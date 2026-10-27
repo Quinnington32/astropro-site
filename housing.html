@@ -1,0 +1,252 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Off-Campus Housing — AstroPro Student Data &amp; Resource Center</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    color-scheme:light;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+    --bg:        #ffffff;
+    --surface:   #f4f6fb;
+    --surface-2: #eef1f9;
+    --ink:       #0f1a2e;
+    --ink-soft:  #59647c;
+    --line:      #e3e7f0;
+    --primary:   #3143e0;
+    --primary-ink:#ffffff;
+    --accent:    #ff7a3d;
+    --accent-ink:#341300;
+    --shadow:    rgba(20,30,60,0.09);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0a0f1c; --surface:#121a2c; --surface-2:#172035; --ink:#eef1fa;
+      --ink-soft:#99a3bf; --line:#233052; --primary:#6d7bff; --primary-ink:#0a0f1c;
+      --accent:#ff8f5c; --accent-ink:#2c1000; --shadow:rgba(0,0,0,0.45);
+      color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0a0f1c; --surface:#121a2c; --surface-2:#172035; --ink:#eef1fa;
+    --ink-soft:#99a3bf; --line:#233052; --primary:#6d7bff; --primary-ink:#0a0f1c;
+    --accent:#ff8f5c; --accent-ink:#2c1000; --shadow:rgba(0,0,0,0.45);
+    color-scheme:dark;
+  }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--bg); color:var(--ink); font-family:"Work Sans", system-ui, sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased}
+  img{max-width:100%}
+  .wrap{max-width:1160px; margin-inline:auto; padding-inline:20px}
+  h1,h2,h3,h4{font-family:"Sora", system-ui, sans-serif; font-weight:700; text-wrap:balance; margin:0; color:var(--ink)}
+  .mono{font-family:"IBM Plex Mono", ui-monospace, monospace; font-variant-numeric:tabular-nums}
+  a{color:inherit}
+  button{font-family:inherit}
+
+  header{position:sticky; top:env(safe-area-inset-top,0px); z-index:20; background:color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter:blur(10px); border-bottom:1px solid var(--line)}
+  .header-row{display:flex; align-items:center; justify-content:space-between; gap:16px; padding-block:16px; flex-wrap:wrap}
+  .wordmark{display:flex; align-items:center; gap:9px; font-family:"Sora"; font-weight:800; font-size:1.2rem; text-decoration:none}
+  .wordmark .dot{width:9px;height:9px;border-radius:50%;background:var(--accent)}
+  nav{display:flex; gap:26px; font-size:0.94rem; font-weight:500}
+  nav a{text-decoration:none; color:var(--ink-soft); transition:color .15s}
+  nav a:hover, nav a.current{color:var(--ink)}
+
+  .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:12px 22px; border-radius:9px; font-size:0.95rem; font-weight:600; text-decoration:none; border:1px solid transparent; cursor:pointer; white-space:nowrap}
+  .btn-primary{background:var(--primary); color:var(--primary-ink)}
+  .btn-primary:hover{filter:brightness(1.07)}
+  .btn-ghost{background:transparent; border-color:var(--line); color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--primary)}
+  .btn-sm{padding:9px 16px; font-size:0.88rem; border-radius:8px}
+
+  .page-hero{padding-block:48px 32px}
+  .kicker{display:inline-flex; align-items:center; gap:8px; font-size:0.82rem; font-weight:600; color:var(--primary); background:color-mix(in srgb, var(--primary) 10%, transparent); padding:6px 12px; border-radius:20px}
+  .page-hero h1{font-size:clamp(2rem,4vw,2.8rem); line-height:1.12; letter-spacing:-0.01em; margin-top:16px}
+  .page-hero p.lede{margin-top:14px; font-size:1.08rem; color:var(--ink-soft); max-width:62ch}
+  .cta-row{display:flex; gap:14px; margin-top:24px; flex-wrap:wrap}
+
+  .how-panel{background:var(--surface); border:1px solid var(--line); border-radius:20px; padding:32px; margin-top:36px; display:grid; grid-template-columns:repeat(3,1fr); gap:24px}
+  .how-panel .step .idx{display:inline-flex; align-items:center; justify-content:center; width:28px;height:28px;border-radius:8px; background:var(--ink); color:var(--bg); font-family:"Sora"; font-weight:700; font-size:0.82rem}
+  .how-panel .step h3{font-size:1rem; margin-top:12px}
+  .how-panel .step p{color:var(--ink-soft); font-size:0.9rem; margin-top:6px}
+
+  section{padding-block:40px}
+  .section-head{max-width:62ch; margin-bottom:28px}
+  .kicker-sm{font-size:0.82rem; font-weight:700; color:var(--primary); letter-spacing:0.02em}
+  .section-head h2{font-size:clamp(1.5rem,2.4vw,1.9rem); margin-top:10px}
+  .section-head p{color:var(--ink-soft); margin-top:10px; font-size:1rem}
+
+  .slot-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+  .slot-card{
+    border:1.5px dashed var(--line);
+    border-radius:16px;
+    padding:24px;
+    display:flex; flex-direction:column; gap:10px;
+    background:var(--surface);
+  }
+  .slot-card .open-tag{font-size:0.72rem; font-weight:700; color:var(--primary); background:color-mix(in srgb, var(--primary) 10%, transparent); padding:4px 10px; border-radius:20px; align-self:flex-start}
+  .slot-card h3{font-size:1.02rem}
+  .slot-card p{color:var(--ink-soft); font-size:0.88rem; flex-grow:1}
+  .slot-card .claim{font-size:0.88rem; font-weight:600; color:var(--primary); text-decoration:none}
+  .slot-card .claim:hover{text-decoration:underline}
+
+  .partner-note{background:var(--ink); border-radius:20px; padding:32px; margin-top:12px}
+  .partner-note h2{color:var(--bg); font-size:1.3rem}
+  .partner-note p{color:color-mix(in srgb, var(--bg) 70%, transparent); margin-top:10px; font-size:0.95rem; max-width:70ch}
+  .partner-note .fee-row{display:flex; gap:28px; margin-top:20px; flex-wrap:wrap}
+  .partner-note .fee-row .f .n{font-family:"Sora"; font-weight:800; font-size:1.4rem; color:var(--bg)}
+  .partner-note .fee-row .f .l{font-size:0.82rem; color:color-mix(in srgb, var(--bg) 65%, transparent); margin-top:2px}
+  .partner-note .btn-primary{background:var(--accent); color:var(--accent-ink); margin-top:22px}
+
+  .tips-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px}
+  .tip-card{background:var(--bg); border:1px solid var(--line); border-radius:14px; padding:20px}
+  .tip-card h3{font-size:0.98rem}
+  .tip-card p{color:var(--ink-soft); font-size:0.9rem; margin-top:6px}
+
+  footer{border-top:1px solid var(--line); padding-block:32px 44px}
+  .footer-row{display:flex; justify-content:space-between; flex-wrap:wrap; gap:18px; font-size:0.86rem; color:var(--ink-soft)}
+  .footer-links{display:flex; gap:20px; flex-wrap:wrap}
+  .footer-links a{text-decoration:none; color:var(--ink-soft)}
+  .footer-links a:hover{color:var(--ink)}
+
+  @media (max-width:900px){
+    nav{display:none}
+    .how-panel{grid-template-columns:1fr}
+    .slot-grid{grid-template-columns:1fr}
+    .tips-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-row">
+    <a class="wordmark" href="index.html"><span class="dot"></span>AstroPro Student Data &amp; Resource Center</a>
+    <nav>
+      <a href="index.html#mission">Mission</a>
+      <a href="index.html#resources">Resource Center</a>
+      <a href="scholarships.html">Scholarships</a>
+      <a href="housing.html" class="current">Housing</a>
+      <a href="index.html#organizations">For Organizations</a>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-ghost btn-sm" href="index.html">&larr; Back to home</a>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="kicker">Student Resource Center</span>
+    <h1>Off-campus housing</h1>
+    <p class="lede">Finding off-campus housing is one of the biggest decisions a student makes each year. This page is where we feature Preferred Partner properties directly to students in our network &mdash; every link goes straight to the property's own site.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="index.html#organizations">List your property</a>
+      <a class="btn btn-ghost" href="#tips">See housing search tips</a>
+    </div>
+
+    <div class="how-panel">
+      <div class="step"><span class="idx mono">01</span><h3>Property manager lists</h3><p>A one-time $375 fee gets a property featured here and in our student housing email.</p></div>
+      <div class="step"><span class="idx mono">02</span><h3>We review it</h3><p>Every property is checked before it goes live, same as every other listing on this site.</p></div>
+      <div class="step"><span class="idx mono">03</span><h3>Students click through</h3><p>Interested students go straight to the property's own website. We never host the listing or the lease.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker-sm">PREFERRED PARTNERS</span>
+      <h2>We're onboarding our first partner properties now.</h2>
+      <p>No properties are live on this page yet &mdash; these are the categories we're opening up first. Students checking back will see real properties appear here as managers sign on.</p>
+    </div>
+    <div class="slot-grid">
+      <div class="slot-card">
+        <span class="open-tag">Spot open</span>
+        <h3>Near-campus apartments</h3>
+        <p>Walking distance to campus is the #1 thing students search for. First near-campus partner gets top placement.</p>
+        <a class="claim" href="index.html#organizations">Claim this spot &rarr;</a>
+      </div>
+      <div class="slot-card">
+        <span class="open-tag">Spot open</span>
+        <h3>Budget-friendly housing</h3>
+        <p>Price is the second most common filter students use. Great fit for value-focused properties.</p>
+        <a class="claim" href="index.html#organizations">Claim this spot &rarr;</a>
+      </div>
+      <div class="slot-card">
+        <span class="open-tag">Spot open</span>
+        <h3>Furnished &amp; move-in ready</h3>
+        <p>Popular with out-of-state and international students who can't easily furnish a place themselves.</p>
+        <a class="claim" href="index.html#organizations">Claim this spot &rarr;</a>
+      </div>
+      <div class="slot-card">
+        <span class="open-tag">Spot open</span>
+        <h3>Pet-friendly properties</h3>
+        <p>A consistent, underserved search filter among students with pets.</p>
+        <a class="claim" href="index.html#organizations">Claim this spot &rarr;</a>
+      </div>
+      <div class="slot-card">
+        <span class="open-tag">Spot open</span>
+        <h3>Studio &amp; 1-bedroom</h3>
+        <p>For students who want to live alone rather than split a lease with roommates.</p>
+        <a class="claim" href="index.html#organizations">Claim this spot &rarr;</a>
+      </div>
+      <div class="slot-card">
+        <span class="open-tag">Spot open</span>
+        <h3>Luxury &amp; amenity-rich</h3>
+        <p>Gyms, pools and co-working space &mdash; a growing category among upperclassmen.</p>
+        <a class="claim" href="index.html#organizations">Claim this spot &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="partner-note">
+      <h2>For property managers: what you get</h2>
+      <p>One listing, one fee, direct to students who are actively deciding where to live. No ongoing subscription.</p>
+      <div class="fee-row">
+        <div class="f"><div class="n mono">$375</div><div class="l">one-time fee, per property</div></div>
+        <div class="f"><div class="n mono">Direct</div><div class="l">students click straight to your site</div></div>
+        <div class="f"><div class="n mono">0</div><div class="l">recurring charges</div></div>
+      </div>
+      <a class="btn btn-primary" href="index.html#organizations">Become a Preferred Partner</a>
+    </div>
+  </div>
+</section>
+
+<section id="tips">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker-sm">WHILE WE ONBOARD PARTNERS</span>
+      <h2>A few things worth checking before you sign a lease.</h2>
+    </div>
+    <div class="tips-grid">
+      <div class="tip-card"><h3>Start 2&ndash;3 months early</h3><p>The best off-campus units near most campuses get claimed well before the semester starts.</p></div>
+      <div class="tip-card"><h3>Confirm who you're renting from</h3><p>Verify the property manager or landlord is real before sending any deposit or signing anything.</p></div>
+      <div class="tip-card"><h3>Ask what's included</h3><p>Utilities, internet, furniture and parking are often separate costs &mdash; get it in writing.</p></div>
+      <div class="tip-card"><h3>Read the lease term carefully</h3><p>Many off-campus leases run 12 months, not just the school year &mdash; know what you're signing up for.</p></div>
+      <div class="tip-card"><h3>Walk the unit if you can</h3><p>Photos can be outdated. If you can't visit in person, ask for a live video walkthrough.</p></div>
+      <div class="tip-card"><h3>Know your roommate agreement</h3><p>If you're splitting a lease, put rent splits and move-out terms in writing before signing.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <span>&copy; AstroPro Student Data &amp; Resource Center</span>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="scholarships.html">Scholarships</a>
+      <a href="index.html#organizations">For organizations</a>
+      <a href="index.html#mission">Our mission</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

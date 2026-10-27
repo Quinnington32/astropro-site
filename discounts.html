@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Student Discounts — AstroPro Student Data &amp; Resource Center</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{color-scheme:light; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+    --bg:#ffffff; --surface:#f4f6fb; --surface-2:#eef1f9; --ink:#0f1a2e; --ink-soft:#59647c; --line:#e3e7f0;
+    --primary:#3143e0; --primary-ink:#ffffff; --accent:#ff7a3d; --accent-ink:#341300; --shadow:rgba(20,30,60,0.09);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){ --bg:#0a0f1c; --surface:#121a2c; --surface-2:#172035; --ink:#eef1fa; --ink-soft:#99a3bf; --line:#233052; --primary:#6d7bff; --primary-ink:#0a0f1c; --accent:#ff8f5c; --accent-ink:#2c1000; --shadow:rgba(0,0,0,0.45); color-scheme:dark; }
+  }
+  :root[data-theme="dark"]{ --bg:#0a0f1c; --surface:#121a2c; --surface-2:#172035; --ink:#eef1fa; --ink-soft:#99a3bf; --line:#233052; --primary:#6d7bff; --primary-ink:#0a0f1c; --accent:#ff8f5c; --accent-ink:#2c1000; --shadow:rgba(0,0,0,0.45); color-scheme:dark; }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--bg); color:var(--ink); font-family:"Work Sans", system-ui, sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased}
+  img{max-width:100%}
+  .wrap{max-width:1160px; margin-inline:auto; padding-inline:20px}
+  h1,h2,h3,h4{font-family:"Sora", system-ui, sans-serif; font-weight:700; text-wrap:balance; margin:0; color:var(--ink)}
+  .mono{font-family:"IBM Plex Mono", ui-monospace, monospace; font-variant-numeric:tabular-nums}
+  a{color:inherit}
+  header{position:sticky; top:env(safe-area-inset-top,0px); z-index:20; background:color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter:blur(10px); border-bottom:1px solid var(--line)}
+  .header-row{display:flex; align-items:center; justify-content:space-between; gap:16px; padding-block:16px; flex-wrap:wrap}
+  .wordmark{display:flex; align-items:center; gap:9px; font-family:"Sora"; font-weight:800; font-size:1.2rem; text-decoration:none}
+  .wordmark .dot{width:9px;height:9px;border-radius:50%;background:var(--accent)}
+  nav{display:flex; gap:20px; font-size:0.92rem; font-weight:500}
+  nav a{text-decoration:none; color:var(--ink-soft); transition:color .15s}
+  nav a:hover, nav a.current{color:var(--ink)}
+  .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:12px 22px; border-radius:9px; font-size:0.95rem; font-weight:600; text-decoration:none; border:1px solid transparent; cursor:pointer; white-space:nowrap}
+  .btn-primary{background:var(--primary); color:var(--primary-ink)}
+  .btn-ghost{background:transparent; border-color:var(--line); color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--primary)}
+  .btn-sm{padding:9px 16px; font-size:0.88rem; border-radius:8px}
+  .page-hero{padding-block:48px 32px}
+  .kicker{display:inline-flex; align-items:center; gap:8px; font-size:0.82rem; font-weight:600; color:var(--primary); background:color-mix(in srgb, var(--primary) 10%, transparent); padding:6px 12px; border-radius:20px}
+  .page-hero h1{font-size:clamp(2rem,4vw,2.8rem); line-height:1.12; letter-spacing:-0.01em; margin-top:16px}
+  .page-hero p.lede{margin-top:14px; font-size:1.08rem; color:var(--ink-soft); max-width:62ch}
+  .note{background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:14px 18px; font-size:0.88rem; color:var(--ink-soft); margin-top:24px}
+  .note strong{color:var(--ink)}
+  section{padding-block:40px}
+  .section-head{max-width:62ch; margin-bottom:24px}
+  .kicker-sm{font-size:0.82rem; font-weight:700; color:var(--primary); letter-spacing:0.02em}
+  .section-head h2{font-size:clamp(1.5rem,2.4vw,1.9rem); margin-top:10px}
+  .section-head p{color:var(--ink-soft); margin-top:10px; font-size:1rem}
+  .cat-row{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:14px}
+  .cat-row h3{font-size:1.1rem}
+  .disc-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:36px}
+  .disc-card{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:18px; display:flex; flex-direction:column; gap:8px}
+  .disc-card .pct{font-family:"Sora"; font-weight:800; font-size:1.3rem; color:var(--primary)}
+  .disc-card h4{font-size:0.98rem}
+  .disc-card p{color:var(--ink-soft); font-size:0.86rem}
+  .disc-card a.link{font-size:0.86rem; font-weight:600; color:var(--ink); text-decoration:none}
+  .disc-card a.link:hover{color:var(--primary)}
+  .cta-panel{background:var(--ink); border-radius:20px; padding:36px; display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap}
+  .cta-panel h2{color:var(--bg); font-size:1.35rem}
+  .cta-panel p{color:color-mix(in srgb, var(--bg) 70%, transparent); margin-top:6px; font-size:0.95rem}
+  .cta-panel .btn-primary{background:var(--accent); color:var(--accent-ink)}
+  footer{border-top:1px solid var(--line); padding-block:32px 44px}
+  .footer-row{display:flex; justify-content:space-between; flex-wrap:wrap; gap:18px; font-size:0.86rem; color:var(--ink-soft)}
+  .footer-links{display:flex; gap:20px; flex-wrap:wrap}
+  .footer-links a{text-decoration:none; color:var(--ink-soft)}
+  @media (max-width:900px){ .disc-grid{grid-template-columns:1fr} nav{display:none} .cta-panel{flex-direction:column; align-items:flex-start} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-row">
+    <a class="wordmark" href="index.html"><span class="dot"></span>AstroPro Student Data &amp; Resource Center</a>
+    <nav>
+      <a href="index.html#resources">Resource Center</a>
+      <a href="scholarships.html">Scholarships</a>
+      <a href="housing.html">Housing</a>
+      <a href="internships.html">Jobs</a>
+      <a href="discounts.html" class="current">Discounts</a>
+    </nav>
+    <div class="header-cta"><a class="btn btn-ghost btn-sm" href="index.html">&larr; Back to home</a></div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="kicker">Student Resource Center</span>
+    <h1>Student discounts</h1>
+    <p class="lede">Verified student pricing already exists on most of what you buy, you just have to know where to apply it. Here's where to find it, by category.</p>
+    <div class="note"><strong>We don't run these discount programs</strong> &mdash; they're operated by the companies and verification services listed. We link to the real, current programs; eligibility and terms are set by each one.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+
+    <div class="cat-row"><h3>Verification platforms (the fastest way to unlock most of these)</h3></div>
+    <div class="disc-grid">
+      <div class="disc-card"><span class="pct">UNiDAYS</span><h4>Free student verification + discounts</h4><p>One of the largest student discount networks; verify once, unlock pricing across hundreds of brands.</p><a class="link" href="https://www.myunidays.com" target="_blank" rel="noopener">Visit UNiDAYS &rarr;</a></div>
+      <div class="disc-card"><span class="pct">Student Beans</span><h4>Free student verification + discounts</h4><p>Similar to UNiDAYS: verify your student status once, browse discounts by category.</p><a class="link" href="https://www.studentbeans.com" target="_blank" rel="noopener">Visit Student Beans &rarr;</a></div>
+      <div class="disc-card"><span class="pct">SheerID</span><h4>Verification used at checkout</h4><p>The verification layer many brands (Apple, Spotify, Amazon Prime Student) use directly at checkout.</p><a class="link" href="https://www.sheerid.com" target="_blank" rel="noopener">Learn more &rarr;</a></div>
+    </div>
+
+    <div class="cat-row"><h3>Software &amp; tech</h3></div>
+    <div class="disc-grid">
+      <div class="disc-card"><span class="pct">~60%</span><h4>Adobe Creative Cloud</h4><p>Discounted student pricing on the full Creative Cloud suite with .edu verification.</p><a class="link" href="https://www.adobe.com/creativecloud/buy/students.html" target="_blank" rel="noopener">Check pricing &rarr;</a></div>
+      <div class="disc-card"><span class="pct">Free/Low</span><h4>Microsoft 365 Education</h4><p>Many schools provide this free; check your own .edu email first before paying.</p><a class="link" href="https://www.microsoft.com/en-us/education/products/office" target="_blank" rel="noopener">Check eligibility &rarr;</a></div>
+      <div class="disc-card"><span class="pct">50%</span><h4>Amazon Prime Student</h4><p>Half-price Prime membership, verified through SheerID with a valid .edu email.</p><a class="link" href="https://www.amazon.com/amazonprime/student" target="_blank" rel="noopener">Check eligibility &rarr;</a></div>
+    </div>
+
+    <div class="cat-row"><h3>Entertainment &amp; music</h3></div>
+    <div class="disc-grid">
+      <div class="disc-card"><span class="pct">~50%</span><h4>Spotify Premium Student</h4><p>Discounted Premium bundled with Hulu, verified annually through SheerID.</p><a class="link" href="https://www.spotify.com/student" target="_blank" rel="noopener">Check eligibility &rarr;</a></div>
+      <div class="disc-card"><span class="pct">Varies</span><h4>Apple Music &amp; Apple One</h4><p>Reduced student pricing on Apple Music and select Apple One bundles.</p><a class="link" href="https://www.apple.com/apple-music/" target="_blank" rel="noopener">Check eligibility &rarr;</a></div>
+      <div class="disc-card"><span class="pct">Varies</span><h4>YouTube Premium Student</h4><p>Discounted Premium plan for verified students.</p><a class="link" href="https://www.youtube.com/premium/student" target="_blank" rel="noopener">Check eligibility &rarr;</a></div>
+    </div>
+
+    <div class="cat-row"><h3>Travel &amp; transit</h3></div>
+    <div class="disc-grid">
+      <div class="disc-card"><span class="pct">Varies</span><h4>Amtrak student fares</h4><p>Discounted rail fares for students verified through Student Advantage or similar programs.</p><a class="link" href="https://www.amtrak.com" target="_blank" rel="noopener">Check fares &rarr;</a></div>
+      <div class="disc-card"><span class="pct">Varies</span><h4>Student Universe</h4><p>Student-only fares on flights and trains, aimed specifically at students and young travelers.</p><a class="link" href="https://www.studentuniverse.com" target="_blank" rel="noopener">Visit StudentUniverse &rarr;</a></div>
+      <div class="disc-card"><span class="pct">Local</span><h4>Local transit discounts</h4><p>Most city transit systems offer reduced student fares with a valid school ID &mdash; check your own city's transit site.</p><a class="link" href="#">Varies by city</a></div>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cta-panel">
+      <div><h2>Run a brand with a student discount?</h2><p>Get it featured here and sent directly to students in our network.</p></div>
+      <a class="btn btn-primary" href="index.html#organizations">Submit a student discount</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <span>&copy; AstroPro Student Data &amp; Resource Center</span>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="scholarships.html">Scholarships</a>
+      <a href="housing.html">Housing</a>
+      <a href="internships.html">Jobs</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Career Guides — AstroPro Student Data &amp; Resource Center</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{color-scheme:light; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+    --bg:#ffffff; --surface:#f4f6fb; --surface-2:#eef1f9; --ink:#0f1a2e; --ink-soft:#59647c; --line:#e3e7f0;
+    --primary:#3143e0; --primary-ink:#ffffff; --accent:#ff7a3d; --accent-ink:#341300; --shadow:rgba(20,30,60,0.09);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){ --bg:#0a0f1c; --surface:#121a2c; --surface-2:#172035; --ink:#eef1fa; --ink-soft:#99a3bf; --line:#233052; --primary:#6d7bff; --primary-ink:#0a0f1c; --accent:#ff8f5c; --accent-ink:#2c1000; --shadow:rgba(0,0,0,0.45); color-scheme:dark; }
+  }
+  :root[data-theme="dark"]{ --bg:#0a0f1c; --surface:#121a2c; --surface-2:#172035; --ink:#eef1fa; --ink-soft:#99a3bf; --line:#233052; --primary:#6d7bff; --primary-ink:#0a0f1c; --accent:#ff8f5c; --accent-ink:#2c1000; --shadow:rgba(0,0,0,0.45); color-scheme:dark; }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--bg); color:var(--ink); font-family:"Work Sans", system-ui, sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1160px; margin-inline:auto; padding-inline:20px}
+  h1,h2,h3,h4{font-family:"Sora", system-ui, sans-serif; font-weight:700; text-wrap:balance; margin:0; color:var(--ink)}
+  a{color:inherit}
+  header{position:sticky; top:env(safe-area-inset-top,0px); z-index:20; background:color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter:blur(10px); border-bottom:1px solid var(--line)}
+  .header-row{display:flex; align-items:center; justify-content:space-between; gap:16px; padding-block:16px; flex-wrap:wrap}
+  .wordmark{display:flex; align-items:center; gap:9px; font-family:"Sora"; font-weight:800; font-size:1.2rem; text-decoration:none}
+  .wordmark .dot{width:9px;height:9px;border-radius:50%;background:var(--accent)}
+  nav{display:flex; gap:18px; font-size:0.9rem; font-weight:500}
+  nav a{text-decoration:none; color:var(--ink-soft)}
+  nav a:hover, nav a.current{color:var(--ink)}
+  .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:12px 22px; border-radius:9px; font-size:0.95rem; font-weight:600; text-decoration:none; border:1px solid transparent; cursor:pointer; white-space:nowrap}
+  .btn-primary{background:var(--primary); color:var(--primary-ink)}
+  .btn-ghost{background:transparent; border-color:var(--line); color:var(--ink)}
+  .btn-sm{padding:9px 16px; font-size:0.88rem; border-radius:8px}
+  .page-hero{padding-block:48px 32px}
+  .kicker{display:inline-flex; align-items:center; gap:8px; font-size:0.82rem; font-weight:600; color:var(--primary); background:color-mix(in srgb, var(--primary) 10%, transparent); padding:6px 12px; border-radius:20px}
+  .page-hero h1{font-size:clamp(2rem,4vw,2.8rem); line-height:1.12; letter-spacing:-0.01em; margin-top:16px}
+  .page-hero p.lede{margin-top:14px; font-size:1.08rem; color:var(--ink-soft); max-width:62ch}
+  section{padding-block:36px}
+  .section-head{max-width:62ch; margin-bottom:22px}
+  .kicker-sm{font-size:0.82rem; font-weight:700; color:var(--primary); letter-spacing:0.02em}
+  .section-head h2{font-size:clamp(1.4rem,2.2vw,1.8rem); margin-top:8px}
+  .guide-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+  .guide-card{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:22px; display:flex; flex-direction:column; gap:10px}
+  .guide-card h3{font-size:1rem}
+  .guide-card p{color:var(--ink-soft); font-size:0.9rem}
+  .accordion{border:1px solid var(--line); border-radius:12px; margin-bottom:10px; overflow:hidden}
+  .accordion summary{padding:16px 18px; cursor:pointer; font-weight:600; font-size:0.96rem; list-style:none; display:flex; justify-content:space-between; align-items:center}
+  .accordion summary::-webkit-details-marker{display:none}
+  .accordion summary::after{content:"+"; font-size:1.2rem; color:var(--primary)}
+  .accordion[open] summary::after{content:"\2212"}
+  .accordion .body{padding:0 18px 18px; color:var(--ink-soft); font-size:0.92rem}
+  .accordion .body ul{margin:8px 0 0; padding-left:20px}
+  .accordion .body li{margin-bottom:6px}
+  .cta-panel{background:var(--ink); border-radius:20px; padding:36px; display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap}
+  .cta-panel h2{color:var(--bg); font-size:1.3rem}
+  .cta-panel p{color:color-mix(in srgb, var(--bg) 70%, transparent); margin-top:6px; font-size:0.93rem}
+  .cta-panel .btn-primary{background:var(--accent); color:var(--accent-ink)}
+  footer{border-top:1px solid var(--line); padding-block:32px 44px}
+  .footer-row{display:flex; justify-content:space-between; flex-wrap:wrap; gap:18px; font-size:0.86rem; color:var(--ink-soft)}
+  .footer-links{display:flex; gap:20px; flex-wrap:wrap}
+  .footer-links a{text-decoration:none; color:var(--ink-soft)}
+  @media (max-width:900px){ .guide-grid{grid-template-columns:1fr} nav{display:none} .cta-panel{flex-direction:column; align-items:flex-start} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-row">
+    <a class="wordmark" href="index.html"><span class="dot"></span>AstroPro Student Data &amp; Resource Center</a>
+    <nav>
+      <a href="index.html#resources">Resource Center</a>
+      <a href="scholarships.html">Scholarships</a>
+      <a href="internships.html">Jobs</a>
+      <a href="career-guides.html" class="current">Career Guides</a>
+    </nav>
+    <div class="header-cta"><a class="btn btn-ghost btn-sm" href="index.html">&larr; Back to home</a></div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="kicker">Student Resource Center</span>
+    <h1>Career guides</h1>
+    <p class="lede">Practical, no-fluff guidance for the parts of job hunting that trip students up most: the resume, the interview, and picking a direction in the first place.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head"><span class="kicker-sm">RESUME</span><h2>Build a resume that actually gets read</h2></div>
+    <details class="accordion" open>
+      <summary>Keep it to one page as an undergrad</summary>
+      <div class="body">Recruiters scan resumes in seconds. One page forces you to keep only what's relevant: your degree, 2&ndash;4 relevant experiences, and skills that match the role. A two-page resume for an internship application usually works against you.</div>
+    </details>
+    <details class="accordion">
+      <summary>Lead every bullet with what you did and what changed</summary>
+      <div class="body">
+        <p>Use the pattern: action + what you did + the result, with a number where you can.</p>
+        <ul>
+          <li>Weak: "Helped with marketing for the club"</li>
+          <li>Strong: "Ran social accounts for a 200-member student org, growing followers 40% in one semester"</li>
+        </ul>
+      </div>
+    </details>
+    <details class="accordion">
+      <summary>No work experience yet? Use what you actually have</summary>
+      <div class="body">Class projects, student organization roles, part-time jobs, and volunteer work all count if you describe the skill, not just the title. "Treasurer, Student Government" is a title; "Managed a $12,000 annual budget across 8 departments" is a skill.</div>
+    </details>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head"><span class="kicker-sm">INTERVIEWING</span><h2>Interview prep that's worth your time</h2></div>
+    <details class="accordion" open>
+      <summary>Have 3 stories ready before any interview</summary>
+      <div class="body">Most behavioral questions ("tell me about a time you...") map to a handful of themes: handling conflict, leading something, fixing a mistake, and working under pressure. Prepare one real story for each, structured as situation &rarr; action &rarr; result, and you'll be ready for most of what comes up.</div>
+    </details>
+    <details class="accordion">
+      <summary>Research the company past the "About" page</summary>
+      <div class="body">Know their product, a recent news item about them, and why their specific role interests you. "I want to work in marketing" is generic; "I used your app and noticed X, and I'd want to work on that" shows you actually looked.</div>
+    </details>
+    <details class="accordion">
+      <summary>Always have questions ready for them</summary>
+      <div class="body">Ask about the team you'd join, what success looks like in the first 90 days, or what's changed recently. Skipping this, or asking only about pay and benefits this early, is one of the most common interview mistakes.</div>
+    </details>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head"><span class="kicker-sm">CHOOSING A DIRECTION</span><h2>If you don't know what you want yet</h2></div>
+    <div class="guide-grid">
+      <div class="guide-card"><h3>Talk to people doing the job, not just the title</h3><p>A 20-minute conversation with someone actually doing a job tells you more than a job description ever will. Most people say yes to a short, specific ask.</p></div>
+      <div class="guide-card"><h3>Try before you commit a career to it</h3><p>A short internship, a part-time role, or even a single class project in a field can tell you whether you'd actually want to do it for years.</p></div>
+      <div class="guide-card"><h3>Your major doesn't lock you in</h3><p>Most entry-level roles outside a handful of licensed fields (engineering, nursing, accounting) care more about what you can show than your exact major.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cta-panel">
+      <div><h2>Want a mentor to walk through this with you?</h2><p>Connect with alumni and professionals in the field you're heading into.</p></div>
+      <a class="btn btn-primary" href="mentorship.html">Find a mentor</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <span>&copy; AstroPro Student Data &amp; Resource Center</span>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="internships.html">Jobs</a>
+      <a href="mentorship.html">Mentorship</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

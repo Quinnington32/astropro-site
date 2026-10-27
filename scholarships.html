@@ -1,0 +1,352 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Scholarship Directory — AstroPro Student Data &amp; Resource Center</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    color-scheme:light;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+    --bg:        #ffffff;
+    --surface:   #f4f6fb;
+    --surface-2: #eef1f9;
+    --ink:       #0f1a2e;
+    --ink-soft:  #59647c;
+    --line:      #e3e7f0;
+    --primary:   #3143e0;
+    --primary-ink:#ffffff;
+    --accent:    #ff7a3d;
+    --accent-ink:#341300;
+    --shadow:    rgba(20,30,60,0.09);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0a0f1c; --surface:#121a2c; --surface-2:#172035; --ink:#eef1fa;
+      --ink-soft:#99a3bf; --line:#233052; --primary:#6d7bff; --primary-ink:#0a0f1c;
+      --accent:#ff8f5c; --accent-ink:#2c1000; --shadow:rgba(0,0,0,0.45);
+      color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0a0f1c; --surface:#121a2c; --surface-2:#172035; --ink:#eef1fa;
+    --ink-soft:#99a3bf; --line:#233052; --primary:#6d7bff; --primary-ink:#0a0f1c;
+    --accent:#ff8f5c; --accent-ink:#2c1000; --shadow:rgba(0,0,0,0.45);
+    color-scheme:dark;
+  }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--bg); color:var(--ink); font-family:"Work Sans", system-ui, sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased}
+  img{max-width:100%}
+  .wrap{max-width:1160px; margin-inline:auto; padding-inline:20px}
+  h1,h2,h3,h4{font-family:"Sora", system-ui, sans-serif; font-weight:700; text-wrap:balance; margin:0; color:var(--ink)}
+  .mono{font-family:"IBM Plex Mono", ui-monospace, monospace; font-variant-numeric:tabular-nums}
+  a{color:inherit}
+  button{font-family:inherit}
+
+  header{position:sticky; top:env(safe-area-inset-top,0px); z-index:20; background:color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter:blur(10px); border-bottom:1px solid var(--line)}
+  .header-row{display:flex; align-items:center; justify-content:space-between; gap:16px; padding-block:16px; flex-wrap:wrap}
+  .wordmark{display:flex; align-items:center; gap:9px; font-family:"Sora"; font-weight:800; font-size:1.2rem; text-decoration:none}
+  .wordmark .dot{width:9px;height:9px;border-radius:50%;background:var(--accent)}
+  nav{display:flex; gap:26px; font-size:0.94rem; font-weight:500}
+  nav a{text-decoration:none; color:var(--ink-soft); transition:color .15s}
+  nav a:hover, nav a.current{color:var(--ink)}
+
+  .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:12px 22px; border-radius:9px; font-size:0.95rem; font-weight:600; text-decoration:none; border:1px solid transparent; cursor:pointer; white-space:nowrap}
+  .btn-primary{background:var(--primary); color:var(--primary-ink)}
+  .btn-primary:hover{filter:brightness(1.07)}
+  .btn-ghost{background:transparent; border-color:var(--line); color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--primary)}
+  .btn-sm{padding:9px 16px; font-size:0.88rem; border-radius:8px}
+
+  .page-hero{padding-block:48px 32px}
+  .kicker{display:inline-flex; align-items:center; gap:8px; font-size:0.82rem; font-weight:600; color:var(--primary); background:color-mix(in srgb, var(--primary) 10%, transparent); padding:6px 12px; border-radius:20px}
+  .page-hero h1{font-size:clamp(2rem,4vw,2.8rem); line-height:1.12; letter-spacing:-0.01em; margin-top:16px}
+  .page-hero p.lede{margin-top:14px; font-size:1.08rem; color:var(--ink-soft); max-width:62ch}
+
+  .stat-row{display:flex; gap:28px; margin-top:28px; flex-wrap:wrap}
+  .stat-row .stat .n{font-family:"Sora"; font-weight:800; font-size:1.6rem}
+  .stat-row .stat .l{font-size:0.84rem; color:var(--ink-soft); margin-top:2px}
+
+  .note{background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:14px 18px; font-size:0.88rem; color:var(--ink-soft); margin-top:28px}
+  .note strong{color:var(--ink)}
+
+  .controls{position:sticky; top:calc(70px + env(safe-area-inset-top,0px)); z-index:10; background:var(--bg); padding-block:16px; border-bottom:1px solid var(--line); margin-top:36px}
+  .controls-row{display:flex; gap:12px; flex-wrap:wrap; align-items:center}
+  .search-box{position:relative; flex:1; min-width:220px}
+  .search-box input{width:100%; padding:11px 14px; border-radius:9px; border:1px solid var(--line); background:var(--surface); color:var(--ink); font-family:inherit; font-size:0.94rem}
+  .search-box input:focus{outline:2px solid var(--primary); outline-offset:1px; border-color:transparent}
+  .pills{display:flex; gap:8px; flex-wrap:wrap}
+  .pill{padding:8px 15px; border-radius:20px; border:1px solid var(--line); background:var(--bg); color:var(--ink-soft); font-size:0.86rem; font-weight:600; cursor:pointer}
+  .pill.active{background:var(--primary); color:var(--primary-ink); border-color:transparent}
+  .result-count{font-size:0.86rem; color:var(--ink-soft); margin-top:12px}
+
+  .listing-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px; padding-block:28px 60px}
+  .s-card{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:22px; display:flex; flex-direction:column; gap:10px}
+  .s-card .top-row{display:flex; justify-content:space-between; align-items:flex-start; gap:12px}
+  .s-card .amount{font-family:"Sora"; font-weight:800; font-size:1.25rem; color:var(--primary); white-space:nowrap}
+  .s-card h3{font-size:1.05rem}
+  .s-card .cat-tag{font-size:0.72rem; font-weight:700; color:var(--primary); background:color-mix(in srgb, var(--primary) 10%, transparent); padding:4px 10px; border-radius:20px; align-self:flex-start}
+  .s-card p.elig{color:var(--ink-soft); font-size:0.9rem; flex-grow:1}
+  .s-card .meta-row{display:flex; justify-content:space-between; align-items:center; border-top:1px dashed var(--line); padding-top:12px; margin-top:4px}
+  .s-card .deadline{font-size:0.84rem; color:var(--ink-soft)}
+  .s-card .deadline b{color:var(--ink); font-family:"IBM Plex Mono", monospace}
+  .s-card .link{font-size:0.88rem; font-weight:600; color:var(--ink); text-decoration:none}
+  .s-card .link:hover{color:var(--primary)}
+  .s-card[hidden]{display:none}
+
+  .no-results{display:none; text-align:center; padding:50px 20px; color:var(--ink-soft)}
+  .no-results.show{display:block}
+
+  .cta-panel{background:var(--ink); border-radius:20px; padding:36px; display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; margin-bottom:60px}
+  .cta-panel h2{color:var(--bg); font-size:1.4rem}
+  .cta-panel p{color:color-mix(in srgb, var(--bg) 70%, transparent); margin-top:6px; font-size:0.95rem}
+  .cta-panel .btn-primary{background:var(--accent); color:var(--accent-ink)}
+
+  footer{border-top:1px solid var(--line); padding-block:32px 44px}
+  .footer-row{display:flex; justify-content:space-between; flex-wrap:wrap; gap:18px; font-size:0.86rem; color:var(--ink-soft)}
+  .footer-links{display:flex; gap:20px; flex-wrap:wrap}
+  .footer-links a{text-decoration:none; color:var(--ink-soft)}
+  .footer-links a:hover{color:var(--ink)}
+
+  @media (max-width:900px){
+    .listing-grid{grid-template-columns:1fr}
+    nav{display:none}
+    .cta-panel{flex-direction:column; align-items:flex-start}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-row">
+    <a class="wordmark" href="index.html"><span class="dot"></span>AstroPro Student Data &amp; Resource Center</a>
+    <nav>
+      <a href="index.html#mission">Mission</a>
+      <a href="index.html#resources">Resource Center</a>
+      <a href="scholarships.html" class="current">Scholarships</a>
+      <a href="index.html#organizations">For Organizations</a>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-ghost btn-sm" href="index.html">&larr; Back to home</a>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="kicker">Student Resource Center</span>
+    <h1>Scholarship directory</h1>
+    <p class="lede">A curated, growing list of scholarships students can apply for right now &mdash; no-essay awards, need-based funding, leadership and service scholarships, and creative contests. Search or filter below, then apply directly on the sponsor's page.</p>
+    <div class="stat-row">
+      <div class="stat"><div class="n mono">16</div><div class="l">scholarships listed</div></div>
+      <div class="stat"><div class="n mono">$500&ndash;$55K</div><div class="l">award range</div></div>
+      <div class="stat"><div class="n mono">5</div><div class="l">categories</div></div>
+    </div>
+    <div class="note"><strong>This list is a starting point, not every scholarship that exists.</strong> We're adding to it regularly. Deadlines and amounts come from each sponsor and can change &mdash; always confirm details on the official scholarship page before applying.</div>
+  </div>
+</section>
+
+<div class="controls">
+  <div class="wrap controls-row">
+    <div class="search-box">
+      <input id="searchInput" type="text" placeholder="Search scholarships by name...">
+    </div>
+    <div class="pills" id="pillGroup">
+      <button class="pill active" data-cat="all">All</button>
+      <button class="pill" data-cat="no-essay">No essay</button>
+      <button class="pill" data-cat="need-based">Need-based</button>
+      <button class="pill" data-cat="leadership">Leadership &amp; service</button>
+      <button class="pill" data-cat="creative">Creative &amp; video</button>
+      <button class="pill" data-cat="major">Major-specific</button>
+    </div>
+  </div>
+  <div class="wrap"><div class="result-count" id="resultCount"></div></div>
+</div>
+
+<div class="wrap">
+  <div class="listing-grid" id="listingGrid">
+
+    <div class="s-card" data-cat="need-based" data-name="Jack Kent Cooke Foundation College Scholarship">
+      <div class="top-row"><h3>Jack Kent Cooke Foundation College Scholarship</h3><span class="amount mono">Up to $55K/yr</span></div>
+      <span class="cat-tag">Need-based</span>
+      <p class="elig">High school seniors with a 3.5+ GPA and financial need (household income guidance up to about $95,000). Renewable for up to four years of college.</p>
+      <div class="meta-row"><span class="deadline">Deadline: <b>Mid-Nov 2026*</b></span><a class="link" href="https://www.interviewgrid.com/top/top-scholarships-college-students-us" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+    <div class="s-card" data-cat="leadership" data-name="Ron Brown Scholar Program">
+      <div class="top-row"><h3>Ron Brown Scholar Program</h3><span class="amount mono">$40,000</span></div>
+      <span class="cat-tag">Leadership &amp; service</span>
+      <p class="elig">For Black/African American high school seniors who are U.S. citizens or permanent residents, showing academic excellence, leadership, service and financial need. About 20 awards per year, $10,000/year for four years.</p>
+      <div class="meta-row"><span class="deadline">Deadline: <b>Dec 1, 2026</b></span><a class="link" href="https://www.interviewgrid.com/top/top-scholarships-college-students-us" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+    <div class="s-card" data-cat="leadership" data-name="Horatio Alger National Scholarship">
+      <div class="top-row"><h3>Horatio Alger National Scholarship</h3><span class="amount mono">$25,000</span></div>
+      <span class="cat-tag">Need-based</span>
+      <p class="elig">For students who have overcome significant adversity. Requires U.S. citizenship, a 2.0+ GPA, and financial need. Seniors should check the earlier Feb 15 window.</p>
+      <div class="meta-row"><span class="deadline">Deadline: <b>Feb 15&ndash;Mar 1, 2027</b></span><a class="link" href="https://www.interviewgrid.com/top/top-scholarships-college-students-us" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+    <div class="s-card" data-cat="no-essay" data-name="Scholarships360 $10,000 No Essay Scholarship">
+      <div class="top-row"><h3>Scholarships360 $10,000 No-Essay Scholarship</h3><span class="amount mono">$10,000</span></div>
+      <span class="cat-tag">No essay</span>
+      <p class="elig">Open to high school seniors, undergrads, grad students and adult learners. No GPA requirement, no essay. One winner selected monthly.</p>
+      <div class="meta-row"><span class="deadline">Deadline: <b>Monthly, through 6/30/27</b></span><a class="link" href="https://www.interviewgrid.com/top/top-scholarships-college-students-us" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+    <div class="s-card" data-cat="need-based" data-name="U.S. Bank Student Scholarship Program">
+      <div class="top-row"><h3>U.S. Bank Student Scholarship Program</h3><span class="amount mono">$2,500&ndash;$20,000</span></div>
+      <span class="cat-tag">Need-based</span>
+      <p class="elig">Undergraduates age 17+. Register and complete online financial literacy lessons to qualify for an entry.</p>
+      <div class="meta-row"><span class="deadline">Deadline: <b>10/30/26</b></span><a class="link" href="https://www.fastweb.com/college-scholarships/articles/scholarships-for-college-students" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+    <div class="s-card" data-cat="leadership" data-name="Chick-fil-A Community Scholars Program">
+      <div class="top-row"><h3>Chick-fil-A Community Scholars Program</h3><span class="amount mono">$25,000</span></div>
+      <span class="cat-tag">Leadership &amp; service</span>
+      <p class="elig">Undergraduate and graduate students with a 3.0+ GPA, demonstrated financial need, community service and a recommendation letter.</p>
+      <div class="meta-row"><span class="deadline">Deadline: <b>11/3/26</b></span><a class="link" href="https://www.fastweb.com/college-scholarships/articles/scholarships-for-college-students" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+    <div class="s-card" data-cat="no-essay" data-name="Mensa Foundation U.S. Scholarship">
+      <div class="top-row"><h3>Mensa Foundation U.S. Scholarship</h3><span class="amount mono">$2,000</span></div>
+      <span class="cat-tag">Essay-based</span>
+      <p class="elig">Enrolled in a degree program at an accredited U.S. institution. Requires an essay of up to 550 words on career goals.</p>
+      <div class="meta-row"><span class="deadline">Deadline: <b>11/15/26</b></span><a class="link" href="https://www.fastweb.com/college-scholarships/articles/scholarships-for-college-students" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+    <div class="s-card" data-cat="creative" data-name="editing.services Scholarship">
+      <div class="top-row"><h3>editing.services Scholarship</h3><span class="amount mono">$1,000</span></div>
+      <span class="cat-tag">Essay-based</span>
+      <p class="elig">Age 18+. Submit a 300-word essay on the impact of writing in today's world.</p>
+      <div class="meta-row"><span class="deadline">Deadline: <b>11/29/26</b></span><a class="link" href="https://www.fastweb.com/college-scholarships/articles/scholarships-for-college-students" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+    <div class="s-card" data-cat="leadership" data-name="Space to Succeed Scholarship">
+      <div class="top-row"><h3>Space to Succeed Scholarship</h3><span class="amount mono">$5,000</span></div>
+      <span class="cat-tag">Leadership &amp; service</span>
+      <p class="elig">Age 18+. Submit a 500&ndash;800-word essay on community commitment and how education will expand your impact.</p>
+      <div class="meta-row"><span class="deadline">Deadline: <b>11/30/26</b></span><a class="link" href="https://www.fastweb.com/college-scholarships/articles/scholarships-for-college-students" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+    <div class="s-card" data-cat="major" data-name="InspireCraft Scholarship">
+      <div class="top-row"><h3>InspireCraft Scholarship</h3><span class="amount mono">$500</span></div>
+      <span class="cat-tag">Major-specific</span>
+      <p class="elig">Age 18+. For students with an interest in arts, crafts, decoration or a related field.</p>
+      <div class="meta-row"><span class="deadline">Deadline: <b>12/31/26</b></span><a class="link" href="https://www.fastweb.com/college-scholarships/articles/scholarships-for-college-students" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+    <div class="s-card" data-cat="no-essay" data-name="Financial Goals Scholarship">
+      <div class="top-row"><h3>Financial Goals Scholarship</h3><span class="amount mono">$2,000</span></div>
+      <span class="cat-tag">Essay-based</span>
+      <p class="elig">Age 18+. Submit a 500-word essay on a personal finance topic.</p>
+      <div class="meta-row"><span class="deadline">Deadline: <b>12/31/26</b></span><a class="link" href="https://www.fastweb.com/college-scholarships/articles/scholarships-for-college-students" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+    <div class="s-card" data-cat="need-based" data-name="Union Plus Scholarship">
+      <div class="top-row"><h3>Union Plus Scholarship</h3><span class="amount mono">$1,000&ndash;$4,000</span></div>
+      <span class="cat-tag">Need-based</span>
+      <p class="elig">Undergraduate and graduate students who are, or are the spouse or dependent child of, a current or retired union member in a participating union.</p>
+      <div class="meta-row"><span class="deadline">Deadline: <b>1/31/27</b></span><a class="link" href="https://www.fastweb.com/college-scholarships/articles/scholarships-for-college-students" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+    <div class="s-card" data-cat="leadership" data-name="Truman Scholars Program">
+      <div class="top-row"><h3>Truman Scholars Program</h3><span class="amount mono">$30,000</span></div>
+      <span class="cat-tag">Leadership &amp; service</span>
+      <p class="elig">Full-time college juniors planning graduate study in public service. Finalists attend Leadership Week in Liberty, Missouri.</p>
+      <div class="meta-row"><span class="deadline">Deadline: <b>2/2/27</b></span><a class="link" href="https://www.fastweb.com/college-scholarships/articles/scholarships-for-college-students" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+    <div class="s-card" data-cat="creative" data-name="The Christophers Video Contest for College Students">
+      <div class="top-row"><h3>The Christophers Video Contest</h3><span class="amount mono">$100&ndash;$1,000</span></div>
+      <span class="cat-tag">Creative &amp; video</span>
+      <p class="elig">Undergraduate and graduate students. Submit a five-minute video on "One Person Can Make a Difference."</p>
+      <div class="meta-row"><span class="deadline">Deadline: <b>2/11/27</b></span><a class="link" href="https://www.fastweb.com/college-scholarships/articles/scholarships-for-college-students" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+    <div class="s-card" data-cat="creative" data-name="Stossel in the Classroom Video Contest">
+      <div class="top-row"><h3>Stossel in the Classroom Video Contest</h3><span class="amount mono">$200&ndash;$2,500</span></div>
+      <span class="cat-tag">Creative &amp; video</span>
+      <p class="elig">Ages 10&ndash;23. Submit a one-to-three-minute video on one of four provided topics.</p>
+      <div class="meta-row"><span class="deadline">Deadline: <b>3/12/27</b></span><a class="link" href="https://www.fastweb.com/college-scholarships/articles/scholarships-for-college-students" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+    <div class="s-card" data-cat="no-essay" data-name="Debt.com Scholarship for Aggressive Scholarship Applicants">
+      <div class="top-row"><h3>Debt.com Scholarship for Aggressive Applicants</h3><span class="amount mono">$1,000</span></div>
+      <span class="cat-tag">No essay required to apply broadly</span>
+      <p class="elig">Apply to as many scholarships as possible (winning isn't required) and submit proof plus a short statement about the experience.</p>
+      <div class="meta-row"><span class="deadline">Deadline: <b>4/1/27</b></span><a class="link" href="https://www.fastweb.com/college-scholarships/articles/scholarships-for-college-students" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+  </div>
+
+  <div class="no-results" id="noResults">No scholarships match your search. Try a different keyword or filter.</div>
+</div>
+
+<div class="wrap">
+  <div class="cta-panel">
+    <div>
+      <h2>Running a scholarship? Get it in front of students here.</h2>
+      <p>Submit it for review and it can be added to this directory and sent to matching students in our network.</p>
+    </div>
+    <a class="btn btn-primary" href="index.html#organizations">Submit a scholarship</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap footer-row">
+    <span>&copy; AstroPro Student Data &amp; Resource Center</span>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#organizations">For organizations</a>
+      <a href="index.html#mission">Our mission</a>
+    </div>
+  </div>
+  <div class="wrap" style="margin-top:14px; font-size:0.78rem; color:var(--ink-soft)">
+    Sources: <a href="https://www.fastweb.com/college-scholarships/articles/scholarships-for-college-students" target="_blank" rel="noopener">Fastweb</a>, <a href="https://www.interviewgrid.com/top/top-scholarships-college-students-us" target="_blank" rel="noopener">InterviewGrid</a>. Compiled October 2026; *dates marked with an asterisk are approximate &mdash; confirm on the sponsor's official page.
+  </div>
+</footer>
+
+<script>
+(function(){
+  var searchInput = document.getElementById('searchInput');
+  var pillGroup = document.getElementById('pillGroup');
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.s-card'));
+  var resultCount = document.getElementById('resultCount');
+  var noResults = document.getElementById('noResults');
+  var activeCat = 'all';
+
+  function applyFilters(){
+    var q = (searchInput.value || '').trim().toLowerCase();
+    var visible = 0;
+    cards.forEach(function(card){
+      var matchesCat = activeCat === 'all' || card.getAttribute('data-cat') === activeCat;
+      var matchesSearch = !q || card.getAttribute('data-name').toLowerCase().indexOf(q) !== -1;
+      var show = matchesCat && matchesSearch;
+      card.hidden = !show;
+      if(show) visible++;
+    });
+    resultCount.textContent = visible + (visible === 1 ? ' scholarship' : ' scholarships') + ' shown';
+    noResults.classList.toggle('show', visible === 0);
+  }
+
+  searchInput.addEventListener('input', applyFilters);
+  pillGroup.addEventListener('click', function(e){
+    var btn = e.target.closest('.pill');
+    if(!btn) return;
+    pillGroup.querySelectorAll('.pill').forEach(function(p){ p.classList.remove('active'); });
+    btn.classList.add('active');
+    activeCat = btn.getAttribute('data-cat');
+    applyFilters();
+  });
+
+  applyFilters();
+})();
+</script>
+
+</body>
+</html>

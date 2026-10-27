@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mentorship — AstroPro Student Data &amp; Resource Center</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{color-scheme:light; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+    --bg:#ffffff; --surface:#f4f6fb; --surface-2:#eef1f9; --ink:#0f1a2e; --ink-soft:#59647c; --line:#e3e7f0;
+    --primary:#3143e0; --primary-ink:#ffffff; --accent:#ff7a3d; --accent-ink:#341300; --shadow:rgba(20,30,60,0.09);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){ --bg:#0a0f1c; --surface:#121a2c; --surface-2:#172035; --ink:#eef1fa; --ink-soft:#99a3bf; --line:#233052; --primary:#6d7bff; --primary-ink:#0a0f1c; --accent:#ff8f5c; --accent-ink:#2c1000; --shadow:rgba(0,0,0,0.45); color-scheme:dark; }
+  }
+  :root[data-theme="dark"]{ --bg:#0a0f1c; --surface:#121a2c; --surface-2:#172035; --ink:#eef1fa; --ink-soft:#99a3bf; --line:#233052; --primary:#6d7bff; --primary-ink:#0a0f1c; --accent:#ff8f5c; --accent-ink:#2c1000; --shadow:rgba(0,0,0,0.45); color-scheme:dark; }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--bg); color:var(--ink); font-family:"Work Sans", system-ui, sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1160px; margin-inline:auto; padding-inline:20px}
+  h1,h2,h3,h4{font-family:"Sora", system-ui, sans-serif; font-weight:700; text-wrap:balance; margin:0; color:var(--ink)}
+  a{color:inherit}
+  button{font-family:inherit}
+  header{position:sticky; top:env(safe-area-inset-top,0px); z-index:20; background:color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter:blur(10px); border-bottom:1px solid var(--line)}
+  .header-row{display:flex; align-items:center; justify-content:space-between; gap:16px; padding-block:16px; flex-wrap:wrap}
+  .wordmark{display:flex; align-items:center; gap:9px; font-family:"Sora"; font-weight:800; font-size:1.2rem; text-decoration:none}
+  .wordmark .dot{width:9px;height:9px;border-radius:50%;background:var(--accent)}
+  nav{display:flex; gap:18px; font-size:0.9rem; font-weight:500}
+  nav a{text-decoration:none; color:var(--ink-soft)}
+  nav a:hover, nav a.current{color:var(--ink)}
+  .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:12px 22px; border-radius:9px; font-size:0.95rem; font-weight:600; text-decoration:none; border:1px solid transparent; cursor:pointer; white-space:nowrap}
+  .btn-primary{background:var(--primary); color:var(--primary-ink)}
+  .btn-accent{background:var(--accent); color:var(--accent-ink)}
+  .btn-ghost{background:transparent; border-color:var(--line); color:var(--ink)}
+  .btn-sm{padding:9px 16px; font-size:0.88rem; border-radius:8px}
+  .page-hero{padding-block:48px 32px}
+  .kicker{display:inline-flex; align-items:center; gap:8px; font-size:0.82rem; font-weight:600; color:var(--primary); background:color-mix(in srgb, var(--primary) 10%, transparent); padding:6px 12px; border-radius:20px}
+  .page-hero h1{font-size:clamp(2rem,4vw,2.8rem); line-height:1.12; letter-spacing:-0.01em; margin-top:16px}
+  .page-hero p.lede{margin-top:14px; font-size:1.08rem; color:var(--ink-soft); max-width:62ch}
+  section{padding-block:36px}
+  .two-col{display:grid; grid-template-columns:1fr 1fr; gap:20px}
+  .path-card{background:var(--surface); border:1px solid var(--line); border-radius:20px; padding:32px}
+  .path-card h2{font-size:1.3rem}
+  .path-card p.desc{color:var(--ink-soft); margin-top:8px; font-size:0.95rem}
+  .field{display:flex; flex-direction:column; gap:6px; margin-bottom:14px; margin-top:18px}
+  .field label{font-size:0.84rem; font-weight:600; color:var(--ink)}
+  .field input, .field select, .field textarea{font-family:inherit; font-size:0.94rem; padding:11px 13px; border-radius:9px; border:1px solid var(--line); background:var(--bg); color:var(--ink)}
+  .field input:focus, .field select:focus, .field textarea:focus{outline:2px solid var(--primary); outline-offset:1px; border-color:transparent}
+  .confirm-box{display:none; text-align:center; padding:24px 8px}
+  .confirm-box .badge{width:48px;height:48px;border-radius:50%; background:color-mix(in srgb, var(--primary) 14%, transparent); color:var(--primary); display:flex; align-items:center; justify-content:center; margin:0 auto 14px; font-size:1.3rem; font-weight:800; font-family:"Sora"}
+  .confirm-box p{color:var(--ink-soft); font-size:0.9rem; margin-top:6px}
+  form.submitted .fields-wrap{display:none}
+  form.submitted .confirm-box{display:block}
+  footer{border-top:1px solid var(--line); padding-block:32px 44px}
+  .footer-row{display:flex; justify-content:space-between; flex-wrap:wrap; gap:18px; font-size:0.86rem; color:var(--ink-soft)}
+  .footer-links{display:flex; gap:20px; flex-wrap:wrap}
+  .footer-links a{text-decoration:none; color:var(--ink-soft)}
+  @media (max-width:900px){ .two-col{grid-template-columns:1fr} nav{display:none} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-row">
+    <a class="wordmark" href="index.html"><span class="dot"></span>AstroPro Student Data &amp; Resource Center</a>
+    <nav>
+      <a href="index.html#resources">Resource Center</a>
+      <a href="career-guides.html">Career Guides</a>
+      <a href="mentorship.html" class="current">Mentorship</a>
+    </nav>
+    <div class="header-cta"><a class="btn btn-ghost btn-sm" href="index.html">&larr; Back to home</a></div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="kicker">Student Resource Center</span>
+    <h1>Mentorship</h1>
+    <p class="lede">We're building our mentor network now, matching students with alumni and professionals in the field they're heading into. Sign up below as either side and we'll reach out as matches become available.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap two-col">
+    <div class="path-card">
+      <h2>I'm a student looking for a mentor</h2>
+      <p class="desc">Tell us your field of interest and we'll match you with a professional or alum as mentors join.</p>
+      <form id="menteeForm">
+        <div class="fields-wrap">
+          <div class="field"><label for="menteeName">Your name</label><input id="menteeName" type="text" required></div>
+          <div class="field"><label for="menteeEmail">Email</label><input id="menteeEmail" type="email" required></div>
+          <div class="field"><label for="menteeField">Field or industry you're interested in</label><input id="menteeField" type="text" placeholder="e.g. marketing, software engineering, nursing" required></div>
+          <div class="field"><label for="menteeGrad">Graduation year</label><input id="menteeGrad" type="text" placeholder="2027"></div>
+          <button type="submit" class="btn btn-primary" style="width:100%; margin-top:6px">Request a mentor</button>
+        </div>
+        <div class="confirm-box">
+          <div class="badge">&#10003;</div>
+          <h3>You're on the list</h3>
+          <p>We'll email you as soon as we have a mentor match in your field.</p>
+        </div>
+      </form>
+    </div>
+
+    <div class="path-card">
+      <h2>I want to mentor a student</h2>
+      <p class="desc">Alumni and working professionals: tell us your field and we'll match you with students in our network.</p>
+      <form id="mentorForm">
+        <div class="fields-wrap">
+          <div class="field"><label for="mentorName">Your name</label><input id="mentorName" type="text" required></div>
+          <div class="field"><label for="mentorEmail">Email</label><input id="mentorEmail" type="email" required></div>
+          <div class="field"><label for="mentorField">Your field or industry</label><input id="mentorField" type="text" required></div>
+          <div class="field"><label for="mentorTime">How much time can you give?</label>
+            <select id="mentorTime">
+              <option>30 min / month</option>
+              <option>1 hour / month</option>
+              <option>A few hours / semester</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-accent" style="width:100%; margin-top:6px">Sign up to mentor</button>
+        </div>
+        <div class="confirm-box">
+          <div class="badge">&#10003;</div>
+          <h3>Thanks for signing up</h3>
+          <p>We'll reach out when we have a student match in your field.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <span>&copy; AstroPro Student Data &amp; Resource Center</span>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="career-guides.html">Career Guides</a>
+      <a href="internships.html">Jobs</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    ['menteeForm','mentorForm'].forEach(function(id){
+      var form = document.getElementById(id);
+      if(!form) return;
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        form.classList.add('submitted');
+      });
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,444 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Internships &amp; Jobs — AstroPro Student Data &amp; Resource Center</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    color-scheme:light;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+    --bg:        #ffffff;
+    --surface:   #f4f6fb;
+    --surface-2: #eef1f9;
+    --ink:       #0f1a2e;
+    --ink-soft:  #59647c;
+    --line:      #e3e7f0;
+    --primary:   #3143e0;
+    --primary-ink:#ffffff;
+    --accent:    #ff7a3d;
+    --accent-ink:#341300;
+    --shadow:    rgba(20,30,60,0.09);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0a0f1c; --surface:#121a2c; --surface-2:#172035; --ink:#eef1fa;
+      --ink-soft:#99a3bf; --line:#233052; --primary:#6d7bff; --primary-ink:#0a0f1c;
+      --accent:#ff8f5c; --accent-ink:#2c1000; --shadow:rgba(0,0,0,0.45);
+      color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0a0f1c; --surface:#121a2c; --surface-2:#172035; --ink:#eef1fa;
+    --ink-soft:#99a3bf; --line:#233052; --primary:#6d7bff; --primary-ink:#0a0f1c;
+    --accent:#ff8f5c; --accent-ink:#2c1000; --shadow:rgba(0,0,0,0.45);
+    color-scheme:dark;
+  }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--bg); color:var(--ink); font-family:"Work Sans", system-ui, sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased}
+  img{max-width:100%}
+  .wrap{max-width:1160px; margin-inline:auto; padding-inline:20px}
+  h1,h2,h3,h4{font-family:"Sora", system-ui, sans-serif; font-weight:700; text-wrap:balance; margin:0; color:var(--ink)}
+  .mono{font-family:"IBM Plex Mono", ui-monospace, monospace; font-variant-numeric:tabular-nums}
+  a{color:inherit}
+  button{font-family:inherit}
+
+  header{position:sticky; top:env(safe-area-inset-top,0px); z-index:20; background:color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter:blur(10px); border-bottom:1px solid var(--line)}
+  .header-row{display:flex; align-items:center; justify-content:space-between; gap:16px; padding-block:16px; flex-wrap:wrap}
+  .wordmark{display:flex; align-items:center; gap:9px; font-family:"Sora"; font-weight:800; font-size:1.2rem; text-decoration:none}
+  .wordmark .dot{width:9px;height:9px;border-radius:50%;background:var(--accent)}
+  nav{display:flex; gap:22px; font-size:0.94rem; font-weight:500}
+  nav a{text-decoration:none; color:var(--ink-soft); transition:color .15s}
+  nav a:hover, nav a.current{color:var(--ink)}
+
+  .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:12px 22px; border-radius:9px; font-size:0.95rem; font-weight:600; text-decoration:none; border:1px solid transparent; cursor:pointer; white-space:nowrap}
+  .btn-primary{background:var(--primary); color:var(--primary-ink)}
+  .btn-primary:hover{filter:brightness(1.07)}
+  .btn-ghost{background:transparent; border-color:var(--line); color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--primary)}
+  .btn-sm{padding:9px 16px; font-size:0.88rem; border-radius:8px}
+
+  .page-hero{padding-block:48px 32px}
+  .kicker{display:inline-flex; align-items:center; gap:8px; font-size:0.82rem; font-weight:600; color:var(--primary); background:color-mix(in srgb, var(--primary) 10%, transparent); padding:6px 12px; border-radius:20px}
+  .page-hero h1{font-size:clamp(2rem,4vw,2.8rem); line-height:1.12; letter-spacing:-0.01em; margin-top:16px}
+  .page-hero p.lede{margin-top:14px; font-size:1.08rem; color:var(--ink-soft); max-width:62ch}
+  .stat-row{display:flex; gap:28px; margin-top:26px; flex-wrap:wrap}
+  .stat-row .stat .n{font-family:"Sora"; font-weight:800; font-size:1.6rem}
+  .stat-row .stat .l{font-size:0.84rem; color:var(--ink-soft); margin-top:2px}
+  .note{background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:14px 18px; font-size:0.88rem; color:var(--ink-soft); margin-top:24px}
+  .note strong{color:var(--ink)}
+
+  .controls{position:sticky; top:calc(70px + env(safe-area-inset-top,0px)); z-index:10; background:var(--bg); padding-block:16px; border-bottom:1px solid var(--line); margin-top:32px}
+  .controls-row{display:flex; gap:12px; flex-wrap:wrap; align-items:center}
+  .search-box{position:relative; flex:1; min-width:220px}
+  .search-box input{width:100%; padding:11px 14px; border-radius:9px; border:1px solid var(--line); background:var(--surface); color:var(--ink); font-family:inherit; font-size:0.94rem}
+  .search-box input:focus{outline:2px solid var(--primary); outline-offset:1px; border-color:transparent}
+  .pills{display:flex; gap:8px; flex-wrap:wrap}
+  .pill{padding:8px 15px; border-radius:20px; border:1px solid var(--line); background:var(--bg); color:var(--ink-soft); font-size:0.86rem; font-weight:600; cursor:pointer}
+  .pill.active{background:var(--primary); color:var(--primary-ink); border-color:transparent}
+  .result-count{font-size:0.86rem; color:var(--ink-soft); margin-top:12px}
+
+  .listing-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px; padding-block:28px 20px}
+  .s-card{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:22px; display:flex; flex-direction:column; gap:10px}
+  .s-card .top-row{display:flex; justify-content:space-between; align-items:flex-start; gap:12px}
+  .s-card .amount{font-family:"Sora"; font-weight:800; font-size:1.05rem; color:var(--primary); white-space:nowrap}
+  .s-card h3{font-size:1.05rem}
+  .s-card .cat-tag{font-size:0.72rem; font-weight:700; color:var(--primary); background:color-mix(in srgb, var(--primary) 10%, transparent); padding:4px 10px; border-radius:20px; align-self:flex-start}
+  .s-card p.elig{color:var(--ink-soft); font-size:0.9rem; flex-grow:1}
+  .s-card .meta-row{display:flex; justify-content:space-between; align-items:center; border-top:1px dashed var(--line); padding-top:12px; margin-top:4px}
+  .s-card .deadline{font-size:0.84rem; color:var(--ink-soft)}
+  .s-card .deadline b{color:var(--ink); font-family:"IBM Plex Mono", monospace}
+  .s-card .link{font-size:0.88rem; font-weight:600; color:var(--ink); text-decoration:none}
+  .s-card .link:hover{color:var(--primary)}
+  .s-card[hidden]{display:none}
+  .no-results{display:none; text-align:center; padding:50px 20px; color:var(--ink-soft)}
+  .no-results.show{display:block}
+
+  section{padding-block:40px}
+  .section-head{max-width:62ch; margin-bottom:24px}
+  .kicker-sm{font-size:0.82rem; font-weight:700; color:var(--primary); letter-spacing:0.02em}
+  .section-head h2{font-size:clamp(1.5rem,2.4vw,1.9rem); margin-top:10px}
+  .section-head p{color:var(--ink-soft); margin-top:10px; font-size:1rem}
+
+  .slot-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+  .slot-card{border:1.5px dashed var(--line); border-radius:16px; padding:22px; display:flex; flex-direction:column; gap:10px; background:var(--surface)}
+  .slot-card .open-tag{font-size:0.72rem; font-weight:700; color:var(--primary); background:color-mix(in srgb, var(--primary) 10%, transparent); padding:4px 10px; border-radius:20px; align-self:flex-start}
+  .slot-card h3{font-size:1rem}
+  .slot-card p{color:var(--ink-soft); font-size:0.88rem; flex-grow:1}
+  .slot-card .claim{font-size:0.88rem; font-weight:600; color:var(--primary); text-decoration:none}
+  .slot-card .claim:hover{text-decoration:underline}
+
+  .cta-panel{background:var(--ink); border-radius:20px; padding:36px; display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; margin-bottom:10px}
+  .cta-panel h2{color:var(--bg); font-size:1.4rem}
+  .cta-panel p{color:color-mix(in srgb, var(--bg) 70%, transparent); margin-top:6px; font-size:0.95rem}
+  .cta-panel .btn-primary{background:var(--accent); color:var(--accent-ink)}
+
+  footer{border-top:1px solid var(--line); padding-block:32px 44px}
+  .footer-row{display:flex; justify-content:space-between; flex-wrap:wrap; gap:18px; font-size:0.86rem; color:var(--ink-soft)}
+  .footer-links{display:flex; gap:20px; flex-wrap:wrap}
+  .footer-links a{text-decoration:none; color:var(--ink-soft)}
+  .footer-links a:hover{color:var(--ink)}
+
+  @media (max-width:900px){
+    .listing-grid{grid-template-columns:1fr}
+    .slot-grid{grid-template-columns:1fr}
+    nav{display:none}
+    .cta-panel{flex-direction:column; align-items:flex-start}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-row">
+    <a class="wordmark" href="index.html"><span class="dot"></span>AstroPro Student Data &amp; Resource Center</a>
+    <nav>
+      <a href="index.html#mission">Mission</a>
+      <a href="index.html#resources">Resource Center</a>
+      <a href="scholarships.html">Scholarships</a>
+      <a href="housing.html">Housing</a>
+      <a href="internships.html" class="current">Jobs &amp; Internships</a>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-ghost btn-sm" href="index.html">&larr; Back to home</a>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="kicker">Student Resource Center</span>
+    <h1>Internships &amp; jobs</h1>
+    <p class="lede">A starting list of real, currently-recruiting internship programs, plus the open spots for employers who want their own role featured directly to students in our network.</p>
+    <div class="stat-row">
+      <div class="stat"><div class="n mono">23</div><div class="l">internship programs listed</div></div>
+      <div class="stat"><div class="n mono">Paid</div><div class="l">nearly all listed roles</div></div>
+      <div class="stat"><div class="n mono">6</div><div class="l">employer slots open</div></div>
+    </div>
+    <div class="note"><strong>This is a starting list, not every internship that exists.</strong> Programs below are compiled from public sources; many open on a rolling or yearly cycle. Always confirm the current deadline on the employer's own careers page before applying.</div>
+  </div>
+</section>
+
+<div class="controls">
+  <div class="wrap controls-row">
+    <div class="search-box">
+      <input id="searchInput" type="text" placeholder="Search by company or field...">
+    </div>
+    <div class="pills" id="pillGroup">
+      <button class="pill active" data-cat="all">All</button>
+      <button class="pill" data-cat="tech">Tech &amp; engineering</button>
+      <button class="pill" data-cat="finance">Finance &amp; business</button>
+      <button class="pill" data-cat="media">Media &amp; creative</button>
+      <button class="pill" data-cat="science">Science &amp; healthcare</button>
+      <button class="pill" data-cat="public">Public service &amp; nonprofit</button>
+    </div>
+  </div>
+  <div class="wrap"><div class="result-count" id="resultCount"></div></div>
+</div>
+
+<div class="wrap">
+  <div class="listing-grid" id="listingGrid">
+
+    <div class="s-card" data-cat="tech" data-name="SpaceX Internship Program">
+      <div class="top-row"><h3>SpaceX Internship Program</h3><span class="amount mono">Paid</span></div>
+      <span class="cat-tag">Engineering &amp; operations</span>
+      <p class="elig">Engineering, business and operations roles. Applications accepted year-round across multiple start dates.</p>
+      <div class="meta-row"><span class="deadline">Window: <b>Rolling</b></span><a class="link" href="https://www.fastweb.com/student-news/articles/top-internships-for-students" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+    <div class="s-card" data-cat="tech" data-name="Adobe Internship">
+      <div class="top-row"><h3>Adobe Internship</h3><span class="amount mono">Paid</span></div>
+      <span class="cat-tag">Tech &amp; design</span>
+      <p class="elig">Software engineering, UI design, HR, finance, marketing and legal tracks for current students.</p>
+      <div class="meta-row"><span class="deadline">Window: <b>Varies by role</b></span><a class="link" href="https://www.fastweb.com/student-news/articles/top-internships-for-students" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+    <div class="s-card" data-cat="tech" data-name="NVIDIA Internship">
+      <div class="top-row"><h3>NVIDIA Internship</h3><span class="amount mono">Paid</span></div>
+      <span class="cat-tag">Tech &amp; engineering</span>
+      <p class="elig">Engineering, marketing, research and finance roles for students pursuing technical and business degrees.</p>
+      <div class="meta-row"><span class="deadline">Window: <b>Varies by role</b></span><a class="link" href="https://www.fastweb.com/student-news/articles/top-internships-for-students" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+    <div class="s-card" data-cat="tech" data-name="Salesforce Internship">
+      <div class="top-row"><h3>Salesforce Internship</h3><span class="amount mono">Paid</span></div>
+      <span class="cat-tag">Tech &amp; sales</span>
+      <p class="elig">Software engineering, sales, UX and marketing tracks for undergraduate and graduate students.</p>
+      <div class="meta-row"><span class="deadline">Window: <b>Varies by role</b></span><a class="link" href="https://www.fastweb.com/student-news/articles/top-internships-for-students" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+    <div class="s-card" data-cat="tech" data-name="Oracle Internship">
+      <div class="top-row"><h3>Oracle Internship</h3><span class="amount mono">Paid</span></div>
+      <span class="cat-tag">Tech &amp; data</span>
+      <p class="elig">Engineering, finance, marketing, data science and legal tracks.</p>
+      <div class="meta-row"><span class="deadline">Window: <b>Varies by role</b></span><a class="link" href="https://www.fastweb.com/student-news/articles/top-internships-for-students" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+    <div class="s-card" data-cat="tech" data-name="Apple Internship">
+      <div class="top-row"><h3>Apple Internship</h3><span class="amount mono">Paid</span></div>
+      <span class="cat-tag">Tech &amp; creative</span>
+      <p class="elig">Computer science, business, marketing, music and environmental studies tracks.</p>
+      <div class="meta-row"><span class="deadline">Window: <b>Varies by role</b></span><a class="link" href="https://www.fastweb.com/student-news/articles/top-internships-for-students" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+    <div class="s-card" data-cat="tech" data-name="Amazon Internship">
+      <div class="top-row"><h3>Amazon Internship</h3><span class="amount mono">Paid</span></div>
+      <span class="cat-tag">Business &amp; tech</span>
+      <p class="elig">Business, operations, marketing and technology roles across many locations.</p>
+      <div class="meta-row"><span class="deadline">Window: <b>Varies by role</b></span><a class="link" href="https://www.fastweb.com/student-news/articles/top-internships-for-students" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+    <div class="s-card" data-cat="tech" data-name="GE Aerospace Internship">
+      <div class="top-row"><h3>GE Aerospace Internship</h3><span class="amount mono">Paid</span></div>
+      <span class="cat-tag">Engineering</span>
+      <p class="elig">Engineering, IT, healthcare, aviation, business and marketing tracks.</p>
+      <div class="meta-row"><span class="deadline">Window: <b>Varies by role</b></span><a class="link" href="https://www.fastweb.com/student-news/articles/top-internships-for-students" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+    <div class="s-card" data-cat="tech" data-name="BMW Group Internship">
+      <div class="top-row"><h3>BMW Group Internship</h3><span class="amount mono">Paid</span></div>
+      <span class="cat-tag">Engineering</span>
+      <p class="elig">Engineering, communications, finance, marketing, IT and logistics tracks.</p>
+      <div class="meta-row"><span class="deadline">Window: <b>Varies by role</b></span><a class="link" href="https://www.fastweb.com/student-news/articles/top-internships-for-students" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+    <div class="s-card" data-cat="tech" data-name="Schneider Electric Internship">
+      <div class="top-row"><h3>Schneider Electric Internship</h3><span class="amount mono">Paid</span></div>
+      <span class="cat-tag">Logistics &amp; technical</span>
+      <p class="elig">Logistics, sales, HR, IT, marketing and technical field tracks.</p>
+      <div class="meta-row"><span class="deadline">Window: <b>Varies by role</b></span><a class="link" href="https://www.fastweb.com/student-news/articles/top-internships-for-students" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+    <div class="s-card" data-cat="finance" data-name="JPMorgan Chase Internship">
+      <div class="top-row"><h3>JPMorgan Chase Internship</h3><span class="amount mono">Paid</span></div>
+      <span class="cat-tag">Finance &amp; business</span>
+      <p class="elig">Banking, wealth management, commercial finance and technology tracks.</p>
+      <div class="meta-row"><span class="deadline">Window: <b>Varies by role</b></span><a class="link" href="https://www.fastweb.com/student-news/articles/top-internships-for-students" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+    <div class="s-card" data-cat="finance" data-name="Bank of America Summer Internship">
+      <div class="top-row"><h3>Bank of America Summer Internship</h3><span class="amount mono">Paid</span></div>
+      <span class="cat-tag">Finance &amp; business</span>
+      <p class="elig">Banking, markets, finance and technology tracks for undergraduate and graduate students.</p>
+      <div class="meta-row"><span class="deadline">Window: <b>Varies by role</b></span><a class="link" href="https://www.fastweb.com/student-news/articles/top-internships-for-students" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+    <div class="s-card" data-cat="finance" data-name="Home Depot Summer Internship">
+      <div class="top-row"><h3>Home Depot Summer Internship</h3><span class="amount mono">Paid</span></div>
+      <span class="cat-tag">Business &amp; operations</span>
+      <p class="elig">Merchandising, supply chain, finance, HR and operations tracks.</p>
+      <div class="meta-row"><span class="deadline">Deadline: <b>Oct 31 (annual)</b></span><a class="link" href="https://www.fastweb.com/student-news/articles/top-internships-for-students" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+    <div class="s-card" data-cat="finance" data-name="PGA TOUR Internship Program">
+      <div class="top-row"><h3>PGA TOUR Internship Program</h3><span class="amount mono">Paid</span></div>
+      <span class="cat-tag">Sports business</span>
+      <p class="elig">Event operations, broadcasting, communications, finance and tech tracks.</p>
+      <div class="meta-row"><span class="deadline">Deadline: <b>Jan (annual)</b></span><a class="link" href="https://www.fastweb.com/student-news/articles/top-internships-for-students" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+    <div class="s-card" data-cat="finance" data-name="Royal Caribbean Internship">
+      <div class="top-row"><h3>Royal Caribbean Internship</h3><span class="amount mono">Paid</span></div>
+      <span class="cat-tag">Business &amp; operations</span>
+      <p class="elig">Finance, IT, business and project management tracks.</p>
+      <div class="meta-row"><span class="deadline">Window: <b>Varies by role</b></span><a class="link" href="https://www.fastweb.com/student-news/articles/top-internships-for-students" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+    <div class="s-card" data-cat="finance" data-name="United Airlines Internship">
+      <div class="top-row"><h3>United Airlines Internship</h3><span class="amount mono">Paid</span></div>
+      <span class="cat-tag">Business &amp; operations</span>
+      <p class="elig">Business, technology, finance and airport operations tracks.</p>
+      <div class="meta-row"><span class="deadline">Window: <b>Varies by role</b></span><a class="link" href="https://www.fastweb.com/student-news/articles/top-internships-for-students" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+    <div class="s-card" data-cat="media" data-name="The Daily Show Internship">
+      <div class="top-row"><h3>The Daily Show Internship</h3><span class="amount mono">Not stated</span></div>
+      <span class="cat-tag">Media &amp; creative</span>
+      <p class="elig">TV production and media roles for current students.</p>
+      <div class="meta-row"><span class="deadline">Deadline: <b>Nov (annual)</b></span><a class="link" href="https://www.fastweb.com/student-news/articles/top-internships-for-students" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+    <div class="s-card" data-cat="media" data-name="Dow Jones Internship">
+      <div class="top-row"><h3>Dow Jones Internship</h3><span class="amount mono">Paid</span></div>
+      <span class="cat-tag">Media &amp; creative</span>
+      <p class="elig">Journalism, communications, business and economics tracks.</p>
+      <div class="meta-row"><span class="deadline">Deadline: <b>Nov (annual)</b></span><a class="link" href="https://www.fastweb.com/student-news/articles/top-internships-for-students" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+    <div class="s-card" data-cat="media" data-name="Sony Internship">
+      <div class="top-row"><h3>Sony Internship</h3><span class="amount mono">Paid</span></div>
+      <span class="cat-tag">Media &amp; entertainment</span>
+      <p class="elig">Music, pictures, PlayStation and entertainment technology tracks.</p>
+      <div class="meta-row"><span class="deadline">Window: <b>Varies by role</b></span><a class="link" href="https://www.fastweb.com/student-news/articles/top-internships-for-students" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+    <div class="s-card" data-cat="media" data-name="TikTok Internship">
+      <div class="top-row"><h3>TikTok Internship</h3><span class="amount mono">Paid</span></div>
+      <span class="cat-tag">Media &amp; tech</span>
+      <p class="elig">Marketing, business, design and computer science tracks.</p>
+      <div class="meta-row"><span class="deadline">Window: <b>Varies by role</b></span><a class="link" href="https://www.fastweb.com/student-news/articles/top-internships-for-students" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+    <div class="s-card" data-cat="media" data-name="Live Nation Internship">
+      <div class="top-row"><h3>Live Nation Internship</h3><span class="amount mono">Paid</span></div>
+      <span class="cat-tag">Media &amp; events</span>
+      <p class="elig">Marketing, finance, ticketing, operations, HR and technology tracks.</p>
+      <div class="meta-row"><span class="deadline">Window: <b>Varies by role</b></span><a class="link" href="https://www.fastweb.com/student-news/articles/top-internships-for-students" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+    <div class="s-card" data-cat="science" data-name="NASA Internship">
+      <div class="top-row"><h3>NASA Internship</h3><span class="amount mono">Paid</span></div>
+      <span class="cat-tag">Science &amp; engineering</span>
+      <p class="elig">Science, engineering, business and administration tracks. Open to high school, college and graduate students.</p>
+      <div class="meta-row"><span class="deadline">Deadline: <b>Feb (annual)</b></span><a class="link" href="https://www.fastweb.com/student-news/articles/top-internships-for-students" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+    <div class="s-card" data-cat="science" data-name="Mayo Clinic Internship">
+      <div class="top-row"><h3>Mayo Clinic Internship</h3><span class="amount mono">Paid</span></div>
+      <span class="cat-tag">Healthcare &amp; science</span>
+      <p class="elig">Nursing, lab sciences, IT, administration and research tracks.</p>
+      <div class="meta-row"><span class="deadline">Window: <b>Varies by role</b></span><a class="link" href="https://www.fastweb.com/student-news/articles/top-internships-for-students" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+    <div class="s-card" data-cat="science" data-name="San Diego Zoo Summer Internship">
+      <div class="top-row"><h3>San Diego Zoo Summer Internship</h3><span class="amount mono">Paid</span></div>
+      <span class="cat-tag">Science &amp; conservation</span>
+      <p class="elig">Social media, wildlife care, horticulture and IT tracks.</p>
+      <div class="meta-row"><span class="deadline">Window: <b>Varies by role</b></span><a class="link" href="https://www.fastweb.com/student-news/articles/top-internships-for-students" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+    <div class="s-card" data-cat="public" data-name="ACLU Internship">
+      <div class="top-row"><h3>ACLU Internship</h3><span class="amount mono">Paid</span></div>
+      <span class="cat-tag">Public service &amp; legal</span>
+      <p class="elig">Legal, advocacy, development and communications tracks.</p>
+      <div class="meta-row"><span class="deadline">Window: <b>Varies by role</b></span><a class="link" href="https://www.fastweb.com/student-news/articles/top-internships-for-students" target="_blank" rel="noopener">View details &rarr;</a></div>
+    </div>
+
+  </div>
+
+  <div class="no-results" id="noResults">No internships match your search. Try a different keyword or filter.</div>
+</div>
+
+<div class="wrap">
+  <div class="section-head">
+    <span class="kicker-sm">EMPLOYER PARTNER SLOTS</span>
+    <h2>Hiring students? Get your role featured directly.</h2>
+    <p>Preferred Partner employer spots go out in the same email students use to find scholarships and housing.</p>
+  </div>
+  <div class="slot-grid">
+    <div class="slot-card"><span class="open-tag">Spot open</span><h3>Software &amp; engineering</h3><p>Reach students actively applying to technical internships this cycle.</p><a class="claim" href="index.html#organizations">Claim this spot &rarr;</a></div>
+    <div class="slot-card"><span class="open-tag">Spot open</span><h3>Finance &amp; business</h3><p>A direct line to business and finance majors applying for internships now.</p><a class="claim" href="index.html#organizations">Claim this spot &rarr;</a></div>
+    <div class="slot-card"><span class="open-tag">Spot open</span><h3>Local &amp; regional employers</h3><p>Great fit for employers hiring near a specific campus rather than nationally.</p><a class="claim" href="index.html#organizations">Claim this spot &rarr;</a></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="cta-panel">
+      <div>
+        <h2>Hiring students for a role we haven't listed?</h2>
+        <p>Submit it for review and we'll add it to this page and send it to matching students.</p>
+      </div>
+      <a class="btn btn-primary" href="index.html#organizations">Submit a job or internship</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <span>&copy; AstroPro Student Data &amp; Resource Center</span>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="scholarships.html">Scholarships</a>
+      <a href="housing.html">Housing</a>
+      <a href="index.html#mission">Our mission</a>
+    </div>
+  </div>
+  <div class="wrap" style="margin-top:14px; font-size:0.78rem; color:var(--ink-soft)">
+    Source: <a href="https://www.fastweb.com/student-news/articles/top-internships-for-students" target="_blank" rel="noopener">Fastweb</a>. Compiled October 2026; deadlines marked "annual" are typical cycles &mdash; confirm the current year's date on the employer's own careers page.
+  </div>
+</footer>
+
+<script>
+(function(){
+  var searchInput = document.getElementById('searchInput');
+  var pillGroup = document.getElementById('pillGroup');
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.s-card'));
+  var resultCount = document.getElementById('resultCount');
+  var noResults = document.getElementById('noResults');
+  var activeCat = 'all';
+
+  function applyFilters(){
+    var q = (searchInput.value || '').trim().toLowerCase();
+    var visible = 0;
+    cards.forEach(function(card){
+      var matchesCat = activeCat === 'all' || card.getAttribute('data-cat') === activeCat;
+      var matchesSearch = !q || card.getAttribute('data-name').toLowerCase().indexOf(q) !== -1;
+      var show = matchesCat && matchesSearch;
+      card.hidden = !show;
+      if(show) visible++;
+    });
+    resultCount.textContent = visible + (visible === 1 ? ' program' : ' programs') + ' shown';
+    noResults.classList.toggle('show', visible === 0);
+  }
+
+  searchInput.addEventListener('input', applyFilters);
+  pillGroup.addEventListener('click', function(e){
+    var btn = e.target.closest('.pill');
+    if(!btn) return;
+    pillGroup.querySelectorAll('.pill').forEach(function(p){ p.classList.remove('active'); });
+    btn.classList.add('active');
+    activeCat = btn.getAttribute('data-cat');
+    applyFilters();
+  });
+
+  applyFilters();
+})();
+</script>
+
+</body>
+</html>
