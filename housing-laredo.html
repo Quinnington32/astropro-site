@@ -195,20 +195,6 @@
   </div>
 </section>
 
-<section>
-  <div class="wrap">
-    <div class="section-head">
-      <span class="kicker-sm">LOCAL CONTEXT &mdash; LAREDO</span>
-      <h2>What actually shapes the search near Laredo College.</h2>
-      <p>A quick read on the neighborhoods, getting around, and timing &mdash; before you dig into partner listings.</p>
-    </div>
-    <div class="tips-grid">
-      <div class="tip-card"><h3>Neighborhoods students look at</h3><p>Areas like College Heights, near the Laredo College campus, are a common starting point for students, along with neighborhoods throughout central Laredo within a short drive of campus.</p></div>
-      <div class="tip-card"><h3>Getting around</h3><p>El Metro Transit operates Laredo's public bus system, with routes reaching the Laredo College area, though a car makes getting around this border city considerably easier.</p></div>
-      <div class="tip-card"><h3>Timing the market</h3><p>Laredo's housing market doesn't swing as sharply with the academic calendar as a big university town, but it's still worth starting your search a couple of months before the semester begins.</p></div>
-    </div>
-  </div>
-</section>
 
 <section>
   <div class="wrap">
@@ -322,51 +308,25 @@
   }
   addMsg('bot', 'Hi — ask me about neighborhoods, getting around, timing, or what it takes to list a property here.');
 
-  function getLocalTips(){
-    // The LOCAL CONTEXT tip-cards are always the first .tips-grid on the
-    // page (the general onboarding tips lower down are a second grid).
-    var cards = document.querySelectorAll('.tips-grid .tip-card');
-    var arr = [];
-    cards.forEach(function(c){
-      var h = c.querySelector('h3');
-      var p = c.querySelector('p');
-      arr.push({ title: h ? h.textContent.trim() : '', body: p ? p.textContent.trim() : '' });
-    });
-    return arr;
-  }
-
   var PRICING_RE = /(how much|cost|price|pricing|list(ing)? (a |my )?propert|become a partner|preferred partner|sign up|subscription|recurring)/i;
   var NEIGHBORHOOD_RE = /(neighborhood|which area|what area|where.*live|part of town)/i;
   var TRANSIT_RE = /(\bbus\b|transit|getting around|parking|\bwalk\b|commute|transport)/i;
   var TIMING_RE = /(when should|timing|start looking|start early|how early|how soon)/i;
-  var LEASETIPS_RE = /(\btip|lease|roommate|deposit|walkthrough|utilit|move.?in)/i;
+  var LEASETIPS_RE = /(\btip|lease|roommate|deposit|walkthrough|utilit|move.?in|furnish|pet|short.?term)/i;
 
   function respond(raw){
     var q = raw.trim();
     if(!q) return;
-    var tips = getLocalTips();
 
     if(PRICING_RE.test(q)){
       addMsg('bot', 'We don\u2019t publish pricing here \u2014 tell us a bit about your property and our team will follow up on how Preferred Partner placement works. <a href="index.html#organizations" target="_top">Tell us about your property &rarr;</a>');
       return;
     }
-    if(NEIGHBORHOOD_RE.test(q) && tips[0]){
-      addMsg('bot', '<strong>' + escapeHtml(tips[0].title) + '</strong><p style="margin-top:6px">' + escapeHtml(tips[0].body) + '</p>');
+    if(NEIGHBORHOOD_RE.test(q) || TRANSIT_RE.test(q) || TIMING_RE.test(q) || LEASETIPS_RE.test(q)){
+      addMsg('bot', 'Tap one of the topic tabs below (like distance to campus, bus route, or short-term leases) for a quick tip on that \u2014 <a href="#tips">jump to that section &rarr;</a>');
       return;
     }
-    if(TRANSIT_RE.test(q) && tips[1]){
-      addMsg('bot', '<strong>' + escapeHtml(tips[1].title) + '</strong><p style="margin-top:6px">' + escapeHtml(tips[1].body) + '</p>');
-      return;
-    }
-    if(TIMING_RE.test(q) && tips[2]){
-      addMsg('bot', '<strong>' + escapeHtml(tips[2].title) + '</strong><p style="margin-top:6px">' + escapeHtml(tips[2].body) + '</p>');
-      return;
-    }
-    if(LEASETIPS_RE.test(q)){
-      addMsg('bot', 'Scroll down to the housing tips section on this page for lease, roommate and timing advice.');
-      return;
-    }
-    addMsg('bot', 'I\u2019m a simple scripted helper, so I don\u2019t recognize that one yet. Try asking about neighborhoods, getting around, or timing, or scroll down to the <a href="#tips">housing tips</a> section.');
+    addMsg('bot', 'I\u2019m a simple scripted helper, so I don\u2019t recognize that one yet. Try asking about listing a property, or scroll down to the <a href="#tips">housing tips</a> section below.');
   }
 
   form.addEventListener('submit', function(e){
