@@ -167,14 +167,14 @@
     align-items:center;
   }
   .mission-panel p{color:var(--ink-soft); font-size:1.05rem}
-  .mission-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:16px}
-  .mission-list li{display:flex; gap:12px; align-items:flex-start; font-size:0.96rem}
-  .check{
-    flex-shrink:0; width:22px;height:22px; border-radius:6px;
-    background:color-mix(in srgb, var(--primary) 14%, transparent);
-    color:var(--primary); display:flex; align-items:center; justify-content:center;
-    font-size:0.8rem; font-weight:700; margin-top:1px;
+  .mission-resource-list{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:10px 14px}
+  .mission-resource-list li a{
+    display:flex; align-items:center; gap:10px; font-size:0.93rem; font-weight:600;
+    color:var(--ink); text-decoration:none; padding:11px 13px; border-radius:10px;
+    background:var(--bg); border:1px solid var(--line); transition:border-color .15s, color .15s;
   }
+  .mission-resource-list li a:hover{border-color:var(--primary); color:var(--primary)}
+  .mission-resource-list .dot2{width:7px; height:7px; border-radius:50%; background:var(--accent); flex-shrink:0}
 
   /* Audience cards */
   .quad-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:18px}
@@ -324,6 +324,7 @@
     .field-row{grid-template-columns:1fr}
     .submit-panel, .mission-panel{padding:26px}
     .metrics-grid{grid-template-columns:1fr 1fr}
+    .mission-resource-list{grid-template-columns:1fr}
     .ar-quick{grid-template-columns:1fr 1fr}
     .ar-head, .ar-log, .ar-form, .ar-quick{padding-inline:18px}
     .ar-disclaimer{margin-inline:18px}
@@ -408,15 +409,25 @@
     <div class="mission-panel">
       <div>
         <span class="kicker-sm">OUR MISSION</span>
-        <h2 style="margin-top:10px; font-size:clamp(1.5rem,2.4vw,1.9rem)">We take our responsibility to student data seriously.</h2>
-        <p style="margin-top:14px">It's our mission to give students the best possible access to the resources and opportunities that help them succeed &mdash; scholarships, jobs, internships and support, delivered responsibly and always on their terms.</p>
+        <h2 style="margin-top:10px; font-size:clamp(1.5rem,2.4vw,1.9rem)">The place we wish we'd had when we were starting college.</h2>
+        <p style="margin-top:14px">We built Rally around a simple regret: we wish we'd known everything that was out there when we were applying to college &mdash; the scholarships we never heard about, the financial aid rules nobody explained, the off-campus apartment search with no idea where to even start. So we put it all in one place, matched to you, so starting college doesn't mean figuring it out alone. That's Rally. For you.</p>
+        <p style="margin-top:14px; color:var(--ink-soft); font-size:0.92rem">Always free to students, always your choice what you hear about, and we never sell your information to anyone.</p>
       </div>
-      <ul class="mission-list">
-        <li><span class="check">&#10003;</span> Every student controls what they receive and can opt out in one click</li>
-        <li><span class="check">&#10003;</span> Opportunities are matched to real interests, not blasted at random</li>
-        <li><span class="check">&#10003;</span> We never sell or hand over individual student records to a third party</li>
-        <li><span class="check">&#10003;</span> Every organization we work with is reviewed before we send their offer</li>
-      </ul>
+      <div>
+        <p style="font-family:'Sora'; font-weight:700; letter-spacing:0.03em; text-transform:uppercase; font-size:0.76rem; color:var(--ink-soft); margin-bottom:14px">Everything, in one place</p>
+        <ul class="mission-resource-list">
+          <li><a href="scholarships.html"><span class="dot2"></span>Scholarships</a></li>
+          <li><a href="internships.html"><span class="dot2"></span>Internships &amp; jobs</a></li>
+          <li><a href="housing.html"><span class="dot2"></span>Off-campus housing</a></li>
+          <li><a href="discounts.html"><span class="dot2"></span>Student discounts</a></li>
+          <li><a href="career-guides.html"><span class="dot2"></span>Career guides</a></li>
+          <li><a href="financial-aid.html"><span class="dot2"></span>Financial aid tools</a></li>
+          <li><a href="mentorship.html"><span class="dot2"></span>Mentorship</a></li>
+          <li><a href="tutoring.html"><span class="dot2"></span>Tutoring &amp; study help</a></li>
+          <li><a href="wellbeing.html"><span class="dot2"></span>Mental health &amp; basic needs</a></li>
+          <li><a href="money-basics.html"><span class="dot2"></span>Student finances</a></li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
