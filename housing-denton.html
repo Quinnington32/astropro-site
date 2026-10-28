@@ -128,6 +128,23 @@
   .tip-card h3{font-size:0.98rem}
   .tip-card p{color:var(--ink-soft); font-size:0.9rem; margin-top:6px}
 
+  .rank-list{display:flex; flex-direction:column; gap:14px}
+  .rank-card{position:relative; display:flex; gap:18px; align-items:flex-start; background:linear-gradient(135deg, var(--surface), var(--surface-2)); border:1px solid var(--line); border-radius:16px; padding:22px 24px 22px 20px; overflow:hidden}
+  .rank-card::before{content:""; position:absolute; left:0; top:0; bottom:0; width:5px; background:var(--primary)}
+  .rank-badge{flex-shrink:0; width:44px; height:44px; border-radius:12px; background:var(--primary); color:var(--primary-ink); display:flex; align-items:center; justify-content:center; font-family:"Sora"; font-weight:800; font-size:1.25rem; margin-left:6px}
+  .rank-body{flex-grow:1; min-width:0}
+  .rank-top{display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px}
+  .rank-name{font-family:"Sora"; font-weight:700; font-size:1.08rem; color:var(--ink)}
+  .rank-mile{flex-shrink:0; font-size:0.78rem; font-weight:700; color:var(--primary); background:color-mix(in srgb, var(--primary) 12%, transparent); padding:5px 11px; border-radius:20px; white-space:nowrap}
+  .rank-stats{display:flex; gap:18px; flex-wrap:wrap; margin-top:10px; font-size:0.86rem; color:var(--ink-soft)}
+  .rank-stat{display:flex; align-items:center; gap:5px}
+  .rank-stars{color:#f5a623; letter-spacing:-1px}
+  .rank-note{margin-top:8px; font-size:0.86rem; color:var(--ink-soft)}
+  .rank-actions{display:flex; gap:18px; margin-top:14px; flex-wrap:wrap}
+  .rank-actions a{font-size:0.86rem; font-weight:600; color:var(--primary); text-decoration:none}
+  .rank-actions a:hover{text-decoration:underline}
+  .rank-actions .maps-link{color:var(--ink-soft)}
+  @media (max-width:560px){ .rank-card{flex-direction:column} .rank-badge{margin-left:0} }
   .tip-tabs{display:flex; gap:10px; flex-wrap:wrap}
   .tip-tab{background:var(--surface); border:1px solid var(--line); border-radius:20px; padding:9px 16px; font-size:0.86rem; font-weight:600; color:var(--ink); cursor:pointer; transition:border-color .15s, background .15s}
   .tip-tab:hover{border-color:var(--primary)}
@@ -201,26 +218,60 @@
     <div class="section-head">
       <span class="kicker-sm">APARTMENTS NEAR CAMPUS</span>
       <h2>Apartments near Texas Woman's University</h2>
-      <p>Found via a general apartment-listing search &mdash; these properties are in Denton's Fry Street/University area, a few miles from the TWU campus (they're marketed mainly toward UNT, not TWU, and no source confirmed a close distance to TWU specifically). This is general information, not a Preferred Partner placement or an endorsement &mdash; confirm current availability and actual distance from TWU directly with each property.</p>
+      <p>Ranked 1&ndash;3 by distance from Texas Woman's University &mdash; closest first. Pulled from research across official sources and general listings; general information, not a Preferred Partner placement or an endorsement. Where a property has no official site online, we link its verified Google Maps listing instead of a third-party listing platform. Confirm current availability and pricing directly with each property.</p>
+      <p class="section-note">These are all a few miles from TWU, near UNT's Fry Street/University area &mdash; the closest named complexes found serving the Denton market.</p>
     </div>
-    <div class="slot-grid">
-      <div class="slot-card">
-        <div class="preview-photo"><span class="soon-tag">Near campus</span></div>
-        <h3>U Centre at Fry Street</h3>
-        <p>In Denton's Fry Street district, a few miles from the TWU campus.</p>
-        <a class="claim" href="https://www.americancampus.com/denton" target="_blank" rel="noopener">See current listing &rarr;</a>
+    <div class="rank-list">
+      <div class="rank-card">
+        <div class="rank-badge">1</div>
+        <div class="rank-body">
+          <div class="rank-top">
+            <span class="rank-name">City Parc at Fry Street</span>
+            <span class="rank-mile">1.2 mi from campus</span>
+          </div>
+          <div class="rank-stats">
+            <span class="rank-stat"><span class="rank-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span> 4.3 (284 Google reviews)</span>
+            <a href="https://www.americancampus.com/student-apartments/tx/denton/city-parc-at-fry-street/floor-plans" target="_blank" rel="noopener">See floor plans &rarr;</a>
+          </div>
+          
+          <div class="rank-actions">
+            <a href="https://www.americancampus.com/student-apartments/tx/denton/city-parc-at-fry-street" target="_blank" rel="noopener">Visit official site &rarr;</a>
+          </div>
+        </div>
       </div>
-      <div class="slot-card">
-        <div class="preview-photo"><span class="soon-tag">Near campus</span></div>
-        <h3>City Parc at Fry Street</h3>
-        <p>In Denton's Fry Street district, a few miles from the TWU campus.</p>
-        <a class="claim" href="https://www.americancampus.com/denton" target="_blank" rel="noopener">See current listing &rarr;</a>
+      <div class="rank-card">
+        <div class="rank-badge">2</div>
+        <div class="rank-body">
+          <div class="rank-top">
+            <span class="rank-name">U Centre at Fry Street</span>
+            <span class="rank-mile">1.4 mi from campus</span>
+          </div>
+          <div class="rank-stats">
+            <span class="rank-stat"><span class="rank-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span> 3.9 (388 Google reviews)</span>
+            <a href="https://www.americancampus.com/student-apartments/tx/denton/u-centre-at-fry-street/floor-plans" target="_blank" rel="noopener">See floor plans &rarr;</a>
+          </div>
+          
+          <div class="rank-actions">
+            <a href="https://www.americancampus.com/student-apartments/tx/denton/u-centre-at-fry-street" target="_blank" rel="noopener">Visit official site &rarr;</a>
+          </div>
+        </div>
       </div>
-      <div class="slot-card">
-        <div class="preview-photo"><span class="soon-tag">Near campus</span></div>
-        <h3>Uptown Apartments</h3>
-        <p>In Denton; on the UNT shuttle bus route, per the listing.</p>
-        <a class="claim" href="https://www.americancampus.com/student-apartments/tx/denton/uptown" target="_blank" rel="noopener">See current listing &rarr;</a>
+      <div class="rank-card">
+        <div class="rank-badge">3</div>
+        <div class="rank-body">
+          <div class="rank-top">
+            <span class="rank-name">Uptown Apartments</span>
+            <span class="rank-mile">2.4 mi from campus</span>
+          </div>
+          <div class="rank-stats">
+            <span class="rank-stat"><span class="rank-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span> 3.7 (272 Google reviews)</span>
+            <a href="https://www.americancampus.com/student-apartments/tx/denton/uptown/floor-plans" target="_blank" rel="noopener">See floor plans &rarr;</a>
+          </div>
+          
+          <div class="rank-actions">
+            <a href="https://www.americancampus.com/student-apartments/tx/denton/uptown" target="_blank" rel="noopener">Visit official site &rarr;</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>

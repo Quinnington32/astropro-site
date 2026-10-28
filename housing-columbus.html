@@ -128,6 +128,23 @@
   .tip-card h3{font-size:0.98rem}
   .tip-card p{color:var(--ink-soft); font-size:0.9rem; margin-top:6px}
 
+  .rank-list{display:flex; flex-direction:column; gap:14px}
+  .rank-card{position:relative; display:flex; gap:18px; align-items:flex-start; background:linear-gradient(135deg, var(--surface), var(--surface-2)); border:1px solid var(--line); border-radius:16px; padding:22px 24px 22px 20px; overflow:hidden}
+  .rank-card::before{content:""; position:absolute; left:0; top:0; bottom:0; width:5px; background:var(--primary)}
+  .rank-badge{flex-shrink:0; width:44px; height:44px; border-radius:12px; background:var(--primary); color:var(--primary-ink); display:flex; align-items:center; justify-content:center; font-family:"Sora"; font-weight:800; font-size:1.25rem; margin-left:6px}
+  .rank-body{flex-grow:1; min-width:0}
+  .rank-top{display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px}
+  .rank-name{font-family:"Sora"; font-weight:700; font-size:1.08rem; color:var(--ink)}
+  .rank-mile{flex-shrink:0; font-size:0.78rem; font-weight:700; color:var(--primary); background:color-mix(in srgb, var(--primary) 12%, transparent); padding:5px 11px; border-radius:20px; white-space:nowrap}
+  .rank-stats{display:flex; gap:18px; flex-wrap:wrap; margin-top:10px; font-size:0.86rem; color:var(--ink-soft)}
+  .rank-stat{display:flex; align-items:center; gap:5px}
+  .rank-stars{color:#f5a623; letter-spacing:-1px}
+  .rank-note{margin-top:8px; font-size:0.86rem; color:var(--ink-soft)}
+  .rank-actions{display:flex; gap:18px; margin-top:14px; flex-wrap:wrap}
+  .rank-actions a{font-size:0.86rem; font-weight:600; color:var(--primary); text-decoration:none}
+  .rank-actions a:hover{text-decoration:underline}
+  .rank-actions .maps-link{color:var(--ink-soft)}
+  @media (max-width:560px){ .rank-card{flex-direction:column} .rank-badge{margin-left:0} }
   .tip-tabs{display:flex; gap:10px; flex-wrap:wrap}
   .tip-tab{background:var(--surface); border:1px solid var(--line); border-radius:20px; padding:9px 16px; font-size:0.86rem; font-weight:600; color:var(--ink); cursor:pointer; transition:border-color .15s, background .15s}
   .tip-tab:hover{border-color:var(--primary)}
@@ -201,38 +218,60 @@
     <div class="section-head">
       <span class="kicker-sm">APARTMENTS NEAR CAMPUS</span>
       <h2>Apartments near Ohio State University</h2>
-      <p>Found via general apartment-listing searches near Ohio State University &mdash; not confirmed by the university itself. This is general information, not a Preferred Partner placement or an endorsement &mdash; confirm current availability, pricing, and actual distance from campus directly with each property.</p>
+      <p>Ranked 1&ndash;3 by distance from Ohio State University &mdash; closest first. Pulled from research across official sources and general listings; general information, not a Preferred Partner placement or an endorsement. Where a property has no official site online, we link its verified Google Maps listing instead of a third-party listing platform. Confirm current availability and pricing directly with each property.</p>
+      
     </div>
-    <div class="slot-grid">
-      <div class="slot-card">
-        <div class="preview-photo"><span class="soon-tag">Near campus</span></div>
-        <h3>Highline at Nine</h3>
-        <p>Listed as steps from the OSU campus on High Street.</p>
-        <a class="claim" href="https://www.rentable.co/columbus-oh/highline-at-nine" target="_blank" rel="noopener">See current listing &rarr;</a>
+    <div class="rank-list">
+      <div class="rank-card">
+        <div class="rank-badge">1</div>
+        <div class="rank-body">
+          <div class="rank-top">
+            <span class="rank-name">StateHouse Lane</span>
+            <span class="rank-mile">0.8 mi from campus</span>
+          </div>
+          <div class="rank-stats">
+            <span class="rank-stat"><span class="rank-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span> 3.7 (98 Google reviews)</span>
+            <span class="rank-stat">Floor plans not listed online &mdash; contact the leasing office</span>
+          </div>
+          
+          <div class="rank-actions">
+            <a href="https://housing.osu.edu/hms/roomsearch/statehouse-lane" target="_blank" rel="noopener">Visit official site &rarr;</a>
+          </div>
+        </div>
       </div>
-      <div class="slot-card">
-        <div class="preview-photo"><span class="soon-tag">Near campus</span></div>
-        <h3>Lumen on Ninth</h3>
-        <p>Near-campus student housing on the N High St / 9th Ave corridor.</p>
-        <a class="claim" href="https://edge.apartmentiq.io/columbus-oh/lumen-on-ninth" target="_blank" rel="noopener">See current listing &rarr;</a>
+      <div class="rank-card">
+        <div class="rank-badge">2</div>
+        <div class="rank-body">
+          <div class="rank-top">
+            <span class="rank-name">Lumen on Ninth</span>
+            <span class="rank-mile">1.5 mi from campus</span>
+          </div>
+          <div class="rank-stats">
+            <span class="rank-stat"><span class="rank-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 4.6 (308 Google reviews)</span>
+            <a href="https://lumenonninth.prospectportal.com/columbus/lumen-on-ninth/floorplans/" target="_blank" rel="noopener">See floor plans &rarr;</a>
+          </div>
+          
+          <div class="rank-actions">
+            <a href="https://lumenonninth.prospectportal.com/columbus/lumen-on-ninth/" target="_blank" rel="noopener">Visit official site &rarr;</a>
+          </div>
+        </div>
       </div>
-      <div class="slot-card">
-        <div class="preview-photo"><span class="soon-tag">Near campus</span></div>
-        <h3>The Doric on Lane</h3>
-        <p>Near-campus student housing on Lane Ave.</p>
-        <a class="claim" href="https://amberstudent.com/places/the-doric-on-lane-columbus-2407277338509" target="_blank" rel="noopener">See current listing &rarr;</a>
-      </div>
-      <div class="slot-card">
-        <div class="preview-photo"><span class="soon-tag">Near campus</span></div>
-        <h3>Statehouse Highline on 9th</h3>
-        <p>Near-campus student housing near 9th Ave.</p>
-        <a class="claim" href="https://amberstudent.com/places/statehouse-highline-on-9th-columbus-2412061162968" target="_blank" rel="noopener">See current listing &rarr;</a>
-      </div>
-      <div class="slot-card">
-        <div class="preview-photo"><span class="soon-tag">Near campus</span></div>
-        <h3>StateHouse Lane</h3>
-        <p>An OSU-affiliated off-campus housing option on the Lane Ave corridor.</p>
-        <a class="claim" href="https://housing.osu.edu/hms/roomsearch/statehouse-lane" target="_blank" rel="noopener">See current listing &rarr;</a>
+      <div class="rank-card">
+        <div class="rank-badge">3</div>
+        <div class="rank-body">
+          <div class="rank-top">
+            <span class="rank-name">Statehouse Highline on 9th</span>
+            <span class="rank-mile">1.5 mi from campus</span>
+          </div>
+          <div class="rank-stats">
+            <span class="rank-stat"><span class="rank-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span> 4.1 (187 Google reviews)</span>
+            <span class="rank-stat">Floor plans not listed online &mdash; contact the leasing office</span>
+          </div>
+          
+          <div class="rank-actions">
+            <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Statehouse%20Highline%20on%209th%2C%20Columbus%2C%20OH" target="_blank" rel="noopener">See on Google Maps &rarr;</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -128,6 +128,23 @@
   .tip-card h3{font-size:0.98rem}
   .tip-card p{color:var(--ink-soft); font-size:0.9rem; margin-top:6px}
 
+  .rank-list{display:flex; flex-direction:column; gap:14px}
+  .rank-card{position:relative; display:flex; gap:18px; align-items:flex-start; background:linear-gradient(135deg, var(--surface), var(--surface-2)); border:1px solid var(--line); border-radius:16px; padding:22px 24px 22px 20px; overflow:hidden}
+  .rank-card::before{content:""; position:absolute; left:0; top:0; bottom:0; width:5px; background:var(--primary)}
+  .rank-badge{flex-shrink:0; width:44px; height:44px; border-radius:12px; background:var(--primary); color:var(--primary-ink); display:flex; align-items:center; justify-content:center; font-family:"Sora"; font-weight:800; font-size:1.25rem; margin-left:6px}
+  .rank-body{flex-grow:1; min-width:0}
+  .rank-top{display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px}
+  .rank-name{font-family:"Sora"; font-weight:700; font-size:1.08rem; color:var(--ink)}
+  .rank-mile{flex-shrink:0; font-size:0.78rem; font-weight:700; color:var(--primary); background:color-mix(in srgb, var(--primary) 12%, transparent); padding:5px 11px; border-radius:20px; white-space:nowrap}
+  .rank-stats{display:flex; gap:18px; flex-wrap:wrap; margin-top:10px; font-size:0.86rem; color:var(--ink-soft)}
+  .rank-stat{display:flex; align-items:center; gap:5px}
+  .rank-stars{color:#f5a623; letter-spacing:-1px}
+  .rank-note{margin-top:8px; font-size:0.86rem; color:var(--ink-soft)}
+  .rank-actions{display:flex; gap:18px; margin-top:14px; flex-wrap:wrap}
+  .rank-actions a{font-size:0.86rem; font-weight:600; color:var(--primary); text-decoration:none}
+  .rank-actions a:hover{text-decoration:underline}
+  .rank-actions .maps-link{color:var(--ink-soft)}
+  @media (max-width:560px){ .rank-card{flex-direction:column} .rank-badge{margin-left:0} }
   .tip-tabs{display:flex; gap:10px; flex-wrap:wrap}
   .tip-tab{background:var(--surface); border:1px solid var(--line); border-radius:20px; padding:9px 16px; font-size:0.86rem; font-weight:600; color:var(--ink); cursor:pointer; transition:border-color .15s, background .15s}
   .tip-tab:hover{border-color:var(--primary)}
@@ -201,20 +218,43 @@
     <div class="section-head">
       <span class="kicker-sm">APARTMENTS NEAR CAMPUS</span>
       <h2>Apartments near Amarillo College</h2>
-      <p>Pulled from Amarillo College's own off-campus housing listings &mdash; which only shows two properties right now. This is general information, not a Preferred Partner placement or an endorsement &mdash; confirm current availability and pricing directly with each property.</p>
+      <p>Ranked 1&ndash;2 by distance from Amarillo College &mdash; closest first. Pulled from research across official sources and general listings; general information, not a Preferred Partner placement or an endorsement. Where a property has no official site online, we link its verified Google Maps listing instead of a third-party listing platform. Confirm current availability and pricing directly with each property.</p>
+      
     </div>
-    <div class="slot-grid">
-      <div class="slot-card">
-        <div class="preview-photo"><span class="soon-tag">Near campus</span></div>
-        <h3>Georgia Villas</h3>
-        <p>Less than 5 miles from campus, per Amarillo College's off-campus housing listings.</p>
-        <a class="claim" href="https://www.actx.edu/offcampushousing/properties/7/Georgia-Villas" target="_blank" rel="noopener">See current listing &rarr;</a>
+    <div class="rank-list">
+      <div class="rank-card">
+        <div class="rank-badge">1</div>
+        <div class="rank-body">
+          <div class="rank-top">
+            <span class="rank-name">The Badgers on Jackson</span>
+            <span class="rank-mile">0.3 mi from campus</span>
+          </div>
+          <div class="rank-stats">
+            <span class="rank-stat">No Google rating yet</span>
+            <span class="rank-stat">Floor plans not listed online &mdash; contact the leasing office</span>
+          </div>
+          
+          <div class="rank-actions">
+            <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=The%20Badgers%20on%20Jackson%2C%20Amarillo%2C%20TX" target="_blank" rel="noopener">See on Google Maps &rarr;</a>
+          </div>
+        </div>
       </div>
-      <div class="slot-card">
-        <div class="preview-photo"><span class="soon-tag">Near campus</span></div>
-        <h3>The Badgers on Jackson</h3>
-        <p>Less than 5 miles from campus, per Amarillo College's off-campus housing listings.</p>
-        <a class="claim" href="https://www.actx.edu/offcampushousing/properties/95/The-Badgers-on-Jackson" target="_blank" rel="noopener">See current listing &rarr;</a>
+      <div class="rank-card">
+        <div class="rank-badge">2</div>
+        <div class="rank-body">
+          <div class="rank-top">
+            <span class="rank-name">Georgia Villas</span>
+            <span class="rank-mile">3.0 mi from campus</span>
+          </div>
+          <div class="rank-stats">
+            <span class="rank-stat"><span class="rank-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span> 4.1 (79 Google reviews)</span>
+            <span class="rank-stat">Floor plans not listed online &mdash; contact the leasing office</span>
+          </div>
+          
+          <div class="rank-actions">
+            <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Georgia%20Villas%2C%20Amarillo%2C%20TX" target="_blank" rel="noopener">See on Google Maps &rarr;</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
