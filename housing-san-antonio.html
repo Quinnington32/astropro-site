@@ -72,6 +72,26 @@
   .page-hero p.lede{margin-top:14px; font-size:1.08rem; color:var(--ink-soft); max-width:66ch}
   .cta-row{display:flex; gap:14px; margin-top:24px; flex-wrap:wrap}
 
+  /* Ask about this market — inline chat in the hero */
+  .hero-guide{background:var(--surface); border:1px solid var(--line); border-radius:20px; margin-top:28px; overflow:hidden}
+  .hg-head{padding:22px 24px 0}
+  .hg-head h3{font-size:1.05rem}
+  .hg-head p{color:var(--ink-soft); font-size:0.86rem; margin-top:6px; max-width:62ch}
+  .hg-disclaimer{font-size:0.76rem; color:var(--ink-soft); background:var(--surface-2); border:1px solid var(--line); padding:9px 14px; margin:14px 24px 0; border-radius:10px}
+  .hg-log{padding:16px 24px; display:flex; flex-direction:column; gap:12px; font-size:0.9rem; max-height:320px; overflow-y:auto}
+  .hg-msg{padding:10px 14px; border-radius:14px; max-width:94%; line-height:1.55}
+  .hg-msg.bot{background:var(--bg); border:1px solid var(--line); align-self:flex-start; border-bottom-left-radius:4px}
+  .hg-msg.user{background:var(--primary); color:var(--primary-ink); align-self:flex-end; border-bottom-right-radius:4px}
+  .hg-msg a{color:inherit; text-decoration:underline}
+  .hg-msg p{margin:0}
+  .hg-form{display:flex; gap:10px; padding:14px 24px 20px; border-top:1px solid var(--line)}
+  .hg-form input{flex:1; min-width:0; padding:11px 13px; border-radius:9px; border:1px solid var(--line); background:var(--bg); color:var(--ink); font-family:inherit; font-size:0.9rem}
+  .hg-form input:focus{outline:2px solid var(--primary); outline-offset:1px; border-color:transparent}
+  @media (max-width:480px){
+    .hg-head, .hg-log, .hg-form{padding-inline:16px}
+    .hg-disclaimer{margin-inline:16px}
+  }
+
   section{padding-block:40px}
   .section-head{max-width:62ch; margin-bottom:28px}
   .kicker-sm{font-size:0.82rem; font-weight:700; color:var(--primary); letter-spacing:0.02em}
@@ -152,6 +172,18 @@
     <div class="cta-row">
       <a class="btn btn-primary" href="index.html#organizations">List a property in San Antonio, TX</a>
       <a class="btn btn-ghost" href="#tips">See housing search tips</a>
+    </div>
+    <div class="hero-guide" id="heroGuide">
+      <div class="hg-head">
+        <h3>Ask about San Antonio, TX</h3>
+        <p>Questions about neighborhoods, getting around, timing or listing a property here &mdash; ask below.</p>
+      </div>
+      <div class="hg-disclaimer">A simple scripted helper, not a live AI &mdash; it reads this page’s own content.</div>
+      <div class="hg-log" id="hgLog" aria-live="polite"></div>
+      <form class="hg-form" id="hgForm">
+        <input type="text" id="hgInput" placeholder="e.g. &ldquo;neighborhoods&rdquo; or &ldquo;how much does it cost to list?&rdquo;" autocomplete="off" aria-label="Ask about San Antonio, TX">
+        <button type="submit" class="btn btn-primary btn-sm">Send</button>
+      </form>
     </div>
   </div>
 </section>
@@ -255,6 +287,87 @@
     </div>
   </div>
 </footer>
+
+
+<script>
+(function(){
+  // ---- Ask about this market: a small, honest, rule-based helper. No
+  // backend, no external calls — it only reads this same page's own
+  // content, since the market is already chosen. ----
+  var log = document.getElementById('hgLog');
+  var form = document.getElementById('hgForm');
+  var input = document.getElementById('hgInput');
+  if(!form || !input || !log) return;
+
+  function escapeHtml(s){
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+  function addMsg(who, html){
+    var div = document.createElement('div');
+    div.className = 'hg-msg ' + who;
+    div.innerHTML = html;
+    log.appendChild(div);
+    log.scrollTop = log.scrollHeight;
+  }
+  addMsg('bot', 'Hi — ask me about neighborhoods, getting around, timing, or what it takes to list a property here.');
+
+  function getLocalTips(){
+    // The LOCAL CONTEXT tip-cards are always the first .tips-grid on the
+    // page (the general onboarding tips lower down are a second grid).
+    var cards = document.querySelectorAll('.tips-grid .tip-card');
+    var arr = [];
+    cards.forEach(function(c){
+      var h = c.querySelector('h3');
+      var p = c.querySelector('p');
+      arr.push({ title: h ? h.textContent.trim() : '', body: p ? p.textContent.trim() : '' });
+    });
+    return arr;
+  }
+
+  var PRICING_RE = /(how much|cost|price|pricing|list(ing)? (a |my )?propert|become a partner|preferred partner|sign up|subscription|recurring)/i;
+  var NEIGHBORHOOD_RE = /(neighborhood|which area|what area|where.*live|part of town)/i;
+  var TRANSIT_RE = /(\bbus\b|transit|getting around|parking|\bwalk\b|commute|transport)/i;
+  var TIMING_RE = /(when should|timing|start looking|start early|how early|how soon)/i;
+  var LEASETIPS_RE = /(\btip|lease|roommate|deposit|walkthrough|utilit|move.?in)/i;
+
+  function respond(raw){
+    var q = raw.trim();
+    if(!q) return;
+    var tips = getLocalTips();
+
+    if(PRICING_RE.test(q)){
+      addMsg('bot', 'We don\u2019t publish pricing here \u2014 tell us a bit about your property and our team will follow up on how Preferred Partner placement works. <a href="index.html#organizations" target="_top">Tell us about your property &rarr;</a>');
+      return;
+    }
+    if(NEIGHBORHOOD_RE.test(q) && tips[0]){
+      addMsg('bot', '<strong>' + escapeHtml(tips[0].title) + '</strong><p style="margin-top:6px">' + escapeHtml(tips[0].body) + '</p>');
+      return;
+    }
+    if(TRANSIT_RE.test(q) && tips[1]){
+      addMsg('bot', '<strong>' + escapeHtml(tips[1].title) + '</strong><p style="margin-top:6px">' + escapeHtml(tips[1].body) + '</p>');
+      return;
+    }
+    if(TIMING_RE.test(q) && tips[2]){
+      addMsg('bot', '<strong>' + escapeHtml(tips[2].title) + '</strong><p style="margin-top:6px">' + escapeHtml(tips[2].body) + '</p>');
+      return;
+    }
+    if(LEASETIPS_RE.test(q)){
+      addMsg('bot', 'Scroll down to the housing tips section on this page for lease, roommate and timing advice.');
+      return;
+    }
+    addMsg('bot', 'I\u2019m a simple scripted helper, so I don\u2019t recognize that one yet. Try asking about neighborhoods, getting around, or timing, or scroll down to the <a href="#tips">housing tips</a> section.');
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var val = input.value;
+    if(!val || !val.trim()) return;
+    addMsg('user', escapeHtml(val));
+    input.value = '';
+    setTimeout(function(){ respond(val); }, 150);
+  });
+})();
+</script>
 
 </body>
 </html>
