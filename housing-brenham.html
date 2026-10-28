@@ -70,6 +70,7 @@
   .kicker{display:inline-flex; align-items:center; gap:8px; font-size:0.82rem; font-weight:600; color:var(--primary); background:color-mix(in srgb, var(--primary) 10%, transparent); padding:6px 12px; border-radius:20px}
   .page-hero h1{font-size:clamp(2rem,4vw,2.8rem); line-height:1.12; letter-spacing:-0.01em; margin-top:16px}
   .page-hero p.lede{margin-top:14px; font-size:1.08rem; color:var(--ink-soft); max-width:66ch}
+  .page-hero h1 .uni-line{display:block; font-size:0.42em; color:var(--ink-soft); margin-top:8px; font-weight:600}
   .cta-row{display:flex; gap:14px; margin-top:24px; flex-wrap:wrap}
 
   /* Ask about this market — inline chat in the hero */
@@ -127,6 +128,12 @@
   .tip-card h3{font-size:0.98rem}
   .tip-card p{color:var(--ink-soft); font-size:0.9rem; margin-top:6px}
 
+  .tip-tabs{display:flex; gap:10px; flex-wrap:wrap}
+  .tip-tab{background:var(--surface); border:1px solid var(--line); border-radius:20px; padding:9px 16px; font-size:0.86rem; font-weight:600; color:var(--ink); cursor:pointer; transition:border-color .15s, background .15s}
+  .tip-tab:hover{border-color:var(--primary)}
+  .tip-tab.active{background:var(--primary); border-color:var(--primary); color:var(--primary-ink)}
+  .tip-panel{margin-top:16px; background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:18px 20px; font-size:0.92rem; color:var(--ink-soft); line-height:1.6}
+
   footer{border-top:1px solid var(--line); padding-block:32px 44px}
   .footer-row{display:flex; justify-content:space-between; flex-wrap:wrap; gap:18px; font-size:0.86rem; color:var(--ink-soft)}
   .footer-links{display:flex; gap:20px; flex-wrap:wrap}
@@ -167,8 +174,8 @@
 <section class="page-hero">
   <div class="wrap">
     <span class="kicker">Off-Campus Housing</span>
-    <h1>Off-campus housing in Brenham, TX</h1>
-    <p class="lede">A market page for students at Blinn College looking off campus in Brenham, TX. We don't operate a listings marketplace here &mdash; this page is where Preferred Partner properties serving the Brenham, TX market will be featured directly, plus general housing search guidance you can use right now.</p>
+    <h1>Brenham, TX<span class="uni-line">Blinn College</span></h1>
+    <p class="lede">Your guide to off-campus apartments close to campus &mdash; local search tips, plus new properties as we onboard them.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="index.html#organizations">List a property in Brenham, TX</a>
       <a class="btn btn-ghost" href="#tips">See housing search tips</a>
@@ -248,17 +255,21 @@
 <section id="tips">
   <div class="wrap">
     <div class="section-head">
-      <span class="kicker-sm">WHILE WE ONBOARD PARTNERS</span>
-      <h2>A few things worth checking before you sign a lease in Brenham, TX.</h2>
+      <span class="kicker-sm">WHAT STUDENTS SEARCH FOR</span>
+      <h2>Popular things to check before you sign a lease in Brenham, TX.</h2>
+      <p>Tap a topic for a quick tip.</p>
     </div>
-    <div class="tips-grid">
-      <div class="tip-card"><h3>Start 2&ndash;3 months early</h3><p>The best off-campus units near Blinn College get claimed well before the semester starts.</p></div>
-      <div class="tip-card"><h3>Confirm who you're renting from</h3><p>Verify the property manager or landlord is real before sending any deposit or signing anything.</p></div>
-      <div class="tip-card"><h3>Ask what's included</h3><p>Utilities, internet, furniture and parking are often separate costs &mdash; get it in writing.</p></div>
-      <div class="tip-card"><h3>Read the lease term carefully</h3><p>Many off-campus leases run 12 months, not just the school year &mdash; know what you're signing up for.</p></div>
-      <div class="tip-card"><h3>Walk the unit if you can</h3><p>Photos can be outdated. If you can't visit in person, ask for a live video walkthrough.</p></div>
-      <div class="tip-card"><h3>Know your roommate agreement</h3><p>If you're splitting a lease, put rent splits and move-out terms in writing before signing.</p></div>
+    <div class="tip-tabs" id="tipTabs">
+      <button class="tip-tab" type="button" data-tip="distance">Distance to campus</button>
+      <button class="tip-tab" type="button" data-tip="short-term">Short-term leases</button>
+      <button class="tip-tab" type="button" data-tip="furnished">Furnished</button>
+      <button class="tip-tab" type="button" data-tip="roommate">Roommate matching</button>
+      <button class="tip-tab" type="button" data-tip="amenities">Amenities</button>
+      <button class="tip-tab" type="button" data-tip="bus">Bus route</button>
+      <button class="tip-tab" type="button" data-tip="pet">Pet-friendly</button>
+      <button class="tip-tab" type="button" data-tip="parking">Parking</button>
     </div>
+    <div class="tip-panel" id="tipPanel" hidden></div>
   </div>
 </section>
 
@@ -365,6 +376,40 @@
     addMsg('user', escapeHtml(val));
     input.value = '';
     setTimeout(function(){ respond(val); }, 150);
+  });
+})();
+</script>
+
+
+<script>
+(function(){
+  var TIP_TEXT = {
+    'distance': 'Distance to campus is the single biggest factor in price \u2014 when Preferred Partner properties go live here, each one will list its walk or bus time, so you can compare before reaching out.',
+    'short-term': 'Need a 9- or 10-month lease instead of a full 12? Ask directly \u2014 some landlords near campus will shorten a term for students, especially outside peak leasing season.',
+    'furnished': '\u201cFurnished\u201d can mean very different things \u2014 ask exactly what\u2019s included (bed, desk, couch) before assuming a unit is fully move-in ready.',
+    'roommate': 'Splitting a lease? Put rent splits, utility splits and move-out terms in writing before anyone signs \u2014 verbal agreements are the most common source of roommate disputes.',
+    'amenities': 'In-unit laundry, parking and reliable internet are the amenities students ask about most \u2014 confirm what\u2019s included in rent versus billed separately.',
+    'bus': 'Check the campus or city bus route before ruling a place out for being \u201ctoo far\u201d \u2014 plenty of good off-campus units are a short ride, not a walk, from campus.',
+    'pet': 'Pet-friendly doesn\u2019t always mean fee-free \u2014 ask about pet deposits, monthly pet rent and any breed or weight limits before signing.',
+    'parking': 'Parking is often priced separately from rent \u2014 ask whether a spot is included, extra, or first-come-first-served before you commit.'
+  };
+  var tabs = document.getElementById('tipTabs');
+  var panel = document.getElementById('tipPanel');
+  if(!tabs || !panel) return;
+  tabs.addEventListener('click', function(e){
+    var btn = e.target.closest('.tip-tab');
+    if(!btn) return;
+    var key = btn.getAttribute('data-tip');
+    var wasActive = btn.classList.contains('active');
+    tabs.querySelectorAll('.tip-tab').forEach(function(b){ b.classList.remove('active'); });
+    if(wasActive){
+      panel.hidden = true;
+      panel.textContent = '';
+      return;
+    }
+    btn.classList.add('active');
+    panel.hidden = false;
+    panel.textContent = TIP_TEXT[key] || '';
   });
 })();
 </script>
