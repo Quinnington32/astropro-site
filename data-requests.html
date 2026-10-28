@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Data Requests — Rally Student Resource &amp; Data Center</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{color-scheme:light; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+    --bg:#ffffff; --surface:#f4f6fb; --surface-2:#eef1f9; --ink:#0f1a2e; --ink-soft:#59647c; --line:#e3e7f0;
+    --primary:#3143e0; --primary-ink:#ffffff; --accent:#ff7a3d; --accent-ink:#341300; --shadow:rgba(20,30,60,0.09);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){ --bg:#0a0f1c; --surface:#121a2c; --surface-2:#172035; --ink:#eef1fa; --ink-soft:#99a3bf; --line:#233052; --primary:#6d7bff; --primary-ink:#0a0f1c; --accent:#ff8f5c; --accent-ink:#2c1000; --shadow:rgba(0,0,0,0.45); color-scheme:dark; }
+  }
+  :root[data-theme="dark"]{ --bg:#0a0f1c; --surface:#121a2c; --surface-2:#172035; --ink:#eef1fa; --ink-soft:#99a3bf; --line:#233052; --primary:#6d7bff; --primary-ink:#0a0f1c; --accent:#ff8f5c; --accent-ink:#2c1000; --shadow:rgba(0,0,0,0.45); color-scheme:dark; }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--bg); color:var(--ink); font-family:"Work Sans", system-ui, sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1160px; margin-inline:auto; padding-inline:20px}
+  h1,h2,h3,h4{font-family:"Sora", system-ui, sans-serif; font-weight:700; text-wrap:balance; margin:0; color:var(--ink)}
+  a{color:inherit}
+  header{position:sticky; top:env(safe-area-inset-top,0px); z-index:20; background:color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter:blur(10px); border-bottom:1px solid var(--line)}
+  .header-row{display:flex; align-items:center; justify-content:space-between; gap:16px; padding-block:16px; flex-wrap:wrap}
+  .wordmark{display:flex; align-items:center; gap:9px; font-family:"Sora"; font-weight:800; font-size:1.2rem; text-decoration:none}
+  .wordmark .dot{width:9px;height:9px;border-radius:50%;background:var(--accent)}
+  nav{display:flex; gap:18px; font-size:0.9rem; font-weight:500}
+  nav a{text-decoration:none; color:var(--ink-soft)}
+  nav a:hover, nav a.current{color:var(--ink)}
+  .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:12px 22px; border-radius:9px; font-size:0.95rem; font-weight:600; text-decoration:none; border:1px solid transparent; cursor:pointer; white-space:nowrap}
+  .btn-primary{background:var(--primary); color:var(--primary-ink)}
+  .btn-ghost{background:transparent; border-color:var(--line); color:var(--ink)}
+  .btn-sm{padding:9px 16px; font-size:0.88rem; border-radius:8px}
+  .page-hero{padding-block:48px 28px}
+  .kicker{display:inline-flex; align-items:center; gap:8px; font-size:0.82rem; font-weight:600; color:var(--primary); background:color-mix(in srgb, var(--primary) 10%, transparent); padding:6px 12px; border-radius:20px}
+  .page-hero h1{font-size:clamp(2rem,4vw,2.8rem); line-height:1.12; letter-spacing:-0.01em; margin-top:16px}
+  .page-hero p.lede{margin-top:14px; font-size:1.08rem; color:var(--ink-soft); max-width:68ch}
+  section{padding-block:32px}
+  .prose{max-width:72ch}
+  .prose h2{font-size:clamp(1.25rem,2vw,1.5rem); margin-bottom:10px}
+  .prose p{color:var(--ink-soft); font-size:0.98rem; margin-top:10px}
+  .prose ul{color:var(--ink-soft); font-size:0.98rem; margin-top:10px; padding-left:22px; display:flex; flex-direction:column; gap:6px}
+  .request-panel{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:28px; margin-top:4px}
+  .request-panel h3{font-size:1.1rem}
+  .request-panel p{color:var(--ink-soft); font-size:0.94rem; margin-top:8px; max-width:60ch}
+  .request-panel a.btn-primary{margin-top:16px}
+  .note{background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:14px 18px; font-size:0.88rem; color:var(--ink-soft); margin-top:20px; max-width:72ch}
+  .note strong{color:var(--ink)}
+  footer{border-top:1px solid var(--line); padding-block:32px 44px}
+  .footer-row{display:flex; justify-content:space-between; flex-wrap:wrap; gap:18px; font-size:0.86rem; color:var(--ink-soft)}
+  .footer-links{display:flex; gap:20px; flex-wrap:wrap}
+  .footer-links a{text-decoration:none; color:var(--ink-soft)}
+  .footer-links a:hover{color:var(--ink)}
+  @media (max-width:900px){ nav{display:none} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-row">
+    <a class="wordmark" href="index.html"><span class="dot"></span>Rally Student Resource &amp; Data Center</a>
+    <nav>
+      <a href="index.html#resources">Resource Center</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="data-requests.html" class="current">Data Requests</a>
+    </nav>
+    <div class="header-cta"><a class="btn btn-ghost btn-sm" href="index.html">&larr; Back to home</a></div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="kicker">Your data</span>
+    <h1>Data requests</h1>
+    <p class="lede">Want to see what information we have about you, fix something that's wrong, or have your data deleted? Here's exactly how.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap prose">
+    <h2>What you can ask for</h2>
+    <ul>
+      <li><strong>See it.</strong> Ask what information we have on file connected to your email address.</li>
+      <li><strong>Correct it.</strong> If something's wrong (a typo in your school, an outdated email, etc.), tell us and we'll fix it.</li>
+      <li><strong>Delete it.</strong> Ask us to remove your information entirely from our systems and mailing list.</li>
+    </ul>
+    <p>This applies whether you're a student whose school shared your email with us, or anyone else who's submitted information to this site.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="request-panel">
+      <h3>How to make a request right now</h3>
+      <p>We're a small, growing team and don't have an automated self-service tool built for this yet &mdash; so the real, working way to make a data request today is to email us directly. A person reads and handles every one of these.</p>
+      <a class="btn btn-primary" href="mailto:admin@astropromarketing.com?subject=Data%20Request">Email a data request &rarr;</a>
+      <p style="margin-top:14px; font-size:0.86rem">Tip: let us know which email address to look up, and whether you want to see, correct, or delete your information.</p>
+    </div>
+    <div class="note"><strong>Response time:</strong> We aim to respond within a few business days. We're still a small team, so thank you for your patience &mdash; we read every message.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <span>&copy; Rally Student Resource &amp; Data Center</span>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy policy</a>
+      <a href="data-requests.html">Data requests</a>
+      <a href="unsubscribe.html">Unsubscribe</a>
+      <a href="index.html#mission">Our mission</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

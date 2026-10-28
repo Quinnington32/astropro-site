@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Career Guides — AstroPro Student Data &amp; Resource Center</title>
+<title>Career Guides — Rally Student Resource &amp; Data Center</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
@@ -52,6 +52,13 @@
   .accordion .body{padding:0 18px 18px; color:var(--ink-soft); font-size:0.92rem}
   .accordion .body ul{margin:8px 0 0; padding-left:20px}
   .accordion .body li{margin-bottom:6px}
+  .tool-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+  .tool-card{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:20px; display:flex; flex-direction:column; gap:8px}
+  .tool-card h3{font-size:0.98rem}
+  .tool-card p{color:var(--ink-soft); font-size:0.88rem; flex-grow:1}
+  .tool-card a.link{font-size:0.88rem; font-weight:600; color:var(--ink); text-decoration:none}
+  .tool-card a.link:hover{color:var(--primary)}
+  .tool-card .price{font-size:0.74rem; font-weight:700; color:var(--primary); background:color-mix(in srgb, var(--primary) 10%, transparent); padding:3px 9px; border-radius:20px; align-self:flex-start}
   .cta-panel{background:var(--ink); border-radius:20px; padding:36px; display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap}
   .cta-panel h2{color:var(--bg); font-size:1.3rem}
   .cta-panel p{color:color-mix(in srgb, var(--bg) 70%, transparent); margin-top:6px; font-size:0.93rem}
@@ -60,14 +67,14 @@
   .footer-row{display:flex; justify-content:space-between; flex-wrap:wrap; gap:18px; font-size:0.86rem; color:var(--ink-soft)}
   .footer-links{display:flex; gap:20px; flex-wrap:wrap}
   .footer-links a{text-decoration:none; color:var(--ink-soft)}
-  @media (max-width:900px){ .guide-grid{grid-template-columns:1fr} nav{display:none} .cta-panel{flex-direction:column; align-items:flex-start} }
+  @media (max-width:900px){ .guide-grid{grid-template-columns:1fr} .tool-grid{grid-template-columns:1fr} nav{display:none} .cta-panel{flex-direction:column; align-items:flex-start} }
 </style>
 </head>
 <body>
 
 <header>
   <div class="wrap header-row">
-    <a class="wordmark" href="index.html"><span class="dot"></span>AstroPro Student Data &amp; Resource Center</a>
+    <a class="wordmark" href="index.html"><span class="dot"></span>Rally Student Resource &amp; Data Center</a>
     <nav>
       <a href="index.html#resources">Resource Center</a>
       <a href="scholarships.html">Scholarships</a>
@@ -141,6 +148,19 @@
 
 <section>
   <div class="wrap">
+    <div class="section-head"><span class="kicker-sm">FREE TOOLS</span><h2>Free career tools worth bookmarking</h2></div>
+    <div class="tool-grid">
+      <div class="tool-card"><span class="price">Free</span><h3>O*NET OnLine</h3><p>Run by the U.S. Department of Labor. Look up any occupation to see its typical tasks, required skills, pay range data, and job outlook.</p><a class="link" href="https://www.onetonline.org" target="_blank" rel="noopener">Visit O*NET OnLine &rarr;</a></div>
+      <div class="tool-card"><span class="price">Free</span><h3>CareerOneStop</h3><p>Sponsored by the U.S. Department of Labor. Resume-building tools, salary data by location, and job search help in one place.</p><a class="link" href="https://www.careeronestop.org" target="_blank" rel="noopener">Visit CareerOneStop &rarr;</a></div>
+      <div class="tool-card"><span class="price">Free</span><h3>Indeed Career Guide</h3><p>Free articles covering resumes, interviews, and career paths across almost every industry.</p><a class="link" href="https://www.indeed.com/career-advice" target="_blank" rel="noopener">Visit Indeed Career Guide &rarr;</a></div>
+      <div class="tool-card"><span class="price">Free</span><h3>Handshake (through your school)</h3><p>Most colleges already give students free access to Handshake, the recruiting platform thousands of employers and campus career centers use to post jobs and internships, through your school login.</p><a class="link" href="#">Check your school's career center site</a></div>
+      <div class="tool-card"><span class="price">Free</span><h3>Your campus career center</h3><p>Free resume reviews, mock interviews, and job postings curated for your school are usually sitting there unused &mdash; worth a visit before paying for any outside service.</p><a class="link" href="#">Check your school's site</a></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
     <div class="cta-panel">
       <div><h2>Want a mentor to walk through this with you?</h2><p>Connect with alumni and professionals in the field you're heading into.</p></div>
       <a class="btn btn-primary" href="mentorship.html">Find a mentor</a>
@@ -150,7 +170,7 @@
 
 <footer>
   <div class="wrap footer-row">
-    <span>&copy; AstroPro Student Data &amp; Resource Center</span>
+    <span>&copy; Rally Student Resource &amp; Data Center</span>
     <div class="footer-links">
       <a href="index.html">Home</a>
       <a href="internships.html">Jobs</a>

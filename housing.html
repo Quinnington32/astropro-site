@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Off-Campus Housing — AstroPro Student Data &amp; Resource Center</title>
+<title>Off-Campus Housing — Rally Student Resource &amp; Data Center</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
@@ -106,6 +106,54 @@
   .tip-card h3{font-size:0.98rem}
   .tip-card p{color:var(--ink-soft); font-size:0.9rem; margin-top:6px}
 
+  .market-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+  .market-card{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:22px; display:flex; flex-direction:column; gap:8px; text-decoration:none; transition:border-color .15s, transform .15s}
+  .market-card:hover{border-color:var(--primary); transform:translateY(-2px)}
+  .market-card .school{font-size:0.72rem; font-weight:700; color:var(--primary); background:color-mix(in srgb, var(--primary) 10%, transparent); padding:4px 10px; border-radius:20px; align-self:flex-start}
+  .market-card h3{font-size:1.05rem}
+  .market-card p{color:var(--ink-soft); font-size:0.88rem}
+  .market-card .go{font-size:0.86rem; font-weight:600; color:var(--ink)}
+  .market-card:hover .go{color:var(--primary)}
+  .market-card.is-hidden{display:none}
+
+  /* Hero stat row */
+  .stats-row{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:28px}
+  .stat-tile{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:18px 20px}
+  .stat-tile .n{font-family:"Sora"; font-weight:800; font-size:1.55rem; color:var(--ink)}
+  .stat-tile .l{font-size:0.8rem; color:var(--ink-soft); margin-top:4px}
+
+  /* Market search/sort controls */
+  .market-controls{display:flex; gap:12px; flex-wrap:wrap; margin-bottom:12px}
+  .search-wrap{position:relative; flex:1 1 260px; min-width:220px}
+  .search-wrap svg{position:absolute; left:14px; top:50%; transform:translateY(-50%); width:16px; height:16px; stroke:var(--ink-soft); pointer-events:none}
+  .search-wrap input{width:100%; padding:11px 14px 11px 38px; border-radius:9px; border:1px solid var(--line); background:var(--bg); color:var(--ink); font-family:inherit; font-size:0.94rem}
+  .search-wrap input:focus{outline:2px solid var(--primary); outline-offset:1px; border-color:transparent}
+  .sort-select{padding:11px 14px; border-radius:9px; border:1px solid var(--line); background:var(--bg); color:var(--ink); font-family:inherit; font-size:0.9rem; cursor:pointer; flex:0 0 auto}
+  .result-count{color:var(--ink-soft); font-size:0.85rem; margin:0 0 14px}
+  .no-results{display:none; color:var(--ink-soft); font-size:0.95rem; padding:36px 0; text-align:center}
+
+  /* Housing Guide helper widget */
+  .guide-launcher{position:fixed; right:20px; bottom:20px; z-index:60}
+  .guide-fab{display:inline-flex; align-items:center; gap:10px; padding:14px 18px; border-radius:999px; background:var(--primary); color:var(--primary-ink); border:none; cursor:pointer; box-shadow:0 14px 30px var(--shadow); font-weight:600; font-size:0.9rem; font-family:inherit}
+  .guide-fab:hover{filter:brightness(1.07)}
+  .guide-fab-icon{display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:50%; background:color-mix(in srgb, var(--primary-ink) 22%, transparent); font-family:"Sora"; font-weight:800; font-size:0.84rem; flex-shrink:0}
+  .guide-panel{position:absolute; right:0; bottom:calc(100% + 14px); width:338px; max-width:calc(100vw - 40px); max-height:min(520px,70vh); background:var(--bg); border:1px solid var(--line); border-radius:18px; box-shadow:0 26px 60px var(--shadow); display:flex; flex-direction:column; overflow:hidden}
+  .guide-panel[hidden]{display:none}
+  .guide-head{display:flex; justify-content:space-between; align-items:flex-start; gap:10px; padding:16px 16px 0}
+  .guide-head h3{font-size:1rem}
+  .guide-head p{color:var(--ink-soft); font-size:0.78rem; margin-top:4px}
+  .guide-close{background:transparent; border:none; font-size:1.25rem; line-height:1; color:var(--ink-soft); cursor:pointer; padding:0 2px}
+  .guide-close:hover{color:var(--ink)}
+  .guide-disclaimer{font-size:0.76rem; color:var(--ink-soft); background:var(--surface); border:1px solid var(--line); padding:9px 12px; margin:12px 16px 0; border-radius:10px}
+  .guide-log{flex:1; overflow-y:auto; padding:14px 16px; display:flex; flex-direction:column; gap:10px; font-size:0.87rem; min-height:140px}
+  .guide-msg{padding:9px 13px; border-radius:13px; max-width:86%; line-height:1.5}
+  .guide-msg.bot{background:var(--surface); align-self:flex-start; border-bottom-left-radius:4px}
+  .guide-msg.user{background:var(--primary); color:var(--primary-ink); align-self:flex-end; border-bottom-right-radius:4px}
+  .guide-msg a{color:inherit; text-decoration:underline}
+  .guide-form{display:flex; gap:8px; padding:12px 14px; border-top:1px solid var(--line)}
+  .guide-form input{flex:1; min-width:0; padding:10px 12px; border-radius:9px; border:1px solid var(--line); background:var(--surface); color:var(--ink); font-family:inherit; font-size:0.87rem}
+  .guide-form input:focus{outline:2px solid var(--primary); outline-offset:1px; border-color:transparent}
+
   footer{border-top:1px solid var(--line); padding-block:32px 44px}
   .footer-row{display:flex; justify-content:space-between; flex-wrap:wrap; gap:18px; font-size:0.86rem; color:var(--ink-soft)}
   .footer-links{display:flex; gap:20px; flex-wrap:wrap}
@@ -117,6 +165,13 @@
     .how-panel{grid-template-columns:1fr}
     .slot-grid{grid-template-columns:1fr}
     .tips-grid{grid-template-columns:1fr}
+    .market-grid{grid-template-columns:1fr}
+    .stats-row{grid-template-columns:1fr}
+  }
+  @media (max-width:480px){
+    .guide-panel{width:calc(100vw - 32px); right:-4px}
+    .guide-fab-label{display:none}
+    .guide-fab{padding:14px; border-radius:50%}
   }
 </style>
 </head>
@@ -124,7 +179,7 @@
 
 <header>
   <div class="wrap header-row">
-    <a class="wordmark" href="index.html"><span class="dot"></span>AstroPro Student Data &amp; Resource Center</a>
+    <a class="wordmark" href="index.html"><span class="dot"></span>Rally Student Resource &amp; Data Center</a>
     <nav>
       <a href="index.html#mission">Mission</a>
       <a href="index.html#resources">Resource Center</a>
@@ -142,79 +197,98 @@
   <div class="wrap">
     <span class="kicker">Student Resource Center</span>
     <h1>Off-campus housing</h1>
-    <p class="lede">Finding off-campus housing is one of the biggest decisions a student makes each year. This page is where we feature Preferred Partner properties directly to students in our network &mdash; every link goes straight to the property's own site.</p>
+    <p class="lede">Finding off-campus housing is one of the biggest decisions a student makes each year. Pick your college market below for market-specific guidance, or browse the Preferred Partner program and general housing search tips further down this page &mdash; every partner link goes straight to the property's own site.</p>
     <div class="cta-row">
-      <a class="btn btn-primary" href="index.html#organizations">List your property</a>
+      <a class="btn btn-primary" href="#markets">Find your market</a>
+      <a class="btn btn-ghost" href="index.html#organizations">List your property</a>
       <a class="btn btn-ghost" href="#tips">See housing search tips</a>
     </div>
 
+    <div class="stats-row">
+      <div class="stat-tile"><div class="n mono">34</div><div class="l">campus markets covered</div></div>
+      <div class="stat-tile"><div class="n mono">204</div><div class="l">open Preferred Partner slots &mdash; none filled yet</div></div>
+      <div class="stat-tile"><div class="n mono">Direct</div><div class="l">every click goes straight to the property's own site</div></div>
+    </div>
+
     <div class="how-panel">
-      <div class="step"><span class="idx mono">01</span><h3>Property manager lists</h3><p>A one-time $375 fee gets a property featured here and in our student housing email.</p></div>
+      <div class="step"><span class="idx mono">01</span><h3>Property manager reaches out</h3><p>Tell us about your property and we'll follow up with details on getting it featured here and in our student housing email.</p></div>
       <div class="step"><span class="idx mono">02</span><h3>We review it</h3><p>Every property is checked before it goes live, same as every other listing on this site.</p></div>
       <div class="step"><span class="idx mono">03</span><h3>Students click through</h3><p>Interested students go straight to the property's own website. We never host the listing or the lease.</p></div>
     </div>
   </div>
 </section>
 
-<section>
+<section id="markets">
   <div class="wrap">
     <div class="section-head">
-      <span class="kicker-sm">PREFERRED PARTNERS</span>
-      <h2>We're onboarding our first partner properties now.</h2>
-      <p>No properties are live on this page yet &mdash; these are the categories we're opening up first. Students checking back will see real properties appear here as managers sign on.</p>
+      <span class="kicker-sm">FIND YOUR MARKET</span>
+      <h2>Off-campus housing guidance for 34 college markets.</h2>
+      <p>Search or sort to find your school's market for market-specific Preferred Partner slots and housing notes. Don't see your school yet &mdash; we're adding more markets regularly, so check back, and in the meantime the general tips and partner program below apply everywhere.</p>
     </div>
-    <div class="slot-grid">
-      <div class="slot-card">
-        <span class="open-tag">Spot open</span>
-        <h3>Near-campus apartments</h3>
-        <p>Walking distance to campus is the #1 thing students search for. First near-campus partner gets top placement.</p>
-        <a class="claim" href="index.html#organizations">Claim this spot &rarr;</a>
+
+    <div class="market-controls">
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" id="marketSearch" placeholder="Search by school, city or state&hellip;" aria-label="Search markets by school, city or state">
       </div>
-      <div class="slot-card">
-        <span class="open-tag">Spot open</span>
-        <h3>Budget-friendly housing</h3>
-        <p>Price is the second most common filter students use. Great fit for value-focused properties.</p>
-        <a class="claim" href="index.html#organizations">Claim this spot &rarr;</a>
-      </div>
-      <div class="slot-card">
-        <span class="open-tag">Spot open</span>
-        <h3>Furnished &amp; move-in ready</h3>
-        <p>Popular with out-of-state and international students who can't easily furnish a place themselves.</p>
-        <a class="claim" href="index.html#organizations">Claim this spot &rarr;</a>
-      </div>
-      <div class="slot-card">
-        <span class="open-tag">Spot open</span>
-        <h3>Pet-friendly properties</h3>
-        <p>A consistent, underserved search filter among students with pets.</p>
-        <a class="claim" href="index.html#organizations">Claim this spot &rarr;</a>
-      </div>
-      <div class="slot-card">
-        <span class="open-tag">Spot open</span>
-        <h3>Studio &amp; 1-bedroom</h3>
-        <p>For students who want to live alone rather than split a lease with roommates.</p>
-        <a class="claim" href="index.html#organizations">Claim this spot &rarr;</a>
-      </div>
-      <div class="slot-card">
-        <span class="open-tag">Spot open</span>
-        <h3>Luxury &amp; amenity-rich</h3>
-        <p>Gyms, pools and co-working space &mdash; a growing category among upperclassmen.</p>
-        <a class="claim" href="index.html#organizations">Claim this spot &rarr;</a>
-      </div>
+      <select id="marketSort" class="sort-select" aria-label="Sort markets">
+        <option value="default">Sort: Featured order</option>
+        <option value="city">Sort: City (A&ndash;Z)</option>
+        <option value="state">Sort: State (A&ndash;Z)</option>
+      </select>
     </div>
+    <p class="result-count mono" id="resultCount">34 markets</p>
+
+    <div class="market-grid" id="marketGrid">
+      <a class="market-card" href="housing-columbus.html"><span class="school">Ohio State University</span><h3>Columbus, OH</h3><p>One of the largest campus housing markets in the country, with a dense ring of off-campus neighborhoods &mdash; Old North Columbus, Victorian Village, Grandview &mdash; around OSU.</p><span class="go">View Columbus housing &rarr;</span></a>
+      <a class="market-card" href="housing-athens.html"><span class="school">Ohio University</span><h3>Athens, OH</h3><p>A compact Appalachian college town built almost entirely around Ohio University's campus, with Uptown Athens as the center of gravity.</p><span class="go">View Athens housing &rarr;</span></a>
+      <a class="market-card" href="housing-houston.html"><span class="school">University of Houston</span><h3>Houston, TX</h3><p>A large metro market, with students often looking in Third Ward, Midtown and the Museum District near the METRORail Purple Line.</p><span class="go">View Houston housing &rarr;</span></a>
+      <a class="market-card" href="housing-mckinney.html"><span class="school">Collin College</span><h3>McKinney, TX</h3><p>A multi-campus system across Collin County, so most students look near whichever campus they attend rather than one shared area.</p><span class="go">View McKinney housing &rarr;</span></a>
+      <a class="market-card" href="housing-dallas.html"><span class="school">Dallas College</span><h3>Dallas, TX</h3><p>Seven campuses spread across the metro, with DART light rail and bus opening up housing options near each one.</p><span class="go">View Dallas housing &rarr;</span></a>
+      <a class="market-card" href="housing-mcallen.html"><span class="school">South Texas College</span><h3>McAllen, TX</h3><p>A Rio Grande Valley market serving a multi-campus system across McAllen and the surrounding area.</p><span class="go">View McAllen housing &rarr;</span></a>
+      <a class="market-card" href="housing-bakersfield.html"><span class="school">Kern Community College District</span><h3>Bakersfield, CA</h3><p>A Central Valley market, with GET Bus offering free rides for Bakersfield College students.</p><span class="go">View Bakersfield housing &rarr;</span></a>
+      <a class="market-card" href="housing-lincoln.html"><span class="school">University of Nebraska&ndash;Lincoln</span><h3>Lincoln, NE</h3><p>A classic college-town market around UNL's city and east campuses, served by StarTran city buses.</p><span class="go">View Lincoln housing &rarr;</span></a>
+      <a class="market-card" href="housing-normal.html"><span class="school">Illinois State University</span><h3>Normal, IL</h3><p>The Bloomington&ndash;Normal twin-city market, connected by Connect Transit's documented ISU student partnership.</p><span class="go">View Normal housing &rarr;</span></a>
+      <a class="market-card" href="housing-reno.html"><span class="school">University of Nevada</span><h3>Reno, NV</h3><p>A growing Nevada market near UNR, with RTC RIDE offering a student EdPass for campus-area routes.</p><span class="go">View Reno housing &rarr;</span></a>
+      <a class="market-card" href="housing-denver.html"><span class="school">Metropolitan State University of Denver</span><h3>Denver, CO</h3><p>An urban commuter market on the Auraria campus, with RTD's student fare program covering downtown Denver.</p><span class="go">View Denver housing &rarr;</span></a>
+      <a class="market-card" href="housing-beaumont.html"><span class="school">Lamar University</span><h3>Beaumont, TX</h3><p>A Southeast Texas market served by Beaumont Municipal Transit near Lamar's campus.</p><span class="go">View Beaumont housing &rarr;</span></a>
+      <a class="market-card" href="housing-kilgore.html"><span class="school">Kilgore College</span><h3>Kilgore, TX</h3><p>A small East Texas college town market without large-scale public transit, so proximity to campus matters most.</p><span class="go">View Kilgore housing &rarr;</span></a>
+      <a class="market-card" href="housing-brenham.html"><span class="school">Blinn College</span><h3>Brenham, TX</h3><p>Home to Blinn's main campus, part of a multi-campus district also serving the Bryan&ndash;College Station area.</p><span class="go">View Brenham housing &rarr;</span></a>
+      <a class="market-card" href="housing-grand-forks.html"><span class="school">University of North Dakota</span><h3>Grand Forks, ND</h3><p>A compact Northern Plains market served by Cities Area Transit near UND's campus.</p><span class="go">View Grand Forks housing &rarr;</span></a>
+      <a class="market-card" href="housing-denton.html"><span class="school">Texas Woman's University</span><h3>Denton, TX</h3><p>A North Texas college town also home to UNT, with DCTA's GoZone service documented for TWU students specifically.</p><span class="go">View Denton housing &rarr;</span></a>
+      <a class="market-card" href="housing-omaha.html"><span class="school">University of Nebraska Omaha</span><h3>Omaha, NE</h3><p>An urban market where students often look in Dundee, Benson and Midtown, per UNO's own off-campus housing guidance.</p><span class="go">View Omaha housing &rarr;</span></a>
+      <a class="market-card" href="housing-pensacola.html"><span class="school">University of West Florida</span><h3>Pensacola, FL</h3><p>A Gulf Coast market served by ECAT and a UWF campus trolley along the university's main corridors.</p><span class="go">View Pensacola housing &rarr;</span></a>
+      <a class="market-card" href="housing-amarillo.html"><span class="school">Amarillo College</span><h3>Amarillo, TX</h3><p>A Texas Panhandle market served by Amarillo City Transit, with Wolflin among the areas students look at.</p><span class="go">View Amarillo housing &rarr;</span></a>
+      <a class="market-card" href="housing-goldsboro.html"><span class="school">Wayne Community College</span><h3>Goldsboro, NC</h3><p>An Eastern North Carolina market served by the Goldsboro-Wayne Transportation Authority.</p><span class="go">View Goldsboro housing &rarr;</span></a>
+      <a class="market-card" href="housing-tyler.html"><span class="school">UT Tyler</span><h3>Tyler, TX</h3><p>An East Texas market served by Tyler Transit, with the Azalea District among the areas near campus.</p><span class="go">View Tyler housing &rarr;</span></a>
+      <a class="market-card" href="housing-midland.html"><span class="school">Midland College</span><h3>Midland, TX</h3><p>A Permian Basin market served by EZ-RIDER, the regional transit system shared with nearby Odessa.</p><span class="go">View Midland housing &rarr;</span></a>
+      <a class="market-card" href="housing-toledo.html"><span class="school">Owens Community College</span><h3>Toledo, OH</h3><p>A Northwest Ohio market, with Owens' main campus in Perrysburg Township just outside Toledo, served by TARTA.</p><span class="go">View Toledo housing &rarr;</span></a>
+      <a class="market-card" href="housing-san-antonio.html"><span class="school">Texas A&amp;M University-San Antonio</span><h3>San Antonio, TX</h3><p>A South Texas market near the Brooks/Southside area, served by VIA Metropolitan Transit.</p><span class="go">View San Antonio housing &rarr;</span></a>
+      <a class="market-card" href="housing-tahlequah.html"><span class="school">Northeastern State University</span><h3>Tahlequah, OK</h3><p>A Northeast Oklahoma market served by Cherokee Nation and KI BOIS transit routes.</p><span class="go">View Tahlequah housing &rarr;</span></a>
+      <a class="market-card" href="housing-smithfield.html"><span class="school">Johnston Community College</span><h3>Smithfield, NC</h3><p>A Johnston County market served by JCATS, the county's public transit system.</p><span class="go">View Smithfield housing &rarr;</span></a>
+      <a class="market-card" href="housing-corsicana.html"><span class="school">Navarro College</span><h3>Corsicana, TX</h3><p>A smaller North Texas market without large-scale public transit, so proximity to campus matters most.</p><span class="go">View Corsicana housing &rarr;</span></a>
+      <a class="market-card" href="housing-portland-me.html"><span class="school">University of Southern Maine</span><h3>Portland, ME</h3><p>A Maine market near Parkside, Deering Center and the West End, with USM's own Husky Line shuttle plus Greater Portland METRO.</p><span class="go">View Portland housing &rarr;</span></a>
+      <a class="market-card" href="housing-des-plaines.html"><span class="school">Oakton College</span><h3>Des Plaines, IL</h3><p>A Chicago-suburb market reachable by the CTA Blue Line, Metra UP-NW and Pace bus routes.</p><span class="go">View Des Plaines housing &rarr;</span></a>
+      <a class="market-card" href="housing-jackson-mi.html"><span class="school">Jackson College</span><h3>Jackson, MI</h3><p>A South-Central Michigan market served by JATA, the local transit authority.</p><span class="go">View Jackson housing &rarr;</span></a>
+      <a class="market-card" href="housing-laredo.html"><span class="school">Laredo College</span><h3>Laredo, TX</h3><p>A South Texas border-city market, with College Heights among the areas near campus, served by El Metro.</p><span class="go">View Laredo housing &rarr;</span></a>
+      <a class="market-card" href="housing-odessa.html"><span class="school">UT Permian Basin</span><h3>Odessa, TX</h3><p>A West Texas market sharing the EZ-RIDER regional transit system with nearby Midland.</p><span class="go">View Odessa housing &rarr;</span></a>
+      <a class="market-card" href="housing-kearney.html"><span class="school">University of Nebraska Kearney</span><h3>Kearney, NE</h3><p>A smaller Nebraska college-town market without large-scale public transit, so proximity to campus matters most.</p><span class="go">View Kearney housing &rarr;</span></a>
+      <a class="market-card" href="housing-new-hampshire.html"><span class="school">Community College System of New Hampshire</span><h3>New Hampshire (statewide)</h3><p>A statewide system across several NH campuses &mdash; students look for housing near whichever campus they attend.</p><span class="go">View New Hampshire housing &rarr;</span></a>
+    </div>
+    <p class="no-results" id="noResults">No markets match your search. Try a different school, city or state &mdash; or <a href="index.html#organizations">tell us where you need a market next</a>.</p>
   </div>
 </section>
 
 <section>
   <div class="wrap">
     <div class="partner-note">
-      <h2>For property managers: what you get</h2>
-      <p>One listing, one fee, direct to students who are actively deciding where to live. No ongoing subscription.</p>
+      <h2>Interested in having your property here?</h2>
+      <p>We don’t publish pricing here. Tell us a bit about your property and our team will follow up with how Preferred Partner placement works.</p>
       <div class="fee-row">
-        <div class="f"><div class="n mono">$375</div><div class="l">one-time fee, per property</div></div>
         <div class="f"><div class="n mono">Direct</div><div class="l">students click straight to your site</div></div>
-        <div class="f"><div class="n mono">0</div><div class="l">recurring charges</div></div>
+        <div class="f"><div class="n mono">0</div><div class="l">listings hosted by us</div></div>
       </div>
-      <a class="btn btn-primary" href="index.html#organizations">Become a Preferred Partner</a>
+      <a class="btn btn-primary" href="index.html#organizations">Tell us about your property</a>
     </div>
   </div>
 </section>
@@ -238,7 +312,7 @@
 
 <footer>
   <div class="wrap footer-row">
-    <span>&copy; AstroPro Student Data &amp; Resource Center</span>
+    <span>&copy; Rally Student Resource &amp; Data Center</span>
     <div class="footer-links">
       <a href="index.html">Home</a>
       <a href="scholarships.html">Scholarships</a>
@@ -247,6 +321,233 @@
     </div>
   </div>
 </footer>
+
+<div class="guide-launcher">
+  <button type="button" class="guide-fab" id="guideToggle" aria-expanded="false" aria-controls="guidePanel">
+    <span class="guide-fab-icon" aria-hidden="true">?</span>
+    <span class="guide-fab-label">Ask the Housing Guide</span>
+  </button>
+  <div class="guide-panel" id="guidePanel" role="dialog" aria-label="Housing Guide" hidden>
+    <div class="guide-head">
+      <div>
+        <h3>Housing Guide</h3>
+        <p>A simple scripted helper &mdash; not a live AI.</p>
+      </div>
+      <button type="button" class="guide-close" id="guideClose" aria-label="Close Housing Guide">&times;</button>
+    </div>
+    <div class="guide-disclaimer">I can help you find your market and answer common housing questions &mdash; I'm not able to search live listings yet since partners are still signing on.</div>
+    <div class="guide-log" id="guideLog" aria-live="polite"></div>
+    <form class="guide-form" id="guideForm">
+      <input type="text" id="guideInput" placeholder="e.g. &ldquo;Austin&rdquo; or &ldquo;how much does it cost?&rdquo;" autocomplete="off" aria-label="Ask the Housing Guide a question">
+      <button type="submit" class="btn btn-primary btn-sm">Send</button>
+    </form>
+  </div>
+</div>
+
+<script>
+(function(){
+  // ---- Market search + sort (vanilla JS, reads the live DOM so it never
+  // depends on a hardcoded market count) ----
+  var grid = document.getElementById('marketGrid');
+  if(!grid) return;
+  var searchInput = document.getElementById('marketSearch');
+  var sortSelect = document.getElementById('marketSort');
+  var resultCount = document.getElementById('resultCount');
+  var noResults = document.getElementById('noResults');
+
+  function readMarkets(){
+    var cards = Array.prototype.slice.call(grid.querySelectorAll('.market-card'));
+    return cards.map(function(card){
+      var schoolEl = card.querySelector('.school');
+      var h3 = card.querySelector('h3');
+      var school = schoolEl ? schoolEl.textContent.trim() : '';
+      var place = h3 ? h3.textContent.trim() : '';
+      var parts = place.split(',');
+      var city = (parts[0] || '').trim();
+      var state = (parts.length > 1 ? parts[1] : '').trim();
+      return {
+        el: card,
+        school: school,
+        place: place,
+        city: city,
+        state: state,
+        haystack: (school + ' ' + place).toLowerCase()
+      };
+    });
+  }
+
+  function applySort(mode){
+    var data = readMarkets();
+    if(mode === 'city'){
+      data.sort(function(a, b){ return a.city.localeCompare(b.city) || a.school.localeCompare(b.school); });
+    } else if(mode === 'state'){
+      data.sort(function(a, b){ return a.state.localeCompare(b.state) || a.city.localeCompare(b.city); });
+    }
+    if(mode !== 'default'){
+      data.forEach(function(item){ grid.appendChild(item.el); });
+    }
+  }
+
+  function applyFilter(){
+    var data = readMarkets();
+    var total = data.length;
+    var q = (searchInput && searchInput.value ? searchInput.value : '').trim().toLowerCase();
+    var visible = 0;
+    data.forEach(function(item){
+      var match = !q || item.haystack.indexOf(q) !== -1;
+      item.el.classList.toggle('is-hidden', !match);
+      if(match) visible++;
+    });
+    if(resultCount){
+      if(!q){
+        resultCount.textContent = total + (total === 1 ? ' market' : ' markets');
+      } else {
+        var rawQ = searchInput.value.trim();
+        resultCount.textContent = visible + (visible === 1 ? ' market' : ' markets') + ' match “' + rawQ + '”';
+      }
+    }
+    if(noResults) noResults.style.display = visible === 0 ? 'block' : 'none';
+    grid.style.display = visible === 0 ? 'none' : '';
+  }
+
+  if(searchInput) searchInput.addEventListener('input', applyFilter);
+  if(sortSelect) sortSelect.addEventListener('change', function(){
+    applySort(sortSelect.value);
+    applyFilter();
+  });
+
+  applyFilter();
+})();
+
+(function(){
+  // ---- Housing Guide: a small, honest, rule-based helper. No backend,
+  // no external calls, no claim to live listings data. ----
+  var toggle = document.getElementById('guideToggle');
+  var panel = document.getElementById('guidePanel');
+  var closeBtn = document.getElementById('guideClose');
+  var log = document.getElementById('guideLog');
+  var form = document.getElementById('guideForm');
+  var input = document.getElementById('guideInput');
+  if(!toggle || !panel || !form || !input || !log) return;
+
+  function openPanel(){
+    panel.hidden = false;
+    toggle.setAttribute('aria-expanded', 'true');
+    if(!log.childElementCount){
+      addMsg('bot', 'Hi, I’m the Housing Guide. Ask me about your campus market (e.g. a school or city name), what it costs to list a property, or general housing search tips.');
+    }
+    input.focus();
+  }
+  function closePanel(){
+    panel.hidden = true;
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+  toggle.addEventListener('click', function(){
+    if(panel.hidden){ openPanel(); } else { closePanel(); }
+  });
+  closeBtn.addEventListener('click', closePanel);
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && !panel.hidden) closePanel();
+  });
+
+  function escapeHtml(s){
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+
+  function addMsg(who, html){
+    var div = document.createElement('div');
+    div.className = 'guide-msg ' + who;
+    div.innerHTML = html;
+    log.appendChild(div);
+    log.scrollTop = log.scrollHeight;
+  }
+
+  function getMarkets(){
+    var cards = document.querySelectorAll('#marketGrid .market-card');
+    var arr = [];
+    cards.forEach(function(card){
+      var schoolEl = card.querySelector('.school');
+      var h3 = card.querySelector('h3');
+      var school = schoolEl ? schoolEl.textContent.trim() : '';
+      var place = h3 ? h3.textContent.trim() : '';
+      var parts = place.split(',');
+      arr.push({
+        href: card.getAttribute('href'),
+        school: school,
+        place: place,
+        city: (parts[0] || '').trim(),
+        state: (parts.length > 1 ? parts[1] : '').trim(),
+        haystack: (school + ' ' + place).toLowerCase()
+      });
+    });
+    return arr;
+  }
+
+  function findMarket(q){
+    var markets = getMarkets();
+    var lower = q.toLowerCase().trim();
+    if(lower.length < 3) return null;
+    var i;
+    for(i = 0; i < markets.length; i++){
+      if(markets[i].haystack.indexOf(lower) !== -1) return markets[i];
+    }
+    var words = lower.split(/\s+/).filter(function(w){ return w.length > 2; });
+    for(i = 0; i < words.length; i++){
+      for(var k = 0; k < markets.length; k++){
+        if(markets[k].haystack.indexOf(words[i]) !== -1) return markets[k];
+      }
+    }
+    return null;
+  }
+
+  function getTipTitles(){
+    var cards = document.querySelectorAll('#tips .tip-card h3');
+    var titles = [];
+    cards.forEach(function(h3){ titles.push(h3.textContent.trim()); });
+    return titles;
+  }
+
+  var PRICING_RE = /(how much|cost|price|pricing|list(ing)? (a |my )?propert|become a partner|preferred partner|sign up|subscription|recurring)/i;
+  var TIPS_RE = /(\btip|lease|roommate|when should|start looking|start early|deposit|walkthrough|utilit|move.?in)/i;
+
+  function respond(raw){
+    var q = raw.trim();
+    if(!q) return;
+
+    if(PRICING_RE.test(q)){
+      addMsg('bot', 'We don’t publish pricing here &mdash; tell us a bit about your property and our team will follow up with how Preferred Partner placement works. Interested students click straight through to your own site; we never host the listing or the lease. You can <a href="index.html#organizations" target="_top">tell us about your property here</a>.');
+      return;
+    }
+
+    if(TIPS_RE.test(q)){
+      var titles = getTipTitles();
+      if(titles.length){
+        addMsg('bot', 'Our general housing tips cover: ' + titles.join(', ') + '. You can read the full tips in the <a href="#tips">tips section below</a>.');
+      } else {
+        addMsg('bot', 'Scroll down to the housing tips section on this page for lease, roommate and timing advice.');
+      }
+      return;
+    }
+
+    var market = findMarket(q);
+    if(market){
+      addMsg('bot', 'Looks like you mean <strong>' + escapeHtml(market.place) + '</strong> (' + escapeHtml(market.school) + '). <a href="' + escapeHtml(market.href) + '" target="_top">View ' + escapeHtml(market.city) + ' housing &rarr;</a>');
+      return;
+    }
+
+    addMsg('bot', 'I’m a simple scripted helper, so I don’t recognize that one yet. Try browsing or searching the <a href="#markets">market grid above</a> for your school or city, or scroll to the <a href="#tips">general housing tips</a> section.');
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var val = input.value;
+    if(!val || !val.trim()) return;
+    addMsg('user', escapeHtml(val));
+    input.value = '';
+    setTimeout(function(){ respond(val); }, 150);
+  });
+})();
+</script>
 
 </body>
 </html>
