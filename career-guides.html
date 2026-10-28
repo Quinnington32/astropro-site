@@ -58,7 +58,16 @@
   .tool-card p{color:var(--ink-soft); font-size:0.88rem; flex-grow:1}
   .tool-card a.link{font-size:0.88rem; font-weight:600; color:var(--ink); text-decoration:none}
   .tool-card a.link:hover{color:var(--primary)}
-  .tool-card .price{font-size:0.74rem; font-weight:700; color:var(--primary); background:color-mix(in srgb, var(--primary) 10%, transparent); padding:3px 9px; border-radius:20px; align-self:flex-start}
+  .tool-card .price{font-size:0.74rem; font-weight:700; color:var(--primary); background:color-mix(in srgb, var(--primary) 10%, transparent); padding:3px 9px; align-self:flex-start; border-radius:20px}
+  .tool-card .price.paid{color:var(--accent); background:color-mix(in srgb, var(--accent) 12%, transparent)}
+  .doc-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px}
+  .doc-card{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:22px; display:flex; align-items:center; gap:16px}
+  .doc-card .doc-icon{width:44px; height:44px; border-radius:10px; background:color-mix(in srgb, var(--primary) 12%, transparent); color:var(--primary); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-family:"Sora"; font-weight:800; font-size:0.78rem}
+  .doc-card .doc-body{flex-grow:1}
+  .doc-card h3{font-size:0.98rem}
+  .doc-card p{color:var(--ink-soft); font-size:0.86rem; margin-top:4px}
+  .doc-card a.dl{display:inline-flex; align-items:center; gap:6px; margin-top:10px; font-size:0.86rem; font-weight:600; color:var(--primary); text-decoration:none}
+  .doc-card a.dl:hover{text-decoration:underline}
   .cta-panel{background:var(--ink); border-radius:20px; padding:36px; display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap}
   .cta-panel h2{color:var(--bg); font-size:1.3rem}
   .cta-panel p{color:color-mix(in srgb, var(--bg) 70%, transparent); margin-top:6px; font-size:0.93rem}
@@ -67,7 +76,7 @@
   .footer-row{display:flex; justify-content:space-between; flex-wrap:wrap; gap:18px; font-size:0.86rem; color:var(--ink-soft)}
   .footer-links{display:flex; gap:20px; flex-wrap:wrap}
   .footer-links a{text-decoration:none; color:var(--ink-soft)}
-  @media (max-width:900px){ .guide-grid{grid-template-columns:1fr} .tool-grid{grid-template-columns:1fr} nav{display:none} .cta-panel{flex-direction:column; align-items:flex-start} }
+  @media (max-width:900px){ .guide-grid{grid-template-columns:1fr} .tool-grid{grid-template-columns:1fr} .doc-grid{grid-template-columns:1fr} nav{display:none} .cta-panel{flex-direction:column; align-items:flex-start} }
 </style>
 </head>
 <body>
@@ -119,6 +128,30 @@
 
 <section>
   <div class="wrap">
+    <div class="section-head"><span class="kicker-sm">TEMPLATES</span><h2>Start from an actual document, not a blank page</h2><p>Two simple, ATS-friendly templates &mdash; download, duplicate, and fill in your own information.</p></div>
+    <div class="doc-grid">
+      <div class="doc-card">
+        <div class="doc-icon">DOCX</div>
+        <div class="doc-body">
+          <h3>Student resume template</h3>
+          <p>One page, clean formatting, with real section prompts (education, experience, projects, skills) instead of lorem ipsum.</p>
+          <a class="dl" href="resources/resume-template.docx" download>Download .docx &rarr;</a> &nbsp;&middot;&nbsp; <a class="dl" href="resources/resume-template.pdf" target="_blank" rel="noopener">View PDF</a>
+        </div>
+      </div>
+      <div class="doc-card">
+        <div class="doc-icon">DOCX</div>
+        <div class="doc-body">
+          <h3>Cover letter template</h3>
+          <p>A standard three-paragraph structure with prompts for what to actually say in each one.</p>
+          <a class="dl" href="resources/cover-letter-template.docx" download>Download .docx &rarr;</a> &nbsp;&middot;&nbsp; <a class="dl" href="resources/cover-letter-template.pdf" target="_blank" rel="noopener">View PDF</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
     <div class="section-head"><span class="kicker-sm">INTERVIEWING</span><h2>Interview prep that's worth your time</h2></div>
     <details class="accordion" open>
       <summary>Have 3 stories ready before any interview</summary>
@@ -155,6 +188,18 @@
       <div class="tool-card"><span class="price">Free</span><h3>Indeed Career Guide</h3><p>Free articles covering resumes, interviews, and career paths across almost every industry.</p><a class="link" href="https://www.indeed.com/career-advice" target="_blank" rel="noopener">Visit Indeed Career Guide &rarr;</a></div>
       <div class="tool-card"><span class="price">Free</span><h3>Handshake (through your school)</h3><p>Most colleges already give students free access to Handshake, the recruiting platform thousands of employers and campus career centers use to post jobs and internships, through your school login.</p><a class="link" href="#">Check your school's career center site</a></div>
       <div class="tool-card"><span class="price">Free</span><h3>Your campus career center</h3><p>Free resume reviews, mock interviews, and job postings curated for your school are usually sitting there unused &mdash; worth a visit before paying for any outside service.</p><a class="link" href="#">Check your school's site</a></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head"><span class="kicker-sm">RESUME BUILDERS</span><h2>If you want a formatted builder instead of a blank template</h2><p>Real, widely-used resume-building services &mdash; most let you build for free and only charge to export or unlock premium templates. Check current pricing on each site before you commit.</p></div>
+    <div class="tool-grid">
+      <div class="tool-card"><span class="price">Free</span><h3>Canva Resume Builder</h3><p>Drag-and-drop resume templates with free PDF export &mdash; a solid free option if you want something more designed than a plain template.</p><a class="link" href="https://www.canva.com/resumes/templates/" target="_blank" rel="noopener">Visit Canva &rarr;</a></div>
+      <div class="tool-card"><span class="price">Freemium</span><h3>Novor&eacute;sum&eacute;</h3><p>Guided resume builder aimed at students and early-career job seekers, with ATS-friendly templates. Free tier available; some templates/features are paid.</p><a class="link" href="https://novoresume.com" target="_blank" rel="noopener">Visit Novor&eacute;sum&eacute; &rarr;</a></div>
+      <div class="tool-card"><span class="price paid">Paid</span><h3>Zety</h3><p>One of the most widely used resume builders &mdash; free to build, but exporting the finished file requires a paid subscription.</p><a class="link" href="https://zety.com" target="_blank" rel="noopener">Visit Zety &rarr;</a></div>
+      <div class="tool-card"><span class="price">Freemium</span><h3>Jobscan</h3><p>Scans your resume against a specific job posting and flags missing keywords &mdash; useful once you have a draft and a real job listing to target.</p><a class="link" href="https://www.jobscan.co" target="_blank" rel="noopener">Visit Jobscan &rarr;</a></div>
     </div>
   </div>
 </section>
