@@ -1,3 +1,4 @@
+import { createPrivateSession } from "./private-session.js";
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 const esc = (value) =>
@@ -467,28 +468,79 @@ function setupSchool() {
 function setupAdmin() {
   const login = $("#adminLogin");
   if (!login) return;
-  let token = "",
-    cursor = null;
+  const session = createPrivateSession(document.baseURI);
+  let cursor = null,
+    busy = false,
+    idleTimer,
+    operation = 0;
   const message = $("#adminMessage"),
-    records = $("#adminRecords");
-  async function request(path, options = {}) {
-    const r = await fetch(new URL("api/admin/" + path, document.baseURI), {
-      ...options,
-      headers: {
-        Authorization: "Bearer " + token,
-        "Content-Type": "application/json",
-      },
-    });
-    const data = await r.json();
-    if (!r.ok) throw Error(data.error || "Could not load inbox.");
-    return data;
+    records = $("#adminRecords"),
+    view = $("#adminView"),
+    status = $("#adminStatus"),
+    type = $("#adminType");
+  const names = {
+    listing: "Resource submission",
+    mentee: "Student mentoring interest",
+    mentor: "Volunteer mentor interest",
+    "data-request": "Personal data request",
+    unsubscribe: "Email preference request",
+  };
+  function touch() {
+    clearTimeout(idleTimer);
+    if (session.unlocked)
+      idleTimer = setTimeout(
+        () =>
+          lock(
+            "Inbox locked after 15 minutes without activity. Enter the private key to reopen it.",
+          ),
+        15 * 60 * 1000,
+      );
+  }
+  function controls() {
+    $("#adminRefresh").disabled = busy;
+    $("#adminMore").disabled = busy;
+    view.disabled = busy;
+    status.disabled = busy || view.value === "preferences";
+    type.disabled = busy || view.value === "preferences";
+    $("button", login).disabled = busy;
+    records.setAttribute("aria-busy", String(busy));
+    for (const button of $$("[data-review-status]", records))
+      button.disabled =
+        busy ||
+        button.dataset.reviewStatus ===
+          button.closest("article").dataset.status;
+  }
+  function failure(err) {
+    if (err.name === "AbortError") return;
+    if (err.status === 401) lock(err.message);
+    else
+      message.textContent =
+        err.message || "Could not load inbox. Please try again.";
+  }
+  function drawPreferences(items) {
+    for (const item of items) {
+      const article = document.createElement("article");
+      article.className = "admin-record";
+      const h = document.createElement("h2");
+      h.textContent = item.email;
+      const p = document.createElement("p");
+      p.textContent = item.do_not_contact
+        ? "Do not contact for Student Resource Center marketing."
+        : "No do-not-contact preference recorded.";
+      const meta = document.createElement("p");
+      meta.className = "fineprint";
+      meta.textContent = "Preference updated: " + item.updated_at;
+      article.append(h, p, meta);
+      records.append(article);
+    }
   }
   function draw(items) {
     for (const item of items) {
       const article = document.createElement("article");
       article.className = "admin-record";
+      article.dataset.status = item.status;
       const h = document.createElement("h2");
-      h.textContent = item.type + " · " + item.status;
+      h.textContent = (names[item.type] || item.type) + " · " + item.status;
       const meta = document.createElement("p");
       meta.className = "fineprint";
       meta.textContent = item.id + " · " + item.created_at;
@@ -496,24 +548,35 @@ function setupAdmin() {
       pre.textContent = JSON.stringify(item.payload, null, 2);
       const actions = document.createElement("div");
       actions.className = "admin-controls";
-      for (const state of ["reviewed", "resolved"]) {
+      for (const state of ["new", "reviewed", "resolved"]) {
         const b = document.createElement("button");
         b.type = "button";
         b.className = "btn btn-ghost";
         b.textContent = "Mark " + state;
+        b.dataset.reviewStatus = state;
+        b.disabled = item.status === state;
         b.addEventListener("click", async () => {
-          b.disabled = true;
+          if (busy) return;
+          const current = ++operation;
+          busy = true;
+          controls();
           try {
-            await request("submissions/" + item.id, {
+            await session.request("submissions/" + item.id, {
               method: "PATCH",
               body: JSON.stringify({ status: state }),
             });
-            h.textContent = item.type + " · " + state;
-            message.textContent = "Request status updated.";
+            item.status = state;
+            article.dataset.status = state;
+            h.textContent = (names[item.type] || item.type) + " · " + state;
+            message.textContent =
+              "Request status updated. Refresh to reapply filters.";
           } catch (err) {
-            message.textContent = err.message;
+            failure(err);
           } finally {
-            b.disabled = false;
+            if (current === operation) {
+              busy = false;
+              controls();
+            }
           }
         });
         actions.append(b);
@@ -523,44 +586,80 @@ function setupAdmin() {
     }
   }
   async function refresh(more = false) {
+    if (busy || !session.unlocked || (more && !cursor)) return;
+    const current = ++operation;
+    busy = true;
+    if (!more) {
+      cursor = null;
+      records.replaceChildren();
+      $("#adminMore").hidden = true;
+    }
+    controls();
     try {
       message.textContent = "Loading…";
-      const data = await request(
-        "submissions" +
-          (more && cursor ? "?cursor=" + encodeURIComponent(cursor) : ""),
-      );
+      const params = new URLSearchParams();
+      if (view.value === "submissions") {
+        if (status.value) params.set("status", status.value);
+        if (type.value) params.set("type", type.value);
+      }
+      if (more && cursor) params.set("cursor", cursor);
+      const data = await session.request(view.value + "?" + params);
+      if (!Array.isArray(data.items))
+        throw Error(
+          "The inbox returned an unreadable response. Please refresh.",
+        );
       if (!more) records.replaceChildren();
-      draw(data.items);
+      if (view.value === "preferences") drawPreferences(data.items);
+      else draw(data.items);
       cursor = data.nextCursor;
       $("#adminMore").hidden = !cursor;
       login.hidden = true;
       $("#adminInbox").hidden = false;
       message.textContent = data.items.length
-        ? "Private requests loaded."
-        : "No requests in this page.";
+        ? `${records.children.length} private ${view.value === "preferences" ? "preferences" : "requests"} loaded${cursor ? "; older records are available" : ""}.`
+        : "No records match this view.";
+      touch();
     } catch (err) {
-      message.textContent = err.message;
-      if (/access|authorized/i.test(err.message)) lock();
+      failure(err);
+    } finally {
+      if (current === operation) {
+        busy = false;
+        controls();
+      }
     }
   }
-  function lock() {
-    token = "";
+  function lock(reason = "Inbox locked.") {
+    session.lock();
+    operation++;
+    clearTimeout(idleTimer);
     $("#adminToken").value = "";
     records.replaceChildren();
     $("#adminInbox").hidden = true;
     login.hidden = false;
     cursor = null;
+    busy = false;
+    controls();
+    message.textContent = reason;
   }
   login.addEventListener("submit", (event) => {
     event.preventDefault();
-    token = $("#adminToken").value.trim();
+    if (busy || !login.reportValidity()) return;
+    session.unlock($("#adminToken").value.trim());
     $("#adminToken").value = "";
+    touch();
     refresh();
   });
   $("#adminRefresh").addEventListener("click", () => refresh());
   $("#adminMore").addEventListener("click", () => refresh(true));
-  $("#adminLogout").addEventListener("click", lock);
-  window.addEventListener("pagehide", lock);
+  for (const input of [view, status, type])
+    input.addEventListener("change", () => refresh());
+  $("#adminLogout").addEventListener("click", () => {
+    lock();
+    $("#adminToken").focus();
+  });
+  for (const event of ["pointerdown", "keydown", "focusin"])
+    document.addEventListener(event, touch, { passive: true });
+  window.addEventListener("pagehide", () => lock());
 }
 setupDirectory();
 setupMarkets();

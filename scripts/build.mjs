@@ -332,7 +332,7 @@ emit(
     "Review inbox",
     "Staff access only. Use your private inbox access key. This page is not linked from public navigation.",
   ) +
-    `<section class="wrap"><form id="adminLogin" class="school-search"><label for="adminToken">Private access key</label><input id="adminToken" type="password" required autocomplete="off" minlength="32"><button class="btn btn-primary">Open inbox</button></form><div id="adminMessage" role="status" aria-live="polite"></div><div id="adminInbox" hidden><div class="admin-controls"><button class="btn btn-primary" type="button" id="adminRefresh">Refresh</button><button class="btn btn-ghost" type="button" id="adminMore" hidden>Load older requests</button><button class="btn btn-ghost" type="button" id="adminLogout">Lock inbox</button></div><p class="fineprint">Requests are private. Verify identity before fulfilling access, correction, or deletion requests.</p><div id="adminRecords"></div></div></section>`,
+    `<section class="wrap"><form id="adminLogin" class="school-search"><label for="adminToken">Private access key</label><input id="adminToken" type="password" required autocomplete="off" minlength="32"><button class="btn btn-primary">Open inbox</button></form><div id="adminMessage" role="status" aria-live="polite"></div><div id="adminInbox" hidden><div class="admin-controls"><button class="btn btn-primary" type="button" id="adminRefresh">Refresh</button><button class="btn btn-ghost" type="button" id="adminMore" hidden>Load older records</button><button class="btn btn-ghost" type="button" id="adminLogout">Lock inbox</button></div><div class="directory-controls admin-filters"><div><label for="adminView">View</label><select id="adminView"><option value="submissions">Requests</option><option value="preferences">Do-not-contact preferences</option></select></div><div><label for="adminStatus">Review status</label><select id="adminStatus"><option value="">All statuses</option><option value="new">New</option><option value="reviewed">Reviewed</option><option value="resolved">Resolved</option></select></div><div><label for="adminType">Request type</label><select id="adminType"><option value="">All types</option><option value="listing">Resource submission</option><option value="mentee">Student mentoring interest</option><option value="mentor">Volunteer mentor interest</option><option value="data-request">Personal data request</option><option value="unsubscribe">Email preference request</option></select></div></div><p class="fineprint">Requests are private. Verify identity before fulfilling access, correction, or deletion requests. Follow-up is manual; this inbox does not send email. It locks after 15 minutes without activity.</p><div id="adminRecords"></div></div></section>`,
   { noindex: true },
 );
 emit(
@@ -352,6 +352,7 @@ await cp("resources", "dist/resources", { recursive: true });
 await cp("public", "dist", { recursive: true });
 await cp("src/styles/site.css", "dist/assets/site.css");
 await cp("src/client/site.js", "dist/assets/site.js");
+await cp("src/client/private-session.js", "dist/assets/private-session.js");
 const catalog = [
   ...scholarships.map((x) => ({
     ...x,

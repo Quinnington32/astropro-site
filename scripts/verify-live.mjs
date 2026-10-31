@@ -19,6 +19,7 @@ for (const file of (await readdir("dist")).filter((x) => x.endsWith(".html"))) {
 }
 for (const file of [
   "assets/site.js",
+  "assets/private-session.js",
   "assets/site.css",
   "assets/catalog.json",
   "assets/sora.woff2",
@@ -38,6 +39,20 @@ for (const file of [
 }
 assert.equal((await fetch(origin + "/does-not-exist-asrc-check")).status, 404);
 assert.equal((await fetch(origin + "/api/admin/submissions")).status, 401);
+assert.equal((await fetch(origin + "/api/admin/preferences")).status, 401);
+const health = await fetch(origin + "/api/health");
+assert.equal(health.status, 200);
+assert.deepEqual(await health.json(), {
+  ok: true,
+  storageConfigured: true,
+  service: "astropro-student-resource-center",
+});
+const invalidBody = await fetch(origin + "/api/submissions", {
+  method: "POST",
+  headers: { Origin: origin, "Content-Type": "application/json" },
+  body: "null",
+});
+assert.equal(invalidBody.status, 400);
 const alias = await fetch("https://goastropro.com/studentresourcecenter/", {
   signal: AbortSignal.timeout(15000),
 });
@@ -132,10 +147,12 @@ const report = {
   verifiedAt: new Date().toISOString(),
   origin,
   pages: results.length,
-  assetByteChecks: 9,
+  assetByteChecks: 10,
   aliasFinal: alias.url,
   unauthorizedInboxStatus: 401,
   missingPageStatus: 404,
+  storageReadinessStatus: 200,
+  invalidBodyStatus: 400,
   receipts,
   checks: results,
 };
@@ -145,5 +162,5 @@ await writeFile(
   JSON.stringify(report, null, 2),
 );
 console.log(
-  `Production verified: ${results.length} pages match the checked build; 9 assets/downloads match; alias, 404 and private access checks pass; ${receipts.length} form receipts confirmed.`,
+  `Production verified: ${results.length} pages match the checked build; 10 assets/downloads match; alias, 404, storage readiness, validation and private access checks pass; ${receipts.length} form receipts confirmed.`,
 );

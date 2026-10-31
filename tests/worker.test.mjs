@@ -2,7 +2,7 @@ import { test, before, after } from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { Miniflare, convertV4MiniflareOptions } from "miniflare";
-import { randomUUID } from "node:crypto";
+import { randomUUID, createHash } from "node:crypto";
 import { validateSubmission } from "../worker/index.mjs";
 let mf, db;
 const token = "local-test-only-secret-".repeat(3);
@@ -344,4 +344,193 @@ test("mounted asset lookup stays scoped and serves a real 404", async () => {
     ).status,
     404,
   );
+});
+
+test("JSON primitives, malformed field shapes, and invalid media types return client errors", async () => {
+  const before = await db
+    .prepare("SELECT COUNT(*) AS n FROM submissions")
+    .first();
+  for (const value of [null, [], true, 42, "text", [body()]])
+    assert.equal((await send(value)).status, 400);
+  const invalid = body("mentee", { requestId: [randomUUID()] });
+  assert.throws(() => validateSubmission(invalid), /identifier is invalid/);
+  assert.equal((await send(invalid)).status, 400);
+  assert.equal(
+    (await send(body(), { "Content-Type": "application/jsonp" })).status,
+    415,
+  );
+  const patch = await mf.dispatchFetch(
+    origin + "/api/admin/submissions/" + randomUUID(),
+    {
+      method: "PATCH",
+      headers: {
+        Authorization: "Bearer " + token,
+        "Content-Type": "application/json",
+      },
+      body: "null",
+    },
+  );
+  assert.equal(patch.status, 400);
+  assert.equal(
+    (await db.prepare("SELECT COUNT(*) AS n FROM submissions").first()).n,
+    before.n,
+  );
+  const payload = body("mentee", { requestId: randomUUID().toUpperCase() });
+  assert.equal(
+    (await send(payload, { "Idempotency-Key": payload.requestId })).status,
+    201,
+  );
+});
+
+test("conflicting unsubscribe retries only save the winning request’s preference", async () => {
+  const requestId = randomUUID();
+  const candidates = ["race-a", "race-b"].map((name) =>
+    body("unsubscribe", {
+      requestId,
+      email: `${name}-${requestId}@example.com`,
+    }),
+  );
+  const responses = await Promise.all(candidates.map((input) => send(input)));
+  assert.deepEqual(responses.map((r) => r.status).sort(), [201, 409]);
+  const winner = candidates[responses.findIndex((r) => r.status === 201)].email;
+  const { results } = await db
+    .prepare("SELECT email FROM communication_preferences WHERE email IN (?,?)")
+    .bind(...candidates.map((p) => p.email))
+    .all();
+  assert.deepEqual(
+    results.map((p) => p.email),
+    [winner],
+  );
+});
+
+test("private filters combine status and type and reject unknown options", async () => {
+  const id = randomUUID(),
+    time = new Date().toISOString();
+  await db
+    .prepare(
+      "INSERT INTO submissions (id,type,payload_json,payload_hash,consent_version,status,created_at,updated_at) VALUES (?,'mentor','{}','test','test','resolved',?,?)",
+    )
+    .bind(id, time, time)
+    .run();
+  const headers = { Authorization: "Bearer " + token };
+  const r = await mf.dispatchFetch(
+    origin + "/api/admin/submissions?type=mentor&status=resolved",
+    { headers },
+  );
+  assert.equal(r.status, 200);
+  const data = await r.json();
+  assert.deepEqual(
+    data.items.map((item) => item.id),
+    [id],
+  );
+  for (const query of [
+    "status=unknown",
+    "type=__proto__",
+    "status=new%27%20OR%201=1",
+  ])
+    assert.equal(
+      (
+        await mf.dispatchFetch(origin + "/api/admin/submissions?" + query, {
+          headers,
+        })
+      ).status,
+      400,
+    );
+  for (const value of [
+    ["not-a-date", id],
+    [time, [id]],
+    [time, "invalid-id"],
+  ]) {
+    const cursor = Buffer.from(JSON.stringify(value)).toString("base64url");
+    assert.equal(
+      (
+        await mf.dispatchFetch(
+          origin + "/api/admin/submissions?cursor=" + cursor,
+          { headers },
+        )
+      ).status,
+      400,
+    );
+  }
+});
+
+test("private preferences paginate past 500 entries without omissions at tied timestamps", async () => {
+  const time = "2026-11-01T00:00:00.000Z";
+  await db.batch(
+    Array.from({ length: 505 }, (_, i) => {
+      const email = `preference-pagination-${i}@example.com`;
+      return db
+        .prepare(
+          "INSERT INTO communication_preferences(email_hash,email,do_not_contact,created_at,updated_at) VALUES(?,?,1,?,?)",
+        )
+        .bind(
+          createHash("sha256").update(email).digest("hex"),
+          email,
+          time,
+          time,
+        );
+    }),
+  );
+  assert.equal(
+    (await mf.dispatchFetch(origin + "/api/admin/preferences")).status,
+    401,
+  );
+  const headers = { Authorization: "Bearer " + token };
+  const emails = [];
+  let cursor;
+  do {
+    const r = await mf.dispatchFetch(
+      origin + "/api/admin/preferences" + (cursor ? "?cursor=" + cursor : ""),
+      { headers },
+    );
+    assert.equal(r.status, 200);
+    assert.equal(r.headers.get("cache-control"), "no-store");
+    const data = await r.json();
+    assert.ok(data.items.length <= 50);
+    assert.ok(data.items.every((item) => item.email_hash === undefined));
+    emails.push(...data.items.map((item) => item.email));
+    cursor = data.nextCursor;
+  } while (cursor);
+  const count = await db
+    .prepare("SELECT COUNT(*) AS n FROM communication_preferences")
+    .first();
+  assert.equal(emails.length, count.n);
+  assert.equal(new Set(emails).size, count.n);
+  assert.equal(
+    (
+      await mf.dispatchFetch(origin + "/api/admin/preferences?cursor=invalid", {
+        headers,
+      })
+    ).status,
+    400,
+  );
+});
+
+test("health reports real storage readiness without exposing private details", async () => {
+  const ready = await mf.dispatchFetch(origin + "/api/health");
+  assert.equal(ready.status, 200);
+  assert.deepEqual(await ready.json(), {
+    ok: true,
+    storageConfigured: true,
+    service: "astropro-student-resource-center",
+  });
+  const worker = (await import("../worker/index.mjs")).default;
+  for (const env of [
+    {},
+    {
+      DB: {
+        prepare() {
+          throw Error("private failure details");
+        },
+      },
+    },
+  ]) {
+    const response = await worker.fetch(
+      new Request(origin + "/api/health"),
+      env,
+    );
+    assert.equal(response.status, 503);
+    assert.equal(response.headers.get("cache-control"), "no-store");
+    assert.equal((await response.json()).ok, false);
+  }
 });
