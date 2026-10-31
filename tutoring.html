@@ -10,12 +10,12 @@
 <style>
   :root{color-scheme:light; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
     --bg:#ffffff; --surface:#f4f6fb; --surface-2:#eef1f9; --ink:#0f1a2e; --ink-soft:#59647c; --line:#e3e7f0;
-    --primary:#3143e0; --primary-ink:#ffffff; --accent:#ff7a3d; --accent-ink:#341300; --shadow:rgba(20,30,60,0.09);
+    --primary:#203a9e; --primary-ink:#ffffff; --accent:#d99a2b; --accent-ink:#2b1a00; --shadow:rgba(20,30,60,0.09);
   }
   @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){ --bg:#0a0f1c; --surface:#121a2c; --surface-2:#172035; --ink:#eef1fa; --ink-soft:#99a3bf; --line:#233052; --primary:#6d7bff; --primary-ink:#0a0f1c; --accent:#ff8f5c; --accent-ink:#2c1000; --shadow:rgba(0,0,0,0.45); color-scheme:dark; }
+    :root:not([data-theme="light"]){ --bg:#0a0f1c; --surface:#121a2c; --surface-2:#172035; --ink:#eef1fa; --ink-soft:#99a3bf; --line:#233052; --primary:#7c90ff; --primary-ink:#0a0f1c; --accent:#e6b354; --accent-ink:#2b1a00; --shadow:rgba(0,0,0,0.45); color-scheme:dark; }
   }
-  :root[data-theme="dark"]{ --bg:#0a0f1c; --surface:#121a2c; --surface-2:#172035; --ink:#eef1fa; --ink-soft:#99a3bf; --line:#233052; --primary:#6d7bff; --primary-ink:#0a0f1c; --accent:#ff8f5c; --accent-ink:#2c1000; --shadow:rgba(0,0,0,0.45); color-scheme:dark; }
+  :root[data-theme="dark"]{ --bg:#0a0f1c; --surface:#121a2c; --surface-2:#172035; --ink:#eef1fa; --ink-soft:#99a3bf; --line:#233052; --primary:#7c90ff; --primary-ink:#0a0f1c; --accent:#e6b354; --accent-ink:#2b1a00; --shadow:rgba(0,0,0,0.45); color-scheme:dark; }
   *{box-sizing:border-box}
   body{margin:0; background:var(--bg); color:var(--ink); font-family:"Work Sans", system-ui, sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased}
   .wrap{max-width:1160px; margin-inline:auto; padding-inline:20px}
@@ -43,6 +43,7 @@
   .kicker-sm{font-size:0.82rem; font-weight:700; color:var(--primary); letter-spacing:0.02em}
   .section-head h2{font-size:clamp(1.4rem,2.2vw,1.8rem); margin-top:8px}
   .tool-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+  .tool-grid-wide{grid-template-columns:repeat(4,1fr)}
   .tool-card{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:20px; display:flex; flex-direction:column; gap:8px}
   .tool-card h3{font-size:0.98rem}
   .tool-card p{color:var(--ink-soft); font-size:0.88rem; flex-grow:1}
@@ -95,7 +96,7 @@
 <section>
   <div class="wrap">
     <div class="section-head"><span class="kicker-sm">FREE OR LOW-COST</span><h2>Start here</h2></div>
-    <div class="tool-grid">
+    <div class="tool-grid tool-grid-wide">
       <div class="tool-card"><span class="price">Free</span><h3>Your campus tutoring center</h3><p>Most schools offer free drop-in or scheduled tutoring, often by course, already covered by tuition.</p><a class="link" href="#">Check your school's site</a></div>
       <div class="tool-card"><span class="price">Free</span><h3>Khan Academy</h3><p>Free video lessons and practice problems across math, science, economics and more, self-paced.</p><a class="link" href="https://www.khanacademy.org" target="_blank" rel="noopener">Visit Khan Academy &rarr;</a></div>
       <div class="tool-card"><span class="price">Free</span><h3>Your campus writing center</h3><p>Free one-on-one help with papers, at any stage from outline to final draft, usually bookable online.</p><a class="link" href="#">Check your school's site</a></div>

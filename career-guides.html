@@ -10,12 +10,12 @@
 <style>
   :root{color-scheme:light; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
     --bg:#ffffff; --surface:#f4f6fb; --surface-2:#eef1f9; --ink:#0f1a2e; --ink-soft:#59647c; --line:#e3e7f0;
-    --primary:#3143e0; --primary-ink:#ffffff; --accent:#ff7a3d; --accent-ink:#341300; --shadow:rgba(20,30,60,0.09);
+    --primary:#203a9e; --primary-ink:#ffffff; --accent:#d99a2b; --accent-ink:#2b1a00; --shadow:rgba(20,30,60,0.09);
   }
   @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){ --bg:#0a0f1c; --surface:#121a2c; --surface-2:#172035; --ink:#eef1fa; --ink-soft:#99a3bf; --line:#233052; --primary:#6d7bff; --primary-ink:#0a0f1c; --accent:#ff8f5c; --accent-ink:#2c1000; --shadow:rgba(0,0,0,0.45); color-scheme:dark; }
+    :root:not([data-theme="light"]){ --bg:#0a0f1c; --surface:#121a2c; --surface-2:#172035; --ink:#eef1fa; --ink-soft:#99a3bf; --line:#233052; --primary:#7c90ff; --primary-ink:#0a0f1c; --accent:#e6b354; --accent-ink:#2b1a00; --shadow:rgba(0,0,0,0.45); color-scheme:dark; }
   }
-  :root[data-theme="dark"]{ --bg:#0a0f1c; --surface:#121a2c; --surface-2:#172035; --ink:#eef1fa; --ink-soft:#99a3bf; --line:#233052; --primary:#6d7bff; --primary-ink:#0a0f1c; --accent:#ff8f5c; --accent-ink:#2c1000; --shadow:rgba(0,0,0,0.45); color-scheme:dark; }
+  :root[data-theme="dark"]{ --bg:#0a0f1c; --surface:#121a2c; --surface-2:#172035; --ink:#eef1fa; --ink-soft:#99a3bf; --line:#233052; --primary:#7c90ff; --primary-ink:#0a0f1c; --accent:#e6b354; --accent-ink:#2b1a00; --shadow:rgba(0,0,0,0.45); color-scheme:dark; }
   *{box-sizing:border-box}
   body{margin:0; background:var(--bg); color:var(--ink); font-family:"Work Sans", system-ui, sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased}
   .wrap{max-width:1160px; margin-inline:auto; padding-inline:20px}
@@ -53,6 +53,7 @@
   .accordion .body ul{margin:8px 0 0; padding-left:20px}
   .accordion .body li{margin-bottom:6px}
   .tool-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+  .tool-grid-pair{grid-template-columns:repeat(2,1fr)}
   .tool-card{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:20px; display:flex; flex-direction:column; gap:8px}
   .tool-card h3{font-size:0.98rem}
   .tool-card p{color:var(--ink-soft); font-size:0.88rem; flex-grow:1}
@@ -202,7 +203,7 @@
 <section>
   <div class="wrap">
     <div class="section-head"><span class="kicker-sm">RESUME BUILDERS</span><h2>If you want a formatted builder instead of a blank template</h2><p>Real, widely-used resume-building services &mdash; most let you build for free and only charge to export or unlock premium templates. Check current pricing on each site before you commit.</p></div>
-    <div class="tool-grid">
+    <div class="tool-grid tool-grid-pair">
       <div class="tool-card"><span class="price">Free</span><h3>Canva Resume Builder</h3><p>Drag-and-drop resume templates with free PDF export &mdash; a solid free option if you want something more designed than a plain template.</p><a class="link" href="https://www.canva.com/resumes/templates/" target="_blank" rel="noopener">Visit Canva &rarr;</a></div>
       <div class="tool-card"><span class="price">Freemium</span><h3>Novor&eacute;sum&eacute;</h3><p>Guided resume builder aimed at students and early-career job seekers, with ATS-friendly templates. Free tier available; some templates/features are paid.</p><a class="link" href="https://novoresume.com" target="_blank" rel="noopener">Visit Novor&eacute;sum&eacute; &rarr;</a></div>
       <div class="tool-card"><span class="price paid">Paid</span><h3>Zety</h3><p>One of the most widely used resume builders &mdash; free to build, but exporting the finished file requires a paid subscription.</p><a class="link" href="https://zety.com" target="_blank" rel="noopener">Visit Zety &rarr;</a></div>
