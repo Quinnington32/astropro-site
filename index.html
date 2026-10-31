@@ -292,7 +292,6 @@
     .resource-grid{grid-template-columns:repeat(2,1fr)}
     .mission-panel{grid-template-columns:1fr}
     .submit-panel{grid-template-columns:1fr}
-    .ar-quick{grid-template-columns:repeat(3,1fr)}
     nav{display:none}
   }
   @media (max-width:560px){
@@ -302,13 +301,13 @@
     .submit-panel, .mission-panel{padding:26px}
     .metrics-grid{grid-template-columns:1fr 1fr}
     .mission-resource-list{grid-template-columns:1fr}
-    .ar-quick{grid-template-columns:1fr 1fr}
-    .ar-head, .ar-log, .ar-form, .ar-quick{padding-inline:18px}
-    .ar-disclaimer{margin-inline:18px}
   }
 
   @media (max-width:480px){
     .wordmark{font-size:0.92rem; gap:7px}
+    .header-row{flex-direction:column; align-items:flex-start; gap:10px}
+    .header-cta{align-self:stretch}
+    .header-cta .btn{width:100%}
   }
 </style>
 
@@ -319,9 +318,10 @@
       <a href="#resources">Resource Center</a>
       <a href="apply-to-college.html">Apply to College</a>
       <a href="#mission">Our Mission</a>
-      <a href="#organizations">For Organizations</a>
-      <a href="#schools">For Schools</a>
     </nav>
+    <div class="header-cta">
+      <a class="btn btn-primary btn-sm" href="#organizations">Partner with us</a>
+    </div>
   </div>
 </header>
 
@@ -330,7 +330,7 @@
     <div>
       <span class="kicker">Now 1,000,000+ students strong</span>
       <h1>Everything college throws at you, in one place.</h1>
-      <p class="lede">Scholarships, jobs, internships, off-campus housing and more &mdash; matched to you, in one place, so you're never missing out on something that was built for you. Free for every student, always on your terms.</p>
+      <p class="lede">Scholarships, jobs, internships, off-campus housing and more &mdash; all organized in one Resource Center, so you're never missing out on something that was built for you. Free for every student, nothing to sign up for just to browse.</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="#resources">Explore the Resource Center</a>
         <a class="btn btn-ghost" href="housing.html">Off-Campus Housing</a>
