@@ -35,7 +35,7 @@ Cards render full eligibility text. Search checks names, descriptions, categorie
 
 The Worker persists organization submissions, mentor/mentee interest, data requests, and communication preferences in the dedicated D1 database. Validation runs server-side. Requests require same-origin JSON and explicit consent. A receipt is returned only after storage confirms the record. Reusing the same UUID and details returns the original receipt; reusing an ID with changed details is rejected. The browser retains an uncertain attempt in tab-scoped storage for a safe retry.
 
-Staff review is available at `/admin.html`, protected by the `ADMIN_TOKEN` Worker secret. The page is noindex; the API requires authentication regardless of whether someone knows its URL. It supports review status and paginated requests. The key stays in memory while the inbox is open and is cleared on lock or navigation.
+Staff review is available at `/admin.html`, protected by the `ADMIN_TOKEN` Worker secret. The page is noindex; the API requires authentication regardless of whether someone knows its URL. It supports combined status/type filters, paginated requests, review status changes, and a separate paginated do-not-contact view. The key stays in memory while the inbox is open and is cleared on lock, navigation, or 15 minutes without activity. Locking aborts pending requests and rejects late responses so they cannot reopen the inbox.
 
 On the deployment owner’s Mac, the private key is in this checkout’s ignored mode-0600 `.dev.vars`. It is deliberately absent from Git, build output, URLs, screenshots, and this README. Use a private environment to install the same value on another machine. The convenient authenticated CLI reads it without putting it in a URL:
 
@@ -50,6 +50,8 @@ Alternatively set `ASRC_ADMIN_TOKEN` in the environment. Do not paste inbox data
 The inbox is the delivery destination. **No automatic email, newsletter, CRM enrollment, or mentor matching is claimed or enabled.** Reviewers handle follow-up themselves. Communication preferences apply to this resource center’s database; they do not silently alter an unrelated AstroPro/HighLevel mailing list. Before fulfilling a data access, correction, or deletion request, verify the requester’s identity. Authorized staff can make verified corrections/deletions in the Cloudflare D1 console, using parameterized queries or an exact reviewed record ID.
 
 Short-lived hashed network/email buckets limit abuse; no raw IP is stored in the application tables. A daily scheduled handler removes form records older than 90 days and expired abuse buckets. Do-not-contact preferences persist separately. New resource submissions are never automatically published. Check the inbox regularly; storing a request does not imply it has been reviewed.
+
+See [the operating guide](docs/OPERATIONS.md) for the daily review routine, preference checks, content upkeep, and incident response. `/api/health` performs a real storage read and returns 503 when the database is missing or unavailable; it exposes no submission data.
 
 ## Deployment
 

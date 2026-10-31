@@ -67,6 +67,8 @@ const choices = {
 };
 const UUID =
   /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+const HASH = /^[0-9a-f]{64}$/;
+const reviewStates = ["new", "reviewed", "resolved"];
 const json = (body, status = 200, extra = {}) =>
   new Response(JSON.stringify(body), {
     status,
@@ -92,10 +94,8 @@ async function authorize(request, env) {
 }
 async function readJson(request) {
   if (
-    !request.headers
-      .get("content-type")
-      ?.toLowerCase()
-      .startsWith("application/json")
+    request.headers.get("content-type")?.split(";")[0].trim().toLowerCase() !==
+    "application/json"
   )
     throw Object.assign(Error("Use an application/json request."), {
       status: 415,
@@ -123,13 +123,17 @@ async function readJson(request) {
     bytes.set(chunk, offset);
     offset += chunk.byteLength;
   }
+  let value;
   try {
-    return JSON.parse(new TextDecoder("utf-8", { fatal: true }).decode(bytes));
+    value = JSON.parse(new TextDecoder("utf-8", { fatal: true }).decode(bytes));
   } catch {
     throw Object.assign(Error("The request body is not valid JSON."), {
       status: 400,
     });
   }
+  if (!value || typeof value !== "object" || Array.isArray(value))
+    throw Object.assign(Error("Please send a JSON object."), { status: 400 });
+  return value;
 }
 export function validateSubmission(input) {
   if (!input || typeof input !== "object" || Array.isArray(input))
@@ -139,7 +143,7 @@ export function validateSubmission(input) {
     throw Error("Choose a valid request type.");
   if (input.consent !== true)
     throw Error("Please agree to the request-specific privacy notice.");
-  if (!UUID.test(input.requestId || ""))
+  if (typeof input.requestId !== "string" || !UUID.test(input.requestId))
     throw Error(
       "The request identifier is invalid. Reload the form and try again.",
     );
@@ -233,7 +237,7 @@ async function submissions(request, env) {
   }
   if (
     request.headers.get("idempotency-key") &&
-    request.headers.get("idempotency-key") !== data.requestId
+    request.headers.get("idempotency-key").toLowerCase() !== data.requestId
   )
     return json({ error: "Request identifiers do not match." }, 400);
   if (!env.DB)
@@ -309,8 +313,15 @@ async function submissions(request, env) {
       const hash = await digest(data.payload.email);
       statements.push(
         env.DB.prepare(
-          "INSERT INTO communication_preferences (email_hash,email,do_not_contact,created_at,updated_at) VALUES (?,?,1,?,?) ON CONFLICT(email_hash) DO UPDATE SET do_not_contact=1,updated_at=excluded.updated_at",
-        ).bind(hash, data.payload.email, created, created),
+          "INSERT INTO communication_preferences (email_hash,email,do_not_contact,created_at,updated_at) SELECT ?,?,1,?,? WHERE EXISTS (SELECT 1 FROM submissions WHERE id=? AND payload_hash=? AND type='unsubscribe') ON CONFLICT(email_hash) DO UPDATE SET do_not_contact=1,updated_at=excluded.updated_at",
+        ).bind(
+          hash,
+          data.payload.email,
+          created,
+          created,
+          data.requestId,
+          payloadHash,
+        ),
       );
     }
     await env.DB.batch(statements);
@@ -339,6 +350,32 @@ async function submissions(request, env) {
     );
   }
 }
+function decodeCursor(cursor, idPattern) {
+  if (!cursor) return null;
+  try {
+    if (cursor.length > 240 || !/^[A-Za-z0-9_-]+$/.test(cursor)) throw Error();
+    const value = JSON.parse(
+      atob(cursor.replace(/-/g, "+").replace(/_/g, "/")),
+    );
+    if (
+      !Array.isArray(value) ||
+      value.length !== 2 ||
+      typeof value[0] !== "string" ||
+      new Date(value[0]).toISOString() !== value[0] ||
+      typeof value[1] !== "string" ||
+      !idPattern.test(value[1])
+    )
+      throw Error();
+    return value;
+  } catch {
+    throw Object.assign(Error("Invalid pagination cursor."), { status: 400 });
+  }
+}
+const encodeCursor = (time, id) =>
+  btoa(JSON.stringify([time, id]))
+    .replace(/\+/g, "-")
+    .replace(/\//g, "_")
+    .replace(/=+$/, "");
 async function admin(request, env, path) {
   if (!(await authorize(request, env)))
     return json({ error: "Private access key required." }, 401, {
@@ -347,27 +384,31 @@ async function admin(request, env, path) {
   if (!env.DB) return json({ error: "Request storage is unavailable." }, 503);
   if (path === "/api/admin/submissions" && request.method === "GET") {
     const url = new URL(request.url),
-      cursor = url.searchParams.get("cursor");
+      cursor = decodeCursor(url.searchParams.get("cursor"), UUID),
+      status = url.searchParams.get("status"),
+      type = url.searchParams.get("type");
+    if (
+      (status && !reviewStates.includes(status)) ||
+      (type && !Object.hasOwn(types, type))
+    )
+      return json({ error: "Choose a valid inbox filter." }, 400);
     let sql =
         "SELECT id,type,payload_json,status,created_at,updated_at FROM submissions",
-      args = [];
-    if (cursor) {
-      let value;
-      try {
-        value = JSON.parse(atob(cursor.replace(/-/g, "+").replace(/_/g, "/")));
-      } catch {
-        return json({ error: "Invalid pagination cursor." }, 400);
-      }
-      if (
-        !Array.isArray(value) ||
-        value.length !== 2 ||
-        typeof value[0] !== "string" ||
-        !UUID.test(value[1])
-      )
-        return json({ error: "Invalid pagination cursor." }, 400);
-      sql += " WHERE (created_at < ? OR (created_at = ? AND id < ?))";
-      args = [value[0], value[0], value[1]];
+      args = [],
+      conditions = [];
+    if (status) {
+      conditions.push("status=?");
+      args.push(status);
     }
+    if (type) {
+      conditions.push("type=?");
+      args.push(type);
+    }
+    if (cursor) {
+      conditions.push("(created_at < ? OR (created_at = ? AND id < ?))");
+      args.push(cursor[0], cursor[0], cursor[1]);
+    }
+    if (conditions.length) sql += " WHERE " + conditions.join(" AND ");
     sql += " ORDER BY created_at DESC,id DESC LIMIT 51";
     const { results } = await env.DB.prepare(sql)
       .bind(...args)
@@ -375,12 +416,7 @@ async function admin(request, env, path) {
     const hasMore = results.length > 50;
     const rows = results.slice(0, 50);
     const last = rows.at(-1);
-    const nextCursor = hasMore
-      ? btoa(JSON.stringify([last.created_at, last.id]))
-          .replace(/\+/g, "-")
-          .replace(/\//g, "_")
-          .replace(/=+$/, "")
-      : null;
+    const nextCursor = hasMore ? encodeCursor(last.created_at, last.id) : null;
     return json({
       items: rows.map(({ payload_json, ...row }) => ({
         ...row,
@@ -392,7 +428,7 @@ async function admin(request, env, path) {
   const match = path.match(/^\/api\/admin\/submissions\/([0-9a-f-]{36})$/i);
   if (match && request.method === "PATCH") {
     const raw = await readJson(request);
-    if (!["new", "reviewed", "resolved"].includes(raw.status))
+    if (!reviewStates.includes(raw.status))
       return json({ error: "Choose a valid review status." }, 400);
     const r = await env.DB.prepare(
       "UPDATE submissions SET status=?,updated_at=? WHERE id=?",
@@ -404,10 +440,28 @@ async function admin(request, env, path) {
       : json({ error: "Request not found." }, 404);
   }
   if (path === "/api/admin/preferences" && request.method === "GET") {
+    const cursor = decodeCursor(
+      new URL(request.url).searchParams.get("cursor"),
+      HASH,
+    );
     const { results } = await env.DB.prepare(
-      "SELECT email,do_not_contact,created_at,updated_at FROM communication_preferences ORDER BY updated_at DESC LIMIT 500",
-    ).all();
-    return json({ items: results });
+      "SELECT email_hash,email,do_not_contact,created_at,updated_at FROM communication_preferences" +
+        (cursor
+          ? " WHERE (updated_at < ? OR (updated_at = ? AND email_hash < ?))"
+          : "") +
+        " ORDER BY updated_at DESC,email_hash DESC LIMIT 51",
+    )
+      .bind(...(cursor ? [cursor[0], cursor[0], cursor[1]] : []))
+      .all();
+    const rows = results.slice(0, 50),
+      last = rows.at(-1);
+    return json({
+      items: rows.map(({ email_hash, ...row }) => row),
+      nextCursor:
+        results.length > 50
+          ? encodeCursor(last.updated_at, last.email_hash)
+          : null,
+    });
   }
   return json({ error: "Endpoint not found." }, 404);
 }
@@ -446,12 +500,23 @@ export async function handleRequest(request, env) {
   else if (["goastropro.com", "www.goastropro.com"].includes(url.hostname))
     return new Response("Not found", { status: 404 });
   if (path.startsWith("/api/")) {
-    if (path === "/api/health" && ["GET", "HEAD"].includes(request.method))
-      return json({
-        ok: true,
-        storageConfigured: !!env.DB,
-        service: "astropro-student-resource-center",
-      });
+    if (path === "/api/health" && ["GET", "HEAD"].includes(request.method)) {
+      let ready = false;
+      try {
+        if (env.DB) {
+          await env.DB.prepare("SELECT 1 FROM submissions LIMIT 1").first();
+          ready = true;
+        }
+      } catch {}
+      return json(
+        {
+          ok: ready,
+          storageConfigured: !!env.DB,
+          service: "astropro-student-resource-center",
+        },
+        ready ? 200 : 503,
+      );
+    }
     if (path === "/api/submissions") return submissions(request, env);
     if (path.startsWith("/api/admin/")) return admin(request, env, path);
     return json({ error: "Endpoint not found." }, 404);

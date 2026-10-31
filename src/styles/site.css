@@ -979,6 +979,9 @@ textarea::placeholder {
   flex-wrap: wrap;
   gap: 10px;
 }
+.admin-filters {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
 .storage-warning {
   color: #9d2828;
   font-size: 0.9rem;
@@ -1117,6 +1120,15 @@ textarea::placeholder {
   .wordmark {
     gap: 8px;
     font-size: 1rem;
+  }
+  .header-row .wordmark,
+  .wordmark > span:last-child {
+    min-width: 0;
+    flex-shrink: 1;
+  }
+  .header-row .brand-mark,
+  .mobile-menu {
+    flex-shrink: 0;
   }
   .wordmark small {
     font-size: 0.66rem;
