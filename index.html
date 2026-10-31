@@ -1,4 +1,4 @@
-<title>Rally Student Resource & Data Center</title>
+<title>AstroPro Student Resource & Data Center</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -226,7 +226,7 @@
   }
   .resource-card .link:hover{color:var(--primary)}
 
-  /* Ask Rally — inline chat + quick category boxes */
+  /* Ask AstroPro — inline chat + quick category boxes */
   .ask-rally{background:var(--surface); border:1px solid var(--line); border-radius:20px; overflow:hidden}
   .ar-head{padding:28px 28px 0}
   .ar-head h3{font-size:1.3rem}
@@ -327,11 +327,15 @@
     .ar-head, .ar-log, .ar-form, .ar-quick{padding-inline:18px}
     .ar-disclaimer{margin-inline:18px}
   }
+
+  @media (max-width:480px){
+    .wordmark{font-size:0.92rem; gap:7px}
+  }
 </style>
 
 <header>
   <div class="wrap header-row">
-    <div class="wordmark"><span class="dot"></span>Rally Student Resource &amp; Data Center</div>
+    <div class="wordmark"><span class="dot"></span>AstroPro Student Resource &amp; Data Center</div>
     <nav>
       <a href="#mission">Mission</a>
       <a href="#resources">Resource Center</a>
@@ -370,15 +374,15 @@
 
 <section id="ask">
   <div class="wrap">
-    <div class="ask-rally" id="askRally">
+    <div class="ask-rally" id="askAstroPro">
       <div class="ar-head">
-        <h3>Ask Rally</h3>
+        <h3>Ask AstroPro</h3>
         <p>Type what you're looking for &mdash; try &ldquo;internships&rdquo; or &ldquo;I need help with financial aid&rdquo; &mdash; or jump straight to a category below.</p>
       </div>
       <div class="ar-disclaimer">A simple scripted helper, not a live AI &mdash; it points you to the right page on this site.</div>
       <div class="ar-log" id="arLog" aria-live="polite"></div>
       <form class="ar-form" id="arForm">
-        <input type="text" id="arInput" placeholder="e.g. &ldquo;scholarships for freshmen&rdquo; or &ldquo;tutoring&rdquo;" autocomplete="off" aria-label="Ask Rally">
+        <input type="text" id="arInput" placeholder="e.g. &ldquo;scholarships for freshmen&rdquo; or &ldquo;tutoring&rdquo;" autocomplete="off" aria-label="Ask AstroPro">
         <button type="submit" class="btn btn-primary btn-sm">Ask</button>
       </form>
       <div class="ar-quick" id="arQuick">
@@ -478,7 +482,7 @@
       <div>
         <span class="kicker-sm">OUR MISSION</span>
         <h2 style="margin-top:10px; font-size:clamp(1.5rem,2.4vw,1.9rem)">The place we wish we'd had when we were starting college.</h2>
-        <p style="margin-top:14px">We built Rally around a simple regret: we wish we'd known everything that was out there when we were applying to college &mdash; the scholarships we never heard about, the financial aid rules nobody explained, the off-campus apartment search with no idea where to even start. So we put it all in one place, matched to you, so starting college doesn't mean figuring it out alone. That's Rally. For you.</p>
+        <p style="margin-top:14px">We built AstroPro around a simple regret: we wish we'd known everything that was out there when we were applying to college &mdash; the scholarships we never heard about, the financial aid rules nobody explained, the off-campus apartment search with no idea where to even start. So we put it all in one place, matched to you, so starting college doesn't mean figuring it out alone. That's AstroPro. For you.</p>
         <p style="margin-top:14px; color:var(--ink-soft); font-size:0.92rem">Always free to students, always your choice what you hear about, and we never sell your information to anyone.</p>
       </div>
       <div>
@@ -581,7 +585,7 @@
 
 <footer>
   <div class="wrap footer-row">
-    <span>&copy; Rally Student Resource &amp; Data Center</span>
+    <span>&copy; AstroPro Student Resource &amp; Data Center</span>
     <div class="footer-links">
       <a href="privacy.html">Privacy policy</a>
       <a href="data-requests.html">Data requests</a>
@@ -602,7 +606,7 @@
   })();
 
   (function(){
-    // ---- Ask Rally: a small, honest, rule-based helper. No backend, no
+    // ---- Ask AstroPro: a small, honest, rule-based helper. No backend, no
     // external calls, no claim to live AI — it only routes to this site's
     // own resource pages. ----
     var log = document.getElementById('arLog');
@@ -622,7 +626,7 @@
       log.scrollTop = log.scrollHeight;
     }
 
-    addMsg('bot', 'Hi, I’m Rally’s helper. Tell me what you’re looking for — a scholarship, an internship, housing, financial aid, and so on — and I’ll point you to the right page. You can also just tap one of the boxes below.');
+    addMsg('bot', 'Hi, I’m AstroPro’s helper. Tell me what you’re looking for — a scholarship, an internship, housing, financial aid, and so on — and I’ll point you to the right page. You can also just tap one of the boxes below.');
 
     // Ordered most-specific first, since several categories share words like
     // "money" or "help" — the first regex that matches wins.
