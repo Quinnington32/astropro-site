@@ -41,7 +41,11 @@ External 403/418/5xx and network failures require follow-up; they are not proof 
 
 ## Publishing and recovery
 
-GitHub Actions checks pull requests and main pushes. It does not automatically deploy production. The deployment owner publishes the checked build with the existing Cloudflare Workers/Routes-authorized identity:
+Push or merge an update into `main` to publish it automatically. GitHub Actions checks the exact source commit, then uploads and promotes the checked Worker version and verifies the live release. Pull requests run checks without publishing. View the repository's Actions page for the result; a green checks-only pull-request run is not a production deployment. Obsolete main runs report that they were skipped in favor of a newer commit.
+
+The publish step uses the encrypted `ASRC_CLOUDFLARE_DEPLOY_TOKEN` repository secret, restricted to Workers Editor on this resource center's Worker. It does not use the private inbox key or the owner's interactive OAuth credentials. `/build.json` identifies the live source commit.
+
+For an owner-managed manual release or infrastructure change, use the existing Cloudflare Workers/Routes-authorized identity:
 
 ```sh
 npm run check
@@ -50,6 +54,8 @@ node scripts/verify-live.mjs
 ```
 
 On the deployment owner's Mac, use the existing `default` profile for Workers/routes and `amos-setup` for D1 management. Other team members should use their own authorized Cloudflare login rather than copy an account credential. Apply only new, reviewed migrations before a release that requires them. The launch-hardening release requires no schema change.
+
+The automated workflow publishes application versions without changing domains, routes, or cron triggers. Review and apply schema migrations deliberately before merging code that needs them. The live check verifies the same GitHub source commit and retries transient failures up to three times. If a run fails, inspect its failed step; use **Run workflow** on `main` to retry after fixing the cause. A post-publish verification failure does not automatically roll back the release; use the verified rollback procedure below if necessary.
 
 The live verifier is read-only by default except for one intentionally invalid, rejected request. `--exercise-forms` creates five clearly identified synthetic requests, verifies their receipts/retries and review status, and leaves them resolved. Remove only those exact synthetic IDs/preferences afterward using the release report. Never clear the inbox or use a broad email-domain match to clean up a test.
 

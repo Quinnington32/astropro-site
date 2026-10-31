@@ -4,6 +4,20 @@ import assert from "node:assert/strict";
 const origin = "https://students.goastropro.com";
 const digest = (bytes) => createHash("sha256").update(bytes).digest("hex");
 const results = [];
+const manifestResponse = await fetch(origin + "/build.json", {
+  cache: "no-store",
+  signal: AbortSignal.timeout(15000),
+});
+assert.equal(manifestResponse.status, 200);
+const manifest = await manifestResponse.json();
+const expectedCommit =
+  process.env.GITHUB_SHA || process.env.ASRC_EXPECTED_COMMIT;
+if (expectedCommit)
+  assert.equal(
+    manifest.sourceCommit,
+    expectedCommit,
+    "production must serve this exact source commit",
+  );
 for (const file of (await readdir("dist")).filter((x) => x.endsWith(".html"))) {
   const response = await fetch(
     origin + "/" + (file === "index.html" ? "" : file),
@@ -145,6 +159,7 @@ if (process.argv.includes("--exercise-forms")) {
 }
 const report = {
   verifiedAt: new Date().toISOString(),
+  sourceCommit: manifest.sourceCommit || null,
   origin,
   pages: results.length,
   assetByteChecks: 10,

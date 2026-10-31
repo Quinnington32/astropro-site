@@ -69,7 +69,17 @@ npx wrangler d1 migrations apply astropro-student-resource-center --remote
 npx wrangler deploy
 ```
 
-This Mac’s existing `amos-setup` profile can manage D1; its `default` profile can deploy Workers/routes. Neither credential is in the repo. The private inbox key is installed as `ADMIN_TOKEN` through Wrangler’s secret command via stdin, never command-line arguments. GitHub checks do not auto-publish production; the owner’s Cloudflare credentials remain local.
+This Mac’s existing `amos-setup` profile can manage D1; its `default` profile can deploy Workers/routes. Neither credential is in the repo. The private inbox key is installed as `ADMIN_TOKEN` through Wrangler’s secret command via stdin, never command-line arguments.
+
+### Automatic publishing
+
+Push or merge content/code updates into `main`. GitHub Actions installs the locked dependencies, builds the site, runs the tests and page audit, and then publishes the checked build to `students.goastropro.com`. Pull requests run checks without publishing. The final workflow step verifies the live source commit, all generated HTML pages, shared assets/downloads, storage health, private API authorization, and compatibility routing. Failed checks prevent publication; failed live verification makes the workflow red and requires investigation.
+
+The encrypted repository secret `ASRC_CLOUDFLARE_DEPLOY_TOKEN` authorizes the publish step. Use an account-owned Cloudflare token with **Workers Editor scoped only to `astropro-student-resource-center`**. It does not need DNS/route permissions or separate D1 access. The private inbox key is not a deployment credential and must never be used for this secret.
+
+The pipeline uploads one Worker version and promotes that exact version to 100% of traffic. It serializes main builds, checks that the source is still the latest main commit before upload and again before promotion, and records the commit in `/build.json`. Older queued commits cannot overwrite a newer release. A GitHub Actions success includes the production publish and live checks when that run publishes; an obsolete run explicitly reports that it was skipped.
+
+This automatic path updates application code, static assets, and versioned bindings. Domains, routes, and cron triggers remain managed by the owner's explicit `wrangler deploy`/trigger commands. Database migrations must be reviewed and applied deliberately before merging code that needs them. Use the workflow's **Run workflow** action on `main` to retry a failed release, then check its publish and live-verification steps.
 
 Keep deployment IDs and verification evidence in a release receipt. Validate the canonical domain, the compatibility entry path, a real synthetic submission/receipt, unauthorized inbox rejection, local downloads, and mobile layout before announcing a release. A deploy command alone is not proof the custom domain routes correctly.
 
