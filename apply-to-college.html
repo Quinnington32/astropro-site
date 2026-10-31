@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Apply to College &mdash; AstroPro Student Resource &amp; Data Center</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{color-scheme:light; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+    --bg:#ffffff; --surface:#f4f6fb; --surface-2:#eef1f9; --ink:#0f1a2e; --ink-soft:#59647c; --line:#e3e7f0;
+    --primary:#203a9e; --primary-ink:#ffffff; --accent:#d99a2b; --accent-ink:#2b1a00; --shadow:rgba(20,30,60,0.09);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){ --bg:#0a0f1c; --surface:#121a2c; --surface-2:#172035; --ink:#eef1fa; --ink-soft:#99a3bf; --line:#233052; --primary:#7c90ff; --primary-ink:#0a0f1c; --accent:#e6b354; --accent-ink:#2b1a00; --shadow:rgba(0,0,0,0.45); color-scheme:dark; }
+  }
+  :root[data-theme="dark"]{ --bg:#0a0f1c; --surface:#121a2c; --surface-2:#172035; --ink:#eef1fa; --ink-soft:#99a3bf; --line:#233052; --primary:#7c90ff; --primary-ink:#0a0f1c; --accent:#e6b354; --accent-ink:#2b1a00; --shadow:rgba(0,0,0,0.45); color-scheme:dark; }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--bg); color:var(--ink); font-family:"Work Sans", system-ui, sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1160px; margin-inline:auto; padding-inline:20px}
+  h1,h2,h3,h4{font-family:"Sora", system-ui, sans-serif; font-weight:700; text-wrap:balance; margin:0; color:var(--ink)}
+  a{color:inherit}
+  header{position:sticky; top:env(safe-area-inset-top,0px); z-index:20; background:color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter:blur(10px); border-bottom:1px solid var(--line)}
+  .header-row{display:flex; align-items:center; justify-content:space-between; gap:16px; padding-block:16px; flex-wrap:wrap}
+  .wordmark{display:flex; align-items:center; gap:9px; font-family:"Sora"; font-weight:800; font-size:1.2rem; text-decoration:none; color:var(--primary)}
+  .wordmark .dot{width:9px;height:9px;border-radius:50%;background:var(--accent)}
+  nav{display:flex; gap:18px; font-size:0.9rem; font-weight:500}
+  nav a{text-decoration:none; color:var(--ink-soft)}
+  nav a:hover, nav a.current{color:var(--ink)}
+  .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:12px 22px; border-radius:9px; font-size:0.95rem; font-weight:600; text-decoration:none; border:1px solid transparent; cursor:pointer; white-space:nowrap}
+  .btn-ghost{background:transparent; border-color:var(--line); color:var(--ink)}
+  .btn-sm{padding:9px 16px; font-size:0.88rem; border-radius:8px}
+  .page-hero{padding-block:48px 28px}
+  .kicker{display:inline-flex; align-items:center; gap:8px; font-size:0.82rem; font-weight:600; color:var(--primary); background:color-mix(in srgb, var(--primary) 10%, transparent); padding:6px 12px; border-radius:20px}
+  .page-hero h1{font-size:clamp(2rem,4vw,2.8rem); line-height:1.12; letter-spacing:-0.01em; margin-top:16px}
+  .page-hero p.lede{margin-top:14px; font-size:1.08rem; color:var(--ink-soft); max-width:62ch}
+
+  section{padding-block:36px}
+  .section-head{max-width:62ch; margin-bottom:22px}
+  .kicker-sm{font-size:0.82rem; font-weight:700; color:var(--primary); letter-spacing:0.02em}
+  .section-head h2{font-size:clamp(1.4rem,2.2vw,1.8rem); margin-top:8px}
+  .section-head p{color:var(--ink-soft); margin-top:10px; font-size:1rem}
+
+  .tool-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+  .tool-grid-pair{grid-template-columns:repeat(2,1fr)}
+  .tool-card{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:22px; display:flex; flex-direction:column; gap:8px}
+  .tool-card h3{font-size:1.02rem}
+  .tool-card p{color:var(--ink-soft); font-size:0.9rem; flex-grow:1}
+  .tool-card a.link{font-size:0.9rem; font-weight:600; color:var(--ink); text-decoration:none}
+  .tool-card a.link:hover{color:var(--primary)}
+  .tool-card .price{font-size:0.74rem; font-weight:700; color:var(--primary); background:color-mix(in srgb, var(--primary) 10%, transparent); padding:3px 9px; border-radius:20px; align-self:flex-start}
+
+  .step-list{display:flex; flex-direction:column; gap:14px}
+  .step{display:flex; gap:18px; background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:22px}
+  .step .n{flex-shrink:0; width:38px; height:38px; border-radius:50%; background:var(--primary); color:var(--primary-ink); display:flex; align-items:center; justify-content:center; font-family:"Sora"; font-weight:800; font-size:1rem}
+  .step .body h3{font-size:1.02rem; margin-bottom:6px}
+  .step .body p{color:var(--ink-soft); font-size:0.93rem}
+  .step .body a.link{font-size:0.88rem; font-weight:600; color:var(--primary); text-decoration:none; display:inline-block; margin-top:8px}
+  .step .body a.link:hover{text-decoration:underline}
+
+  .note{background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:14px 18px; font-size:0.88rem; color:var(--ink-soft); margin-top:20px}
+  .note strong{color:var(--ink)}
+
+  .deadline-row{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:4px}
+  .deadline-card{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:20px}
+  .deadline-card h4{font-size:0.95rem; color:var(--primary)}
+  .deadline-card p{color:var(--ink-soft); font-size:0.88rem; margin-top:8px}
+
+  footer{border-top:1px solid var(--line); padding-block:32px 44px}
+  .footer-row{display:flex; justify-content:space-between; flex-wrap:wrap; gap:18px; font-size:0.86rem; color:var(--ink-soft)}
+  .footer-links{display:flex; gap:20px; flex-wrap:wrap}
+  .footer-links a{text-decoration:none; color:var(--ink-soft)}
+  @media (max-width:900px){ .tool-grid, .tool-grid-pair, .deadline-row{grid-template-columns:1fr} nav{display:none} }
+
+  @media (max-width:480px){
+    .wordmark{font-size:0.92rem; gap:7px}
+    .header-row{flex-direction:column; align-items:flex-start; gap:10px}
+    .header-cta{align-self:stretch}
+    .header-cta .btn{width:100%}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-row">
+    <a class="wordmark" href="index.html"><span class="dot"></span>AstroPro Student Resource &amp; Data Center</a>
+    <nav>
+      <a href="index.html#resources">Resource Center</a>
+      <a href="apply-to-college.html" class="current">Apply to College</a>
+    </nav>
+    <div class="header-cta"><a class="btn btn-ghost btn-sm" href="index.html">&larr; Back to home</a></div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="kicker">Student Resource Center</span>
+    <h1>How to actually apply to college</h1>
+    <p class="lede">There's no single "apply to any college" button &mdash; but there are only a handful of real systems behind almost every application. Here's what they are, and the step-by-step process for using them.</p>
+    <div class="note"><strong>We don't submit applications for you.</strong> Every link below goes straight to the real system or the school's own site &mdash; we don't run any of these, and there's no fee to use this page.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head"><span class="kicker-sm">Where you actually apply</span><h2>The real systems behind most applications</h2><p>Most four-year colleges accept one (or more) of these. Check each school's own admissions page to see which they take &mdash; many accept several.</p></div>
+    <div class="tool-grid">
+      <div class="tool-card"><h3>Common App</h3><p>One application, submitted to 1,200+ member colleges across the U.S., public and private. The most widely used system for first-year applicants.</p><a class="link" href="https://www.commonapp.org/" target="_blank" rel="noopener">Visit Common App &rarr;</a></div>
+      <div class="tool-card"><h3>Coalition for College</h3><p>A similar one-application, many-colleges system used by 150+ member schools, including several that also accept the Common App.</p><a class="link" href="https://www.coalitionforcollegeaccess.org/" target="_blank" rel="noopener">Visit Coalition for College &rarr;</a></div>
+      <div class="tool-card"><h3>University of California (UC) Application</h3><p>All nine UC undergraduate campuses share one application, filed directly through the UC's own admissions site &mdash; not Common App or Coalition.</p><a class="link" href="https://admission.universityofcalifornia.edu/how-to-apply/" target="_blank" rel="noopener">Visit UC Admissions &rarr;</a></div>
+      <div class="tool-card"><h3>Cal State Apply</h3><p>The shared application for all 22 California State University campuses, run directly by the CSU system.</p><a class="link" href="https://www.calstate.edu/apply" target="_blank" rel="noopener">Visit Cal State Apply &rarr;</a></div>
+      <div class="tool-card"><h3>ApplyTexas</h3><p>The shared application accepted by Texas's public universities (and some private ones), run by the State of Texas.</p><a class="link" href="https://www.applytexas.org" target="_blank" rel="noopener">Visit ApplyTexas &rarr;</a></div>
+      <div class="tool-card"><h3>SUNY applySUNY</h3><p>The shared application for the State University of New York's 60+ campuses, run directly by SUNY.</p><a class="link" href="https://www.suny.edu/apply" target="_blank" rel="noopener">Visit applySUNY &rarr;</a></div>
+    </div>
+    <div class="note"><strong>Don't see your state?</strong> Many other public university systems (and almost all community colleges) run their own direct application on the school's own website &mdash; usually free, often just 10&ndash;15 minutes. Search "[your school] apply" or check the admissions page on their official site.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head"><span class="kicker-sm">The process</span><h2>Step by step, start to submit</h2></div>
+    <div class="step-list">
+      <div class="step"><div class="n">1</div><div class="body"><h3>Build your list</h3><p>Pick a mix of reach, match and safety schools. For each one, note its application deadline and which system it uses &mdash; Common App, Coalition, or its own direct portal.</p></div></div>
+      <div class="step"><div class="n">2</div><div class="body"><h3>Create your account(s)</h3><p>Set up an account on whichever system(s) your schools use. If a school runs its own portal (like the UC or SUNY systems above), you'll create a separate account there.</p></div></div>
+      <div class="step"><div class="n">3</div><div class="body"><h3>Gather your materials</h3><p>Transcripts, test scores (if a school requires them), your activities list, and basic biographical info. Ask your counselor how transcripts get sent &mdash; most high schools send them electronically.</p></div></div>
+      <div class="step"><div class="n">4</div><div class="body"><h3>Write your essays</h3><p>Most systems require one main personal essay, plus some schools add their own short supplemental essays. Start the main essay first since it's reused across every school on that system.</p></div></div>
+      <div class="step"><div class="n">5</div><div class="body"><h3>Line up recommendation letters early</h3><p>Ask teachers or your counselor well before the deadline. Give them your resume, your list of schools, and the actual due dates so they're not rushing.</p></div></div>
+      <div class="step"><div class="n">6</div><div class="body"><h3>File your financial aid forms</h3><p>Submit the FAFSA (and the CSS Profile if a school requires it) as early as you can &mdash; aid is often awarded on a rolling basis, and some state and school deadlines come earlier than you'd expect.</p><a class="link" href="financial-aid.html">See our Financial Aid Tools &rarr;</a></div></div>
+      <div class="step"><div class="n">7</div><div class="body"><h3>Submit before the deadline</h3><p>Pay attention to which deadline type each school is using for you (see below) &mdash; then submit with time to spare in case of a last-minute technical issue.</p></div></div>
+      <div class="step"><div class="n">8</div><div class="body"><h3>Track every application after you submit</h3><p>Each school opens its own applicant status portal once you apply. Check it regularly and respond quickly to any request for more information.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head"><span class="kicker-sm">Know your deadline type</span><h2>Early Decision, Early Action, Regular Decision</h2><p>Deadlines aren't all the same kind &mdash; applying under the wrong one for your situation can cost you flexibility (or an advantage).</p></div>
+    <div class="deadline-row">
+      <div class="deadline-card"><h4>Early Decision (binding)</h4><p>Apply early and you're committing to enroll there if accepted. Only use this for your true first-choice school, since you'll withdraw other applications if admitted.</p></div>
+      <div class="deadline-card"><h4>Early Action (non-binding)</h4><p>Apply early and hear back sooner, but you're not obligated to enroll. You can usually apply Early Action to multiple schools and still decide later.</p></div>
+      <div class="deadline-card"><h4>Regular Decision</h4><p>The standard, later deadline most applicants use. No commitment either way, but financial aid and housing priority can sometimes be better for students who apply earlier in the cycle.</p></div>
+    </div>
+    <div class="note">Exact deadline dates shift year to year and school to school &mdash; always confirm the current date directly on each school's own admissions page rather than assuming it matches last year.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head"><span class="kicker-sm">While you're at it</span><h2>Related resources on this site</h2></div>
+    <div class="tool-grid tool-grid-pair">
+      <div class="tool-card"><h3>Financial Aid Tools</h3><p>FAFSA checklists, loan calculators and budgeting resources &mdash; start here once you're ready to file for aid.</p><a class="link" href="financial-aid.html">Open Financial Aid Tools &rarr;</a></div>
+      <div class="tool-card"><h3>Scholarships</h3><p>54 real, searchable scholarships you can start applying for now, separate from your college applications.</p><a class="link" href="scholarships.html">Browse scholarships &rarr;</a></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <span>&copy; AstroPro Student Resource &amp; Data Center</span>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="financial-aid.html">Financial Aid</a>
+      <a href="index.html#mission">Our mission</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -226,27 +226,6 @@
   }
   .resource-card .link:hover{color:var(--primary)}
 
-  /* Ask AstroPro — inline chat + quick category boxes */
-  .ask-rally{background:var(--surface); border:1px solid var(--line); border-top:3px solid var(--primary); border-radius:20px; overflow:hidden}
-  .ar-head{padding:28px 28px 0}
-  .ar-head h3{font-size:1.3rem}
-  .ar-head p{color:var(--ink-soft); font-size:0.95rem; margin-top:8px; max-width:62ch}
-  .ar-disclaimer{font-size:0.8rem; color:var(--ink-soft); background:var(--surface-2); border:1px solid var(--line); padding:10px 14px; margin:16px 28px 0; border-radius:10px}
-  .ar-log{padding:18px 28px; display:flex; flex-direction:column; gap:12px; font-size:0.95rem; max-height:360px; overflow-y:auto}
-  .ar-msg{padding:11px 16px; border-radius:14px; max-width:88%; line-height:1.55}
-  .ar-msg.bot{background:var(--bg); border:1px solid var(--line); align-self:flex-start; border-bottom-left-radius:4px}
-  .ar-msg.user{background:var(--primary); color:var(--primary-ink); align-self:flex-end; border-bottom-right-radius:4px}
-  .ar-msg a{color:inherit; text-decoration:underline}
-  .ar-msg p{margin:0}
-  .ar-form{display:flex; gap:10px; padding:4px 28px 22px}
-  .ar-form input{flex:1; min-width:0; padding:13px 16px; border-radius:9px; border:1px solid var(--line); background:var(--bg); color:var(--ink); font-family:inherit; font-size:0.95rem}
-  .ar-form input:focus{outline:2px solid var(--primary); outline-offset:1px; border-color:transparent}
-  .ar-quick{display:grid; grid-template-columns:repeat(5,1fr); gap:10px; padding:0 28px 28px}
-  .ar-box{background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:14px; text-decoration:none; display:flex; flex-direction:column; gap:6px; transition:border-color .15s, transform .15s}
-  .ar-box:hover{border-color:var(--primary); transform:translateY(-2px)}
-  .ar-box .ar-tag{font-size:0.68rem; font-weight:700; color:var(--primary); background:color-mix(in srgb, var(--primary) 10%, transparent); padding:3px 8px; border-radius:20px; align-self:flex-start}
-  .ar-box .ar-label{font-size:0.88rem; font-weight:600; color:var(--ink); font-family:"Sora"}
-
   /* Organization submission */
   .submit-panel{
     background:var(--ink);
@@ -337,8 +316,9 @@
   <div class="wrap header-row">
     <div class="wordmark"><span class="dot"></span>AstroPro Student Resource &amp; Data Center</div>
     <nav>
-      <a href="#mission">Mission</a>
       <a href="#resources">Resource Center</a>
+      <a href="apply-to-college.html">Apply to College</a>
+      <a href="#mission">Mission</a>
       <a href="#organizations">For Organizations</a>
       <a href="#schools">For Schools</a>
     </nav>
@@ -363,39 +343,10 @@
         <div class="cap">students in our network nationwide</div>
       </div>
       <div class="metrics-grid">
-        <div class="metric-tile"><div class="n">28</div><div class="l">active scholarships</div></div>
-        <div class="metric-tile"><div class="n">35</div><div class="l">internships &amp; jobs live</div></div>
-        <div class="metric-tile"><div class="n">20</div><div class="l">student discounts live</div></div>
+        <div class="metric-tile"><div class="n">54</div><div class="l">active scholarships</div></div>
+        <div class="metric-tile"><div class="n">66</div><div class="l">internships &amp; jobs live</div></div>
+        <div class="metric-tile"><div class="n">33</div><div class="l">student discounts live</div></div>
         <div class="metric-tile"><div class="n">34</div><div class="l">campus housing markets</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="ask">
-  <div class="wrap">
-    <div class="ask-rally" id="askAstroPro">
-      <div class="ar-head">
-        <h3>Ask AstroPro</h3>
-        <p>Type what you're looking for &mdash; try &ldquo;internships&rdquo; or &ldquo;I need help with financial aid&rdquo; &mdash; or jump straight to a category below.</p>
-      </div>
-      <div class="ar-disclaimer">A simple scripted helper, not a live AI &mdash; it points you to the right page on this site.</div>
-      <div class="ar-log" id="arLog" aria-live="polite"></div>
-      <form class="ar-form" id="arForm">
-        <input type="text" id="arInput" placeholder="e.g. &ldquo;scholarships for freshmen&rdquo; or &ldquo;tutoring&rdquo;" autocomplete="off" aria-label="Ask AstroPro">
-        <button type="submit" class="btn btn-primary btn-sm">Ask</button>
-      </form>
-      <div class="ar-quick" id="arQuick">
-        <a class="ar-box" href="scholarships.html"><span class="ar-tag">Funding</span><span class="ar-label">Scholarships</span></a>
-        <a class="ar-box" href="internships.html"><span class="ar-tag">Careers</span><span class="ar-label">Internships &amp; jobs</span></a>
-        <a class="ar-box" href="financial-aid.html"><span class="ar-tag">Money</span><span class="ar-label">Financial aid</span></a>
-        <a class="ar-box" href="discounts.html"><span class="ar-tag">Savings</span><span class="ar-label">Discounts</span></a>
-        <a class="ar-box" href="housing.html"><span class="ar-tag">Housing</span><span class="ar-label">Off-campus housing</span></a>
-        <a class="ar-box" href="career-guides.html"><span class="ar-tag">Guidance</span><span class="ar-label">Career guides</span></a>
-        <a class="ar-box" href="mentorship.html"><span class="ar-tag">Community</span><span class="ar-label">Mentorship</span></a>
-        <a class="ar-box" href="tutoring.html"><span class="ar-tag">Learning</span><span class="ar-label">Tutoring</span></a>
-        <a class="ar-box" href="wellbeing.html"><span class="ar-tag">Wellbeing</span><span class="ar-label">Mental health</span></a>
-        <a class="ar-box" href="money-basics.html"><span class="ar-tag">Money</span><span class="ar-label">Student finances</span></a>
       </div>
     </div>
   </div>
@@ -587,6 +538,7 @@
   <div class="wrap footer-row">
     <span>&copy; AstroPro Student Resource &amp; Data Center</span>
     <div class="footer-links">
+      <a href="apply-to-college.html">Apply to College</a>
       <a href="privacy.html">Privacy policy</a>
       <a href="data-requests.html">Data requests</a>
       <a href="unsubscribe.html">Unsubscribe</a>
@@ -605,64 +557,4 @@
     });
   })();
 
-  (function(){
-    // ---- Ask AstroPro: a small, honest, rule-based helper. No backend, no
-    // external calls, no claim to live AI — it only routes to this site's
-    // own resource pages. ----
-    var log = document.getElementById('arLog');
-    var form = document.getElementById('arForm');
-    var input = document.getElementById('arInput');
-    if(!form || !input || !log) return;
-
-    function escapeHtml(s){
-      return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-    }
-
-    function addMsg(who, html){
-      var div = document.createElement('div');
-      div.className = 'ar-msg ' + who;
-      div.innerHTML = html;
-      log.appendChild(div);
-      log.scrollTop = log.scrollHeight;
-    }
-
-    addMsg('bot', 'Hi, I’m AstroPro’s helper. Tell me what you’re looking for — a scholarship, an internship, housing, financial aid, and so on — and I’ll point you to the right page. You can also just tap one of the boxes below.');
-
-    // Ordered most-specific first, since several categories share words like
-    // "money" or "help" — the first regex that matches wins.
-    var CATEGORIES = [
-      { href:'financial-aid.html', label:'Financial aid tools', re:/(fafsa|financial aid|student loan|net.price|work.study|grant aid|aid tool)/i },
-      { href:'scholarships.html', label:'Scholarships', re:/(scholarship|tuition award|merit award)/i },
-      { href:'internships.html', label:'Internships & jobs', re:/(internship|\bintern\b|\bjob\b|jobs|hiring|employer)/i },
-      { href:'housing.html', label:'Off-campus housing', re:/(housing|apartment|roommate|\blease\b|off.campus|sublease)/i },
-      { href:'discounts.html', label:'Student discounts', re:/(discount|\bdeal\b|deals|\bperk\b|perks|coupon|student pricing)/i },
-      { href:'career-guides.html', label:'Career guides', re:/(resume|cover letter|interview|career guide|career path)/i },
-      { href:'mentorship.html', label:'Mentorship', re:/(mentor|mentorship|alumni|networking)/i },
-      { href:'tutoring.html', label:'Tutoring & study help', re:/(tutor|tutoring|study help|homework|studying)/i },
-      { href:'wellbeing.html', label:'Mental health & basic needs', re:/(mental health|counsel|wellbeing|well-being|stress|anxiety|depress|crisis|food insecur|basic needs)/i },
-      { href:'money-basics.html', label:'Student finances', re:/(budget|refund check|student tax|banking|savings account|\bmoney\b|finances)/i }
-    ];
-
-    function respond(raw){
-      var q = raw.trim();
-      if(!q) return;
-      for(var i = 0; i < CATEGORIES.length; i++){
-        if(CATEGORIES[i].re.test(q)){
-          var c = CATEGORIES[i];
-          addMsg('bot', 'That sounds like our <strong>' + escapeHtml(c.label) + '</strong> page. <a href="' + c.href + '" target="_top">Go to ' + escapeHtml(c.label) + ' &rarr;</a>');
-          return;
-        }
-      }
-      addMsg('bot', 'I’m a simple scripted helper, so I don’t recognize that one yet. Try one of the category boxes below, or browse the full <a href="#resources">Resource Center</a>.');
-    }
-
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-      var val = input.value;
-      if(!val || !val.trim()) return;
-      addMsg('user', escapeHtml(val));
-      input.value = '';
-      setTimeout(function(){ respond(val); }, 150);
-    });
-  })();
 </script>
