@@ -1,0 +1,697 @@
+[
+  {
+    "id": "scholarships-ron-brown-scholar-program",
+    "changes": {
+      "description": "For Black/African American high school seniors who are U.S. citizens or permanent residents and demonstrate academic achievement, leadership, service and financial need. Awards total $40,000 over four years; essays and recommendations are required.",
+      "deadline": "2026-12-01",
+      "deadlineLabel": "December 1, 2026 (recommendation deadline December 15)",
+      "amount": "$40,000 over four years",
+      "status": "open"
+    },
+    "source": "https://ronbrown.org/ron-brown-scholarship/",
+    "verifiedFields": [
+      "description",
+      "deadline",
+      "deadlineLabel",
+      "amount",
+      "status"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "scholarships-chick-fil-a-community-scholars-program",
+    "changes": {
+      "description": "Thirteen $25,000 awards recognize students for academic success, community service and financial need. Includes a one-year leadership development and mentoring program; review the sponsor application for full eligibility.",
+      "deadline": "2026-11-03",
+      "deadlineLabel": "November 3, 2026",
+      "amount": "$25,000",
+      "status": "open"
+    },
+    "source": "https://www.chick-fil-a.com/community-scholars",
+    "verifiedFields": [
+      "description",
+      "deadline",
+      "deadlineLabel",
+      "amount",
+      "status"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "scholarships-truman-scholars-program",
+    "changes": {
+      "description": "A graduate-study scholarship for eligible college students committed to public-service careers. Applicants must be nominated by their institution; check campus nomination deadlines before the national deadline.",
+      "amount": "Up to $30,000",
+      "deadline": "2027-02-02",
+      "deadlineLabel": "February 2, 2027, 11:59 p.m. in your time zone; campus deadlines may be earlier",
+      "status": "open"
+    },
+    "source": "https://www.truman.gov/apply/applying/important-dates",
+    "verifiedFields": [
+      "deadline",
+      "deadlineLabel",
+      "description"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "scholarships-horatio-alger-national-scholarship",
+    "changes": {
+      "description": "Need-based awards of up to $25,000 for high school juniors who have overcome adversity and demonstrate leadership, service and academic commitment. Check the sponsor for the next application cycle and detailed eligibility; high school seniors should review its other programs.",
+      "amount": "Up to $25,000",
+      "deadline": null,
+      "deadlineLabel": "Check sponsor for the next junior-year application cycle",
+      "status": "check-sponsor"
+    },
+    "source": "https://horatioalger.org/news-events/news/horatio-alger-association-announces-class-of-2027-nationalscholarship-recipients/",
+    "verifiedFields": [
+      "description",
+      "amount",
+      "deadline",
+      "deadlineLabel",
+      "status"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "scholarships-hispanic-scholarship-fund",
+    "changes": {
+      "name": "Hispanic Scholarship Fund Scholar Program",
+      "amount": "$500\u2013$5,000, subject to funding",
+      "description": "Merit-selected HSF Scholars receive support services and may receive a cash award based on need and available funding. Hispanic-heritage students must meet citizenship/residency, GPA and full-time enrollment requirements; a Scholar designation does not guarantee a cash award.",
+      "url": "https://www.hsf.net/scholarship/",
+      "deadline": "2026-02-15",
+      "deadlineLabel": "2026 application closed; check sponsor for the next cycle",
+      "status": "closed"
+    },
+    "source": "https://www.hsf.net/scholarship/",
+    "verifiedFields": [
+      "name",
+      "amount",
+      "description",
+      "url",
+      "deadline",
+      "deadlineLabel",
+      "status"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "scholarships-american-indian-college-fund-scholarship",
+    "changes": {
+      "name": "American Indian College Fund Scholarships",
+      "description": "Scholarships for American Indian and Alaska Native students in certificate, undergraduate or graduate programs at tribal colleges and universities or accredited nonprofit schools. One annual application covers multiple opportunities; eligibility and funding vary.",
+      "amount": "Varies by scholarship",
+      "url": "https://collegefund.org/students/scholarships/",
+      "deadline": null,
+      "deadlineLabel": "Check sponsor for current application and priority dates",
+      "status": "check-sponsor"
+    },
+    "source": "https://collegefund.org/students/scholarships/",
+    "verifiedFields": [
+      "name",
+      "description",
+      "amount",
+      "url",
+      "deadline",
+      "deadlineLabel",
+      "status"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "scholarships-uncf-united-negro-college-fund-scholarships",
+    "changes": {
+      "description": "UNCF administers a range of scholarships, fellowships and other student opportunities. Each program has its own school, major, eligibility, essay and deadline requirements; use the official opportunities portal to find a match.",
+      "amount": "Varies by program",
+      "deadline": null,
+      "deadlineLabel": "Varies by individual scholarship",
+      "status": "check-sponsor"
+    },
+    "source": "https://uncf.org/scholarships",
+    "verifiedFields": [
+      "description",
+      "amount",
+      "deadline",
+      "deadlineLabel",
+      "status"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "scholarships-hagan-scholarship-foundation-scholarship",
+    "changes": {
+      "name": "Hagan Scholarship",
+      "amount": "Up to $7,500 per semester",
+      "description": "A renewable scholarship with funding determined by educational costs and other aid, plus required workshops and student responsibilities. Review the sponsor\u2019s current academic, income, enrollment and work requirements before applying.",
+      "url": "https://haganscholarships.org/",
+      "deadline": null,
+      "deadlineLabel": "Check sponsor for current application cycle",
+      "status": "check-sponsor"
+    },
+    "source": "https://haganscholarships.org/description/",
+    "verifiedFields": [
+      "name",
+      "amount",
+      "description",
+      "url",
+      "deadline",
+      "deadlineLabel",
+      "status"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "scholarships-children-of-fallen-patriots-foundation-scholarship",
+    "changes": {
+      "description": "College and trade-school scholarships, educational assistance and career support for military children who lost a parent in the line of duty. The program is joining Tunnel to Towers and states that scholarship processing continues; contact the sponsor to confirm eligibility and funding.",
+      "amount": "Varies by educational need",
+      "deadline": null,
+      "deadlineLabel": "Contact sponsor about enrollment and funding",
+      "status": "check-sponsor"
+    },
+    "source": "https://fallenpatriots.org/",
+    "verifiedFields": [
+      "description",
+      "amount",
+      "deadline",
+      "deadlineLabel",
+      "status"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "scholarships-thedream-us-national-scholarship",
+    "changes": {
+      "description": "For eligible low-income Dreamer students attending a participating in-state or online Partner College. Current rules include U.S. arrival before age 16 and before November 1, 2021; international students and temporary nonimmigrant statuses are ineligible. Review all immigration, residency, GPA and enrollment criteria directly with the sponsor.",
+      "amount": "Up to $18,000 associate / $36,000 bachelor, plus possible stipends",
+      "deadline": null,
+      "deadlineLabel": "Check sponsor for current National Scholarship cycle",
+      "status": "check-sponsor"
+    },
+    "source": "https://www.thedream.us/scholarships/",
+    "verifiedFields": [
+      "description",
+      "amount",
+      "deadline",
+      "deadlineLabel",
+      "status"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "scholarships-space-to-succeed-scholarship",
+    "changes": {
+      "amount": "$5,000",
+      "description": "For legal U.S. residents age 18+ attending an accredited U.S. college or university. Submit a 500\u2013800 word essay about community involvement, plus required photos and enrollment documentation; three awards in this cycle.",
+      "deadline": "2026-11-30",
+      "deadlineLabel": "November 30, 2026, 11:59 p.m. Central",
+      "status": "open"
+    },
+    "source": "https://thestoragecenter.com/self-storage/scholarship/",
+    "verifiedFields": [
+      "amount",
+      "description",
+      "deadline",
+      "deadlineLabel",
+      "status"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "scholarships-union-plus-scholarship",
+    "changes": {
+      "amount": "$1,000\u2013$4,000, one-time",
+      "description": "For eligible current or retired participating-union members, spouses and dependent children. Applicants must meet membership and enrollment rules; essays weigh heavily in selection. Awards are one-time, but students may reapply in later years.",
+      "deadline": "2027-01-31",
+      "deadlineLabel": "January 31, 2027 (confirm time in sponsor rules)",
+      "status": "open"
+    },
+    "source": "https://www.unionplus.org/benefits/education/union-plus-scholarships",
+    "verifiedFields": [
+      "amount",
+      "description",
+      "deadline",
+      "deadlineLabel",
+      "status"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "scholarships-coca-cola-scholars-program",
+    "changes": {
+      "description": "Achievement-based awards recognizing leadership and service among eligible students in their final year of high school. The program selects 150 students for $20,000 awards; current citizenship/residency, GPA and school requirements apply.",
+      "amount": "$20,000",
+      "url": "https://www.coca-colascholarsfoundation.org/apply/",
+      "deadline": null,
+      "deadlineLabel": "2027 application is closed; check sponsor for next cycle",
+      "status": "closed"
+    },
+    "source": "https://www.coca-colascholarsfoundation.org/apply/",
+    "verifiedFields": [
+      "description",
+      "amount",
+      "url",
+      "deadline",
+      "deadlineLabel",
+      "status"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "scholarships-the-gates-scholarship",
+    "changes": {
+      "description": "A highly selective, last-dollar scholarship for outstanding high school seniors from low-income households. Check the official application for current eligibility, funding coverage, required materials and deadlines.",
+      "amount": "Last-dollar college funding",
+      "deadline": null,
+      "deadlineLabel": "Check sponsor for current application rules and dates",
+      "status": "check-sponsor"
+    },
+    "source": "https://www.thegatesscholarship.org/",
+    "verifiedFields": [
+      "description",
+      "amount",
+      "deadline",
+      "deadlineLabel",
+      "status"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "scholarships-questbridge-national-college-match",
+    "changes": {
+      "description": "Connects high-achieving high school seniors from low-income backgrounds with partner colleges and full four-year Match Scholarships. Review citizenship, academic and financial criteria and the binding Match process before ranking colleges.",
+      "amount": "Full four-year Match Scholarship",
+      "deadline": null,
+      "deadlineLabel": "2026 Match applicants have been selected as Finalists; check sponsor for next entry cycle",
+      "status": "closed"
+    },
+    "source": "https://www.questbridge.org/",
+    "verifiedFields": [
+      "description",
+      "amount",
+      "status",
+      "deadlineLabel"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "scholarships-burger-king-scholars-program",
+    "changes": {
+      "description": "Scholarships for eligible high school seniors, Burger King employees and employee families pursuing postsecondary college or vocational/technical education. Awards and criteria vary by application track; check the administrator for current requirements.",
+      "amount": "Varies by award",
+      "url": "https://scholarshipamerica.org/scholarship/burger-king-scholars-program/",
+      "deadline": null,
+      "deadlineLabel": "Check sponsor for current application cycle",
+      "status": "check-sponsor"
+    },
+    "source": "https://scholarshipamerica.org/scholarship/burger-king-scholars-program/",
+    "verifiedFields": [
+      "description",
+      "amount",
+      "url",
+      "deadline",
+      "deadlineLabel",
+      "status"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "scholarships-imagine-america-foundation-scholarship",
+    "changes": {
+      "name": "Imagine America Career College Scholarships",
+      "description": "Tuition discounts/grants at participating career colleges through separate high-school, adult-learner and military programs. Check your chosen school and program requirements; this is tuition assistance at partner schools rather than unrestricted cash.",
+      "amount": "Typically $1,000 toward partner-school tuition",
+      "url": "https://imagine-america.org/students",
+      "deadline": null,
+      "deadlineLabel": "Varies by school and program",
+      "status": "check-sponsor"
+    },
+    "source": "https://imagine-america.org/students",
+    "verifiedFields": [
+      "name",
+      "description",
+      "amount",
+      "url",
+      "deadline",
+      "deadlineLabel",
+      "status"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "scholarships-foster-care-to-success-national-scholarship-program",
+    "changes": {
+      "publish": false,
+      "status": "unverified",
+      "amount": "Current individual award unverified",
+      "description": "The old individual scholarship page redirects to FC2S\u2019s redesigned website, which now describes strategic workforce and educational investments through CommunityNow. A current public individual scholarship application could not be verified.",
+      "deadline": null,
+      "deadlineLabel": "Current scholarship application unverified"
+    },
+    "source": "https://www.fc2success.org/",
+    "verifiedFields": [
+      "publish",
+      "status",
+      "description"
+    ],
+    "verifiedAt": null
+  },
+  {
+    "id": "scholarships-jeannette-rankin-women-s-scholarship-fund",
+    "changes": {
+      "name": "Jeannette Rankin National Scholar Grant",
+      "description": "Unrestricted, nontuition grants for eligible students age 35+ who self-identify and present as women, pursuing technical/vocational education, a first associate degree or first bachelor degree at an accredited nonprofit U.S. institution. Review income and other sponsor criteria.",
+      "amount": "Varies by grant",
+      "url": "https://rankinfoundation.org/national-scholar-grant/",
+      "deadline": "2027-02-12",
+      "deadlineLabel": "February 12, 2027; application and recommendation deadline",
+      "status": "open"
+    },
+    "source": "https://rankinfoundation.org/national-scholar-grant/",
+    "verifiedFields": [
+      "name",
+      "description",
+      "amount",
+      "url",
+      "deadline",
+      "deadlineLabel",
+      "status"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "scholarships-dar-american-history-scholarship",
+    "changes": {
+      "name": "DAR Pittenger American History Scholarship",
+      "description": "For a graduating high school senior pursuing an undergraduate degree with at least 24 credit hours in American history or American government. The$2,000 award may be renewed for up to four years under GPA and transcript requirements; see sponsor for details.",
+      "amount": "$2,000, renewable subject to requirements",
+      "url": "https://www.dar.org/national-society/scholarships/history-etc",
+      "deadline": null,
+      "deadlineLabel": "Check DAR scholarship portal for current cycle",
+      "status": "check-sponsor"
+    },
+    "source": "https://www.dar.org/national-society/scholarships/history-etc",
+    "verifiedFields": [
+      "name",
+      "description",
+      "amount",
+      "url",
+      "deadline",
+      "deadlineLabel",
+      "status"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "scholarships-national-4-h-council-scholarships",
+    "changes": {
+      "publish": false,
+      "status": "unverified",
+      "description": "A current national college-scholarship program and application could not be verified from the inherited URL. Specific state or land-grant university 4-H programs should be reviewed separately.",
+      "amount": "Current national award unverified",
+      "deadline": null,
+      "deadlineLabel": "Current application unverified"
+    },
+    "source": "https://4-h.org/parents/scholarships/",
+    "verifiedFields": [
+      "publish",
+      "status",
+      "description"
+    ],
+    "verifiedAt": null
+  },
+  {
+    "id": "scholarships-sallie-mae-no-essay-scholarship",
+    "changes": {
+      "name": "Sallie$2,000 No Essay Scholarship",
+      "amount": "$2,000 monthly drawing",
+      "description": "For legal residents of the 50 U.S. states, D.C. or U.S. territories age 16+ who meet the specified college-student, high-school-junior/senior or parent eligibility. Monthly sweepstakes; no essay required. Review official rules before entering.",
+      "deadline": null,
+      "deadlineLabel": "Monthly entry periods; see sponsor for current deadline",
+      "status": "check-sponsor"
+    },
+    "source": "https://www.sallie.com/scholarships/no-essay",
+    "verifiedFields": [
+      "name",
+      "amount",
+      "description",
+      "deadline",
+      "deadlineLabel",
+      "status"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "scholarships-niche-2-000-no-essay-scholarship",
+    "changes": {
+      "description": "A no-essay drawing for eligible high school, college and graduate students or those planning enrollment within 12 months. Entrants age 13\u201317 require parental consent/supervision; citizenship or valid-visa and other official-rule restrictions apply.",
+      "amount": "$2,000",
+      "deadline": null,
+      "deadlineLabel": "Monthly sweepstakes periods; confirm current rules",
+      "status": "check-sponsor"
+    },
+    "source": "https://www.niche.com/colleges/scholarships/no-essay-scholarship/",
+    "verifiedFields": [
+      "description",
+      "amount",
+      "deadline",
+      "deadlineLabel",
+      "status"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "scholarships-appily-scholarship",
+    "changes": {
+      "name": "Appily Easy Money Scholarship",
+      "description": "A monthly no-essay scholarship for eligible U.S. students age 13+ who create a free Appily account and plan postsecondary enrollment. Complete the profile and entry requirements in the official rules; one winner is selected each month.",
+      "amount": "$1,000 monthly",
+      "url": "https://www.appily.com/scholarships/easy-money-scholarship",
+      "deadline": null,
+      "deadlineLabel": "Monthly entry periods",
+      "status": "check-sponsor"
+    },
+    "source": "https://www.appily.com/scholarships/easy-money-scholarship",
+    "verifiedFields": [
+      "name",
+      "description",
+      "amount",
+      "url",
+      "deadline",
+      "deadlineLabel",
+      "status"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "scholarships-dosomething-org-easy-scholarships",
+    "changes": {
+      "description": "For people ages 13\u201325 living in the U.S. or U.S. citizens abroad who complete an eligible community-service action and report back. No essay, GPA or recommendation requirement; each action has its own location, rules, award and deadline.",
+      "amount": "Varies by eligible action",
+      "url": "https://dosomething.org/pays-to-do-good",
+      "deadline": null,
+      "deadlineLabel": "Varies by eligible action",
+      "status": "check-sponsor"
+    },
+    "source": "https://dosomething.org/pays-to-do-good",
+    "verifiedFields": [
+      "description",
+      "amount",
+      "url",
+      "deadline",
+      "deadlineLabel",
+      "status"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "scholarships-scholastic-art-writing-awards",
+    "changes": {
+      "description": "Art and writing recognition and scholarship opportunities for eligible teen entrants. Portfolio scholarships for high school seniors submitting six works can reach$12,500; other awards and regional rules differ. Review current grade, age and submission requirements.",
+      "amount": "Portfolio scholarships up to $12,500",
+      "url": "https://www.artandwriting.org/scholarships/",
+      "deadline": null,
+      "deadlineLabel": "Varies by region and category",
+      "status": "check-sponsor"
+    },
+    "source": "https://www.artandwriting.org/scholarships/",
+    "verifiedFields": [
+      "description",
+      "amount",
+      "url",
+      "deadline",
+      "deadlineLabel",
+      "status"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "scholarships-youngarts",
+    "changes": {
+      "description": "A national visual, literary and performing arts competition for eligible students in grades 10\u201312 or ages 15\u201318, with U.S. citizenship, residency or taxable-income eligibility requirements. Winners receive cash awards and career/mentorship support.",
+      "amount": "$250\u2013$10,000 cash awards",
+      "deadline": null,
+      "deadlineLabel": "Current application closed; next 2028 application opens summer 2027",
+      "status": "closed"
+    },
+    "source": "https://youngarts.org/apply/",
+    "verifiedFields": [
+      "description",
+      "amount",
+      "deadline",
+      "deadlineLabel",
+      "status"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "scholarships-society-of-women-engineers-swe-scholarship-program",
+    "changes": {
+      "description": "Scholarships for students in eligible engineering, technology and related programs. Undergraduate tracks require an eligible ABET-accredited program; year-of-study, GPA, graduate-major and regional requirements differ. Recommendations are required; check the relevant application.",
+      "amount": "Varies by scholarship",
+      "deadline": "2027-02-01",
+      "deadlineLabel": "Collegiate/graduate: Dec 1, 2026\u2013Feb 1, 2027; first-year: Feb 8\u2013Mar 31, 2027",
+      "status": "upcoming"
+    },
+    "source": "https://swe.org/apply-for-a-swe-scholarship/",
+    "verifiedFields": [
+      "description",
+      "amount",
+      "deadline",
+      "deadlineLabel",
+      "status"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "scholarships-national-ffa-scholarships",
+    "changes": {
+      "description": "One application covers multiple scholarship opportunities for senior FFA members in high school and FFA alumni in college, pursuing trade certificates, two-year or four-year programs. Individual sponsors set additional eligibility criteria.",
+      "amount": "Varies by scholarship",
+      "url": "https://www.ffa.org/participate/grants-and-scholarships/scholarships/",
+      "deadline": "2027-01-14",
+      "deadlineLabel": "Applications open November 1, 2026; due January 14, 2027",
+      "status": "upcoming"
+    },
+    "source": "https://www.ffa.org/participate/grants-and-scholarships/scholarships/",
+    "verifiedFields": [
+      "description",
+      "amount",
+      "url",
+      "deadline",
+      "deadlineLabel",
+      "status"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "scholarships-vfw-voice-of-democracy-scholarship-contest",
+    "changes": {
+      "description": "For eligible students in grades 9\u201312. Submit an original audio essay on the current patriotic theme with an entry form through a participating local VFW Post. National, state and local awards vary.",
+      "amount": "National top award $35,000",
+      "deadline": "2026-10-31",
+      "deadlineLabel": "October 31, 2026, midnight; submit through your participating VFW Post",
+      "status": "open"
+    },
+    "source": "https://www.vfw.org/VOD/",
+    "verifiedFields": [
+      "description",
+      "amount",
+      "deadline",
+      "deadlineLabel",
+      "status"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "scholarships-taco-bell-foundation-live-ma-s-scholarship",
+    "changes": {
+      "description": "For eligible new applicants ages 16\u201326 pursuing postsecondary education. Submit either a 30-second\u20132-minute video or a 250\u2013500-word essay about passion, community and impact. No GPA or test-score requirement; financial need is considered for new 2027 applicants.",
+      "amount": "Varies by award",
+      "url": "https://tacobellfoundation.org/live-mas-scholarship/",
+      "deadline": "2027-01-05",
+      "deadlineLabel": "January 5, 2027, 5 p.m. Pacific",
+      "status": "open"
+    },
+    "source": "https://tacobellfoundation.org/live-mas-scholarship/eligibilityfaq/",
+    "verifiedFields": [
+      "description",
+      "amount",
+      "url",
+      "deadline",
+      "deadlineLabel",
+      "status"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "scholarships-american-legion-national-legacy-scholarships",
+    "changes": {
+      "name": "American Legion Legacy Scholarship",
+      "description": "Need-based support for eligible children of U.S. servicemembers who died on active duty on or after September 11, 2001, or post-9/11 veterans with a VA combined disability rating of at least 50%. Review documentation and other aid requirements directly with the sponsor.",
+      "amount": "Up to $20,000 for children of fallen / $5,000 for children of disabled veterans",
+      "url": "https://www.legion.org/get-involved/scholarships/the-american-legion-legacy-scholarship",
+      "deadline": "2026-03-25",
+      "deadlineLabel": "Last posted 2026 application closed; check sponsor for next cycle",
+      "status": "closed"
+    },
+    "source": "https://www.legion.org/get-involved/scholarships/the-american-legion-legacy-scholarship",
+    "verifiedFields": [
+      "name",
+      "description",
+      "amount",
+      "url",
+      "deadline",
+      "deadlineLabel",
+      "status"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "scholarships-boys-girls-clubs-of-america-national-youth-of-the-year",
+    "changes": {
+      "name": "Boys & Girls Clubs Youth of the Year Scholarships",
+      "description": "Scholarships for participants advancing through Boys & Girls Clubs Youth of the Year recognition. State winners receive $2,500, regional winners $20,000 and the National Youth of the Year $50,000. Ask your Club about participation and its selection process.",
+      "amount": "$2,500\u2013$50,000 by recognition level",
+      "url": "https://www.bgca.org/programs/youth-of-the-year/scholarships/",
+      "deadline": null,
+      "deadlineLabel": "Contact your Club about its selection timeline",
+      "status": "check-sponsor"
+    },
+    "source": "https://www.bgca.org/programs/youth-of-the-year/scholarships/",
+    "verifiedFields": [
+      "name",
+      "description",
+      "amount",
+      "url",
+      "deadline",
+      "deadlineLabel",
+      "status"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "scholarships-aicpa-foundation-scholarship-awards",
+    "changes": {
+      "name": "AICPA Foundation Legacy Scholarships",
+      "description": "Awards supporting eligible accounting students pursuing CPA careers, with separate Future CPAs, first-generation/public accounting and two-year-transfer opportunities. GPA, citizenship/residency, enrollment and other rules differ; one application can cover eligible Legacy awards.",
+      "amount": "$5,000\u2013$10,000 by award",
+      "url": "https://www.thiswaytocpa.com/education/aicpa-legacy-scholarships/",
+      "deadline": null,
+      "deadlineLabel": "Check the relevant Legacy scholarship for current dates",
+      "status": "check-sponsor"
+    },
+    "source": "https://www.thiswaytocpa.com/education/aicpa-legacy-scholarships/",
+    "verifiedFields": [
+      "name",
+      "description",
+      "amount",
+      "url",
+      "deadline",
+      "deadlineLabel",
+      "status"
+    ],
+    "verifiedAt": "2026-10-31"
+  }
+]

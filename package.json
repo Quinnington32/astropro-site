@@ -1,0 +1,23 @@
+{
+  "name": "astropro-student-resource-center",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "npm run build && wrangler dev --port 4174",
+    "test": "node --test --test-concurrency=1 tests/*.test.mjs",
+    "check": "npm run build && npm test && node scripts/audit.mjs",
+    "deploy": "npm run check && wrangler deploy",
+    "inbox": "node scripts/inbox.mjs",
+    "links": "node scripts/check-links.mjs"
+  },
+  "devDependencies": {
+    "cheerio": "1.2.0",
+    "miniflare": "5.20261023.3-beta",
+    "wrangler": "4.156.0"
+  }
+}

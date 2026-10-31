@@ -1,0 +1,304 @@
+{
+  "verifiedAt": "2026-10-31T05:27:00.234Z",
+  "origin": "https://students.goastropro.com",
+  "pages": 54,
+  "assetByteChecks": 9,
+  "aliasFinal": "https://students.goastropro.com/",
+  "unauthorizedInboxStatus": 401,
+  "missingPageStatus": 404,
+  "receipts": [
+    {
+      "id": "b38f1f6d-4f9e-4f54-8d60-678e3122d8a9",
+      "type": "listing"
+    },
+    {
+      "id": "a33ea0a4-f734-43b4-bbc5-72a2ed74f921",
+      "type": "mentee"
+    },
+    {
+      "id": "167b89ae-7b96-4cc0-9fa9-b1a2346922d3",
+      "type": "mentor"
+    },
+    {
+      "id": "6471536f-cb89-4a34-a885-8be231850b2f",
+      "type": "data-request"
+    },
+    {
+      "id": "cc8d6488-c093-44a4-8e0a-e7e2e2ee6c5d",
+      "type": "unsubscribe"
+    }
+  ],
+  "checks": [
+    {
+      "file": "404.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "about.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "admin.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "apply-to-college.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "career-guides.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "data-requests.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "discounts.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "financial-aid.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "housing-amarillo.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "housing-athens.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "housing-bakersfield.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "housing-beaumont.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "housing-brenham.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "housing-columbus.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "housing-corsicana.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "housing-dallas.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "housing-denton.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "housing-denver.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "housing-des-plaines.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "housing-goldsboro.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "housing-grand-forks.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "housing-houston.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "housing-jackson-mi.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "housing-kearney.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "housing-kilgore.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "housing-laredo.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "housing-lincoln.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "housing-mcallen.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "housing-mckinney.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "housing-midland.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "housing-new-hampshire.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "housing-normal.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "housing-odessa.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "housing-omaha.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "housing-pensacola.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "housing-portland-me.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "housing-reno.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "housing-san-antonio.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "housing-smithfield.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "housing-tahlequah.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "housing-toledo.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "housing-tyler.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "housing.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "index.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "internships.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "mentorship.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "money-basics.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "privacy.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "saved.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "scholarships.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "school-resources.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "tutoring.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "unsubscribe.html",
+      "status": 200,
+      "bytesMatch": true
+    },
+    {
+      "file": "wellbeing.html",
+      "status": 200,
+      "bytesMatch": true
+    }
+  ],
+  "syntheticFixturesRemoved": true
+}

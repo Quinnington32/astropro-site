@@ -1,0 +1,140 @@
+{
+  "verified_at": "2026-10-31",
+  "scope": "Bounded official-source factual review of wellbeing, tutoring, money basics, and college application guides. No repo edits. Existing crisis contact digits were neither changed nor newly supplied.",
+  "url_replacements": {
+    "https://www.suny.edu/apply": "https://www.suny.edu/attend/apply-to-suny/",
+    "https://www.suny.edu/apply/": "https://www.suny.edu/attend/apply-to-suny/",
+    "https://www.samhsa.gov/find-help/national-helpline": "https://www.samhsa.gov/find-help/helplines/national-helpline",
+    "https://www.nami.org/help": "https://www.nami.org/nami-helpline/",
+    "https://www.irs.gov/credits-deductions/individuals/education-credits-aotc-llc": "https://www.irs.gov/credits-deductions/individuals/education-credits-aotc-and-llc"
+  },
+  "corrections": [
+    {
+      "file": "tutoring.html",
+      "heading": "Chegg Study",
+      "old_text": "Textbook solutions, step-by-step help, and on-demand tutoring across most college subjects.",
+      "new_text": "Paid homework and study support with step-by-step solutions and expert-verified answers. Check the available tools and subscription terms; this is different from booking a live one-to-one tutor.",
+      "reason": "Current Chegg page advertises homework solutions and study tools, not on-demand live tutoring.",
+      "source": "https://www.chegg.com/study"
+    },
+    {
+      "file": "tutoring.html",
+      "heading": "STEM-focused tutoring",
+      "old_text": "Math, science and engineering help is the most-searched tutoring category among our students.",
+      "new_text": "Math, science and engineering tutoring for college coursework.",
+      "reason": "A ranking of searches among AstroPro students requires internal analytics; no evidence is present. This is a factual unsupported business claim, not a stylistic issue.",
+      "source": null
+    },
+    {
+      "file": "wellbeing.html",
+      "heading": "SNAP (food assistance)",
+      "old_text": "Many college students qualify for SNAP food benefits and don't realize it \u2014 eligibility rules for students changed in recent years. Check your state's page to see if you qualify.",
+      "new_text": "College students enrolled at least half-time generally must meet a student exemption as well as other SNAP eligibility rules. Check the official student guidance and apply through your state agency; the agency determines eligibility.",
+      "reason": "Avoid implying recent temporary student expansions are still in effect or that college enrollment alone qualifies. USDA current page describes exemptions and other eligibility requirements.",
+      "source": "https://www.fna.usda.gov/snap/students",
+      "verification": "Official original FNS URL redirected to fna.usda.gov and returned200 with full eligibility text in direct HTTP check; web crawler403 is not evidence of a broken URL."
+    },
+    {
+      "file": "wellbeing.html",
+      "heading": "NAMI (National Alliance on Mental Illness)",
+      "old_text": "Education, support groups, and a helpline for anyone navigating a mental health condition, including students.",
+      "new_text": "Education, support groups, and a non-crisis HelpLine offering mental health information and emotional support. HelpLine hours are Monday\u2013Friday, 10 a.m.\u201310 p.m. Eastern, excluding federal holidays.",
+      "reason": "Clarifies that this resource is not a24/7 crisis service; it sits separately from the existing crisis cards.",
+      "source": "https://www.nami.org/nami-helpline/"
+    },
+    {
+      "file": "money-basics.html",
+      "heading": "A simple way to handle it",
+      "old_text": "Before spending anything, map out what the rest of the semester actually costs: textbooks, groceries, transportation, and rent or utilities if you live off campus. Set that amount aside first, in a separate account if that helps, and treat only what's left as discretionary.",
+      "new_text": "Before spending a financial aid refund, map out authorized education and living costs for the semester, such as course materials, food, transportation and housing. A federal student loan refund remains loan money restricted to authorized educational expenses; it is not unrestricted discretionary income. Ask your school's financial aid office about returning money you do not need.",
+      "reason": "Federal Direct Loan MPN restricts proceeds to authorized educational expenses, even after a credit-balance refund.",
+      "source": "https://studentaid.gov/app/downloadPDF.action?fileName=SUB_UNSUB_MPN"
+    },
+    {
+      "file": "money-basics.html",
+      "heading": "If a refund includes loan money",
+      "old_text": "Remember that any loan portion of a refund has to be repaid, usually with interest, after you leave school. Borrowing only what you need \u2014 and returning unused loan funds to your school if you're offered more than you need \u2014 can reduce what you owe later.",
+      "new_text": "The loan portion must be repaid under that loan's terms. Interest on Direct Unsubsidized Loans generally accrues while you are in school, even when payments are deferred. Borrow only what you need and contact your financial aid office or servicer about how and when to return unused funds.",
+      "reason": "Existing text can imply interest waits until leaving school; unsubsidized interest accrues during school.",
+      "source": "https://studentaid.gov/understand-aid/types/loans/subsidized-unsubsidized"
+    },
+    {
+      "file": "money-basics.html",
+      "heading": "Know your forms: W-2 and 1098-T",
+      "old_text": "If you had a job, your employer sends you a Form W-2 showing your wages and the taxes already withheld. If you paid tuition, your school sends a Form 1098-T showing education expenses that may be relevant to education tax benefits. Keep both once they arrive, usually by early in the year.",
+      "new_text": "Employees generally receive a Form W-2. Gig or contract income may be reported on a 1099 form and can still be taxable even if you receive no form. Eligible schools generally issue Form 1098-T for reportable tuition transactions, but exceptions apply. Keep your forms and payment records, and ask your school if you expect a 1098-T but have not received it.",
+      "reason": "Not every paid worker is an employee and not every tuition-paying student receives a1098-T.",
+      "sources": [
+        "https://www.irs.gov/businesses/gig-economy-tax-center",
+        "https://www.irs.gov/instructions/i1098et"
+      ]
+    },
+    {
+      "file": "money-basics.html",
+      "heading": "Taxes for students",
+      "action": "Add a short scholarship tax note",
+      "new_text": "Scholarships and grants can be partly taxable depending on how the money is used. Amounts used for room and board or other nonqualified costs may be taxable. Check IRS scholarship guidance or a qualified tax professional for your situation.",
+      "source": "https://www.irs.gov/taxtopics/tc421",
+      "priority": "optional meaningful addition"
+    },
+    {
+      "file": "apply-to-college.html",
+      "heading": "Write your essays",
+      "old_text": "Most systems require one main personal essay, plus some schools add their own short supplemental essays. Start the main essay first since it's reused across every school on that system.",
+      "new_text": "Check each college's writing requirements before drafting. Common App colleges can make the personal essay required or optional and may add supplements. UC first-year applicants answer four personal insight questions; most Cal State applicants do not submit essays. Prepare the writing your actual colleges request.",
+      "reason": "The existing blanket main-essay claim does not fit several systems listed on the same page.",
+      "sources": [
+        "https://www.commonapp.org/apply/first-year-students/",
+        "https://admission.universityofcalifornia.edu/how-to-apply/applying-as-a-first-year/personal-insight-questions.html",
+        "https://www.calstate.edu/apply"
+      ]
+    },
+    {
+      "file": "apply-to-college.html",
+      "heading": "Coalition for College",
+      "old_text": "A similar one-application, many-colleges system used by 150+ member schools, including several that also accept the Common App.",
+      "new_text": "Apply Coalition with Scoir lets you submit applications to participating Coalition member colleges. Check each college for availability, deadlines, and required materials.",
+      "recommended_url": "https://www.coalitionforcollegeaccess.org/apply-coalition-on-scoir",
+      "source": "https://www.coalitionforcollegeaccess.org/apply-coalition-on-scoir"
+    },
+    {
+      "file": "apply-to-college.html",
+      "heading": "SUNY applySUNY",
+      "old_text": "The shared application for the State University of New York's 60+ campuses, run directly by SUNY.",
+      "new_text": "The applySUNY application lets you apply to multiple participating SUNY campuses. Check the participating-campus list and any campus-specific materials before submitting.",
+      "source": "https://www.suny.edu/attend/apply-to-suny/participating-campuses/"
+    },
+    {
+      "file": "apply-to-college.html",
+      "heading": "Don't see your state?",
+      "old_text": "Many other public university systems (and almost all community colleges) run their own direct application on the school's own website \u2014 usually free, often just 10\u201315 minutes. Search \"[your school] apply\" or check the admissions page on their official site.",
+      "new_text": "Other universities and community colleges may use their own application. Start on the school's official admissions page and check the required materials, deadline and application fee. Ask about a fee waiver when needed; time and fees vary by institution.",
+      "reason": "Avoid unsupported universal claims about free applications and completion time; official Common App and SUNY explain institution-specific fees/requirements.",
+      "sources": [
+        "https://www.commonapp.org/apply/first-year-students/",
+        "https://www.suny.edu/attend/apply-to-suny/"
+      ]
+    }
+  ],
+  "confirmed_current": [
+    {
+      "claim": "Common App1200+ colleges",
+      "source": "https://www.commonapp.org/",
+      "no_change_needed": true
+    },
+    {
+      "claim": "CSU22 campuses",
+      "source": "https://www.calstate.edu/apply",
+      "no_change_needed": true
+    },
+    {
+      "claim": "Preply also offers academic subjects",
+      "source": "https://preply.com/en/online/school-tutors",
+      "no_change_needed": true
+    }
+  ],
+  "unverified_internal_claims": [
+    "STEM tutoring most-searched by our students",
+    "54 scholarships you can start applying for now (must use current structured listing count and avoid claiming all open)"
+  ]
+}

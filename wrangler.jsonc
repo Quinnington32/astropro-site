@@ -1,0 +1,45 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "astropro-student-resource-center",
+  "account_id": "604bc8f6fd70f62522869abae693396b",
+  "main": "worker/index.mjs",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "preview_urls": false,
+  "routes": [
+    {
+      "pattern": "students.goastropro.com",
+      "custom_domain": true,
+    },
+    {
+      "pattern": "astropromarketing.com/studentresourcecenter",
+      "zone_name": "astropromarketing.com",
+    },
+    {
+      "pattern": "astropromarketing.com/studentresourcecenter/*",
+      "zone_name": "astropromarketing.com",
+    },
+  ],
+  "assets": {
+    "directory": "dist",
+    "binding": "ASSETS",
+    "run_worker_first": true,
+    "html_handling": "none",
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "astropro-student-resource-center",
+      "database_id": "c4a3ed6f-7f10-490e-9c09-d3db46448850",
+      "migrations_dir": "migrations",
+    },
+  ],
+  "triggers": {
+    "crons": ["17 4 * * *"],
+  },
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 0.1,
+  },
+}

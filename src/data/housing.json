@@ -1,0 +1,1146 @@
+[
+  {
+    "id": "housing-columbus",
+    "file": "housing-columbus.html",
+    "school": "Ohio State University",
+    "place": "Columbus, OH",
+    "description": "One of the largest campus housing markets in the country, with a dense ring of off-campus neighborhoods — Old North Columbus, Victorian Village, Grandview — around OSU.",
+    "properties": [
+      {
+        "id": "housing-columbus-property-statehouse-lane",
+        "name": "StateHouse Lane",
+        "website": "https://housing.osu.edu/hms/roomsearch/statehouse-lane",
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=StateHouse%20Lane%2C%20Columbus%2C%20OH"
+      },
+      {
+        "id": "housing-columbus-property-lumen-on-ninth",
+        "name": "Lumen on Ninth",
+        "website": "https://lumenonninth.prospectportal.com/columbus/lumen-on-ninth/floorplans/",
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=Lumen%20on%20Ninth%2C%20Columbus%2C%20OH"
+      },
+      {
+        "id": "housing-columbus-property-statehouse-highline-on-9th",
+        "name": "Statehouse Highline on 9th",
+        "website": "https://statehousecolumbus.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Statehouse%20Highline%20on%209th%2C%20Columbus%2C%20OH",
+        "source": "https://statehousecolumbus.com/"
+      }
+    ]
+  },
+  {
+    "id": "housing-athens",
+    "file": "housing-athens.html",
+    "school": "Ohio University",
+    "place": "Athens, OH",
+    "description": "A compact Appalachian college town built almost entirely around Ohio University's campus, with Uptown Athens as the center of gravity.",
+    "properties": [
+      {
+        "id": "housing-athens-property-river-park-on-south-green",
+        "name": "River Park on South Green",
+        "website": "https://riverpark.prospectportal.com",
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=River%20Park%20on%20South%20Green%2C%20Athens%2C%20OH"
+      },
+      {
+        "id": "housing-athens-property-rivergate-apartments",
+        "name": "Rivergate Apartments",
+        "website": "https://homesteadu.prospectportal.com/athens/river-gate/student/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Rivergate%20Apartments%2C%20Athens%2C%20OH",
+        "source": "https://homesteadu.prospectportal.com/athens/river-gate/student/"
+      },
+      {
+        "id": "housing-athens-property-university-courtyard",
+        "name": "University Courtyard",
+        "website": "https://www.ucathens.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=University%20Courtyard%2C%20Athens%2C%20OH",
+        "source": "https://www.ucathens.com/"
+      },
+      {
+        "id": "housing-athens-property-the-summit-at-coates-run",
+        "name": "The Summit at Coates Run",
+        "website": "https://thesummitatcoates.prospectportal.com",
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Summit%20at%20Coates%20Run%2C%20Athens%2C%20OH"
+      },
+      {
+        "id": "housing-athens-property-campus-heights",
+        "name": "Campus Heights",
+        "website": "https://www.livecampusheights.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Campus%20Heights%2C%20Athens%2C%20OH",
+        "source": "https://www.livecampusheights.com/"
+      }
+    ]
+  },
+  {
+    "id": "housing-houston",
+    "file": "housing-houston.html",
+    "school": "University of Houston",
+    "place": "Houston, TX",
+    "description": "A large metro market, with students often looking in Third Ward, Midtown and the Museum District near the METRORail Purple Line.",
+    "properties": [
+      {
+        "id": "housing-houston-property-allure-hermann-park-at-med-center",
+        "name": "Allure Hermann Park at Med Center",
+        "website": "https://www.allurehermannpark.com/",
+        "floorplans": "https://www.allurehermannpark.com/floorplans",
+        "address": "5927 Almeda Road, Houston, TX 77004",
+        "summary": "1, 2 and 4 bedroom layouts listed by the property",
+        "source": "https://www.allurehermannpark.com/floorplans",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Allure%20Hermann%20Park%20at%20Med%20Center%2C%20Houston%2C%20TX"
+      },
+      {
+        "id": "housing-houston-property-hermann-park-lofts",
+        "name": "Hermann Park Lofts",
+        "website": "https://hermannparklofts.com/",
+        "floorplans": "https://hermannparklofts.com/floorplans/",
+        "address": "1 Hermann Park Court, Houston, TX 77021",
+        "summary": "Studios, 1, 2 and 3 bedroom layouts listed by the property",
+        "source": "https://hermannparklofts.com/floorplans/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Hermann%20Park%20Lofts%2C%20Houston%2C%20TX"
+      },
+      {
+        "id": "housing-houston-property-forme",
+        "name": "Forme",
+        "website": "https://www.formehtx.com/",
+        "floorplans": "https://www.formehtx.com/residences",
+        "address": "5501 La Branch Street, Houston, TX 77004",
+        "summary": "Studios, 1, 2 and 3 bedroom homes; co-living suites described on property website",
+        "source": "https://www.formehtx.com/residences",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Forme%2C%20Houston%2C%20TX"
+      },
+      {
+        "id": "housing-houston-property-marquis-enclave",
+        "name": "Marquis Enclave",
+        "website": "https://www.marquisenclave.com/",
+        "floorplans": "https://www.marquisenclave.com/floor-plans",
+        "address": "301 St Joseph Parkway, Houston, TX 77002",
+        "summary": "Studios, 1 and 2 bedroom homes listed by the property",
+        "source": "https://www.marquisenclave.com/floor-plans",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Marquis%20Enclave%2C%20Houston%2C%20TX"
+      },
+      {
+        "id": "housing-houston-property-life-tower",
+        "name": "Life Tower",
+        "website": "https://www.livelifetower.com/",
+        "floorplans": "https://www.livelifetower.com/apartments/tx/houston/floor-plans",
+        "address": "6919 Main Street, Houston, TX 77030",
+        "summary": "Furnished studios, 1, 2 and 4 bedroom apartments described on property website",
+        "source": "https://www.livelifetower.com/apartments/tx/houston/floor-plans",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Life%20Tower%2C%20Houston%2C%20TX"
+      }
+    ]
+  },
+  {
+    "id": "housing-mckinney",
+    "file": "housing-mckinney.html",
+    "school": "Collin College",
+    "place": "McKinney, TX",
+    "description": "A multi-campus system across Collin County, so most students look near whichever campus they attend rather than one shared area.",
+    "properties": [
+      {
+        "id": "housing-mckinney-property-heritage-mckinney-square",
+        "name": "Heritage McKinney Square",
+        "website": "https://www.willowbridgepc.com/properties/heritage-mckinney-square-mckinney-tx",
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=Heritage%20McKinney%20Square%2C%20McKinney%2C%20TX"
+      },
+      {
+        "id": "housing-mckinney-property-davis-at-the-square",
+        "name": "Davis at the Square",
+        "website": "https://www.willowbridgepc.com/properties/davis-at-square-mckinney-tx/",
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=Davis%20at%20the%20Square%2C%20McKinney%2C%20TX"
+      },
+      {
+        "id": "housing-mckinney-property-vireo-medical-district",
+        "name": "Vireo Medical District",
+        "website": "https://vireomedicaldistrict.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Vireo%20Medical%20District%2C%20McKinney%2C%20TX",
+        "source": "https://vireomedicaldistrict.com/"
+      },
+      {
+        "id": "housing-mckinney-property-greenhaven-mckinney",
+        "name": "Greenhaven McKinney",
+        "website": "https://www.liveatgreenhaven.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Greenhaven%20McKinney%2C%20McKinney%2C%20TX",
+        "source": "https://www.liveatgreenhaven.com/"
+      },
+      {
+        "id": "housing-mckinney-property-aspire-mckinney-ranch",
+        "name": "Aspire McKinney Ranch",
+        "website": "https://aspiremckinneyranchapts.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Aspire%20McKinney%20Ranch%2C%20McKinney%2C%20TX",
+        "source": "https://aspiremckinneyranchapts.com/"
+      }
+    ]
+  },
+  {
+    "id": "housing-dallas",
+    "file": "housing-dallas.html",
+    "school": "Dallas College",
+    "place": "Dallas, TX",
+    "description": "Seven campuses spread across the metro, with DART light rail and bus opening up housing options near each one.",
+    "properties": [
+      {
+        "id": "housing-dallas-property-the-wilson-building",
+        "name": "The Wilson Building",
+        "website": "https://rent.brookfieldproperties.com/property/the-wilson",
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Wilson%20Building%2C%20Dallas%2C%20TX"
+      },
+      {
+        "id": "housing-dallas-property-mid-elm-lofts",
+        "name": "Mid Elm Lofts",
+        "website": "https://www.midelmlofts.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Mid%20Elm%20Lofts%2C%20Dallas%2C%20TX",
+        "source": "https://www.midelmlofts.com/"
+      },
+      {
+        "id": "housing-dallas-property-arrive-west-end",
+        "name": "Arrive West End",
+        "website": "https://arrivewestend.prospectportal.com",
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=Arrive%20West%20End%2C%20Dallas%2C%20TX"
+      },
+      {
+        "id": "housing-dallas-property-the-griffin",
+        "name": "The Griffin",
+        "website": "https://www.thegriffindallas.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Griffin%2C%20Dallas%2C%20TX",
+        "source": "https://www.thegriffindallas.com/amenities"
+      }
+    ]
+  },
+  {
+    "id": "housing-mcallen",
+    "file": "housing-mcallen.html",
+    "school": "South Texas College",
+    "place": "McAllen, TX",
+    "description": "A Rio Grande Valley market serving a multi-campus system across McAllen and the surrounding area.",
+    "properties": [
+      {
+        "id": "housing-mcallen-property-kerria-square-apartments",
+        "name": "Kerria Square Apartments",
+        "website": null,
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=Kerria%20Square%20Apartments%2C%20McAllen%2C%20TX"
+      },
+      {
+        "id": "housing-mcallen-property-villas-on-ware",
+        "name": "Villas on Ware",
+        "website": "https://rhodesliving.com/communities/villas-on-ware",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Villas%20on%20Ware%2C%20McAllen%2C%20TX",
+        "source": "https://rhodesliving.com/communities/villas-on-ware"
+      },
+      {
+        "id": "housing-mcallen-property-padre-de-vida-apartments",
+        "name": "Padre De Vida Apartments",
+        "website": "https://www.padredevida.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Padre%20De%20Vida%20Apartments%2C%20McAllen%2C%20TX",
+        "source": "https://www.padredevida.com/"
+      },
+      {
+        "id": "housing-mcallen-property-district-apartments",
+        "name": "District Apartments",
+        "website": null,
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=District%20Apartments%2C%20McAllen%2C%20TX"
+      }
+    ]
+  },
+  {
+    "id": "housing-bakersfield",
+    "file": "housing-bakersfield.html",
+    "school": "Kern Community College District",
+    "place": "Bakersfield, CA",
+    "description": "A Central Valley market, with GET Bus offering free rides for Bakersfield College students.",
+    "properties": []
+  },
+  {
+    "id": "housing-lincoln",
+    "file": "housing-lincoln.html",
+    "school": "University of Nebraska–Lincoln",
+    "place": "Lincoln, NE",
+    "description": "A classic college-town market around UNL's city and east campuses, served by StarTran city buses.",
+    "properties": [
+      {
+        "id": "housing-lincoln-property-atmosphere-lincoln",
+        "name": "Atmosphere Lincoln",
+        "website": "https://atmospherelincoln.prospectportal.com/lincoln/atmosphere-lincoln/student/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Atmosphere%20Lincoln%2C%20Lincoln%2C%20NE",
+        "source": "https://atmospherelincoln.prospectportal.com/lincoln/atmosphere-lincoln/student/"
+      },
+      {
+        "id": "housing-lincoln-property-the-quarters-lincoln",
+        "name": "The Quarters Lincoln",
+        "website": "https://thequarterslincoln.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Quarters%20Lincoln%2C%20Lincoln%2C%20NE",
+        "source": "https://thequarterslincoln.com/contact/"
+      },
+      {
+        "id": "housing-lincoln-property-lionsgate-apartments",
+        "name": "Lionsgate Apartments",
+        "website": "https://www.vinestreetapts.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Lionsgate%20Apartments%2C%20Lincoln%2C%20NE",
+        "source": "https://www.vinestreetapts.com/sisterpropertiesdetailedview"
+      }
+    ]
+  },
+  {
+    "id": "housing-normal",
+    "file": "housing-normal.html",
+    "school": "Illinois State University",
+    "place": "Normal, IL",
+    "description": "The Bloomington–Normal twin-city market, connected by Connect Transit's documented ISU student partnership.",
+    "properties": [
+      {
+        "id": "housing-normal-property-the-social-on-hovey",
+        "name": "The Social on Hovey",
+        "website": "https://thesocialonhovey.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Social%20on%20Hovey%2C%20Normal%2C%20IL",
+        "source": "https://thesocialonhovey.com/gallery/"
+      },
+      {
+        "id": "housing-normal-property-university-row-townhomes",
+        "name": "University Row Townhomes",
+        "website": null,
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=University%20Row%20Townhomes%2C%20Normal%2C%20IL"
+      },
+      {
+        "id": "housing-normal-property-pinecrest-apartments",
+        "name": "Pinecrest Apartments",
+        "website": "https://www.pinecrest-apts.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Pinecrest%20Apartments%2C%20Normal%2C%20IL",
+        "source": "https://www.pinecrest-apts.com/"
+      }
+    ]
+  },
+  {
+    "id": "housing-reno",
+    "file": "housing-reno.html",
+    "school": "University of Nevada",
+    "place": "Reno, NV",
+    "description": "A growing Nevada market near UNR, with RTC RIDE offering a student EdPass for campus-area routes.",
+    "properties": [
+      {
+        "id": "housing-reno-property-elevation-at-the-u",
+        "name": "Elevation at the U",
+        "website": "https://elevationattheu.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Elevation%20at%20the%20U%2C%20Reno%2C%20NV",
+        "source": "https://elevationattheu.com/"
+      },
+      {
+        "id": "housing-reno-property-fifteen51",
+        "name": "Fifteen51",
+        "website": "https://livefifteen51.prospectportal.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Fifteen51%2C%20Reno%2C%20NV",
+        "source": "https://livefifteen51.prospectportal.com/"
+      },
+      {
+        "id": "housing-reno-property-gravitate-reno",
+        "name": "Gravitate Reno",
+        "website": "https://gravitatereno.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Gravitate%20Reno%2C%20Reno%2C%20NV",
+        "source": "https://gravitatereno.com/contact/"
+      },
+      {
+        "id": "housing-reno-property-the-towers-at-pink-hill",
+        "name": "The Towers At Pink Hill",
+        "website": null,
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Towers%20At%20Pink%20Hill%2C%20Reno%2C%20NV"
+      },
+      {
+        "id": "housing-reno-property-canyon-flats",
+        "name": "Canyon Flats",
+        "website": "https://canyonflatsaptsreno.prospectportal.com/reno-nv-apartments/canyon-flats/",
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=Canyon%20Flats%2C%20Reno%2C%20NV"
+      }
+    ]
+  },
+  {
+    "id": "housing-denver",
+    "file": "housing-denver.html",
+    "school": "Metropolitan State University of Denver",
+    "place": "Denver, CO",
+    "description": "An urban commuter market on the Auraria campus, with RTD's student fare program covering downtown Denver.",
+    "properties": [
+      {
+        "id": "housing-denver-property-auraria-lofts",
+        "name": "Auraria Lofts",
+        "website": "https://theaurarialofts.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Auraria%20Lofts%2C%20Denver%2C%20CO",
+        "source": "https://theaurarialofts.com/contact/"
+      },
+      {
+        "id": "housing-denver-property-alta-mile-high",
+        "name": "Alta Mile High",
+        "website": "https://altamilehigh.com",
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=Alta%20Mile%20High%2C%20Denver%2C%20CO"
+      },
+      {
+        "id": "housing-denver-property-novel-uptown-by-crescent-communities",
+        "name": "NOVEL Uptown by Crescent Communities",
+        "website": "https://www.noveluptown.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=NOVEL%20Uptown%20by%20Crescent%20Communities%2C%20Denver%2C%20CO",
+        "source": "https://www.noveluptown.com/"
+      },
+      {
+        "id": "housing-denver-property-x-denver",
+        "name": "X Denver",
+        "website": "https://www.xdenverliving.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=X%20Denver%2C%20Denver%2C%20CO",
+        "source": "https://entrata.xdenverliving.com/denver/x-denver-1a/conventional/"
+      }
+    ]
+  },
+  {
+    "id": "housing-beaumont",
+    "file": "housing-beaumont.html",
+    "school": "Lamar University",
+    "place": "Beaumont, TX",
+    "description": "A Southeast Texas market served by Beaumont Municipal Transit near Lamar's campus.",
+    "properties": [
+      {
+        "id": "housing-beaumont-property-prutzman-place-apartments",
+        "name": "Prutzman Place Apartments",
+        "website": "https://prutzmanplaceapartments.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Prutzman%20Place%20Apartments%2C%20Beaumont%2C%20TX",
+        "source": "https://prutzmanplaceapartments.com/"
+      },
+      {
+        "id": "housing-beaumont-property-arthur-place-apartments",
+        "name": "Arthur Place Apartments",
+        "website": null,
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=Arthur%20Place%20Apartments%2C%20Beaumont%2C%20TX"
+      }
+    ]
+  },
+  {
+    "id": "housing-kilgore",
+    "file": "housing-kilgore.html",
+    "school": "Kilgore College",
+    "place": "Kilgore, TX",
+    "description": "A small East Texas college town market without large-scale public transit, so proximity to campus matters most.",
+    "properties": [
+      {
+        "id": "housing-kilgore-property-northview",
+        "name": "Northview",
+        "website": "https://meganmanagement.com/_northview/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Northview%2C%20Kilgore%2C%20TX",
+        "source": "https://meganmanagement.com/_northview/"
+      },
+      {
+        "id": "housing-kilgore-property-stoneridge-apartments",
+        "name": "Stoneridge Apartments",
+        "website": "https://www.vdiapartments.com/apartments/tx/kilgore/stoneridge/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Stoneridge%20Apartments%2C%20Kilgore%2C%20TX",
+        "source": "https://www.vdiapartments.com/apartments/tx/kilgore/stoneridge/"
+      }
+    ]
+  },
+  {
+    "id": "housing-brenham",
+    "file": "housing-brenham.html",
+    "school": "Blinn College",
+    "place": "Brenham, TX",
+    "description": "Home to Blinn's main campus, part of a multi-campus district also serving the Bryan–College Station area.",
+    "properties": [
+      {
+        "id": "housing-brenham-property-washington-court-apartments",
+        "name": "Washington Court Apartments",
+        "website": null,
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=Washington%20Court%20Apartments%2C%20Brenham%2C%20TX"
+      },
+      {
+        "id": "housing-brenham-property-park-place-apartments",
+        "name": "Park Place Apartments",
+        "website": null,
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=Park%20Place%20Apartments%2C%20Brenham%2C%20TX"
+      }
+    ]
+  },
+  {
+    "id": "housing-grand-forks",
+    "file": "housing-grand-forks.html",
+    "school": "University of North Dakota",
+    "place": "Grand Forks, ND",
+    "description": "A compact Northern Plains market served by Cities Area Transit near UND's campus.",
+    "properties": [
+      {
+        "id": "housing-grand-forks-property-williamsburg",
+        "name": "Williamsburg",
+        "website": null,
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=Williamsburg%2C%20Grand%20Forks%2C%20ND"
+      },
+      {
+        "id": "housing-grand-forks-property-berkeley-drive-apartments",
+        "name": "Berkeley Drive Apartments",
+        "website": "https://und.edu/student-life/housing/campus-housing/berkeley.html",
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=Berkeley%20Drive%20Apartments%2C%20Grand%20Forks%2C%20ND"
+      },
+      {
+        "id": "housing-grand-forks-property-the-gallery-apartments",
+        "name": "The Gallery Apartments",
+        "website": "https://www.immapartments.com/the-gallery",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Gallery%20Apartments%2C%20Grand%20Forks%2C%20ND",
+        "source": "https://www.immapartments.com/the-gallery"
+      },
+      {
+        "id": "housing-grand-forks-property-columbia-west",
+        "name": "Columbia West",
+        "website": "https://www.liveatcolumbiawest.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Columbia%20West%2C%20Grand%20Forks%2C%20ND",
+        "source": "https://www.liveatcolumbiawest.com/"
+      },
+      {
+        "id": "housing-grand-forks-property-library-lane",
+        "name": "Library Lane",
+        "website": "https://www.liveatlibrarylane.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Library%20Lane%2C%20Grand%20Forks%2C%20ND",
+        "source": "https://www.liveatlibrarylane.com/"
+      }
+    ]
+  },
+  {
+    "id": "housing-denton",
+    "file": "housing-denton.html",
+    "school": "Texas Woman's University",
+    "place": "Denton, TX",
+    "description": "A North Texas college town also home to UNT, with DCTA's GoZone service documented for TWU students specifically.",
+    "properties": [
+      {
+        "id": "housing-denton-property-city-parc-at-fry-street",
+        "name": "City Parc at Fry Street",
+        "website": "https://www.americancampus.com/student-apartments/tx/denton/city-parc-at-fry-street/floor-plans",
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=City%20Parc%20at%20Fry%20Street%2C%20Denton%2C%20TX"
+      },
+      {
+        "id": "housing-denton-property-u-centre-at-fry-street",
+        "name": "U Centre at Fry Street",
+        "website": "https://www.americancampus.com/student-apartments/tx/denton/u-centre-at-fry-street/floor-plans",
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=U%20Centre%20at%20Fry%20Street%2C%20Denton%2C%20TX"
+      },
+      {
+        "id": "housing-denton-property-uptown-apartments",
+        "name": "Uptown Apartments",
+        "website": "https://www.americancampus.com/student-apartments/tx/denton/uptown/floor-plans",
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=Uptown%20Apartments%2C%20Denton%2C%20TX"
+      }
+    ]
+  },
+  {
+    "id": "housing-omaha",
+    "file": "housing-omaha.html",
+    "school": "University of Nebraska Omaha",
+    "place": "Omaha, NE",
+    "description": "An urban market where students often look in Dundee, Benson and Midtown, per UNO's own off-campus housing guidance.",
+    "properties": [
+      {
+        "id": "housing-omaha-property-swivel",
+        "name": "Swivel",
+        "website": "https://www.liveswivel.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Swivel%2C%20Omaha%2C%20NE",
+        "source": "https://www.liveswivel.com/"
+      },
+      {
+        "id": "housing-omaha-property-zag",
+        "name": "ZAG",
+        "website": "https://www.zagapts.com/omaha/zag/map-and-directions/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=ZAG%2C%20Omaha%2C%20NE",
+        "source": "https://www.zagapts.com/omaha/zag/map-and-directions/"
+      },
+      {
+        "id": "housing-omaha-property-broadmoor-at-aksarben-village",
+        "name": "Broadmoor at Aksarben Village",
+        "website": "https://broadmoor.cc",
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=Broadmoor%20at%20Aksarben%20Village%2C%20Omaha%2C%20NE"
+      },
+      {
+        "id": "housing-omaha-property-clove",
+        "name": "Clove",
+        "website": "https://www.clove-omaha.com/floorplans",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Clove%2C%20Omaha%2C%20NE",
+        "source": "https://www.clove-omaha.com/floorplans"
+      },
+      {
+        "id": "housing-omaha-property-the-traveler-apartments",
+        "name": "The Traveler Apartments",
+        "website": "https://www.thetravelerapts.com/floorplans",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Traveler%20Apartments%2C%20Omaha%2C%20NE",
+        "source": "https://www.thetravelerapts.com/floorplans"
+      }
+    ]
+  },
+  {
+    "id": "housing-pensacola",
+    "file": "housing-pensacola.html",
+    "school": "University of West Florida",
+    "place": "Pensacola, FL",
+    "description": "A Gulf Coast market served by ECAT and a UWF campus trolley along the university's main corridors.",
+    "properties": [
+      {
+        "id": "housing-pensacola-property-the-fountains-apartments",
+        "name": "The Fountains Apartments",
+        "website": "https://www.fountainspensacola.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Fountains%20Apartments%2C%20Pensacola%2C%20FL",
+        "source": "https://www.fountainspensacola.com/"
+      }
+    ]
+  },
+  {
+    "id": "housing-amarillo",
+    "file": "housing-amarillo.html",
+    "school": "Amarillo College",
+    "place": "Amarillo, TX",
+    "description": "A Texas Panhandle market served by Amarillo City Transit, with Wolflin among the areas students look at.",
+    "properties": [
+      {
+        "id": "housing-amarillo-property-the-badgers-on-jackson",
+        "name": "The Badgers on Jackson",
+        "website": "https://pacerealtytexas.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Badgers%20on%20Jackson%2C%20Amarillo%2C%20TX",
+        "source": "https://amarillocollege.com/offcampushousing/properties/95/The-Badgers-on-Jackson"
+      },
+      {
+        "id": "housing-amarillo-property-georgia-villas",
+        "name": "Georgia Villas",
+        "website": "https://georgiavillas.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Georgia%20Villas%2C%20Amarillo%2C%20TX",
+        "source": "https://georgiavillas.com/"
+      }
+    ]
+  },
+  {
+    "id": "housing-goldsboro",
+    "file": "housing-goldsboro.html",
+    "school": "Wayne Community College",
+    "place": "Goldsboro, NC",
+    "description": "An Eastern North Carolina market served by the Goldsboro-Wayne Transportation Authority.",
+    "properties": [
+      {
+        "id": "housing-goldsboro-property-windsor-creek",
+        "name": "Windsor Creek",
+        "website": "https://www.jwhunter.com/401-windsor-creek-parkway/default",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Windsor%20Creek%2C%20Goldsboro%2C%20NC",
+        "source": "https://www.jwhunter.com/401-windsor-creek-parkway/default"
+      }
+    ]
+  },
+  {
+    "id": "housing-tyler",
+    "file": "housing-tyler.html",
+    "school": "UT Tyler",
+    "place": "Tyler, TX",
+    "description": "An East Texas market served by Tyler Transit, with the Azalea District among the areas near campus.",
+    "properties": [
+      {
+        "id": "housing-tyler-property-university-pines",
+        "name": "University Pines",
+        "website": "https://campuslivingvillages.com/united-states/university-of-texas-at-tyler/university-pines-ut-tyler-housing/uhmc-floorplans-page-3/",
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=University%20Pines%2C%20Tyler%2C%20TX"
+      },
+      {
+        "id": "housing-tyler-property-varsity-view",
+        "name": "Varsity View",
+        "website": "https://www.varsityview.com/availability",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Varsity%20View%2C%20Tyler%2C%20TX",
+        "source": "https://www.varsityview.com/availability"
+      },
+      {
+        "id": "housing-tyler-property-haverhill-place",
+        "name": "Haverhill Place",
+        "website": "https://www.haverhillplace.com/about-us/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Haverhill%20Place%2C%20Tyler%2C%20TX",
+        "source": "https://www.haverhillplace.com/about-us/"
+      },
+      {
+        "id": "housing-tyler-property-the-woodlands",
+        "name": "The Woodlands",
+        "website": "https://www.thewoodlandstyler.com/contact/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Woodlands%2C%20Tyler%2C%20TX",
+        "source": "https://www.thewoodlandstyler.com/contact/"
+      }
+    ]
+  },
+  {
+    "id": "housing-midland",
+    "file": "housing-midland.html",
+    "school": "Midland College",
+    "place": "Midland, TX",
+    "description": "A Permian Basin market served by EZ-RIDER, the regional transit system shared with nearby Odessa.",
+    "properties": [
+      {
+        "id": "housing-midland-property-midland-village-apartments",
+        "name": "Midland Village Apartments",
+        "website": null,
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=Midland%20Village%20Apartments%2C%20Midland%2C%20TX"
+      },
+      {
+        "id": "housing-midland-property-renew-fairmont-park",
+        "name": "ReNew Fairmont Park",
+        "website": "https://www.renewfairmontpark.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=ReNew%20Fairmont%20Park%2C%20Midland%2C%20TX",
+        "source": "https://www.renewfairmontpark.com/Apartments/module/application_authentication/"
+      }
+    ]
+  },
+  {
+    "id": "housing-toledo",
+    "file": "housing-toledo.html",
+    "school": "Owens Community College",
+    "place": "Toledo, OH",
+    "description": "A Northwest Ohio market, with Owens' main campus in Perrysburg Township just outside Toledo, served by TARTA.",
+    "properties": [
+      {
+        "id": "housing-toledo-property-lake-view-shores-apartments",
+        "name": "Lake View Shores Apartments",
+        "website": "https://choiceproperties.com/community/lake-view-shores/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Lake%20View%20Shores%20Apartments%2C%20Toledo%2C%20OH",
+        "source": "https://choiceproperties.com/community/lake-view-shores/"
+      },
+      {
+        "id": "housing-toledo-property-oak-hill-apartments",
+        "name": "Oak Hill Apartments",
+        "website": "https://rentoakhill.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Oak%20Hill%20Apartments%2C%20Toledo%2C%20OH",
+        "source": "https://rentoakhill.com/"
+      },
+      {
+        "id": "housing-toledo-property-hamlet-at-maumee",
+        "name": "Hamlet at Maumee",
+        "website": "https://www.hamletatmaumee.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Hamlet%20at%20Maumee%2C%20Toledo%2C%20OH",
+        "source": "https://www.hamletatmaumee.com/"
+      },
+      {
+        "id": "housing-toledo-property-quail-hollow-at-the-lakes",
+        "name": "Quail Hollow at the Lakes",
+        "website": "https://www.quailhollowatthelakesholland.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Quail%20Hollow%20at%20the%20Lakes%2C%20Toledo%2C%20OH",
+        "source": "https://www.quailhollowatthelakesholland.com/"
+      },
+      {
+        "id": "housing-toledo-property-fox-chase-apartments",
+        "name": "Fox Chase Apartments",
+        "website": "https://villagegreen.com/oh/holland/fox-chase/#Floorplans",
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=Fox%20Chase%20Apartments%2C%20Toledo%2C%20OH"
+      }
+    ]
+  },
+  {
+    "id": "housing-san-antonio",
+    "file": "housing-san-antonio.html",
+    "school": "Texas A&M University-San Antonio",
+    "place": "San Antonio, TX",
+    "description": "A South Texas market near the Brooks/Southside area, served by VIA Metropolitan Transit.",
+    "properties": [
+      {
+        "id": "housing-san-antonio-property-los-arcos-at-vida",
+        "name": "Los Arcos at VIDA",
+        "website": "https://www.losarcosvida.com/",
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=Los%20Arcos%20at%20VIDA%2C%20San%20Antonio%2C%20TX"
+      },
+      {
+        "id": "housing-san-antonio-property-the-landings-at-brooks-city-base",
+        "name": "The Landings at Brooks City-Base",
+        "website": "https://www.thelandingsatbrookscity-base.com/mapsanddirections",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Landings%20at%20Brooks%20City-Base%2C%20San%20Antonio%2C%20TX",
+        "source": "https://www.thelandingsatbrookscity-base.com/mapsanddirections"
+      },
+      {
+        "id": "housing-san-antonio-property-los-cielos-at-brooks-luxury-rentals",
+        "name": "Los Cielos at Brooks Luxury Rentals",
+        "website": "https://www.greystar.com/properties/san-antonio-tx/los-cielos-at-brooks-luxury-rentals/floorplans",
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=Los%20Cielos%20at%20Brooks%20Luxury%20Rentals%2C%20San%20Antonio%2C%20TX"
+      }
+    ]
+  },
+  {
+    "id": "housing-tahlequah",
+    "file": "housing-tahlequah.html",
+    "school": "Northeastern State University",
+    "place": "Tahlequah, OK",
+    "description": "A Northeast Oklahoma market served by Cherokee Nation and KI BOIS transit routes.",
+    "properties": [
+      {
+        "id": "housing-tahlequah-property-north-brook-apartments",
+        "name": "North Brook Apartments",
+        "website": null,
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=North%20Brook%20Apartments%2C%20Tahlequah%2C%20OK"
+      },
+      {
+        "id": "housing-tahlequah-property-pleasant-view-apartments",
+        "name": "Pleasant View Apartments",
+        "website": null,
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=Pleasant%20View%20Apartments%2C%20Tahlequah%2C%20OK"
+      }
+    ]
+  },
+  {
+    "id": "housing-smithfield",
+    "file": "housing-smithfield.html",
+    "school": "Johnston Community College",
+    "place": "Smithfield, NC",
+    "description": "A Johnston County market served by JCATS, the county's public transit system.",
+    "properties": [
+      {
+        "id": "housing-smithfield-property-glen-lake-apartments",
+        "name": "Glen Lake Apartments",
+        "website": "https://glen-lake-apartments0.rentcafewebsite.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Glen%20Lake%20Apartments%2C%20Smithfield%2C%20NC",
+        "source": "https://glen-lake-apartments0.rentcafewebsite.com/",
+        "summary": "Income restrictions apply. Confirm eligibility directly with the property before applying."
+      }
+    ]
+  },
+  {
+    "id": "housing-corsicana",
+    "file": "housing-corsicana.html",
+    "school": "Navarro College",
+    "place": "Corsicana, TX",
+    "description": "A smaller North Texas market without large-scale public transit, so proximity to campus matters most.",
+    "properties": [
+      {
+        "id": "housing-corsicana-property-weston-corsicana",
+        "name": "Weston Corsicana",
+        "website": "https://www.westoncorsicana.com/corsicana/weston-corsicana/conventional/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Weston%20Corsicana%2C%20Corsicana%2C%20TX",
+        "source": "https://www.westoncorsicana.com/corsicana/weston-corsicana/conventional/"
+      },
+      {
+        "id": "housing-corsicana-property-tcg-at-corsicana",
+        "name": "TCG at Corsicana",
+        "website": null,
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=TCG%20at%20Corsicana%2C%20Corsicana%2C%20TX"
+      },
+      {
+        "id": "housing-corsicana-property-arbors-of-corsicana",
+        "name": "Arbors of Corsicana",
+        "website": "https://www.arborsofcorsicana.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Arbors%20of%20Corsicana%2C%20Corsicana%2C%20TX",
+        "source": "https://www.arborsofcorsicana.com/"
+      },
+      {
+        "id": "housing-corsicana-property-oak-lawn-place",
+        "name": "Oak Lawn Place",
+        "website": null,
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=Oak%20Lawn%20Place%2C%20Corsicana%2C%20TX"
+      },
+      {
+        "id": "housing-corsicana-property-northwood-village-apartments",
+        "name": "Northwood Village Apartments",
+        "website": "https://www.northwoodcorsicana.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Northwood%20Village%20Apartments%2C%20Corsicana%2C%20TX",
+        "source": "https://www.northwoodcorsicana.com/"
+      }
+    ]
+  },
+  {
+    "id": "housing-portland-me",
+    "file": "housing-portland-me.html",
+    "school": "University of Southern Maine",
+    "place": "Portland, ME",
+    "description": "A Maine market near Parkside, Deering Center and the West End, with USM's own Husky Line shuttle plus Greater Portland METRO.",
+    "properties": [
+      {
+        "id": "housing-portland-me-property-the-linden",
+        "name": "The Linden",
+        "website": "https://www.thelindenportland.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Linden%2C%20Portland%2C%20ME",
+        "source": "https://www.thelindenportland.com/"
+      },
+      {
+        "id": "housing-portland-me-property-back-bay-tower",
+        "name": "Back Bay Tower",
+        "website": "https://backbaytower.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Back%20Bay%20Tower%2C%20Portland%2C%20ME",
+        "source": "https://backbaytower.com/"
+      },
+      {
+        "id": "housing-portland-me-property-princeton-pines",
+        "name": "Princeton Pines",
+        "website": "https://www.princetonpinesapts.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Princeton%20Pines%2C%20Portland%2C%20ME",
+        "source": "https://www.princetonpinesapts.com/"
+      },
+      {
+        "id": "housing-portland-me-property-redbank-village",
+        "name": "Redbank Village",
+        "website": "https://www.redbankvillageapts.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Redbank%20Village%2C%20Portland%2C%20ME",
+        "source": "https://www.redbankvillageapts.com/"
+      }
+    ]
+  },
+  {
+    "id": "housing-des-plaines",
+    "file": "housing-des-plaines.html",
+    "school": "Oakton College",
+    "place": "Des Plaines, IL",
+    "description": "A Chicago-suburb market reachable by the CTA Blue Line, Metra UP-NW and Pace bus routes.",
+    "properties": [
+      {
+        "id": "housing-des-plaines-property-park-colony-apartments",
+        "name": "Park Colony Apartments",
+        "website": "https://www.parkcolonydesplaines.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Park%20Colony%20Apartments%2C%20Des%20Plaines%2C%20IL",
+        "source": "https://www.parkcolonydesplaines.com/"
+      }
+    ]
+  },
+  {
+    "id": "housing-jackson-mi",
+    "file": "housing-jackson-mi.html",
+    "school": "Jackson College",
+    "place": "Jackson, MI",
+    "description": "A South-Central Michigan market served by JATA, the local transit authority.",
+    "properties": [
+      {
+        "id": "housing-jackson-mi-property-park-crest-apartments",
+        "name": "Park Crest Apartments",
+        "website": null,
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=Park%20Crest%20Apartments%2C%20Jackson%2C%20MI"
+      },
+      {
+        "id": "housing-jackson-mi-property-cascade-ridge-apartments",
+        "name": "Cascade Ridge Apartments",
+        "website": "https://www.cascaderidgeapartments.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Cascade%20Ridge%20Apartments%2C%20Jackson%2C%20MI",
+        "source": "https://www.cascaderidgeapartments.com/"
+      }
+    ]
+  },
+  {
+    "id": "housing-laredo",
+    "file": "housing-laredo.html",
+    "school": "Laredo College",
+    "place": "Laredo, TX",
+    "description": "A South Texas border-city market, with College Heights among the areas near campus, served by El Metro.",
+    "properties": [
+      {
+        "id": "housing-laredo-property-la-contessa-apartments",
+        "name": "La Contessa Apartments",
+        "website": "https://www.greystar.com/properties/laredo-tx/la-contessa-apartments/floorplans",
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=La%20Contessa%20Apartments%2C%20Laredo%2C%20TX"
+      }
+    ]
+  },
+  {
+    "id": "housing-odessa",
+    "file": "housing-odessa.html",
+    "school": "UT Permian Basin",
+    "place": "Odessa, TX",
+    "description": "A West Texas market sharing the EZ-RIDER regional transit system with nearby Midland.",
+    "properties": [
+      {
+        "id": "housing-odessa-property-west-winds-village-apartments",
+        "name": "West Winds Village Apartments",
+        "website": null,
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=West%20Winds%20Village%20Apartments%2C%20Odessa%2C%20TX"
+      },
+      {
+        "id": "housing-odessa-property-cru",
+        "name": "Cru",
+        "website": "https://livecruapartments.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Cru%2C%20Odessa%2C%20TX",
+        "source": "https://livecruapartments.com/"
+      },
+      {
+        "id": "housing-odessa-property-tuscany-at-faudree-apartment-homes",
+        "name": "Tuscany at Faudree Apartment Homes",
+        "website": "https://www.tuscanyatfaudree.com/gallery/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Tuscany%20at%20Faudree%20Apartment%20Homes%2C%20Odessa%2C%20TX",
+        "source": "https://www.tuscanyatfaudree.com/gallery/"
+      },
+      {
+        "id": "housing-odessa-property-sedona-ranch",
+        "name": "Sedona Ranch",
+        "website": "https://www.sedonaranchapartments.com/",
+        "floorplans": "https://www.sedonaranchapartments.com/floorplans",
+        "address": "8001 Brownstone Road, Odessa, TX 79765",
+        "summary": "1 and 2 bedroom apartments described on property website",
+        "source": "https://www.sedonaranchapartments.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Sedona%20Ranch%2C%20Odessa%2C%20TX"
+      },
+      {
+        "id": "housing-odessa-property-latitude-31",
+        "name": "Latitude 31°",
+        "website": "https://www.latitude31apartments.com/sitemap",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Latitude%2031%C2%B0%2C%20Odessa%2C%20TX",
+        "source": "https://www.latitude31apartments.com/sitemap"
+      }
+    ]
+  },
+  {
+    "id": "housing-kearney",
+    "file": "housing-kearney.html",
+    "school": "University of Nebraska Kearney",
+    "place": "Kearney, NE",
+    "description": "A smaller Nebraska college-town market without large-scale public transit, so proximity to campus matters most.",
+    "properties": [
+      {
+        "id": "housing-kearney-property-element-30-apartments",
+        "name": "Element 30 Apartments",
+        "website": "https://www.liveelement30.com/faq",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Element%2030%20Apartments%2C%20Kearney%2C%20NE",
+        "source": "https://www.liveelement30.com/faq"
+      },
+      {
+        "id": "housing-kearney-property-kearney-apartment-homes",
+        "name": "Kearney Apartment Homes",
+        "website": "https://www.kearneyapartmenthomes.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Kearney%20Apartment%20Homes%2C%20Kearney%2C%20NE",
+        "source": "https://www.kearneyapartmenthomes.com/"
+      },
+      {
+        "id": "housing-kearney-property-village-at-kearney-apartments",
+        "name": "Village at Kearney Apartments",
+        "website": "https://www.villageatkearneyapartments.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Village%20at%20Kearney%20Apartments%2C%20Kearney%2C%20NE",
+        "source": "https://www.villageatkearneyapartments.com/"
+      },
+      {
+        "id": "housing-kearney-property-the-sterling-apartments-at-kearney",
+        "name": "The Sterling Apartments at Kearney",
+        "website": "https://www.thesterlingkearney.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Sterling%20Apartments%20at%20Kearney%2C%20Kearney%2C%20NE",
+        "source": "https://www.thesterlingkearney.com/"
+      }
+    ]
+  },
+  {
+    "id": "housing-new-hampshire",
+    "file": "housing-new-hampshire.html",
+    "school": "Community College System of New Hampshire",
+    "place": "New Hampshire (statewide)",
+    "description": "A statewide system across several NH campuses — students look for housing near whichever campus they attend.",
+    "properties": [
+      {
+        "id": "housing-new-hampshire-property-trade-center-apartments",
+        "name": "Trade Center Apartments",
+        "website": "https://www.tradecenterapartments.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Trade%20Center%20Apartments%2C%20New%20Hampshire",
+        "source": "https://www.tradecenterapartments.com/"
+      },
+      {
+        "id": "housing-new-hampshire-property-75-canal-st",
+        "name": "75 Canal St",
+        "website": "https://www.75canal.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=75%20Canal%20St%2C%20New%20Hampshire",
+        "source": "https://www.75canal.com/"
+      },
+      {
+        "id": "housing-new-hampshire-property-the-apartments-at-cotton-mill",
+        "name": "The Apartments at Cotton Mill",
+        "website": "https://cottonmillnh.com",
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Apartments%20at%20Cotton%20Mill%2C%20New%20Hampshire%20(statewide)"
+      },
+      {
+        "id": "housing-new-hampshire-property-the-flats-on-high-street",
+        "name": "The Flats on High Street",
+        "website": "https://flatsonhighst.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Flats%20on%20High%20Street%2C%20New%20Hampshire",
+        "source": "https://flatsonhighst.com/"
+      }
+    ]
+  }
+]
