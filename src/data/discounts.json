@@ -1,0 +1,332 @@
+[
+  {
+    "id": "discount-free-student-verification-discounts-unidays",
+    "name": "UNiDAYS",
+    "category": "Verification platforms (the fastest way to unlock most of these)",
+    "amount": "Free discount platform",
+    "description": "Browse offers from participating brands after verifying student eligibility. Each brand sets its own terms and verification requirements.",
+    "url": "https://www.myunidays.com/US/en-US",
+    "verifiedAt": "2026-10-31",
+    "source": "https://www.myunidays.com/US/en-US",
+    "verifiedFields": ["amount", "description", "url"]
+  },
+  {
+    "id": "discount-free-student-verification-discounts-student-beans",
+    "name": "Student Beans",
+    "category": "Verification platforms (the fastest way to unlock most of these)",
+    "amount": "Free discount platform",
+    "description": "Browse student offers and verify eligibility with Student Beans. Savings, exclusions and verification requirements vary by brand.",
+    "url": "https://www.studentbeans.com/us",
+    "verifiedAt": "2026-10-31",
+    "source": "https://www.studentbeans.com/us",
+    "verifiedFields": ["amount", "description", "url"]
+  },
+  {
+    "id": "discount-verification-used-at-checkout-sheerid",
+    "name": "SheerID student verification",
+    "category": "Verification platforms (the fastest way to unlock most of these)",
+    "amount": "Verification service",
+    "description": "Some brands use SheerID to confirm student eligibility. Start with the brand’s offer page and follow its verification steps; requirements vary by offer.",
+    "url": "https://www.sheerid.com",
+    "verifiedAt": "2026-10-31",
+    "source": "https://www.sheerid.com/",
+    "verifiedFields": ["name", "amount", "description"]
+  },
+  {
+    "id": "discount-adobe-creative-cloud-60",
+    "name": "Adobe Creative Cloud",
+    "category": "Software & tech",
+    "amount": "Student subscription",
+    "description": "Discounted Creative Cloud Pro subscription for eligible students and teachers. Verify with a school email or accepted enrollment documents; introductory and renewal prices differ.",
+    "url": "https://www.adobe.com/creativecloud/buy/students.html",
+    "verifiedAt": "2026-10-31",
+    "source": "https://www.adobe.com/creativecloud/buy/students.html",
+    "verifiedFields": ["amount", "description"]
+  },
+  {
+    "id": "discount-microsoft-365-education-free-low",
+    "name": "Office 365 Education",
+    "category": "Software & tech",
+    "amount": "Free A1 for eligible schools",
+    "description": "Eligible students and educators can access Office 365 A1, including web versions of core Office apps. Desktop app access depends on your school’s license; verify eligibility before buying.",
+    "url": "https://www.microsoft.com/en-us/education/products/office",
+    "verifiedAt": "2026-10-31",
+    "source": "https://www.microsoft.com/en-us/education/products/office",
+    "verifiedFields": ["name", "amount", "description"]
+  },
+  {
+    "id": "discount-amazon-prime-student-50",
+    "name": "Prime for Young Adults",
+    "category": "Software & tech",
+    "amount": "Discounted",
+    "description": "Amazon's discounted Prime membership for eligible young adults and higher-education students. Verification can use age or student enrollment; a .edu address is not the only route.",
+    "url": "https://www.amazon.com/youngadult",
+    "verifiedAt": "2026-10-31",
+    "source": "https://www.aboutamazon.com/news/retail/amazon-prime-for-young-adults"
+  },
+  {
+    "id": "discount-github-student-developer-pack-free",
+    "name": "GitHub Student Developer Pack",
+    "category": "Software & tech",
+    "amount": "Free and discounted tools",
+    "description": "A bundle of developer tools and partner offers for verified students. Individual offers have their own eligibility rules, usage limits and expiration dates.",
+    "url": "https://education.github.com/pack",
+    "verifiedAt": "2026-10-31",
+    "source": "https://education.github.com/pack",
+    "verifiedFields": ["amount", "description"]
+  },
+  {
+    "id": "discount-figma-education-free-low",
+    "name": "Figma Education",
+    "category": "Software & tech",
+    "amount": "Free Education plan",
+    "description": "Verified students and educators in eligible educational programs can create an Education team with Professional-tier access. School-managed access has separate requirements.",
+    "url": "https://www.figma.com/education/",
+    "verifiedAt": "2026-10-31",
+    "source": "https://www.figma.com/education/",
+    "verifiedFields": ["amount", "description"]
+  },
+  {
+    "id": "discount-canva-for-education-free",
+    "name": "Canva Campus / Free Canva",
+    "category": "Software & tech",
+    "amount": "School-dependent",
+    "description": "Canva Education is free for eligible K–12 schools and their students. College students should check whether their institution provides Canva Campus; a college email alone does not unlock free Pro.",
+    "url": "https://www.canva.com/higher-education/",
+    "verifiedAt": "2026-10-31",
+    "source": "https://www.canva.com/higher-education/faculty/"
+  },
+  {
+    "id": "discount-codecademy-student-discount-varies",
+    "name": "Codecademy student discount",
+    "category": "Learning & productivity",
+    "amount": "Check current offer",
+    "description": "Codecademy Pro Student provides eligible students discounted access to the coding curriculum. Check current annual pricing, trial and verification terms.",
+    "url": "https://www.codecademy.com/student-center",
+    "verifiedAt": "2026-10-31",
+    "source": "https://www.codecademy.com/student-center"
+  },
+  {
+    "id": "discount-notion-for-education-free",
+    "name": "Notion for Education",
+    "category": "Learning & productivity",
+    "amount": "Free Education plan",
+    "description": "Eligible college and university students or teachers can get a free Education plan for a one-member workspace using an institution email. Annual verification is required; student organizations apply separately.",
+    "url": "https://www.notion.com/help/notion-for-education",
+    "verifiedAt": "2026-10-31",
+    "source": "https://www.notion.com/help/notion-for-education",
+    "verifiedFields": ["amount", "description", "url"]
+  },
+  {
+    "id": "discount-linkedin-learning-via-your-library-free",
+    "name": "LinkedIn Learning via your library",
+    "category": "Learning & productivity",
+    "amount": "Through participating libraries",
+    "description": "Participating libraries provide LinkedIn Learning at no additional cost to patrons. Check your library’s website for its login link, card and PIN requirements.",
+    "url": "school-resources.html?topic=library",
+    "verifiedAt": "2026-10-31",
+    "source": "https://www.linkedin.com/help/learning/answer/a704922/linkedin-learning-for-library-librarian-faq?lang=en",
+    "verifiedFields": ["amount", "description"]
+  },
+  {
+    "id": "discount-spotify-premium-student-50",
+    "name": "Spotify Premium Student",
+    "category": "Entertainment & music",
+    "amount": "Student subscription",
+    "description": "Discounted U.S. Premium Student plan currently includes Hulu with ads, subject to eligibility. Student status is verified through SheerID and renewed annually; the student offer has a four-year limit.",
+    "url": "https://www.spotify.com/us/student/",
+    "verifiedAt": "2026-10-31",
+    "source": "https://www.spotify.com/us/student/",
+    "verifiedFields": ["amount", "description", "url"]
+  },
+  {
+    "id": "discount-apple-music-apple-one-varies",
+    "name": "Apple Music Student",
+    "category": "Entertainment & music",
+    "amount": "Discounted",
+    "description": "Discounted Apple Music for eligible higher-education students, with Apple TV access subject to the current offer. Check eligibility and renewal terms on Apple's site.",
+    "url": "https://www.apple.com/apple-music/",
+    "verifiedAt": "2026-10-31",
+    "source": "https://www.apple.com/apple-music/"
+  },
+  {
+    "id": "discount-youtube-premium-student-varies",
+    "name": "YouTube Premium Student",
+    "category": "Entertainment & music",
+    "amount": "Student subscription",
+    "description": "Discounted YouTube Premium for students at eligible higher education institutions. SheerID verification and annual re-verification are required, for up to four consecutive years.",
+    "url": "https://www.youtube.com/premium/student",
+    "verifiedAt": "2026-10-31",
+    "source": "https://support.google.com/youtube/answer/9158808?hl=en",
+    "verifiedFields": ["amount", "description"]
+  },
+  {
+    "id": "discount-hulu-student-plan-1-99-mo",
+    "name": "Disney+, Hulu Student Bundle",
+    "category": "Entertainment & music",
+    "amount": "Discounted",
+    "description": "An ad-supported Disney+ and Hulu bundle for eligible U.S. college and graduate students age 18+. Enrollment is verified through SheerID and must be re-verified annually.",
+    "url": "https://www.hulu.com/student",
+    "verifiedAt": "2026-10-31",
+    "source": "https://www.hulu.com/student"
+  },
+  {
+    "id": "discount-amtrak-student-fares-varies",
+    "name": "Amtrak student fares",
+    "category": "Travel & transit",
+    "amount": "Eligible routes",
+    "description": "Amtrak offers student fares with age, route, fare-class, advance-purchase and ID requirements. Check the current national or regional offer before booking.",
+    "url": "https://www.amtrak.com/deals-discounts/everyday-discounts/student-discounts",
+    "verifiedAt": "2026-10-31",
+    "source": "https://www.amtrak.com/deals-discounts/everyday-discounts/student-discounts"
+  },
+  {
+    "id": "discount-student-universe-varies",
+    "name": "BYOjet for Students (formerly StudentUniverse)",
+    "category": "Travel & transit",
+    "amount": "Fares vary",
+    "description": "StudentUniverse now operates as BYOjet for Students. The booking service advertises fares for students, young adults and other travelers; availability and restrictions vary by itinerary.",
+    "url": "https://home.byojet.com/student-universe?referrer=StudentUniverse_US",
+    "verifiedAt": "2026-10-31",
+    "source": "https://home.byojet.com/student-universe?referrer=StudentUniverse_US",
+    "verifiedFields": ["name", "amount", "description", "url"]
+  },
+  {
+    "id": "discount-local-transit-discounts-local",
+    "name": "Local transit discounts",
+    "category": "Travel & transit",
+    "amount": "Varies by transit system",
+    "description": "Check your school and local transit agency for student fares or campus pass programs. Eligibility, enrollment verification and required fare cards vary; a school ID alone may not qualify.",
+    "url": "school-resources.html?topic=transit",
+    "verifiedAt": "2026-10-31",
+    "source": "https://www.ridemetro.org/fares/faqs",
+    "verifiedFields": ["amount", "description"]
+  },
+  {
+    "id": "discount-apple-education-pricing-varies",
+    "name": "Apple Education Pricing",
+    "category": "Shopping & retail",
+    "amount": "Education pricing",
+    "description": "Apple’s U.S. Education Store offers special pricing on eligible products for qualifying education customers. Check current eligibility, purchase limits and terms before ordering.",
+    "url": "https://www.apple.com/us-edu/store",
+    "verifiedAt": "2026-10-31",
+    "source": "https://www.apple.com/us-edu/store",
+    "verifiedFields": ["amount", "description"]
+  },
+  {
+    "id": "discount-nike-student-discount-varies",
+    "name": "Nike Student Discount",
+    "category": "Shopping & retail",
+    "amount": "10% on eligible items",
+    "description": "Eligible U.S. students age 16+ can verify through SheerID for a single-use discount code on eligible Nike.com and Nike App purchases. Product exclusions apply.",
+    "url": "https://www.nike.com/help/a/student-discount",
+    "verifiedAt": "2026-10-31",
+    "source": "https://www.nike.com/help/a/student-discount"
+  },
+  {
+    "id": "discount-samsung-education-store-varies",
+    "name": "Samsung Education Store",
+    "category": "Shopping & retail",
+    "amount": "Education offers",
+    "description": "Samsung’s Education Offer Program provides eligible students and educators access to selected offers. Verification can use a school email or ID.me; product exclusions and terms apply.",
+    "url": "https://www.samsung.com/us/shop/offer-program/education/",
+    "verifiedAt": "2026-10-31",
+    "source": "https://www.samsung.com/us/shop/offer-program/education/",
+    "verifiedFields": ["amount", "description"]
+  },
+  {
+    "id": "discount-dell-student-discount-discounted",
+    "name": "Dell Student Discount",
+    "category": "Shopping & retail",
+    "amount": "Education offers",
+    "description": "Dell’s Education Purchase Program offers eligible students and teachers additional savings. A Dell account, Dell Rewards enrollment and status verification are required; exclusions apply.",
+    "url": "https://www.dell.com/en-us/shop/member/lp/students",
+    "verifiedAt": "2026-10-31",
+    "source": "https://www.dell.com/en-us/shop/member/lp/students",
+    "verifiedFields": ["amount", "description", "url"]
+  },
+  {
+    "id": "discount-hp-education-store-discounted",
+    "name": "HP Education Store",
+    "category": "Shopping & retail",
+    "amount": "Discounted",
+    "description": "HP's dedicated education storefront offers reduced pricing on laptops for verified students.",
+    "url": "https://www.hp.com/us-en/shop/cv/hp-education",
+    "verifiedAt": "2026-10-31",
+    "source": "https://www.hp.com/us-en/shop/cv/hp-education"
+  },
+  {
+    "id": "discount-under-armour-student-discount-discounted",
+    "name": "Under Armour Student Discount",
+    "category": "Shopping & retail",
+    "amount": "Student pricing",
+    "description": "Under Armour’s official student offer uses UNiDAYS verification for an extra online discount. Check current exclusions and checkout terms.",
+    "url": "https://www.underarmour.com/en-us/t/unidays/",
+    "verifiedAt": "2026-10-31",
+    "source": "https://www.underarmour.com/en-us/t/unidays/",
+    "verifiedFields": ["amount", "description", "url"]
+  },
+  {
+    "id": "discount-walmart-student-discount-50",
+    "name": "Walmart+ Student Discount",
+    "category": "Shopping & retail",
+    "amount": "50% off eligible membership",
+    "description": "Eligible college and graduate students can receive 50% off a Walmart+ monthly or annual membership after verification. Membership renews and benefit restrictions apply.",
+    "url": "https://www.walmart.com/plus/student",
+    "verifiedAt": "2026-10-31",
+    "source": "https://www.walmart.com/plus/student",
+    "verifiedFields": ["amount", "description"]
+  },
+  {
+    "id": "discount-headspace-for-students-free-1-yr",
+    "name": "Headspace for Students",
+    "category": "Health & wellness",
+    "amount": "Discounted",
+    "description": "Paid student subscription for eligible college and university students age 18+. Verify enrollment through SheerID and check current annual pricing and renewal terms.",
+    "url": "https://www.headspace.com/studentplan",
+    "verifiedAt": "2026-10-31",
+    "source": "https://www.headspace.com/studentplan"
+  },
+  {
+    "id": "discount-peloton-app-student-membership-discounted",
+    "name": "Peloton App Student Membership",
+    "category": "Health & wellness",
+    "amount": "Check current offer",
+    "description": "Verified university students can access special pricing on eligible Peloton App plans. Check membership tier, verification and current renewal pricing.",
+    "url": "https://www.onepeloton.com/offers/specialpricing/student",
+    "verifiedAt": "2026-10-31",
+    "source": "https://www.onepeloton.com/offers/specialpricing/student"
+  },
+  {
+    "id": "discount-doordash-dashpass-for-students-discounted",
+    "name": "DoorDash DashPass for Students",
+    "category": "Food, banking & phone plans",
+    "amount": "Discounted membership",
+    "description": "Verified university and post-secondary students can subscribe at the student rate. Delivery benefits apply only to participating merchants and qualifying order minimums; other fees may apply.",
+    "url": "https://help.doordash.com/en-us/consumers/article/dashpass-for-students",
+    "verifiedAt": "2026-10-31",
+    "source": "https://help.doordash.com/en-us/consumers/article/dashpass-for-students",
+    "verifiedFields": ["amount", "description", "url"]
+  },
+  {
+    "id": "discount-t-mobile-student-discounts-discounted",
+    "name": "T-Mobile Student Discounts",
+    "category": "Food, banking & phone plans",
+    "amount": "Check current offer",
+    "description": "Dedicated Student Perks plans for eligible college students age 18+ who are the primary account holder. Verify enrollment within 45 days and re-verify annually; taxes, fees and plan requirements apply.",
+    "url": "https://www.t-mobile.com/cell-phone-plans/student-discounts",
+    "verifiedAt": "2026-10-31",
+    "source": "https://www.t-mobile.com/cell-phone-plans/student-discounts"
+  },
+  {
+    "id": "discount-chase-college-checking-fee-waivers",
+    "name": "Chase Secure Banking",
+    "category": "Food, banking & phone plans",
+    "amount": "Monthly service fee waiver",
+    "description": "Chase Secure Banking waives its monthly service fee for account owners ages 17–24. Account approval and other fees apply; review current terms. Chase College Checking is no longer offered to new applicants.",
+    "url": "https://personal.chase.com/personal/secure-banking",
+    "verifiedAt": "2026-10-31",
+    "source": "https://account.chase.com/consumer/banking/secure/college-offer",
+    "verifiedFields": ["name", "amount", "description", "url"]
+  }
+]

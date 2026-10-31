@@ -1,0 +1,14 @@
+{
+  "checkedAt": "2026-10-31T05:26:59.673Z",
+  "destinations": 286,
+  "statusCounts": {
+    "200": 236,
+    "403": 43,
+    "418": 1,
+    "unverified": 4,
+    "500": 1,
+    "520": 1
+  },
+  "confirmed404or410": 0,
+  "limitations": "403, 418, 429, 5xx and network failures are not confirmed dead links; provider offers and availability can change."
+}

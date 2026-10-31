@@ -1,0 +1,855 @@
+{
+  "scholarships": {
+    "verified_at": "2026-10-31",
+    "scope": "Final high-confidence corrections from official sources; full remaining cycle dates intentionally unverified.",
+    "url_replacements": {
+      "https://www.soroptimist.org/our-focus/live-your-dream-award/live-your-dream-award.html": "https://www.soroptimist.org/our-work/live-your-dream-awards/apply-for-the-live-your-dream-awards.html",
+      "https://www.nhs.us/students/scholarships/": "https://www.nationalhonorsociety.org/the-nhs-scholarship/",
+      "https://www.niche.com/colleges/scholarships/niche-2000-no-essay-scholarship/": "https://www.niche.com/colleges/scholarships/no-essay-scholarship/",
+      "https://www.unigo.com/scholarships/our-scholarships/the-unigo-10k-scholarship": "https://www.unigo.com/scholarships/our-scholarships/unigo-10k-scholarship",
+      "https://www.dosomething.org/us/scholarships": "https://dosomething.org/about/scholarships",
+      "https://www.ronbrown.org/": "https://ronbrown.org/ron-brown-scholarship/",
+      "https://www.aauw.org/resources/programs/fellowships-grants/current-opportunities/career-development/": "https://www.aauw.org/resources/programs/fellowships-grants/career-development-grants/",
+      "https://www.truman.gov/candidates/important-dates": "https://www.truman.gov/apply/applying/important-dates",
+      "https://www.pointfoundation.org/": "https://pointfoundation.org/scholarships/flagship",
+      "https://www.dellscholars.org/": "https://www.dellscholars.org/students/",
+      "https://www.elks.org/scholars": "https://www.elks.org/scholars/scholarships/MVS.cfm",
+      "https://www.haganscholarships.org/": "https://haganscholarships.org/"
+    },
+    "corrections": [
+      {
+        "name": "Mensa Foundation U.S. Scholarship",
+        "changes": {
+          "category": "essay",
+          "essay_required": true,
+          "deadline": "2026-11-15"
+        },
+        "source": "https://www.mensafoundation.org/what-we-do/scholarships/",
+        "reason": "Official page requires a 550-word essay; falsely assigned no-essay in data-cat.",
+        "reviewed_at": "2026-10-31",
+        "verified_fields": [
+          "category",
+          "essay_required",
+          "deadline"
+        ]
+      },
+      {
+        "name": "Financial Goals Scholarship",
+        "changes": {
+          "category": "essay",
+          "essay_required": true,
+          "deadline_label": "Monthly — confirm current entry period",
+          "eligibility": "U.S. residents age 18 or older who are planning to enroll or currently enrolled in a college degree program; written response required."
+        },
+        "source": "https://www.1fbusascholarship.com/",
+        "reason": "Official page describes $2,000 awarded each month; remove unverified December-only deadline and no-essay category.",
+        "reviewed_at": "2026-10-31",
+        "verified_fields": [
+          "category",
+          "essay_required",
+          "deadline_label",
+          "eligibility"
+        ]
+      },
+      {
+        "name": "Unigo $10,000 Scholarship",
+        "changes": {
+          "category": "essay",
+          "essay_required": true,
+          "eligibility": "U.S. legal residents age 14 or older; short original written response of 250 words or fewer required.",
+          "deadline": "2026-12-31",
+          "deadline_label": "December 31, 2026, 11:59 p.m. Pacific"
+        },
+        "source": "https://www.unigo.com/scholarships/our-scholarships/unigo-10k-scholarship",
+        "reason": "Official rules explicitly require a 250-word response. Not no-essay.",
+        "reviewed_at": "2026-10-31",
+        "verified_fields": [
+          "category",
+          "essay_required",
+          "eligibility",
+          "deadline",
+          "deadline_label"
+        ]
+      },
+      {
+        "name": "Scholarships360 $10,000 No Essay Scholarship",
+        "changes": {
+          "eligibility": "Open to U.S. citizens and permanent residents across high school, undergraduate, graduate, technical and vocational programs. Rolling monthly entry deadlines; one $10,000 award for the cycle, with finalist interviews.",
+          "deadline": "2027-06-30",
+          "deadline_label": "June 30, 2027 (rolling monthly entry deadlines)"
+        },
+        "source": "https://scholarships360.org/scholarships/search/10000-no-essay-scholarship/",
+        "reason": "One annual/cycle award, not one $10,000 winner monthly.",
+        "reviewed_at": "2026-10-31",
+        "verified_fields": [
+          "eligibility",
+          "deadline",
+          "deadline_label"
+        ]
+      },
+      {
+        "name": "U.S. Bank Student Scholarship Program",
+        "changes": {
+          "category": "no-essay",
+          "status": "closed",
+          "deadline": "2026-10-30",
+          "eligibility": "Legal U.S. residents age 17+, accepted or enrolled in an eligible undergraduate college or trade/vocational program. Financial education modules required; a sweepstakes rather than a need-based award."
+        },
+        "source": "https://www.usbank.com/dam/en/documents/pdfs/about-us-bank/2026-US-Bank-Student-Scholarship-Sweepstakes-Rules.pdf",
+        "reason": "2026 cycle ended October 30, 2026 at 11:59 p.m. Central. Financial need is not a qualification.",
+        "reviewed_at": "2026-10-31",
+        "verified_fields": [
+          "category",
+          "deadline",
+          "eligibility"
+        ]
+      },
+      {
+        "name": "National Honor Society Scholarship",
+        "changes": {
+          "deadline": "2026-11-20",
+          "deadline_label": "November 20, 2026, 5 p.m. ET"
+        },
+        "source": "https://www.nationalhonorsociety.org/the-nhs-scholarship/",
+        "reviewed_at": "2026-10-31",
+        "verified_fields": [
+          "deadline",
+          "deadline_label"
+        ]
+      },
+      {
+        "name": "Soroptimist Live Your Dream Award",
+        "changes": {
+          "amount": "Up to $16,000 across award levels",
+          "deadline_label": "November 15 (annual; confirm current cycle)",
+          "eligibility": "Women with financial need providing primary financial support for themselves AND dependents, enrolled or accepted into undergraduate or vocational training; additional country and prior-award restrictions apply."
+        },
+        "source": "https://www.soroptimist.org/our-work/live-your-dream-awards/apply-for-the-live-your-dream-awards.html",
+        "reviewed_at": "2026-10-31",
+        "verified_fields": [
+          "amount",
+          "deadline_label",
+          "eligibility"
+        ]
+      },
+      {
+        "name": "Comcast Leaders and Achievers Scholarship Program",
+        "changes": {
+          "status": "unverified",
+          "publish": false
+        },
+        "source": "https://corporate.comcast.com/news-information/news-feed/comcast-recognizes-academic-excellence-through-leaders-and-achievers-scholarship-program",
+        "reason": "Current target returns404 and official search only finds old historic announcements. Do not claim active; remove until current application verified. No definitive official discontinuation statement located.",
+        "source_checked_at": "2026-10-31"
+      },
+      {
+        "name": "Jack Kent Cooke Foundation College Scholarship",
+        "changes": {
+          "deadline": "2026-11-11",
+          "deadline_label": "November 11, 2026",
+          "eligibility": "U.S. high school seniors graduating spring 2027 and entering an accredited four-year college in fall 2027; minimum unweighted GPA 3.75, required SAT/ACT/AP/IB test score, and financial need with family income reviewed up to $95,000."
+        },
+        "source": "https://www.jkcf.org/our-scholarships/college-scholarship-program/how-to-apply/",
+        "reviewed_at": "2026-10-31",
+        "verified_fields": [
+          "deadline",
+          "deadline_label",
+          "eligibility"
+        ]
+      },
+      {
+        "name": "Dell Scholars Program",
+        "changes": {
+          "deadline": "2027-01-12",
+          "state": "TX",
+          "eligibility": "For the 2027 cycle: Texas high school seniors planning to attend an accredited four-year PUBLIC college or university in Texas; participation in an approved college-readiness program in grades11–12, Pell eligibility and GPA2.4+ required."
+        },
+        "source": "https://www.dellscholars.org/students/",
+        "reviewed_at": "2026-10-31",
+        "verified_fields": [
+          "deadline",
+          "state",
+          "eligibility"
+        ]
+      },
+      {
+        "name": "Davidson Fellows Scholarship",
+        "changes": {
+          "amount": "$25,000–$100,000",
+          "status": "upcoming",
+          "opens": "2026-11-02",
+          "deadline_label": "2027 applications open November 2, 2026; check sponsor for deadline"
+        },
+        "source": "https://www.davidsongifted.org/gifted-programs/fellows-scholarship/",
+        "reviewed_at": "2026-10-31",
+        "verified_fields": [
+          "amount",
+          "opens",
+          "deadline_label"
+        ]
+      },
+      {
+        "name": "The Christophers Video Contest for College Students",
+        "changes": {
+          "deadline": "2027-01-11",
+          "amount": "$100–$2,000",
+          "eligibility": "College student video contest; original video no longer than five minutes interpreting One Person Can Make a Difference. Sponsor prohibits AI-generated video."
+        },
+        "source": "https://www.christophers.org/video-contest-for-college-students",
+        "reviewed_at": "2026-10-31",
+        "verified_fields": [
+          "deadline",
+          "amount",
+          "eligibility"
+        ]
+      },
+      {
+        "name": "National Merit Scholarship Program",
+        "changes": {
+          "category": "merit",
+          "essay_required": true,
+          "eligibility": "Entry begins through qualifying PSAT/NMSQT participation and program requirements. Semifinalists must complete an application including an essay and meet additional requirements to become Finalists; this is not a no-essay scholarship."
+        },
+        "source": "https://www.nationalmerit.org/s/1758/interior.aspx?gid=2&pgid=434&sid=1758",
+        "reviewed_at": "2026-10-31",
+        "verified_fields": [
+          "category",
+          "essay_required",
+          "eligibility"
+        ]
+      },
+      {
+        "name": "Elks National Foundation Most Valuable Student Scholarship",
+        "changes": {
+          "amount": "$4,000–$30,000 over four years",
+          "deadline": "2026-11-12",
+          "deadline_label": "November 12, 2026, 11:59 p.m. Pacific",
+          "eligibility": "Current high school seniors who are U.S. citizens and plan full-time four-year undergraduate study at an accredited U.S. college. Elks membership/relationship not required."
+        },
+        "source": "https://www.elks.org/scholars/scholarships/MVS.cfm",
+        "reviewed_at": "2026-10-31",
+        "verified_fields": [
+          "amount",
+          "deadline",
+          "deadline_label",
+          "eligibility"
+        ]
+      },
+      {
+        "name": "Point Foundation Scholarship",
+        "changes": {
+          "name": "Point Foundation Flagship Scholarship",
+          "amount": "Up to $15,000",
+          "deadline_label": "November 19, 5 p.m. Pacific (fall 2027 funding; confirm cycle)",
+          "eligibility": "LGBTQ+ AND ally students, at least high school seniors, with GPA3.3+ pursuing full-time undergraduate/graduate/professional degrees at accredited U.S. not-for-profit institutions. 100%online degree programs excluded."
+        },
+        "source": "https://pointfoundation.org/scholarships/flagship",
+        "reviewed_at": "2026-10-31",
+        "verified_fields": [
+          "name",
+          "amount",
+          "deadline_label",
+          "eligibility"
+        ]
+      },
+      {
+        "name": "Jackie Robinson Foundation Scholarship",
+        "changes": {
+          "deadline": "2027-01-14",
+          "eligibility": "Graduating high school seniors who are U.S. citizens, demonstrate financial need, academic excellence, leadership and community service, and plan an approved four-year college. Transcript, test score, CSS Profile, essays and recommendation required."
+        },
+        "source": "https://jackierobinson.org/apply/",
+        "reviewed_at": "2026-10-31",
+        "verified_fields": [
+          "deadline",
+          "eligibility"
+        ]
+      },
+      {
+        "name": "Stossel in the Classroom Video Contest",
+        "changes": {
+          "deadline": "2027-03-12",
+          "deadline_label": "March 12, 2027, 11:59 p.m. Eastern",
+          "eligibility": "Middle school grades5–8, high school grades9–12, or undergraduate college students residing in the U.S./Canada or with a U.S. military address. Submit a one-to-three-minute video on a current prompt."
+        },
+        "source": "https://stosselintheclassroom.org/video-contest/",
+        "reviewed_at": "2026-10-31",
+        "verified_fields": [
+          "deadline",
+          "deadline_label",
+          "eligibility"
+        ]
+      },
+      {
+        "name": "AAUW Career Development Grant",
+        "changes": {
+          "amount": "Up to $8,000",
+          "status": "upcoming",
+          "opens": "2027-01-27",
+          "deadline": "2027-03-18",
+          "deadline_label": "Next cycle January27–March18, 2027 (5p.m. Eastern deadline)",
+          "eligibility": "Women with at least an associate degree pursuing a short-term accredited certificate/training program in a field where women are underrepresented. Not for a bachelor/master/professional degree program."
+        },
+        "source": "https://www.aauw.org/resources/programs/fellowships-grants/career-development-grants/",
+        "reviewed_at": "2026-10-31",
+        "verified_fields": [
+          "amount",
+          "opens",
+          "deadline",
+          "deadline_label",
+          "eligibility"
+        ]
+      },
+      {
+        "name": "Generation Google Scholarship",
+        "changes": {
+          "status": "unverified",
+          "publish": false
+        },
+        "source": "https://buildyourfuture.withgoogle.com/scholarships/generation-google-scholarship",
+        "reason": "Existing official page exposes no current application/eligibility in text; 2026/27 North America cycle could not be verified. Do not mark active.",
+        "source_checked_at": "2026-10-31"
+      },
+      {
+        "name": "Debt.com Scholarship for Aggressive Scholarship Applicants",
+        "changes": {
+          "category": "essay",
+          "essay_required": true,
+          "deadline_label": "Check sponsor for current cycle",
+          "status": "check-sponsor"
+        },
+        "source": "https://www.debt.com/our-story/scholarships/",
+        "reason": "Requires letter/short statement plus application proof. Source body still lists Apr1 2026; cannot promote Apr1 2027 as verified.",
+        "reviewed_at": "2026-10-31",
+        "verified_fields": [
+          "category",
+          "essay_required",
+          "deadline_label"
+        ]
+      }
+    ],
+    "financial_aid_corrections": [
+      {
+        "old": "You have to opt in on the FAFSA / schools generally only consider you if you've checked that box",
+        "replace_heading": "Ask your school about work-study",
+        "replace_text": "Submit the FAFSA to be considered for Federal Work-Study. Your school determines eligibility and available funding. Check your financial aid offer, then ask the financial aid or student employment office how to apply for available jobs.",
+        "source": "https://studentaid.gov/articles/8-things-federal-work-study/"
+      },
+      {
+        "old": "File as soon as the application opens—even with estimated information if needed",
+        "replace_text": "File early using the tax year and information requested by that year's FAFSA. Provide consent for the IRS transfer when requested. If your household finances have changed or you cannot provide required information, contact your school's financial aid office for help rather than guessing.",
+        "sources": [
+          "https://studentaid.gov/articles/fafsa-student-steps/",
+          "https://fsapartners.ed.gov/knowledge-center/fsa-handbook/2026-2027/application-and-verification-guide/ch2-filling-out-fafsa-form"
+        ]
+      }
+    ],
+    "policy": "Do not label all54 verified. reviewed_at only applies to fields explicitly listed in verified_fields; it does not verify an open application unless status says so. Use Check sponsor for unverified/annual-cycle dates; never extrapolate a new year.",
+    "remaining_records": [
+      {
+        "name": "Ron Brown Scholar Program",
+        "action": "Preserve as a listed resource with sponsor link; do not claim current cycle verified. Replace unverified explicit/estimated dates with Check sponsor.",
+        "reviewed_at": null
+      },
+      {
+        "name": "Horatio Alger National Scholarship",
+        "action": "Preserve as a listed resource with sponsor link; do not claim current cycle verified. Replace unverified explicit/estimated dates with Check sponsor.",
+        "reviewed_at": null
+      },
+      {
+        "name": "Chick-fil-A Community Scholars Program",
+        "action": "Preserve as a listed resource with sponsor link; do not claim current cycle verified. Replace unverified explicit/estimated dates with Check sponsor.",
+        "reviewed_at": null
+      },
+      {
+        "name": "VFW Voice of Democracy Scholarship Contest",
+        "action": "Preserve as a listed resource with sponsor link; do not claim current cycle verified. Replace unverified explicit/estimated dates with Check sponsor.",
+        "reviewed_at": null
+      },
+      {
+        "name": "Space to Succeed Scholarship",
+        "action": "Preserve as a listed resource with sponsor link; do not claim current cycle verified. Replace unverified explicit/estimated dates with Check sponsor.",
+        "reviewed_at": null
+      },
+      {
+        "name": "Union Plus Scholarship",
+        "action": "Preserve as a listed resource with sponsor link; do not claim current cycle verified. Replace unverified explicit/estimated dates with Check sponsor.",
+        "reviewed_at": null
+      },
+      {
+        "name": "Truman Scholars Program",
+        "action": "Preserve as a listed resource with sponsor link; do not claim current cycle verified. Replace unverified explicit/estimated dates with Check sponsor.",
+        "reviewed_at": null
+      },
+      {
+        "name": "Coca-Cola Scholars Program",
+        "action": "Preserve as a listed resource with sponsor link; do not claim current cycle verified. Replace unverified explicit/estimated dates with Check sponsor.",
+        "reviewed_at": null
+      },
+      {
+        "name": "The Gates Scholarship",
+        "action": "Preserve as a listed resource with sponsor link; do not claim current cycle verified. Replace unverified explicit/estimated dates with Check sponsor.",
+        "reviewed_at": null
+      },
+      {
+        "name": "QuestBridge National College Match",
+        "action": "Preserve as a listed resource with sponsor link; do not claim current cycle verified. Replace unverified explicit/estimated dates with Check sponsor.",
+        "reviewed_at": null
+      },
+      {
+        "name": "Burger King Scholars Program",
+        "action": "Preserve as a listed resource with sponsor link; do not claim current cycle verified. Replace unverified explicit/estimated dates with Check sponsor.",
+        "reviewed_at": null
+      },
+      {
+        "name": "Hispanic Scholarship Fund",
+        "action": "Preserve as a listed resource with sponsor link; do not claim current cycle verified. Replace unverified explicit/estimated dates with Check sponsor.",
+        "reviewed_at": null
+      },
+      {
+        "name": "American Indian College Fund Scholarship",
+        "action": "Preserve as a listed resource with sponsor link; do not claim current cycle verified. Replace unverified explicit/estimated dates with Check sponsor.",
+        "reviewed_at": null
+      },
+      {
+        "name": "UNCF (United Negro College Fund) Scholarships",
+        "action": "Preserve as a listed resource with sponsor link; do not claim current cycle verified. Replace unverified explicit/estimated dates with Check sponsor.",
+        "reviewed_at": null
+      },
+      {
+        "name": "Hagan Scholarship Foundation Scholarship",
+        "action": "Preserve as a listed resource with sponsor link; do not claim current cycle verified. Replace unverified explicit/estimated dates with Check sponsor.",
+        "reviewed_at": null
+      },
+      {
+        "name": "Children of Fallen Patriots Foundation Scholarship",
+        "action": "Preserve as a listed resource with sponsor link; do not claim current cycle verified. Replace unverified explicit/estimated dates with Check sponsor.",
+        "reviewed_at": null
+      },
+      {
+        "name": "Imagine America Foundation Scholarship",
+        "action": "Preserve as a listed resource with sponsor link; do not claim current cycle verified. Replace unverified explicit/estimated dates with Check sponsor.",
+        "reviewed_at": null
+      },
+      {
+        "name": "Foster Care to Success National Scholarship Program",
+        "action": "Preserve as a listed resource with sponsor link; do not claim current cycle verified. Replace unverified explicit/estimated dates with Check sponsor.",
+        "reviewed_at": null
+      },
+      {
+        "name": "TheDream.US National Scholarship",
+        "action": "Preserve as a listed resource with sponsor link; do not claim current cycle verified. Replace unverified explicit/estimated dates with Check sponsor.",
+        "reviewed_at": null
+      },
+      {
+        "name": "Jeannette Rankin Women's Scholarship Fund",
+        "action": "Preserve as a listed resource with sponsor link; do not claim current cycle verified. Replace unverified explicit/estimated dates with Check sponsor.",
+        "reviewed_at": null
+      },
+      {
+        "name": "Taco Bell Foundation Live Más Scholarship",
+        "action": "Preserve as a listed resource with sponsor link; do not claim current cycle verified. Replace unverified explicit/estimated dates with Check sponsor.",
+        "reviewed_at": null
+      },
+      {
+        "name": "American Legion National & Legacy Scholarships",
+        "action": "Preserve as a listed resource with sponsor link; do not claim current cycle verified. Replace unverified explicit/estimated dates with Check sponsor.",
+        "reviewed_at": null
+      },
+      {
+        "name": "DAR American History Scholarship",
+        "action": "Preserve as a listed resource with sponsor link; do not claim current cycle verified. Replace unverified explicit/estimated dates with Check sponsor.",
+        "reviewed_at": null
+      },
+      {
+        "name": "National 4-H Council Scholarships",
+        "action": "Preserve as a listed resource with sponsor link; do not claim current cycle verified. Replace unverified explicit/estimated dates with Check sponsor.",
+        "reviewed_at": null
+      },
+      {
+        "name": "Boys & Girls Clubs of America National Youth of the Year",
+        "action": "Preserve as a listed resource with sponsor link; do not claim current cycle verified. Replace unverified explicit/estimated dates with Check sponsor.",
+        "reviewed_at": null
+      },
+      {
+        "name": "Sallie Mae No Essay Scholarship",
+        "action": "Preserve as a listed resource with sponsor link; do not claim current cycle verified. Replace unverified explicit/estimated dates with Check sponsor.",
+        "reviewed_at": null
+      },
+      {
+        "name": "Niche $2,000 No Essay Scholarship",
+        "action": "Preserve as a listed resource with sponsor link; do not claim current cycle verified. Replace unverified explicit/estimated dates with Check sponsor.",
+        "reviewed_at": null
+      },
+      {
+        "name": "Appily Scholarship",
+        "action": "Preserve as a listed resource with sponsor link; do not claim current cycle verified. Replace unverified explicit/estimated dates with Check sponsor.",
+        "reviewed_at": null
+      },
+      {
+        "name": "DoSomething.org Easy Scholarships",
+        "action": "Preserve as a listed resource with sponsor link; do not claim current cycle verified. Replace unverified explicit/estimated dates with Check sponsor.",
+        "reviewed_at": null
+      },
+      {
+        "name": "Scholastic Art & Writing Awards",
+        "action": "Preserve as a listed resource with sponsor link; do not claim current cycle verified. Replace unverified explicit/estimated dates with Check sponsor.",
+        "reviewed_at": null
+      },
+      {
+        "name": "YoungArts",
+        "action": "Preserve as a listed resource with sponsor link; do not claim current cycle verified. Replace unverified explicit/estimated dates with Check sponsor.",
+        "reviewed_at": null
+      },
+      {
+        "name": "Society of Women Engineers (SWE) Scholarship Program",
+        "action": "Preserve as a listed resource with sponsor link; do not claim current cycle verified. Replace unverified explicit/estimated dates with Check sponsor.",
+        "reviewed_at": null
+      },
+      {
+        "name": "AICPA Foundation Scholarship Awards",
+        "action": "Preserve as a listed resource with sponsor link; do not claim current cycle verified. Replace unverified explicit/estimated dates with Check sponsor.",
+        "reviewed_at": null
+      },
+      {
+        "name": "National FFA Scholarships",
+        "action": "Preserve as a listed resource with sponsor link; do not claim current cycle verified. Replace unverified explicit/estimated dates with Check sponsor.",
+        "reviewed_at": null
+      }
+    ]
+  },
+  "resources": {
+    "verified_on": "2026-10-31",
+    "scope": "Official-source review of broken/high-risk internship, discount, and representative housing content. Not every current job opening or property detail has been independently verified.",
+    "url_replacements": [
+      {
+        "from": "https://www.samsung.com/us/education/",
+        "to": "https://www.samsung.com/us/shop/offer-program/education/",
+        "source": "https://www.samsung.com/us/shop/offer-program/education/",
+        "status": "verified"
+      },
+      {
+        "from": "https://careers.homedepot.com/campus",
+        "to": "https://careers.homedepot.com/student-internships/",
+        "source": "https://careers.homedepot.com/student-internships/",
+        "status": "verified"
+      },
+      {
+        "from": "https://www.pgatour.com/company/internships",
+        "to": "https://pgatour.wd5.myworkdayjobs.com/PGATOURExternal/job/XMLNAME-2027-PGA-Tour-Summer-Internship-Program_R015374",
+        "source": "https://pgatour.wd5.myworkdayjobs.com/PGATOURExternal/job/XMLNAME-2027-PGA-Tour-Summer-Internship-Program_R015374",
+        "status": "verified",
+        "evergreen_alternative": "https://sites.teamworkonline.com/pga-tour/"
+      },
+      {
+        "from": "https://www.smithsonianofi.com",
+        "to": "https://internships.si.edu/opportunities/",
+        "source": "https://internships.si.edu/opportunities/",
+        "status": "verified"
+      },
+      {
+        "from": "https://careers.smartrecruiters.com/Visa/global-internship-program",
+        "to": "https://corporate.visa.com/en/careers/early-careers.html",
+        "source": "https://corporate.visa.com/en/careers/early-careers.html",
+        "status": "verified",
+        "reason": "Old URL redirects to generic SmartRecruiters portal, losing Visa context."
+      },
+      {
+        "from": "https://jobs.merck.com/student-opportunities",
+        "to": "https://jobs.merck.com/us/en/student-opportunities",
+        "source": "https://jobs.merck.com/us/en/student-opportunities",
+        "status": "verified",
+        "reason": "Old URL redirects to general careers home."
+      },
+      {
+        "from": "https://jobs.intel.com/internships",
+        "to": "https://www.intel.com/content/www/us/en/support/articles/000021775/programs/jobs-at-intel.html",
+        "source": "https://www.intel.com/content/www/us/en/support/articles/000021775/programs/jobs-at-intel.html",
+        "status": "verified",
+        "reason": "Official Intel guide links through to current search; old URL redirects to 404 handler."
+      },
+      {
+        "from": "https://www.olympusproperty.com/sedona-ranch-odessa-tx",
+        "to": "https://www.sedonaranchapartments.com/",
+        "source": "https://www.sedonaranchapartments.com/",
+        "status": "verified"
+      },
+      {
+        "from": "https://www.olympusproperty.com/sedona-ranch-odessa-tx/floorplans",
+        "to": "https://www.sedonaranchapartments.com/floorplans",
+        "source": "https://www.sedonaranchapartments.com/",
+        "status": "verified_official_link",
+        "reason": "Floorplans URL linked by official property homepage; page fetch timed out."
+      },
+      {
+        "from": "https://www.onepeloton.com/student",
+        "to": "https://www.onepeloton.com/offers/specialpricing/student",
+        "source": "https://www.onepeloton.com/offers/specialpricing/student",
+        "status": "verified"
+      },
+      {
+        "from": "https://www.codecademy.com",
+        "to": "https://www.codecademy.com/student-center",
+        "source": "https://www.codecademy.com/student-center",
+        "status": "verified"
+      },
+      {
+        "from": "https://www.nike.com",
+        "to": "https://www.nike.com/help/a/student-discount",
+        "source": "https://www.nike.com/help/a/student-discount",
+        "status": "verified"
+      },
+      {
+        "from": "https://www.amtrak.com",
+        "to": "https://www.amtrak.com/deals-discounts/everyday-discounts/student-discounts",
+        "source": "https://www.amtrak.com/deals-discounts/everyday-discounts/student-discounts",
+        "status": "verified"
+      },
+      {
+        "from": "https://www.notion.so/students",
+        "to": "https://www.notion.com/students",
+        "status": "redirect_confirmed_in_original_link_check"
+      },
+      {
+        "from": "https://www.amazon.com/amazonprime/student",
+        "to": "https://www.amazon.com/youngadult",
+        "source": "https://www.aboutamazon.com/news/retail/amazon-prime-for-young-adults",
+        "status": "verified_official_link"
+      },
+      {
+        "from": "https://www.nytco.com/careers/students/",
+        "to": "https://www.nytco.com/careers/early-career-opportunities/internships-outside-the-newsroom/",
+        "source": "https://www.nytco.com/careers/early-career-opportunities/internships-outside-the-newsroom/",
+        "status": "verified_direct_https_and_content"
+      }
+    ],
+    "discount_corrections": [
+      {
+        "name": "Headspace for Students",
+        "action": "correct",
+        "badge": "Discounted",
+        "description": "Paid student subscription for eligible college and university students age 18+. Verify enrollment through SheerID and check current annual pricing and renewal terms.",
+        "facts": "Official FAQ lists $9.99 USD/year; free-year claim is false.",
+        "source": "https://www.headspace.com/studentplan"
+      },
+      {
+        "name": "Calm for Prime Student",
+        "action": "remove",
+        "facts": "Calm lists the Amazon Prime Students promotion under Offers No Longer Available.",
+        "source": "https://support.calm.com/hc/en-us/articles/27320818343323-Promotional-Offers-through-Calm-Partners"
+      },
+      {
+        "name": "Canva for Education",
+        "action": "replace_with_Canva_Campus",
+        "title": "Canva Campus / Free Canva",
+        "badge": "School-dependent",
+        "description": "Canva Education is free for eligible K–12 schools and their students. College students should check whether their institution provides Canva Campus; a college email alone does not unlock free Pro.",
+        "url": "https://www.canva.com/higher-education/",
+        "source": "https://www.canva.com/higher-education/faculty/"
+      },
+      {
+        "name": "Apple Music & Apple One",
+        "action": "rename_and_correct",
+        "title": "Apple Music Student",
+        "badge": "Discounted",
+        "description": "Discounted Apple Music for eligible higher-education students, with Apple TV access subject to the current offer. Check eligibility and renewal terms on Apple's site.",
+        "facts": "Official Apple Music page identifies a Student Plan; Apple One is a separate bundle, not a student discount.",
+        "source": "https://www.apple.com/apple-music/"
+      },
+      {
+        "name": "Amazon Prime Student",
+        "action": "rename_and_correct",
+        "title": "Prime for Young Adults",
+        "badge": "Discounted",
+        "description": "Amazon's discounted Prime membership for eligible young adults and higher-education students. Verification can use age or student enrollment; a .edu address is not the only route.",
+        "facts": "Official Amazon announcement lists ages 18–24, $7.49/month or $69/year and eligible new-member trial. Avoid hardcoding trial length or price unless maintaining offer dates.",
+        "source": "https://www.aboutamazon.com/news/retail/amazon-prime-for-young-adults"
+      },
+      {
+        "name": "Hulu Student Plan",
+        "action": "rename_and_correct",
+        "title": "Disney+, Hulu Student Bundle",
+        "badge": "Discounted",
+        "description": "An ad-supported Disney+ and Hulu bundle for eligible U.S. college and graduate students age 18+. Enrollment is verified through SheerID and must be re-verified annually.",
+        "facts": "Current official student landing page lists $6.49/month, not the old $1.99/month Hulu-only offer.",
+        "source": "https://www.hulu.com/student"
+      },
+      {
+        "name": "Nike Student Discount",
+        "action": "correct",
+        "badge": "10% on eligible items",
+        "description": "Eligible U.S. students age 16+ can verify through SheerID for a single-use discount code on eligible Nike.com and Nike App purchases. Product exclusions apply.",
+        "facts": "US verification is SheerID, not UNiDAYS/Student Beans.",
+        "source": "https://www.nike.com/help/a/student-discount"
+      },
+      {
+        "name": "Amtrak student fares",
+        "action": "correct",
+        "badge": "Eligible routes",
+        "description": "Amtrak offers student fares with age, route, fare-class, advance-purchase and ID requirements. Check the current national or regional offer before booking.",
+        "facts": "Current national terms list 15% off for ages 17–24, valid student ID and one-day advance purchase; a separate older marketing page says ages 13–25/three days. Link current terms and avoid assuming one universal rule.",
+        "source": "https://www.amtrak.com/deals-discounts/everyday-discounts/student-discounts"
+      },
+      {
+        "name": "T-Mobile Student Discounts",
+        "action": "retain_with_terms",
+        "description": "Dedicated Student Perks plans for eligible college students age 18+ who are the primary account holder. Verify enrollment within 45 days and re-verify annually; taxes, fees and plan requirements apply.",
+        "facts": "Current student plans do exist. Do not remove the offer as fabricated.",
+        "source": "https://www.t-mobile.com/cell-phone-plans/student-discounts"
+      },
+      {
+        "name": "Peloton App Student Membership",
+        "action": "update_url",
+        "description": "Verified university students can access special pricing on eligible Peloton App plans. Check membership tier, verification and current renewal pricing.",
+        "source": "https://www.onepeloton.com/offers/specialpricing/student"
+      },
+      {
+        "name": "Codecademy student discount",
+        "action": "update_url",
+        "description": "Codecademy Pro Student provides eligible students discounted access to the coding curriculum. Check current annual pricing, trial and verification terms.",
+        "source": "https://www.codecademy.com/student-center"
+      }
+    ],
+    "internship_corrections": [
+      {
+        "name": "Home Depot Summer Internship",
+        "url": "https://careers.homedepot.com/student-internships/",
+        "status": "closed_for_current_cycle",
+        "deadline": "2026-10-23",
+        "display_deadline": "2027 summer applications closed Oct 23, 2026; check next cycle",
+        "description": "Paid 11-week summer internship with business and technology projects. Official 2027 program dates are May 17–July 30, 2027.",
+        "source": "https://careers.homedepot.com/student-internships/"
+      },
+      {
+        "name": "PGA TOUR Internship Program",
+        "url": "https://pgatour.wd5.myworkdayjobs.com/PGATOURExternal/job/XMLNAME-2027-PGA-Tour-Summer-Internship-Program_R015374",
+        "status": "open_as_of_verification",
+        "deadline": "2027-01-08",
+        "description": "Paid eight-week internship. For the 2027 program, applicants must be enrolled in an undergraduate or graduate program, have completed sophomore year by June 2027, and be authorized to work in the U.S. Written and creative responses are required.",
+        "source": "https://pgatour.wd5.myworkdayjobs.com/PGATOURExternal/job/XMLNAME-2027-PGA-Tour-Summer-Internship-Program_R015374"
+      },
+      {
+        "name": "Smithsonian Institution Internship Program",
+        "url": "https://internships.si.edu/opportunities/",
+        "description": "Internships across Smithsonian museums and research centers. Eligibility, compensation, location and dates vary by hosting unit; not all internships include a stipend.",
+        "source": "https://internships.si.edu/frequently-asked-questions"
+      },
+      {
+        "name": "Google Internship Program",
+        "action": "remove_unverified_STEP_reference",
+        "description": "Student opportunities in software engineering, UX, business, data science and other fields. Program names, eligibility and open roles vary by location and cycle; check current Google postings.",
+        "source": "https://www.google.com/about/careers/applications/students/",
+        "limitation": "Could not verify a current STEP cohort from an official source. Do not assert retirement without official evidence; simply stop advertising it as available."
+      },
+      {
+        "name": "NIH Summer Internship Program",
+        "url": "https://www.training.nih.gov/research-training/grads/summer-internship-program-sip/",
+        "description": "Full-time in-person summer research for eligible community college, undergraduate, graduate and professional students, with a limited graduating-high-school route. U.S. citizenship/permanent residency and age/enrollment rules apply.",
+        "source": "https://www.training.nih.gov/research-training/grads/summer-internship-program-sip/"
+      },
+      {
+        "name": "NASA Internship",
+        "url": "https://www.nasa.gov/learning-resources/internship-programs/",
+        "description": "NASA offers internship opportunities with program-specific enrollment, citizenship, GPA, age and location requirements. Confirm the current term on NASA's program page rather than assuming a single annual deadline.",
+        "source": "https://www.nasa.gov/learning-resources/internship-programs/",
+        "note": "NASA GISS separately lists summer 2027 deadline Feb 26, 2027 and fall May 21, 2027, but do not apply one center's dates universally."
+      },
+      {
+        "name": "The New York Times Internship Program",
+        "action": "replace_broken_url_and_correct_scope",
+        "candidate_url": "https://www.nytco.com/careers/early-career-opportunities/internships-outside-the-newsroom/",
+        "verified": true,
+        "reason": "Official direct HTTPS request verified 200 and page content; web index source had been proxy-only.",
+        "safe_description": "Explore business and technology early-career opportunities on the employer's careers site; current openings and eligibility vary.",
+        "url": "https://www.nytco.com/careers/early-career-opportunities/internships-outside-the-newsroom/",
+        "source": "https://www.nytco.com/careers/early-career-opportunities/internships-outside-the-newsroom/",
+        "description": "Paid ten-week business and technology internships based in New York. Journalism internships were replaced by the newsroom fellowship; consult the current early-career program page for applications and eligibility.",
+        "deadline_note": "Official page lists Summer 2027 applications posting Oct 30, 2026 and beginning to close week of Nov 9; verify specific requisition deadlines."
+      },
+      {
+        "name": "Visa Global Internship Program",
+        "url": "https://corporate.visa.com/en/careers/early-careers.html",
+        "description": "College internships in business and technology, with eligibility and dates set by the specific role and country.",
+        "source": "https://corporate.visa.com/en/careers/early-careers.html"
+      },
+      {
+        "name": "Merck Future Talent Program",
+        "url": "https://jobs.merck.com/us/en/student-opportunities",
+        "description": "Paid internships and co-ops across research, manufacturing, technology and business. U.S. internships generally require enrollment in a bachelor's, master's or Ph.D. program and work authorization; role requirements vary.",
+        "source": "https://jobs.merck.com/us/en/student-opportunities"
+      }
+    ],
+    "housing_properties": [
+      {
+        "market": "Houston, TX",
+        "name": "Allure Hermann Park at Med Center",
+        "website": "https://www.allurehermannpark.com/",
+        "floorplans": "https://www.allurehermannpark.com/floorplans",
+        "address": "5927 Almeda Road, Houston, TX 77004",
+        "floorplan_summary": "1, 2 and 4 bedroom layouts listed by the property",
+        "source": "https://www.allurehermannpark.com/floorplans",
+        "note": "Existing claim that floor plans are not listed online is false. Do not copy current rent/availability into static data."
+      },
+      {
+        "market": "Houston, TX",
+        "name": "Hermann Park Lofts",
+        "website": "https://hermannparklofts.com/",
+        "floorplans": "https://hermannparklofts.com/floorplans/",
+        "address": "1 Hermann Park Court, Houston, TX 77021",
+        "floorplan_summary": "Studios, 1, 2 and 3 bedroom layouts listed by the property",
+        "source": "https://hermannparklofts.com/floorplans/",
+        "note": "Some short-term furnished apartments mentioned by property, but availability/terms require confirmation."
+      },
+      {
+        "market": "Houston, TX",
+        "name": "Forme",
+        "website": "https://www.formehtx.com/",
+        "floorplans": "https://www.formehtx.com/residences",
+        "address": "5501 La Branch Street, Houston, TX 77004",
+        "floorplan_summary": "Studios, 1, 2 and 3 bedroom homes; co-living suites described on property website",
+        "source": "https://www.formehtx.com/residences"
+      },
+      {
+        "market": "Houston, TX",
+        "name": "Marquis Enclave",
+        "website": "https://www.marquisenclave.com/",
+        "floorplans": "https://www.marquisenclave.com/floor-plans",
+        "address": "301 St Joseph Parkway, Houston, TX 77002",
+        "floorplan_summary": "Studios, 1 and 2 bedroom homes listed by the property",
+        "source": "https://www.marquisenclave.com/floor-plans"
+      },
+      {
+        "market": "Houston, TX",
+        "name": "Life Tower",
+        "website": "https://www.livelifetower.com/",
+        "floorplans": "https://www.livelifetower.com/apartments/tx/houston/floor-plans",
+        "address": "6919 Main Street, Houston, TX 77030",
+        "floorplan_summary": "Furnished studios, 1, 2 and 4 bedroom apartments described on property website",
+        "source": "https://www.livelifetower.com/apartments/tx/houston/floor-plans",
+        "note": "Official FAQ states 12-month installments; do not imply short-term leasing available. Site primarily discusses Rice/Texas A&M Medicine, so verify commute to UH rather than assume proximity means walkable."
+      },
+      {
+        "market": "Odessa, TX",
+        "name": "Sedona Ranch",
+        "website": "https://www.sedonaranchapartments.com/",
+        "floorplans": "https://www.sedonaranchapartments.com/floorplans",
+        "address": "8001 Brownstone Road, Odessa, TX 79765",
+        "floorplan_summary": "1 and 2 bedroom apartments described on property website",
+        "source": "https://www.sedonaranchapartments.com/"
+      }
+    ],
+    "global_copy_changes": [
+      "Replace currently recruiting / live jobs claims with program directory language unless actual open requisitions are tracked.",
+      "Show source-reviewed dates at record level. HTTP 200 only verifies a URL responds, not every fact in the listing.",
+      "Remove or clearly label inherited Google review scores/counts, distance estimates and ordinal ranking. These were manually embedded without timestamps or a documented ranking method.",
+      "For housing, replace floor plans not listed online with Check current floor plans and availability on the property website when not independently verified; link the official site or honest Maps lookup.",
+      "Do not describe public directory entries as Preferred Partners unless the partnership is actually established. Separate paid placement from editorial directory entries.",
+      "Discount amounts, free-trial length, fees and renewal terms change. Prefer Discounted / Check current offer and link exact eligibility terms, with reviewed date."
+    ],
+    "limitations": [
+      "403/429/500 responses and timeouts are not proof of dead links. Preserve as unverified or replace with confirmed official evergreen pages.",
+      "Could not independently verify every one of the 66 programs' current recruiting status. Generic annual cycles must not imply applications are open.",
+      "Only Houston's five property websites and broken Sedona Ranch destinations were independently researched here. The other markets' availability, ratings, distances and apartment eligibility remain unverified."
+    ]
+  }
+}

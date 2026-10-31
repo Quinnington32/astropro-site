@@ -1,0 +1,448 @@
+[
+  {
+    "id": "discount-free-student-verification-discounts-unidays",
+    "changes": {
+      "amount": "Free discount platform",
+      "description": "Browse offers from participating brands after verifying student eligibility. Each brand sets its own terms and verification requirements.",
+      "url": "https://www.myunidays.com/US/en-US"
+    },
+    "source": "https://www.myunidays.com/US/en-US",
+    "verifiedFields": [
+      "amount",
+      "description",
+      "url"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "discount-free-student-verification-discounts-student-beans",
+    "changes": {
+      "amount": "Free discount platform",
+      "description": "Browse student offers and verify eligibility with Student Beans. Savings, exclusions and verification requirements vary by brand.",
+      "url": "https://www.studentbeans.com/us"
+    },
+    "source": "https://www.studentbeans.com/us",
+    "verifiedFields": [
+      "amount",
+      "description",
+      "url"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "discount-verification-used-at-checkout-sheerid",
+    "changes": {
+      "name": "SheerID student verification",
+      "amount": "Verification service",
+      "description": "Some brands use SheerID to confirm student eligibility. Start with the brand’s offer page and follow its verification steps; requirements vary by offer."
+    },
+    "source": "https://www.sheerid.com/",
+    "verifiedFields": [
+      "name",
+      "amount",
+      "description"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "discount-adobe-creative-cloud-60",
+    "changes": {
+      "amount": "Student subscription",
+      "description": "Discounted Creative Cloud Pro subscription for eligible students and teachers. Verify with a school email or accepted enrollment documents; introductory and renewal prices differ."
+    },
+    "source": "https://www.adobe.com/creativecloud/buy/students.html",
+    "verifiedFields": [
+      "amount",
+      "description"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "discount-microsoft-365-education-free-low",
+    "changes": {
+      "name": "Office 365 Education",
+      "amount": "Free A1 for eligible schools",
+      "description": "Eligible students and educators can access Office 365 A1, including web versions of core Office apps. Desktop app access depends on your school’s license; verify eligibility before buying."
+    },
+    "source": "https://www.microsoft.com/en-us/education/products/office",
+    "verifiedFields": [
+      "name",
+      "amount",
+      "description"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "discount-github-student-developer-pack-free",
+    "changes": {
+      "amount": "Free and discounted tools",
+      "description": "A bundle of developer tools and partner offers for verified students. Individual offers have their own eligibility rules, usage limits and expiration dates."
+    },
+    "source": "https://education.github.com/pack",
+    "verifiedFields": [
+      "amount",
+      "description"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "discount-figma-education-free-low",
+    "changes": {
+      "amount": "Free Education plan",
+      "description": "Verified students and educators in eligible educational programs can create an Education team with Professional-tier access. School-managed access has separate requirements."
+    },
+    "source": "https://www.figma.com/education/",
+    "verifiedFields": [
+      "amount",
+      "description"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "discount-notion-for-education-free",
+    "changes": {
+      "amount": "Free Education plan",
+      "description": "Eligible college and university students or teachers can get a free Education plan for a one-member workspace using an institution email. Annual verification is required; student organizations apply separately.",
+      "url": "https://www.notion.com/help/notion-for-education"
+    },
+    "source": "https://www.notion.com/help/notion-for-education",
+    "verifiedFields": [
+      "amount",
+      "description",
+      "url"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "discount-linkedin-learning-via-your-library-free",
+    "changes": {
+      "amount": "Through participating libraries",
+      "description": "Participating libraries provide LinkedIn Learning at no additional cost to patrons. Check your library’s website for its login link, card and PIN requirements."
+    },
+    "source": "https://www.linkedin.com/help/learning/answer/a704922/linkedin-learning-for-library-librarian-faq?lang=en",
+    "verifiedFields": [
+      "amount",
+      "description"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "discount-spotify-premium-student-50",
+    "changes": {
+      "amount": "Student subscription",
+      "description": "Discounted U.S. Premium Student plan currently includes Hulu with ads, subject to eligibility. Student status is verified through SheerID and renewed annually; the student offer has a four-year limit.",
+      "url": "https://www.spotify.com/us/student/"
+    },
+    "source": "https://www.spotify.com/us/student/",
+    "verifiedFields": [
+      "amount",
+      "description",
+      "url"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "discount-youtube-premium-student-varies",
+    "changes": {
+      "amount": "Student subscription",
+      "description": "Discounted YouTube Premium for students at eligible higher education institutions. SheerID verification and annual re-verification are required, for up to four consecutive years."
+    },
+    "source": "https://support.google.com/youtube/answer/9158808?hl=en",
+    "verifiedFields": [
+      "amount",
+      "description"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "discount-audible-student-discount-discounted",
+    "changes": {
+      "publish": false
+    },
+    "source": "https://www.studentbeans.com/student-discount/us/amazon-audible",
+    "verifiedFields": [
+      "publish"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "discount-student-universe-varies",
+    "changes": {
+      "name": "BYOjet for Students (formerly StudentUniverse)",
+      "amount": "Fares vary",
+      "description": "StudentUniverse now operates as BYOjet for Students. The booking service advertises fares for students, young adults and other travelers; availability and restrictions vary by itinerary.",
+      "url": "https://home.byojet.com/student-universe?referrer=StudentUniverse_US"
+    },
+    "source": "https://home.byojet.com/student-universe?referrer=StudentUniverse_US",
+    "verifiedFields": [
+      "name",
+      "amount",
+      "description",
+      "url"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "discount-local-transit-discounts-local",
+    "changes": {
+      "amount": "Varies by transit system",
+      "description": "Check your school and local transit agency for student fares or campus pass programs. Eligibility, enrollment verification and required fare cards vary; a school ID alone may not qualify."
+    },
+    "source": "https://www.ridemetro.org/fares/faqs",
+    "verifiedFields": [
+      "amount",
+      "description"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "discount-apple-education-pricing-varies",
+    "changes": {
+      "amount": "Education pricing",
+      "description": "Apple’s U.S. Education Store offers special pricing on eligible products for qualifying education customers. Check current eligibility, purchase limits and terms before ordering."
+    },
+    "source": "https://www.apple.com/us-edu/store",
+    "verifiedFields": [
+      "amount",
+      "description"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "discount-samsung-education-store-varies",
+    "changes": {
+      "amount": "Education offers",
+      "description": "Samsung’s Education Offer Program provides eligible students and educators access to selected offers. Verification can use a school email or ID.me; product exclusions and terms apply."
+    },
+    "source": "https://www.samsung.com/us/shop/offer-program/education/",
+    "verifiedFields": [
+      "amount",
+      "description"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "discount-dell-student-discount-discounted",
+    "changes": {
+      "amount": "Education offers",
+      "description": "Dell’s Education Purchase Program offers eligible students and teachers additional savings. A Dell account, Dell Rewards enrollment and status verification are required; exclusions apply.",
+      "url": "https://www.dell.com/en-us/shop/member/lp/students"
+    },
+    "source": "https://www.dell.com/en-us/shop/member/lp/students",
+    "verifiedFields": [
+      "amount",
+      "description",
+      "url"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "discount-under-armour-student-discount-discounted",
+    "changes": {
+      "amount": "Student pricing",
+      "description": "Under Armour’s official student offer uses UNiDAYS verification for an extra online discount. Check current exclusions and checkout terms.",
+      "url": "https://www.underarmour.com/en-us/t/unidays/"
+    },
+    "source": "https://www.underarmour.com/en-us/t/unidays/",
+    "verifiedFields": [
+      "amount",
+      "description",
+      "url"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "discount-walmart-student-discount-50",
+    "changes": {
+      "amount": "50% off eligible membership",
+      "description": "Eligible college and graduate students can receive 50% off a Walmart+ monthly or annual membership after verification. Membership renews and benefit restrictions apply."
+    },
+    "source": "https://www.walmart.com/plus/student",
+    "verifiedFields": [
+      "amount",
+      "description"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "discount-doordash-dashpass-for-students-discounted",
+    "changes": {
+      "amount": "Discounted membership",
+      "description": "Verified university and post-secondary students can subscribe at the student rate. Delivery benefits apply only to participating merchants and qualifying order minimums; other fees may apply.",
+      "url": "https://help.doordash.com/en-us/consumers/article/dashpass-for-students"
+    },
+    "source": "https://help.doordash.com/en-us/consumers/article/dashpass-for-students",
+    "verifiedFields": [
+      "amount",
+      "description",
+      "url"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "discount-chase-college-checking-fee-waivers",
+    "changes": {
+      "name": "Chase Secure Banking",
+      "amount": "Monthly service fee waiver",
+      "description": "Chase Secure Banking waives its monthly service fee for account owners ages 17–24. Account approval and other fees apply; review current terms. Chase College Checking is no longer offered to new applicants.",
+      "url": "https://personal.chase.com/personal/secure-banking"
+    },
+    "source": "https://account.chase.com/consumer/banking/secure/college-offer",
+    "verifiedFields": [
+      "name",
+      "amount",
+      "description",
+      "url"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "internships-ge-aerospace-internship",
+    "changes": {
+      "description": "Paid U.S. internships and co-ops in aerospace engineering, digital technology, commercial operations, finance and other business areas. Qualifications and locations vary by posting."
+    },
+    "source": "https://careers.geaerospace.com/global/en/us-internships",
+    "verifiedFields": [
+      "description"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "internships-uberstar-internship-program",
+    "changes": {
+      "name": "Uber Internships and Emerging Talent",
+      "amount": "Check each role",
+      "description": "Uber’s directory for university internships and early-career programs. Search current roles for team, location, student eligibility and compensation; availability varies.",
+      "url": "https://jobs.uber.com/en/teams/emerging-talent/"
+    },
+    "source": "https://jobs.uber.com/en/teams/emerging-talent/",
+    "verifiedFields": [
+      "name",
+      "amount",
+      "description",
+      "url"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "internships-u-s-department-of-state-student-internship-program",
+    "changes": {
+      "amount": "Paid",
+      "description": "Paid foreign-affairs internships in U.S. offices and overseas posts. Applicants must be U.S. citizens age 18 or older and meet academic, security-clearance and other program requirements."
+    },
+    "source": "https://careers.state.gov/interns-fellows/student-internship-program/",
+    "verifiedFields": [
+      "amount",
+      "description"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "internships-peace-corps-internship-program",
+    "changes": {
+      "amount": "Paid and unpaid tracks",
+      "description": "The Peace Corps Student Internship Program includes paid general and legal internships as well as unpaid placements. Enrollment, work arrangements and compensation depend on the advertised opportunity."
+    },
+    "source": "https://files.peacecorps.gov/documents/IPS-1-23-Interim-Policy.pdf",
+    "verifiedFields": [
+      "amount",
+      "description"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "internships-brookings-institution-internship-program",
+    "changes": {
+      "amount": "Paid",
+      "description": "Paid internships for degree-seeking students and occasional recent graduates in policy research and business functions. Review each cohort’s official listings for eligibility and application dates.",
+      "url": "https://www.brookings.edu/careers/internships/"
+    },
+    "source": "https://www.brookings.edu/careers/internships/",
+    "verifiedFields": [
+      "amount",
+      "description",
+      "url"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "internships-national-geographic-society-internship-program",
+    "changes": {
+      "description": "Paid summer internships for undergraduate and graduate students supporting the Society’s work. The 2026 cycle was postponed; consult the official program page for the next cohort and application window.",
+      "url": "https://www.nationalgeographic.org/about/careers/internships"
+    },
+    "source": "https://www.nationalgeographic.org/about/careers/internships",
+    "verifiedFields": [
+      "description",
+      "url"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "internships-mayo-clinic-internship",
+    "changes": {
+      "name": "Mayo Clinic Administrative Internship",
+      "amount": "Check current posting",
+      "description": "A 10–12-week healthcare administration internship for graduate students. This program is for administrative leadership experience; clinical, nursing and laboratory training use separate programs."
+    },
+    "source": "https://jobs.mayoclinic.org/AIP",
+    "verifiedFields": [
+      "name",
+      "amount",
+      "description"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "internships-bmw-group-internship",
+    "changes": {
+      "description": "BMW Group U.S. internships and co-ops across manufacturing, engineering and business teams. Student enrollment, academic level, location and work-authorization requirements differ by program.",
+      "url": "https://www.bmwgroup.jobs/us/en/opportunities/student/undergraduate-student.html"
+    },
+    "source": "https://www.bmwgroup.jobs/us/en/opportunities/student/undergraduate-student.html",
+    "verifiedFields": [
+      "description",
+      "url"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "internships-goldman-sachs-summer-analyst-program",
+    "changes": {
+      "description": "Summer internships across Goldman Sachs business areas for students pursuing a college or university degree, usually in the third or penultimate year. Eligibility and available locations vary by program."
+    },
+    "source": "https://www.goldmansachs.com/careers/students/programs-and-internships/americas/2027-summer-analyst-program",
+    "verifiedFields": [
+      "description"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "internships-ey-internship-program-ey-launch",
+    "changes": {
+      "name": "EY Internships and Student Programs",
+      "description": "EY’s directory of internships and student opportunities. Choose a current program and location to review academic requirements, recruiting timelines and compensation.",
+      "url": "https://www.ey.com/en_us/careers/student-entry-level-programs"
+    },
+    "source": "https://www.ey.com/en_us/careers/student-entry-level-programs",
+    "verifiedFields": [
+      "name",
+      "description",
+      "url"
+    ],
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "internships-pfizer-futures-program",
+    "changes": {
+      "description": "Paid U.S. summer internship program for full-time undergraduate students age 18 or older at the start. Work authorization without employer sponsorship, GPA and on-site attendance requirements apply.",
+      "url": "https://www.pfizer.com/en/about/careers/pfizer-futures"
+    },
+    "source": "https://www.pfizer.com/en/about/careers/pfizer-futures",
+    "verifiedFields": [
+      "description",
+      "url"
+    ],
+    "verifiedAt": "2026-10-31"
+  }
+]
