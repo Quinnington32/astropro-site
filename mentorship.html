@@ -39,6 +39,17 @@
   .page-hero h1{font-size:clamp(2rem,4vw,2.8rem); line-height:1.12; letter-spacing:-0.01em; margin-top:16px}
   .page-hero p.lede{margin-top:14px; font-size:1.08rem; color:var(--ink-soft); max-width:62ch}
   section{padding-block:36px}
+  .section-head{max-width:62ch; margin-bottom:22px}
+  .kicker-sm{font-size:0.82rem; font-weight:700; color:var(--primary); letter-spacing:0.02em}
+  .section-head h2{font-size:clamp(1.4rem,2.2vw,1.8rem); margin-top:8px}
+  .section-head p{color:var(--ink-soft); margin-top:10px; font-size:1rem}
+  .tool-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px}
+  .tool-card{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:22px; display:flex; flex-direction:column; gap:8px}
+  .tool-card h3{font-size:1.02rem}
+  .tool-card p{color:var(--ink-soft); font-size:0.9rem; flex-grow:1}
+  .tool-card a.link{font-size:0.9rem; font-weight:600; color:var(--ink); text-decoration:none}
+  .tool-card a.link:hover{color:var(--primary)}
+  .tool-card .price{font-size:0.74rem; font-weight:700; color:var(--primary); background:color-mix(in srgb, var(--primary) 10%, transparent); padding:3px 9px; border-radius:20px; align-self:flex-start}
   .two-col{display:grid; grid-template-columns:1fr 1fr; gap:20px}
   .path-card{background:var(--surface); border:1px solid var(--line); border-radius:20px; padding:32px}
   .path-card h2{font-size:1.3rem}
@@ -56,7 +67,7 @@
   .footer-row{display:flex; justify-content:space-between; flex-wrap:wrap; gap:18px; font-size:0.86rem; color:var(--ink-soft)}
   .footer-links{display:flex; gap:20px; flex-wrap:wrap}
   .footer-links a{text-decoration:none; color:var(--ink-soft)}
-  @media (max-width:900px){ .two-col{grid-template-columns:1fr} nav{display:none} }
+  @media (max-width:900px){ .two-col{grid-template-columns:1fr} .tool-grid{grid-template-columns:1fr} nav{display:none} }
 
   @media (max-width:480px){
     .wordmark{font-size:0.92rem; gap:7px}
@@ -89,6 +100,21 @@
 </section>
 
 <section>
+  <div class="wrap">
+    <div class="section-head"><span class="kicker-sm">While you wait</span><h2>Real mentorship options you can use right now</h2><p>Our own matching isn't live yet, so here's where to actually find a mentor today &mdash; free and paid.</p></div>
+    <div class="tool-grid">
+      <div class="tool-card"><span class="price">Free</span><h3>Your school's alumni or mentorship office</h3><p>Most colleges run a formal alumni mentorship program through career services or a dedicated alumni relations office &mdash; often the fastest way to a mentor who already knows your school.</p><a class="link" href="#">Check your school's alumni office</a></div>
+      <div class="tool-card"><span class="price">Free</span><h3>LinkedIn's alumni tool</h3><p>Search LinkedIn for your school's alumni page, then use the built-in alumni tool to filter by field, employer or location &mdash; a direct way to find and message people a few years ahead of you.</p><a class="link" href="https://www.linkedin.com" target="_blank" rel="noopener">Visit LinkedIn &rarr;</a></div>
+      <div class="tool-card"><span class="price">Free</span><h3>ADPList</h3><p>A large, free mentorship platform, strongest in tech, design and product, where you can book time with real working professionals at no cost.</p><a class="link" href="https://adplist.org" target="_blank" rel="noopener">Visit ADPList &rarr;</a></div>
+      <div class="tool-card"><span class="price paid">Paid</span><h3>MentorCruise</h3><p>A paid 1-on-1 mentorship marketplace with mentors from companies like Amazon, Airbnb and Netflix, across tech, business and more &mdash; useful if you want a more structured, ongoing relationship.</p><a class="link" href="https://mentorcruise.com" target="_blank" rel="noopener">Visit MentorCruise &rarr;</a></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head"><span class="kicker-sm">Join our network too</span><h2>Sign up and we'll match you as it grows</h2></div>
+  </div>
   <div class="wrap two-col">
     <div class="path-card">
       <h2>I'm a student looking for a mentor</h2>
