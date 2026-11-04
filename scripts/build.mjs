@@ -16,9 +16,6 @@ import {
 } from "../src/render.mjs";
 const json = async (name) =>
   JSON.parse(await readFile(`src/data/${name}.json`, "utf8"));
-const sourceCommit = process.env.GITHUB_SHA || null;
-if (sourceCommit && !/^[0-9a-f]{40}$/.test(sourceCommit))
-  throw Error("GITHUB_SHA must identify the exact source commit.");
 const [scholarships, internships, discounts, markets] = await Promise.all(
   ["scholarships", "internships", "discounts", "housing"].map(json),
 );
