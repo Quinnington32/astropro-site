@@ -29,7 +29,9 @@ The preview runs at `http://localhost:4174`. Run `npm run build` after changing 
 
 Use official sponsor/provider sources. `verifiedAt` means the source was reviewed, not that an offer will remain available. Record the source and the specific verified fields. Unknown application windows should direct visitors to the sponsor rather than repeat an estimated annual date. Known expired deadlines close automatically in the UI. Do not advertise every program as currently accepting applications.
 
-Cards render full eligibility text. Search checks names, descriptions, categories, and available state metadata. Categories and application-window filters combine. Sorting can always restore the source order. Saved resources are browser-local, with JSON export/import; they do not create an account or mailing subscription.
+Cards show a short preview with the full eligibility text and source notes under “Details & eligibility.” Directories initially show 12 matches; “Show more” reveals the next 12. Search checks every published record, including cards not yet displayed. Categories and application-window filters combine. Sorting can always restore the source order. The homepage search and `/search.html` search scholarships, career programs, discounts, and property records together; exact provider names rank first. Search also includes the guides, mentorship, and campus support tools. Saved resources are browser-local, with JSON export/import; they do not create an account or mailing subscription.
+
+The organization submission form is under “Suggest a listing.” Its field names and API validation remain compatible with existing submissions. Guides keep detailed explanations in expandable sections, with jump links to each topic. No visitor tracker or email automation was added by the visual redesign.
 
 ## Forms and private inbox
 

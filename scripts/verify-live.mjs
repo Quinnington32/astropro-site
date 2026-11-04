@@ -4,19 +4,20 @@ import assert from "node:assert/strict";
 const origin = "https://students.goastropro.com";
 const digest = (bytes) => createHash("sha256").update(bytes).digest("hex");
 const results = [];
-const manifestResponse = await fetch(origin + "/build.json", {
+const manifest = JSON.parse(await readFile("dist/build.json", "utf8"));
+const liveManifest = await fetch(origin + "/build.json", {
   cache: "no-store",
   signal: AbortSignal.timeout(15000),
 });
-assert.equal(manifestResponse.status, 200);
-const manifest = await manifestResponse.json();
+assert.equal(liveManifest.status, 200, "live release manifest");
+const liveBuild = await liveManifest.json();
 const expectedCommit =
   process.env.GITHUB_SHA || process.env.ASRC_EXPECTED_COMMIT;
 if (expectedCommit)
   assert.equal(
-    manifest.sourceCommit,
+    liveBuild.sourceCommit,
     expectedCommit,
-    "production must serve this exact source commit",
+    "live source commit must match the release",
   );
 for (const file of (await readdir("dist")).filter((x) => x.endsWith(".html"))) {
   const response = await fetch(
@@ -34,6 +35,7 @@ for (const file of (await readdir("dist")).filter((x) => x.endsWith(".html"))) {
 for (const file of [
   "assets/site.js",
   "assets/private-session.js",
+  "assets/resource-search.js",
   "assets/site.css",
   "assets/catalog.json",
   "assets/sora.woff2",
@@ -159,10 +161,10 @@ if (process.argv.includes("--exercise-forms")) {
 }
 const report = {
   verifiedAt: new Date().toISOString(),
-  sourceCommit: manifest.sourceCommit || null,
+  sourceCommit: liveBuild.sourceCommit || null,
   origin,
   pages: results.length,
-  assetByteChecks: 10,
+  assetByteChecks: 11,
   aliasFinal: alias.url,
   unauthorizedInboxStatus: 401,
   missingPageStatus: 404,
@@ -177,5 +179,5 @@ await writeFile(
   JSON.stringify(report, null, 2),
 );
 console.log(
-  `Production verified: ${results.length} pages match the checked build; 10 assets/downloads match; alias, 404, storage readiness, validation and private access checks pass; ${receipts.length} form receipts confirmed.`,
+  `Production verified: ${results.length} pages match the checked build; 11 assets/downloads match; alias, 404, storage readiness, validation and private access checks pass; ${receipts.length} form receipts confirmed.`,
 );

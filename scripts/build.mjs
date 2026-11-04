@@ -12,6 +12,7 @@ import {
   saveButton,
   dateLabel,
   canonicalRoot,
+  icon,
 } from "../src/render.mjs";
 const json = async (name) =>
   JSON.parse(await readFile(`src/data/${name}.json`, "utf8"));
@@ -29,6 +30,9 @@ const guides = [
   "tutoring",
   "wellbeing",
 ];
+const sourceCommit = process.env.GITHUB_SHA || null;
+if (sourceCommit && !/^[0-9a-f]{40}$/.test(sourceCommit))
+  throw new Error("GITHUB_SHA must identify the exact source commit.");
 const pages = [];
 const emit = (file, title, description, body, options = {}) =>
   pages.push({ file, title, description, body, ...options });
@@ -96,11 +100,11 @@ const resourceTypes = [
 ];
 const listingForm = form({
   type: "listing",
-  button: "Send for editorial review",
+  button: "Send listing for review",
   fields:
-    field("organization", "Organization name") +
+    field("organization", "Organization or school") +
     field("email", "Contact email", "email") +
-    field("listingType", "Resource type", "text", {
+    field("listingType", "Type of listing", "text", {
       options: [
         "Scholarship",
         "Job or internship",
@@ -110,16 +114,120 @@ const listingForm = form({
         "Other resource",
       ],
     }) +
-    field("title", "Resource title") +
+    field("title", "Listing name", "text", {
+      placeholder: "e.g. First Generation Scholarship",
+      hint: "The name students will see in the directory.",
+    }) +
     field("description", "Description", "textarea", {
       max: 4000,
       placeholder: "Who is it for? Include eligibility, dates, and any cost.",
     }) +
-    field("url", "Official application or information link", "url", {
+    field("url", "Website link", "url", {
       max: 1000,
+      placeholder: "https://",
+      hint: "The provider’s official application or information page.",
     }),
 });
-const home = `<section class="home-hero"><div class="wrap hero-grid"><div><p class="eyebrow">A clearer path through college</p><h1>Everything college throws at you, in one place.</h1><p class="lede">Find funding, your next opportunity, and the support that makes college work. Start with what you need today.</p><div class="cta-row"><a class="btn btn-primary" href="scholarships.html">Find scholarships</a><a class="btn btn-ghost" href="index.html#resources">Explore all resources</a></div><p class="hero-note">Free to browse. No account required.</p></div><aside class="hero-aside" aria-label="Where to start"><h2>What’s your next step?</h2><a class="next-link" href="apply-to-college.html"><span aria-hidden="true">01</span><span><strong>I’m applying to college</strong><small>Applications, timelines, and financial aid</small></span></a><a class="next-link" href="internships.html"><span aria-hidden="true">02</span><span><strong>I’m looking for experience</strong><small>Student programs and career guidance</small></span></a><a class="next-link" href="housing.html"><span aria-hidden="true">03</span><span><strong>I need a place to live</strong><small>Campus markets and housing search tools</small></span></a><a class="next-link" href="school-resources.html"><span aria-hidden="true">04</span><span><strong>I could use some support</strong><small>Find help through your own school</small></span></a></aside></div></section><section class="wrap" aria-label="Directory overview"><div class="stats-strip"><div><strong>${scholarships.length}</strong><span>scholarships listed</span></div><div><strong>${internships.length}</strong><span>student career programs</span></div><div><strong>${discounts.length}</strong><span>discount resources</span></div><div><strong>${markets.length}</strong><span>campus housing markets</span></div></div></section><section id="resources"><div class="wrap"><div class="section-head"><p class="eyebrow">Your resource center</p><h2>Find something that moves you forward.</h2><p>Browse a category and save useful resources on this device. Applications go directly to the organization that runs each opportunity.</p></div><div class="resource-grid">${resourceTypes.map(([slug, tag, title, description]) => `<article class="resource-card"><p class="tag">${tag}</p><h3>${title}</h3><p>${description}</p><a class="link" href="${slug}.html">Explore ${title.toLowerCase()} →</a></article>`).join("")}</div></div></section><section id="mission"><div class="wrap form-layout"><div class="section-head"><p class="eyebrow">Our mission</p><h2>The place we wish we’d had when we were starting college.</h2><p>College comes with a lot to figure out. We bring useful starting points together so finding a scholarship, a career program, or campus support takes less searching.</p><p>Our directory is editorial, free to browse, and independent of the organizations linked here. We don’t submit applications or guarantee awards, jobs, housing, or mentor matches.</p><a class="link" href="about.html">How we select and review resources →</a></div><div class="callout"><h2>Build your own shortlist.</h2><p>Save resources while you browse, then come back to compare them. Your saved list stays in this browser.</p><a class="btn btn-primary" href="saved.html">Open saved resources</a></div></div></section><section id="organizations"><div class="wrap form-layout"><div class="section-head"><p class="eyebrow">For organizations</p><h2>Have something useful for students?</h2><p>Submit an official scholarship, student program, discount, or property website for review. A submission is a request for editorial consideration, not a paid placement or guaranteed listing.</p><p>We store your request so the team can review it and contact you. We don’t share a student mailing list or enroll visitors in marketing.</p><p class="fineprint">Schools can use this form to propose a partnership. Property owners should include the official property website, campus served, and any eligibility restrictions.</p></div><div class="form-panel">${listingForm}</div></div></section><section id="schools"><div class="wrap"><div class="callout"><p class="eyebrow">For schools</p><h2>Help students find the support already around them.</h2><p>Suggest official campus services or talk with us about keeping your school’s resources represented accurately.</p><a class="btn btn-primary" href="index.html#organizations">Suggest a school partnership</a></div></div></section>`;
+const homeCategories = [
+  [
+    "scholarships",
+    "scholarships.html",
+    "Scholarships",
+    "Find your scholarship.",
+    `${scholarships.length} scholarships`,
+    "mint",
+  ],
+  [
+    "internships",
+    "internships.html",
+    "Jobs & internships",
+    "Turn your interests into experience.",
+    `${internships.length} career programs`,
+    "lavender",
+  ],
+  [
+    "housing",
+    "housing.html",
+    "Off-campus housing",
+    "Find a place to make your own.",
+    `${markets.length} campus markets`,
+    "peach",
+  ],
+  [
+    "discounts",
+    "discounts.html",
+    "Student discounts",
+    "A student budget can go further.",
+    `${discounts.length} resources`,
+    "butter",
+  ],
+  [
+    "guides",
+    "apply-to-college.html",
+    "College guides",
+    "The next step, made a little clearer.",
+    "Applications, resumes & more",
+    "blue",
+  ],
+  [
+    "campus",
+    "school-resources.html",
+    "Campus support",
+    "Start with the help around you.",
+    "Find your school’s resources",
+    "rose",
+  ],
+];
+const supportLinks = [
+  ["mentorship", "mentorship.html", "Find a mentor"],
+  ["tutoring", "tutoring.html", "Study help"],
+  ["wellbeing", "wellbeing.html", "Wellbeing"],
+  ["money", "money-basics.html", "Money basics"],
+  ["scholarships", "financial-aid.html", "Financial aid"],
+  ["guides", "career-guides.html", "Career guides"],
+];
+const home = `
+<section class="home-hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="hero-badge"><span aria-hidden="true">✦</span> A little direction. A lot of possibility.</p>
+      <h1>Less searching.<br><span>More possibilities.</span></h1>
+      <p class="lede">Scholarships, careers, housing, and a little help along the way. Your next step starts here.</p>
+      <form class="home-search" action="search.html" method="get" role="search">
+        <label class="sr-only" for="homeSearch">Search all student resources</label>
+        ${icon("search")}<input id="homeSearch" name="q" type="search" placeholder="Scholarships, housing, career help…" maxlength="120" required><button class="btn btn-primary" type="submit">Search ${icon("arrow")}</button>
+      </form>
+      <div class="popular-links"><span>Start with</span><a href="scholarships.html">Scholarships ↗</a><a href="housing.html">Housing ↗</a><a href="school-resources.html">Campus help ↗</a></div>
+      <p class="hero-note">${icon("check")} Free to explore. No account needed.</p>
+    </div>
+    <aside class="hero-board" aria-label="Explore your next step">
+      <div class="orbit orbit-one" aria-hidden="true"></div><div class="orbit orbit-two" aria-hidden="true"></div><span class="board-star" aria-hidden="true">✦</span><span class="board-dot" aria-hidden="true"></span>
+      <div class="board-label">YOUR NEXT CHAPTER</div>
+      <a class="board-card board-funding" href="scholarships.html"><span class="board-icon tone-mint">${icon("scholarships")}</span><span><small>A little less tuition stress</small><strong>Find your funding.</strong><span class="board-meta">${scholarships.length} scholarships to explore</span></span><span class="board-arrow" aria-hidden="true">↗</span></a>
+      <a class="board-card board-career" href="internships.html"><span class="board-icon tone-lavender">${icon("internships")}</span><span><small>Make your next move</small><strong>Build your future.</strong><span class="board-meta">${internships.length} career programs</span></span><span class="board-arrow" aria-hidden="true">↗</span></a>
+      <a class="board-card board-housing" href="housing.html"><span class="board-icon tone-peach">${icon("housing")}</span><span><small>A place to call yours</small><strong>Feel at home.</strong><span class="board-meta">${markets.length} campus markets</span></span><span class="board-arrow" aria-hidden="true">↗</span></a>
+      <span class="board-caption">Good things are ahead. <span aria-hidden="true">⤴</span></span>
+    </aside>
+  </div>
+</section>
+<section id="resources" class="home-resources">
+  <div class="wrap">
+    <div class="section-head section-head-row"><div><p class="eyebrow">Pick your next step</p><h2>A good place to start.</h2></div><p>You’ve got options. Let’s find yours.</p></div>
+    <div class="category-grid">${homeCategories.map(([symbol, href, title, description, count, tone]) => `<a class="category-card" href="${href}"><div class="category-top"><span class="category-icon tone-${tone}">${icon(symbol)}</span><span class="category-arrow" aria-hidden="true">↗</span></div><h3>${title}</h3><p>${description}</p><span class="category-foot">${count} ${icon("arrow")}</span></a>`).join("")}</div>
+  </div>
+</section>
+<section id="mission" class="home-support">
+  <div class="wrap support-panel">
+    <div><p class="eyebrow">A little help goes a long way</p><h2>You don’t have to figure it all out alone.</h2><p>Find support for the college stuff—and the life stuff.</p><a class="btn btn-light" href="school-resources.html">Find help at my school ${icon("arrow")}</a></div>
+    <div class="support-links">${supportLinks.map(([symbol, href, title]) => `<a href="${href}">${icon(symbol)}<span>${title}</span><span aria-hidden="true">↗</span></a>`).join("")}</div>
+  </div>
+</section>
+<section class="wrap submission-section">
+  <details class="submission-drawer" id="organizations">
+    <summary><span class="submission-heading"><span class="category-icon tone-mint">${icon("plus")}</span><span><strong>Have something useful to share?</strong><small>For organizations, schools, and student communities.</small></span></span><span class="submission-action">Suggest a listing ${icon("plus")}</span></summary>
+    <div class="submission-content form-layout"><div id="schools"><p class="eyebrow">Make the directory better</p><h2>Suggest a listing.</h2><p>Send us a scholarship, program, discount, property, or campus service to review.</p><ul class="submission-checks"><li>${icon("check")} Use the provider’s official website.</li><li>${icon("check")} Include eligibility, dates, and any costs.</li><li>${icon("check")} Our team reviews each suggestion.</li></ul><p class="fineprint">Suggestions are considered for editorial inclusion. A submission does not guarantee a listing or purchase placement. Schools can also suggest a partnership.</p><a class="link" href="about.html">Our editorial standards ↗</a></div><div class="form-panel">${listingForm}</div></div>
+  </details>
+</section>`;
 emit(
   "index.html",
   "AstroPro Student Resource Center",
@@ -131,9 +239,9 @@ emit(
   "Scholarship directory",
   "Search scholarships by eligibility, category, and keyword. Check current application windows with the official sponsor.",
   directory({
-    title: "Find funding for your next chapter.",
+    title: "Find your scholarship.",
     description:
-      "Scholarships for different backgrounds, interests, and stages of education. Compare the requirements, then apply directly with the sponsor.",
+      "Explore funding by interest, eligibility, and application window.",
     items: scholarships,
     type: "scholarships",
   }),
@@ -143,9 +251,9 @@ emit(
   "Jobs & internships",
   "Browse student internship and early-career programs, search by field, and check current openings on employer websites.",
   directory({
-    title: "Experience starts somewhere.",
+    title: "Find your next opportunity.",
     description:
-      "Explore student internship and early-career programs by company, field, or keyword. Each employer sets its own requirements and application windows.",
+      "Explore internships and early-career programs. Check current openings with each employer.",
     items: internships,
     type: "internships",
   }),
@@ -155,9 +263,9 @@ emit(
   "Student discounts",
   "Find student discount and verification resources with links to current eligibility, offer, and renewal details.",
   directory({
-    title: "Make your student budget go further.",
+    title: "A little more for your budget.",
     description:
-      "Software, learning tools, everyday essentials, and student offers. Check the provider’s current price, verification rules, and renewal terms.",
+      "Explore student offers on software, learning, and everyday essentials.",
     items: discounts,
     type: "discounts",
   }),
@@ -213,11 +321,11 @@ for (const m of markets) {
     `<div class="wrap breadcrumb"><a href="housing.html">← All housing markets</a></div>` +
     hero(
       m.place,
-      `Housing research near ${m.school}. Check the exact campus, address, eligibility, and current availability before making plans.`,
+      `Explore housing options near ${m.school}.`,
       "",
       "Off-campus housing",
     ) +
-    `<section class="wrap"><p class="notice">${e(m.description)} Directory entries are not ranked or confirmed available. We’ve removed inherited review scores and unsourced distance claims. Verify the commute to your specific campus.</p><div class="property-grid">${m.properties.map((p) => `<article class="property-card"><div class="card-heading"><p class="tag">Property research</p>${saveButton({ ...p, name: p.name })}</div><h2>${e(p.name)}</h2>${p.address ? `<p>${e(p.address)}</p>` : ""}<p>${e(p.summary || "Confirm the property identity, rental eligibility, current floor plans, and availability directly before applying.")}</p><div class="cta-row">${p.website ? external(p.website, "Official property site", "btn btn-primary") : external(p.maps, "Find property on Maps", "btn btn-primary")}${p.floorplans ? external(p.floorplans, "Current floor plans", "btn btn-ghost") : p.website ? external(p.maps, "Map lookup", "btn btn-ghost") : ""}</div><p class="review-date">${p.verifiedAt ? "Official source reviewed " + dateLabel(p.verifiedAt) + ". Current price and availability not verified." : "Official website and current availability have not been independently verified. Maps is a search lookup."}</p></article>`).join("")}</div></section>` +
+    `<section class="wrap"><p class="notice">${e(m.description)} Check eligibility, commute, and availability directly with each property.</p><div class="property-grid">${m.properties.map((p) => `<article class="property-card"><div class="card-heading"><p class="tag">Property research</p>${saveButton({ ...p, name: p.name })}</div><h2>${e(p.name)}</h2>${p.address ? `<p>${e(p.address)}</p>` : ""}<p>${e(p.summary || "Confirm the property identity, rental eligibility, current floor plans, and availability directly before applying.")}</p><div class="cta-row">${p.website ? external(p.website, "Official property site", "btn btn-primary") : external(p.maps, "Find property on Maps", "btn btn-primary")}${p.floorplans ? external(p.floorplans, "Current floor plans", "btn btn-ghost") : p.website ? external(p.maps, "Map lookup", "btn btn-ghost") : ""}</div><p class="review-date">${p.verifiedAt ? "Official source reviewed " + dateLabel(p.verifiedAt) + ". Current price and availability not verified." : "Official website and current availability have not been independently verified. Maps is a search lookup."}</p></article>`).join("")}</div></section>` +
     faqs() +
     `<section class="wrap"><div class="callout"><h2>Need help closer to your campus?</h2><p>Your school’s housing office may have rental guidance, emergency support, and off-campus listings.</p><div class="cta-row"><a class="btn btn-primary" href="school-resources.html?school=${encodeURIComponent(m.school)}&topic=housing">Find campus housing resources</a><a class="btn btn-ghost" href="index.html#organizations">Suggest a correction or property</a></div></div></section>`;
   emit(
@@ -240,12 +348,113 @@ for (const slug of guides) {
       "54 scholarships you can start applying for now",
       `${scholarships.length} listed scholarship programs to explore`,
     );
-  emit(slug + ".html", metadata.title, metadata.description, body);
+  const intro = {
+    "apply-to-college": [
+      "College applications, made clearer.",
+      "Find the right application system and take it one step at a time.",
+    ],
+    "career-guides": [
+      "A little prep. A stronger next step.",
+      "Resumes, interviews, and finding your direction. Start with what you need.",
+    ],
+    "financial-aid": [
+      "Make sense of financial aid.",
+      "Start with the FAFSA, understand your options, and find official help.",
+    ],
+    "money-basics": [
+      "A little more money confidence.",
+      "Understand aid refunds, build a budget, and get the basics in place.",
+    ],
+    tutoring: [
+      "You don’t have to study solo.",
+      "Find campus tutoring, writing help, and free learning resources.",
+    ],
+    wellbeing: [
+      "Take care of the person, too.",
+      "Support for your wellbeing, basic needs, and the days that feel like a lot.",
+    ],
+  }[slug];
+  const $guide = load(body, null, false);
+  $guide(".page-hero .kicker").text(metadata.title);
+  $guide(".page-hero h1").text(intro[0]);
+  $guide(".page-hero .lede").text(intro[1]);
+  $guide(".accordion").removeAttr("open");
+  $guide(".tool-card,.guide-card").each((_, card) => {
+    const parts = $guide(card).children(
+      "p:not(.price):not(.source-note),ul,ol",
+    );
+    if (parts.text().length <= 340) return;
+    const preview = parts.first().text().trim();
+    const excerpt =
+      preview.length > 160
+        ? preview.slice(0, 157).replace(/\s+\S*$/, "") + "…"
+        : preview;
+    const full = parts
+      .toArray()
+      .map((el) => $guide.html(el))
+      .join("");
+    parts
+      .first()
+      .before(
+        `<p>${e(excerpt)}</p><details class="listing-details"><summary>Read more</summary><div>${full}</div></details>`,
+      );
+    parts.remove();
+  });
+  $guide(".page-hero .note").each((_, note) => {
+    $guide(note).replaceWith(
+      `<details class="guide-note"><summary>Before you start</summary><div>${$guide(note).html()}</div></details>`,
+    );
+  });
+  const jumpLabels = {
+    "apply-to-college": [
+      "Application systems",
+      "Your checklist",
+      "Deadlines",
+      "More resources",
+    ],
+    "career-guides": [
+      "Resume",
+      "Templates",
+      "Interviews",
+      "Career direction",
+      "Free tools",
+      "Resume builders",
+      "Mentorship",
+    ],
+    "financial-aid": [
+      "FAFSA",
+      "Deadlines",
+      "Work-study",
+      "College costs",
+      "State grants",
+      "Your checklist",
+    ],
+    "money-basics": ["Aid refunds", "Budgeting", "Taxes", "Banking", "Earning"],
+    tutoring: ["Campus help", "Online resources"],
+    wellbeing: ["Wellbeing", "Basic needs"],
+  }[slug];
+  const jumps = [];
+  $guide("section")
+    .not(".page-hero")
+    .each((index, section) => {
+      const title = $guide(section).find("h2").first().text().trim();
+      if (!title) return;
+      const id = $guide(section).attr("id") || `guide-step-${index + 1}`;
+      $guide(section).attr("id", id);
+      const jumpLabel = jumpLabels[jumps.length] || title;
+      jumps.push(
+        `<a href="#${e(id)}" aria-label="Jump to ${e(title)}">${e(jumpLabel)}</a>`,
+      );
+    });
+  $guide(".page-hero .wrap").append(
+    `<nav class="guide-nav" aria-label="On this page">${jumps.join("")}</nav>`,
+  );
+  emit(slug + ".html", metadata.title, metadata.description, $guide.html());
 }
 const mentorshipBody =
   hero(
     "People who can help you find your direction.",
-    "Start with an established mentorship program, or register your interest in the AstroPro network. Our own matching is handled by people as suitable mentors become available.",
+    "Find a mentoring program or tell us about the direction you’d like to take.",
   ) +
   `<section class="wrap"><div class="section-head"><h2>Find a mentor today</h2><p>These services operate independently of AstroPro. Check their eligibility, availability, and fees.</p></div><div class="tool-grid"><article class="tool-card"><p class="tag">Campus first</p><h3>Your school’s alumni network</h3><p>Career services and alumni relations often run mentoring programs for current students.</p><a class="link" href="school-resources.html?topic=alumni%20mentorship">Find your school’s program →</a></article><article class="tool-card"><p class="tag">Free</p><h3>ADPList</h3><p>Mentoring across design, technology, product, and related careers. Check individual mentor availability.</p>${external("https://adplist.org/", "Explore ADPList")}</article><article class="tool-card"><p class="tag">Professional network</p><h3>LinkedIn alumni tools</h3><p>Find your school’s alumni and reach out with a specific, respectful request for a career conversation.</p>${external("https://www.linkedin.com/", "Visit LinkedIn")}</article><article class="tool-card"><p class="tag">Paid</p><h3>MentorCruise</h3><p>Ongoing mentoring with independent professionals. Review pricing and each mentor’s terms before booking.</p>${external("https://mentorcruise.com/", "Explore MentorCruise")}</article></div></section><section class="wrap"><div class="section-head"><h2>Register your interest</h2><p>These requests reach our review inbox. A request does not guarantee a match or a response time. No mentoring relationship begins until both people agree.</p></div><div class="two-col"><div class="path-card"><h2>I’m looking for a mentor</h2><p class="desc">Tell us where you’re headed.</p>${form({ type: "mentee", button: "Register student interest", fields: field("name", "Your name") + field("email", "Your email", "email") + field("field", "Field or industry") + field("graduationYear", "Graduation year", "text", { required: false, max: 4 }) })}</div><div class="path-card"><h2>I’d like to mentor a student</h2><p class="desc">Share your field and availability.</p>${form({ type: "mentor", button: "Register mentor interest", fields: field("name", "Your name") + field("email", "Your email", "email") + field("field", "Your professional field") + field("availability", "Availability", "text", { options: ["30 minutes per month", "One hour per month", "A few hours per semester"] }) })}</div></div></section>`;
 emit(
@@ -255,12 +464,25 @@ emit(
   mentorshipBody,
 );
 emit(
+  "search.html",
+  "Search student resources",
+  "Find scholarships, careers, discounts, and housing in one search.",
+  hero(
+    "Find what you need.",
+    "Search the directory, practical guides, and campus support.",
+    "",
+    "Find your next step",
+  ) +
+    `<section class="wrap search-page"><form id="resourceSearchForm" class="home-search" action="search.html" method="get" role="search"><label class="sr-only" for="resourceSearch">Search all resources</label>${icon("search")}<input id="resourceSearch" name="q" type="search" maxlength="120" placeholder="Try NASA, nursing, or Athens" autocomplete="off"><button class="btn btn-primary">Search ${icon("arrow")}</button></form><div class="search-categories"><a href="scholarships.html">Scholarships</a><a href="internships.html">Careers</a><a href="housing.html">Housing</a><a href="discounts.html">Discounts</a></div><p class="result-count" id="resourceSearchCount" role="status" aria-live="polite"></p><div class="listing-grid" id="resourceSearchResults"></div><div class="empty-state" id="resourceSearchEmpty"><span class="empty-icon">${icon("search")}</span><h2>What’s on your mind?</h2><p>Search a name, interest, school, or city—or choose a category above.</p></div><div class="load-more"><button class="btn btn-ghost" id="moreSearchResults" type="button" hidden>Show more results</button></div><noscript><p class="notice">Choose a category above to browse resources. Enable JavaScript to search the full directory.</p></noscript></section>`,
+  { noindex: true },
+);
+emit(
   "saved.html",
   "Saved resources",
   "Your shortlist of scholarships, career programs, discounts, and housing research saved in this browser.",
   hero(
     "Your next steps, saved.",
-    "Keep useful resources together while you decide what to do next. This list is stored only in this browser on this device.",
+    "Good finds, all in one place. Your shortlist stays in this browser.",
   ) +
     `<section class="wrap"><p class="notice">Saved items don’t create an account or email subscription. Clearing browser data removes your list. You can export a backup and import it in another browser.</p><div class="admin-controls"><button class="btn btn-ghost" data-export-saved>Export saved list</button><button class="btn btn-ghost" type="button" data-import-saved>Import saved list</button><input id="savedImport" aria-label="Import an AstroPro saved list" type="file" accept="application/json,.json" hidden><button class="btn btn-ghost" data-clear-saved>Clear saved list</button></div><p class="result-count" id="savedCount" role="status" aria-live="polite"></p><div class="listing-grid" id="savedGrid"></div><div class="empty-state" id="savedEmpty"><h2>Make room for your next opportunity.</h2><p>Use the Save button on a scholarship, career program, discount, or property.</p><a class="btn btn-primary" href="scholarships.html">Find something to save</a></div></section>`,
 );
@@ -283,7 +505,7 @@ emit(
   "Find official financial aid, career, tutoring, counseling, library, and housing resources through your college.",
   hero(
     "Your school is a good place to start.",
-    "Find the campus offices and free resources you may already have access to. Enter your school and the kind of help you need.",
+    "Find the campus services you may already have access to.",
   ) +
     `<section class="wrap"><form class="school-search" id="schoolSearch"><div><label for="schoolName">College or university name</label><input id="schoolName" name="school" type="search" required maxlength="150" placeholder="e.g. University of Houston" autocomplete="organization"></div><div><label for="schoolTopic">I’m looking for</label><select name="topic" id="schoolTopic">${topics.map((t) => `<option>${e(t)}</option>`).join("")}</select></div><button class="btn btn-primary" type="submit">Find official campus resources</button></form><div id="schoolResults" class="school-results" role="status" aria-live="polite"></div><p class="fineprint">This tool creates a web search for your school’s official resources. Check the domain and school name before sharing personal information. Search results are provided by Google, not verified by AstroPro.</p><div class="callout"><h2>Still choosing a school?</h2><p>Explore accredited institutions and official college information through the U.S. Department of Education.</p>${external("https://nces.ed.gov/collegenavigator/", "Open College Navigator", "btn btn-ghost")}</div></section>`,
 );
@@ -355,6 +577,7 @@ await cp("resources", "dist/resources", { recursive: true });
 await cp("public", "dist", { recursive: true });
 await cp("src/styles/site.css", "dist/assets/site.css");
 await cp("src/client/site.js", "dist/assets/site.js");
+await cp("src/client/resource-search.js", "dist/assets/resource-search.js");
 await cp("src/client/private-session.js", "dist/assets/private-session.js");
 const catalog = [
   ...scholarships.map((x) => ({
