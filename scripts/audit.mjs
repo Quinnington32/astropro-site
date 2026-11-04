@@ -63,6 +63,10 @@ for (const [file, $] of docs) {
       "unlabelled form field",
     );
   }
+  $("[aria-describedby]").each((_, el) => {
+    for (const id of ($(el).attr("aria-describedby") || "").split(/\s+/))
+      check(ids.has(id), `missing field hint ${id}`);
+  });
 }
 const catalog = JSON.parse(await readFile("dist/assets/catalog.json"));
 const known = new Set();

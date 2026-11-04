@@ -1,4 +1,5 @@
 import { createPrivateSession } from "./private-session.js";
+import { searchResources, navigationResources } from "./resource-search.js";
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 const esc = (value) =>
@@ -44,6 +45,7 @@ function setupDirectory() {
     status = $("#statusFilter"),
     sort = $("#directorySort");
   const cards = $$(".listing-card", root);
+  let shown = 12;
   const params = new URLSearchParams(location.search);
   search.value = params.get("q") || "";
   if ([...category.options].some((o) => o.value === params.get("category")))
@@ -108,10 +110,15 @@ function setupDirectory() {
           b.dataset.deadline || "9999",
         ),
       );
-    for (const card of ordered) $("#listingGrid").append(card);
+    let displayed = 0;
+    for (const card of ordered) {
+      if (!card.hidden) card.hidden = ++displayed > shown;
+      $("#listingGrid").append(card);
+    }
     $("#resultCount").textContent =
-      `${count} ${count === 1 ? "result" : "results"}${search.value ? " for “" + search.value.trim() + "”" : ""}`;
+      `${count} ${count === 1 ? "result" : "results"}${search.value ? " for “" + search.value.trim() + "”" : ""}${count > shown ? ` · showing ${shown}` : ""}`;
     $("#noResults").hidden = count > 0;
+    $("#moreResources").hidden = count <= shown;
     const next = new URLSearchParams();
     if (search.value.trim()) next.set("q", search.value.trim());
     if (category.value !== "all") next.set("category", category.value);
@@ -123,16 +130,25 @@ function setupDirectory() {
       location.pathname + (next.size ? "?" + next : "") + location.hash,
     );
   }
-  search.addEventListener("input", apply);
-  category.addEventListener("change", apply);
-  sort.addEventListener("change", apply);
-  status?.addEventListener("change", apply);
+  const changed = () => {
+    shown = 12;
+    apply();
+  };
+  search.addEventListener("input", changed);
+  category.addEventListener("change", changed);
+  sort.addEventListener("change", changed);
+  status?.addEventListener("change", changed);
+  $("#moreResources").addEventListener("click", () => {
+    shown += 12;
+    apply();
+  });
   $$("[data-reset-filters]").forEach((btn) =>
     btn.addEventListener("click", () => {
       search.value = "";
       category.value = "all";
       if (status) status.value = "all";
       sort.value = "featured";
+      shown = 12;
       apply();
       search.focus();
     }),
@@ -227,7 +243,113 @@ async function catalog() {
 }
 function savedCard(item) {
   const url = item.url;
-  return `<article class="resource-card listing-card"><div class="card-heading"><p class="tag">${esc(item.type === "housing" ? "Housing" : item.type)}</p><button type="button" class="save-button" data-save="${esc(item.id)}" aria-label="Remove ${esc(item.name)}" aria-pressed="true">✓ Saved</button></div><h2>${esc(item.name)}</h2><p class="award">${esc(item.amount)}</p><p class="description">${esc(item.description)}</p><div class="card-bottom"><a class="link" href="${esc(url)}" target="_blank" rel="noopener noreferrer">${item.type === "housing" ? "View property source" : "View official source"} ↗<span class="sr-only"> (opens in a new tab)</span></a><p class="review-date"><a href="${esc(item.page)}">Back to directory →</a> · Confirm current terms with the provider.</p></div></article>`;
+  const description = String(item.description || "");
+  const excerpt =
+    description.length > 135
+      ? description.slice(0, 132).replace(/\s+\S*$/, "") + "…"
+      : description;
+  const type =
+    {
+      housing: "Housing",
+      internships: "Careers",
+      scholarships: "Scholarships",
+      discounts: "Discounts",
+      guides: "Guides & support",
+    }[item.type] || "Resource";
+  const state =
+    item.deadline && item.deadline < dateToday()
+      ? "closed"
+      : item.opens && item.opens > dateToday()
+        ? "upcoming"
+        : item.status === "open"
+          ? "open"
+          : "check-sponsor";
+  const stateText = {
+    closed: "Cycle closed",
+    upcoming: "Upcoming",
+    open: "Open when reviewed",
+    "check-sponsor": "Check current cycle",
+  }[state];
+  const window = ["scholarships", "internships"].includes(item.type)
+    ? `<div class="listing-meta"><span class="status ${state}">${stateText}</span><p>${esc(item.deadlineLabel)}</p></div>`
+    : "";
+  const save = item.internal
+    ? ""
+    : `<button type="button" class="save-button" data-save="${esc(item.id)}" aria-label="Save ${esc(item.name)}" aria-pressed="false">＋ Save</button>`;
+  const action = item.internal
+    ? `<a class="link" href="${esc(url)}">Explore this guide <span aria-hidden="true">→</span></a>`
+    : `<a class="link" href="${esc(url)}" target="_blank" rel="noopener noreferrer">${item.type === "housing" ? "View property source" : "View official source"} <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>`;
+  return `<article class="resource-card listing-card"><div class="card-heading"><p class="tag">${esc(type)}</p>${save}</div><h2><a href="${esc(item.page)}">${esc(item.name)}</a></h2>${item.amount ? `<p class="award">${esc(item.amount)}</p>` : ""}<p class="description">${esc(excerpt)}</p>${window}${item.internal ? "" : `<details class="listing-details"><summary>Details & eligibility</summary><div><p>${esc(description)}</p><p class="review-date">Confirm current terms with the provider.</p></div></details>`}<div class="card-bottom">${action}</div></article>`;
+}
+function setupResourceSearch() {
+  const form = $("#resourceSearchForm");
+  if (!form) return;
+  const input = $("#resourceSearch"),
+    results = $("#resourceSearchResults"),
+    count = $("#resourceSearchCount"),
+    empty = $("#resourceSearchEmpty"),
+    more = $("#moreSearchResults");
+  input.value = (new URLSearchParams(location.search).get("q") || "").slice(
+    0,
+    120,
+  );
+  let shown = 24,
+    operation = 0;
+  async function apply() {
+    const current = ++operation,
+      query = input.value.trim();
+    const params = new URLSearchParams();
+    if (query) params.set("q", query);
+    history.replaceState(
+      null,
+      "",
+      location.pathname + (params.size ? "?" + params : ""),
+    );
+    more.hidden = true;
+    if (!query) {
+      results.replaceChildren();
+      count.textContent = "";
+      empty.hidden = false;
+      $("h2", empty).textContent = "What’s on your mind?";
+      $("p", empty).textContent =
+        "Search a name, interest, school, or city—or choose a category above.";
+      return;
+    }
+    count.textContent = "Searching resources…";
+    try {
+      const matches = searchResources(
+        [...(await catalog()), ...navigationResources],
+        query,
+      );
+      if (current !== operation) return;
+      results.innerHTML = matches.slice(0, shown).map(savedCard).join("");
+      count.textContent = `${matches.length} ${matches.length === 1 ? "result" : "results"} for “${query}”${matches.length > shown ? ` · showing ${shown}` : ""}`;
+      empty.hidden = matches.length > 0;
+      $("h2", empty).textContent = "No matches just yet.";
+      $("p", empty).textContent =
+        "Try a shorter keyword or explore one of the categories above.";
+      more.hidden = matches.length <= shown;
+      updateSaveButtons();
+    } catch {
+      if (current !== operation) return;
+      count.textContent =
+        "We couldn’t load the directory. Try again or choose a category above.";
+    }
+  }
+  input.addEventListener("input", () => {
+    shown = 24;
+    apply();
+  });
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    shown = 24;
+    apply();
+  });
+  more.addEventListener("click", () => {
+    shown += 24;
+    apply();
+  });
+  apply();
 }
 async function renderSaved() {
   if (!$("#savedGrid")) return;
@@ -404,7 +526,29 @@ function setupForms() {
           );
         const receipt = result.receipt;
         fields.hidden = true;
-        status.innerHTML = `<h3>${type === "unsubscribe" ? "Preference recorded" : "Request received"}</h3><p>${type === "unsubscribe" ? "Your do-not-contact preference is stored for the Student Resource Center. Use the link in an existing email for any separate mailing list." : "Your request is stored for the team to review. Keep this reference if you need to follow up. This is a receipt, not an approval or a mentor match."}</p><p class="receipt">Reference: ${esc(receipt)}</p><button type="button" class="btn btn-ghost" data-new-request>Send another request</button>`;
+        const received = {
+          listing: [
+            "Suggestion received",
+            "Thanks for the suggestion. Our team will review the details. Keep this reference if you need to follow up.",
+          ],
+          mentee: [
+            "Interest registered",
+            "Your interest is saved for team review. A mentor match depends on availability.",
+          ],
+          mentor: [
+            "Interest registered",
+            "Thanks for offering your time. Our team will review your interest and availability.",
+          ],
+          "data-request": [
+            "Request received",
+            "Our team will review your request and may contact you to verify your identity.",
+          ],
+          unsubscribe: [
+            "Preference recorded",
+            "Your do-not-contact preference is stored for the Student Resource Center. Use the link in an existing email for any separate mailing list.",
+          ],
+        }[type];
+        status.innerHTML = `<h3>${received[0]}</h3><p>${received[1]}</p><p class="receipt">Reference: ${esc(receipt)}</p><button type="button" class="btn btn-ghost" data-new-request>Send another request</button>`;
         pending = null;
         try {
           sessionStorage.removeItem(key);
@@ -662,9 +806,19 @@ function setupAdmin() {
   window.addEventListener("pagehide", () => lock());
 }
 setupDirectory();
+setupResourceSearch();
 setupMarkets();
 setupForms();
 setupSchool();
 setupAdmin();
 updateSaveButtons();
 renderSaved();
+if (location.hash === "#organizations") {
+  const suggestion = $("#organizations");
+  if (suggestion?.tagName === "DETAILS") suggestion.open = true;
+}
+window.addEventListener("hashchange", () => {
+  const suggestion = $("#organizations");
+  if (location.hash === "#organizations" && suggestion?.tagName === "DETAILS")
+    suggestion.open = true;
+});
