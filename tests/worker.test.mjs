@@ -456,21 +456,22 @@ test("private filters combine status and type and reject unknown options", async
 
 test("private preferences paginate past 500 entries without omissions at tied timestamps", async () => {
   const time = "2026-11-01T00:00:00.000Z";
-  await db.batch(
-    Array.from({ length: 505 }, (_, i) => {
-      const email = `preference-pagination-${i}@example.com`;
-      return db
-        .prepare(
-          "INSERT INTO communication_preferences(email_hash,email,do_not_contact,created_at,updated_at) VALUES(?,?,1,?,?)",
-        )
-        .bind(
-          createHash("sha256").update(email).digest("hex"),
-          email,
-          time,
-          time,
-        );
-    }),
-  );
+  const fixtures = Array.from({ length: 505 }, (_, i) => {
+    const email = `preference-pagination-${i}@example.com`;
+    return db
+      .prepare(
+        "INSERT INTO communication_preferences(email_hash,email,do_not_contact,created_at,updated_at) VALUES(?,?,1,?,?)",
+      )
+      .bind(
+        createHash("sha256").update(email).digest("hex"),
+        email,
+        time,
+        time,
+      );
+  });
+  // Keep setup batches modest; the assertion still exercises more than 500 records.
+  for (let offset = 0; offset < fixtures.length; offset += 50)
+    await db.batch(fixtures.slice(offset, offset + 50));
   assert.equal(
     (await mf.dispatchFetch(origin + "/api/admin/preferences")).status,
     401,
