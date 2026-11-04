@@ -2646,3 +2646,98 @@ body:is(
     font-size: 0.75rem;
   }
 }
+
+.home-aid {
+  padding-block: 48px 0;
+}
+.aid-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  padding: 40px 48px;
+  background: #f4f0e5;
+  border: 1px solid #e2dcc9;
+  border-radius: 26px;
+}
+.aid-panel .eyebrow {
+  color: #77632b;
+}
+.aid-panel h2 {
+  max-width: 23ch;
+}
+.aid-intro > p:not(.eyebrow) {
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  max-width: 47ch;
+  margin-top: 17px;
+}
+.aid-intro > .btn {
+  margin-top: 24px;
+}
+.aid-links {
+  display: grid;
+  gap: 12px;
+}
+.aid-links > a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 15px 18px;
+  background: #fffc;
+  border: 1px solid #e2dcc9;
+  border-radius: 13px;
+  color: var(--ink);
+  text-decoration: none;
+}
+.aid-links > a:hover {
+  background: #fff;
+  border-color: #b4aa87;
+}
+.aid-links strong,
+.aid-links small {
+  display: block;
+}
+.aid-links strong {
+  font-size: 0.93rem;
+  font-weight: 550;
+}
+.aid-links small {
+  font-size: 0.76rem;
+  color: #617057;
+  margin-top: 4px;
+}
+.aid-links > a > span:last-child {
+  margin-left: auto;
+  color: #706435;
+}
+@media (max-width: 960px) {
+  .aid-panel {
+    padding: 34px;
+    gap: 30px;
+  }
+}
+@media (max-width: 700px) {
+  .home-aid {
+    padding-top: 30px;
+  }
+  .aid-panel {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 26px;
+    gap: 28px;
+    border-radius: 22px;
+  }
+  .aid-panel h2 {
+    font-size: 1.7rem;
+  }
+  .aid-links > a {
+    gap: 11px;
+    padding: 15px 13px;
+  }
+  .aid-links strong {
+    font-size: 0.86rem;
+  }
+  .aid-links small {
+    font-size: 0.75rem;
+  }
+}
