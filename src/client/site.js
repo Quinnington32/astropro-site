@@ -590,23 +590,22 @@ function setupSchool() {
   search.value = (params.get("school") || "").slice(0, 150);
   if ([...topic.options].some((o) => o.value === params.get("topic")))
     topic.value = params.get("topic");
+  search.addEventListener("input", () => search.setCustomValidity(""));
   form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    if (!form.reportValidity()) return;
-    const q = search.value.trim() + " official " + topic.value;
-    const link = document.createElement("a");
-    link.className = "btn btn-primary";
-    link.href = "https://www.google.com/search?q=" + encodeURIComponent(q);
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-    link.textContent =
-      "Search for " + search.value.trim() + " " + topic.value + " ↗";
-    const p = document.createElement("p");
-    p.className = "fineprint";
-    p.textContent =
-      "Choose a result on your school’s official website. AstroPro has not verified these search results.";
-    $("#schoolResults").replaceChildren(link, p);
-    link.focus();
+    search.value = search.value.trim().replace(/\s+/g, " ");
+    if (!search.value) {
+      event.preventDefault();
+      search.setCustomValidity("Enter your college or university name.");
+      search.reportValidity();
+      return;
+    }
+    // The browser submits the native GET form directly, including without JavaScript.
+    // Keep the campus selection when someone returns from their search results.
+    const next = new URLSearchParams({
+      school: search.value,
+      topic: topic.value,
+    });
+    history.replaceState(null, "", location.pathname + "?" + next);
   });
 }
 function setupAdmin() {

@@ -476,7 +476,7 @@ function secure(response, isHtml = false) {
   );
   r.headers.set(
     "Content-Security-Policy",
-    "default-src 'self'; script-src 'self'; script-src-attr 'none'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'; upgrade-insecure-requests",
+    "default-src 'self'; script-src 'self'; script-src-attr 'none'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self' https://www.google.com; upgrade-insecure-requests",
   );
   if (isHtml)
     r.headers.set("Cache-Control", "public, max-age=0, must-revalidate");

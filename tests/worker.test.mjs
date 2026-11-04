@@ -246,6 +246,15 @@ test("security headers and method restrictions apply to API responses", async ()
     r.headers.get("content-security-policy").includes("script-src 'self'"),
   );
   assert.equal(
+    r.headers
+      .get("content-security-policy")
+      .split(";")
+      .map((part) => part.trim())
+      .find((part) => part.startsWith("form-action ")),
+    "form-action 'self' https://www.google.com",
+    "campus searches can submit directly to Google while forms stay limited to known destinations",
+  );
+  assert.equal(
     (
       await mf.dispatchFetch(origin + "/studentresourcecenter", {
         redirect: "manual",

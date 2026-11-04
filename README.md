@@ -33,6 +33,8 @@ Cards show a short preview with the full eligibility text and source notes under
 
 The organization submission form is under “Suggest a listing.” Its field names and API validation remain compatible with existing submissions. Guides keep detailed explanations in expandable sections, with jump links to each topic. No visitor tracker or email automation was added by the visual redesign.
 
+Financial aid has its own homepage section and a prominent starting link. The campus finder submits a native GET search to Google using the college name and selected topic, without requiring a second confirmation link. The site only allows native forms to submit to its own origin or `https://www.google.com`. Campus search results are external and should be checked against the school’s official website.
+
 ## Forms and private inbox
 
 The Worker persists organization submissions, mentor/mentee interest, data requests, and communication preferences in the dedicated D1 database. Validation runs server-side. Requests require same-origin JSON and explicit consent. A receipt is returned only after storage confirms the record. Reusing the same UUID and details returns the original receipt; reusing an ID with changed details is rejected. The browser retains an uncertain attempt in tab-scoped storage for a safe retry.
