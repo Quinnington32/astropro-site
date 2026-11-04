@@ -2633,3 +2633,16 @@ body:is(
     display: none;
   }
 }
+
+@media (max-width: 700px) {
+  .hero-badge,
+  .hero-note,
+  .popular-links,
+  .category-foot,
+  .support-links a,
+  .submission-heading small,
+  .submission-action,
+  .guide-nav a {
+    font-size: 0.75rem;
+  }
+}
