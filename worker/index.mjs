@@ -523,8 +523,18 @@ export async function handleRequest(request, env) {
   }
   if (!["GET", "HEAD"].includes(request.method))
     return json({ error: "Method not allowed." }, 405, { allow: "GET, HEAD" });
+  if (path === "/brand") {
+    const destination = new URL(request.url);
+    destination.pathname += "/";
+    return Response.redirect(destination.href, 308);
+  }
   const assetURL = new URL(request.url);
-  assetURL.pathname = path === "/" ? "/index.html" : path;
+  assetURL.pathname =
+    path === "/"
+      ? "/index.html"
+      : path === "/brand/"
+        ? "/brand/index.html"
+        : path;
   let response = await env.ASSETS.fetch(new Request(assetURL, request));
   if (response.status === 404) {
     assetURL.pathname = "/404.html";

@@ -1,7 +1,9 @@
 import { readFile, readdir, access } from "node:fs/promises";
 import { load } from "cheerio";
 import assert from "node:assert/strict";
-const files = (await readdir("dist")).filter((f) => f.endsWith(".html"));
+const files = (await readdir("dist", { recursive: true })).filter((f) =>
+  f.endsWith(".html"),
+);
 const docs = new Map();
 for (const file of files)
   docs.set(file, load(await readFile("dist/" + file, "utf8")));
@@ -24,7 +26,9 @@ for (const [file, $] of docs) {
     check(!ids.has(id), `duplicate id ${id}`);
     ids.add(id);
   });
-  for (const element of $("a[href],script[src],link[href]").toArray()) {
+  for (const element of $(
+    "a[href],script[src],link[href],img[src]",
+  ).toArray()) {
     const el = $(element),
       href = el.attr("href") || el.attr("src");
     links++;
@@ -52,6 +56,9 @@ for (const [file, $] of docs) {
       );
     }
   }
+  $("img").each((_, image) => {
+    check($(image).attr("alt") !== undefined, "image missing alt text");
+  });
   for (const input of $(
     "input:not([type=hidden]):not([type=checkbox]),select,textarea",
   ).toArray()) {

@@ -35,6 +35,14 @@ The organization submission form is under “Suggest a listing.” Its field nam
 
 Financial aid has its own homepage section and a prominent starting link. The campus finder submits a native GET search to Google using the college name and selected topic, without requiring a second confirmation link. The site only allows native forms to submit to its own origin or `https://www.google.com`. Campus search results are external and should be checked against the school’s official website.
 
+## Student Resource Center identity
+
+The student-facing brand is **Student Resource Center**, with **“A project by AstroPro”** as a small supporting endorsement. The main company’s brand is separate. “Your next move.” is the brand line; the three-block rising symbol is called The Step.
+
+The visual system uses Move Blue (`#2448F2`), Signal Lime (`#DAFF3E`), Ink (`#17191B`), and Paper (`#F7F7F2`). Headlines use Sora; interface and body text use Work Sans. Local font files and license notices remain under `public/assets/`. Logo SVGs contain outlined lettering so recipients do not need fonts installed.
+
+`public/brand/` contains primary/reverse/monochrome SVGs, the SRC shorthand, transparent PNGs, a 1024px avatar, a 1200×630 social cover, brand tokens, and the downloadable ZIP. The visual guide is published at `/brand/`; its `/brand` entry redirects to the trailing-slash route. This guide is kept out of search indexing and student navigation. Shared site graphics live under `public/assets/`. Audit includes nested guide HTML and image references, and release verification compares brand files and downloads to the exact checked build.
+
 ## Forms and private inbox
 
 The Worker persists organization submissions, mentor/mentee interest, data requests, and communication preferences in the dedicated D1 database. Validation runs server-side. Requests require same-origin JSON and explicit consent. A receipt is returned only after storage confirms the record. Reusing the same UUID and details returns the original receipt; reusing an ID with changed details is rejected. The browser retains an uncertain attempt in tab-scoped storage for a safe retry.
