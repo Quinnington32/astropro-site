@@ -2823,3 +2823,15 @@ textarea:focus {
 .home-hero h1 {
   word-spacing: 0.08em;
 }
+/* Keep supporting interface labels readable at every breakpoint. */
+.eyebrow,
+.kicker,
+.kicker-sm,
+.page-hero .eyebrow,
+.hero-badge,
+.next-board-top,
+.next-index,
+.footer-links p,
+.footer-bottom {
+  font-size: 0.75rem;
+}
