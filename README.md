@@ -35,13 +35,13 @@ The organization submission form is under “Suggest a listing.” Its field nam
 
 Financial aid has its own homepage section and a prominent starting link. The campus finder submits a native GET search to Google using the college name and selected topic, without requiring a second confirmation link. The site only allows native forms to submit to its own origin or `https://www.google.com`. Campus search results are external and should be checked against the school’s official website.
 
-## Student Resource Center identity
+## AstroPro student identity
 
-The student-facing brand is **Student Resource Center**, with **“A project by AstroPro”** as a small supporting endorsement. The main company’s brand is separate. “Your next move.” is the brand line; the three-block rising symbol is called The Step.
+The project uses a custom **AstroPro Student Resource Center** logo, retaining AstroPro’s lettering, star, and ringed planet with a graduation cap and student descriptor. The site uses warm ivory (`#FBFAF6`), navy (`#172447`), restrained orange accents (`#E77B25` / text `#B35A28`), Sora medium-weight headings, and Work Sans body text.
 
-The visual system uses Move Blue (`#2448F2`), Signal Lime (`#DAFF3E`), Ink (`#17191B`), and Paper (`#F7F7F2`). Headlines use Sora; interface and body text use Work Sans. Local font files and license notices remain under `public/assets/`. Logo SVGs contain outlined lettering so recipients do not need fonts installed.
+`public/brand/` contains the transparent PNG/lossless WebP logo, an SVG student-planet symbol, profile artwork, a campaign cover, brand tokens, font notices, and the downloadable ZIP. The primary logo is a raster asset; the small symbol is SVG. The visual guide is at `/brand/`. The ZIP remains at the established download URL so previous links deliver the current kit. Retired Step/SRC graphics are no longer part of the published brand assets.
 
-`public/brand/` contains primary/reverse/monochrome SVGs, the SRC shorthand, transparent PNGs, a 1024px avatar, a 1200×630 social cover, brand tokens, and the downloadable ZIP. The visual guide is published at `/brand/`; its `/brand` entry redirects to the trailing-slash route. This guide is kept out of search indexing and student navigation. Shared site graphics live under `public/assets/`. Audit includes nested guide HTML and image references, and release verification compares brand files and downloads to the exact checked build.
+`public/assets/campus-life.webp` is generated editorial imagery, not a named school, partnership, or testimonial. Both the logo variation and photo were created using the built-in image_gen tool. Source references and prompts are recorded in the ignored release artifacts; the main company’s source assets are unchanged. The logo and imagery are copied into the repository and served locally with the rest of the site assets. Audit checks nested guide HTML and image references, and release verification compares the live pages and brand files to the exact checked build.
 
 ## Forms and private inbox
 

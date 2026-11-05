@@ -48,6 +48,7 @@ const assetFiles = [
   "assets/apple-touch-icon.png",
   "assets/social-card.svg",
   "assets/social-card.png",
+  "assets/campus-life.webp",
   ...(await readdir("dist/brand")).map((file) => "brand/" + file),
 ];
 for (const file of assetFiles) {
