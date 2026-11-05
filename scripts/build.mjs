@@ -187,9 +187,9 @@ const home = `
 <section class="home-hero">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <p class="hero-badge"><span class="badge-dot" aria-hidden="true"></span> Student life. Less guesswork.</p>
-      <h1>Your next<br><span>move.</span></h1>
-      <p class="lede">Find the funding, opportunities, and support to make it happen.</p>
+      <p class="hero-badge">A little help for your next big thing</p>
+      <h1>Your next chapter<br><span>starts here.</span></h1>
+      <p class="lede">Scholarships, careers, housing, and support for life at college. Find a good place to start.</p>
       <form class="home-search" action="search.html" method="get" role="search">
         <label class="sr-only" for="homeSearch">Search all student resources</label>
         ${icon("search")}<input id="homeSearch" name="q" type="search" placeholder="Scholarships, housing, career help…" maxlength="120" required><button class="btn btn-primary" type="submit">Search ${icon("arrow")}</button>
@@ -197,21 +197,17 @@ const home = `
       <div class="popular-links"><span>Start with</span><a href="financial-aid.html">Financial aid ↗</a><a href="housing.html">Housing ↗</a><a href="school-resources.html">Campus help ↗</a></div>
       <p class="hero-note">${icon("check")} Free to explore. No account needed.</p>
     </div>
-    <aside class="next-board" aria-label="Explore your next step">
-      <div class="next-board-top"><span>For what’s next</span><span aria-hidden="true">01 — 03</span></div>
-      <div class="next-board-art" aria-hidden="true"><span>YOU’RE<br>UP NEXT.</span><img src="brand/src-mark-lime.svg" width="240" height="240" alt=""></div>
-      <div class="next-board-links">
-        <a href="scholarships.html"><span class="next-index">01</span><span><strong>Get funded.</strong><small>${scholarships.length} scholarships to explore</small></span>${icon("arrow")}</a>
-        <a href="internships.html"><span class="next-index">02</span><span><strong>Build experience.</strong><small>${internships.length} career programs</small></span>${icon("arrow")}</a>
-        <a href="housing.html"><span class="next-index">03</span><span><strong>Find your place.</strong><small>${markets.length} campus housing markets</small></span>${icon("arrow")}</a>
-      </div>
-    </aside>
+    <figure class="campus-visual">
+      <div class="campus-photo"><img src="assets/campus-life.webp" width="1000" height="1500" alt="Students talking together on a leafy campus path" fetchpriority="high" decoding="async"></div>
+      <figcaption><span class="campus-caption-icon" aria-hidden="true">${icon("guides")}</span><span><strong>A little direction.</strong><small>A lot of possibility.</small></span></figcaption>
+      <span class="campus-spark" aria-hidden="true">✦</span>
+    </figure>
   </div>
 </section>
 <section id="resources" class="home-resources">
   <div class="wrap">
-    <div class="section-head section-head-row"><div><p class="eyebrow">The resource edit</p><h2>Less noise. More next steps.</h2></div><p>You’ve got options. Let’s find yours.</p></div>
-    <div class="category-grid">${homeCategories.map(([symbol, href, title, description, count, tone], index) => `<a class="category-card" href="${href}"><div class="category-top"><span class="category-number">0${index + 1}</span><span class="category-icon tone-${tone}">${icon(symbol)}</span><span class="category-arrow" aria-hidden="true">↗</span></div><h3>${title}</h3><p>${description}</p><span class="category-foot">${count} ${icon("arrow")}</span></a>`).join("")}</div>
+    <div class="section-head section-head-row"><div><p class="eyebrow">Find your next step</p><h2>What can we help you with?</h2></div><p>You’ve got options. Let’s find yours.</p></div>
+    <div class="category-grid">${homeCategories.map(([symbol, href, title, description, count, tone]) => `<a class="category-card" href="${href}"><div class="category-top"><span class="category-icon tone-${tone}">${icon(symbol)}</span><span class="category-arrow" aria-hidden="true">↗</span></div><h3>${title}</h3><p>${description}</p><span class="category-foot">${count} ${icon("arrow")}</span></a>`).join("")}</div>
   </div>
 </section>
 <section class="home-aid" id="financial-aid" aria-labelledby="aidHeading">
@@ -238,7 +234,7 @@ const home = `
 </section>`;
 emit(
   "index.html",
-  "Student Resource Center — Your next move",
+  "AstroPro Student Resource Center",
   "Find scholarships, student career programs, off-campus housing, discounts, and practical college support. Free to browse, with no account required.",
   home,
 );

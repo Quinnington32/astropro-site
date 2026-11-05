@@ -1,28 +1,26 @@
 {
-  "name": "Student Resource Center",
-  "endorsement": "A project by AstroPro",
-  "brandLine": "Your next move.",
+  "name": "AstroPro Student Resource Center",
+  "parentBrand": "AstroPro",
+  "logo": "AstroPro wordmark and planet with graduation cap and Student Resource Center descriptor",
   "colors": {
-    "moveBlue": "#2448F2",
-    "signalLime": "#DAFF3E",
-    "ink": "#17191B",
-    "paper": "#F7F7F2",
-    "bodyText": "#5E626B"
+    "navy": "#172447",
+    "brandNavy": "#111B69",
+    "orange": "#E77B25",
+    "textAccent": "#B35A28",
+    "ivory": "#FBFAF6",
+    "bodyText": "#606878",
+    "sand": "#F3EEE6"
   },
   "typography": {
-    "display": { "family": "Sora", "weight": [700, 800] },
-    "body": { "family": "Work Sans", "weight": [400, 650] },
-    "logo": "Outlined Work Sans lettering; use the supplied SVG assets"
+    "heading": {
+      "family": "Sora",
+      "weight": [550, 600]
+    },
+    "body": {
+      "family": "Work Sans",
+      "weight": [400, 600]
+    }
   },
-  "logo": {
-    "symbol": "The Step",
-    "minimumSymbolWidthPx": 20,
-    "minimumLockupWidthPx": 180,
-    "clearSpace": "One step width on every side"
-  },
-  "accessibility": {
-    "textPairs": ["white on moveBlue", "ink on signalLime", "ink on paper"],
-    "minimumSmallInterfaceTextPx": 12,
-    "mobileInputTextPx": 16
-  }
+  "minimumFullLogoWidthPx": 190,
+  "minimumSymbolWidthPx": 24
 }
