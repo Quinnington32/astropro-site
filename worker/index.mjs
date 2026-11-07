@@ -1,5 +1,5 @@
 const PREFIX = "/studentresourcecenter";
-const MAX_BODY = 16000;
+const MAX_BODY = 2500000;
 const JSON_HEADERS = {
   "content-type": "application/json; charset=utf-8",
   "cache-control": "no-store",
@@ -17,6 +17,21 @@ const types = {
   mentor: ["name", "email", "field", "availability"],
   "data-request": ["email", "requestType", "description"],
   unsubscribe: ["email"],
+  "partner-campaign": [
+    "market",
+    "marketName",
+    "orderRef",
+    "contactName",
+    "email",
+    "phone",
+    "subject",
+    "instructions",
+    "url",
+    "wantsFlyerDesigned",
+    "flyerName",
+    "flyerMime",
+    "flyerBase64",
+  ],
 };
 const required = {
   listing: [
@@ -31,6 +46,15 @@ const required = {
   mentor: ["name", "email", "field", "availability"],
   "data-request": ["email", "requestType"],
   unsubscribe: ["email"],
+  "partner-campaign": [
+    "market",
+    "marketName",
+    "orderRef",
+    "contactName",
+    "email",
+    "subject",
+    "instructions",
+  ],
 };
 const maxima = {
   organization: 200,
@@ -44,6 +68,17 @@ const maxima = {
   graduationYear: 4,
   availability: 80,
   requestType: 80,
+  market: 60,
+  marketName: 150,
+  orderRef: 20,
+  contactName: 200,
+  phone: 40,
+  subject: 200,
+  instructions: 4000,
+  wantsFlyerDesigned: 4,
+  flyerName: 200,
+  flyerMime: 40,
+  flyerBase64: 2400000,
 };
 const choices = {
   listingType: [
@@ -183,6 +218,31 @@ export function validateSubmission(input) {
       throw Error("Use an HTTPS website URL without login information.");
     payload.url = url.href;
   }
+  if (type === "partner-campaign") {
+    if (!/^housing-[a-z0-9-]+$/.test(payload.market))
+      throw Error("Choose a valid market.");
+    if (!/^AP-[A-Z0-9]{6}$/i.test(payload.orderRef))
+      throw Error(
+        "The order reference is invalid. Start again from the payment page.",
+      );
+    const hasFlyer = !!payload.flyerBase64;
+    const wantsDesigned = payload.wantsFlyerDesigned === "yes";
+    if (!hasFlyer && !wantsDesigned)
+      throw Error(
+        "Upload a flyer or choose to have AstroPro design one for you.",
+      );
+    if (hasFlyer) {
+      if (
+        !["image/png", "image/jpeg", "image/webp", "application/pdf"].includes(
+          payload.flyerMime,
+        )
+      )
+        throw Error("Upload a PNG, JPEG, WebP, or PDF flyer.");
+      if (!payload.flyerName) throw Error("The flyer file name is missing.");
+      if (!/^[A-Za-z0-9+/]+=*$/.test(payload.flyerBase64))
+        throw Error("The flyer file could not be read. Try a different file.");
+    }
+  }
   return {
     type,
     payload,
@@ -206,6 +266,59 @@ async function quota(db, key, maximum, expires) {
     .bind(key, expires, maximum)
     .first();
   return !!row;
+}
+async function notifyPartnerCampaign(env, data) {
+  if (!env.BREVO_API_KEY) return;
+  try {
+    const p = data.payload;
+    await fetch("https://api.brevo.com/v3/smtp/email", {
+      method: "POST",
+      headers: {
+        accept: "application/json",
+        "content-type": "application/json",
+        "api-key": env.BREVO_API_KEY,
+      },
+      body: JSON.stringify({
+        sender: {
+          email: env.PARTNER_NOTIFY_FROM || "noreply@goastropro.com",
+          name: "AstroPro Resource Center",
+        },
+        to: [{ email: "michael@goastropro.com" }, { email: "cory@goastropro.com" }],
+        subject:
+          "New partner campaign order — " +
+          p.marketName +
+          " (" +
+          p.orderRef +
+          ")",
+        htmlContent:
+          "<p>A property partner submitted a paid campaign order.</p><ul>" +
+          "<li><strong>Order ref:</strong> " +
+          p.orderRef +
+          "</li><li><strong>Market:</strong> " +
+          p.marketName +
+          "</li><li><strong>Contact:</strong> " +
+          p.contactName +
+          " — " +
+          p.email +
+          (p.phone ? " — " + p.phone : "") +
+          "</li><li><strong>Subject line:</strong> " +
+          p.subject +
+          "</li><li><strong>Link to include:</strong> " +
+          (p.url || "(none provided)") +
+          "</li><li><strong>Flyer:</strong> " +
+          (p.flyerName
+            ? "Uploaded (" + p.flyerName + ")"
+            : p.wantsFlyerDesigned === "yes"
+              ? "Asked AstroPro to design one"
+              : "(none)") +
+          "</li></ul><p><strong>Instructions from partner:</strong><br>" +
+          p.instructions.replace(/\n/g, "<br>") +
+          "</p><p>Full details and the flyer file are in the admin inbox.</p>",
+      }),
+    });
+  } catch {
+    console.error("Partner campaign notification email failed");
+  }
 }
 async function submissions(request, env) {
   if (request.method !== "POST")
@@ -338,6 +451,8 @@ async function submissions(request, env) {
         },
         409,
       );
+    if (data.type === "partner-campaign")
+      await notifyPartnerCampaign(env, data);
     return json({ receipt: stored.id, receivedAt: stored.created_at }, 201);
   } catch {
     console.error("Resource Center submission persistence failed");

@@ -39,14 +39,19 @@ before(async () => {
     }),
   );
   db = await mf.getD1Database("DB");
-  const schema = await readFile("migrations/0001_resource_center.sql", "utf8");
-  await db.batch(
-    schema
-      .split(";")
-      .map((s) => s.trim())
-      .filter(Boolean)
-      .map((sql) => db.prepare(sql)),
-  );
+  for (const file of [
+    "migrations/0001_resource_center.sql",
+    "migrations/0002_partner_campaign_type.sql",
+  ]) {
+    const schema = await readFile(file, "utf8");
+    await db.batch(
+      schema
+        .split(";")
+        .map((s) => s.trim())
+        .filter(Boolean)
+        .map((sql) => db.prepare(sql)),
+    );
+  }
 });
 after(async () => {
   await mf?.dispose();
@@ -100,6 +105,46 @@ test("all five forms persist only validated fields and return receipts", async (
     assert.equal(row.consent_version, "2026-10-31");
   }
 });
+test("partner campaign orders validate the market, order reference, and flyer choice", async () => {
+  const partnerBody = (extra = {}) => ({
+    requestId: randomUUID(),
+    type: "partner-campaign",
+    market: "housing-brenham",
+    marketName: "Blinn College — Brenham, TX",
+    orderRef: "AP-AB12CD",
+    contactName: "Test Partner",
+    email: randomUUID() + "@example.com",
+    subject: "New leasing special",
+    instructions: "Please mention our move-in special.",
+    wantsFlyerDesigned: "yes",
+    consent: true,
+    ...extra,
+  });
+  assert.throws(() =>
+    validateSubmission(partnerBody({ market: "not-a-market" })),
+  );
+  assert.throws(() =>
+    validateSubmission(partnerBody({ orderRef: "not-valid" })),
+  );
+  assert.throws(() =>
+    validateSubmission(partnerBody({ wantsFlyerDesigned: "" })),
+  );
+  const r = await send(partnerBody());
+  assert.equal(r.status, 201);
+  const flyerPayload = partnerBody({
+    wantsFlyerDesigned: "",
+    flyerName: "flyer.png",
+    flyerMime: "image/png",
+    flyerBase64: Buffer.from("fake-image-bytes").toString("base64"),
+  });
+  const flyerResult = await send(flyerPayload);
+  assert.equal(flyerResult.status, 201);
+  const row = await db
+    .prepare("SELECT payload_json FROM submissions WHERE id=?")
+    .bind(flyerPayload.requestId)
+    .first();
+  assert.equal(JSON.parse(row.payload_json).flyerName, "flyer.png");
+});
 test("identical retries and simultaneous submits produce one stored receipt", async () => {
   const payload = body();
   const responses = await Promise.all([
@@ -136,7 +181,7 @@ test("cross-origin, malformed, oversized, spam, and invalid requests cannot crea
   const r = await mf.dispatchFetch(origin + "/api/submissions", {
     method: "POST",
     headers: { Origin: origin, "Content-Type": "application/json" },
-    body: "x".repeat(17000),
+    body: "x".repeat(2600000),
   });
   assert.equal(r.status, 413);
 });

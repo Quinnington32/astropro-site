@@ -275,6 +275,12 @@ main > section:last-child {
 .btn-primary:hover {
   background: #273963;
 }
+.btn.is-disabled {
+  opacity: 0.5;
+}
+.btn[aria-disabled="true"] {
+  opacity: 0.7;
+}
 .btn-ghost {
   background: transparent;
   color: var(--ink);
@@ -1159,6 +1165,22 @@ body[data-page="discounts"] .tag {
   line-height: 1.65;
 }
 .consent input {
+  width: 18px;
+  height: 18px;
+  min-height: 18px;
+  flex-shrink: 0;
+  margin-top: 3px;
+  accent-color: var(--primary);
+}
+.checkbox-label {
+  display: flex;
+  align-items: start;
+  gap: 10px;
+  font-weight: 500;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+.checkbox-label input {
   width: 18px;
   height: 18px;
   min-height: 18px;
