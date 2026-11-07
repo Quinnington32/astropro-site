@@ -554,7 +554,9 @@ emit(
     `<section class="wrap prose"><h2>What we do</h2><p>Student Resource Center is a free directory and guide collection, and a project by AstroPro. We link to scholarship sponsors, employers, providers, property sources, and campus services. Those organizations make their own decisions and set their own rules.</p><h2>How resources are reviewed</h2><p>We prefer official sources. A “source reviewed” date means we checked the linked source for the specified information; it does not promise the provider will keep the same terms. Other entries remain starting points whose current rules need confirmation. Closed and upcoming cycles are labeled where dates are known.</p><p>Resources without a verifiable current source may be withheld. We don’t invent deadlines, availability, partnerships, rankings, or review scores. Listing counts are generated from published records.</p><h2>Housing and commercial offers</h2><p>A property mention is not a guarantee of rental suitability or an endorsement. Map links are searches, not verified listings. We do not collect rental applications or payments. Discounts may involve paid subscriptions, renewals, or third-party verification; read the terms before signing up.</p><h2>Corrections and submissions</h2><p>Spot something wrong? <a href="index.html#organizations">Send the official source and a correction</a>. Submissions are reviewed by people and are not automatically published. Our directory currently has no paid-placement ordering.</p><h2>What is available here</h2><p>Browse directories, use guides, save a shortlist on your device, find campus resources, or send a request. We do not provide automatic scholarship matching, a live job feed, personalized financial or medical advice, or a student email list.</p></section>`,
 );
 const PARTNER_CAMPAIGN_PRICE = 499;
-const PAYPAL_ME_HANDLE = (process.env.PAYPAL_ME_HANDLE || "").trim();
+const PAYPAL_BUSINESS_EMAIL = (
+  process.env.PAYPAL_BUSINESS_EMAIL || "michael.squinn8989@gmail.com"
+).trim();
 const partnerSteps = [
   [
     "Complete your payment",
@@ -594,10 +596,10 @@ const partnerPayBody =
         .join("")}
     </div>
   </section>
-  <section class="wrap" data-partner-pay>
+  <section class="wrap" data-partner-pay data-paypal-business="${e(PAYPAL_BUSINESS_EMAIL)}" data-price="${PARTNER_CAMPAIGN_PRICE}">
     <div class="callout">
       <h2>Step 1 · Choose your market and pay</h2>
-      <p class="fineprint">Your reference code: <code data-order-ref></code> — keep this for your records and for PayPal’s note field if one is offered.</p>
+      <p class="fineprint">Your reference code: <code data-order-ref></code> — this is included automatically when you click Pay, and carries through to your onboarding form.</p>
       <div class="field">
         <label for="partnerMarket">Campus market</label>
         <select id="partnerMarket">
@@ -607,8 +609,8 @@ const partnerPayBody =
       </div>
       <p class="award">$${PARTNER_CAMPAIGN_PRICE} flat rate, any market.</p>
       ${
-        PAYPAL_ME_HANDLE
-          ? `<a data-pay-link class="btn btn-primary" target="_blank" rel="noopener noreferrer" href="https://www.paypal.com/paypalme/${e(PAYPAL_ME_HANDLE)}/${PARTNER_CAMPAIGN_PRICE}USD">Pay with PayPal <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>`
+        PAYPAL_BUSINESS_EMAIL
+          ? `<a data-pay-link class="btn btn-primary is-disabled" aria-disabled="true" target="_blank" rel="noopener noreferrer" href="mailto:michael@goastropro.com">Pay with PayPal <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>`
           : `<p class="notice">Online payment isn’t configured yet. Contact <a href="mailto:michael@goastropro.com">michael@goastropro.com</a> to arrange payment and we’ll get your campaign started.</p>`
       }
       <p class="fineprint">After PayPal confirms your payment, continue to the onboarding form below.</p>

@@ -629,7 +629,9 @@ function setupPartnerPay() {
   const select = $("#partnerMarket", root),
     payLink = $("[data-pay-link]", root),
     continueLink = $("[data-continue-link]", root),
-    refOut = $("[data-order-ref]", root);
+    refOut = $("[data-order-ref]", root),
+    business = root.dataset.paypalBusiness,
+    price = Number(root.dataset.price) || 0;
   let ref;
   try {
     ref = sessionStorage.getItem("astropro.partner.orderRef");
@@ -644,32 +646,55 @@ function setupPartnerPay() {
   const update = () => {
     const option = select.options[select.selectedIndex];
     const marketName = option && option.value ? option.textContent : "";
+    const ready = !!(option && option.value);
     if (continueLink) {
-      if (option && option.value) {
+      if (ready) {
         const url = new URL(continueLink.dataset.base, location.href);
         url.searchParams.set("market", option.value);
         url.searchParams.set("marketName", marketName);
         url.searchParams.set("orderRef", ref);
         continueLink.href = url.pathname + url.search;
         continueLink.removeAttribute("aria-disabled");
+        continueLink.classList.remove("is-disabled");
       } else {
         continueLink.href = "#";
         continueLink.setAttribute("aria-disabled", "true");
+        continueLink.classList.add("is-disabled");
       }
     }
-    if (payLink) {
-      payLink.classList.toggle("is-disabled", !(option && option.value));
+    if (payLink && business) {
+      if (ready) {
+        const url = new URL("https://www.paypal.com/cgi-bin/webscr");
+        url.searchParams.set("cmd", "_xclick");
+        url.searchParams.set("business", business);
+        url.searchParams.set(
+          "item_name",
+          "AstroPro student email campaign — " + marketName,
+        );
+        url.searchParams.set("item_number", ref);
+        url.searchParams.set("amount", price.toFixed(2));
+        url.searchParams.set("currency_code", "USD");
+        url.searchParams.set("no_shipping", "1");
+        payLink.href = url.href;
+        payLink.removeAttribute("aria-disabled");
+        payLink.classList.remove("is-disabled");
+      } else {
+        payLink.href = "mailto:michael@goastropro.com";
+        payLink.setAttribute("aria-disabled", "true");
+        payLink.classList.add("is-disabled");
+      }
     }
   };
   select?.addEventListener("change", update);
   update();
-  continueLink?.addEventListener("click", (event) => {
-    if (continueLink.getAttribute("aria-disabled") === "true") {
-      event.preventDefault();
-      select?.focus();
-      toast("Choose your market first.");
-    }
-  });
+  for (const link of [payLink, continueLink])
+    link?.addEventListener("click", (event) => {
+      if (link.getAttribute("aria-disabled") === "true") {
+        event.preventDefault();
+        select?.focus();
+        toast("Choose your market first.");
+      }
+    });
 }
 function setupPartnerOnboarding() {
   const form = $('[data-intake="partner-campaign"]');
