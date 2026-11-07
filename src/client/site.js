@@ -466,6 +466,28 @@ $("[data-clear-saved]")?.addEventListener("click", async () => {
     }
   }
 });
+function fileToBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(String(reader.result).split(",")[1] || "");
+    reader.onerror = () => reject(reader.error);
+    reader.readAsDataURL(file);
+  });
+}
+async function formDataToPayload(form) {
+  const data = {};
+  for (const [name, value] of new FormData(form).entries()) {
+    if (value instanceof File) {
+      if (!value.size) continue;
+      data[name + "Name"] = value.name.slice(0, 200);
+      data[name + "Mime"] = value.type || "application/octet-stream";
+      data[name + "Base64"] = await fileToBase64(value);
+    } else {
+      data[name] = value;
+    }
+  }
+  return data;
+}
 function setupForms() {
   for (const form of $$("[data-intake]")) {
     const type = form.dataset.intake,
@@ -490,7 +512,16 @@ function setupForms() {
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
       if (button.disabled || !form.reportValidity()) return;
-      const data = Object.fromEntries(new FormData(form));
+      let data;
+      try {
+        data = await formDataToPayload(form);
+      } catch {
+        status.dataset.error = "true";
+        status.textContent =
+          "We could not read your uploaded file. Try a different file or remove it.";
+        status.focus();
+        return;
+      }
       data.type = type;
       data.consent = data.consent === "yes";
       const canonical = JSON.stringify(data);
@@ -547,6 +578,10 @@ function setupForms() {
             "Preference recorded",
             "Your do-not-contact preference is stored for the Student Resource Center. Use the link in an existing email for any separate mailing list.",
           ],
+          "partner-campaign": [
+            "Order received",
+            "Thanks! Our team has your campaign details and will follow up by email to confirm timing.",
+          ],
         }[type];
         status.innerHTML = `<h3>${received[0]}</h3><p>${received[1]}</p><p class="receipt">Reference: ${esc(receipt)}</p><button type="button" class="btn btn-ghost" data-new-request>Send another request</button>`;
         pending = null;
@@ -580,6 +615,104 @@ function setupForms() {
         input.value = "Campus market: " + query.get("market");
     }
   }
+}
+function randomOrderRef() {
+  const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ0123456789";
+  let ref = "";
+  for (let i = 0; i < 6; i++)
+    ref += chars[Math.floor(Math.random() * chars.length)];
+  return "AP-" + ref;
+}
+function setupPartnerPay() {
+  const root = $("[data-partner-pay]");
+  if (!root) return;
+  const select = $("#partnerMarket", root),
+    payLink = $("[data-pay-link]", root),
+    continueLink = $("[data-continue-link]", root),
+    refOut = $("[data-order-ref]", root);
+  let ref;
+  try {
+    ref = sessionStorage.getItem("astropro.partner.orderRef");
+  } catch {}
+  if (!ref) {
+    ref = randomOrderRef();
+    try {
+      sessionStorage.setItem("astropro.partner.orderRef", ref);
+    } catch {}
+  }
+  if (refOut) refOut.textContent = ref;
+  const update = () => {
+    const option = select.options[select.selectedIndex];
+    const marketName = option && option.value ? option.textContent : "";
+    if (continueLink) {
+      if (option && option.value) {
+        const url = new URL(continueLink.dataset.base, location.href);
+        url.searchParams.set("market", option.value);
+        url.searchParams.set("marketName", marketName);
+        url.searchParams.set("orderRef", ref);
+        continueLink.href = url.pathname + url.search;
+        continueLink.removeAttribute("aria-disabled");
+      } else {
+        continueLink.href = "#";
+        continueLink.setAttribute("aria-disabled", "true");
+      }
+    }
+    if (payLink) {
+      payLink.classList.toggle("is-disabled", !(option && option.value));
+    }
+  };
+  select?.addEventListener("change", update);
+  update();
+  continueLink?.addEventListener("click", (event) => {
+    if (continueLink.getAttribute("aria-disabled") === "true") {
+      event.preventDefault();
+      select?.focus();
+      toast("Choose your market first.");
+    }
+  });
+}
+function setupPartnerOnboarding() {
+  const form = $('[data-intake="partner-campaign"]');
+  if (!form) return;
+  const query = new URLSearchParams(location.search),
+    market = query.get("market") || "",
+    marketName = query.get("marketName") || "",
+    orderRef = query.get("orderRef") || "";
+  for (const [name, value] of [
+    ["market", market],
+    ["marketName", marketName],
+    ["orderRef", orderRef],
+  ]) {
+    const input = form.elements.namedItem(name);
+    if (input) input.value = value;
+  }
+  const summary = $("[data-order-summary]");
+  if (summary) {
+    summary.textContent =
+      market && orderRef
+        ? "Market: " + marketName + " · Reference: " + orderRef
+        : "We couldn't find your order details. Start from the Property Partners page so your order is linked correctly.";
+    summary.hidden = false;
+  }
+  const flyerInput = form.elements.namedItem("flyer"),
+    designCheckbox = form.elements.namedItem("wantsFlyerDesigned");
+  const syncFlyerChoice = () => {
+    const hasFlyer = flyerInput && flyerInput.files && flyerInput.files.length;
+    const wantsDesigned = designCheckbox && designCheckbox.checked;
+    if (hasFlyer && designCheckbox) designCheckbox.checked = false;
+    if (flyerInput)
+      flyerInput.setCustomValidity(
+        !hasFlyer && !wantsDesigned
+          ? "Upload a flyer, or check the box to have AstroPro design one."
+          : "",
+      );
+  };
+  flyerInput?.addEventListener("change", syncFlyerChoice);
+  designCheckbox?.addEventListener("change", () => {
+    if (designCheckbox.checked && flyerInput) flyerInput.value = "";
+    syncFlyerChoice();
+  });
+  syncFlyerChoice();
 }
 function setupSchool() {
   const form = $("#schoolSearch");
@@ -808,6 +941,8 @@ setupDirectory();
 setupResourceSearch();
 setupMarkets();
 setupForms();
+setupPartnerPay();
+setupPartnerOnboarding();
 setupSchool();
 setupAdmin();
 updateSaveButtons();
