@@ -15,7 +15,11 @@
     "opens": null,
     "state": null,
     "source": "https://www.jkcf.org/our-scholarships/college-scholarship-program/how-to-apply/",
-    "verifiedFields": ["deadline", "deadline_label", "eligibility"]
+    "verifiedFields": [
+      "deadline",
+      "deadline_label",
+      "eligibility"
+    ]
   },
   {
     "id": "scholarships-ron-brown-scholar-program",
@@ -77,7 +81,11 @@
     "opens": null,
     "state": null,
     "source": "https://scholarships360.org/scholarships/search/10000-no-essay-scholarship/",
-    "verifiedFields": ["eligibility", "deadline", "deadline_label"]
+    "verifiedFields": [
+      "eligibility",
+      "deadline",
+      "deadline_label"
+    ]
   },
   {
     "id": "scholarships-u-s-bank-student-scholarship-program",
@@ -95,7 +103,11 @@
     "opens": null,
     "state": null,
     "source": "https://www.usbank.com/dam/en/documents/pdfs/about-us-bank/2026-US-Bank-Student-Scholarship-Sweepstakes-Rules.pdf",
-    "verifiedFields": ["category", "deadline", "eligibility"]
+    "verifiedFields": [
+      "category",
+      "deadline",
+      "eligibility"
+    ]
   },
   {
     "id": "scholarships-chick-fil-a-community-scholars-program",
@@ -135,7 +147,11 @@
     "opens": null,
     "state": null,
     "source": "https://www.mensafoundation.org/what-we-do/scholarships/",
-    "verifiedFields": ["category", "essay_required", "deadline"]
+    "verifiedFields": [
+      "category",
+      "essay_required",
+      "deadline"
+    ]
   },
   {
     "id": "scholarships-vfw-voice-of-democracy-scholarship-contest",
@@ -240,7 +256,11 @@
     "legacyDeadline": "2/2/27",
     "deadline": "2027-02-02",
     "source": "https://www.truman.gov/apply/applying/important-dates",
-    "verifiedFields": ["deadline", "deadlineLabel", "description"]
+    "verifiedFields": [
+      "deadline",
+      "deadlineLabel",
+      "description"
+    ]
   },
   {
     "id": "scholarships-the-christophers-video-contest-for-college-students",
@@ -258,7 +278,11 @@
     "opens": null,
     "state": null,
     "source": "https://www.christophers.org/video-contest-for-college-students",
-    "verifiedFields": ["deadline", "amount", "eligibility"]
+    "verifiedFields": [
+      "deadline",
+      "amount",
+      "eligibility"
+    ]
   },
   {
     "id": "scholarships-stossel-in-the-classroom-video-contest",
@@ -276,7 +300,11 @@
     "opens": null,
     "state": null,
     "source": "https://stosselintheclassroom.org/video-contest/",
-    "verifiedFields": ["deadline", "deadline_label", "eligibility"]
+    "verifiedFields": [
+      "deadline",
+      "deadline_label",
+      "eligibility"
+    ]
   },
   {
     "id": "scholarships-debt-com-scholarship-for-aggressive-scholarship-applicants",
@@ -285,16 +313,20 @@
     "categoryLabel": "No essay required to apply broadly",
     "amount": "$1,000",
     "description": "Apply to as many scholarships as possible (winning isn't required) and submit proof plus a short statement about the experience.",
-    "deadlineLabel": "Check sponsor for current cycle",
+    "deadlineLabel": "April 1, 2027 (annual)",
     "url": "https://www.debt.com/our-story/scholarships",
-    "status": "check-sponsor",
+    "status": "open",
     "verifiedAt": "2026-10-31",
     "legacyDeadline": "4/1/27",
-    "deadline": null,
+    "deadline": "2027-04-01",
     "opens": null,
     "state": null,
     "source": "https://www.debt.com/our-story/scholarships/",
-    "verifiedFields": ["category", "essay_required", "deadline_label"]
+    "verifiedFields": [
+      "category",
+      "essay_required",
+      "deadline_label"
+    ]
   },
   {
     "id": "scholarships-coca-cola-scholars-program",
@@ -326,12 +358,12 @@
     "categoryLabel": "Need-based",
     "amount": "Last-dollar college funding",
     "description": "A highly selective, last-dollar scholarship for outstanding high school seniors from low-income households. Check the official application for current eligibility, funding coverage, required materials and deadlines.",
-    "deadlineLabel": "Check sponsor for current application rules and dates",
+    "deadlineLabel": "2027-cycle deadline was September 15, 2026 (opened July 15, 2026); now closed — check sponsor for next cycle",
     "url": "https://www.thegatesscholarship.org",
-    "status": "check-sponsor",
+    "status": "closed",
     "verifiedAt": "2026-10-31",
     "legacyDeadline": "Varies (annual)",
-    "deadline": null,
+    "deadline": "2026-09-15",
     "source": "https://www.thegatesscholarship.org/",
     "verifiedFields": [
       "description",
@@ -339,7 +371,8 @@
       "deadline",
       "deadlineLabel",
       "status"
-    ]
+    ],
+    "opens": "2026-07-15"
   },
   {
     "id": "scholarships-dell-scholars-program",
@@ -357,7 +390,11 @@
     "opens": null,
     "state": "TX",
     "source": "https://www.dellscholars.org/students/",
-    "verifiedFields": ["deadline", "state", "eligibility"]
+    "verifiedFields": [
+      "deadline",
+      "state",
+      "eligibility"
+    ]
   },
   {
     "id": "scholarships-questbridge-national-college-match",
@@ -373,21 +410,26 @@
     "legacyDeadline": "Late September (annual)",
     "deadline": null,
     "source": "https://www.questbridge.org/",
-    "verifiedFields": ["description", "amount", "status", "deadlineLabel"]
+    "verifiedFields": [
+      "description",
+      "amount",
+      "status",
+      "deadlineLabel"
+    ]
   },
   {
     "id": "scholarships-burger-king-scholars-program",
     "name": "Burger King Scholars Program",
     "category": "leadership",
     "categoryLabel": "Leadership & service",
-    "amount": "Varies by award",
+    "amount": "$1,000–$60,000 (most awards $1,000–$5,000)",
     "description": "Scholarships for eligible high school seniors, Burger King employees and employee families pursuing postsecondary college or vocational/technical education. Awards and criteria vary by application track; check the administrator for current requirements.",
-    "deadlineLabel": "Check sponsor for current application cycle",
+    "deadlineLabel": "December 15, 2026, 11:59 p.m. CT",
     "url": "https://scholarshipamerica.org/scholarship/burger-king-scholars-program/",
-    "status": "check-sponsor",
+    "status": "open",
     "verifiedAt": "2026-10-31",
     "legacyDeadline": "Varies (annual)",
-    "deadline": null,
+    "deadline": "2026-12-15",
     "source": "https://scholarshipamerica.org/scholarship/burger-king-scholars-program/",
     "verifiedFields": [
       "description",
@@ -414,7 +456,12 @@
     "opens": null,
     "state": null,
     "source": "https://www.elks.org/scholars/scholarships/MVS.cfm",
-    "verifiedFields": ["amount", "deadline", "deadline_label", "eligibility"]
+    "verifiedFields": [
+      "amount",
+      "deadline",
+      "deadline_label",
+      "eligibility"
+    ]
   },
   {
     "id": "scholarships-point-foundation-scholarship",
@@ -432,7 +479,12 @@
     "opens": null,
     "state": null,
     "source": "https://pointfoundation.org/scholarships/flagship",
-    "verifiedFields": ["name", "amount", "deadline_label", "eligibility"]
+    "verifiedFields": [
+      "name",
+      "amount",
+      "deadline_label",
+      "eligibility"
+    ]
   },
   {
     "id": "scholarships-hispanic-scholarship-fund",
@@ -465,7 +517,7 @@
     "categoryLabel": "Need-based",
     "amount": "Varies by scholarship",
     "description": "Scholarships for American Indian and Alaska Native students in certificate, undergraduate or graduate programs at tribal colleges and universities or accredited nonprofit schools. One annual application covers multiple opportunities; eligibility and funding vary.",
-    "deadlineLabel": "Check sponsor for current application and priority dates",
+    "deadlineLabel": "Applications open annually February 1; priority review deadline May 31 (late applications still accepted); spring-term deadline January 25",
     "url": "https://collegefund.org/students/scholarships/",
     "status": "check-sponsor",
     "verifiedAt": "2026-10-31",
@@ -511,16 +563,20 @@
     "categoryLabel": "Major-specific",
     "amount": "$25,000–$100,000",
     "description": "For students 18 and under who have completed a significant piece of work in science, technology, math, literature, music, philosophy or outside the box categories.",
-    "deadlineLabel": "2027 applications open November 2, 2026; check sponsor for deadline",
+    "deadlineLabel": "Applications close February 17, 2027, 11:59 p.m. Pacific",
     "url": "https://www.davidsongifted.org/gifted-programs/fellows-scholarship",
-    "status": "upcoming",
+    "status": "open",
     "verifiedAt": "2026-10-31",
     "legacyDeadline": "Varies (annual)",
-    "deadline": null,
+    "deadline": "2027-02-17",
     "opens": "2026-11-02",
     "state": null,
     "source": "https://www.davidsongifted.org/gifted-programs/fellows-scholarship/",
-    "verifiedFields": ["amount", "opens", "deadline_label"]
+    "verifiedFields": [
+      "amount",
+      "opens",
+      "deadline_label"
+    ]
   },
   {
     "id": "scholarships-national-merit-scholarship-program",
@@ -538,7 +594,11 @@
     "opens": null,
     "state": null,
     "source": "https://www.nationalmerit.org/s/1758/interior.aspx?gid=2&pgid=434&sid=1758",
-    "verifiedFields": ["category", "essay_required", "eligibility"]
+    "verifiedFields": [
+      "category",
+      "essay_required",
+      "eligibility"
+    ]
   },
   {
     "id": "scholarships-jackie-robinson-foundation-scholarship",
@@ -556,7 +616,10 @@
     "opens": null,
     "state": null,
     "source": "https://jackierobinson.org/apply/",
-    "verifiedFields": ["deadline", "eligibility"]
+    "verifiedFields": [
+      "deadline",
+      "eligibility"
+    ]
   },
   {
     "id": "scholarships-hagan-scholarship-foundation-scholarship",
@@ -565,12 +628,12 @@
     "categoryLabel": "Need-based",
     "amount": "Up to $7,500 per semester",
     "description": "A renewable scholarship with funding determined by educational costs and other aid, plus required workshops and student responsibilities. Review the sponsor’s current academic, income, enrollment and work requirements before applying.",
-    "deadlineLabel": "Check sponsor for current application cycle",
+    "deadlineLabel": "December 1, 2026 (for the 2027-2028 academic year)",
     "url": "https://haganscholarships.org/",
-    "status": "check-sponsor",
+    "status": "open",
     "verifiedAt": "2026-10-31",
     "legacyDeadline": "Varies — check site",
-    "deadline": null,
+    "deadline": "2026-12-01",
     "source": "https://haganscholarships.org/description/",
     "verifiedFields": [
       "name",
@@ -635,9 +698,9 @@
     "categoryLabel": "Need-based",
     "amount": "Up to $18,000 associate / $36,000 bachelor, plus possible stipends",
     "description": "For eligible low-income Dreamer students attending a participating in-state or online Partner College. Current rules include U.S. arrival before age 16 and before November 1, 2021; international students and temporary nonimmigrant statuses are ineligible. Review all immigration, residency, GPA and enrollment criteria directly with the sponsor.",
-    "deadlineLabel": "Check sponsor for current National Scholarship cycle",
+    "deadlineLabel": "Current round is open; sponsor has not posted a fixed National Scholarship deadline on the page reviewed — check thedream.us/scholarships/national-scholarship/",
     "url": "https://www.thedream.us/scholarships/",
-    "status": "check-sponsor",
+    "status": "open",
     "verifiedAt": "2026-10-31",
     "legacyDeadline": "Varies — check site",
     "deadline": null,
@@ -679,7 +742,7 @@
     "name": "Jeannette Rankin National Scholar Grant",
     "category": "need-based",
     "categoryLabel": "Need-based",
-    "amount": "Varies by grant",
+    "amount": "Up to $3,000 per year, renewable up to 5 years",
     "description": "Unrestricted, nontuition grants for eligible students age 35+ who self-identify and present as women, pursuing technical/vocational education, a first associate degree or first bachelor degree at an accredited nonprofit U.S. institution. Review income and other sponsor criteria.",
     "deadlineLabel": "February 12, 2027; application and recommendation deadline",
     "url": "https://rankinfoundation.org/national-scholar-grant/",
@@ -707,14 +770,18 @@
     "description": "Women with financial need providing primary financial support for themselves AND dependents, enrolled or accepted into undergraduate or vocational training; additional country and prior-award restrictions apply.",
     "deadlineLabel": "November 15 (annual; confirm current cycle)",
     "url": "https://www.soroptimist.org/our-work/live-your-dream-awards/apply-for-the-live-your-dream-awards.html",
-    "status": "check-sponsor",
+    "status": "open",
     "verifiedAt": "2026-10-31",
     "legacyDeadline": "Typically November",
-    "deadline": null,
+    "deadline": "2026-11-15",
     "opens": null,
     "state": null,
     "source": "https://www.soroptimist.org/our-work/live-your-dream-awards/apply-for-the-live-your-dream-awards.html",
-    "verifiedFields": ["amount", "deadline_label", "eligibility"]
+    "verifiedFields": [
+      "amount",
+      "deadline_label",
+      "eligibility"
+    ]
   },
   {
     "id": "scholarships-taco-bell-foundation-live-ma-s-scholarship",
@@ -746,12 +813,12 @@
     "categoryLabel": "Leadership & service",
     "amount": "Up to $20,000 for children of fallen / $5,000 for children of disabled veterans",
     "description": "Need-based support for eligible children of U.S. servicemembers who died on active duty on or after September 11, 2001, or post-9/11 veterans with a VA combined disability rating of at least 50%. Review documentation and other aid requirements directly with the sponsor.",
-    "deadlineLabel": "Last posted 2026 application closed; check sponsor for next cycle",
+    "deadlineLabel": "March 24, 2027, 11:59 p.m. ET (2027-28 academic year cycle)",
     "url": "https://www.legion.org/get-involved/scholarships/the-american-legion-legacy-scholarship",
-    "status": "closed",
+    "status": "upcoming",
     "verifiedAt": "2026-10-31",
     "legacyDeadline": "Varies — check site",
-    "deadline": "2026-03-25",
+    "deadline": "2027-03-24",
     "source": "https://www.legion.org/get-involved/scholarships/the-american-legion-legacy-scholarship",
     "verifiedFields": [
       "name",
@@ -803,7 +870,10 @@
     "opens": null,
     "state": null,
     "source": "https://www.nationalhonorsociety.org/the-nhs-scholarship/",
-    "verifiedFields": ["deadline", "deadline_label"]
+    "verifiedFields": [
+      "deadline",
+      "deadline_label"
+    ]
   },
   {
     "id": "scholarships-boys-girls-clubs-of-america-national-youth-of-the-year",
@@ -836,12 +906,12 @@
     "categoryLabel": "No essay",
     "amount": "$2,000 monthly drawing",
     "description": "For legal residents of the 50 U.S. states, D.C. or U.S. territories age 16+ who meet the specified college-student, high-school-junior/senior or parent eligibility. Monthly sweepstakes; no essay required. Review official rules before entering.",
-    "deadlineLabel": "Monthly entry periods; see sponsor for current deadline",
+    "deadlineLabel": "Monthly; next deadline November 30, 2026, then December 31, 2026",
     "url": "https://www.sallie.com/scholarships/no-essay",
     "status": "check-sponsor",
     "verifiedAt": "2026-10-31",
     "legacyDeadline": "Monthly drawings",
-    "deadline": null,
+    "deadline": "2026-11-30",
     "source": "https://www.sallie.com/scholarships/no-essay",
     "verifiedFields": [
       "name",
@@ -859,7 +929,7 @@
     "categoryLabel": "No essay",
     "amount": "$2,000",
     "description": "A no-essay drawing for eligible high school, college and graduate students or those planning enrollment within 12 months. Entrants age 13–17 require parental consent/supervision; citizenship or valid-visa and other official-rule restrictions apply.",
-    "deadlineLabel": "Monthly sweepstakes periods; confirm current rules",
+    "deadlineLabel": "Niche runs a rotating series of differently-named/amounted no-essay drawings (e.g., $2,000/$10,000/$25,000/$50,000 versions) with dated URLs rather than one fixed page — search niche.com directly for the current one",
     "url": "https://www.niche.com/colleges/scholarships/no-essay-scholarship/",
     "status": "check-sponsor",
     "verifiedAt": "2026-10-31",
@@ -1017,14 +1087,14 @@
     "name": "AICPA Foundation Legacy Scholarships",
     "category": "major",
     "categoryLabel": "Major-specific",
-    "amount": "$5,000–$10,000 by award",
+    "amount": "$3,000–$10,000 by award",
     "description": "Awards supporting eligible accounting students pursuing CPA careers, with separate Future CPAs, first-generation/public accounting and two-year-transfer opportunities. GPA, citizenship/residency, enrollment and other rules differ; one application can cover eligible Legacy awards.",
-    "deadlineLabel": "Check the relevant Legacy scholarship for current dates",
+    "deadlineLabel": "March 15, 2027, 11:59 p.m. ET (application opens December 1)",
     "url": "https://www.thiswaytocpa.com/education/aicpa-legacy-scholarships/",
-    "status": "check-sponsor",
+    "status": "upcoming",
     "verifiedAt": "2026-10-31",
     "legacyDeadline": "Varies — check site",
-    "deadline": null,
+    "deadline": "2027-03-15",
     "source": "https://www.thiswaytocpa.com/education/aicpa-legacy-scholarships/",
     "verifiedFields": [
       "name",
@@ -1057,6 +1127,617 @@
       "deadline",
       "deadlineLabel",
       "status"
+    ],
+    "opens": "2026-11-01"
+  },
+  {
+    "id": "scholarships-jeannette-rankin-tribal-scholar-grant",
+    "name": "Jeannette Rankin Foundation Tribal Scholar Grant",
+    "category": "need-based",
+    "categoryLabel": "Need-based",
+    "amount": "Up to $3,000 per year",
+    "description": "Unrestricted, non-tuition-specific grants for women age 25 or older who are enrolled members of a federally recognized Tribe (verified by a Certificate of Indian Blood or Tribal Identification Card), attending a Tribal College, pursuing technical/vocational education or a first associate or bachelor's degree, and demonstrating financial need. Grants are renewable for up to five years.",
+    "deadlineLabel": "February 12, 2027 (application and recommendation letters due)",
+    "url": "https://rankinfoundation.org/native-woman-scholar-grant/",
+    "status": "open",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Feb 12, 2027",
+    "deadline": "2027-02-12",
+    "opens": null,
+    "state": null,
+    "source": "https://rankinfoundation.org/native-woman-scholar-grant/",
+    "verifiedFields": [
+      "deadline",
+      "amount",
+      "eligibility"
+    ]
+  },
+  {
+    "id": "scholarships-elks-national-foundation-legacy-awards",
+    "name": "Elks National Foundation Legacy Awards",
+    "category": "leadership",
+    "categoryLabel": "Leadership & service",
+    "amount": "$6,000 total ($1,500 per year for four years)",
+    "description": "For high school seniors who are a child, grandchild, step-child, step-grandchild, or legal ward of a living Elks member (membership must have begun on or before April 1, 2024, and be dues-paid through March 31, 2027). 400 awards are offered nationally (251 state-allocated, 149 at-large). Standardized test scores are not required for the 2027 contest.",
+    "deadlineLabel": "February 1, 2027, 11:59 a.m. Pacific",
+    "url": "https://www.elks.org/scholars/scholarships/Legacy.cfm",
+    "status": "open",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Feb 1, 2027",
+    "deadline": "2027-02-01",
+    "opens": null,
+    "state": null,
+    "source": "https://www.elks.org/scholars/scholarships/Legacy.cfm",
+    "verifiedFields": [
+      "deadline",
+      "eligibility",
+      "amount"
+    ]
+  },
+  {
+    "id": "scholarships-ala-children-of-warriors-national-presidents-scholarship",
+    "name": "American Legion Auxiliary Children of Warriors National President's Scholarship",
+    "category": "leadership",
+    "categoryLabel": "Leadership & service",
+    "amount": "$5,000 (15 awards annually, 3 per ALA division)",
+    "description": "For high school seniors who are a direct descendant (child, grandchild, or great-grandchild) of a veteran who served April 6, 1917–November 11, 1918, or at any time after December 7, 1941. Requires at least 50 documented volunteer hours completed during high school; American Legion Family membership is not required.",
+    "deadlineLabel": "March 1 each year, 11:59 p.m. Eastern (no extensions)",
+    "url": "https://legion-aux.org/scholarships/children-of-warriors",
+    "status": "upcoming",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "March 1 (annual)",
+    "deadline": "2027-03-01",
+    "opens": null,
+    "state": null,
+    "source": "https://legion-aux.org/scholarships/children-of-warriors",
+    "verifiedFields": [
+      "deadline",
+      "amount",
+      "eligibility"
+    ]
+  },
+  {
+    "id": "scholarships-ala-non-traditional-student-scholarship",
+    "name": "American Legion Auxiliary Non-Traditional Student Scholarship",
+    "category": "need-based",
+    "categoryLabel": "Need-based",
+    "amount": "$2,000 (5 awards annually, 1 per ALA division)",
+    "description": "For non-traditional students — those returning to school after an interruption in formal education or beginning postsecondary study later in life — who are either a two-year paid member of The American Legion/Auxiliary/Sons of The American Legion, an honorably discharged veteran, or the spouse of an active-duty servicemember or honorably discharged veteran. For certified trade, professional, technical, or degree programs.",
+    "deadlineLabel": "March 1 each year, 11:59 p.m. Eastern (no extensions)",
+    "url": "https://www.legion-aux.org/Scholarships/Non-Traditional-Student",
+    "status": "upcoming",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "March 1 (annual)",
+    "deadline": "2027-03-01",
+    "opens": null,
+    "state": null,
+    "source": "https://www.legion-aux.org/Scholarships/Non-Traditional-Student",
+    "verifiedFields": [
+      "deadline",
+      "amount",
+      "eligibility"
+    ]
+  },
+  {
+    "id": "scholarships-shpe-scholarshpe-program",
+    "name": "SHPE ScholarSHPE Scholarship Program",
+    "category": "major",
+    "categoryLabel": "Major-specific",
+    "amount": "Varies by individual scholarship (SHPE reports $1,000,000+ awarded annually across roughly 245 scholarships)",
+    "description": "For active Society of Hispanic Professional Engineers (SHPE) members who are declared STEM majors with at least a 2.5 cumulative GPA, planning full-time enrollment at an accredited two- or four-year U.S. institution (U.S. territories included). Open to incoming high school seniors through graduate/doctoral students; some sponsor-funded awards add citizenship or major-specific requirements. One common ScholarSHPE application covers all SHPE-administered scholarships.",
+    "deadlineLabel": "Recent cycle opened February 2 and closed February 16 — check sponsor for the current cycle's exact dates",
+    "url": "https://scholarships.shpe.org/students/",
+    "status": "check-sponsor",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Mid-February (annual)",
+    "deadline": null,
+    "opens": null,
+    "state": null,
+    "source": "https://shpe.org/engage/programs/scholarshpe/",
+    "verifiedFields": [
+      "eligibility",
+      "amount"
+    ]
+  },
+  {
+    "id": "scholarships-nsbe-scholarships",
+    "name": "NSBE Scholarships",
+    "category": "major",
+    "categoryLabel": "Major-specific",
+    "amount": "$500–$17,500 per award, depending on the specific sponsored scholarship",
+    "description": "For registered, paid National Society of Black Engineers (NSBE) members — high school seniors through graduate students — pursuing engineering, computer science, mathematics, or a related STEM field, generally with a minimum 2.5 cumulative GPA (individual sponsored scholarships may set higher GPA, residency, or major requirements). One application covers more than 100 sponsored scholarships.",
+    "deadlineLabel": "Fall/Winter GPA-verification and application window runs September 1, 2026 – February 26, 2027 — check sponsor for the exact scholarship-specific deadline",
+    "url": "https://nsbe.org/scholarships/",
+    "status": "check-sponsor",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Varies — check site",
+    "deadline": null,
+    "opens": "2026-09-01",
+    "state": null,
+    "source": "https://nsbe.org/scholarships/",
+    "verifiedFields": [
+      "amount",
+      "eligibility",
+      "opens"
+    ]
+  },
+  {
+    "id": "scholarships-acs-scholars-program",
+    "name": "ACS Scholars Program",
+    "category": "major",
+    "categoryLabel": "Major-specific",
+    "amount": "Up to $5,000 per academic year",
+    "description": "For African American/Black, Hispanic/Latino, or American Indian U.S. citizens or legal permanent residents who are high school seniors or college freshmen/sophomores/juniors (seniors may apply for a 5th year), majoring or intending to major in chemistry, biochemistry, chemical engineering, chemical technology, or another chemistry-related science with a GPA of 3.0 or higher. Pre-med, nursing, pharmacy, and veterinary students are not eligible (MD/PhD aspirants are).",
+    "deadlineLabel": "March 1 each year (application opens November 1)",
+    "url": "https://www.acs.org/content/dam/acsorg/membership/acs/welcoming/diversity/acs-scholars.pdf",
+    "status": "open",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "March 1 (annual)",
+    "deadline": "2027-03-01",
+    "opens": "2026-11-01",
+    "state": null,
+    "source": "https://www.acs.org/content/dam/acsorg/membership/acs/welcoming/diversity/acs-scholars.pdf",
+    "verifiedFields": [
+      "deadline",
+      "opens",
+      "amount",
+      "eligibility"
+    ]
+  },
+  {
+    "id": "scholarships-ptk-all-usa-academic-team-scholarship",
+    "name": "Phi Theta Kappa All-USA Academic Team Scholarship",
+    "category": "merit",
+    "categoryLabel": "Merit",
+    "amount": "Up to $3,000",
+    "description": "For Phi Theta Kappa community-college members pursuing an associate degree: at least 6 semester credit-hours of college-level coursework, 36+ semester credits completed by December, a minimum 3.50 GPA on coursework from the last 5 years, no prior All-USA or Coca-Cola Academic Team nomination, and a disciplinary record free of suspension or probation. For transfer and workforce students; by college nomination only (not a direct individual application).",
+    "deadlineLabel": "December 1, 2026 (part of PTK's broader scholarship-application group)",
+    "url": "https://www.ptk.org/scholarships/apply-now/",
+    "status": "open",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Dec 1 (annual)",
+    "deadline": "2026-12-01",
+    "opens": null,
+    "state": null,
+    "source": "https://www.ptk.org/scholarships/apply-now/",
+    "verifiedFields": [
+      "deadline",
+      "amount",
+      "eligibility"
+    ]
+  },
+  {
+    "id": "scholarships-peo-program-for-continuing-education",
+    "name": "P.E.O. Program for Continuing Education (PCE)",
+    "category": "need-based",
+    "categoryLabel": "Need-based",
+    "amount": "Up to $4,000",
+    "description": "Need-based grants for women in the U.S. and Canada whose education has been interrupted and who are returning to school to complete a degree or certification that will improve employability. Applicants must be sponsored by a local P.E.O. chapter rather than applying directly online; there is no single universal deadline — check with a local chapter for timing.",
+    "deadlineLabel": "No fixed national deadline — apply through sponsorship by a local P.E.O. chapter",
+    "url": "https://www.peointernational.org/about-peo-program-continuing-education-pce",
+    "status": "check-sponsor",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Varies — check local chapter",
+    "deadline": null,
+    "opens": null,
+    "state": null,
+    "source": "https://www.peointernational.org/about-peo-program-continuing-education-pce",
+    "verifiedFields": [
+      "amount",
+      "eligibility"
+    ]
+  },
+  {
+    "id": "scholarships-coolidge-scholarship",
+    "name": "Coolidge Scholarship",
+    "category": "merit",
+    "categoryLabel": "Merit",
+    "amount": "Full-ride (tuition, room, board, and expenses for four years at any accredited U.S. college or university)",
+    "description": "A full-ride presidential scholarship from the Calvin Coolidge Presidential Foundation for current high school juniors (current seniors are not eligible). Recipients are notified in late May of their junior year and may attend any accredited American college or university.",
+    "deadlineLabel": "Applicants apply during junior year — check coolidgescholars.org for the current cycle's exact deadline",
+    "url": "https://www.coolidgefoundation.org/front-page/coolidge-scholars-program/",
+    "status": "check-sponsor",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Varies — check site",
+    "deadline": null,
+    "opens": null,
+    "state": null,
+    "source": "https://www.coolidgefoundation.org/front-page/coolidge-scholars-program/",
+    "verifiedFields": [
+      "amount",
+      "eligibility"
+    ]
+  },
+  {
+    "id": "scholarships-tmcf-lowes-gap-scholarship",
+    "name": "TMCF Lowe's Gap Scholarship",
+    "category": "major",
+    "categoryLabel": "Major-specific",
+    "amount": "Up to $5,000 for the academic year (25 scholars)",
+    "description": "For full-time undergraduates at a Thurgood Marshall College Fund (TMCF) member school (public HBCUs and predominantly Black institutions) majoring in business or a STEM field, with a cumulative GPA of 3.00 or higher and demonstrated financial need. U.S. citizens or legal permanent residents only; funds cover verifiable tuition and standard fees.",
+    "deadlineLabel": "December 1, 2026, 11:59 p.m. ET (application opens June 1, 2026)",
+    "url": "https://tmcf.org/open-scholarships/2026-2027-tmcf-lowes-gap-scholarship/",
+    "status": "open",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Dec 1, 2026",
+    "deadline": "2026-12-01",
+    "opens": "2026-06-01",
+    "state": null,
+    "source": "https://tmcf.org/open-scholarships/2026-2027-tmcf-lowes-gap-scholarship/",
+    "verifiedFields": [
+      "deadline",
+      "opens",
+      "amount",
+      "eligibility"
+    ]
+  },
+  {
+    "id": "scholarships-naba-national-scholarship-program",
+    "name": "NABA National Scholarship Program",
+    "category": "major",
+    "categoryLabel": "Major-specific",
+    "amount": "$2,500–$10,000 (150+ scholarships annually)",
+    "description": "For active student members of the National Association of Black Accountants (NABA) enrolled full-time at an accredited U.S. two- or four-year college or university, who are U.S. citizens or lawful permanent residents with strong academic performance. Selection weighs academic achievement, leadership, service, and engagement with NABA's mission.",
+    "deadlineLabel": "Application window is shorter than in past years; decisions begin on a rolling basis starting Summer 2026 — check nabainc.org/scholarship for the exact closing date",
+    "url": "https://nabainc.org/scholarship",
+    "status": "check-sponsor",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Varies — check site",
+    "deadline": null,
+    "opens": null,
+    "state": null,
+    "source": "https://nabainc.org/scholarship",
+    "verifiedFields": [
+      "amount",
+      "eligibility"
+    ]
+  },
+  {
+    "id": "scholarships-samsung-american-legion-scholarship",
+    "name": "Samsung American Legion Scholarship",
+    "category": "leadership",
+    "categoryLabel": "Leadership & service",
+    "amount": "$10,000 (10 national scholars), $5,000 (10 national runners-up), $1,250 (remaining department finalists)",
+    "description": "For students who are a direct descendant (child, grandchild, great-grandchild, or legally adopted child) of a U.S. veteran and who participate in their state's American Legion Boys State or Girls State civic-leadership program. Applicants apply through their Boys State/Girls State program; department (state) finalists must reach American Legion National Headquarters by August 1, with national winners announced by mid-October.",
+    "deadlineLabel": "Set individually by each Boys State/Girls State program; department finalists due to National Headquarters by August 1",
+    "url": "https://www.legion.org/get-involved/scholarships/samsung-american-legion-scholarship/samsung-american-legion-scholarship-frequently-asked-questions",
+    "status": "check-sponsor",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Varies by state program",
+    "deadline": null,
+    "opens": null,
+    "state": null,
+    "source": "https://www.legion.org/get-involved/scholarships/samsung-american-legion-scholarship/samsung-american-legion-scholarship-frequently-asked-questions",
+    "verifiedFields": [
+      "amount",
+      "eligibility"
+    ]
+  },
+  {
+    "id": "scholarships-niaf-scholarship-program",
+    "name": "NIAF Scholarship Program",
+    "category": "need-based",
+    "categoryLabel": "Need-based",
+    "amount": "$2,500–$12,000, depending on the specific scholarship category",
+    "description": "For National Italian American Foundation (NIAF) members (a student may use a parent's, guardian's, or grandparent's membership) who are U.S. citizens or permanent residents with at least one ancestor who emigrated from Italy, planning full-time enrollment at an accredited U.S. college or university, generally with a GPA of 3.5 or higher (some categories set lower minimums). More than 20 scholarship categories are available, undergraduate through law/medical level.",
+    "deadlineLabel": "2027-2028 cycle: applications open December 1, 2026 and are due March 1, 2027, 11:59 p.m. ET",
+    "url": "https://www.niaf.org/programs/scholarships/",
+    "status": "upcoming",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "March 1 (annual)",
+    "deadline": "2027-03-01",
+    "opens": "2026-12-01",
+    "state": null,
+    "source": "https://www.niaf.org/programs/scholarships/",
+    "verifiedFields": [
+      "deadline",
+      "opens",
+      "amount",
+      "eligibility"
+    ]
+  },
+  {
+    "id": "scholarships-nspe-education-foundation-scholarships",
+    "name": "NSPE Education Foundation Scholarships",
+    "category": "major",
+    "categoryLabel": "Major-specific",
+    "amount": "$2,500–$5,000 by individual scholarship (e.g., Steinman Scholarship $5,000 x5, Auxiliary Legacy Scholarship $5,000 x2, Kimel Engineering Scholarship $2,500 x3, Hightower Fellowship $3,000 x2)",
+    "description": "For undergraduates (generally entering or continuing junior year) in a four-year ABET-accredited engineering program; some named awards are restricted by gender (Auxiliary Legacy, for women) or state residency (Kimel, for Kansas/Missouri residents). Administered by the National Society of Professional Engineers (NSPE) Education Foundation; all awards depend on available foundation funds each cycle.",
+    "deadlineLabel": "Application process was set to open \"early 2026\" for that cycle — check apply.nspe.org for current dates",
+    "url": "https://apply.nspe.org/",
+    "status": "check-sponsor",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Varies — check site",
+    "deadline": null,
+    "opens": null,
+    "state": null,
+    "source": "https://apply.nspe.org/",
+    "verifiedFields": [
+      "amount",
+      "eligibility"
+    ]
+  },
+  {
+    "id": "scholarships-national-federation-of-the-blind-scholarship-program",
+    "name": "National Federation of the Blind Scholarship Program",
+    "category": "need-based",
+    "categoryLabel": "Need-based",
+    "amount": "More than $300,000 in cash and prizes awarded in total across all 50 states, D.C., and Puerto Rico",
+    "description": "For legally blind applicants (in both eyes) residing in the U.S., D.C., or Puerto Rico, age 18 or older, pursuing or planning to pursue a full-time post-secondary degree at a U.S. institution (a limited number of awards go to part-time students). Requires an interview with the applicant's NFB state affiliate president, and winners must attend the entire NFB National Convention in person, including all scholarship activities.",
+    "deadlineLabel": "Historically March 31 each year — confirm the current cycle's deadline at scholarships.nfb.org",
+    "url": "https://scholarships.nfb.org",
+    "status": "check-sponsor",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "March 31 (annual)",
+    "deadline": null,
+    "opens": null,
+    "state": null,
+    "source": "https://scholarships.nfb.org",
+    "verifiedFields": [
+      "amount",
+      "eligibility",
+      "deadline_label"
+    ]
+  },
+  {
+    "id": "scholarships-jack-kent-cooke-undergraduate-transfer-scholarship",
+    "name": "Jack Kent Cooke Undergraduate Transfer Scholarship",
+    "category": "need-based",
+    "categoryLabel": "Need-based",
+    "amount": "Up to $55,000 per year (last-dollar funding, generally up to 3 years)",
+    "description": "For community college / two-year-institution students with sophomore status as of January 1, 2027 (or graduates since spring 2022) planning to transfer full-time into a bachelor's program in fall 2027. Requires a cumulative GPA of 3.5+, unmet financial need with household income up to $95,000, and no prior attendance at a four-year institution (narrow exceptions apply). U.S. citizenship is not required and there is no age limit. Applications go through the Common App for Transfer.",
+    "deadlineLabel": "2027 cycle: applications open August 19, 2026 and close December 9, 2026",
+    "url": "https://www.jkcf.org/our-scholarships/undergraduate-transfer-scholarship/faqs/",
+    "status": "open",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Dec 9, 2026",
+    "deadline": "2026-12-09",
+    "opens": "2026-08-19",
+    "state": null,
+    "source": "https://www.jkcf.org/our-scholarships/undergraduate-transfer-scholarship/faqs/",
+    "verifiedFields": [
+      "deadline",
+      "opens",
+      "amount",
+      "eligibility"
+    ]
+  },
+  {
+    "id": "scholarships-national-beta-club-scholarship",
+    "name": "National Beta Club Scholarship",
+    "category": "merit",
+    "categoryLabel": "Merit",
+    "amount": "Top 5 National Awards: $6,000–$20,000; plus five $2,500 awards and 250 $1,000 awards (all non-renewable)",
+    "description": "For Senior Beta Club members registered with National Beta Headquarters by the application deadline. Semifinalists must complete an additional semifinalist form roughly two months after the initial deadline.",
+    "deadlineLabel": "Historically January 15 (no extensions) — confirm the current cycle at betaclub.org",
+    "url": "https://wiki.betaclub.org/scholarship/index",
+    "status": "check-sponsor",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Jan 15 (annual)",
+    "deadline": null,
+    "opens": null,
+    "state": null,
+    "source": "https://wiki.betaclub.org/scholarship/index",
+    "verifiedFields": [
+      "amount",
+      "eligibility",
+      "deadline_label"
+    ]
+  },
+  {
+    "id": "scholarships-hispanic-heritage-youth-awards",
+    "name": "Hispanic Heritage Youth Awards",
+    "category": "leadership",
+    "categoryLabel": "Leadership & service",
+    "amount": "Gold/Silver/Bronze one-time innovation grants per category (amount not published; funds can go toward college or a community-service project)",
+    "description": "For high school seniors (unweighted GPA 3.0+ on a 4.0 scale, or 7.5+ on a 10.0 scale) graduating spring 2027 and planning to enroll at an accredited higher-education institution in 2027-2028. Recognizes leadership and achievement across categories such as STEM, business/entrepreneurship, education, and the arts; selected honorees must attend a virtual regional awards ceremony.",
+    "deadlineLabel": "November 1, 2026 (current cycle; now closed — check sponsor for next cycle)",
+    "url": "https://hispanicheritage.org/programs/leadership/youth-awards/",
+    "status": "closed",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Nov 1, 2026",
+    "deadline": "2026-11-01",
+    "opens": null,
+    "state": null,
+    "source": "https://hispanicheritage.org/programs/leadership/youth-awards/",
+    "verifiedFields": [
+      "deadline",
+      "eligibility"
+    ]
+  },
+  {
+    "id": "scholarships-tillman-scholars-program",
+    "name": "Tillman Scholars Program",
+    "category": "need-based",
+    "categoryLabel": "Need-based",
+    "amount": "Average $10,000 per academic year (varies by financial need and cost of attendance); up to 60 scholars selected annually",
+    "description": "For U.S. active-duty service members, veterans (pre- and post-9/11 eras, all branches including National Guard), and current or surviving spouses of service members/veterans, planning full-time enrollment in an accredited U.S. bachelor's, graduate, or professional degree program (certificates, associate degrees, and trade programs don't qualify; children of veterans are not eligible). No minimum GPA to apply, but a 3.0 GPA is required to renew.",
+    "deadlineLabel": "2027-2028 cycle: applications open December 3, 2026 — exact closing date not yet posted, check pattillmanfoundation.org/apply",
+    "url": "https://pattillmanfoundation.org/apply",
+    "status": "upcoming",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Varies — check site",
+    "deadline": null,
+    "opens": "2026-12-03",
+    "state": null,
+    "source": "https://pattillmanfoundation.org/apply",
+    "verifiedFields": [
+      "opens",
+      "eligibility"
+    ]
+  },
+  {
+    "id": "scholarships-optimist-international-essay-contest",
+    "name": "Optimist International Essay Contest",
+    "category": "essay",
+    "categoryLabel": "Essay-based",
+    "amount": "$2,500 at the District level (club-level winners advance to District competition)",
+    "description": "For students under 19 as of October 1 of the contest year who have not yet completed high school or its equivalent (including CEGEP in Québec). Entrants compete first at the local sponsoring Optimist Club level on an annual theme, with club winners advancing to a District contest for a $2,500 college scholarship. Entry is through the District where the student lives (or, for U.S. students on overseas military installations, the District of their last permanent U.S. home).",
+    "deadlineLabel": "Set by each local sponsoring Optimist Club, typically by early February — contact your local Club for its exact date",
+    "url": "https://www.optimist.org/Essay",
+    "status": "check-sponsor",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Early February (club-set)",
+    "deadline": null,
+    "opens": null,
+    "state": null,
+    "source": "https://www.optimist.org/Essay",
+    "verifiedFields": [
+      "amount",
+      "eligibility",
+      "deadline_label"
+    ]
+  },
+  {
+    "id": "scholarships-cspan-studentcam-documentary-competition",
+    "name": "C-SPAN StudentCam Documentary Competition",
+    "category": "creative",
+    "categoryLabel": "Creative & video",
+    "amount": "$250–$5,000 per student prize (Grand Prize $5,000; First $3,000; Second $1,500; Third $750; Honorable Mention $250), plus matching teacher/school prizes",
+    "description": "A national documentary competition for students in grades 6-12 (middle school and high school compete in separate divisions) who produce a short documentary responding to C-SPAN's annual civics theme. Prize money is split evenly among all students who produced a winning entry; additional $100 prizes are offered for behind-the-scenes production photos.",
+    "deadlineLabel": "Entries due by 11:59 p.m. PT, Wednesday, January 20, 2027",
+    "url": "https://www.studentcam.org/",
+    "status": "upcoming",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Jan 20, 2027",
+    "deadline": "2027-01-20",
+    "opens": null,
+    "state": null,
+    "source": "https://www.studentcam.org/prizes/",
+    "verifiedFields": [
+      "deadline",
+      "amount",
+      "eligibility"
+    ]
+  },
+  {
+    "id": "scholarships-bold-be-bold-no-essay-scholarship",
+    "name": "Bold.org \"Be Bold\" No-Essay Scholarship",
+    "category": "no-essay",
+    "categoryLabel": "No essay",
+    "amount": "$25,000",
+    "description": "Open to all students — high school, undergraduate, or graduate level — regardless of state, field of study, or GPA. No essay is required; the winner is chosen for the \"boldest\" Bold.org profile, reflecting earnestness, determination, and momentum rather than academic accomplishment alone. Applying earlier in the cycle improves the odds of winning.",
+    "deadlineLabel": "November 30, 2026 (recurring monthly-style cycle; winner announced December 1, 2026)",
+    "url": "https://www.bold.org/scholarships/the-be-bold-no-essay-scholarship",
+    "status": "open",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Nov 30, 2026",
+    "deadline": "2026-11-30",
+    "opens": null,
+    "state": null,
+    "source": "https://www.bold.org/scholarships/the-be-bold-no-essay-scholarship",
+    "verifiedFields": [
+      "deadline",
+      "amount",
+      "eligibility"
+    ]
+  },
+  {
+    "id": "scholarships-scholarshipowl-no-essay-scholarship",
+    "name": "ScholarshipOwl No Essay Scholarship",
+    "category": "no-essay",
+    "categoryLabel": "No essay",
+    "amount": "$1,000 (4 winners drawn each month)",
+    "description": "For applicants over age 16 who are legal residents of the 50 U.S. states, D.C., or a U.S. territory (Rhode Island and Michigan residents excluded), enrolled or planning to enroll within three months of registering at a qualifying U.S. high school, college, or university. No essay required; four winners are randomly drawn each month.",
+    "deadlineLabel": "Monthly drawing; no single fixed deadline — check sponsor for the current month's cutoff",
+    "url": "https://intercom.help/scholarshipowl/en/articles/4136054-what-is-the-scholarshipowl-no-essay-scholarship",
+    "status": "check-sponsor",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Monthly",
+    "deadline": null,
+    "opens": null,
+    "state": null,
+    "source": "https://intercom.help/scholarshipowl/en/articles/4136054-what-is-the-scholarshipowl-no-essay-scholarship",
+    "verifiedFields": [
+      "amount",
+      "eligibility"
+    ]
+  },
+  {
+    "id": "scholarships-georgia-hope-scholarship",
+    "name": "Georgia HOPE Scholarship",
+    "category": "merit",
+    "categoryLabel": "Merit",
+    "amount": "Pays a per-credit-hour tuition rate set annually by the state, varying by institution (roughly $105–$306 per credit hour for 2025-26; some schools use a flat per-term rate instead)",
+    "description": "For U.S. citizens or eligible non-citizens meeting Georgia residency rules (generally 12 consecutive months of residency for those who graduated Georgia high schools, 24 months for others) who are degree-seeking students in good academic standing at an eligible University System of Georgia, Technical College System of Georgia, or private HOPE-eligible Georgia college. Requires Selective Service registration where applicable, compliance with the Georgia Drug-Free Postsecondary Education Act, and no default on prior federal or Georgia financial aid.",
+    "deadlineLabel": "No single deadline — applications are accepted through the last day of the school term or a student's withdrawal date, whichever comes first; apply early since individual colleges may set their own earlier deadlines",
+    "url": "https://gafutures.org/hope-state-aid-programs/hope-zell-miller-scholarships/hope-scholarship/application-and-deadline",
+    "status": "open",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Rolling (through end of term)",
+    "deadline": null,
+    "opens": null,
+    "state": "GA",
+    "source": "https://gafutures.org/hope-state-aid-programs/hope-zell-miller-scholarships/hope-scholarship/application-and-deadline",
+    "verifiedFields": [
+      "deadline_label",
+      "eligibility",
+      "amount"
+    ]
+  },
+  {
+    "id": "scholarships-ny-excelsior-scholarship-program",
+    "name": "New York Excelsior Scholarship Program",
+    "category": "need-based",
+    "categoryLabel": "Need-based",
+    "amount": "Last-dollar award covering tuition at a SUNY or CUNY college after other aid (e.g., Pell, TAP) is applied, for 2–5 years depending on the degree program",
+    "description": "For U.S. citizens or eligible noncitizens with 12 continuous months of New York State residency, household combined federal adjusted gross income of $125,000 or less, pursuing an undergraduate degree full-time (12+ credits/term, 30+ credits/year) at a SUNY or CUNY college. Non-residents, including undocumented students, apply through the NYS DREAM Act instead. Recipients who move out of New York after graduating must repay the award as a loan, and award years used count against a service/residency requirement to live and work in New York after graduation.",
+    "deadlineLabel": "The NYS Excelsior Scholarship program is now closed for the 2026-27 academic year — check hesc.ny.gov for the next application window",
+    "url": "https://hesc.ny.gov/find-aid/nys-grants-scholarships/excelsior-scholarship-program",
+    "status": "closed",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Closed for 2026-27",
+    "deadline": null,
+    "opens": null,
+    "state": "NY",
+    "source": "https://hesc.ny.gov/find-aid/nys-grants-scholarships/excelsior-scholarship-program",
+    "verifiedFields": [
+      "status",
+      "amount",
+      "eligibility"
+    ]
+  },
+  {
+    "id": "scholarships-tennessee-promise",
+    "name": "Tennessee Promise",
+    "category": "need-based",
+    "categoryLabel": "Need-based",
+    "amount": "Last-dollar scholarship covering tuition and mandatory fees not covered by the Pell Grant, HOPE Scholarship, or Tennessee Student Assistance Award at Tennessee's community colleges, Colleges of Applied Technology, or eligible four-year institutions offering an associate degree",
+    "description": "For Tennessee high school seniors (class of 2027) who complete the TN Promise application, attend a mandatory meeting coordinated by their partnering mentoring organization (the Ayers Foundation Trust or tnAchieves, depending on county), submit the 2027-28 FAFSA by April 1, 2027, enroll full-time starting spring 2027, and complete 16 hours of community service (first 16 hours due August 1, 2027).",
+    "deadlineLabel": "Class of 2027 application was due November 2, 2026 — now closed; check collegefortn.org/TNPromise for the next cycle",
+    "url": "https://collegefortn.org/TNPromise",
+    "status": "closed",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Nov 2, 2026",
+    "deadline": "2026-11-02",
+    "opens": null,
+    "state": "TN",
+    "source": "https://collegefortn.org/TNPromise",
+    "verifiedFields": [
+      "deadline",
+      "eligibility",
+      "amount"
+    ]
+  },
+  {
+    "id": "scholarships-california-cal-grant-community-college-entitlement-award",
+    "name": "California Cal Grant Community College Entitlement Award",
+    "category": "need-based",
+    "categoryLabel": "Need-based",
+    "amount": "Varies by financial need and school costs; covers tuition/fee gaps at California Community Colleges — exact award amounts are not published on the program page, contact CSAC for current figures",
+    "description": "For students enrolling at a California Community College who submit a FAFSA (or CA Dream Act Application) along with a verified Cal Grant GPA, and who meet the California Student Aid Commission's general income, asset, and residency eligibility standards. A related Cal Grant C award (no GPA requirement) is available for students in occupational or technical programs who meet the same financial standards.",
+    "deadlineLabel": "September 2 for the Community College Entitlement Award (date may shift slightly year to year) — confirm the current cycle's exact date with the California Student Aid Commission",
+    "url": "https://www.csac.ca.gov/cal-grants",
+    "status": "check-sponsor",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "September 2",
+    "deadline": null,
+    "opens": null,
+    "state": "CA",
+    "source": "https://www.csac.ca.gov/cal-grants",
+    "verifiedFields": [
+      "eligibility",
+      "deadline_label"
     ]
   }
 ]

@@ -103,7 +103,9 @@
     "verifiedAt": "2026-10-31",
     "legacyDeadline": "Varies by role",
     "source": "https://careers.geaerospace.com/global/en/us-internships",
-    "verifiedFields": ["description"]
+    "verifiedFields": [
+      "description"
+    ]
   },
   {
     "id": "internships-bmw-group-internship",
@@ -118,7 +120,10 @@
     "verifiedAt": "2026-10-31",
     "legacyDeadline": "Varies by role",
     "source": "https://www.bmwgroup.jobs/us/en/opportunities/student/undergraduate-student.html",
-    "verifiedFields": ["description", "url"]
+    "verifiedFields": [
+      "description",
+      "url"
+    ]
   },
   {
     "id": "internships-schneider-electric-internship",
@@ -221,9 +226,9 @@
     "category": "media",
     "categoryLabel": "Media & creative",
     "amount": "Paid",
-    "description": "Production, digital media and business roles at the sports-media network for current students.",
+    "description": "Production, digital media, marketing and business-track internships at ESPN. Postings are managed through The Walt Disney Company's careers site (search \"ESPN\"), not a standalone ESPN careers portal.",
     "deadlineLabel": "Openings and dates vary by role",
-    "url": "https://www.espncareers.com",
+    "url": "https://www.disneycareers.com/en/internships-united-states",
     "status": "check-sponsor",
     "verifiedAt": null,
     "legacyDeadline": "Varies by role"
@@ -247,7 +252,7 @@
     "category": "media",
     "categoryLabel": "Media & entertainment",
     "amount": "Paid",
-    "description": "Music, pictures, PlayStation and entertainment technology tracks.",
+    "description": "Sony's consumer-electronics division (Sony Electronics Inc.) runs its own internship program at sonyjobs.com, open to students who have completed junior year (3.0+ GPA, U.S. work authorization). Sony Music, Sony Pictures and PlayStation (Sony Interactive Entertainment) run separate internship programs through their own career sites and do not post through sonyjobs.com.",
     "deadlineLabel": "Openings and dates vary by role",
     "url": "https://sonyjobs.com/internships.html",
     "status": "check-sponsor",
@@ -308,7 +313,11 @@
     "verifiedAt": "2026-10-31",
     "legacyDeadline": "Varies by role",
     "source": "https://jobs.mayoclinic.org/AIP",
-    "verifiedFields": ["name", "amount", "description"]
+    "verifiedFields": [
+      "name",
+      "amount",
+      "description"
+    ]
   },
   {
     "id": "internships-san-diego-zoo-summer-internship",
@@ -390,7 +399,9 @@
     "verifiedAt": "2026-10-31",
     "legacyDeadline": "Varies by role",
     "source": "https://www.goldmansachs.com/careers/students/programs-and-internships/americas/2027-summer-analyst-program",
-    "verifiedFields": ["description"]
+    "verifiedFields": [
+      "description"
+    ]
   },
   {
     "id": "internships-deloitte-internship-program",
@@ -474,7 +485,10 @@
     "verifiedAt": "2026-10-31",
     "legacyDeadline": "Varies by cycle",
     "source": "https://careers.state.gov/interns-fellows/student-internship-program/",
-    "verifiedFields": ["amount", "description"]
+    "verifiedFields": [
+      "amount",
+      "description"
+    ]
   },
   {
     "id": "internships-ibm-internship-program",
@@ -484,7 +498,7 @@
     "amount": "Paid",
     "description": "Software engineering, data, consulting and hardware internships for current students.",
     "deadlineLabel": "Openings and dates vary by role",
-    "url": "https://www.ibm.com/careers",
+    "url": "https://www.ibm.com/careers/us-en/early-career/internship",
     "status": "check-sponsor",
     "verifiedAt": null,
     "legacyDeadline": "Varies by role"
@@ -606,7 +620,12 @@
     "verifiedAt": "2026-10-31",
     "legacyDeadline": "Varies by role",
     "source": "https://jobs.uber.com/en/teams/emerging-talent/",
-    "verifiedFields": ["name", "amount", "description", "url"]
+    "verifiedFields": [
+      "name",
+      "amount",
+      "description",
+      "url"
+    ]
   },
   {
     "id": "internships-morgan-stanley-summer-analyst-associate-program",
@@ -655,7 +674,7 @@
     "amount": "Paid",
     "description": "Summer internships in finance, technology, risk and marketing for undergraduates.",
     "deadlineLabel": "Openings and dates vary by role",
-    "url": "https://www.americanexpress.com/en-us/careers",
+    "url": "https://www.americanexpress.com/en-us/careers/student-programs/us/",
     "status": "check-sponsor",
     "verifiedAt": null,
     "legacyDeadline": "Varies by role"
@@ -714,7 +733,11 @@
     "verifiedAt": "2026-10-31",
     "legacyDeadline": "Varies by role",
     "source": "https://www.ey.com/en_us/careers/student-entry-level-programs",
-    "verifiedFields": ["name", "description", "url"]
+    "verifiedFields": [
+      "name",
+      "description",
+      "url"
+    ]
   },
   {
     "id": "internships-conde-nast-internship-program",
@@ -757,7 +780,10 @@
     "verifiedAt": "2026-10-31",
     "legacyDeadline": "Varies by role",
     "source": "https://www.pfizer.com/en/about/careers/pfizer-futures",
-    "verifiedFields": ["description", "url"]
+    "verifiedFields": [
+      "description",
+      "url"
+    ]
   },
   {
     "id": "internships-merck-future-talent-program",
@@ -792,8 +818,8 @@
     "name": "Lawrence Livermore National Laboratory Student Internships",
     "category": "science",
     "categoryLabel": "Science & engineering",
-    "amount": "Stipend",
-    "description": "Research internships for undergrad and grad students in computing, physics and engineering at the DOE national lab.",
+    "amount": "Check current posting",
+    "description": "The Fusion Energy Summer Research Program, run by LLNL's Livermore Institute for Fusion Technology (LIFT), is a flexible, at-least-10-week summer internship for advanced undergraduate and graduate students applying physics, engineering, optics and computational modeling to fusion energy research. This is one specific LLNL student program, not a lab-wide internship listing; broader LLNL student opportunities are posted separately at llnl.gov.",
     "deadlineLabel": "Openings and dates vary by role",
     "url": "https://lift.llnl.gov/students",
     "status": "check-sponsor",
@@ -813,7 +839,10 @@
     "verifiedAt": "2026-10-31",
     "legacyDeadline": "Varies by role",
     "source": "https://www.nationalgeographic.org/about/careers/internships",
-    "verifiedFields": ["description", "url"]
+    "verifiedFields": [
+      "description",
+      "url"
+    ]
   },
   {
     "id": "internships-epa-pathways-internship-program",
@@ -841,7 +870,10 @@
     "verifiedAt": "2026-10-31",
     "legacyDeadline": "Varies by cycle",
     "source": "https://files.peacecorps.gov/documents/IPS-1-23-Interim-Policy.pdf",
-    "verifiedFields": ["amount", "description"]
+    "verifiedFields": [
+      "amount",
+      "description"
+    ]
   },
   {
     "id": "internships-brookings-institution-internship-program",
@@ -856,7 +888,11 @@
     "verifiedAt": "2026-10-31",
     "legacyDeadline": "Varies by cycle",
     "source": "https://www.brookings.edu/careers/internships/",
-    "verifiedFields": ["amount", "description", "url"]
+    "verifiedFields": [
+      "amount",
+      "description",
+      "url"
+    ]
   },
   {
     "id": "internships-world-wildlife-fund-bridge-internship-program",
@@ -896,5 +932,320 @@
     "status": "check-sponsor",
     "verifiedAt": null,
     "legacyDeadline": "Varies by office/cycle"
+  },
+  {
+    "id": "internships-netflix-internship-program",
+    "name": "Netflix Internship Program",
+    "category": "tech",
+    "categoryLabel": "Tech & streaming",
+    "amount": "Check current posting",
+    "description": "A 12-week summer internship program for students enrolled in a bachelor's, master's, or doctoral program, with most roles in Engineering and Data & Insights plus openings in Content, Finance & Strategy, Marketing, and Program Management. Locations include the United States, India, Poland, and Japan.",
+    "deadlineLabel": "Rolling; roles post late summer through spring",
+    "url": "https://jobs.netflix.com/intern-program",
+    "status": "check-sponsor",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Rolling"
+  },
+  {
+    "id": "internships-linkedin-internship-program",
+    "name": "LinkedIn Internship Program",
+    "category": "tech",
+    "categoryLabel": "Tech & business",
+    "amount": "Check current posting",
+    "description": "LinkedIn's Pathways & Programs internships for undergraduates and graduate students, spanning Business tracks (Global Business Organization, Marketing & Communications, Corporate Development, People Analytics, Product Marketing, Sales) as well as separate Technical and Creative internship tracks.",
+    "deadlineLabel": "Varies by track and cycle; check current postings",
+    "url": "https://careers.linkedin.com/pathways-programs/internships/Business",
+    "status": "check-sponsor",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Varies by role"
+  },
+  {
+    "id": "internships-palantir-technologies-internship",
+    "name": "Palantir Technologies Internship",
+    "category": "tech",
+    "categoryLabel": "Tech & engineering",
+    "amount": "Check current posting",
+    "description": "Software engineering, forward-deployed engineering, and product design internships hosted on Palantir's own careers site, with roles across the U.S. Work authorization and visa-sponsorship needs are collected during the application.",
+    "deadlineLabel": "Rolling; check individual postings",
+    "url": "https://jobs.lever.co/palantir",
+    "status": "check-sponsor",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Rolling"
+  },
+  {
+    "id": "internships-atlassian-internship-program",
+    "name": "Atlassian Internship Program",
+    "category": "tech",
+    "categoryLabel": "Tech & engineering",
+    "amount": "Paid",
+    "description": "A full-time, paid summer internship for students in their penultimate year of undergraduate or postgraduate study, with roles across Software Engineering, Design, Product Management, Security, Data/Analytics/Machine Learning, Site Reliability Engineering, Marketing, Sales, and Finance. U.S. and Canada recruiting runs roughly September to March for a May-to-September internship.",
+    "deadlineLabel": "Rolling; U.S./Canada recruiting ~Sept-March",
+    "url": "https://www.atlassian.com/company/careers/earlycareers?tab=interns",
+    "status": "check-sponsor",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Rolling"
+  },
+  {
+    "id": "internships-servicenow-internship-and-co-op-program",
+    "name": "ServiceNow Internship and Co-op Program",
+    "category": "tech",
+    "categoryLabel": "Tech & engineering",
+    "amount": "Paid",
+    "description": "Paid internships and co-ops across AI, Engineering & Product, Sales, and Marketing teams in the U.S., Asia Pacific, and Europe, with mentorship and potential return-offer or full-time conversion.",
+    "deadlineLabel": "Rolling; check current postings",
+    "url": "https://careers.servicenow.com/early-careers/",
+    "status": "check-sponsor",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Rolling"
+  },
+  {
+    "id": "internships-stripe-university-program",
+    "name": "Stripe University Program",
+    "category": "tech",
+    "categoryLabel": "Tech & finance",
+    "amount": "Check current posting",
+    "description": "Stripe's emerging-talent program for undergraduate and graduate students, hosting interns mainly in engineering along with past placements in machine learning and data science; recruiting timing generally follows local academic calendars.",
+    "deadlineLabel": "Varies by school/cycle; apply early",
+    "url": "https://stripe.com/jobs/university",
+    "status": "check-sponsor",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Varies by role"
+  },
+  {
+    "id": "internships-wells-fargo-early-careers-internship",
+    "name": "Wells Fargo Early Careers Internship",
+    "category": "finance",
+    "categoryLabel": "Finance & business",
+    "amount": "Check current posting",
+    "description": "Summer internship and development programs for undergraduate, graduate, and international students, with current openings spanning Audit, Wealth & Investment Management, Cybersecurity, Data Engineering, Technology, and Investment Banking.",
+    "deadlineLabel": "Varies by program; check application dates",
+    "url": "https://www.wellsfargojobs.com/early-careers/",
+    "status": "check-sponsor",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Varies by role"
+  },
+  {
+    "id": "internships-ubs-summer-internship-program",
+    "name": "UBS Summer Internship Program",
+    "category": "finance",
+    "categoryLabel": "Finance & business",
+    "amount": "Check current posting",
+    "description": "A summer internship for students entering their second-to-last or final year of undergraduate study (some divisions also accept master's candidates) across UBS business divisions, including wealth management and technology. U.S./Canada applicants generally need a cumulative GPA of 3.2 or higher and may apply to up to three roles per academic year.",
+    "deadlineLabel": "Rolling by region; US/Canada roles start June",
+    "url": "https://ubs.com/global/en/careers/early-careers/summer-internship-program.html",
+    "status": "check-sponsor",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Varies by region"
+  },
+  {
+    "id": "internships-charles-schwab-internship-academy",
+    "name": "Charles Schwab Internship Academy",
+    "category": "finance",
+    "categoryLabel": "Finance & business",
+    "amount": "Paid",
+    "description": "A paid, nine-week summer internship for students within one year of graduation, combining structured learning, networking, and hands-on project work across Corporate Functions (Finance, HR, Internal Audit), Retail Branch Network, Investor Services, and Technology.",
+    "deadlineLabel": "Check employer for current openings",
+    "url": "https://www.schwabjobs.com/early-careers-overview",
+    "status": "check-sponsor",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Varies by role"
+  },
+  {
+    "id": "internships-fidelity-investments-summer-internship-program",
+    "name": "Fidelity Investments Summer Internship Program",
+    "category": "finance",
+    "categoryLabel": "Finance & business",
+    "amount": "Check current posting",
+    "description": "A 10-week summer internship open to college students from all areas of study, who apply once and are considered across eight focus areas: Actuary, Audit/Risk/Compliance, Client Relations, Corporate Services Support, Finance, Human Resources, Operations, and Technology. Separate timelines apply to asset management, branch, and student-athlete tracks.",
+    "deadlineLabel": "Applications typically open mid-September to mid-October",
+    "url": "https://jobs.fidelity.com/en/students/internships/",
+    "status": "check-sponsor",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Fall (annual)"
+  },
+  {
+    "id": "internships-northern-trust-summer-internship",
+    "name": "Northern Trust Summer Internship",
+    "category": "finance",
+    "categoryLabel": "Finance & business",
+    "amount": "Paid",
+    "description": "A paid, highly competitive 10-week summer internship at the financial services firm, with placements such as Financial Control within Hedge Fund Services among the business areas students can be assigned to.",
+    "deadlineLabel": "Check employer for current openings",
+    "url": "https://www.northerntrust.com/united-states/about-us/careers/students-and-graduates",
+    "status": "check-sponsor",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Varies by role"
+  },
+  {
+    "id": "internships-bloomberg-internship-program",
+    "name": "Bloomberg Internship Program",
+    "category": "finance",
+    "categoryLabel": "Finance & data",
+    "amount": "Check current posting",
+    "description": "An immersive internship for students designed to build professional skills ahead of a possible full-time offer; Bloomberg highlights strong aptitude for finance or technical fields for related full-time roles. Completing select career-readiness programs can provide early access to internship applications.",
+    "deadlineLabel": "Check employer for current openings",
+    "url": "https://www.bloomberg.com/company/early-careers",
+    "status": "check-sponsor",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Varies by role"
+  },
+  {
+    "id": "internships-thomson-reuters-internship-program",
+    "name": "Thomson Reuters Internship Program",
+    "category": "media",
+    "categoryLabel": "Media & information",
+    "amount": "Paid",
+    "description": "Competitively paid internships for students and recent graduates across Sales, Technology, Marketing, Journalism, Legal, Finance, Operations, Consulting, Product Strategy, Editorial, and Manufacturing, with recruiting cycles starting in January, May, and September.",
+    "deadlineLabel": "Rolling; cycles start Jan/May/Sept",
+    "url": "https://www.thomsonreuters.com/en/careers/graduates-interns/internships.html",
+    "status": "check-sponsor",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Rolling"
+  },
+  {
+    "id": "internships-washington-post-summer-internships",
+    "name": "The Washington Post Summer Internships",
+    "category": "media",
+    "categoryLabel": "Media & creative",
+    "amount": "Paid",
+    "description": "Paid summer internships in two tracks: the Newsroom Summer Internship Program (reporters, photographers, videographers, editors, producers, designers, social media, audio) and Engineering & Business Operations Internships (engineering, app development, product design, finance, marketing, advertising, HR).",
+    "deadlineLabel": "Check employer for current openings",
+    "url": "https://corporate.washingtonpost.com/careers",
+    "status": "check-sponsor",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Varies by role"
+  },
+  {
+    "id": "internships-doe-suli-program",
+    "name": "DOE Science Undergraduate Laboratory Internships (SULI)",
+    "category": "science",
+    "categoryLabel": "Science & engineering",
+    "amount": "Paid stipend",
+    "description": "A U.S. Department of Energy Office of Science program placing undergraduates in research internships at DOE national laboratories across STEM fields tied to energy, environment, and national security. The Summer 2027 term application is due January 6, 2027, 5:00 PM ET.",
+    "deadlineLabel": "2027-01-06",
+    "url": "https://science.osti.gov/wdts/suli",
+    "status": "open",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Jan (annual)",
+    "deadline": "2027-01-06"
+  },
+  {
+    "id": "internships-noaa-hollings-scholarship",
+    "name": "NOAA Ernest F. Hollings Undergraduate Scholarship",
+    "category": "science",
+    "categoryLabel": "Science & policy",
+    "amount": "Paid ($700/week internship + tuition support)",
+    "description": "A two-year scholarship (up to $9,500/year in academic support) paired with a paid, 10-week summer internship ($700/week) at a NOAA facility, covering NOAA-related science, research, technology, policy, management, and education work.",
+    "deadlineLabel": "2027-01-31",
+    "url": "https://www.noaa.gov/hollings",
+    "status": "open",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Jan (annual)",
+    "deadline": "2027-01-31"
+  },
+  {
+    "id": "internships-cdc-student-short-term-opportunities",
+    "name": "CDC Student Short-Term Opportunities",
+    "category": "science",
+    "categoryLabel": "Science & healthcare",
+    "amount": "Check current posting",
+    "description": "Short-term public health science internship opportunities at the CDC for undergraduates, master's students, and doctoral/veterinary/medical students, with separate application pathways by academic level.",
+    "deadlineLabel": "Varies by pathway; check current postings",
+    "url": "https://www.cdc.gov/fellowships/php/opportunities/short-term.html",
+    "status": "check-sponsor",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Varies by role"
+  },
+  {
+    "id": "internships-nasa-jpl-internship-program",
+    "name": "NASA Jet Propulsion Laboratory Internship Program",
+    "category": "science",
+    "categoryLabel": "Science & engineering",
+    "amount": "Paid stipend",
+    "description": "Paid research internships for STEM (and some non-STEM) students through JPL's Academic Engagement Office, with most programs including a stipend. JPL recommends applying between October and February for summer placements; applications stay active for eight months.",
+    "deadlineLabel": "Varies by program; apply Oct-Feb for summer",
+    "url": "https://www.jpl.nasa.gov/edu/intern/resources/",
+    "status": "check-sponsor",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Varies by program"
+  },
+  {
+    "id": "internships-scripps-research-surf-program",
+    "name": "Scripps Research Summer Undergraduate Research Fellows (SURF)",
+    "category": "science",
+    "categoryLabel": "Science & research",
+    "amount": "Paid stipend",
+    "description": "A 10-week, full-time summer research internship at Scripps Research's La Jolla, CA campus, with students matched to one of 150+ labs. Includes a $7,200 stipend plus travel support and housing; 2027 dates are June 1-August 6 and are not flexible.",
+    "deadlineLabel": "2027-02-01",
+    "url": "https://education.scripps.edu/undergraduate/summer-research/surf-program",
+    "status": "open",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Feb (annual)",
+    "deadline": "2027-02-01"
+  },
+  {
+    "id": "internships-johns-hopkins-apl-pathways-internship",
+    "name": "Johns Hopkins Applied Physics Laboratory Pathways Internship",
+    "category": "science",
+    "categoryLabel": "Science & engineering",
+    "amount": "Paid",
+    "description": "Paid college internships (the Pathways program) at the Johns Hopkins Applied Physics Laboratory, with assignments in software development, hardware and electronic instrument design, signal processing, embedded systems, and modeling and simulation, plus select business roles. Requires a minimum 3.0 GPA and full-time enrollment the following semester.",
+    "deadlineLabel": "Rolling; posted each fall, open until filled",
+    "url": "https://www.jhuapl.edu/Careers/Internships",
+    "status": "check-sponsor",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Rolling"
+  },
+  {
+    "id": "internships-fbi-honors-internship-program",
+    "name": "FBI Honors Internship Program",
+    "category": "public",
+    "categoryLabel": "Public service & law enforcement",
+    "amount": "Paid",
+    "description": "A paid, full-time summer internship (June-August) for undergraduates between junior and senior year and for graduate/JD/PhD students, open to many majors including non-criminal-justice fields. Requires U.S. citizenship, full-time enrollment, a 3.0+ GPA, and ability to pass an FBI background investigation and receive a Top Secret clearance.",
+    "deadlineLabel": "Check employer for current openings",
+    "url": "https://testpp.fbijobs.gov/students-and-interns",
+    "status": "check-sponsor",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Varies by cycle"
+  },
+  {
+    "id": "internships-library-of-congress-junior-fellows-program",
+    "name": "Library of Congress Junior Fellows Program",
+    "category": "public",
+    "categoryLabel": "Public service & culture",
+    "amount": "Paid",
+    "description": "A paid, 10-week annual summer internship for undergraduate and graduate students and recent graduates, working on projects across Library of Congress divisions such as cataloging, archives, conservation, and copyright research. Onsite interns earn $17.78/hour; remote pay ranges $17.00-$18.79/hour depending on location. Applicants must be U.S. citizens enrolled, graduating, or recently graduated.",
+    "deadlineLabel": "Check employer for current application window",
+    "url": "https://www.loc.gov/item/internships/junior-fellows-program",
+    "status": "check-sponsor",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Varies by cycle"
+  },
+  {
+    "id": "internships-world-bank-group-wbg-pioneers",
+    "name": "World Bank Group WBG Pioneers Internship Program",
+    "category": "public",
+    "categoryLabel": "Public policy & development",
+    "amount": "Paid",
+    "description": "A paid internship for final-year undergraduates and master's/PhD students, with placements in Economics, Investment and Portfolio Management, Human Development, Social Sciences, Agriculture, Environment, Engineering, Urban Planning, Natural Resources Management, Private Sector Development, and Corporate Support. Two annual cycles: Spring/Summer (applications open Jan-Feb) and Winter/Fall (applications open Jul-Aug); applicants may apply to up to three positions.",
+    "deadlineLabel": "Two cycles: Jan-Feb and Jul-Aug application windows",
+    "url": "https://www.worldbank.org/en/about/careers/WBG-Pioneers",
+    "status": "check-sponsor",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Varies by cycle"
+  },
+  {
+    "id": "internships-united-nations-internship-programme",
+    "name": "United Nations Internship Programme",
+    "category": "public",
+    "categoryLabel": "Public service & foreign affairs",
+    "amount": "Unpaid",
+    "description": "An unpaid internship at the UN Secretariat (interns or their sponsoring institutions cover travel, housing, insurance and living costs; pay policies vary at other UN agencies/funds/programmes) for students enrolled in or within one year of graduating from a bachelor's, master's, or PhD program. Typical work spans research, drafting, meeting support, data analysis, and policy assistance; each posting on careers.un.org carries its own deadline.",
+    "deadlineLabel": "Varies by posting; apply before or within one year of graduation",
+    "url": "https://www.un.org/en/node/111705",
+    "status": "check-sponsor",
+    "verifiedAt": "2026-11-06",
+    "legacyDeadline": "Varies by posting"
   }
 ]
