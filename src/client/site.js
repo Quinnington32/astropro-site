@@ -466,6 +466,28 @@ $("[data-clear-saved]")?.addEventListener("click", async () => {
     }
   }
 });
+function fileToBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(String(reader.result).split(",")[1] || "");
+    reader.onerror = () => reject(reader.error);
+    reader.readAsDataURL(file);
+  });
+}
+async function formDataToPayload(form) {
+  const data = {};
+  for (const [name, value] of new FormData(form).entries()) {
+    if (value instanceof File) {
+      if (!value.size) continue;
+      data[name + "Name"] = value.name.slice(0, 200);
+      data[name + "Mime"] = value.type || "application/octet-stream";
+      data[name + "Base64"] = await fileToBase64(value);
+    } else {
+      data[name] = value;
+    }
+  }
+  return data;
+}
 function setupForms() {
   for (const form of $$("[data-intake]")) {
     const type = form.dataset.intake,
@@ -490,7 +512,16 @@ function setupForms() {
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
       if (button.disabled || !form.reportValidity()) return;
-      const data = Object.fromEntries(new FormData(form));
+      let data;
+      try {
+        data = await formDataToPayload(form);
+      } catch {
+        status.dataset.error = "true";
+        status.textContent =
+          "We could not read your uploaded file. Try a different file or remove it.";
+        status.focus();
+        return;
+      }
       data.type = type;
       data.consent = data.consent === "yes";
       const canonical = JSON.stringify(data);
@@ -547,6 +578,10 @@ function setupForms() {
             "Preference recorded",
             "Your do-not-contact preference is stored for the Student Resource Center. Use the link in an existing email for any separate mailing list.",
           ],
+          "partner-campaign": [
+            "Order received",
+            "Thanks! Our team has your campaign details and will follow up by email to confirm timing.",
+          ],
         }[type];
         status.innerHTML = `<h3>${received[0]}</h3><p>${received[1]}</p><p class="receipt">Reference: ${esc(receipt)}</p><button type="button" class="btn btn-ghost" data-new-request>Send another request</button>`;
         pending = null;
@@ -581,6 +616,129 @@ function setupForms() {
     }
   }
 }
+function randomOrderRef() {
+  const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ0123456789";
+  let ref = "";
+  for (let i = 0; i < 6; i++)
+    ref += chars[Math.floor(Math.random() * chars.length)];
+  return "AP-" + ref;
+}
+function setupPartnerPay() {
+  const root = $("[data-partner-pay]");
+  if (!root) return;
+  const select = $("#partnerMarket", root),
+    payLink = $("[data-pay-link]", root),
+    continueLink = $("[data-continue-link]", root),
+    refOut = $("[data-order-ref]", root),
+    business = root.dataset.paypalBusiness,
+    price = Number(root.dataset.price) || 0;
+  let ref;
+  try {
+    ref = sessionStorage.getItem("astropro.partner.orderRef");
+  } catch {}
+  if (!ref) {
+    ref = randomOrderRef();
+    try {
+      sessionStorage.setItem("astropro.partner.orderRef", ref);
+    } catch {}
+  }
+  if (refOut) refOut.textContent = ref;
+  const update = () => {
+    const option = select.options[select.selectedIndex];
+    const marketName = option && option.value ? option.textContent : "";
+    const ready = !!(option && option.value);
+    if (continueLink) {
+      if (ready) {
+        const url = new URL(continueLink.dataset.base, location.href);
+        url.searchParams.set("market", option.value);
+        url.searchParams.set("marketName", marketName);
+        url.searchParams.set("orderRef", ref);
+        continueLink.href = url.pathname + url.search;
+        continueLink.removeAttribute("aria-disabled");
+        continueLink.classList.remove("is-disabled");
+      } else {
+        continueLink.href = "#";
+        continueLink.setAttribute("aria-disabled", "true");
+        continueLink.classList.add("is-disabled");
+      }
+    }
+    if (payLink && business) {
+      if (ready) {
+        const url = new URL("https://www.paypal.com/cgi-bin/webscr");
+        url.searchParams.set("cmd", "_xclick");
+        url.searchParams.set("business", business);
+        url.searchParams.set(
+          "item_name",
+          "AstroPro student email campaign — " + marketName,
+        );
+        url.searchParams.set("item_number", ref);
+        url.searchParams.set("amount", price.toFixed(2));
+        url.searchParams.set("currency_code", "USD");
+        url.searchParams.set("no_shipping", "1");
+        payLink.href = url.href;
+        payLink.removeAttribute("aria-disabled");
+        payLink.classList.remove("is-disabled");
+      } else {
+        payLink.href = "mailto:michael@goastropro.com";
+        payLink.setAttribute("aria-disabled", "true");
+        payLink.classList.add("is-disabled");
+      }
+    }
+  };
+  select?.addEventListener("change", update);
+  update();
+  for (const link of [payLink, continueLink])
+    link?.addEventListener("click", (event) => {
+      if (link.getAttribute("aria-disabled") === "true") {
+        event.preventDefault();
+        select?.focus();
+        toast("Choose your market first.");
+      }
+    });
+}
+function setupPartnerOnboarding() {
+  const form = $('[data-intake="partner-campaign"]');
+  if (!form) return;
+  const query = new URLSearchParams(location.search),
+    market = query.get("market") || "",
+    marketName = query.get("marketName") || "",
+    orderRef = query.get("orderRef") || "";
+  for (const [name, value] of [
+    ["market", market],
+    ["marketName", marketName],
+    ["orderRef", orderRef],
+  ]) {
+    const input = form.elements.namedItem(name);
+    if (input) input.value = value;
+  }
+  const summary = $("[data-order-summary]");
+  if (summary) {
+    summary.textContent =
+      market && orderRef
+        ? "Market: " + marketName + " · Reference: " + orderRef
+        : "We couldn't find your order details. Start from the Property Partners page so your order is linked correctly.";
+    summary.hidden = false;
+  }
+  const flyerInput = form.elements.namedItem("flyer"),
+    designCheckbox = form.elements.namedItem("wantsFlyerDesigned");
+  const syncFlyerChoice = () => {
+    const hasFlyer = flyerInput && flyerInput.files && flyerInput.files.length;
+    const wantsDesigned = designCheckbox && designCheckbox.checked;
+    if (hasFlyer && designCheckbox) designCheckbox.checked = false;
+    if (flyerInput)
+      flyerInput.setCustomValidity(
+        !hasFlyer && !wantsDesigned
+          ? "Upload a flyer, or check the box to have AstroPro design one."
+          : "",
+      );
+  };
+  flyerInput?.addEventListener("change", syncFlyerChoice);
+  designCheckbox?.addEventListener("change", () => {
+    if (designCheckbox.checked && flyerInput) flyerInput.value = "";
+    syncFlyerChoice();
+  });
+  syncFlyerChoice();
+}
 function setupSchool() {
   const form = $("#schoolSearch");
   if (!form) return;
@@ -590,23 +748,22 @@ function setupSchool() {
   search.value = (params.get("school") || "").slice(0, 150);
   if ([...topic.options].some((o) => o.value === params.get("topic")))
     topic.value = params.get("topic");
+  search.addEventListener("input", () => search.setCustomValidity(""));
   form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    if (!form.reportValidity()) return;
-    const q = search.value.trim() + " official " + topic.value;
-    const link = document.createElement("a");
-    link.className = "btn btn-primary";
-    link.href = "https://www.google.com/search?q=" + encodeURIComponent(q);
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-    link.textContent =
-      "Search for " + search.value.trim() + " " + topic.value + " ↗";
-    const p = document.createElement("p");
-    p.className = "fineprint";
-    p.textContent =
-      "Choose a result on your school’s official website. AstroPro has not verified these search results.";
-    $("#schoolResults").replaceChildren(link, p);
-    link.focus();
+    search.value = search.value.trim().replace(/\s+/g, " ");
+    if (!search.value) {
+      event.preventDefault();
+      search.setCustomValidity("Enter your college or university name.");
+      search.reportValidity();
+      return;
+    }
+    // The browser submits the native GET form directly, including without JavaScript.
+    // Keep the campus selection when someone returns from their search results.
+    const next = new URLSearchParams({
+      school: search.value,
+      topic: topic.value,
+    });
+    history.replaceState(null, "", location.pathname + "?" + next);
   });
 }
 function setupAdmin() {
@@ -809,6 +966,8 @@ setupDirectory();
 setupResourceSearch();
 setupMarkets();
 setupForms();
+setupPartnerPay();
+setupPartnerOnboarding();
 setupSchool();
 setupAdmin();
 updateSaveButtons();

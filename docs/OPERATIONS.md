@@ -53,7 +53,7 @@ npx wrangler deploy
 node scripts/verify-live.mjs
 ```
 
-On the deployment owner's Mac, use the existing `default` profile for Workers/routes and `amos-setup` for D1 management. Other team members should use their own authorized Cloudflare login rather than copy an account credential. Apply only new, reviewed migrations before a release that requires them. The launch-hardening release requires no schema change.
+Use an authorized Cloudflare login for each operation. Apply reviewed database migrations with a D1-authorized login before releasing code that depends on them.
 
 The automated workflow publishes application versions without changing domains, routes, or cron triggers. Review and apply schema migrations deliberately before merging code that needs them. The live check verifies the same GitHub source commit and retries transient failures up to three times. If a run fails, inspect its failed step; use **Run workflow** on `main` to retry after fixing the cause. A post-publish verification failure does not automatically roll back the release; use the verified rollback procedure below if necessary.
 

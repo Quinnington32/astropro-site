@@ -33,6 +33,16 @@ Cards show a short preview with the full eligibility text and source notes under
 
 The organization submission form is under “Suggest a listing.” Its field names and API validation remain compatible with existing submissions. Guides keep detailed explanations in expandable sections, with jump links to each topic. No visitor tracker or email automation was added by the visual redesign.
 
+Financial aid has its own homepage section and a prominent starting link. The campus finder submits a native GET search to Google using the college name and selected topic, without requiring a second confirmation link. The site only allows native forms to submit to its own origin or `https://www.google.com`. Campus search results are external and should be checked against the school’s official website.
+
+## AstroPro student identity
+
+The project uses a custom **AstroPro Student Resource Center** logo, retaining AstroPro’s lettering, star, and ringed planet with a graduation cap and student descriptor. The site uses warm ivory (`#FBFAF6`), navy (`#172447`), restrained orange accents (`#E77B25` / text `#B35A28`), Sora medium-weight headings, and Work Sans body text.
+
+`public/brand/` contains the transparent PNG/lossless WebP logo, an SVG student-planet symbol, profile artwork, a campaign cover, brand tokens, font notices, and the downloadable ZIP. The primary logo is a raster asset; the small symbol is SVG. The visual guide is at `/brand/`. The ZIP remains at the established download URL so previous links deliver the current kit. Retired Step/SRC graphics are no longer part of the published brand assets.
+
+`public/assets/campus-life.webp` is generated editorial imagery, not a named school, partnership, or testimonial. Both the logo variation and photo were created using the built-in image_gen tool. Source references and prompts are recorded in the ignored release artifacts; the main company’s source assets are unchanged. The logo and imagery are copied into the repository and served locally with the rest of the site assets. Audit checks nested guide HTML and image references, and release verification compares the live pages and brand files to the exact checked build.
+
 ## Forms and private inbox
 
 The Worker persists organization submissions, mentor/mentee interest, data requests, and communication preferences in the dedicated D1 database. Validation runs server-side. Requests require same-origin JSON and explicit consent. A receipt is returned only after storage confirms the record. Reusing the same UUID and details returns the original receipt; reusing an ID with changed details is rejected. The browser retains an uncertain attempt in tab-scoped storage for a safe retry.
@@ -71,7 +81,7 @@ npx wrangler d1 migrations apply astropro-student-resource-center --remote
 npx wrangler deploy
 ```
 
-This Mac’s existing `amos-setup` profile can manage D1; its `default` profile can deploy Workers/routes. Neither credential is in the repo. The private inbox key is installed as `ADMIN_TOKEN` through Wrangler’s secret command via stdin, never command-line arguments.
+Use a Cloudflare login with D1 access for migrations and a Workers/Routes login for infrastructure changes. Store the private inbox key as `ADMIN_TOKEN` using Wrangler’s secret command and standard input.
 
 ### Automatic publishing
 

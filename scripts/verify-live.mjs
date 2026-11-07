@@ -32,7 +32,7 @@ for (const file of (await readdir("dist")).filter((x) => x.endsWith(".html"))) {
   );
   results.push({ file, status: 200, bytesMatch: true });
 }
-for (const file of [
+const assetFiles = [
   "assets/site.js",
   "assets/private-session.js",
   "assets/resource-search.js",
@@ -44,7 +44,14 @@ for (const file of [
   "resources/resume-template.docx",
   "resources/cover-letter-template.pdf",
   "resources/cover-letter-template.docx",
-]) {
+  "assets/favicon.svg",
+  "assets/apple-touch-icon.png",
+  "assets/social-card.svg",
+  "assets/social-card.png",
+  "assets/campus-life.webp",
+  ...(await readdir("dist/brand")).map((file) => "brand/" + file),
+];
+for (const file of assetFiles) {
   const r = await fetch(origin + "/" + file);
   assert.equal(r.status, 200, file);
   assert.equal(
@@ -53,6 +60,16 @@ for (const file of [
     file,
   );
 }
+const brandGuide = await fetch(origin + "/brand/");
+assert.equal(brandGuide.status, 200, "brand guide directory route");
+assert.equal(
+  digest(Buffer.from(await brandGuide.arrayBuffer())),
+  digest(await readFile("dist/brand/index.html")),
+  "brand guide route must match the checked guide",
+);
+const brandRedirect = await fetch(origin + "/brand", { redirect: "manual" });
+assert.equal(brandRedirect.status, 308, "brand guide slash redirect");
+assert.equal(brandRedirect.headers.get("location"), origin + "/brand/");
 assert.equal((await fetch(origin + "/does-not-exist-asrc-check")).status, 404);
 assert.equal((await fetch(origin + "/api/admin/submissions")).status, 401);
 assert.equal((await fetch(origin + "/api/admin/preferences")).status, 401);
@@ -164,7 +181,7 @@ const report = {
   sourceCommit: liveBuild.sourceCommit || null,
   origin,
   pages: results.length,
-  assetByteChecks: 11,
+  assetByteChecks: assetFiles.length,
   aliasFinal: alias.url,
   unauthorizedInboxStatus: 401,
   missingPageStatus: 404,
@@ -179,5 +196,5 @@ await writeFile(
   JSON.stringify(report, null, 2),
 );
 console.log(
-  `Production verified: ${results.length} pages match the checked build; 11 assets/downloads match; alias, 404, storage readiness, validation and private access checks pass; ${receipts.length} form receipts confirmed.`,
+  `Production verified: ${results.length} pages match the checked build; ${assetFiles.length} assets/downloads match; brand guide, alias, 404, storage readiness, validation and private access checks pass; ${receipts.length} form receipts confirmed.`,
 );

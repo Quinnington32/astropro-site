@@ -187,30 +187,37 @@ const home = `
 <section class="home-hero">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <p class="hero-badge"><span aria-hidden="true">✦</span> A little direction. A lot of possibility.</p>
-      <h1>Less searching.<br><span>More possibilities.</span></h1>
-      <p class="lede">Scholarships, careers, housing, and a little help along the way. Your next step starts here.</p>
+      <p class="hero-badge">A little help for your next big thing</p>
+      <h1>Your next chapter<br><span>starts here.</span></h1>
+      <p class="lede">Scholarships, careers, housing, and support for life at college. Find a good place to start.</p>
       <form class="home-search" action="search.html" method="get" role="search">
         <label class="sr-only" for="homeSearch">Search all student resources</label>
         ${icon("search")}<input id="homeSearch" name="q" type="search" placeholder="Scholarships, housing, career help…" maxlength="120" required><button class="btn btn-primary" type="submit">Search ${icon("arrow")}</button>
       </form>
-      <div class="popular-links"><span>Start with</span><a href="scholarships.html">Scholarships ↗</a><a href="housing.html">Housing ↗</a><a href="school-resources.html">Campus help ↗</a></div>
+      <div class="popular-links"><span>Start with</span><a href="financial-aid.html">Financial aid ↗</a><a href="housing.html">Housing ↗</a><a href="school-resources.html">Campus help ↗</a></div>
       <p class="hero-note">${icon("check")} Free to explore. No account needed.</p>
     </div>
-    <aside class="hero-board" aria-label="Explore your next step">
-      <div class="orbit orbit-one" aria-hidden="true"></div><div class="orbit orbit-two" aria-hidden="true"></div><span class="board-star" aria-hidden="true">✦</span><span class="board-dot" aria-hidden="true"></span>
-      <div class="board-label">YOUR NEXT CHAPTER</div>
-      <a class="board-card board-funding" href="scholarships.html"><span class="board-icon tone-mint">${icon("scholarships")}</span><span><small>A little less tuition stress</small><strong>Find your funding.</strong><span class="board-meta">${scholarships.length} scholarships to explore</span></span><span class="board-arrow" aria-hidden="true">↗</span></a>
-      <a class="board-card board-career" href="internships.html"><span class="board-icon tone-lavender">${icon("internships")}</span><span><small>Make your next move</small><strong>Build your future.</strong><span class="board-meta">${internships.length} career programs</span></span><span class="board-arrow" aria-hidden="true">↗</span></a>
-      <a class="board-card board-housing" href="housing.html"><span class="board-icon tone-peach">${icon("housing")}</span><span><small>A place to call yours</small><strong>Feel at home.</strong><span class="board-meta">${markets.length} campus markets</span></span><span class="board-arrow" aria-hidden="true">↗</span></a>
-      <span class="board-caption">Good things are ahead. <span aria-hidden="true">⤴</span></span>
-    </aside>
+    <figure class="campus-visual">
+      <div class="campus-photo"><img src="assets/campus-life.webp" width="1000" height="1500" alt="Students talking together on a leafy campus path" fetchpriority="high" decoding="async"></div>
+      <figcaption><span class="campus-caption-icon" aria-hidden="true">${icon("guides")}</span><span><strong>A little direction.</strong><small>A lot of possibility.</small></span></figcaption>
+      <span class="campus-spark" aria-hidden="true">✦</span>
+    </figure>
   </div>
 </section>
 <section id="resources" class="home-resources">
   <div class="wrap">
-    <div class="section-head section-head-row"><div><p class="eyebrow">Pick your next step</p><h2>A good place to start.</h2></div><p>You’ve got options. Let’s find yours.</p></div>
+    <div class="section-head section-head-row"><div><p class="eyebrow">Find your next step</p><h2>What can we help you with?</h2></div><p>You’ve got options. Let’s find yours.</p></div>
     <div class="category-grid">${homeCategories.map(([symbol, href, title, description, count, tone]) => `<a class="category-card" href="${href}"><div class="category-top"><span class="category-icon tone-${tone}">${icon(symbol)}</span><span class="category-arrow" aria-hidden="true">↗</span></div><h3>${title}</h3><p>${description}</p><span class="category-foot">${count} ${icon("arrow")}</span></a>`).join("")}</div>
+  </div>
+</section>
+<section class="home-aid" id="financial-aid" aria-labelledby="aidHeading">
+  <div class="wrap aid-panel">
+    <div class="aid-intro"><p class="eyebrow">Financial aid</p><h2 id="aidHeading">Make sense of paying for college.</h2><p>FAFSA, grants, work-study, and college costs. Start with clear guidance and official tools.</p><a class="btn btn-primary" href="financial-aid.html">Explore financial aid ${icon("arrow")}</a></div>
+    <div class="aid-links">
+      <a href="financial-aid.html#guide-step-1"><span class="category-icon tone-butter">${icon("scholarships")}</span><span><strong>FAFSA & aid tools</strong><small>Official places to start</small></span><span aria-hidden="true">↗</span></a>
+      <a href="financial-aid.html#guide-step-2"><span class="category-icon tone-butter">${icon("guides")}</span><span><strong>Dates & deadlines</strong><small>Plan your next step</small></span><span aria-hidden="true">↗</span></a>
+      <a href="financial-aid.html#guide-step-4"><span class="category-icon tone-butter">${icon("money")}</span><span><strong>Understand college costs</strong><small>Find your school’s net price calculator</small></span><span aria-hidden="true">↗</span></a>
+    </div>
   </div>
 </section>
 <section id="mission" class="home-support">
@@ -481,7 +488,7 @@ emit(
     "Your next steps, saved.",
     "Good finds, all in one place. Your shortlist stays in this browser.",
   ) +
-    `<section class="wrap"><p class="notice">Saved items don’t create an account or email subscription. Clearing browser data removes your list. You can export a backup and import it in another browser.</p><div class="admin-controls"><button class="btn btn-ghost" data-export-saved>Export saved list</button><button class="btn btn-ghost" type="button" data-import-saved>Import saved list</button><input id="savedImport" aria-label="Import an AstroPro saved list" type="file" accept="application/json,.json" hidden><button class="btn btn-ghost" data-clear-saved>Clear saved list</button></div><p class="result-count" id="savedCount" role="status" aria-live="polite"></p><div class="listing-grid" id="savedGrid"></div><div class="empty-state" id="savedEmpty"><h2>Make room for your next opportunity.</h2><p>Use the Save button on a scholarship, career program, discount, or property.</p><a class="btn btn-primary" href="scholarships.html">Find something to save</a></div></section>`,
+    `<section class="wrap"><p class="notice">Saved items don’t create an account or email subscription. Clearing browser data removes your list. You can export a backup and import it in another browser.</p><div class="admin-controls"><button class="btn btn-ghost" data-export-saved>Export saved list</button><button class="btn btn-ghost" type="button" data-import-saved>Import saved list</button><input id="savedImport" aria-label="Import a Student Resource Center saved list" type="file" accept="application/json,.json" hidden><button class="btn btn-ghost" data-clear-saved>Clear saved list</button></div><p class="result-count" id="savedCount" role="status" aria-live="polite"></p><div class="listing-grid" id="savedGrid"></div><div class="empty-state" id="savedEmpty"><h2>Make room for your next opportunity.</h2><p>Use the Save button on a scholarship, career program, discount, or property.</p><a class="btn btn-primary" href="scholarships.html">Find something to save</a></div></section>`,
 );
 const topics = [
   "financial aid",
@@ -504,7 +511,7 @@ emit(
     "Your school is a good place to start.",
     "Find the campus services you may already have access to.",
   ) +
-    `<section class="wrap"><form class="school-search" id="schoolSearch"><div><label for="schoolName">College or university name</label><input id="schoolName" name="school" type="search" required maxlength="150" placeholder="e.g. University of Houston" autocomplete="organization"></div><div><label for="schoolTopic">I’m looking for</label><select name="topic" id="schoolTopic">${topics.map((t) => `<option>${e(t)}</option>`).join("")}</select></div><button class="btn btn-primary" type="submit">Find official campus resources</button></form><div id="schoolResults" class="school-results" role="status" aria-live="polite"></div><p class="fineprint">This tool creates a web search for your school’s official resources. Check the domain and school name before sharing personal information. Search results are provided by Google, not verified by AstroPro.</p><div class="callout"><h2>Still choosing a school?</h2><p>Explore accredited institutions and official college information through the U.S. Department of Education.</p>${external("https://nces.ed.gov/collegenavigator/", "Open College Navigator", "btn btn-ghost")}</div></section>`,
+    `<section class="wrap"><form class="school-search" id="schoolSearch" action="https://www.google.com/search" method="get" role="search"><div><label for="schoolName">College or university name</label><input id="schoolName" name="as_q" type="search" required maxlength="150" placeholder="e.g. University of Houston" autocomplete="organization"></div><div><label for="schoolTopic">I’m looking for</label><select name="as_epq" id="schoolTopic">${topics.map((t) => `<option>${e(t)}</option>`).join("")}</select></div><button class="btn btn-primary" type="submit">Search campus support ${icon("arrow")}</button><p class="fineprint">Opens Google search results for your school and topic. Choose your school’s official website.</p></form><div class="callout"><h2>Still choosing a school?</h2><p>Explore accredited institutions and official college information through the U.S. Department of Education.</p>${external("https://nces.ed.gov/collegenavigator/", "Open College Navigator", "btn btn-ghost")}</div></section>`,
 );
 const privacy = `<section class="wrap prose"><p class="fineprint">Effective October 31, 2026</p><h2>What this resource center collects</h2><p>You can browse without an account. Saving a resource stores its identifier in your browser’s local storage. Your saved list stays on your device unless you choose to export or share it.</p><p>If you submit a resource, mentoring interest, or data request, we collect the fields you provide, your agreement to the request-specific privacy notice, and a receipt identifier. These records are stored privately using Cloudflare D1 so the AstroPro team can review and respond. Forms do not subscribe you to a newsletter.</p><h2>Request handling and security</h2><p>Submission records are accessible only through an authenticated staff interface. We use short-lived, hashed network identifiers for abuse prevention; we do not store raw IP addresses in the submission database. Our hosting provider may process technical request information to operate and protect the service.</p><p>Resource and mentoring requests are retained for up to 90 days. Data requests are retained for up to 90 days while handled by the team. Communication preferences retain an email address and a dated do-not-contact record until changed or removed through a verified data request. Browser storage for a pending form may retain its receipt identifier and content in your current tab until it is accepted or you close the tab.</p><h2>How information is used</h2><p>We use a submitted request to review a resource, assess a mentoring inquiry, respond to you, or handle your data or communication preference request. We do not publish form submissions automatically or sell your contact information. We do not share a school-provided student directory through this service.</p><h2>External sites</h2><p>Applications and provider offers open on third-party sites with their own terms and privacy practices. Their cookies, eligibility checks, and data collection are outside this resource center. Our school finder opens a search with Google. Fonts and site assets are served from our own origin.</p><h2>Your choices</h2><p>Use <a href="data-requests.html">Your data</a> to request access, correction, or deletion. We may ask you to verify your email or identity before disclosing or changing a record. Use <a href="unsubscribe.html">Email preferences</a> to record a do-not-contact preference for this resource center.</p><p>If you already receive an AstroPro email from another system, use the unsubscribe link in that message or contact us. This site cannot confirm the state of a separate mailing list.</p><h2>Contact</h2><p>Email <a href="mailto:admin@astropromarketing.com">admin@astropromarketing.com</a>. Please do not submit health details, passwords, government identifiers, financial account information, or other sensitive personal information through these forms.</p></section>`;
 emit(
@@ -544,7 +551,132 @@ emit(
     "Useful starting points. Clear expectations.",
     "We collect resources that help students navigate college and take their next step.",
   ) +
-    `<section class="wrap prose"><h2>What we do</h2><p>AstroPro Student Resource Center is a free directory and guide collection. We link to scholarship sponsors, employers, providers, property sources, and campus services. Those organizations make their own decisions and set their own rules.</p><h2>How resources are reviewed</h2><p>We prefer official sources. A “source reviewed” date means we checked the linked source for the specified information; it does not promise the provider will keep the same terms. Other entries remain starting points whose current rules need confirmation. Closed and upcoming cycles are labeled where dates are known.</p><p>Resources without a verifiable current source may be withheld. We don’t invent deadlines, availability, partnerships, rankings, or review scores. Listing counts are generated from published records.</p><h2>Housing and commercial offers</h2><p>A property mention is not a guarantee of rental suitability or an endorsement. Map links are searches, not verified listings. We do not collect rental applications or payments. Discounts may involve paid subscriptions, renewals, or third-party verification; read the terms before signing up.</p><h2>Corrections and submissions</h2><p>Spot something wrong? <a href="index.html#organizations">Send the official source and a correction</a>. Submissions are reviewed by people and are not automatically published. Our directory currently has no paid-placement ordering.</p><h2>What is available here</h2><p>Browse directories, use guides, save a shortlist on your device, find campus resources, or send a request. We do not provide automatic scholarship matching, a live job feed, personalized financial or medical advice, or a student email list.</p></section>`,
+    `<section class="wrap prose"><h2>What we do</h2><p>Student Resource Center is a free directory and guide collection, and a project by AstroPro. We link to scholarship sponsors, employers, providers, property sources, and campus services. Those organizations make their own decisions and set their own rules.</p><h2>How resources are reviewed</h2><p>We prefer official sources. A “source reviewed” date means we checked the linked source for the specified information; it does not promise the provider will keep the same terms. Other entries remain starting points whose current rules need confirmation. Closed and upcoming cycles are labeled where dates are known.</p><p>Resources without a verifiable current source may be withheld. We don’t invent deadlines, availability, partnerships, rankings, or review scores. Listing counts are generated from published records.</p><h2>Housing and commercial offers</h2><p>A property mention is not a guarantee of rental suitability or an endorsement. Map links are searches, not verified listings. We do not collect rental applications or payments. Discounts may involve paid subscriptions, renewals, or third-party verification; read the terms before signing up.</p><h2>Corrections and submissions</h2><p>Spot something wrong? <a href="index.html#organizations">Send the official source and a correction</a>. Submissions are reviewed by people and are not automatically published. Our directory currently has no paid-placement ordering.</p><h2>What is available here</h2><p>Browse directories, use guides, save a shortlist on your device, find campus resources, or send a request. We do not provide automatic scholarship matching, a live job feed, personalized financial or medical advice, or a student email list.</p></section>`,
+);
+const PARTNER_CAMPAIGN_PRICE = 499;
+const PAYPAL_BUSINESS_EMAIL = (
+  process.env.PAYPAL_BUSINESS_EMAIL || "michael.squinn8989@gmail.com"
+).trim();
+const partnerSteps = [
+  [
+    "Complete your payment",
+    `Pick your campus market below and pay the $${PARTNER_CAMPAIGN_PRICE} campaign fee through PayPal. You’ll get a reference code — keep it handy.`,
+  ],
+  [
+    "Tell us about your campaign",
+    "Come back here and continue to a short form: your contact details, what you want the email to say, a link for students to click, and either your flyer or a request for us to design one.",
+  ],
+  [
+    "We send your email",
+    "Our team reviews your details and sends your campaign to the student list for that market. We’ll email you to confirm timing.",
+  ],
+];
+const partnerPayBody =
+  hero(
+    "Put your property in front of our students.",
+    "AstroPro’s Student Resource Center reaches students actively searching for off-campus housing. We take pride in being a resource students trust — and we know choosing where to live is a big decision, which is why we’re careful about what reaches their inbox.",
+    "",
+    "Property & business partners",
+  ) +
+  `<section class="wrap prose">
+    <h2>Why partners work with us</h2>
+    <p>Off-campus housing is one of the biggest decisions a student makes each year. Students come to the Student Resource Center looking for a real place to start — not a sales pitch — and we work to keep it that way. A campaign email through AstroPro reaches that same audience directly, for the campus market you choose.</p>
+  </section>
+  <section class="wrap">
+    <div class="section-head">
+      <span class="kicker-sm">The process</span>
+      <h2>How a campaign works</h2>
+    </div>
+    <div class="step-list">
+      ${partnerSteps
+        .map(
+          ([title, body], i) =>
+            `<div class="step"><div class="n">${i + 1}</div><div class="body"><h3>${e(title)}</h3><p>${e(body)}</p></div></div>`,
+        )
+        .join("")}
+    </div>
+  </section>
+  <section class="wrap" data-partner-pay data-paypal-business="${e(PAYPAL_BUSINESS_EMAIL)}" data-price="${PARTNER_CAMPAIGN_PRICE}">
+    <div class="callout">
+      <h2>Step 1 · Choose your market and pay</h2>
+      <p class="fineprint">Your reference code: <code data-order-ref></code> — this is included automatically when you click Pay, and carries through to your onboarding form.</p>
+      <div class="field">
+        <label for="partnerMarket">Campus market</label>
+        <select id="partnerMarket">
+          <option value="">Choose a market…</option>
+          ${markets.map((m) => `<option value="${e(m.id)}">${e(m.school)} — ${e(m.place)}</option>`).join("")}
+        </select>
+      </div>
+      <p class="award">$${PARTNER_CAMPAIGN_PRICE} flat rate, any market.</p>
+      ${
+        PAYPAL_BUSINESS_EMAIL
+          ? `<a data-pay-link class="btn btn-primary is-disabled" aria-disabled="true" target="_blank" rel="noopener noreferrer" href="mailto:michael@goastropro.com">Pay with PayPal <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>`
+          : `<p class="notice">Online payment isn’t configured yet. Contact <a href="mailto:michael@goastropro.com">michael@goastropro.com</a> to arrange payment and we’ll get your campaign started.</p>`
+      }
+      <p class="fineprint">After PayPal confirms your payment, continue to the onboarding form below.</p>
+      <a data-continue-link data-base="partner-onboarding.html" class="btn btn-ghost" href="partner-onboarding.html">Continue to onboarding ${icon("arrow")}</a>
+    </div>
+  </section>
+  <section class="wrap prose">
+    <h2>Questions before you pay?</h2>
+    <p>Email <a href="mailto:michael@goastropro.com">michael@goastropro.com</a> or <a href="mailto:cory@goastropro.com">cory@goastropro.com</a> and we’ll help you get set up.</p>
+  </section>`;
+emit(
+  "property-partners.html",
+  "Property & business partners",
+  "Send a paid campaign email to students in your campus market. Pay with PayPal, then tell us what you'd like to say.",
+  partnerPayBody,
+);
+const partnerCampaignForm = form({
+  type: "partner-campaign",
+  button: "Submit campaign order",
+  disclosure:
+    "Our team reviews every campaign before it goes out. We'll follow up by email to confirm timing.",
+  fields:
+    `<input type="hidden" name="market" value="">` +
+    `<input type="hidden" name="marketName" value="">` +
+    `<input type="hidden" name="orderRef" value="">` +
+    field("contactName", "Your name") +
+    field("email", "Your email", "email") +
+    field("phone", "Phone", "tel", { required: false, max: 40 }) +
+    field("subject", "Email subject line", "text", {
+      placeholder: "e.g. New move-in special near campus",
+      max: 200,
+    }) +
+    field("instructions", "What should the email say?", "textarea", {
+      max: 4000,
+      rows: 6,
+      placeholder:
+        "Tell us about your property, the offer, and anything students should know.",
+    }) +
+    field("url", "Link for students to click", "url", {
+      required: false,
+      max: 1000,
+      placeholder: "https://",
+      hint: "Your listing, application, or website. Leave blank if you don’t have one yet.",
+    }) +
+    field("flyer", "Upload a flyer", "file", {
+      required: false,
+      accept: "image/png,image/jpeg,image/webp,application/pdf",
+      hint: "PNG, JPEG, WebP, or PDF.",
+    }) +
+    field("wantsFlyerDesigned", "", "checkbox", {
+      checkboxLabel: "Have AstroPro design the flyer for me instead",
+    }),
+});
+emit(
+  "partner-onboarding.html",
+  "Partner campaign onboarding",
+  "Tell AstroPro what you'd like your student campaign email to say.",
+  hero(
+    "Tell us about your campaign.",
+    "A few details and you're set — our team handles the rest.",
+    "",
+    "Property & business partners",
+  ) +
+    `<section class="wrap"><p class="notice" data-order-summary hidden></p></section>` +
+    `<section class="wrap form-layout"><div class="prose"><h2>Before you submit</h2><p>Complete payment on the <a href="property-partners.html">Property Partners page</a> first if you haven’t already. Use the same reference code so we can match your order to your payment.</p><ul class="submission-checks"><li>${icon("check")} Upload a flyer, or ask us to design one.</li><li>${icon("check")} Tell us exactly what the email should say.</li><li>${icon("check")} We’ll confirm timing by email before it goes out.</li></ul></div><div class="form-panel">${partnerCampaignForm}</div></section>`,
+  { noindex: true },
 );
 emit(
   "admin.html",
@@ -554,7 +686,7 @@ emit(
     "Review inbox",
     "Staff access only. Use your private inbox access key. This page is not linked from public navigation.",
   ) +
-    `<section class="wrap"><form id="adminLogin" class="school-search"><label for="adminToken">Private access key</label><input id="adminToken" type="password" required autocomplete="off" minlength="32"><button class="btn btn-primary">Open inbox</button></form><div id="adminMessage" role="status" aria-live="polite"></div><div id="adminInbox" hidden><div class="admin-controls"><button class="btn btn-primary" type="button" id="adminRefresh">Refresh</button><button class="btn btn-ghost" type="button" id="adminMore" hidden>Load older records</button><button class="btn btn-ghost" type="button" id="adminLogout">Lock inbox</button></div><div class="directory-controls admin-filters"><div><label for="adminView">View</label><select id="adminView"><option value="submissions">Requests</option><option value="preferences">Do-not-contact preferences</option></select></div><div><label for="adminStatus">Review status</label><select id="adminStatus"><option value="">All statuses</option><option value="new">New</option><option value="reviewed">Reviewed</option><option value="resolved">Resolved</option></select></div><div><label for="adminType">Request type</label><select id="adminType"><option value="">All types</option><option value="listing">Resource submission</option><option value="mentee">Student mentoring interest</option><option value="mentor">Volunteer mentor interest</option><option value="data-request">Personal data request</option><option value="unsubscribe">Email preference request</option></select></div></div><p class="fineprint">Requests are private. Verify identity before fulfilling access, correction, or deletion requests. Follow-up is manual; this inbox does not send email. It locks after 15 minutes without activity.</p><div id="adminRecords"></div></div></section>`,
+    `<section class="wrap"><form id="adminLogin" class="school-search"><label for="adminToken">Private access key</label><input id="adminToken" type="password" required autocomplete="off" minlength="32"><button class="btn btn-primary">Open inbox</button></form><div id="adminMessage" role="status" aria-live="polite"></div><div id="adminInbox" hidden><div class="admin-controls"><button class="btn btn-primary" type="button" id="adminRefresh">Refresh</button><button class="btn btn-ghost" type="button" id="adminMore" hidden>Load older records</button><button class="btn btn-ghost" type="button" id="adminLogout">Lock inbox</button></div><div class="directory-controls admin-filters"><div><label for="adminView">View</label><select id="adminView"><option value="submissions">Requests</option><option value="preferences">Do-not-contact preferences</option></select></div><div><label for="adminStatus">Review status</label><select id="adminStatus"><option value="">All statuses</option><option value="new">New</option><option value="reviewed">Reviewed</option><option value="resolved">Resolved</option></select></div><div><label for="adminType">Request type</label><select id="adminType"><option value="">All types</option><option value="listing">Resource submission</option><option value="mentee">Student mentoring interest</option><option value="mentor">Volunteer mentor interest</option><option value="data-request">Personal data request</option><option value="unsubscribe">Email preference request</option><option value="partner-campaign">Partner campaign order</option></select></div></div><p class="fineprint">Requests are private. Verify identity before fulfilling access, correction, or deletion requests. Follow-up is manual; this inbox does not send email. It locks after 15 minutes without activity.</p><div id="adminRecords"></div></div></section>`,
   { noindex: true },
 );
 emit(
@@ -626,6 +758,16 @@ for (const data of pages) {
       "src",
       canonicalRoot + "assets/site.js",
     );
+    $("img[src]").each((_, img) => {
+      const src = $(img).attr("src");
+      if (src && !/^(https?:|data:)/.test(src))
+        $(img).attr("src", canonicalRoot + src);
+    });
+    $('link[rel="icon"],link[rel="apple-touch-icon"]').each((_, link) => {
+      const href = $(link).attr("href");
+      if (href && !/^https?:/.test(href))
+        $(link).attr("href", canonicalRoot + href);
+    });
     $("a").each((_, a) => {
       const href = $(a).attr("href");
       if (href && !/^(https?:|mailto:|#)/.test(href))

@@ -1,0 +1,26 @@
+{
+  "name": "AstroPro Student Resource Center",
+  "parentBrand": "AstroPro",
+  "logo": "AstroPro wordmark and planet with graduation cap and Student Resource Center descriptor",
+  "colors": {
+    "navy": "#172447",
+    "brandNavy": "#111B69",
+    "orange": "#E77B25",
+    "textAccent": "#B35A28",
+    "ivory": "#FBFAF6",
+    "bodyText": "#606878",
+    "sand": "#F3EEE6"
+  },
+  "typography": {
+    "heading": {
+      "family": "Sora",
+      "weight": [550, 600]
+    },
+    "body": {
+      "family": "Work Sans",
+      "weight": [400, 600]
+    }
+  },
+  "minimumFullLogoWidthPx": 190,
+  "minimumSymbolWidthPx": 24
+}

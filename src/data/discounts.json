@@ -8,7 +8,11 @@
     "url": "https://www.myunidays.com/US/en-US",
     "verifiedAt": "2026-10-31",
     "source": "https://www.myunidays.com/US/en-US",
-    "verifiedFields": ["amount", "description", "url"]
+    "verifiedFields": [
+      "amount",
+      "description",
+      "url"
+    ]
   },
   {
     "id": "discount-free-student-verification-discounts-student-beans",
@@ -19,7 +23,11 @@
     "url": "https://www.studentbeans.com/us",
     "verifiedAt": "2026-10-31",
     "source": "https://www.studentbeans.com/us",
-    "verifiedFields": ["amount", "description", "url"]
+    "verifiedFields": [
+      "amount",
+      "description",
+      "url"
+    ]
   },
   {
     "id": "discount-verification-used-at-checkout-sheerid",
@@ -30,18 +38,25 @@
     "url": "https://www.sheerid.com",
     "verifiedAt": "2026-10-31",
     "source": "https://www.sheerid.com/",
-    "verifiedFields": ["name", "amount", "description"]
+    "verifiedFields": [
+      "name",
+      "amount",
+      "description"
+    ]
   },
   {
     "id": "discount-adobe-creative-cloud-60",
     "name": "Adobe Creative Cloud",
     "category": "Software & tech",
-    "amount": "Student subscription",
-    "description": "Discounted Creative Cloud Pro subscription for eligible students and teachers. Verify with a school email or accepted enrollment documents; introductory and renewal prices differ.",
+    "amount": "71% off first year ($19.99/mo, then $39.99/mo)",
+    "description": "Adobe currently advertises 71% off Creative Cloud Pro for students and teachers: $19.99/mo for the first year (annual plan billed monthly), $39.99/mo from the second year if you remain eligible, versus the regular $69.99/mo. Verification uses a school email or documents such as a student ID, class schedule, transcript, or enrollment/completion letter (teachers: teacher ID, pay slip, or offer letter); students must be 13+ and the purchaser 18+.",
     "url": "https://www.adobe.com/creativecloud/buy/students.html",
-    "verifiedAt": "2026-10-31",
+    "verifiedAt": "2026-11-06",
     "source": "https://www.adobe.com/creativecloud/buy/students.html",
-    "verifiedFields": ["amount", "description"]
+    "verifiedFields": [
+      "amount",
+      "description"
+    ]
   },
   {
     "id": "discount-microsoft-365-education-free-low",
@@ -52,17 +67,26 @@
     "url": "https://www.microsoft.com/en-us/education/products/office",
     "verifiedAt": "2026-10-31",
     "source": "https://www.microsoft.com/en-us/education/products/office",
-    "verifiedFields": ["name", "amount", "description"]
+    "verifiedFields": [
+      "name",
+      "amount",
+      "description"
+    ]
   },
   {
     "id": "discount-amazon-prime-student-50",
     "name": "Prime for Young Adults",
     "category": "Software & tech",
-    "amount": "Discounted",
-    "description": "Amazon's discounted Prime membership for eligible young adults and higher-education students. Verification can use age or student enrollment; a .edu address is not the only route.",
+    "amount": "50% off Prime ($7.49/mo or $69/yr)",
+    "description": "Amazon's Prime for Young Adults gives ages 18-24 all Prime benefits at 50% of the regular cost ($7.49/month or $69/year), per Amazon's own announcement; eligible new members can start with a 6-month $0 trial. Verification uses a driver's license, passport, or ID card to confirm age; higher-education students enrolled in a 2- or 4-year college can instead sign up with a .edu email.",
     "url": "https://www.amazon.com/youngadult",
-    "verifiedAt": "2026-10-31",
-    "source": "https://www.aboutamazon.com/news/retail/amazon-prime-for-young-adults"
+    "verifiedAt": "2026-11-06",
+    "source": "https://www.aboutamazon.com/news/retail/amazon-prime-for-young-adults",
+    "verifiedFields": [
+      "amount",
+      "description",
+      "url"
+    ]
   },
   {
     "id": "discount-github-student-developer-pack-free",
@@ -73,7 +97,10 @@
     "url": "https://education.github.com/pack",
     "verifiedAt": "2026-10-31",
     "source": "https://education.github.com/pack",
-    "verifiedFields": ["amount", "description"]
+    "verifiedFields": [
+      "amount",
+      "description"
+    ]
   },
   {
     "id": "discount-figma-education-free-low",
@@ -84,7 +111,10 @@
     "url": "https://www.figma.com/education/",
     "verifiedAt": "2026-10-31",
     "source": "https://www.figma.com/education/",
-    "verifiedFields": ["amount", "description"]
+    "verifiedFields": [
+      "amount",
+      "description"
+    ]
   },
   {
     "id": "discount-canva-for-education-free",
@@ -115,7 +145,11 @@
     "url": "https://www.notion.com/help/notion-for-education",
     "verifiedAt": "2026-10-31",
     "source": "https://www.notion.com/help/notion-for-education",
-    "verifiedFields": ["amount", "description", "url"]
+    "verifiedFields": [
+      "amount",
+      "description",
+      "url"
+    ]
   },
   {
     "id": "discount-linkedin-learning-via-your-library-free",
@@ -126,7 +160,10 @@
     "url": "school-resources.html?topic=library",
     "verifiedAt": "2026-10-31",
     "source": "https://www.linkedin.com/help/learning/answer/a704922/linkedin-learning-for-library-librarian-faq?lang=en",
-    "verifiedFields": ["amount", "description"]
+    "verifiedFields": [
+      "amount",
+      "description"
+    ]
   },
   {
     "id": "discount-spotify-premium-student-50",
@@ -137,7 +174,11 @@
     "url": "https://www.spotify.com/us/student/",
     "verifiedAt": "2026-10-31",
     "source": "https://www.spotify.com/us/student/",
-    "verifiedFields": ["amount", "description", "url"]
+    "verifiedFields": [
+      "amount",
+      "description",
+      "url"
+    ]
   },
   {
     "id": "discount-apple-music-apple-one-varies",
@@ -158,7 +199,10 @@
     "url": "https://www.youtube.com/premium/student",
     "verifiedAt": "2026-10-31",
     "source": "https://support.google.com/youtube/answer/9158808?hl=en",
-    "verifiedFields": ["amount", "description"]
+    "verifiedFields": [
+      "amount",
+      "description"
+    ]
   },
   {
     "id": "discount-hulu-student-plan-1-99-mo",
@@ -174,11 +218,15 @@
     "id": "discount-amtrak-student-fares-varies",
     "name": "Amtrak student fares",
     "category": "Travel & transit",
-    "amount": "Eligible routes",
-    "description": "Amtrak offers student fares with age, route, fare-class, advance-purchase and ID requirements. Check the current national or regional offer before booking.",
+    "amount": "15% off adult fare (ages 17-24)",
+    "description": "Amtrak's student discount is 15% off the regular adult fare for ages 17-24 with a valid student ID, in Coach and Acela Business Class, booked at least one day in advance. Applies automatically on most routes (a list of exclusions applies, e.g. Keystone, Pennsylvanian, Hiawatha, Wolverine routes), or by entering code V814 in the Amtrak app. Can't be combined with Guest Rewards points/Points & Cash bookings; the site also references separate regional discounts (up to 25% in some states) without full published terms.",
     "url": "https://www.amtrak.com/deals-discounts/everyday-discounts/student-discounts",
-    "verifiedAt": "2026-10-31",
-    "source": "https://www.amtrak.com/deals-discounts/everyday-discounts/student-discounts"
+    "verifiedAt": "2026-11-06",
+    "source": "https://www.amtrak.com/deals-discounts/everyday-discounts/student-discounts",
+    "verifiedFields": [
+      "amount",
+      "description"
+    ]
   },
   {
     "id": "discount-student-universe-varies",
@@ -189,7 +237,12 @@
     "url": "https://home.byojet.com/student-universe?referrer=StudentUniverse_US",
     "verifiedAt": "2026-10-31",
     "source": "https://home.byojet.com/student-universe?referrer=StudentUniverse_US",
-    "verifiedFields": ["name", "amount", "description", "url"]
+    "verifiedFields": [
+      "name",
+      "amount",
+      "description",
+      "url"
+    ]
   },
   {
     "id": "discount-local-transit-discounts-local",
@@ -200,7 +253,10 @@
     "url": "school-resources.html?topic=transit",
     "verifiedAt": "2026-10-31",
     "source": "https://www.ridemetro.org/fares/faqs",
-    "verifiedFields": ["amount", "description"]
+    "verifiedFields": [
+      "amount",
+      "description"
+    ]
   },
   {
     "id": "discount-apple-education-pricing-varies",
@@ -211,7 +267,10 @@
     "url": "https://www.apple.com/us-edu/store",
     "verifiedAt": "2026-10-31",
     "source": "https://www.apple.com/us-edu/store",
-    "verifiedFields": ["amount", "description"]
+    "verifiedFields": [
+      "amount",
+      "description"
+    ]
   },
   {
     "id": "discount-nike-student-discount-varies",
@@ -227,33 +286,44 @@
     "id": "discount-samsung-education-store-varies",
     "name": "Samsung Education Store",
     "category": "Shopping & retail",
-    "amount": "Education offers",
-    "description": "Samsung’s Education Offer Program provides eligible students and educators access to selected offers. Verification can use a school email or ID.me; product exclusions and terms apply.",
+    "amount": "Up to 30% off",
+    "description": "Samsung's Education Offer Program gives verified students and educators up to 30% off (varies by product line), plus Samsung Rewards, buy-online-pickup-in-store, and special financing. Verify with a .edu email (via a Samsung Account) or ID.me, or through StudentBeans/UNiDAYS. Limited to a small number of purchases per product category in a 12-month period.",
     "url": "https://www.samsung.com/us/shop/offer-program/education/",
-    "verifiedAt": "2026-10-31",
+    "verifiedAt": "2026-11-06",
     "source": "https://www.samsung.com/us/shop/offer-program/education/",
-    "verifiedFields": ["amount", "description"]
+    "verifiedFields": [
+      "amount",
+      "description"
+    ]
   },
   {
     "id": "discount-dell-student-discount-discounted",
     "name": "Dell Student Discount",
     "category": "Shopping & retail",
-    "amount": "Education offers",
-    "description": "Dell’s Education Purchase Program offers eligible students and teachers additional savings. A Dell account, Dell Rewards enrollment and status verification are required; exclusions apply.",
+    "amount": "Up to 10% off",
+    "description": "Dell's Education Purchase Program currently gives eligible students and teachers an extra 10% off eligible items on Dell.com, applied automatically at checkout once verified. Requires a free Dell account, joining Dell Rewards, and SheerID verification (no academic email required); limited to 2 eligible products per transaction and 2 transactions per year. Certain PCs, accessories, warranties and clearance items are excluded.",
     "url": "https://www.dell.com/en-us/shop/member/lp/students",
-    "verifiedAt": "2026-10-31",
+    "verifiedAt": "2026-11-06",
     "source": "https://www.dell.com/en-us/shop/member/lp/students",
-    "verifiedFields": ["amount", "description", "url"]
+    "verifiedFields": [
+      "amount",
+      "description",
+      "url"
+    ]
   },
   {
     "id": "discount-hp-education-store-discounted",
     "name": "HP Education Store",
     "category": "Shopping & retail",
-    "amount": "Discounted",
-    "description": "HP's dedicated education storefront offers reduced pricing on laptops for verified students.",
+    "amount": "Up to 40% off",
+    "description": "HP's education storefront advertises up to 40% off for verified students, applied automatically once signed in (no promo code). Verification uses a valid academic email address; if you don't have one, HP accepts proof of enrollment instead.",
     "url": "https://www.hp.com/us-en/shop/cv/hp-education",
-    "verifiedAt": "2026-10-31",
-    "source": "https://www.hp.com/us-en/shop/cv/hp-education"
+    "verifiedAt": "2026-11-06",
+    "source": "https://www.hp.com/us-en/shop/cv/hp-education",
+    "verifiedFields": [
+      "amount",
+      "description"
+    ]
   },
   {
     "id": "discount-under-armour-student-discount-discounted",
@@ -264,7 +334,11 @@
     "url": "https://www.underarmour.com/en-us/t/unidays/",
     "verifiedAt": "2026-10-31",
     "source": "https://www.underarmour.com/en-us/t/unidays/",
-    "verifiedFields": ["amount", "description", "url"]
+    "verifiedFields": [
+      "amount",
+      "description",
+      "url"
+    ]
   },
   {
     "id": "discount-walmart-student-discount-50",
@@ -275,48 +349,69 @@
     "url": "https://www.walmart.com/plus/student",
     "verifiedAt": "2026-10-31",
     "source": "https://www.walmart.com/plus/student",
-    "verifiedFields": ["amount", "description"]
+    "verifiedFields": [
+      "amount",
+      "description"
+    ]
   },
   {
     "id": "discount-headspace-for-students-free-1-yr",
     "name": "Headspace for Students",
     "category": "Health & wellness",
-    "amount": "Discounted",
-    "description": "Paid student subscription for eligible college and university students age 18+. Verify enrollment through SheerID and check current annual pricing and renewal terms.",
+    "amount": "$9.99/year",
+    "description": "Headspace's student plan is $9.99/year (regional pricing varies, e.g. £7.99 UK) for verified college/university students 18+ in the US, UK, Australia, Canada, France, Germany, Portugal or Spain. Verification is through SheerID: instant where possible, or manual document review (enrollment letter, class schedule, or tuition receipt) if not; re-verification is required annually. Both full-time and part-time students qualify.",
     "url": "https://www.headspace.com/studentplan",
-    "verifiedAt": "2026-10-31",
-    "source": "https://www.headspace.com/studentplan"
+    "verifiedAt": "2026-11-06",
+    "source": "https://www.headspace.com/studentplan",
+    "verifiedFields": [
+      "amount",
+      "description",
+      "url"
+    ]
   },
   {
     "id": "discount-peloton-app-student-membership-discounted",
     "name": "Peloton App Student Membership",
     "category": "Health & wellness",
-    "amount": "Check current offer",
-    "description": "Verified university students can access special pricing on eligible Peloton App plans. Check membership tier, verification and current renewal pricing.",
+    "amount": "App One $6.99/mo ($75/yr); App+ $12.99/mo ($129/yr)",
+    "description": "Peloton App student pricing: App One is $6.99/month or $75/year; App+ is $12.99/month or $129/year, for students verified as currently enrolled at a university. Verification is through ID.me (not SheerID), where qualifying information is checked by Peloton's verification partner.",
     "url": "https://www.onepeloton.com/offers/specialpricing/student",
-    "verifiedAt": "2026-10-31",
-    "source": "https://www.onepeloton.com/offers/specialpricing/student"
+    "verifiedAt": "2026-11-06",
+    "source": "https://www.onepeloton.com/offers/specialpricing/student",
+    "verifiedFields": [
+      "amount",
+      "description",
+      "url"
+    ]
   },
   {
     "id": "discount-doordash-dashpass-for-students-discounted",
     "name": "DoorDash DashPass for Students",
     "category": "Food, banking & phone plans",
-    "amount": "Discounted membership",
-    "description": "Verified university and post-secondary students can subscribe at the student rate. Delivery benefits apply only to participating merchants and qualifying order minimums; other fees may apply.",
+    "amount": "$5/mo or $48/yr (free 30-day trial)",
+    "description": "DashPass for Students is available to undergraduate and graduate students at accredited U.S. colleges and universities, at a discounted student rate with a free 30-day trial. Benefits (reduced delivery fees, lower service fees) apply only at participating merchants and above order minimums.",
     "url": "https://help.doordash.com/en-us/consumers/article/dashpass-for-students",
-    "verifiedAt": "2026-10-31",
+    "verifiedAt": "2026-11-06",
     "source": "https://help.doordash.com/en-us/consumers/article/dashpass-for-students",
-    "verifiedFields": ["amount", "description", "url"]
+    "verifiedFields": [
+      "amount",
+      "description"
+    ]
   },
   {
     "id": "discount-t-mobile-student-discounts-discounted",
     "name": "T-Mobile Student Discounts",
     "category": "Food, banking & phone plans",
-    "amount": "Check current offer",
-    "description": "Dedicated Student Perks plans for eligible college students age 18+ who are the primary account holder. Verify enrollment within 45 days and re-verify annually; taxes, fees and plan requirements apply.",
+    "amount": "Essentials Saver w/ Student Perks: $30/mo one line, $60/mo two lines (w/ AutoPay)",
+    "description": "T-Mobile's current student offer is the Essentials Saver plan with Student Perks Savings: unlimited talk/text/data plus 50GB premium data, priced at $35 (one line) or $70 (two lines) before the $5/line AutoPay discount, i.e. $30 or $60/mo with AutoPay, plus taxes and fees. Students must be 18+, the primary account holder, enrolled at an eligible college, university, community/junior college, or vocational/technical school, and must verify enrollment within 45 days and maintain it to keep the price.",
     "url": "https://www.t-mobile.com/cell-phone-plans/student-discounts",
-    "verifiedAt": "2026-10-31",
-    "source": "https://www.t-mobile.com/cell-phone-plans/student-discounts"
+    "verifiedAt": "2026-11-06",
+    "source": "https://www.t-mobile.com/cell-phone-plans/student-discounts",
+    "verifiedFields": [
+      "amount",
+      "description",
+      "url"
+    ]
   },
   {
     "id": "discount-chase-college-checking-fee-waivers",
@@ -327,6 +422,339 @@
     "url": "https://personal.chase.com/personal/secure-banking",
     "verifiedAt": "2026-10-31",
     "source": "https://account.chase.com/consumer/banking/secure/college-offer",
-    "verifiedFields": ["name", "amount", "description", "url"]
+    "verifiedFields": [
+      "name",
+      "amount",
+      "description",
+      "url"
+    ]
+  },
+  {
+    "id": "discount-levis-student-discount",
+    "name": "Levi's Student Discount",
+    "category": "Shopping & retail",
+    "amount": "10% off eligible orders",
+    "description": "Active college and university students in the US get 10% off at Levi.com after verifying through SheerID (school name, legal name, date of birth, and email).",
+    "url": "https://help.levi.com/hc/en-us/articles/31500372066573-Student-Discount-Program-for-Levi-s-Customers",
+    "verifiedAt": "2026-11-06",
+    "source": "https://help.levi.com/hc/en-us/articles/31500372066573-Student-Discount-Program-for-Levi-s-Customers",
+    "verifiedFields": [
+      "amount",
+      "description",
+      "url"
+    ]
+  },
+  {
+    "id": "discount-asos-student-discount",
+    "name": "ASOS Student Discount",
+    "category": "Shopping & retail",
+    "amount": "10% off (account required)",
+    "description": "US students get 10% off at ASOS, but only when logged into an ASOS account (guest checkout doesn't qualify). Verification is through SheerID and can take up to 48 working hours; the resulting code is locked to the verified account.",
+    "url": "https://www.asos.com/us/customer-care/payment-promos-gift-voucher/do-you-have-any-promo-codes-or-offers-for-students",
+    "verifiedAt": "2026-11-06",
+    "source": "https://www.asos.com/us/customer-care/payment-promos-gift-voucher/do-you-have-any-promo-codes-or-offers-for-students",
+    "verifiedFields": [
+      "amount",
+      "description",
+      "url"
+    ]
+  },
+  {
+    "id": "discount-vans-student-discount",
+    "name": "Vans Student Discount",
+    "category": "Shopping & retail",
+    "amount": "15% off for students",
+    "description": "Vans offers verified students 15% off, listed on SheerID's official student-offers storefront. Redemption and verification are handled through SheerID; check the current offer page for exclusions before buying.",
+    "url": "https://shop.sheerid.com/studentdeals",
+    "verifiedAt": "2026-11-06",
+    "source": "https://shop.sheerid.com/studentdeals",
+    "verifiedFields": [
+      "amount",
+      "description",
+      "url"
+    ]
+  },
+  {
+    "id": "discount-tarte-cosmetics-student-discount",
+    "name": "Tarte Cosmetics Student Discount",
+    "category": "Shopping & retail",
+    "amount": "20% off for students",
+    "description": "Tarte Cosmetics offers verified students 20% off, listed on SheerID's official student-offers storefront (marked with an asterisk, so additional terms apply). Verification is through SheerID.",
+    "url": "https://shop.sheerid.com/studentdeals",
+    "verifiedAt": "2026-11-06",
+    "source": "https://shop.sheerid.com/studentdeals",
+    "verifiedFields": [
+      "amount",
+      "description",
+      "url"
+    ]
+  },
+  {
+    "id": "discount-leesa-student-discount",
+    "name": "Leesa Student Discount",
+    "category": "Shopping & retail",
+    "amount": "$50 off",
+    "description": "Leesa offers verified students a $50 discount on mattresses, redeemed through an ID.me membership and verification. Full terms apply at checkout.",
+    "url": "https://www.studentbeans.com/student-discount/us/leesa",
+    "verifiedAt": "2026-11-06",
+    "source": "https://www.studentbeans.com/student-discount/us/leesa",
+    "verifiedFields": [
+      "amount",
+      "description",
+      "url"
+    ]
+  },
+  {
+    "id": "discount-1800contacts-student-discount",
+    "name": "1-800 Contacts Student Discount",
+    "category": "Health & wellness",
+    "amount": "30% off contacts",
+    "description": "1-800 Contacts offers verified students 30% off contact lens orders, listed on SheerID's official student-offers storefront. Verification is through SheerID; check the current offer page for exclusions.",
+    "url": "https://shop.sheerid.com/studentdeals",
+    "verifiedAt": "2026-11-06",
+    "source": "https://shop.sheerid.com/studentdeals",
+    "verifiedFields": [
+      "amount",
+      "description",
+      "url"
+    ]
+  },
+  {
+    "id": "discount-lume-student-discount",
+    "name": "Lume Student Discount",
+    "category": "Health & wellness",
+    "amount": "15% off (Subscribe & Save) or up to 30% off (bundle)",
+    "description": "Lume currently lists 15% off with its Subscribe & Save option and up to 30% off when you build your own product bundle, plus free US shipping on orders over $25, via Student Beans. Terms apply and may not stack with other sales; check the brand's terms at checkout.",
+    "url": "https://www.studentbeans.com/student-discount/us/lume",
+    "verifiedAt": "2026-11-06",
+    "source": "https://www.studentbeans.com/student-discount/us/lume",
+    "verifiedFields": [
+      "amount",
+      "description",
+      "url"
+    ]
+  },
+  {
+    "id": "discount-autodesk-education-free",
+    "name": "Autodesk Education",
+    "category": "Software & tech",
+    "amount": "Free 1-year education license",
+    "description": "Eligible students get one year of free, single-user access to Autodesk's education software (renewable annually while eligible), for learning, training and research only, not commercial or for-profit work. Verify with a school email and any required documents through Autodesk's education portal.",
+    "url": "https://www.autodesk.com/education/students",
+    "verifiedAt": "2026-11-06",
+    "source": "https://www.autodesk.com/education/students",
+    "verifiedFields": [
+      "amount",
+      "description",
+      "url"
+    ]
+  },
+  {
+    "id": "discount-unity-student-plan-free",
+    "name": "Unity Student Plan",
+    "category": "Software & tech",
+    "amount": "Free Unity Pro Editor access",
+    "description": "Verified students get the Unity Pro Editor, a no-cost education license for Odin Inspector and Validator, a premium Synty asset bundle, and access to Unity's Cloud ecosystem. Eligible at accredited post-secondary schools, or secondary students 16+ with consent to data processing; verification is through SheerID.",
+    "url": "https://unity.com/products/unity-student",
+    "verifiedAt": "2026-11-06",
+    "source": "https://activation.unity3d.com/products/unity-student",
+    "verifiedFields": [
+      "amount",
+      "description",
+      "url"
+    ]
+  },
+  {
+    "id": "discount-jetbrains-student-pack-free",
+    "name": "JetBrains Student Pack",
+    "category": "Software & tech",
+    "amount": "Free educational licenses",
+    "description": "Students and teachers can get free licenses to JetBrains IDEs (such as IntelliJ IDEA Ultimate), ReSharper, and other tools, for non-commercial educational use. Apply through the JetBrains Student Pack page; verification details are handled there.",
+    "url": "https://www.jetbrains.com/student/",
+    "verifiedAt": "2026-11-06",
+    "source": "https://sales.jetbrains.com/hc/en-gb/articles/207241195",
+    "verifiedFields": [
+      "amount",
+      "description",
+      "url"
+    ]
+  },
+  {
+    "id": "discount-tidal-hifi-student-plan",
+    "name": "TIDAL HiFi Student Plan",
+    "category": "Entertainment & music",
+    "amount": "$6.99/mo (Individual), $14.49/mo (DJ plan)",
+    "description": "TIDAL's Individual Student Plan is $6.99/month versus the standard $11.99, and a student DJ plan is $14.49/month. Available to US college/university students and to US high school students 16+. Verify with an enrollment letter, class schedule, registration/tuition receipt, or transcript; some applicants are verified instantly, others through SheerID. Reverification is required every 12 months.",
+    "url": "https://tidal.com/plans/student",
+    "verifiedAt": "2026-11-06",
+    "source": "https://tidal.com/plans/student",
+    "verifiedFields": [
+      "amount",
+      "description",
+      "url"
+    ]
+  },
+  {
+    "id": "discount-discover-it-student-cash-back",
+    "name": "Discover it Student Cash Back",
+    "category": "Food, banking & phone plans",
+    "amount": "5% rotating categories (up to $1,500/quarter, activation required) + 1% on everything else",
+    "description": "A student credit card with no annual fee: 5% cash back in rotating quarterly categories (on up to $1,500 in combined purchases each quarter, after activating the category) and unlimited 1% on everything else. New cardmembers get Discover's Cashback Match, which matches all cash back earned in the first 12 billing periods/year, automatically at the end of that period. Reports to all three major credit bureaus.",
+    "url": "https://www.discover.com/credit-cards/student-credit-card/it-card/",
+    "verifiedAt": "2026-11-06",
+    "source": "https://www.nerdwallet.com/credit-cards/reviews/discover-it-student-cash-back",
+    "verifiedFields": [
+      "amount",
+      "description"
+    ]
+  },
+  {
+    "id": "discount-united-airlines-student-offer",
+    "name": "United Airlines Student Offer",
+    "category": "Travel & transit",
+    "amount": "Up to $500 off flights; up to 35% off car rental; 5% off for MileagePlus members 18-23",
+    "description": "United's student offers, listed via Student Beans, include up to $500 off eligible flights, up to 35% off car rental, and a 5% discount on economy fares for MileagePlus members ages 18-23 (date of birth must match travel documents). Terms, routes and blackout dates vary; verify current eligibility before booking.",
+    "url": "https://www.studentbeans.com/student-discount/US/united-airlines",
+    "verifiedAt": "2026-11-06",
+    "source": "https://www.studentbeans.com/student-discount/US/united-airlines",
+    "verifiedFields": [
+      "amount",
+      "description",
+      "url"
+    ]
+  },
+  {
+    "id": "discount-flixbus-student-discount",
+    "name": "FlixBus Student Discount",
+    "category": "Travel & transit",
+    "amount": "10% off (time-limited voucher)",
+    "description": "FlixBus currently offers US students 10% off via Student Beans, redeemable in the FlixBus app/website for a limited travel window (verified valid 09/07/2026-12/15/2026, excluding 11/20/2026-11/30/2026). Excludes service fees and extras, can't combine with other codes, and can't apply to existing bookings. Eligibility: students 16+ in full-time education (incl. apprentices), verified and registered on Student Beans.",
+    "url": "https://www.studentbeans.com/student-discount/US/flixbus",
+    "verifiedAt": "2026-11-06",
+    "source": "https://www.studentbeans.com/student-discount/US/flixbus",
+    "verifiedFields": [
+      "amount",
+      "description",
+      "url"
+    ]
+  },
+  {
+    "id": "discount-student-advantage-membership",
+    "name": "Student Advantage (MyDeals membership)",
+    "category": "Verification platforms (the fastest way to unlock most of these)",
+    "amount": "$30/year membership",
+    "description": "Student Advantage is a paid student savings membership/app ($30 for a year of access, often distributed through college ID/card offices) that advertises deals at brands including Greyhound, Target.com, Choice Hotels, 1-800-Flowers.com and Foot Locker, among others. Unlike UNiDAYS/Student Beans/SheerID, this is a paid membership rather than a free verification platform; check which of its listed deals are current before relying on any one brand's offer.",
+    "url": "https://www.uvm.edu/catcard/join-student-advantage",
+    "verifiedAt": "2026-11-06",
+    "source": "https://www.uvm.edu/catcard/join-student-advantage",
+    "verifiedFields": [
+      "amount",
+      "description",
+      "url"
+    ]
+  },
+  {
+    "id": "discount-perplexity-pro-free-students",
+    "name": "Perplexity Pro for Students",
+    "category": "Learning & productivity",
+    "amount": "Free for up to 24 months (referrals can extend it)",
+    "description": "Verified students can get up to 2 years of free Perplexity Pro (cited answers, Deep Research, Perplexity Tasks, and Perplexity Labs), per Perplexity's official partnership with SheerID. Verification is a consent-based SheerID check that typically resolves within seconds; students can also earn additional free months (up to 24 more) by referring others who sign up.",
+    "url": "https://www.perplexity.ai",
+    "verifiedAt": "2026-11-06",
+    "source": "https://www.sheerid.com/press/sheerid-and-perplexity-partner-to-empower-academic-research/",
+    "verifiedFields": [
+      "amount",
+      "description"
+    ]
+  },
+  {
+    "id": "discount-wolfram-alpha-pro-student",
+    "name": "Wolfram|Alpha Pro Student Plan",
+    "category": "Learning & productivity",
+    "amount": "Pro $5/mo ($60/yr); Pro Premium $8.25/mo ($99/yr)",
+    "description": "Wolfram|Alpha's student Pro plan is $5.00/month billed $60.00 annually (regular price $9.99/month), and the student Pro Premium plan is $8.25/month billed $99.00 annually (regular price $12.00/month), per Wolfram's own student pricing page.",
+    "url": "https://www.wolframalpha.com/pro/pricing/students",
+    "verifiedAt": "2026-11-06",
+    "source": "https://www.wolframalpha.com/pro/pricing/students",
+    "verifiedFields": [
+      "amount",
+      "description",
+      "url"
+    ]
+  },
+  {
+    "id": "discount-grammarly-pro-student-50",
+    "name": "Grammarly Pro Student Discount",
+    "category": "Learning & productivity",
+    "amount": "50% off Grammarly Pro (limited time)",
+    "description": "Grammarly currently offers verified students 50% off Grammarly Pro for one subscription period, redeemed and verified through SheerID. Can't be combined with other offers, doesn't apply to past purchases or App Store/Google Play purchases, and on multi-seat Pro plans only covers the first seat.",
+    "url": "https://support.grammarly.com/hc/en-us/articles/38895500890125-Does-Grammarly-offer-discounts-for-students",
+    "verifiedAt": "2026-11-06",
+    "source": "https://support.grammarly.com/hc/en-us/articles/38895500890125-Does-Grammarly-offer-discounts-for-students",
+    "verifiedFields": [
+      "amount",
+      "description",
+      "url"
+    ]
+  },
+  {
+    "id": "discount-microsoft-365-personal-college-student-pricing",
+    "name": "Microsoft 365 Personal College Student Pricing",
+    "category": "Software & tech",
+    "amount": "50% off Microsoft 365 Personal",
+    "description": "Microsoft's official college-student-pricing page offers 50% off Microsoft 365 Personal (Word/Excel/PowerPoint/OneNote/Outlook, Copilot in desktop apps and AI image creation, 1TB OneDrive), at the discounted price for as long as you keep re-verifying. Requires a (non-EDU) Microsoft account and student verification via school email, enrollment details, ISIC card, a verification code, or documents like a dated student ID, class schedule, or acceptance letter; re-verification is required within each year. This is a separate, personal-subscription offer from the free institutional Office 365 A1 plan already listed.",
+    "url": "https://www.microsoft.com/microsoft-365/college-student-pricing",
+    "verifiedAt": "2026-11-06",
+    "source": "https://www.microsoft.com/microsoft-365/college-student-pricing",
+    "verifiedFields": [
+      "amount",
+      "description",
+      "url"
+    ]
+  },
+  {
+    "id": "discount-evernote-student-50",
+    "name": "Evernote Student Discount",
+    "category": "Learning & productivity",
+    "amount": "50% off Evernote Advanced (1 year)",
+    "description": "Evernote's official student offer is 50% off Evernote Advanced for a year while studying; the discount code (STUDENT50) is applied automatically at checkout after sign-up. The page suggests using a school email but doesn't describe a formal verification step.",
+    "url": "https://evernote.com/discounts/students",
+    "verifiedAt": "2026-11-06",
+    "source": "https://evernote.com/discounts/students",
+    "verifiedFields": [
+      "amount",
+      "description",
+      "url"
+    ]
+  },
+  {
+    "id": "discount-squarespace-student-discount",
+    "name": "Squarespace Student Discount",
+    "category": "Software & tech",
+    "amount": "50% off annual plans + 30% off .COM domain",
+    "description": "Verified US students get 50% off a new annual Squarespace website plan (not renewals; one single-use code per 12 months, must be redeemed by December 31 of the year issued) and 30% off a .COM domain registration (renews at full price after year one), via Student Beans verification.",
+    "url": "https://studentbeans.com/student-discount/us/squarespace",
+    "verifiedAt": "2026-11-06",
+    "source": "https://studentbeans.com/student-discount/us/squarespace",
+    "verifiedFields": [
+      "amount",
+      "description",
+      "url"
+    ]
+  },
+  {
+    "id": "discount-proton-student-discounts",
+    "name": "Proton Student Discounts",
+    "category": "Software & tech",
+    "amount": "Proton Pass Plus free 1yr; Mail Plus 80% off (1mo); Drive/VPN/Unlimited 50% off (12mo)",
+    "description": "Proton's official student offers (US, UK, France, Germany): Proton Pass Plus free for 1 year (a 2nd year by referring 2 friends), Proton Mail Plus 80% off at $1/month for 1 month, and Proton Drive Plus, Proton VPN Plus, and Proton Unlimited each 50% off for 12 months ($1.99, $2.49, and $4.99/month respectively). Verification is through Student Beans (e.g. a photo of your student ID), not SheerID.",
+    "url": "https://proton.me/blog/proton-student-discounts",
+    "verifiedAt": "2026-11-06",
+    "source": "https://proton.me/blog/proton-student-discounts",
+    "verifiedFields": [
+      "amount",
+      "description",
+      "url"
+    ]
   }
 ]
