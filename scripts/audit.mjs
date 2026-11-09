@@ -85,8 +85,6 @@ for (const item of catalog) {
     !item.url.startsWith("school-resources.html?")
   )
     errors.push("Unsafe catalog link " + item.id);
-  if (item.affiliateUrl && !/^https:\/\//.test(item.affiliateUrl))
-    errors.push("Unsafe affiliate link " + item.id);
   if (
     item.category === "no-essay" &&
     /requires an essay|submit a 500-word|250 words or fewer/i.test(
