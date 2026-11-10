@@ -1,18 +1,42 @@
-name: Resource Center checks
+name: Resource Center checks and deployment
 on:
   pull_request:
   push:
     branches: [main]
+  workflow_dispatch:
 permissions:
   contents: read
+concurrency:
+  group: resource-center-${{ github.ref }}
+  cancel-in-progress: false
 jobs:
   verify:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: "22"
           cache: npm
       - run: npm ci
       - run: npm run check
+      - name: Publish production
+        id: publish
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.ASRC_CLOUDFLARE_DEPLOY_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: 604bc8f6fd70f62522869abae693396b
+          GH_TOKEN: ${{ github.token }}
+          WRANGLER_SEND_METRICS: "false"
+        run: node scripts/deploy-ci.mjs
+      - name: Verify the live release
+        if: steps.publish.outputs.deployed == 'true'
+        run: |
+          for attempt in 1 2 3; do
+            if node scripts/verify-live.mjs; then exit 0; fi
+            if [ "$attempt" -lt 3 ]; then sleep 5; fi
+          done
+          exit 1
