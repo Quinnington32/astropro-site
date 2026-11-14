@@ -30,6 +30,10 @@ Review sponsor deadlines and application windows before promoting a resource and
 
 Edit structured records in `src/data/`, guides in `src/content/`, and page composition in `scripts/build.mjs`. Preserve stable resource IDs so saved lists keep working. Record the source, review date, and the specific verified information. Withhold entries whose current offer cannot be substantiated. Do not infer eligibility, award availability, partnerships, property suitability, prices, rankings, or review scores.
 
+### Rental spotlights
+
+Use the same source-checked facts for the Facebook post and the matching market in `src/data/housing.json`. Update the existing market and property when present. Add a new market only when the city and campus are missing. Keep the official property link and a short summary of the floor plans and features, then record the source review date in `verifiedAt`. After verifying the Facebook post is live, set the property's `spotlight.publishedAt` and `spotlight.facebookPost` to the post date and permalink. If the photo can be reused on the site, put it in `public/assets/housing/` and set `spotlight.photo` to the corresponding `assets/housing/` path and `spotlight.photoAlt` to a description of the image. Publish the batch through the website release steps below.
+
 ```sh
 git pull --ff-only
 npm ci

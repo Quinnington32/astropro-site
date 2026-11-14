@@ -277,7 +277,7 @@ emit(
 const marketCards = markets
   .map(
     (m, i) =>
-      `<a class="market-card" href="${m.file}" data-order="${i}" data-city="${e(m.place)}" data-state="${e(m.place.includes(",") ? m.place.split(",").at(-1).trim() : "NH")}" data-search="${e((m.school + " " + m.place + " " + m.description).toLowerCase())}"><span class="school">${e(m.school)}</span><h2>${e(m.place)}</h2><p>${e(m.description)}</p><span class="link">Explore this market →</span></a>`,
+      `<a class="market-card" href="${m.file}" data-order="${i}" data-city="${e(m.place)}" data-state="${e(m.place.includes(",") ? m.place.split(",").at(-1).trim() : "NH")}" data-search="${e((m.school + " " + m.place + " " + m.description).toLowerCase())}"><span class="school">${e(m.school)}</span><h2>${e(m.place)}</h2><p>${e(m.description)}</p><span class="link">${m.properties.some((p) => p.spotlight) ? "See rental spotlights" : "Explore this market"} →</span></a>`,
   )
   .join("");
 const housingFaq = [
@@ -308,6 +308,30 @@ const housingFaq = [
 ];
 const faqs = () =>
   `<section id="tips"><div class="wrap"><div class="section-head"><p class="eyebrow">Before you sign</p><h2>Better questions for a better housing search.</h2></div><div class="faq-list">${housingFaq.map(([q, a]) => `<details><summary>${q}</summary><p>${a}</p></details>`).join("")}</div></div></section>`;
+function housingPropertyCard(p) {
+  const spotlight = p.spotlight;
+  const website = p.website
+    ? external(p.website, "Official property site", "btn btn-primary")
+    : external(p.maps, "Find property on Maps", "btn btn-primary");
+  const details = p.floorplans
+    ? external(p.floorplans, "Current floor plans", "btn btn-ghost")
+    : p.website ? external(p.maps, "Map lookup", "btn btn-ghost") : "";
+  const discussion = spotlight?.facebookPost
+    ? external(spotlight.facebookPost, "Facebook discussion", "link")
+    : "";
+  const photo = spotlight?.photo && spotlight?.photoAlt
+    ? `<img class="property-photo" src="${e(spotlight.photo)}" alt="${e(spotlight.photoAlt)}" loading="lazy" decoding="async">`
+    : "";
+  return `<article class="property-card" id="${e(p.id)}">
+    <div class="card-heading"><p class="tag">${spotlight ? "Rental spotlight" : "Property research"}</p>${saveButton({ ...p, name: p.name })}</div>
+    <h2>${e(p.name)}</h2>
+    ${p.address ? `<p>${e(p.address)}</p>` : ""}
+    ${photo}
+    <p>${e(p.summary || "Confirm the property identity, rental eligibility, current floor plans, and availability directly before applying.")}</p>
+    <div class="cta-row">${website}${details}${discussion}</div>
+    <p class="review-date">${p.verifiedAt ? "Official source reviewed " + dateLabel(p.verifiedAt) + ". Check current pricing and availability with the property." : "Official website and current availability have not been independently verified. Maps is a search lookup."}</p>
+  </article>`;
+}
 emit(
   "housing.html",
   "Off-campus housing",
@@ -321,6 +345,9 @@ emit(
     faqs(),
 );
 for (const m of markets) {
+  const properties = [...m.properties].sort(
+    (a, b) => (b.spotlight?.publishedAt || "").localeCompare(a.spotlight?.publishedAt || ""),
+  );
   const body =
     `<div class="wrap breadcrumb"><a href="housing.html">← All housing markets</a></div>` +
     hero(
@@ -329,7 +356,7 @@ for (const m of markets) {
       "",
       "Off-campus housing",
     ) +
-    `<section class="wrap"><p class="notice">${e(m.description)} Check eligibility, commute, and availability directly with each property.</p><div class="property-grid">${m.properties.map((p) => `<article class="property-card"><div class="card-heading"><p class="tag">Property research</p>${saveButton({ ...p, name: p.name })}</div><h2>${e(p.name)}</h2>${p.address ? `<p>${e(p.address)}</p>` : ""}<p>${e(p.summary || "Confirm the property identity, rental eligibility, current floor plans, and availability directly before applying.")}</p><div class="cta-row">${p.website ? external(p.website, "Official property site", "btn btn-primary") : external(p.maps, "Find property on Maps", "btn btn-primary")}${p.floorplans ? external(p.floorplans, "Current floor plans", "btn btn-ghost") : p.website ? external(p.maps, "Map lookup", "btn btn-ghost") : ""}</div><p class="review-date">${p.verifiedAt ? "Official source reviewed " + dateLabel(p.verifiedAt) + ". Current price and availability not verified." : "Official website and current availability have not been independently verified. Maps is a search lookup."}</p></article>`).join("")}</div></section>` +
+    `<section class="wrap"><p class="notice">${e(m.description)} Check eligibility, commute, and availability directly with each property.</p><div class="property-grid">${properties.map(housingPropertyCard).join("")}</div></section>` +
     faqs() +
     `<section class="wrap"><div class="callout"><h2>Need help closer to your campus?</h2><p>Your school’s housing office may have rental guidance, emergency support, and off-campus listings.</p><div class="cta-row"><a class="btn btn-primary" href="school-resources.html?school=${encodeURIComponent(m.school)}&topic=housing">Find campus housing resources</a><a class="btn btn-ghost" href="index.html#organizations">Suggest a correction or property</a></div></div></section>`;
   emit(
@@ -728,8 +755,8 @@ const catalog = [
     m.properties.map((x) => ({
       ...x,
       type: "housing",
-      page: m.file,
-      description: `Property research in ${m.place} near ${m.school}. Confirm eligibility, commute, and availability.`,
+      page: `${m.file}#${x.id}`,
+      description: `${m.place} · ${m.school}. ${x.summary || "Confirm eligibility, commute, and availability."}`,
       url: x.website || x.maps,
       amount: "Housing research",
       category: m.place,

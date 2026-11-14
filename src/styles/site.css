@@ -1288,6 +1288,14 @@ body[data-page="discounts"] .tag {
   color: var(--ink-soft);
   font-size: 0.86rem;
 }
+.property-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-block: 12px 16px;
+}
 .property-card .cta-row {
   margin-top: 22px;
 }

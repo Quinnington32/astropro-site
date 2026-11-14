@@ -1135,5 +1135,335 @@
         "source": "https://flatsonhighst.com/"
       }
     ]
+  },
+  {
+    "id": "housing-kirksville-mo",
+    "file": "housing-kirksville-mo.html",
+    "school": "Truman State University",
+    "place": "Kirksville, MO",
+    "description": "Explore apartments and off-campus rentals in Kirksville near Truman State University.",
+    "properties": [
+      {
+        "id": "housing-kirksville-mo-property-425-west-scott",
+        "name": "425 West Scott",
+        "website": "https://heritagehouserentalsllc.com/listing/425-west-scott-kirksville-missouri/",
+        "verifiedAt": "2026-11-13",
+        "maps": "https://www.google.com/maps/search/?api=1&query=425%20West%20Scott%2C%20Kirksville%2C%20MO",
+        "source": "https://heritagehouserentalsllc.com/listing/425-west-scott-kirksville-missouri/",
+        "summary": "Off-campus rental near Truman State and A.T. Still University in Kirksville, MO. This 2-bedroom, 1-bath apartment includes in-unit laundry. The manager provides lawn care, snow removal and 24-hour maintenance.",
+        "spotlight": {
+          "publishedAt": "2026-11-13",
+          "facebookPost": "https://www.facebook.com/groups/2205622230329742/posts/2207634086795223/"
+        }
+      }
+    ]
+  },
+  {
+    "id": "housing-macomb-il",
+    "file": "housing-macomb-il.html",
+    "school": "Western Illinois University",
+    "place": "Macomb, IL",
+    "description": "Explore apartments and off-campus rentals in Macomb near Western Illinois University.",
+    "properties": [
+      {
+        "id": "housing-macomb-il-property-wheeler-street-townhomes-and-flats",
+        "name": "Wheeler Street Townhomes and Flats",
+        "website": "https://www.macombrentals.com/wheeler-street",
+        "verifiedAt": "2026-11-13",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Wheeler%20Street%20Townhomes%20and%20Flats%2C%20Macomb%2C%20IL",
+        "source": "https://www.macombrentals.com/wheeler-street",
+        "summary": "Looking for rentals near Western Illinois University in Macomb, IL? Wheeler Street Townhomes and Flats offers 1- and 2-bedroom layouts about a block from WIU. The manager lists water, trash and off-street parking as included. Ask which additional utilities come with your unit.",
+        "spotlight": {
+          "publishedAt": "2026-11-13",
+          "facebookPost": "https://www.facebook.com/groups/1125547753567026/posts/1127484226706712/"
+        }
+      }
+    ]
+  },
+  {
+    "id": "housing-platteville-wi",
+    "file": "housing-platteville-wi.html",
+    "school": "University of Wisconsin–Platteville",
+    "place": "Platteville, WI",
+    "description": "Explore apartments and off-campus rentals in Platteville near University of Wisconsin–Platteville.",
+    "properties": [
+      {
+        "id": "housing-platteville-wi-property-330-pine-street",
+        "name": "330 Pine Street",
+        "website": "https://plattevilleapartments.com/pine.php",
+        "verifiedAt": "2026-11-13",
+        "maps": "https://www.google.com/maps/search/?api=1&query=330%20Pine%20Street%2C%20Platteville%2C%20WI",
+        "source": "https://plattevilleapartments.com/pine.php",
+        "summary": "Looking for off-campus housing near UW–Platteville? This 2-bedroom, 1-bath building at 330 Pine Street is one block east of campus. Rent includes water, sewer, trash, snow removal and off-street parking. The building has shared laundry.",
+        "spotlight": {
+          "publishedAt": "2026-11-13",
+          "facebookPost": "https://www.facebook.com/groups/1672495207705371/posts/1674594157495476/"
+        }
+      }
+    ]
+  },
+  {
+    "id": "housing-vermillion-sd",
+    "file": "housing-vermillion-sd.html",
+    "school": "University of South Dakota",
+    "place": "Vermillion, SD",
+    "description": "Explore apartments and off-campus rentals in Vermillion near University of South Dakota.",
+    "properties": [
+      {
+        "id": "housing-vermillion-sd-property-pine-street-apartments",
+        "name": "Pine Street Apartments",
+        "website": "https://pinestreetapartments.com/",
+        "verifiedAt": "2026-11-13",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Pine%20Street%20Apartments%2C%20Vermillion%2C%20SD",
+        "source": "https://pinestreetapartments.com/",
+        "summary": "Sharing a rental near the University of South Dakota in Vermillion, SD? Pine Street Apartments offers 4-bedroom, 4-bath layouts across from campus. Each tenant has a private bathroom, and the property lists in-unit laundry and reserved parking.",
+        "spotlight": {
+          "publishedAt": "2026-11-13",
+          "facebookPost": "https://www.facebook.com/groups/2979932512339316/posts/2982130182119549/"
+        }
+      }
+    ]
+  },
+  {
+    "id": "housing-emporia-ks",
+    "file": "housing-emporia-ks.html",
+    "school": "Emporia State University",
+    "place": "Emporia, KS",
+    "description": "Explore apartments and off-campus rentals in Emporia near Emporia State University.",
+    "properties": [
+      {
+        "id": "housing-emporia-ks-property-the-ridge-of-emporia",
+        "name": "The Ridge of Emporia",
+        "website": "https://www.theridgeemporia.com/",
+        "verifiedAt": "2026-11-13",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Ridge%20of%20Emporia%2C%20Emporia%2C%20KS",
+        "source": "https://www.theridgeemporia.com/",
+        "summary": "Comparing rentals in Emporia, KS while attending Emporia State? The Ridge of Emporia lists 1-, 2-, and 3-bedroom apartments and 4-bedroom townhomes. The property lists kitchens with a dishwasher and built-in microwave, plus a private balcony or patio.",
+        "spotlight": {
+          "publishedAt": "2026-11-13",
+          "facebookPost": "https://www.facebook.com/groups/1129982866618268/posts/1132033819746506/"
+        }
+      }
+    ]
+  },
+  {
+    "id": "housing-ames-ia",
+    "file": "housing-ames-ia.html",
+    "school": "Iowa State University",
+    "place": "Ames, IA",
+    "description": "Explore apartments and off-campus rentals in Ames near Iowa State University.",
+    "properties": [
+      {
+        "id": "housing-ames-ia-property-the-foundry",
+        "name": "The Foundry",
+        "website": "https://www.foundrystudentliving.com/",
+        "verifiedAt": "2026-11-13",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Foundry%2C%20Ames%2C%20IA",
+        "source": "https://www.foundrystudentliving.com/",
+        "summary": "Looking for Iowa State University apartments in Ames, IA? The Foundry offers furnished 2- and 4-bedroom floor plans. Apartments come with in-unit laundry, a dishwasher and stainless-steel appliances.",
+        "spotlight": {
+          "publishedAt": "2026-11-13",
+          "facebookPost": "https://www.facebook.com/groups/951828424471864/posts/952285037759536/"
+        }
+      }
+    ]
+  },
+  {
+    "id": "housing-iowa-city-ia",
+    "file": "housing-iowa-city-ia.html",
+    "school": "University of Iowa",
+    "place": "Iowa City, IA",
+    "description": "Explore apartments and off-campus rentals in Iowa City near University of Iowa.",
+    "properties": [
+      {
+        "id": "housing-iowa-city-ia-property-the-nest-iowa-city",
+        "name": "The Nest Iowa City",
+        "website": "https://thenestiowacity.com/floor-plans/",
+        "verifiedAt": "2026-11-13",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Nest%20Iowa%20City%2C%20Iowa%20City%2C%20IA",
+        "source": "https://thenestiowacity.com/floor-plans/",
+        "summary": "Searching for off-campus housing near the University of Iowa in Iowa City? The Nest lists 1-, 2-, and 3-bedroom apartments. Its floor plans feature furnished packages, and the property lists a dishwasher and full-size washer and dryer in each unit.",
+        "spotlight": {
+          "publishedAt": "2026-11-13",
+          "facebookPost": "https://www.facebook.com/groups/3199654480425813/posts/3200304910360770/"
+        }
+      }
+    ]
+  },
+  {
+    "id": "housing-lawrence-ks",
+    "file": "housing-lawrence-ks.html",
+    "school": "University of Kansas",
+    "place": "Lawrence, KS",
+    "description": "Explore apartments and off-campus rentals in Lawrence near University of Kansas.",
+    "properties": [
+      {
+        "id": "housing-lawrence-ks-property-here-kansas",
+        "name": "HERE Kansas",
+        "website": "https://entrata.herekansas.com/lawrence/here-kansas/amenities/",
+        "verifiedAt": "2026-11-13",
+        "maps": "https://www.google.com/maps/search/?api=1&query=HERE%20Kansas%2C%20Lawrence%2C%20KS",
+        "source": "https://entrata.herekansas.com/lawrence/here-kansas/amenities/",
+        "summary": "Looking for a rental near the University of Kansas in Lawrence, KS? HERE Kansas at 1111 Indiana Street lists fully furnished apartments with an in-unit washer and dryer. The property also offers a fitness center and resident study space.",
+        "spotlight": {
+          "publishedAt": "2026-11-13",
+          "facebookPost": "https://www.facebook.com/groups/1378086194245280/posts/1378547094199190/"
+        }
+      }
+    ]
+  },
+  {
+    "id": "housing-manhattan-ks",
+    "file": "housing-manhattan-ks.html",
+    "school": "Kansas State University",
+    "place": "Manhattan, KS",
+    "description": "Explore apartments and off-campus rentals in Manhattan near Kansas State University.",
+    "properties": [
+      {
+        "id": "housing-manhattan-ks-property-the-district-at-manhattan",
+        "name": "The District at Manhattan",
+        "website": "https://www.districtatmanhattanapts.com/amenities",
+        "verifiedAt": "2026-11-13",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20District%20at%20Manhattan%2C%20Manhattan%2C%20KS",
+        "source": "https://www.districtatmanhattanapts.com/amenities",
+        "summary": "Looking for apartments near Kansas State University in Manhattan, KS? The District at Manhattan lists 1-, 2-, 3-, and 4-bedroom floor plans. Apartment kitchens include a dishwasher, and residents have access to a community pool.",
+        "spotlight": {
+          "publishedAt": "2026-11-13",
+          "facebookPost": "https://www.facebook.com/groups/2120989008519297/posts/2121553725129492/"
+        }
+      }
+    ]
+  },
+  {
+    "id": "housing-stillwater-ok",
+    "file": "housing-stillwater-ok.html",
+    "school": "Oklahoma State University",
+    "place": "Stillwater, OK",
+    "description": "Explore apartments and off-campus rentals in Stillwater near Oklahoma State University.",
+    "properties": [
+      {
+        "id": "housing-stillwater-ok-property-milestone-stillwater",
+        "name": "Milestone Stillwater",
+        "website": "https://milestonestillwater.com/",
+        "verifiedAt": "2026-11-13",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Milestone%20Stillwater%2C%20Stillwater%2C%20OK",
+        "source": "https://milestonestillwater.com/",
+        "summary": "Looking for off-campus apartments near Oklahoma State University in Stillwater, OK? Milestone Stillwater lists in-unit laundry, a dishwasher and a fully equipped kitchen. Compare its floor plans for your roommate setup and ask about lease dates.",
+        "spotlight": {
+          "publishedAt": "2026-11-13",
+          "facebookPost": "https://www.facebook.com/groups/1887445796015247/posts/1888029899290170/"
+        }
+      }
+    ]
+  },
+  {
+    "id": "housing-tucson-az",
+    "file": "housing-tucson-az.html",
+    "school": "University of Arizona",
+    "place": "Tucson, AZ",
+    "description": "Explore apartments and off-campus rentals in Tucson near University of Arizona.",
+    "properties": [
+      {
+        "id": "housing-tucson-az-property-the-pacific",
+        "name": "The Pacific",
+        "website": "https://www.livethepacific.com/apartments/az/tucson/floor-plans",
+        "verifiedAt": "2026-11-13",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Pacific%2C%20Tucson%2C%20AZ",
+        "source": "https://www.livethepacific.com/apartments/az/tucson/floor-plans",
+        "summary": "The Pacific in Tucson is two blocks from the University of Arizona. It lists furnished studios and one- through five-bedroom apartments with an in-unit washer and dryer, a private balcony, and stainless-steel kitchen appliances. The photo shows a model kitchen.",
+        "spotlight": {
+          "publishedAt": "2026-11-13",
+          "facebookPost": "https://www.facebook.com/groups/1128748779953964/posts/1128766493285526/"
+        }
+      }
+    ]
+  },
+  {
+    "id": "housing-albuquerque-nm",
+    "file": "housing-albuquerque-nm.html",
+    "school": "University of New Mexico",
+    "place": "Albuquerque, NM",
+    "description": "Explore apartments and off-campus rentals in Albuquerque near University of New Mexico.",
+    "properties": [
+      {
+        "id": "housing-albuquerque-nm-property-lobo-village",
+        "name": "Lobo Village",
+        "website": "https://www.americancampus.com/student-apartments/nm/albuquerque/lobo-village/",
+        "verifiedAt": "2026-11-14",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Lobo%20Village%2C%20Albuquerque%2C%20NM",
+        "source": "https://www.americancampus.com/student-apartments/nm/albuquerque/lobo-village/",
+        "summary": "Lobo Village on UNM’s South Campus in Albuquerque lists furnished 4-bed, 4-bath apartments, with a private bedroom and bathroom for each resident. It lists a washer and dryer, internet, water, sewer, trash and parking as included.",
+        "spotlight": {
+          "publishedAt": "2026-11-14",
+          "facebookPost": "https://www.facebook.com/groups/2548132042348043/posts/2549068832254364/"
+        }
+      }
+    ]
+  },
+  {
+    "id": "housing-fresno-ca",
+    "file": "housing-fresno-ca.html",
+    "school": "Fresno State",
+    "place": "Fresno, CA",
+    "description": "Explore apartments and off-campus rentals in Fresno near Fresno State.",
+    "properties": [
+      {
+        "id": "housing-fresno-ca-property-topanga-ridge",
+        "name": "Topanga Ridge",
+        "website": "https://www.topangaridge.com/floorplans/",
+        "verifiedAt": "2026-11-14",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Topanga%20Ridge%2C%20Fresno%2C%20CA",
+        "source": "https://www.topangaridge.com/floorplans/",
+        "summary": "Topanga Ridge near Fresno State lists four furnished layouts: two 2-bed, 2-bath plans (including a corner layout), a 4-bed, 2-bath plan and a 4-bed, 4-bath plan. See the floor plans to compare how the bathrooms are shared.",
+        "spotlight": {
+          "publishedAt": "2026-11-14",
+          "facebookPost": "https://www.facebook.com/groups/1153864210494686/posts/1154728423741598/"
+        }
+      }
+    ]
+  },
+  {
+    "id": "housing-sacramento-ca",
+    "file": "housing-sacramento-ca.html",
+    "school": "Sacramento State",
+    "place": "Sacramento, CA",
+    "description": "Explore apartments and off-campus rentals in Sacramento near Sacramento State.",
+    "properties": [
+      {
+        "id": "housing-sacramento-ca-property-the-crossings",
+        "name": "The Crossings",
+        "website": "https://www.crossingssac.com/floor-plans/",
+        "verifiedAt": "2026-11-14",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Crossings%2C%20Sacramento%2C%20CA",
+        "source": "https://www.crossingssac.com/floor-plans/",
+        "summary": "The Crossings at 2920 Ramona Ave. offers furnished apartments near Sacramento State. The floor-plan page lists 1-bed/1-bath, 2-bed/2-bath, 3-bed/3-bath and 4-bed/4-bath layouts. Check with the leasing office for current availability.",
+        "spotlight": {
+          "publishedAt": "2026-11-14",
+          "facebookPost": "https://www.facebook.com/groups/1769167408547278/posts/1770165568447462/"
+        }
+      }
+    ]
+  },
+  {
+    "id": "housing-greensboro-nc",
+    "file": "housing-greensboro-nc.html",
+    "school": "UNC Greensboro",
+    "place": "Greensboro, NC",
+    "description": "Explore apartments and off-campus rentals in Greensboro near UNC Greensboro.",
+    "properties": [
+      {
+        "id": "housing-greensboro-nc-property-spartan-crossing",
+        "name": "Spartan Crossing",
+        "website": "https://www.spartancrossing.com/apartments/",
+        "verifiedAt": "2026-11-14",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Spartan%20Crossing%2C%20Greensboro%2C%20NC",
+        "source": "https://www.spartancrossing.com/apartments/",
+        "summary": "Spartan Crossing on Granite Street near UNC Greensboro lists furnished 1-, 2- and 3-bedroom apartments with in-unit laundry. The layouts include a 1-bed/1-bath, 2-bedroom plans with 2 or 3 baths, and 3-bed/3-bath plans. Check the property site for current availability.",
+        "spotlight": {
+          "publishedAt": "2026-11-14",
+          "facebookPost": "https://www.facebook.com/groups/1670073367846669/posts/1670999884420684/"
+        }
+      }
+    ]
   }
 ]
