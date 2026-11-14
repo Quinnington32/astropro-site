@@ -853,9 +853,30 @@ function setupAdmin() {
       meta.className = "fineprint";
       meta.textContent = item.id + " · " + item.created_at;
       const pre = document.createElement("pre");
-      pre.textContent = JSON.stringify(item.payload, null, 2);
+      const { flyerBase64, ...details } = item.payload;
+      pre.textContent = JSON.stringify(details, null, 2);
       const actions = document.createElement("div");
       actions.className = "admin-controls";
+      if (flyerBase64) {
+        const download = document.createElement("button");
+        download.type = "button";
+        download.className = "btn btn-ghost";
+        download.textContent = "Download flyer";
+        download.addEventListener("click", () => {
+          try {
+            const bytes = Uint8Array.from(atob(flyerBase64), (char) => char.charCodeAt(0));
+            const url = URL.createObjectURL(new Blob([bytes], { type: details.flyerMime }));
+            const link = document.createElement("a");
+            link.href = url;
+            link.download = details.flyerName || "campaign-flyer";
+            link.click();
+            setTimeout(() => URL.revokeObjectURL(url), 10000);
+          } catch {
+            message.textContent = "The submitted flyer could not be read. Ask the sender to resend it.";
+          }
+        });
+        actions.append(download);
+      }
       for (const state of ["new", "reviewed", "resolved"]) {
         const b = document.createElement("button");
         b.type = "button";
