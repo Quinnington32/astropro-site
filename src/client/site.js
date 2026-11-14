@@ -502,7 +502,7 @@ function setupForms() {
       if (pending?.payload && pending?.id) {
         for (const [name, value] of Object.entries(pending.payload)) {
           const input = form.elements.namedItem(name);
-          if (input && typeof value === "string" && input.type !== "checkbox")
+          if (input && typeof value === "string" && input.type !== "checkbox" && name !== "consentVersion")
             input.value = value;
         }
         status.textContent =
@@ -525,8 +525,13 @@ function setupForms() {
       data.type = type;
       data.consent = data.consent === "yes";
       const canonical = JSON.stringify(data);
-      if (!pending || pending.canonical !== canonical)
+      const { consentVersion, ...details } = data;
+      const { consentVersion: previousVersion, ...previousDetails } = pending?.payload ?? {};
+      const sameRequest = pending && JSON.stringify(details) === JSON.stringify(previousDetails);
+      if (!sameRequest)
         pending = { id: crypto.randomUUID(), payload: data, canonical };
+      else if (consentVersion !== previousVersion)
+        pending = { id: pending.id, payload: data, canonical };
       try {
         sessionStorage.setItem(key, JSON.stringify(pending));
       } catch {}
@@ -785,7 +790,9 @@ function setupAdmin() {
     mentor: "Volunteer mentor interest",
     "data-request": "Personal data request",
     unsubscribe: "Email preference request",
+    "partner-campaign": "Partner campaign order",
   };
+  const receipt = new URLSearchParams(location.search).get("receipt");
   function touch() {
     clearTimeout(idleTimer);
     if (session.unlocked)
@@ -882,7 +889,15 @@ function setupAdmin() {
         });
         actions.append(b);
       }
-      article.append(h, meta, pre, actions);
+      article.append(h, meta);
+      if (item.highLevel) {
+        const delivery = document.createElement("p");
+        delivery.className = "fineprint";
+        const labels = { synced: "Synced to GoHighLevel", retrying: "GoHighLevel sync will retry", pending: "Waiting for GoHighLevel sync" };
+        delivery.textContent = labels[item.highLevel.status] + (item.highLevel.error ? ` (${item.highLevel.error})` : "");
+        article.append(delivery);
+      }
+      article.append(pre, actions);
       records.append(article);
     }
   }
@@ -902,6 +917,7 @@ function setupAdmin() {
       if (view.value === "submissions") {
         if (status.value) params.set("status", status.value);
         if (type.value) params.set("type", type.value);
+        if (receipt) params.set("receipt", receipt);
       }
       if (more && cursor) params.set("cursor", cursor);
       const data = await session.request(view.value + "?" + params);

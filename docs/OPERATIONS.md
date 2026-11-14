@@ -8,12 +8,26 @@
 
 1. Open the private inbox using the private access key. Obtain it from the deployment owner through a secure channel. It is deliberately absent from email, GitHub, URLs, and this guide.
 2. Choose **Requests**, filter **Review status → New**, then choose a request type if needed. Filters apply to the database query, including older pages. Use **Load older records** until it disappears when checking a complete view.
-3. Read each request, verify the official source where relevant, and follow up manually from the team mailbox. The inbox does not send email or automatically enroll people in a CRM, newsletter, or mentor match.
+3. Read each request, verify the official source where relevant, and follow up directly. GoHighLevel tracks staff follow-up for business submissions that include the current form consent.
 4. Mark a request **Reviewed** once someone has taken responsibility; mark it **Resolved** when the requested follow-up is finished. Refresh to reapply filters. **Mark new** reopens a mistakenly closed request. A status change does not send a message.
 5. For access, correction, or deletion requests, verify identity before disclosing or changing personal information. Locate the exact record in the dedicated Cloudflare D1 database and make only the verified, authorized change. Keep personal information out of GitHub issues and release reports.
 6. Lock the inbox when finished. It also locks after 15 minutes without activity and on page navigation. Pending responses cannot restore private records after locking.
 
 Check the **Do-not-contact preferences** view before any optional marketing outreach. This view is paginated independently and does not stop at 500 entries. A preference is specific to the Student Resource Center; the unsubscribe link in a separate AstroPro/HighLevel email handles that separate list. Replies a person specifically requested are distinct from optional marketing. The resource center does not currently send either automatically.
+
+## GoHighLevel intake
+
+Open the [Student Resource Center pipeline](https://atom.astropromarketing.com/v2/location/R0dwEE59yxdgMTqUvP8s/opportunities/pipeline/xZZMaxB1X5CISlfDFdCR?tab=stages) in the AstroPro Marketing sub-account.
+
+- **New Listing** goes to Cory Bittick for source verification and review.
+- **Verify Campaign Payment** goes to Michael Quinn. Match the website order reference with a completed PayPal payment before moving the campaign into review or scheduling it.
+- Use **In Review**, **Waiting on Reply**, **Approved / Scheduled**, and **Completed** as you handle the request. Update the opportunity outcome and finish its staff task when the work is done. The task links to the full website request using its receipt. Flyers and form details stay in the private inbox.
+
+New accepted business requests with the GoHighLevel consent notice are saved and queued in D1 together. HighLevel looks up the contact by email, creates the opportunity, and records a staff task due within 24 hours after sync. Each request has its own task. When HighLevel enforces one opportunity per contact in a pipeline, the task uses the existing contact and opportunity without moving the card. The site does not enroll leads in a campaign. Mentoring, data requests, email preferences, and submissions under the older notice are handled from the private inbox.
+
+The inbox shows whether each business request is waiting, retrying, or synced. Retries run every five minutes with backoff on provider failures. If the queue builds up, check the deployment secret and location, pipeline, stage and owner IDs, then check Worker logs for the reported operation code. The website receipt confirms that D1 stored the request. Include the matching opportunity and task when handling a verified request to correct or delete Resource Center information.
+
+Apply `0003_highlevel_deliveries.sql` before deploying the integration. Configure `GHL_PRIVATE_TOKEN` as a Cloudflare Worker secret from the AstroPro Marketing private integration. The token uses contact and opportunity read/write scopes in this sub-account. Confirm `/api/health`, the privacy notice, and both stage assignments with controlled test submissions after release.
 
 The deployment owner's checkout can also read the private inbox:
 
@@ -68,6 +82,6 @@ Preserve D1 data and communication preferences during a code rollback. The dedic
 - **Health 503 or form 503:** check Worker logs, the `DB` binding, and applied migrations. The health check queries storage rather than only checking whether a binding name exists. Error responses omit database internals and visitor details.
 - **Uncertain form receipt:** retry the same details in the same tab. The stable request ID prevents duplicates. Do not tell a visitor a request was received without its confirmed receipt.
 - **Form 429:** per-email, network, or global limits were reached. Wait as instructed or handle the person's request directly; avoid repeatedly resubmitting it.
-- **No email notification:** this is expected. The private inbox is the delivery destination, and staff follow-up is manual.
+- **A lead is missing in GoHighLevel:** check its receipt in the private inbox and review the sync status. Business lead delivery does not depend on the optional partner email notification.
 
 Form submissions expire after 90 days through the daily cron. Communication preferences are retained separately. Review the inbox regularly so requests are handled before expiry.

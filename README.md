@@ -47,6 +47,8 @@ The project uses a custom **AstroPro Student Resource Center** logo, retaining A
 
 The Worker persists organization submissions, mentor/mentee interest, data requests, and communication preferences in the dedicated D1 database. Validation runs server-side. Requests require same-origin JSON and explicit consent. A receipt is returned only after storage confirms the record. Reusing the same UUID and details returns the original receipt; reusing an ID with changed details is rejected. The browser retains an uncertain attempt in tab-scoped storage for a safe retry.
 
+Business submissions that accept the GoHighLevel notice are routed from D1 to the Student Resource Center pipeline with a staff task. See [GoHighLevel intake](docs/OPERATIONS.md#gohighlevel-intake) for setup, review, and recovery.
+
 Staff review is available at `/admin.html`, protected by the `ADMIN_TOKEN` Worker secret. The page is noindex; the API requires authentication regardless of whether someone knows its URL. It supports combined status/type filters, paginated requests, review status changes, and a separate paginated do-not-contact view. The key stays in memory while the inbox is open and is cleared on lock, navigation, or 15 minutes without activity. Locking aborts pending requests and rejects late responses so they cannot reopen the inbox.
 
 On the deployment owner’s Mac, the private key is in this checkout’s ignored mode-0600 `.dev.vars`. It is deliberately absent from Git, build output, URLs, screenshots, and this README. Use a private environment to install the same value on another machine. The convenient authenticated CLI reads it without putting it in a URL:
