@@ -502,7 +502,7 @@ function setupForms() {
       if (pending?.payload && pending?.id) {
         for (const [name, value] of Object.entries(pending.payload)) {
           const input = form.elements.namedItem(name);
-          if (input && typeof value === "string" && input.type !== "checkbox")
+          if (input && typeof value === "string" && input.type !== "checkbox" && name !== "consentVersion")
             input.value = value;
         }
         status.textContent =
@@ -525,8 +525,13 @@ function setupForms() {
       data.type = type;
       data.consent = data.consent === "yes";
       const canonical = JSON.stringify(data);
-      if (!pending || pending.canonical !== canonical)
+      const { consentVersion, ...details } = data;
+      const { consentVersion: previousVersion, ...previousDetails } = pending?.payload ?? {};
+      const sameRequest = pending && JSON.stringify(details) === JSON.stringify(previousDetails);
+      if (!sameRequest)
         pending = { id: crypto.randomUUID(), payload: data, canonical };
+      else if (consentVersion !== previousVersion)
+        pending = { id: pending.id, payload: data, canonical };
       try {
         sessionStorage.setItem(key, JSON.stringify(pending));
       } catch {}
@@ -785,7 +790,9 @@ function setupAdmin() {
     mentor: "Volunteer mentor interest",
     "data-request": "Personal data request",
     unsubscribe: "Email preference request",
+    "partner-campaign": "Partner campaign order",
   };
+  const receipt = new URLSearchParams(location.search).get("receipt");
   function touch() {
     clearTimeout(idleTimer);
     if (session.unlocked)
@@ -846,9 +853,30 @@ function setupAdmin() {
       meta.className = "fineprint";
       meta.textContent = item.id + " · " + item.created_at;
       const pre = document.createElement("pre");
-      pre.textContent = JSON.stringify(item.payload, null, 2);
+      const { flyerBase64, ...details } = item.payload;
+      pre.textContent = JSON.stringify(details, null, 2);
       const actions = document.createElement("div");
       actions.className = "admin-controls";
+      if (flyerBase64) {
+        const download = document.createElement("button");
+        download.type = "button";
+        download.className = "btn btn-ghost";
+        download.textContent = "Download flyer";
+        download.addEventListener("click", () => {
+          try {
+            const bytes = Uint8Array.from(atob(flyerBase64), (char) => char.charCodeAt(0));
+            const url = URL.createObjectURL(new Blob([bytes], { type: details.flyerMime }));
+            const link = document.createElement("a");
+            link.href = url;
+            link.download = details.flyerName || "campaign-flyer";
+            link.click();
+            setTimeout(() => URL.revokeObjectURL(url), 10000);
+          } catch {
+            message.textContent = "The submitted flyer could not be read. Ask the sender to resend it.";
+          }
+        });
+        actions.append(download);
+      }
       for (const state of ["new", "reviewed", "resolved"]) {
         const b = document.createElement("button");
         b.type = "button";
@@ -882,7 +910,15 @@ function setupAdmin() {
         });
         actions.append(b);
       }
-      article.append(h, meta, pre, actions);
+      article.append(h, meta);
+      if (item.highLevel) {
+        const delivery = document.createElement("p");
+        delivery.className = "fineprint";
+        const labels = { synced: "Synced to GoHighLevel", retrying: "GoHighLevel sync will retry", pending: "Waiting for GoHighLevel sync" };
+        delivery.textContent = labels[item.highLevel.status] + (item.highLevel.error ? ` (${item.highLevel.error})` : "");
+        article.append(delivery);
+      }
+      article.append(pre, actions);
       records.append(article);
     }
   }
@@ -902,6 +938,7 @@ function setupAdmin() {
       if (view.value === "submissions") {
         if (status.value) params.set("status", status.value);
         if (type.value) params.set("type", type.value);
+        if (receipt) params.set("receipt", receipt);
       }
       if (more && cursor) params.set("cursor", cursor);
       const data = await session.request(view.value + "?" + params);

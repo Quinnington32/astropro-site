@@ -4,6 +4,8 @@ import { readFile } from "node:fs/promises";
 import { Miniflare, convertV4MiniflareOptions } from "miniflare";
 import { randomUUID, createHash } from "node:crypto";
 import { validateSubmission } from "../worker/index.mjs";
+import { deliverHighLevel, retryHighLevel } from "../worker/highlevel.mjs";
+import { highLevelConsentVersion } from "../src/intake.mjs";
 let mf, db;
 const token = "local-test-only-secret-".repeat(3);
 const origin = "https://local.test";
@@ -30,8 +32,9 @@ const send = (input, headers = {}) =>
 before(async () => {
   mf = new Miniflare(
     convertV4MiniflareOptions({
-      modules: true,
-      scriptPath: "worker/index.mjs",
+      modules: ["worker/index.mjs", "worker/highlevel.mjs", "src/intake.mjs"].map(
+        (path) => ({ path, type: "ESModule" }),
+      ),
       compatibilityDate: "2026-10-01",
       compatibilityFlags: ["nodejs_compat"],
       d1Databases: ["DB"],
@@ -42,6 +45,7 @@ before(async () => {
   for (const file of [
     "migrations/0001_resource_center.sql",
     "migrations/0002_partner_campaign_type.sql",
+    "migrations/0003_highlevel_deliveries.sql",
   ]) {
     const schema = await readFile(file, "utf8");
     await db.batch(
@@ -55,6 +59,87 @@ before(async () => {
 });
 after(async () => {
   await mf?.dispose();
+});
+
+test("HighLevel retries a saved lead without duplicating the contact, opportunity, or task", async () => {
+  const listing = body("listing", {
+    organization: "Local CRM test organization", listingType: "Scholarship",
+    title: "HighLevel route test", description: "Keep the full details private.",
+    url: "https://example.com/listing", consentVersion: highLevelConsentVersion,
+  });
+  const legacy = { ...listing, requestId: randomUUID(), consentVersion: undefined };
+  assert.equal((await send(legacy)).status, 201);
+  assert.equal((await send({ ...legacy, consentVersion: highLevelConsentVersion })).status, 200);
+  const results = await Promise.all([send(listing), send(listing)]);
+  assert.deepEqual(results.map((result) => result.status).sort(), [200, 201]);
+  const getDelivery = (id) => db.prepare("SELECT * FROM highlevel_deliveries WHERE submission_id=?").bind(id).first();
+  assert.equal(await getDelivery(legacy.requestId), null);
+  assert.ok(await getDelivery(listing.requestId));
+
+  const env = {
+    DB: db, GHL_PRIVATE_TOKEN: "local-test-token", GHL_LOCATION_ID: "astropro-location",
+    GHL_PIPELINE_ID: "student-pipeline", GHL_LISTING_STAGE_ID: "listing-stage",
+    GHL_LISTING_OWNER_ID: "cory", GHL_CAMPAIGN_STAGE_ID: "campaign-stage", GHL_CAMPAIGN_OWNER_ID: "michael",
+  };
+  const calls = [];
+  const tasks = [];
+  let opportunity;
+  let taskTimedOut = true;
+  const fetcher = async (url, request) => {
+    const u = new URL(url);
+    const key = `${request.method} ${u.pathname}`;
+    const data = request.body && JSON.parse(request.body);
+    calls.push(key);
+    assert.equal(u.origin, "https://services.leadconnectorhq.com");
+    assert.equal(request.headers.version, "v3");
+    switch (key) {
+      case "GET /contacts/search/duplicate":
+        assert.equal(u.searchParams.get("email"), listing.email);
+        return Response.json({ contact: null });
+      case "POST /contacts":
+        assert.equal(data.email, listing.email);
+        return Response.json({ contact: { id: "contact-one", locationId: env.GHL_LOCATION_ID } });
+      case "GET /opportunities/search":
+        return Response.json({ opportunities: [] });
+      case "POST /opportunities":
+        opportunity = { ...data, id: "opportunity-one" };
+        return Response.json({ opportunity }, { status: 201 });
+      case "GET /contacts/contact-one/tasks":
+        return Response.json({ tasks });
+      case "POST /contacts/contact-one/tasks":
+        tasks.push({ ...data, id: "task-one" });
+        if (taskTimedOut) {
+          taskTimedOut = false;
+          throw Error("The provider stored the task before the request timed out.");
+        }
+        return Response.json({ task: tasks.at(-1) }, { status: 201 });
+      default:
+        throw Error("Unexpected HighLevel operation " + key);
+    }
+  };
+  await Promise.all([deliverHighLevel(env, listing.requestId, fetcher), deliverHighLevel(env, listing.requestId, fetcher)]);
+  const failed = await getDelivery(listing.requestId);
+  assert.equal(failed.error_code, "task_create_unavailable");
+  assert.equal(failed.contact_id, "contact-one");
+  assert.equal(failed.opportunity_id, opportunity.id);
+  assert.equal(opportunity.pipelineStageId, "listing-stage");
+  assert.equal(opportunity.assignedTo, "cory");
+  assert.equal(tasks[0].assignedTo, "cory");
+  assert.match(tasks[0].body, new RegExp(listing.requestId));
+  assert.doesNotMatch(tasks[0].body, /full details private/);
+  await db.prepare("UPDATE highlevel_deliveries SET next_attempt_at=0 WHERE submission_id=?").bind(listing.requestId).run();
+  await retryHighLevel(env, fetcher);
+  const synced = await getDelivery(listing.requestId);
+  assert.ok(synced.synced_at);
+  assert.equal(synced.error_code, null);
+  assert.deepEqual(calls, [
+    "GET /contacts/search/duplicate", "POST /contacts", "GET /opportunities/search", "POST /opportunities",
+    "GET /contacts/contact-one/tasks", "POST /contacts/contact-one/tasks", "GET /contacts/contact-one/tasks",
+  ]);
+  const inbox = await mf.dispatchFetch(origin + "/api/admin/submissions?receipt=" + listing.requestId,
+    { headers: { Authorization: "Bearer " + token } });
+  const { items } = await inbox.json();
+  assert.deepEqual(items.map((item) => [item.id, item.highLevel.status]), [[listing.requestId, "synced"]]);
 });
 test("server validation rejects missing consent, invalid types, and unsafe URLs", () => {
   assert.throws(() => validateSubmission(body("mentee", { consent: false })));

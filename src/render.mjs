@@ -1,3 +1,5 @@
+import { highLevelConsentVersion, isBusinessRequest } from "./intake.mjs";
+
 export const escape = (value) =>
   String(value ?? "").replace(
     /[&<>"']/g,
@@ -146,5 +148,14 @@ export function form({ type, fields, button, disclosure = "" }) {
     /\b(id|for|aria-describedby)="([^"]+)"/g,
     (_, attr, value) => `${attr}="${type}-${value}"`,
   );
-  return `<form class="intake-form" data-intake="${type}" method="post" action="api/submissions"><input type="hidden" name="type" value="${type}"><div class="form-fields">${fields}<div class="honeypot" aria-hidden="true"><label>Leave this field empty<input name="website" type="text" tabindex="-1" autocomplete="off"></label></div><label class="consent"><input type="checkbox" name="consent" required value="yes"><span>${type === "unsubscribe" ? "Record this email preference for the Student Resource Center." : "I agree to have AstroPro store this request and contact me about it."} <a href="privacy.html">Privacy details</a>.</span></label><p class="fineprint">${disclosure || "No marketing signup. Please keep sensitive personal information out of this form."}</p><button class="btn btn-primary" type="submit">${escape(button)}</button></div><div class="form-status" role="status" aria-live="polite" tabindex="-1"></div><noscript><p class="notice">Enable JavaScript to send this form securely, or email <a href="mailto:admin@astropromarketing.com">admin@astropromarketing.com</a>.</p></noscript></form>`;
+  const business = isBusinessRequest(type);
+  const consent = business
+    ? "I agree to have AstroPro store this request, use GoHighLevel to manage follow-up, and contact me about it."
+    : type === "unsubscribe"
+      ? "Record this email preference for the Student Resource Center."
+      : "I agree to have AstroPro store this request and contact me about it.";
+  const noticeVersion = business
+    ? `<input type="hidden" name="consentVersion" value="${highLevelConsentVersion}">`
+    : "";
+  return `<form class="intake-form" data-intake="${type}" method="post" action="api/submissions"><input type="hidden" name="type" value="${type}">${noticeVersion}<div class="form-fields">${fields}<div class="honeypot" aria-hidden="true"><label>Leave this field empty<input name="website" type="text" tabindex="-1" autocomplete="off"></label></div><label class="consent"><input type="checkbox" name="consent" required value="yes"><span>${consent} <a href="privacy.html">Privacy details</a>.</span></label><p class="fineprint">${disclosure || "No marketing signup. Please keep sensitive personal information out of this form."}</p><button class="btn btn-primary" type="submit">${escape(button)}</button></div><div class="form-status" role="status" aria-live="polite" tabindex="-1"></div><noscript><p class="notice">Enable JavaScript to send this form securely, or email <a href="mailto:admin@astropromarketing.com">admin@astropromarketing.com</a>.</p></noscript></form>`;
 }

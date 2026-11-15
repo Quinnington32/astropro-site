@@ -35,8 +35,16 @@
       "migrations_dir": "migrations",
     },
   ],
+  "vars": {
+    "GHL_LOCATION_ID": "R0dwEE59yxdgMTqUvP8s",
+    "GHL_PIPELINE_ID": "xZZMaxB1X5CISlfDFdCR",
+    "GHL_LISTING_STAGE_ID": "564240e3-f673-4a32-8679-591561962f0b",
+    "GHL_CAMPAIGN_STAGE_ID": "69d130ab-b560-45bf-a1f6-62484806b601",
+    "GHL_LISTING_OWNER_ID": "p7xCOyezOj1Ul9Lfm4HD",
+    "GHL_CAMPAIGN_OWNER_ID": "UJ4Dqndx2QMSRwy63Fkz",
+  },
   "triggers": {
-    "crons": ["17 4 * * *"],
+    "crons": ["17 4 * * *", "*/5 * * * *"],
   },
   "observability": {
     "enabled": true,

@@ -1,3 +1,6 @@
+import { highLevelConsentVersion, isBusinessRequest } from "../src/intake.mjs";
+import { deliverHighLevel, highLevelRetryCron, retryHighLevel } from "./highlevel.mjs";
+
 const PREFIX = "/studentresourcecenter";
 const MAX_BODY = 2500000;
 const JSON_HEADERS = {
@@ -247,7 +250,8 @@ export function validateSubmission(input) {
     type,
     payload,
     requestId: input.requestId.toLowerCase(),
-    consentVersion: "2026-10-31",
+    consentVersion: isBusinessRequest(type) && input.consentVersion === highLevelConsentVersion
+      ? highLevelConsentVersion : "2026-10-31",
   };
 }
 function isSameOrigin(request) {
@@ -320,7 +324,7 @@ async function notifyPartnerCampaign(env, data) {
     console.error("Partner campaign notification email failed");
   }
 }
-async function submissions(request, env) {
+async function submissions(request, env, ctx) {
   if (request.method !== "POST")
     return json({ error: "Method not allowed." }, 405, { allow: "POST" });
   if (!isSameOrigin(request))
@@ -366,12 +370,15 @@ async function submissions(request, env) {
   );
   try {
     const existing = await env.DB.prepare(
-      "SELECT id,payload_hash,created_at FROM submissions WHERE id=?",
+      "SELECT id,payload_hash,consent_version,created_at FROM submissions WHERE id=?",
     )
       .bind(data.requestId)
       .first();
     if (existing) {
-      if (existing.payload_hash !== payloadHash)
+      const retryHash = existing.consent_version === data.consentVersion
+        ? payloadHash
+        : await digest(JSON.stringify([data.type, data.payload, existing.consent_version]));
+      if (existing.payload_hash !== retryHash)
         return json(
           {
             error:
@@ -437,13 +444,24 @@ async function submissions(request, env) {
         ),
       );
     }
-    await env.DB.batch(statements);
+    const crmRequest = data.consentVersion === highLevelConsentVersion;
+    if (crmRequest) {
+      statements.push(env.DB.prepare(`INSERT OR IGNORE INTO highlevel_deliveries
+        (submission_id,contact_key,next_attempt_at) SELECT id,?,? FROM submissions
+        WHERE id=? AND payload_hash=?`).bind(
+        await digest("highlevel:" + data.payload.email), Date.now(), data.requestId, payloadHash,
+      ));
+    }
+    const [insert] = await env.DB.batch(statements);
     const stored = await env.DB.prepare(
-      "SELECT id,payload_hash,created_at FROM submissions WHERE id=?",
+      "SELECT id,payload_hash,consent_version,created_at FROM submissions WHERE id=?",
     )
       .bind(data.requestId)
       .first();
-    if (!stored || stored.payload_hash !== payloadHash)
+    const storedHash = stored?.consent_version === data.consentVersion
+      ? payloadHash
+      : await digest(JSON.stringify([data.type, data.payload, stored?.consent_version]));
+    if (!stored || stored.payload_hash !== storedHash)
       return json(
         {
           error:
@@ -451,9 +469,16 @@ async function submissions(request, env) {
         },
         409,
       );
-    if (data.type === "partner-campaign")
+    if (crmRequest && ctx && env.GHL_PRIVATE_TOKEN) {
+      ctx.waitUntil(deliverHighLevel(env, stored.id).catch(() => {
+        console.error("Resource Center HighLevel delivery could not be processed");
+      }));
+    }
+    if (insert.meta.changes && data.type === "partner-campaign")
       await notifyPartnerCampaign(env, data);
-    return json({ receipt: stored.id, receivedAt: stored.created_at }, 201);
+    return insert.meta.changes
+      ? json({ receipt: stored.id, receivedAt: stored.created_at }, 201)
+      : json({ receipt: stored.id, receivedAt: stored.created_at, duplicate: true });
   } catch {
     console.error("Resource Center submission persistence failed");
     return json(
@@ -501,14 +526,17 @@ async function admin(request, env, path) {
     const url = new URL(request.url),
       cursor = decodeCursor(url.searchParams.get("cursor"), UUID),
       status = url.searchParams.get("status"),
-      type = url.searchParams.get("type");
+      type = url.searchParams.get("type"),
+      receipt = url.searchParams.get("receipt");
     if (
       (status && !reviewStates.includes(status)) ||
-      (type && !Object.hasOwn(types, type))
+      (type && !Object.hasOwn(types, type)) ||
+      (receipt && !UUID.test(receipt))
     )
       return json({ error: "Choose a valid inbox filter." }, 400);
-    let sql =
-        "SELECT id,type,payload_json,status,created_at,updated_at FROM submissions",
+    let sql = `SELECT s.id,s.type,s.payload_json,s.status,s.created_at,s.updated_at,
+        d.submission_id AS highlevel_submission,d.synced_at AS highlevel_synced_at,d.error_code AS highlevel_error
+        FROM submissions AS s LEFT JOIN highlevel_deliveries AS d ON d.submission_id=s.id`,
       args = [],
       conditions = [];
     if (status) {
@@ -520,11 +548,15 @@ async function admin(request, env, path) {
       args.push(type);
     }
     if (cursor) {
-      conditions.push("(created_at < ? OR (created_at = ? AND id < ?))");
+      conditions.push("(s.created_at < ? OR (s.created_at = ? AND s.id < ?))");
       args.push(cursor[0], cursor[0], cursor[1]);
     }
+    if (receipt) {
+      conditions.push("s.id=?");
+      args.push(receipt.toLowerCase());
+    }
     if (conditions.length) sql += " WHERE " + conditions.join(" AND ");
-    sql += " ORDER BY created_at DESC,id DESC LIMIT 51";
+    sql += " ORDER BY s.created_at DESC,s.id DESC LIMIT 51";
     const { results } = await env.DB.prepare(sql)
       .bind(...args)
       .all();
@@ -533,9 +565,14 @@ async function admin(request, env, path) {
     const last = rows.at(-1);
     const nextCursor = hasMore ? encodeCursor(last.created_at, last.id) : null;
     return json({
-      items: rows.map(({ payload_json, ...row }) => ({
+      items: rows.map(({ payload_json, highlevel_submission, highlevel_synced_at, highlevel_error, ...row }) => ({
         ...row,
         payload: JSON.parse(payload_json),
+        ...(highlevel_submission && { highLevel: {
+          status: highlevel_synced_at ? "synced" : highlevel_error ? "retrying" : "pending",
+          error: highlevel_error,
+          syncedAt: highlevel_synced_at,
+        } }),
       })),
       nextCursor,
     });
@@ -597,7 +634,7 @@ function secure(response, isHtml = false) {
     r.headers.set("Cache-Control", "public, max-age=0, must-revalidate");
   return r;
 }
-export async function handleRequest(request, env) {
+export async function handleRequest(request, env, ctx) {
   const url = new URL(request.url);
   let path = url.pathname;
   if (
@@ -632,7 +669,7 @@ export async function handleRequest(request, env) {
         ready ? 200 : 503,
       );
     }
-    if (path === "/api/submissions") return submissions(request, env);
+    if (path === "/api/submissions") return submissions(request, env, ctx);
     if (path.startsWith("/api/admin/")) return admin(request, env, path);
     return json({ error: "Endpoint not found." }, 404);
   }
@@ -675,9 +712,9 @@ export async function handleRequest(request, env) {
   return response;
 }
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     try {
-      const response = await handleRequest(request, env);
+      const response = await handleRequest(request, env, ctx);
       return secure(
         response,
         response.headers.get("content-type")?.includes("text/html"),
@@ -696,8 +733,9 @@ export default {
       );
     }
   },
-  async scheduled(_event, env) {
+  async scheduled(event, env) {
     if (!env.DB) return;
+    if (event.cron === highLevelRetryCron) return retryHighLevel(env);
     await env.DB.batch([
       env.DB.prepare("DELETE FROM submissions WHERE created_at < ?").bind(
         new Date(Date.now() - 90 * 86400000).toISOString(),
