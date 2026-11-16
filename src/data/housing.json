@@ -3439,7 +3439,34 @@
     "place": "Provo, UT",
     "description": "Renters and students in Provo use the AstroPro Facebook group to find apartments, subleases, and roommates near Brigham Young University. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/781574775524955/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-provo-ut-property-crestwood",
+        "name": "Crestwood Apartments",
+        "website": "https://crestwoodapts.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Crestwood%20Apartments%2C%20Provo%2C%20UT",
+        "summary": "Student housing in Provo near BYU and UVU. Confirm current pricing on the official site.",
+        "source": "https://crestwoodapts.com/",
+        "pick": 1,
+        "photo": "assets/housing/housing-provo-ut-property-crestwood.jpg",
+        "photoAlt": "Crestwood Apartments in Provo, UT, from the property's official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-provo-ut-property-the-branbury",
+        "name": "The Branbury",
+        "website": "https://www.thebranbury.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Branbury%2C%20Provo%2C%20UT",
+        "summary": "Apartments in Provo for BYU and UVU students. Confirm current pricing on the official site.",
+        "source": "https://www.thebranbury.com/",
+        "pick": 2,
+        "photo": "assets/housing/housing-provo-ut-property-the-branbury.jpg",
+        "photoAlt": "The Branbury in Provo, UT, from the property's official website",
+        "photoApproved": true
+      }
+    ]
   },
   {
     "id": "housing-independence-mo",
@@ -3538,7 +3565,21 @@
     "place": "Murfreesboro, TN",
     "description": "Renters and students in Murfreesboro use the AstroPro Facebook group to find apartments, subleases, and roommates near Middle Tennessee State University. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/1611003420259893/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-murfreesboro-tn-property-1540-place",
+        "name": "1540 Place",
+        "website": "https://1540place.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=1540%20Place%2C%20Murfreesboro%2C%20TN",
+        "summary": "Student apartments in Murfreesboro near MTSU. Confirm current pricing on the official site.",
+        "source": "https://1540place.com/",
+        "pick": 1,
+        "photo": "assets/housing/housing-murfreesboro-tn-property-1540-place.jpg",
+        "photoAlt": "1540 Place in Murfreesboro, TN, from the property's official website",
+        "photoApproved": true
+      }
+    ]
   },
   {
     "id": "housing-san-marcos-tx",
@@ -4075,7 +4116,21 @@
     "place": "Boone, NC",
     "description": "Renters and students in Boone use the AstroPro Facebook group to find apartments, subleases, and roommates near Appalachian State University. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/appstateapartments/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-boone-nc-property-university-highlands",
+        "name": "University Highlands",
+        "website": "https://universityhighlands.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=University%20Highlands%2C%20Boone%2C%20NC",
+        "summary": "Student apartments near Appalachian State University. Confirm current pricing on the official site.",
+        "source": "https://universityhighlands.com/",
+        "pick": 1,
+        "photo": "assets/housing/housing-boone-nc-property-university-highlands.jpg",
+        "photoAlt": "University Highlands in Boone, NC, from the property's official website",
+        "photoApproved": true
+      }
+    ]
   },
   {
     "id": "housing-cullowhee-nc",
