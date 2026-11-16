@@ -3332,7 +3332,21 @@
     "place": "Greeley, CO",
     "description": "Renters and students in Greeley use the AstroPro Facebook group to find apartments, subleases, and roommates near campus. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/318899342193821/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-greeley-co-property-university-flats",
+        "name": "University Flats",
+        "website": "https://liveuniversityflats.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=University%20Flats%2C%20Greeley%2C%20CO",
+        "summary": "Student apartments in Greeley near the University of Northern Colorado. Confirm current pricing on the official site.",
+        "source": "https://liveuniversityflats.com/",
+        "pick": 1,
+        "photo": "assets/housing/housing-greeley-co-property-university-flats.jpg",
+        "photoAlt": "University Flats in Greeley, CO, from the property's official website",
+        "photoApproved": true
+      }
+    ]
   },
   {
     "id": "housing-lewiston-me",
@@ -3475,7 +3489,47 @@
     "place": "Greenville, NC",
     "description": "Renters and students in Greenville use the AstroPro Facebook group to find apartments, subleases, and roommates near East Carolina University. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/1114267574523808/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-greenville-nc-property-the-landing-greenville",
+        "name": "The Landing",
+        "website": "https://landingstudentliving.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Landing%2C%20Greenville%2C%20NC",
+        "summary": "Student apartments in Greenville near East Carolina University. Confirm current pricing on the official site.",
+        "source": "https://landingstudentliving.com/",
+        "pick": 1,
+        "photo": "assets/housing/housing-greenville-nc-property-the-landing-greenville.jpg",
+        "photoAlt": "The Landing in Greenville, NC, from the property's official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-greenville-nc-property-first-street-place",
+        "name": "First Street Place",
+        "website": "https://livefirststreet.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=First%20Street%20Place%2C%20Greenville%2C%20NC",
+        "summary": "Student housing near East Carolina University. Confirm current pricing on the official site.",
+        "source": "https://livefirststreet.com/",
+        "pick": 2,
+        "photo": "assets/housing/housing-greenville-nc-property-first-street-place.jpg",
+        "photoAlt": "First Street Place in Greenville, NC, from the property's official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-greenville-nc-property-the-province-greenville",
+        "name": "The Province Greenville",
+        "website": "https://www.theprovincegreenville.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Province%20Greenville%2C%20Greenville%2C%20NC",
+        "summary": "Student apartments in Greenville, NC. Confirm current pricing on the official site.",
+        "source": "https://www.theprovincegreenville.com/",
+        "pick": 3,
+        "photo": "assets/housing/housing-greenville-nc-property-the-province-greenville.jpg",
+        "photoAlt": "The Province Greenville in Greenville, NC, from the property's official website",
+        "photoApproved": true
+      }
+    ]
   },
   {
     "id": "housing-murfreesboro-tn",
@@ -3807,7 +3861,22 @@
     "place": "Tempe, AZ",
     "description": "Renters and students in Tempe use the AstroPro Facebook group to find apartments, subleases, and roommates near Arizona State University. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/29133244253027071/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-tempe-az-property-the-district-on-apache",
+        "name": "The District on Apache",
+        "website": "https://www.thedistrictonapache.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20District%20on%20Apache%2C%20Tempe%2C%20AZ",
+        "address": "977 E Apache Blvd",
+        "summary": "Student-focused apartments near Arizona State University, also listed in ASU's off-campus housing marketplace.",
+        "source": "https://www.thedistrictonapache.com/",
+        "pick": 1,
+        "photo": "assets/housing/housing-tempe-az-property-the-district-on-apache.jpg",
+        "photoAlt": "The District on Apache in Tempe, AZ, from the property's official website",
+        "photoApproved": true
+      }
+    ]
   },
   {
     "id": "housing-austin-tx",
@@ -3898,7 +3967,34 @@
     "place": "Bowling Green, OH",
     "description": "Renters and students in Bowling Green use the AstroPro Facebook group to find apartments, subleases, and roommates near Bowling Green State University. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/bowlinggreenapartments/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-bowling-green-oh-property-copper-beech-bowling-green",
+        "name": "Copper Beech Bowling Green",
+        "website": "https://copperbeech-bowlinggreen.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Copper%20Beech%20Bowling%20Green%2C%20Bowling%20Green%2C%20OH",
+        "summary": "Off-campus student housing near Bowling Green State University. Confirm current pricing on the official site.",
+        "source": "https://copperbeech-bowlinggreen.com/",
+        "pick": 1,
+        "photo": "assets/housing/housing-bowling-green-oh-property-copper-beech-bowling-green.jpg",
+        "photoAlt": "Copper Beech Bowling Green in Bowling Green, OH, from the property's official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-bowling-green-oh-property-falcon-landing",
+        "name": "Falcon Landing",
+        "website": "https://www.falconlandingbg.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Falcon%20Landing%2C%20Bowling%20Green%2C%20OH",
+        "summary": "Apartment community serving Bowling Green State University students. Confirm current pricing on the official site.",
+        "source": "https://www.falconlandingbg.com/",
+        "pick": 2,
+        "photo": "assets/housing/housing-bowling-green-oh-property-falcon-landing.jpg",
+        "photoAlt": "Falcon Landing in Bowling Green, OH, from the property's official website",
+        "photoApproved": true
+      }
+    ]
   },
   {
     "id": "housing-kennesaw-ga",
@@ -4188,7 +4284,21 @@
     "place": "Memphis, TN",
     "description": "Renters and students in Memphis use the AstroPro Facebook group to find apartments, subleases, and roommates near campus. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/memphisrentals/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-memphis-tn-property-the-nine-at-memphis",
+        "name": "The Nine at Memphis",
+        "website": "https://the9memphis.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Nine%20at%20Memphis%2C%20Memphis%2C%20TN",
+        "summary": "Student-focused apartment community near campus. Confirm current pricing and availability on the official site.",
+        "source": "https://the9memphis.com/",
+        "pick": 1,
+        "photo": "assets/housing/housing-memphis-tn-property-the-nine-at-memphis.jpg",
+        "photoAlt": "The Nine at Memphis in Memphis, TN, from the property's official website",
+        "photoApproved": true
+      }
+    ]
   },
   {
     "id": "housing-el-paso-tx",
