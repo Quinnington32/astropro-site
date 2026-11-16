@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { Miniflare, convertV4MiniflareOptions } from "miniflare";
 import { randomUUID, createHash } from "node:crypto";
-import { validateSubmission, notifyPartnerCampaign } from "../worker/index.mjs";
+import { validateSubmission, notifyPartnerCampaign, buildRawEmail } from "../worker/index.mjs";
 let mf, db;
 const token = "local-test-only-secret-".repeat(3);
 const origin = "https://local.test";
@@ -613,7 +613,12 @@ test("partner campaign orders email the staff inbox with escaped details", async
   });
   assert.equal(sent.length, 1);
   assert.equal(sent[0].to, "leasesolutions3@gmail.com");
-  assert.match(sent[0].from.email, /@astroprostudentresourcecenter\.com$/);
+  assert.match(sent[0].from, /@astroprostudentresourcecenter\.com$/);
+  const raw = buildRawEmail(sent[0]);
+  assert.match(raw, /^From: AstroPro Resource Center <orders@/);
+  assert.match(raw, /\r\nTo: leasesolutions3@gmail\.com\r\n/);
+  assert.match(raw, /Reply-To: pat@example\.com/);
+  assert.match(raw, /multipart\/alternative/);
   assert.match(sent[0].html, /&lt;b&gt;Pat&lt;\/b&gt;/);
   assert.match(sent[0].subject, /ASRC-TEST/);
   await notifyPartnerCampaign(

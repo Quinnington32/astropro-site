@@ -279,6 +279,50 @@ const esc = (v) =>
     /[&<>"']/g,
     (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c],
   );
+const b64 = (text) => {
+  const bytes = new TextEncoder().encode(text);
+  let bin = "";
+  for (let i = 0; i < bytes.length; i += 0x8000)
+    bin += String.fromCharCode(...bytes.subarray(i, i + 0x8000));
+  return btoa(bin).replace(/.{1,76}/g, "$&\r\n").trimEnd();
+};
+const encodeHeader = (value) =>
+  (Array.from(String(value).replace(/[\r\n]+/g, " ")).join("").match(/(?:[\s\S]){1,12}/gu) || [""])
+    .map(
+      (part) =>
+        "=?UTF-8?B?" + btoa(String.fromCharCode(...new TextEncoder().encode(part))) + "?=",
+    )
+    .join("\r\n ");
+export function buildRawEmail({ from, to, replyTo, subject, text, html }) {
+  const boundary = "asrc-" + crypto.randomUUID();
+  const domain = from.split("@")[1];
+  const clean = (v) => String(v).replace(/[\r\n]+/g, " ");
+  return [
+    "From: AstroPro Resource Center <" + clean(from) + ">",
+    "To: " + clean(to),
+    replyTo ? "Reply-To: " + clean(replyTo) : null,
+    "Subject: " + encodeHeader(subject),
+    "Date: " + new Date().toUTCString(),
+    "Message-ID: <" + crypto.randomUUID() + "@" + domain + ">",
+    "MIME-Version: 1.0",
+    'Content-Type: multipart/alternative; boundary="' + boundary + '"',
+    "",
+    "--" + boundary,
+    'Content-Type: text/plain; charset="UTF-8"',
+    "Content-Transfer-Encoding: base64",
+    "",
+    b64(text),
+    "--" + boundary,
+    'Content-Type: text/html; charset="UTF-8"',
+    "Content-Transfer-Encoding: base64",
+    "",
+    b64(html),
+    "--" + boundary + "--",
+    "",
+  ]
+    .filter((l) => l !== null)
+    .join("\r\n");
+}
 export async function notifyPartnerCampaign(env, data) {
   if (!env.EMAIL?.send) return;
   try {
@@ -288,9 +332,9 @@ export async function notifyPartnerCampaign(env, data) {
       : p.wantsFlyerDesigned === "yes"
         ? "Asked AstroPro to design one"
         : "(none)";
-    await env.EMAIL.send({
+    const message = {
       to: env.PARTNER_NOTIFY_TO || NOTIFY_TO,
-      from: { email: NOTIFY_FROM, name: "AstroPro Resource Center" },
+      from: NOTIFY_FROM,
       replyTo: p.email,
       subject:
         "New partner campaign order — " + p.marketName + " (" + p.orderRef + ")",
@@ -314,7 +358,16 @@ export async function notifyPartnerCampaign(env, data) {
         "\nLink: " + (p.url || "(none provided)") +
         "\nFlyer: " + flyer +
         "\n\nInstructions:\n" + p.instructions,
-    });
+    };
+    let EmailMessage;
+    try {
+      ({ EmailMessage } = await import("cloudflare:email"));
+    } catch {}
+    await env.EMAIL.send(
+      EmailMessage
+        ? new EmailMessage(message.from, message.to, buildRawEmail(message))
+        : message,
+    );
   } catch {
     console.error("Partner campaign notification email failed");
   }
