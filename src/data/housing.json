@@ -587,6 +587,17 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Stoneridge%20Apartments%2C%20Kilgore%2C%20TX",
         "source": "https://www.vdiapartments.com/apartments/tx/kilgore/stoneridge/",
         "pick": 2
+      },
+      {
+        "id": "housing-kilgore-property-glen-hollow-kilgore",
+        "name": "Glen Hollow",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Glen%20Hollow%2C%20Kilgore%2C%20TX",
+        "website": "https://www.glenhollowetx.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.glenhollowetx.com/",
+        "summary": "Pet-friendly 1-, 2- and 3-bedroom apartment homes.",
+        "address": "505 Danville Rd, Kilgore, TX",
+        "pick": 3
       }
     ]
   },
@@ -843,6 +854,17 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Georgia%20Villas%2C%20Amarillo%2C%20TX",
         "source": "https://georgiavillas.com/",
         "pick": 2
+      },
+      {
+        "id": "housing-amarillo-property-stonegate-amarillo",
+        "name": "Stonegate",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Stonegate%2C%20Amarillo%2C%20TX",
+        "website": "https://www.stonegateamarillo.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.stonegateamarillo.com/",
+        "summary": "Pet-friendly apartments with spacious floor plans and a pool.",
+        "address": "6400 Bell St, Amarillo, TX 79109",
+        "pick": 3
       }
     ]
   },
@@ -872,6 +894,17 @@
         "summary": "Brand new apartments in Goldsboro.",
         "address": "403 N Oak Forest Rd, Goldsboro, NC",
         "pick": 2
+      },
+      {
+        "id": "housing-goldsboro-property-sheridan-forest-apartments",
+        "name": "Sheridan Forest Apartments",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Sheridan%20Forest%20Apartments%2C%20Goldsboro%2C%20NC",
+        "website": "https://www.sheridanforest.net/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.sheridanforest.net/",
+        "summary": "Spacious 2-bedroom, 1.5-bath homes with washer/dryer connections. Pet-friendly.",
+        "address": "271 Sheridan Forest, Goldsboro, NC 27534",
+        "pick": 3
       }
     ]
   },
@@ -1090,6 +1123,17 @@
         "summary": "Pet-friendly 1- and 2-bedroom apartments with a pet park and laundry facility.",
         "address": "1300 N Jones Ave, Tahlequah, OK",
         "pick": 2
+      },
+      {
+        "id": "housing-tahlequah-property-pines-at-southridge",
+        "name": "Pines at Southridge",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Pines%20at%20Southridge%2C%20Tahlequah%2C%20OK",
+        "website": "https://www.pinesatsouthridge.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.pinesatsouthridge.com/",
+        "summary": "Pet-friendly apartments with spacious floor plans and large closets.",
+        "address": "201 Southridge Rd, Tahlequah, OK 74464",
+        "pick": 3
       }
     ]
   },
@@ -1109,6 +1153,26 @@
         "source": "https://glen-lake-apartments0.rentcafewebsite.com/",
         "summary": "Income restrictions apply. Confirm eligibility directly with the property before applying.",
         "pick": 1
+      },
+      {
+        "id": "housing-smithfield-property-berkshire-apartments-smithfield",
+        "name": "Berkshire Apartments",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Berkshire%20Apartments%2C%20Smithfield%2C%20NC",
+        "website": "https://berkshiresmithfield.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://berkshiresmithfield.com/",
+        "summary": "Apartments with private patio or balcony, washer/dryer hookups and off-street parking. Pets welcome.",
+        "pick": 2
+      },
+      {
+        "id": "housing-smithfield-property-cambridge-apartments-smithfield",
+        "name": "Cambridge Apartments",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Cambridge%20Apartments%2C%20Smithfield%2C%20NC",
+        "website": "https://cambridgesmithfield.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://cambridgesmithfield.com/",
+        "summary": "Two-story community with 2-bedroom, 2.5-bath units and washer/dryer hookups. Pets welcome.",
+        "pick": 3
       }
     ]
   },
@@ -1529,6 +1593,17 @@
         "summary": "Kirksville rental listings from a local property office near Truman State.",
         "address": "703 N Marion St, Kirksville, MO",
         "pick": 2
+      },
+      {
+        "id": "housing-kirksville-mo-property-kirksville-property-management",
+        "name": "Kirksville Property Management",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Kirksville%20Property%20Management%2C%20Kirksville%2C%20MO",
+        "website": "https://www.kirksvillepropertymanagement.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.kirksvillepropertymanagement.com/",
+        "summary": "Local property management office with available Kirksville rentals.",
+        "address": "2424 S Franklin St, Suite B, Kirksville, MO",
+        "pick": 3
       }
     ]
   },
@@ -1586,6 +1661,16 @@
         "summary": "Apartment community serving the WIU community with a full set of amenities.",
         "address": "201 Wigwam Hollow Rd, Macomb, IL 61455",
         "pick": 2
+      },
+      {
+        "id": "housing-macomb-il-property-smith-and-royer",
+        "name": "Smith & Royer Apartments",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Smith%20%26%20Royer%20Apartments%2C%20Macomb%2C%20IL",
+        "website": "https://www.smithandroyer.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.smithandroyer.com/",
+        "summary": "1-, 2- and 4-bedroom apartments three blocks from the university, each with washer, dryer, stove and refrigerator. Not pet friendly.",
+        "pick": 3
       }
     ]
   },
@@ -2226,6 +2311,26 @@
         "summary": "Apartment community near the University of New Mexico.",
         "address": "1901 University Blvd SE, Albuquerque, NM 87106",
         "pick": 1
+      },
+      {
+        "id": "housing-albuquerque-nm-property-broadstone-nob-hill",
+        "name": "Broadstone Nob Hill",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Broadstone%20Nob%20Hill%2C%20Albuquerque%2C%20NM",
+        "website": "https://broadstonenobhill.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://broadstonenobhill.com/",
+        "summary": "Apartment homes in Albuquerque near UNM with modern finishes.",
+        "pick": 2
+      },
+      {
+        "id": "housing-albuquerque-nm-property-nob-hill-apartments",
+        "name": "Nob Hill Apartments",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Nob%20Hill%20Apartments%2C%20Albuquerque%2C%20NM",
+        "website": "https://www.liveatnobhill.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.liveatnobhill.com/",
+        "summary": "Pet-friendly apartments with spacious floor plans in Albuquerque's Nob Hill area.",
+        "pick": 3
       }
     ]
   },
