@@ -3614,7 +3614,22 @@
     "place": "Los Angeles, CA",
     "description": "Renters and students in Los Angeles use the AstroPro Facebook group to find apartments, subleases, and roommates near UCLA & USC. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/1441002644078646/",
-    "properties": [],
+    "properties": [
+      {
+        "id": "housing-los-angeles-ca-property-the-lorenzo",
+        "name": "The Lorenzo",
+        "website": "https://thelorenzo.com",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Lorenzo%2C%20Los%20Angeles%2C%20CA",
+        "address": "325 W Adams Blvd, Los Angeles, CA 90007",
+        "summary": "Student housing about half a mile from USC with a complimentary shuttle, rooftop pools, gyms and study spaces.",
+        "source": "https://thelorenzo.com",
+        "pick": 1,
+        "photo": "assets/housing/housing-los-angeles-ca-property-the-lorenzo.jpg",
+        "photoAlt": "Rooftop pool at The Lorenzo in Los Angeles with the downtown skyline, from the property's official website",
+        "photoApproved": true
+      }
+    ],
     "facebookGroupsMore": [
       {
         "label": "Downtown Los Angeles",
