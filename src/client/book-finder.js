@@ -60,7 +60,49 @@ if (form) {
     }
     out.hidden = false;
   };
-  form.addEventListener("submit", (e) => {
+  const matches = document.querySelector("[data-book-matches]");
+  let token = 0;
+  const showMatches = (books, q) => {
+    matches.textContent = "";
+    if (!books.length) {
+      const p = document.createElement("p");
+      p.textContent = "No exact matches found. You can still search every source below with what you typed.";
+      matches.append(p);
+      return;
+    }
+    const h = document.createElement("h3");
+    h.textContent = "Is it one of these? Pick yours to search by its ISBN";
+    const grid = document.createElement("div");
+    grid.className = "book-match-grid";
+    for (const b of books) {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "book-match";
+      if (b.cover) {
+        const img = document.createElement("img");
+        img.src = b.cover;
+        img.alt = "";
+        img.width = 60;
+        img.height = 90;
+        img.loading = "lazy";
+        btn.append(img);
+      }
+      const t = document.createElement("span");
+      const strong = document.createElement("strong");
+      strong.textContent = b.title;
+      const meta = document.createElement("small");
+      meta.textContent = [b.authors.join(", "), b.year, b.isbn && "ISBN " + b.isbn].filter(Boolean).join(" · ");
+      t.append(strong, meta);
+      btn.append(t);
+      btn.addEventListener("click", () => {
+        render(b.isbn || [b.title, b.authors[0]].filter(Boolean).join(" "));
+        out.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+      grid.append(btn);
+    }
+    matches.append(h, grid);
+  };
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const q = input.value.trim();
     if (q.length < 2) {
@@ -68,6 +110,15 @@ if (form) {
       return;
     }
     render(q);
-    out.scrollIntoView({ behavior: "smooth", block: "start" });
+    matches.textContent = "Looking up matching books…";
+    const mine = ++token;
+    try {
+      const res = await fetch(new URL("api/books?q=" + encodeURIComponent(q), document.baseURI));
+      const data = res.ok ? await res.json() : { books: [] };
+      if (mine === token) showMatches(data.books || [], q);
+    } catch {
+      if (mine === token) matches.textContent = "";
+    }
+    matches.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 }

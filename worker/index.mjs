@@ -701,6 +701,48 @@ function secure(response, isHtml = false) {
     r.headers.set("Cache-Control", "public, max-age=0, must-revalidate");
   return r;
 }
+async function bookSearch(request) {
+  if (!["GET", "HEAD"].includes(request.method))
+    return json({ error: "Method not allowed." }, 405, { allow: "GET, HEAD" });
+  const q = (new URL(request.url).searchParams.get("q") || "")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 100);
+  if (q.length < 2) return json({ error: "Enter a title, author, or ISBN." }, 400);
+  const upstream = new URL("https://openlibrary.org/search.json");
+  upstream.searchParams.set("q", q);
+  upstream.searchParams.set("limit", "10");
+  upstream.searchParams.set(
+    "fields",
+    "key,title,author_name,first_publish_year,isbn,cover_i,edition_count",
+  );
+  let data;
+  try {
+    const res = await fetch(upstream, {
+      headers: { "User-Agent": "AstroProStudentResourceCenter/1.0 (leasesolutions3@gmail.com)" },
+      signal: AbortSignal.timeout(6000),
+      cf: { cacheTtl: 86400, cacheEverything: true },
+    });
+    if (!res.ok) throw new Error("upstream");
+    data = await res.json();
+  } catch {
+    return json({ error: "Book lookup is unavailable right now.", books: [] }, 503);
+  }
+  const books = (data.docs || []).slice(0, 10).map((d) => {
+    const isbns = Array.isArray(d.isbn) ? d.isbn : [];
+    return {
+      title: String(d.title || "").slice(0, 200),
+      authors: (d.author_name || []).slice(0, 3).map((a) => String(a).slice(0, 80)),
+      year: Number.isInteger(d.first_publish_year) ? d.first_publish_year : null,
+      editions: Number.isInteger(d.edition_count) ? d.edition_count : null,
+      isbn: isbns.find((i) => /^\d{13}$/.test(i)) || isbns.find((i) => /^\d{9}[\dX]$/.test(i)) || "",
+      cover: Number.isInteger(d.cover_i)
+        ? `https://covers.openlibrary.org/b/id/${d.cover_i}-M.jpg`
+        : "",
+    };
+  }).filter((b) => b.title);
+  return json({ books }, 200, { "cache-control": "public, max-age=3600" });
+}
 export async function handleRequest(request, env) {
   const url = new URL(request.url);
   let path = url.pathname;
@@ -731,6 +773,7 @@ export async function handleRequest(request, env) {
         ready ? 200 : 503,
       );
     }
+    if (path === "/api/books") return bookSearch(request);
     if (path === "/api/submissions") return submissions(request, env);
     if (path.startsWith("/api/admin/")) return admin(request, env, path);
     return json({ error: "Endpoint not found." }, 404);

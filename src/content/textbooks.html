@@ -20,9 +20,10 @@
         <input id="book-q" name="q" type="search" autocomplete="off" placeholder="e.g. Campbell Biology, or 9780134093413" required minlength="2">
         <button class="btn btn-primary" type="submit">Search all options</button>
       </div>
-      <p class="fineprint">We open a search for your book on each site below, with free and library options first. We don’t see or store what you type, and we don’t show live prices, so use the price-comparison sites to see the cheapest seller today.</p>
+      <p class="fineprint">We look up matching editions here, then open a search for your book on each site below, with free and library options first. We don’t store what you type, and we don’t show live seller prices, so use the price-comparison sites to see the cheapest seller today.</p>
     </form>
-    <div data-book-results hidden aria-live="polite"></div>
+    <div data-book-matches aria-live="polite"></div>
+    <div data-book-results hidden></div>
     <noscript><p class="notice">Turn on JavaScript to use the book finder, or browse the lists below.</p></noscript>
   </div>
 </section>
