@@ -3274,6 +3274,19 @@
         "photo": "assets/housing/housing-raleigh-nc-property-the-college-inn.jpg",
         "photoAlt": "The College Inn in Raleigh, NC, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-raleigh-nc-property-hub-raleigh",
+        "name": "Hub Raleigh",
+        "website": "https://www.hubraleigh.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Hub+Raleigh%2C+Raleigh%2C+NC",
+        "summary": "High-rise student community near NC State with a rooftop pool, listed on the property’s official site.",
+        "source": "https://www.hubraleigh.com/",
+        "pick": 3,
+        "photo": "assets/housing/housing-raleigh-nc-property-hub-raleigh.jpg",
+        "photoAlt": "Rooftop pool at Hub Raleigh near NC State, from the property’s official website",
+        "photoApproved": true
       }
     ]
   },
@@ -3484,6 +3497,19 @@
         "photo": "assets/housing/housing-provo-ut-property-the-branbury.jpg",
         "photoAlt": "The Branbury in Provo, UT, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-provo-ut-property-collegeplace-provo",
+        "name": "CollegePlace Provo",
+        "website": "https://collegeplaceprovo.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=CollegePlace+Provo%2C+Provo%2C+UT",
+        "summary": "Student apartments for BYU students, listed on the property’s official site.",
+        "source": "https://collegeplaceprovo.com/",
+        "pick": 3,
+        "photo": "assets/housing/housing-provo-ut-property-collegeplace-provo.jpg",
+        "photoAlt": "Furnished apartment living area at CollegePlace Provo, from the property’s official website",
+        "photoApproved": true
       }
     ]
   },
@@ -3622,6 +3648,32 @@
         "pick": 1,
         "photo": "assets/housing/housing-murfreesboro-tn-property-1540-place.jpg",
         "photoAlt": "1540 Place in Murfreesboro, TN, from the property's official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-murfreesboro-tn-property-the-social-blue",
+        "name": "The Social Blue",
+        "website": "https://thesocialblueapts.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The+Social+Blue%2C+Murfreesboro%2C+TN",
+        "summary": "All-inclusive student apartments near MTSU with a resort-style pool, listed on the property’s official site.",
+        "source": "https://thesocialblueapts.com/",
+        "pick": 2,
+        "photo": "assets/housing/housing-murfreesboro-tn-property-the-social-blue.jpg",
+        "photoAlt": "Pool and buildings at The Social Blue near MTSU, from the property’s official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-murfreesboro-tn-property-cobalt-row",
+        "name": "Cobalt Row",
+        "website": "https://cobaltrow.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Cobalt+Row%2C+Murfreesboro%2C+TN",
+        "summary": "Student townhome-style housing in Murfreesboro, listed on the property’s official site.",
+        "source": "https://cobaltrow.com/",
+        "pick": 3,
+        "photo": "assets/housing/housing-murfreesboro-tn-property-cobalt-row.jpg",
+        "photoAlt": "Cobalt Row entrance sign and townhomes in Murfreesboro, from the property’s official website",
         "photoApproved": true
       }
     ]
@@ -3972,6 +4024,19 @@
         "photo": "assets/housing/housing-los-angeles-ca-property-the-lorenzo.jpg",
         "photoAlt": "Rooftop pool at The Lorenzo in Los Angeles with the downtown skyline, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-los-angeles-ca-property-university-gateway",
+        "name": "University Gateway",
+        "website": "https://www.livegw.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=University+Gateway%2C+Los+Angeles%2C+CA",
+        "summary": "Student apartments near USC with a landscaped courtyard, listed on the property’s official site.",
+        "source": "https://www.livegw.com/",
+        "pick": 2,
+        "photo": "assets/housing/housing-los-angeles-ca-property-university-gateway.jpg",
+        "photoAlt": "Courtyard at University Gateway near USC, from the property’s official website",
+        "photoApproved": true
       }
     ],
     "facebookGroupsMore": [
@@ -4215,7 +4280,34 @@
     "place": "Orem, UT",
     "description": "Renters and students in Orem use the AstroPro Facebook group to find apartments, subleases, and roommates near Utah Valley University. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/utahvalleyapartments/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-orem-ut-property-village-parkway",
+        "name": "Village Parkway",
+        "website": "https://villageparkway.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Village+Parkway%2C+Orem%2C+UT",
+        "summary": "UVU student housing in Orem with an indoor pool, listed on the property’s official site.",
+        "source": "https://villageparkway.com/",
+        "pick": 1,
+        "photo": "assets/housing/housing-orem-ut-property-village-parkway.jpg",
+        "photoAlt": "Indoor pool at Village Parkway near UVU, from the property’s official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-orem-ut-property-wolverine-crossing",
+        "name": "Wolverine Crossing",
+        "website": "https://wolverinecrossing.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Wolverine+Crossing%2C+Orem%2C+UT",
+        "summary": "UVU student housing in Orem with a resort-style pool, listed on the property’s official site.",
+        "source": "https://wolverinecrossing.com/",
+        "pick": 2,
+        "photo": "assets/housing/housing-orem-ut-property-wolverine-crossing.jpg",
+        "photoAlt": "Pool at Wolverine Crossing near UVU, from the property’s official website",
+        "photoApproved": true
+      }
+    ]
   },
   {
     "id": "housing-williamsburg-va",
@@ -4233,7 +4325,34 @@
     "place": "Kalamazoo, MI",
     "description": "Renters and students in Kalamazoo use the AstroPro Facebook group to find apartments, subleases, and roommates near Western Michigan University. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/kalamazooapartments/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-kalamazoo-mi-property-58-west",
+        "name": "58 West",
+        "website": "https://www.58-west.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=58+West%2C+Kalamazoo%2C+MI",
+        "summary": "Student housing in Kalamazoo near Western Michigan University with a resort-style pool, listed on the property’s official site.",
+        "source": "https://www.58-west.com/",
+        "pick": 1,
+        "photo": "assets/housing/housing-kalamazoo-mi-property-58-west.jpg",
+        "photoAlt": "Pool at 58 West in Kalamazoo, from the property’s official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-kalamazoo-mi-property-the-paddock",
+        "name": "The Paddock",
+        "website": "https://www.thepaddockkzoo.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The+Paddock%2C+Kalamazoo%2C+MI",
+        "summary": "Student apartments near Western Michigan University, listed on the property’s official site.",
+        "source": "https://www.thepaddockkzoo.com/",
+        "pick": 2,
+        "photo": "assets/housing/housing-kalamazoo-mi-property-the-paddock.jpg",
+        "photoAlt": "Furnished living area at The Paddock in Kalamazoo, from the property’s official website",
+        "photoApproved": true
+      }
+    ]
   },
   {
     "id": "housing-boone-nc",
