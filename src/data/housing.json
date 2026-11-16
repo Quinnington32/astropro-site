@@ -3093,7 +3093,34 @@
     "place": "College Park, MD",
     "description": "Renters and students in College Park use the AstroPro Facebook group to find apartments, subleases, and roommates near University of Maryland. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/collegeparkhousing/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-college-park-md-property-terrapin-row",
+        "name": "Terrapin Row",
+        "website": "https://www.terrapinrow.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Terrapin%20Row%2C%20College%20Park%2C%20MD",
+        "summary": "Student apartment community serving UMD students, listed on the university off-campus housing handout. Confirm current pricing on the official site.",
+        "source": "https://www.terrapinrow.com/",
+        "pick": 1,
+        "photo": "assets/housing/housing-college-park-md-property-terrapin-row.jpg",
+        "photoAlt": "Terrapin Row in College Park, MD, from the property's official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-college-park-md-property-rambler-college-park",
+        "name": "Rambler College Park",
+        "website": "https://ramblercollegepark.com/south/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Rambler%20College%20Park%2C%20College%20Park%2C%20MD",
+        "summary": "Student housing near UMD (formerly Landmark College Park), listed on the university off-campus handout.",
+        "source": "https://ramblercollegepark.com/south/",
+        "pick": 2,
+        "photo": "assets/housing/housing-college-park-md-property-rambler-college-park.jpg",
+        "photoAlt": "Rambler College Park in College Park, MD, from the property's official website",
+        "photoApproved": true
+      }
+    ]
   },
   {
     "id": "housing-berkeley-ca",
@@ -3114,6 +3141,32 @@
         "pick": 1,
         "photo": "assets/housing/housing-berkeley-ca-property-the-standard-at-berkeley.jpg",
         "photoAlt": "The Standard at Berkeley in Berkeley, CA, from the property's official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-berkeley-ca-property-2618-college",
+        "name": "2618 College",
+        "website": "https://properties.tbgpm.com/berkeley/2618-college/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=2618%20College%2C%20Berkeley%2C%20CA",
+        "summary": "Furnished rooms near UC Berkeley managed by TBG Property Management. Confirm current rates on the official page.",
+        "source": "https://properties.tbgpm.com/berkeley/2618-college/",
+        "pick": 2,
+        "photo": "assets/housing/housing-berkeley-ca-property-2618-college.jpg",
+        "photoAlt": "2618 College in Berkeley, CA, from the property's official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-berkeley-ca-property-2430-prospect",
+        "name": "2430 Prospect",
+        "website": "https://properties.tbgpm.com/berkeley/2430-prospect/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=2430%20Prospect%2C%20Berkeley%2C%20CA",
+        "summary": "Furnished rooms near UC Berkeley managed by TBG Property Management. Confirm current rates on the official page.",
+        "source": "https://properties.tbgpm.com/berkeley/2430-prospect/",
+        "pick": 3,
+        "photo": "assets/housing/housing-berkeley-ca-property-2430-prospect.jpg",
+        "photoAlt": "2430 Prospect in Berkeley, CA, from the property's official website",
         "photoApproved": true
       }
     ]
@@ -3188,7 +3241,22 @@
     "place": "Raleigh, NC",
     "description": "Renters and students in Raleigh use the AstroPro Facebook group to find apartments, subleases, and roommates near NC State University & Raleigh-area colleges. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/raleighrentals/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-raleigh-nc-property-centennial-ridge",
+        "name": "Centennial Ridge",
+        "website": "https://centennial.prospectportal.com/raleigh/centennial-ridge/student/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Centennial%20Ridge%2C%20Raleigh%2C%20NC",
+        "address": "2450 Centennial Ridge Way",
+        "summary": "Student apartments near NC State's Centennial Campus. Confirm current availability on the official page.",
+        "source": "https://centennial.prospectportal.com/raleigh/centennial-ridge/student/",
+        "pick": 1,
+        "photo": "assets/housing/housing-raleigh-nc-property-centennial-ridge.jpg",
+        "photoAlt": "Centennial Ridge in Raleigh, NC, from the property's official website",
+        "photoApproved": true
+      }
+    ]
   },
   {
     "id": "housing-carmel-in",
