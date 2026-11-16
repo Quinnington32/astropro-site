@@ -62,9 +62,15 @@
       {
         "id": "housing-athens-property-river-park-on-south-green",
         "name": "River Park on South Green",
-        "website": "https://riverpark.prospectportal.com",
-        "verifiedAt": null,
-        "maps": "https://www.google.com/maps/search/?api=1&query=River%20Park%20on%20South%20Green%2C%20Athens%2C%20OH"
+        "website": "https://riverpark.prospectportal.com/",
+        "verifiedAt": "2026-11-15",
+        "maps": "https://www.google.com/maps/search/?api=1&query=River%20Park%20on%20South%20Green%2C%20Athens%2C%20OH",
+        "pick": 1,
+        "source": "https://riverpark.prospectportal.com/",
+        "summary": "Apartment homes in Athens, OH listed on the official River Park/River Edge site. Confirm floor plans, pricing, and availability directly with the property.",
+        "photo": "https://medialibrarycfo.entrata.com/15024/MLv3/3/21/2023/03/08/092116/6408b5fc82fe83.52807201165.jpg",
+        "photoApproved": true,
+        "photoAlt": "River Park on South Green in Athens, OH, from the property's official website"
       },
       {
         "id": "housing-athens-property-rivergate-apartments",
@@ -72,8 +78,7 @@
         "website": "https://homesteadu.prospectportal.com/athens/river-gate/student/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Rivergate%20Apartments%2C%20Athens%2C%20OH",
-        "source": "https://homesteadu.prospectportal.com/athens/river-gate/student/",
-        "pick": 1
+        "source": "https://homesteadu.prospectportal.com/athens/river-gate/student/"
       },
       {
         "id": "housing-athens-property-university-courtyard",
@@ -1077,9 +1082,15 @@
       {
         "id": "housing-tyler-property-university-pines",
         "name": "University Pines",
-        "website": "https://campuslivingvillages.com/united-states/university-of-texas-at-tyler/university-pines-ut-tyler-housing/uhmc-floorplans-page-3/",
-        "verifiedAt": null,
-        "maps": "https://www.google.com/maps/search/?api=1&query=University%20Pines%2C%20Tyler%2C%20TX"
+        "website": "https://campuslivingvillages.com/united-states/university-of-texas-at-tyler/university-pines-ut-tyler-housing/",
+        "verifiedAt": "2026-11-15",
+        "maps": "https://www.google.com/maps/search/?api=1&query=University%20Pines%2C%20Tyler%2C%20TX",
+        "pick": 2,
+        "source": "https://campuslivingvillages.com/united-states/university-of-texas-at-tyler/university-pines-ut-tyler-housing/",
+        "summary": "On-campus apartment community at UT Tyler, listed on the operator’s official site. Confirm eligibility, pricing, and availability with the property.",
+        "photo": "https://cdn.campuslivingvillages.com/public/GalleryItem/Images/UMP-7911__FocusFillWyIwLjAwIiwiMC4wMCIsOTI3LDYxOF0.jpg",
+        "photoApproved": true,
+        "photoAlt": "University Pines in Tyler, TX, from the property's official website"
       },
       {
         "id": "housing-tyler-property-varsity-view",
@@ -1099,8 +1110,7 @@
         "website": "https://www.haverhillplace.com/about-us/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Haverhill%20Place%2C%20Tyler%2C%20TX",
-        "source": "https://www.haverhillplace.com/about-us/",
-        "pick": 2
+        "source": "https://www.haverhillplace.com/about-us/"
       },
       {
         "id": "housing-tyler-property-the-woodlands",
