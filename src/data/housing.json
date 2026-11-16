@@ -3532,6 +3532,32 @@
         "photo": "assets/housing/housing-fort-collins-co-property-state.jpg",
         "photoAlt": "State in Fort Collins, CO, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-fort-collins-co-property-the-mark",
+        "name": "The Mark Fort Collins",
+        "website": "https://www.themarkfortcollins.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Mark%20Fort%20Collins%2C%20Fort%20Collins%2C%20CO",
+        "summary": "Student apartments near Colorado State University with a rooftop-style pool deck and resident amenities.",
+        "source": "https://www.themarkfortcollins.com/",
+        "pick": 2,
+        "photo": "assets/housing/housing-fort-collins-co-property-the-mark.jpg",
+        "photoAlt": "The Mark Fort Collins in Fort Collins, CO, from the property's official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-fort-collins-co-property-cottages-of-fort-collins",
+        "name": "The Cottages of Fort Collins",
+        "website": "https://cottages-ftcollins.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Cottages%20of%20Fort%20Collins%2C%20Fort%20Collins%2C%20CO",
+        "summary": "Four- and five-bedroom student cottages near Colorado State University with a resort-style pool.",
+        "source": "https://cottages-ftcollins.com/",
+        "pick": 3,
+        "photo": "assets/housing/housing-fort-collins-co-property-cottages-of-fort-collins.jpg",
+        "photoAlt": "The Cottages of Fort Collins in Fort Collins, CO, from the property's official website",
+        "photoApproved": true
       }
     ]
   },
