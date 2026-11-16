@@ -3493,7 +3493,34 @@
     "place": "San Marcos, TX",
     "description": "Renters and students in San Marcos use the AstroPro Facebook group to find apartments, subleases, and roommates near Texas State University. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/1825381478489467/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-san-marcos-tx-property-the-retreat",
+        "name": "The Retreat",
+        "website": "https://www.americancampus.com/student-apartments/tx/san-marcos/the-retreat",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Retreat%2C%20San%20Marcos%2C%20TX",
+        "summary": "Student apartment community in San Marcos listed by American Campus Communities. Confirm current pricing on the official page.",
+        "source": "https://www.americancampus.com/student-apartments/tx/san-marcos/the-retreat",
+        "pick": 1,
+        "photo": "assets/housing/housing-san-marcos-tx-property-the-retreat.jpg",
+        "photoAlt": "The Retreat in San Marcos, TX, from the property's official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-san-marcos-tx-property-bishops-square",
+        "name": "Bishop's Square",
+        "website": "https://www.americancampus.com/student-apartments/tx/san-marcos/bishops-square",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Bishop%27s%20Square%2C%20San%20Marcos%2C%20TX",
+        "summary": "Garden-style student apartments with a pool in San Marcos, listed by American Campus Communities.",
+        "source": "https://www.americancampus.com/student-apartments/tx/san-marcos/bishops-square",
+        "pick": 2,
+        "photo": "assets/housing/housing-san-marcos-tx-property-bishops-square.jpg",
+        "photoAlt": "Bishop's Square in San Marcos, TX, from the property's official website",
+        "photoApproved": true
+      }
+    ]
   },
   {
     "id": "housing-greer-sc",
@@ -3880,7 +3907,34 @@
     "place": "Kennesaw, GA",
     "description": "Renters and students in Kennesaw use the AstroPro Facebook group to find apartments, subleases, and roommates near Kennesaw State University. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/kennesawstateapartments/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-kennesaw-ga-property-parliament",
+        "name": "Parliament",
+        "website": "https://www.americancampus.com/student-apartments/ga/kennesaw/parliament",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Parliament%2C%20Kennesaw%2C%20GA",
+        "summary": "Student apartment community in Kennesaw listed by American Campus Communities. Confirm current availability on the official page.",
+        "source": "https://www.americancampus.com/student-apartments/ga/kennesaw/parliament",
+        "pick": 1,
+        "photo": "assets/housing/housing-kennesaw-ga-property-parliament.jpg",
+        "photoAlt": "Parliament in Kennesaw, GA, from the property's official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-kennesaw-ga-property-the-nest",
+        "name": "The Nest",
+        "website": "https://www.americancampus.com/student-apartments/ga/kennesaw/the-nest",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Nest%2C%20Kennesaw%2C%20GA",
+        "summary": "Student apartment community in Kennesaw listed by American Campus Communities. Confirm current availability on the official page.",
+        "source": "https://www.americancampus.com/student-apartments/ga/kennesaw/the-nest",
+        "pick": 2,
+        "photo": "assets/housing/housing-kennesaw-ga-property-the-nest.jpg",
+        "photoAlt": "The Nest in Kennesaw, GA, from the property's official website",
+        "photoApproved": true
+      }
+    ]
   },
   {
     "id": "housing-fairfax-va",
