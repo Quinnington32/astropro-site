@@ -226,7 +226,7 @@ const home = `
 </section>
 <section id="resources" class="home-resources">
   <div class="wrap">
-    <div class="section-head section-head-row"><div><p class="eyebrow">Find your next step</p><h2>What can we help you with?</h2></div><p>You’ve got options. Let’s find yours.</p></div>
+    <div class="section-head section-head-row"><div><p class="eyebrow">Student Resource Center</p><h2>Scroll through the resources below</h2></div><p>You’ve got options. Let’s find yours.</p></div>
     <div class="category-grid">${homeCategories.map(([symbol, href, title, description, count, tone]) => `<a class="category-card" href="${href}"><div class="category-top"><span class="category-icon tone-${tone}">${icon(symbol)}</span><span class="category-arrow" aria-hidden="true">↗</span></div><h3>${title}</h3><p>${description}</p><span class="category-foot">${count} ${icon("arrow")}</span></a>`).join("")}</div>
   </div>
 </section>
