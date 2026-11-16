@@ -4286,7 +4286,47 @@
     "place": "Irvine, CA",
     "description": "Renters and students in Irvine use the AstroPro Facebook group to find apartments, subleases, and roommates near UC Irvine. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/irvinesubleases/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-irvine-ca-property-puerta-del-sol",
+        "name": "Puerta del Sol",
+        "website": "https://www.americancampus.com/student-apartments/ca/irvine/puerta-del-sol",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Puerta%20del%20Sol%2C%20Irvine%2C%20CA",
+        "summary": "Furnished apartments near UC Irvine with private bedroom and bathroom floor plans and study lounges.",
+        "source": "https://www.americancampus.com/student-apartments/ca/irvine/puerta-del-sol",
+        "pick": 1,
+        "photo": "assets/housing/housing-irvine-ca-property-puerta-del-sol.jpg",
+        "photoAlt": "Puerta del Sol in Irvine, CA, from the property's official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-irvine-ca-property-vista-del-campo",
+        "name": "Vista del Campo",
+        "website": "https://www.americancampus.com/student-apartments/ca/irvine/vista-del-campo",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Vista%20del%20Campo%2C%20Irvine%2C%20CA",
+        "summary": "Student apartments near UC Irvine operated by American Campus Communities.",
+        "source": "https://www.americancampus.com/student-apartments/ca/irvine/vista-del-campo",
+        "pick": 2,
+        "photo": "assets/housing/housing-irvine-ca-property-vista-del-campo.jpg",
+        "photoAlt": "Vista del Campo in Irvine, CA, from the property's official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-irvine-ca-property-camino-del-sol",
+        "name": "Camino del Sol",
+        "website": "https://www.americancampus.com/student-apartments/ca/irvine/camino-del-sol",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Camino%20del%20Sol%2C%20Irvine%2C%20CA",
+        "summary": "Furnished apartments and townhomes for UC Irvine students, listed by American Campus Communities.",
+        "source": "https://www.americancampus.com/student-apartments/ca/irvine/camino-del-sol",
+        "pick": 3,
+        "photo": "assets/housing/housing-irvine-ca-property-camino-del-sol.jpg",
+        "photoAlt": "Camino del Sol in Irvine, CA, from the property's official website",
+        "photoApproved": true
+      }
+    ]
   },
   {
     "id": "housing-missoula-mt",
