@@ -3119,6 +3119,19 @@
         "photo": "assets/housing/housing-college-park-md-property-rambler-college-park.jpg",
         "photoAlt": "Rambler College Park in College Park, MD, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-college-park-md-property-tempo",
+        "name": "Tempo College Park",
+        "website": "https://tempocollegepark.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Tempo%20College%20Park%2C%20College%20Park%2C%20MD",
+        "summary": "Student apartments near the University of Maryland campus with a landscaped courtyard and resident amenities.",
+        "source": "https://tempocollegepark.com/",
+        "pick": 3,
+        "photo": "assets/housing/housing-college-park-md-property-tempo.jpg",
+        "photoAlt": "Tempo College Park in College Park, MD, from the property's official website",
+        "photoApproved": true
       }
     ]
   },
@@ -3254,6 +3267,19 @@
         "pick": 1,
         "photo": "assets/housing/housing-raleigh-nc-property-centennial-ridge.jpg",
         "photoAlt": "Centennial Ridge in Raleigh, NC, from the property's official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-raleigh-nc-property-the-college-inn",
+        "name": "The College Inn",
+        "website": "https://www.thecollegeinnraleigh.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20College%20Inn%2C%20Raleigh%2C%20NC",
+        "summary": "Apartment community in Raleigh with a resort-style pool, close to NC State.",
+        "source": "https://www.thecollegeinnraleigh.com/",
+        "pick": 2,
+        "photo": "assets/housing/housing-raleigh-nc-property-the-college-inn.jpg",
+        "photoAlt": "The College Inn in Raleigh, NC, from the property's official website",
         "photoApproved": true
       }
     ]
@@ -3738,7 +3764,34 @@
     "place": "San Diego, CA",
     "description": "Renters and students in San Diego use the AstroPro Facebook group to find apartments, subleases, and roommates near SDSU & UC San Diego. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/1425789229536216/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-san-diego-ca-property-stateside",
+        "name": "Stateside",
+        "website": "https://livestateside.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Stateside%2C%20San%20Diego%2C%20CA",
+        "summary": "Student-focused apartments serving San Diego State students.",
+        "source": "https://livestateside.com/",
+        "pick": 1,
+        "photo": "assets/housing/housing-san-diego-ca-property-stateside.jpg",
+        "photoAlt": "Stateside in San Diego, CA, from the property's official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-san-diego-ca-property-6nineteen",
+        "name": "6Nineteen",
+        "website": "https://6nineteen.live/san-diego/6nineteen/student/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=6Nineteen%2C%20San%20Diego%2C%20CA",
+        "summary": "Student apartment community near San Diego State University.",
+        "source": "https://6nineteen.live/san-diego/6nineteen/student/",
+        "pick": 2,
+        "photo": "assets/housing/housing-san-diego-ca-property-6nineteen.jpg",
+        "photoAlt": "6Nineteen in San Diego, CA, from the property's official website",
+        "photoApproved": true
+      }
+    ]
   },
   {
     "id": "housing-seattle-wa",
@@ -3999,7 +4052,21 @@
     "place": "Boca Raton, FL",
     "description": "Renters and students in Boca Raton use the AstroPro Facebook group to find apartments, subleases, and roommates near Florida Atlantic University. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/bocaratonapartments/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-boca-raton-fl-property-vie-villas",
+        "name": "Vie Villas at Boca Raton",
+        "website": "https://vievillasbr.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Vie%20Villas%20at%20Boca%20Raton%2C%20Boca%20Raton%2C%20FL",
+        "summary": "Student villas near Florida Atlantic University with a shuttle service.",
+        "source": "https://vievillasbr.com/",
+        "pick": 1,
+        "photo": "assets/housing/housing-boca-raton-fl-property-vie-villas.jpg",
+        "photoAlt": "Vie Villas at Boca Raton in Boca Raton, FL, from the property's official website",
+        "photoApproved": true
+      }
+    ]
   },
   {
     "id": "housing-bowling-green-oh",
