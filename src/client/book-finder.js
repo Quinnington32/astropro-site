@@ -132,7 +132,7 @@ if (form) {
       t.append(strong, meta);
       btn.append(t);
       btn.addEventListener("click", () => {
-        render(b.isbn || [b.title, b.authors[0]].filter(Boolean).join(" "));
+        render(/^\d{9}[\dXx]$|^\d{13}$/.test(q.replace(/[\s-]/g, "")) ? q : b.isbn || [b.title, b.authors[0]].filter(Boolean).join(" "));
         out.scrollIntoView({ behavior: "smooth", block: "start" });
       });
       grid.append(btn);
