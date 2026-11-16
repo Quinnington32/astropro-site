@@ -3447,7 +3447,34 @@
     "place": "San Jose, CA",
     "description": "Renters and students in San Jose use the AstroPro Facebook group to find apartments, subleases, and roommates near San José State University. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/sjsuapartments/",
-    "properties": [],
+    "properties": [
+      {
+        "id": "housing-san-jose-ca-property-the-grad-san-jose",
+        "name": "The Grad San Jose",
+        "website": "https://www.thegradsanjose.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The+Grad+San+Jose%2C+San+Jose%2C+CA",
+        "summary": "High-rise student housing near San Jose State with a pool deck, listed on the property’s official site.",
+        "source": "https://www.thegradsanjose.com/",
+        "pick": 1,
+        "photo": "assets/housing/housing-san-jose-ca-property-the-grad-san-jose.jpg",
+        "photoAlt": "Pool deck at The Grad San Jose, from the property’s official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-san-jose-ca-property-state-on-6th",
+        "name": "State on 6th",
+        "website": "https://stateon6th.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=State+on+6th%2C+San+Jose%2C+CA",
+        "summary": "Apartments near San Jose State with a courtyard pool, listed on the property’s official site.",
+        "source": "https://stateon6th.com/",
+        "pick": 2,
+        "photo": "assets/housing/housing-san-jose-ca-property-state-on-6th.jpg",
+        "photoAlt": "Courtyard pool at State on 6th in San Jose, from the property’s official website",
+        "photoApproved": true
+      }
+    ],
     "facebookGroupsMore": [
       {
         "label": "North San Jose",
@@ -4271,7 +4298,34 @@
     "place": "Fairfax, VA",
     "description": "Renters and students in Fairfax use the AstroPro Facebook group to find apartments, subleases, and roommates near George Mason University. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/georgemasonapartments/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-fairfax-va-property-the-flats-on-university",
+        "name": "The Flats on University",
+        "website": "https://flatsonuniversity.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The+Flats+on+University%2C+Fairfax%2C+VA",
+        "summary": "Student apartments near George Mason University, listed on the property’s official site.",
+        "source": "https://flatsonuniversity.com/",
+        "pick": 1,
+        "photo": "assets/housing/housing-fairfax-va-property-the-flats-on-university.jpg",
+        "photoAlt": "The Flats on University near George Mason University, from the property’s official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-fairfax-va-property-the-main-on-university",
+        "name": "The Main on University",
+        "website": "https://mainonuniversity.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The+Main+on+University%2C+Fairfax%2C+VA",
+        "summary": "Student apartments near George Mason University, listed on the property’s official site.",
+        "source": "https://mainonuniversity.com/",
+        "pick": 2,
+        "photo": "assets/housing/housing-fairfax-va-property-the-main-on-university.jpg",
+        "photoAlt": "The Main on University building near George Mason University, from the property’s official website",
+        "photoApproved": true
+      }
+    ]
   },
   {
     "id": "housing-orem-ut",
