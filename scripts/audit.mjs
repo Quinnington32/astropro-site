@@ -99,6 +99,24 @@ for (const item of catalog) {
   )
     errors.push("Essay in no-essay category " + item.id);
 }
+// Internship data rules: dated statuses need a review date; stale or lapsed records are reported as warnings.
+{
+  const internships = JSON.parse(await readFile("src/data/internships.json", "utf8"));
+  const today = new Date().toISOString().slice(0, 10);
+  const warnings = [];
+  for (const i of internships) {
+    if (i.deadline && !/^\d{4}-\d{2}-\d{2}$/.test(i.deadline)) errors.push("Internship deadline must be YYYY-MM-DD: " + i.id);
+    if ((i.status === "open" || i.status === "closed") && !i.verifiedAt) errors.push("Internship marked " + i.status + " without a review date: " + i.id);
+    if (i.status === "open" && !i.deadline) errors.push("Open internship without a deadline: " + i.id);
+    if (!i.deadlineLabel) errors.push("Internship missing deadline note: " + i.id);
+    if (i.status === "open" && i.deadline && i.deadline < today) warnings.push("Open internship past its deadline (update the record): " + i.id);
+    if (i.verifiedAt) {
+      const age = (Date.parse(today) - Date.parse(i.verifiedAt)) / 86400000;
+      if (age > 120) warnings.push("Internship review older than 120 days: " + i.id);
+    }
+  }
+  if (warnings.length) console.warn("Internship warnings (" + warnings.length + "):\n" + warnings.join("\n"));
+}
 if (errors.length) {
   console.error(errors.join("\n"));
   process.exit(1);
