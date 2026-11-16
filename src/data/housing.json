@@ -2766,10 +2766,10 @@
       {
         "id": "housing-tucson-az-property-hub-speedway",
         "name": "Hub Speedway",
-        "website": "https://huboncampus.com/tucson-speedway/floor-plans/",
+        "website": "https://huboncampus.com/tucson-speedway/",
         "verifiedAt": "2026-11-14",
         "maps": "https://www.google.com/maps/search/?api=1&query=Hub%20Speedway%2C%20Tucson%2C%20AZ",
-        "source": "https://huboncampus.com/tucson-speedway/floor-plans/",
+        "source": "https://huboncampus.com/tucson-speedway/",
         "summary": "Hub Speedway near the University of Arizona in Tucson lists one-, two-, four-, and five-bedroom layouts. The property lists furnished apartments with in-unit washers and dryers. Compare layouts and current lease terms on the property site.",
         "spotlight": {
           "publishedAt": "2026-11-14",
@@ -2802,7 +2802,7 @@
         "summary": "Furnished student apartments with a wide range of amenities near the University of Arizona.",
         "address": "55 N Park Ave, Tucson, AZ 85719",
         "pick": 2,
-        "photo": "https://themarkua.landmark-properties.com/wp-content/uploads/2023/10/index-header.jpg",
+        "photo": "assets/housing/housing-tucson-az-property-the-mark-tucson.jpg",
         "photoAlt": "The Mark Tucson in Tucson, AZ, from the property's official website",
         "photoApproved": true
       },

@@ -1,3 +1,5 @@
+// Amazon Associates tracking ID, e.g. "astropro-20". Leave empty until the account is approved.
+const AMAZON_TAG = "";
 const form = document.querySelector("[data-book-finder]");
 if (form) {
   const input = form.querySelector("input[name=q]");
@@ -16,6 +18,7 @@ if (form) {
     ]],
     ["Compare prices across sellers", [
       ["BookFinder", "Compares many used, new, and rental sellers at once", (q) => `https://www.bookfinder.com/search/?keywords=${enc(q)}&st=sh&ac=qr&mode=basic&lang=en&destination=us&currency=USD`],
+      ["Amazon", "New, used, and rental copies", (q) => `https://www.amazon.com/s?k=${enc(q)}&i=stripbooks${AMAZON_TAG ? "&tag=" + enc(AMAZON_TAG) : ""}`],
       ["AbeBooks", "Used and out-of-print copies", (q) => `https://www.abebooks.com/servlet/SearchResults?kn=${enc(q)}`],
     ]],
     ["Used and rental", [
@@ -57,6 +60,12 @@ if (form) {
         grid.append(a);
       }
       out.append(h, grid);
+    }
+    if (AMAZON_TAG) {
+      const d = document.createElement("p");
+      d.className = "fineprint";
+      d.textContent = "As an Amazon Associate we earn from qualifying purchases. This never changes your price.";
+      out.append(d);
     }
     out.hidden = false;
   };
