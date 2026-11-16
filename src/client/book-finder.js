@@ -38,31 +38,7 @@ if (form) {
       ? "Searching by ISBN gives the most exact match."
       : "Tip: add the edition or ISBN from your syllabus to avoid the wrong edition.";
     out.append(note);
-    const feat = document.createElement("a");
-    feat.className = "book-featured";
-    feat.href = amazonUrl(q);
-    feat.target = "_blank";
-    feat.rel = "noopener noreferrer sponsored";
-    const fh = document.createElement("strong");
-    fh.textContent = "Shop Amazon for “" + q + "”";
-    const fp = document.createElement("span");
-    fp.textContent = "New, used, and rental copies with fast shipping. Check the edition and ISBN before you order.";
-    const fb = document.createElement("span");
-    fb.className = "btn btn-primary";
-    fb.textContent = "See it on Amazon →";
-    feat.append(fh, fp, fb);
-    if (AMAZON_TAG) {
-      const fd = document.createElement("small");
-      fd.textContent = "As an Amazon Associate we earn from qualifying purchases. This never changes your price.";
-      feat.append(fd);
-    }
-    out.append(feat);
-    const sub = document.createElement("p");
-    sub.className = "fineprint";
-    sub.textContent = "Want to pay less or nothing? Compare the free, library, and used options below.";
-    out.append(sub);
-    for (const [title, items] of groups) {
-      const h = document.createElement("h3");
+    const renderGroup = ([title, items]) => {      const h = document.createElement("h3");
       h.textContent = title;
       const grid = document.createElement("div");
       grid.className = "tool-grid";
@@ -83,7 +59,36 @@ if (form) {
         grid.append(a);
       }
       out.append(h, grid);
+    };
+    const renderFeatured = () => {
+    const feat = document.createElement("a");
+    feat.className = "book-featured";
+    feat.href = amazonUrl(q);
+    feat.target = "_blank";
+    feat.rel = "noopener noreferrer sponsored";
+    const fh = document.createElement("strong");
+    fh.textContent = "Buy or rent it on Amazon: “" + q + "”";
+    const fp = document.createElement("span");
+    fp.textContent = "New, used, and rental copies with fast shipping. Check the edition and ISBN before you order.";
+    const fb = document.createElement("span");
+    fb.className = "btn btn-primary";
+    fb.textContent = "See it on Amazon →";
+    feat.append(fh, fp, fb);
+    if (AMAZON_TAG) {
+      const fd = document.createElement("small");
+      fd.textContent = "As an Amazon Associate we earn from qualifying purchases. This never changes your price.";
+      feat.append(fd);
     }
+    out.append(feat);
+    const sub = document.createElement("p");
+    sub.className = "fineprint";
+    sub.textContent = "Amazon is not always the cheapest. Compare the used and rental sellers below before you buy.";
+    out.append(sub);
+    };
+    renderGroup(groups[0]);
+    renderFeatured();
+    renderGroup(groups[1]);
+    renderGroup(groups[2]);
     if (AMAZON_TAG) {
       const d = document.createElement("p");
       d.className = "fineprint";
