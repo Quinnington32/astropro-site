@@ -3447,7 +3447,22 @@
     "place": "Boston, MA",
     "description": "Renters and students in Boston use the AstroPro Facebook group to find apartments, subleases, and roommates near Boston University & Northeastern University. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/1798191001418379/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-boston-ma-property-lightview",
+        "name": "LightView",
+        "website": "https://www.americancampus.com/student-apartments/ma/boston/lightview",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=LightView%2C%20Boston%2C%20MA",
+        "address": "744 Columbus Avenue, Boston, MA",
+        "summary": "Furnished student apartments near Northeastern University and Boston University, steps from Ruggles station.",
+        "source": "https://www.americancampus.com/student-apartments/ma/boston/lightview",
+        "pick": 1,
+        "photo": "assets/housing/housing-boston-ma-property-lightview.jpg",
+        "photoAlt": "LightView in Boston, MA, from the property's official website",
+        "photoApproved": true
+      }
+    ]
   },
   {
     "id": "housing-phoenix-az",
@@ -3525,7 +3540,48 @@
     "place": "Philadelphia, PA",
     "description": "Renters and students in Philadelphia use the AstroPro Facebook group to find apartments, subleases, and roommates near Temple University & University of Pennsylvania. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/2383463272426294/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-philadelphia-pa-property-the-summit-at-university-city",
+        "name": "The Summit at University City",
+        "website": "https://www.americancampus.com/student-apartments/pa/philadelphia/the-summit-at-university-city",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Summit%20at%20University%20City%2C%20Philadelphia%2C%20PA",
+        "address": "3400 Lancaster Avenue, Philadelphia, PA 19104",
+        "summary": "Furnished apartments near Drexel University with private and shared bedroom options and resident events.",
+        "source": "https://www.americancampus.com/student-apartments/pa/philadelphia/the-summit-at-university-city",
+        "pick": 1,
+        "photo": "assets/housing/housing-philadelphia-pa-property-the-summit-at-university-city.jpg",
+        "photoAlt": "The Summit at University City in Philadelphia, PA, from the property's official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-philadelphia-pa-property-university-crossings",
+        "name": "University Crossings",
+        "website": "https://www.americancampus.com/student-apartments/pa/philadelphia/university-crossings",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=University%20Crossings%2C%20Philadelphia%2C%20PA",
+        "summary": "Furnished apartments near Drexel University with private and shared bedrooms, a 24-hour fitness center and an Academic Success Center.",
+        "source": "https://www.americancampus.com/student-apartments/pa/philadelphia/university-crossings",
+        "pick": 2,
+        "photo": "assets/housing/housing-philadelphia-pa-property-university-crossings.jpg",
+        "photoAlt": "University Crossings in Philadelphia, PA, from the property's official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-philadelphia-pa-property-university-village-temple",
+        "name": "University Village",
+        "website": "https://www.americancampus.com/student-apartments/pa/philadelphia/university-village-temple",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=University%20Village%2C%20Philadelphia%2C%20PA",
+        "summary": "Off-campus apartments near Temple University with private and shared accommodations.",
+        "source": "https://www.americancampus.com/student-apartments/pa/philadelphia/university-village-temple",
+        "pick": 3,
+        "photo": "assets/housing/housing-philadelphia-pa-property-university-village-temple.jpg",
+        "photoAlt": "University Village sign and building near Temple University, from the property website",
+        "photoApproved": true
+      }
+    ]
   },
   {
     "id": "housing-chicago-il",
@@ -3534,7 +3590,22 @@
     "place": "Chicago, IL",
     "description": "Renters and students in Chicago use the AstroPro Facebook group to find apartments, subleases, and roommates near University of Illinois Chicago. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/1664635285074262/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-chicago-il-property-university-center",
+        "name": "University Center",
+        "website": "https://loopchicago.com/listing/university-center/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=University%20Center%2C%20Chicago%2C%20IL",
+        "address": "525 S State St, Chicago, IL 60605",
+        "summary": "Furnished student housing in the South Loop near DePaul, Roosevelt and Columbia College, also open to interns in summer.",
+        "source": "https://loopchicago.com/listing/university-center/",
+        "pick": 1,
+        "photo": "assets/housing/housing-chicago-il-property-university-center.jpg",
+        "photoAlt": "University Center building on State Street in Chicago, from the Chicago Loop Alliance listing",
+        "photoApproved": true
+      }
+    ]
   },
   {
     "id": "housing-los-angeles-ca",
