@@ -2808,3 +2808,35 @@ body:is(
   .rental-body .cta-row { flex-wrap: wrap; }
   .rental-body .cta-row a { flex: 1 1 8.5rem; justify-content: center; }
 }
+
+/* Housing index: every market card is the same size and shape. */
+.market-card { display: flex; flex-direction: column; justify-content: space-between; min-height: 150px; padding: 24px 26px; box-shadow: 0 1px 2px rgba(20, 30, 60, 0.04); }
+.market-card h2 { margin: 0 0 6px; font-size: 1.4rem; letter-spacing: -0.01em; }
+.market-card .school { order: 2; font-size: 0.8rem; font-weight: 500; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
+.market-card .link { order: 3; margin-top: 18px; }
+.market-card:hover { box-shadow: 0 10px 28px rgba(20, 30, 60, 0.1); }
+
+/* Phones: premium, compact market pages. The three top picks stack as tidy rows so all three are visible together. */
+@media (max-width: 700px) {
+  .market-section { padding-top: 24px; }
+  #top-picks .section-head-row { margin-bottom: 14px; }
+  #top-picks h2, #available-rentals h2 { font-size: 1.55rem; }
+  #top-picks .rental-grid { grid-template-columns: 1fr; gap: 12px; }
+  #top-picks .rental-card { flex-direction: row; align-items: stretch; border-radius: 18px; box-shadow: 0 6px 20px rgba(20, 30, 60, 0.08); border-color: #e6e2d8; }
+  #top-picks .rental-visual { flex: 0 0 38%; width: 38%; aspect-ratio: auto; min-height: 148px; border-radius: 0; }
+  #top-picks .rental-badge { top: 8px; left: 8px; padding: 3px 8px; font-size: 0.62rem; }
+  #top-picks .rental-body { padding: 14px 14px 14px 16px; gap: 5px; justify-content: center; }
+  #top-picks .rental-body h3 { font-size: 1.02rem; line-height: 1.25; }
+  #top-picks .rental-body > p:not(.rental-meta), #top-picks .review-date { display: none; }
+  #top-picks .rental-body .rental-meta { font-size: 0.74rem; line-height: 1.35; }
+  #top-picks .card-heading { align-items: flex-start; gap: 6px; }
+  #top-picks .rental-body .cta-row { padding-top: 6px; gap: 8px; flex-wrap: nowrap; }
+  #top-picks .rental-body .cta-row a { flex: 1 1 0; min-width: 0; padding: 8px 6px; font-size: 0.72rem; justify-content: center; white-space: nowrap; }
+  #top-picks .rental-body .cta-row a.btn-ghost { display: none; }
+  .market-card { min-height: 0; padding: 20px 22px; }
+  .market-card h2 { font-size: 1.3rem; }
+}
+@media (max-width: 700px) {
+  .directory-controls { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .directory-controls input, .directory-controls select { width: 100%; box-sizing: border-box; }
+}

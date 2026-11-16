@@ -277,7 +277,7 @@ emit(
 const marketCards = markets
   .map(
     (m, i) =>
-      `<a class="market-card" href="${m.file}" data-order="${i}" data-city="${e(m.place)}" data-state="${e(m.place.includes(",") ? m.place.split(",").at(-1).trim() : "NH")}" data-search="${e((m.school + " " + m.place + " " + m.description).toLowerCase())}"><span class="school">${e(m.school)}</span><h2>${e(m.place)}</h2><p>${e(m.description)}</p><span class="link">${m.properties.some((p) => p.spotlight) ? "See available rentals" : "Explore this market"} →</span></a>`,
+      `<a class="market-card" href="${m.file}" data-order="${i}" data-city="${e(m.place)}" data-state="${e(m.place.includes(",") ? m.place.split(",").at(-1).trim() : "NH")}" data-search="${e((m.school + " " + m.place + " " + m.description).toLowerCase())}"><h2>${e(m.place)}</h2><span class="school">${e(m.school)}</span><span class="link">${m.properties.some((p) => p.spotlight) ? "See available rentals" : "Explore this market"} →</span></a>`,
   )
   .join("");
 const housingFaq = [
@@ -797,7 +797,6 @@ for (const data of pages) {
   const html = page(data);
   const $ = load(html);
   $('a[target="_blank"]').attr("rel", "noopener noreferrer");
-  if (markets.some((m) => m.file === data.file)) $('meta[name="viewport"]').attr("content", "width=1200");
   $("style,script:not([src])").remove();
   $("[style]").removeAttr("style");
   $('a[href="#"]').each(() => {
