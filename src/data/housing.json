@@ -3102,7 +3102,21 @@
     "place": "Berkeley, CA",
     "description": "Renters and students in Berkeley use the AstroPro Facebook group to find apartments, subleases, and roommates near UC Berkeley. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/berkeleyapartments/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-berkeley-ca-property-the-standard-at-berkeley",
+        "name": "The Standard at Berkeley",
+        "website": "https://www.landmarkproperties.com/property/the-standard-at-berkeley",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Standard%20at%20Berkeley%2C%20Berkeley%2C%20CA",
+        "summary": "Student apartment community near UC Berkeley by Landmark Properties. Check the official page for current availability.",
+        "source": "https://www.landmarkproperties.com/property/the-standard-at-berkeley",
+        "pick": 1,
+        "photo": "assets/housing/housing-berkeley-ca-property-the-standard-at-berkeley.jpg",
+        "photoAlt": "The Standard at Berkeley in Berkeley, CA, from the property's official website",
+        "photoApproved": true
+      }
+    ]
   },
   {
     "id": "housing-morris-mn",
@@ -3192,7 +3206,47 @@
     "place": "College Station, TX",
     "description": "Renters and students in College Station use the AstroPro Facebook group to find apartments, subleases, and roommates near Texas A&M University. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/543357719344215/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-college-station-tx-property-the-callaway-house",
+        "name": "The Callaway House",
+        "website": "https://www.americancampus.com/Student-Apartments/TX/College-Station/The-Callaway-House",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Callaway%20House%2C%20College%20Station%2C%20TX",
+        "summary": "Student apartment community near Texas A&M listed by American Campus Communities. Check the official page for current floor plans and lease terms.",
+        "source": "https://www.americancampus.com/Student-Apartments/TX/College-Station/The-Callaway-House",
+        "pick": 1,
+        "photo": "assets/housing/housing-college-station-tx-property-the-callaway-house.jpg",
+        "photoAlt": "The Callaway House in College Station, TX, from the property's official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-college-station-tx-property-callaway-villas",
+        "name": "Callaway Villas",
+        "website": "https://www.americancampus.com/Student-Apartments/TX/College-Station/Callaway-Villas",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Callaway%20Villas%2C%20College%20Station%2C%20TX",
+        "summary": "Resort-style student community with a pool and courtyard, listed by American Campus Communities. Confirm pricing and availability on the official page.",
+        "source": "https://www.americancampus.com/Student-Apartments/TX/College-Station/Callaway-Villas",
+        "pick": 2,
+        "photo": "assets/housing/housing-college-station-tx-property-callaway-villas.jpg",
+        "photoAlt": "Callaway Villas in College Station, TX, from the property's official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-college-station-tx-property-u-club-townhomes",
+        "name": "U Club Townhomes on Marion Pugh",
+        "website": "https://www.americancampus.com/student-apartments/tx/college-station/u-club-townhomes-on-marion-pugh",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=U%20Club%20Townhomes%20on%20Marion%20Pugh%2C%20College%20Station%2C%20TX",
+        "summary": "Townhome-style student housing in College Station listed by American Campus Communities. Confirm current terms with the property.",
+        "source": "https://www.americancampus.com/student-apartments/tx/college-station/u-club-townhomes-on-marion-pugh",
+        "pick": 3,
+        "photo": "assets/housing/housing-college-station-tx-property-u-club-townhomes.jpg",
+        "photoAlt": "U Club Townhomes on Marion Pugh in College Station, TX, from the property's official website",
+        "photoApproved": true
+      }
+    ]
   },
   {
     "id": "housing-cazenovia-ny",
@@ -3330,7 +3384,21 @@
     "place": "Fort Collins, CO",
     "description": "Renters and students in Fort Collins use the AstroPro Facebook group to find apartments, subleases, and roommates near Colorado State University. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/40635080362745769/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-fort-collins-co-property-state",
+        "name": "State",
+        "website": "https://americancampus.com/student-apartments/co/fort-collins/state",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=State%2C%20Fort%20Collins%2C%20CO",
+        "summary": "Mixed-use student apartment building in Fort Collins listed by American Campus Communities. Check the official page for current pricing.",
+        "source": "https://americancampus.com/student-apartments/co/fort-collins/state",
+        "pick": 1,
+        "photo": "assets/housing/housing-fort-collins-co-property-state.jpg",
+        "photoAlt": "State in Fort Collins, CO, from the property's official website",
+        "photoApproved": true
+      }
+    ]
   },
   {
     "id": "housing-greenville-nc",
