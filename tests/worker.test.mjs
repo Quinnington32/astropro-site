@@ -30,8 +30,11 @@ const send = (input, headers = {}) =>
 before(async () => {
   mf = new Miniflare(
     convertV4MiniflareOptions({
-      modules: true,
-      scriptPath: "worker/index.mjs",
+      modules: [
+        { type: "ESModule", path: "worker/index.mjs" },
+        { type: "ESModule", path: "worker/market-links.mjs" },
+      ],
+      modulesRoot: process.cwd(),
       compatibilityDate: "2026-10-01",
       compatibilityFlags: ["nodejs_compat"],
       d1Databases: ["DB"],
@@ -106,6 +109,15 @@ test("all five forms persist only validated fields and return receipts", async (
     assert.equal(JSON.parse(row.payload_json).unexpected, undefined);
     assert.equal(row.consent_version, "2026-10-31");
   }
+});
+test("short market links redirect to the market page and keep tracking parameters", async () => {
+  const r = await mf.dispatchFetch(origin + "/go/ames?utm_source=facebook", { redirect: "manual" });
+  assert.equal(r.status, 302);
+  const loc = new URL(r.headers.get("location"));
+  assert.equal(loc.pathname, "/housing-ames-ia.html");
+  assert.equal(loc.search, "?utm_source=facebook");
+  const missing = await mf.dispatchFetch(origin + "/go/not-a-market", { redirect: "manual" });
+  assert.notEqual(missing.status, 302);
 });
 test("scholarship help sign-ups validate their choice and keep a valid email", () => {
   const ok = { requestId: randomUUID(), type: "scholarship-interest", email: "Student@Example.com", helpWith: "Keeping track of deadlines", consent: true };

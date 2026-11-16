@@ -65,7 +65,8 @@
         "photoApproved": true,
         "pick": 2
       }
-    ]
+    ],
+    "facebookGroup": "https://www.facebook.com/groups/1144174901392309/"
   },
   {
     "id": "housing-athens",
@@ -140,7 +141,7 @@
   {
     "id": "housing-houston",
     "file": "housing-houston.html",
-    "school": "University of Houston",
+    "school": "University of Houston & Rice University",
     "place": "Houston, TX",
     "description": "A large metro market, with students often looking in Third Ward, Midtown and the Museum District near the METRORail Purple Line.",
     "properties": [
@@ -211,7 +212,8 @@
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Life%20Tower%2C%20Houston%2C%20TX"
       }
-    ]
+    ],
+    "facebookGroup": "https://www.facebook.com/groups/2206417083419058/"
   },
   {
     "id": "housing-mckinney",
@@ -275,7 +277,7 @@
   {
     "id": "housing-dallas",
     "file": "housing-dallas.html",
-    "school": "Dallas College",
+    "school": "Dallas College, SMU & UT Dallas",
     "place": "Dallas, TX",
     "description": "Seven campuses spread across the metro, with DART light rail and bus opening up housing options near each one.",
     "properties": [
@@ -323,7 +325,8 @@
         "photoAlt": "The Griffin in Dallas, TX, from the property's official website",
         "photoApproved": true
       }
-    ]
+    ],
+    "facebookGroup": "https://www.facebook.com/groups/1122350230172459/"
   },
   {
     "id": "housing-mcallen",
@@ -889,7 +892,7 @@
   {
     "id": "housing-denton",
     "file": "housing-denton.html",
-    "school": "Texas Woman's University",
+    "school": "University of North Texas & Texas Woman's University",
     "place": "Denton, TX",
     "description": "A North Texas college town also home to UNT, with DCTA's GoZone service documented for TWU students specifically.",
     "properties": [
@@ -932,7 +935,8 @@
         "photoAlt": "Uptown Apartments in Denton, TX, from the property's official website",
         "photoApproved": true
       }
-    ]
+    ],
+    "facebookGroup": "https://www.facebook.com/groups/1060528837017948/"
   },
   {
     "id": "housing-omaha",
@@ -992,7 +996,8 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=The%20Traveler%20Apartments%2C%20Omaha%2C%20NE",
         "source": "https://www.thetravelerapts.com/floorplans"
       }
-    ]
+    ],
+    "facebookGroup": "https://www.facebook.com/groups/omahahomes/"
   },
   {
     "id": "housing-pensacola",
@@ -1375,6 +1380,13 @@
         "photo": "https://s7d9.scene7.com/is/image/greystarprod/21945BDG2",
         "photoAlt": "Los Cielos at Brooks Luxury Rentals in San Antonio, TX, from the property's official website",
         "photoApproved": true
+      }
+    ],
+    "facebookGroup": "https://www.facebook.com/groups/2632597287255622/",
+    "facebookGroupsMore": [
+      {
+        "label": "UTSA San Antonio rentals",
+        "url": "https://www.facebook.com/groups/sanantoniorentals/"
       }
     ]
   },
@@ -1867,7 +1879,7 @@
   {
     "id": "housing-new-hampshire",
     "file": "housing-new-hampshire.html",
-    "school": "Manchester Community College",
+    "school": "Manchester Community College & Southern New Hampshire University",
     "place": "Manchester, NH",
     "description": "Downtown Manchester is the closest city housing market for students at Manchester Community College and nearby Southern New Hampshire University.",
     "properties": [
@@ -1913,7 +1925,8 @@
         "photoAlt": "The Flats on High Street in New Hampshire (statewide), from the property's official website",
         "photoApproved": true
       }
-    ]
+    ],
+    "facebookGroup": "https://www.facebook.com/groups/hooksettapartments/"
   },
   {
     "id": "housing-kirksville-mo",
@@ -1989,7 +2002,8 @@
         "photoAlt": "Kirksville Property Management in Kirksville, MO, from the property's official website",
         "photoApproved": true
       }
-    ]
+    ],
+    "facebookGroup": "https://www.facebook.com/groups/2205622230329742/"
   },
   {
     "id": "housing-macomb-il",
@@ -2065,7 +2079,8 @@
         "photoAlt": "Smith & Royer Apartments in Macomb, IL, from the property's official website",
         "photoApproved": true
       }
-    ]
+    ],
+    "facebookGroup": "https://www.facebook.com/groups/1125547753567026/"
   },
   {
     "id": "housing-platteville-wi",
@@ -2142,7 +2157,8 @@
         "photoAlt": "Stonebridge Apartments in Platteville, WI, from the property's official website",
         "photoApproved": true
       }
-    ]
+    ],
+    "facebookGroup": "https://www.facebook.com/groups/1672495207705371/"
   },
   {
     "id": "housing-vermillion-sd",
@@ -2218,7 +2234,8 @@
         "photoAlt": "The Heights Vermillion in Vermillion, SD, from the property's official website",
         "photoApproved": true
       }
-    ]
+    ],
+    "facebookGroup": "https://www.facebook.com/groups/2979932512339316/"
   },
   {
     "id": "housing-emporia-ks",
@@ -2294,7 +2311,8 @@
         "photoAlt": "Parkview Apartments in Emporia, KS, from the property's official website",
         "photoApproved": true
       }
-    ]
+    ],
+    "facebookGroup": "https://www.facebook.com/groups/1129982866618268/"
   },
   {
     "id": "housing-ames-ia",
@@ -2371,7 +2389,8 @@
         "photoAlt": "Copper Beech at Ames in Ames, IA, from the property's official website",
         "photoApproved": true
       }
-    ]
+    ],
+    "facebookGroup": "https://www.facebook.com/groups/951828424471864/"
   },
   {
     "id": "housing-iowa-city-ia",
@@ -2448,7 +2467,8 @@
         "photoAlt": "Campus View Apartments in Iowa City, IA, from the property's official website",
         "photoApproved": true
       }
-    ]
+    ],
+    "facebookGroup": "https://www.facebook.com/groups/3199654480425813/"
   },
   {
     "id": "housing-lawrence-ks",
@@ -2523,7 +2543,8 @@
         "photoAlt": "The Collective at Lawrence in Lawrence, KS, from the property's official website",
         "photoApproved": true
       }
-    ]
+    ],
+    "facebookGroup": "https://www.facebook.com/groups/1378086194245280/"
   },
   {
     "id": "housing-manhattan-ks",
@@ -2599,7 +2620,8 @@
         "photoAlt": "Sandstone Apartments in Manhattan, KS, from the property's official website",
         "photoApproved": true
       }
-    ]
+    ],
+    "facebookGroup": "https://www.facebook.com/groups/2120989008519297/"
   },
   {
     "id": "housing-stillwater-ok",
@@ -2676,7 +2698,8 @@
         "photoAlt": "Alight Stillwater in Stillwater, OK, from the property's official website",
         "photoApproved": true
       }
-    ]
+    ],
+    "facebookGroup": "https://www.facebook.com/groups/1887445796015247/"
   },
   {
     "id": "housing-tucson-az",
@@ -2753,7 +2776,8 @@
         "photoAlt": "University Lofts in Tucson, AZ, from the property's official website",
         "photoApproved": true
       }
-    ]
+    ],
+    "facebookGroup": "https://www.facebook.com/groups/1128748779953964/"
   },
   {
     "id": "housing-albuquerque-nm",
@@ -2815,7 +2839,8 @@
         "photoAlt": "Nob Hill Apartments in Albuquerque, NM, from the property's official website",
         "photoApproved": true
       }
-    ]
+    ],
+    "facebookGroup": "https://www.facebook.com/groups/2548132042348043/"
   },
   {
     "id": "housing-fresno-ca",
@@ -2878,7 +2903,8 @@
         "photoAlt": "Palazzo at Campus Pointe in Fresno, CA, from the property's official website",
         "photoApproved": true
       }
-    ]
+    ],
+    "facebookGroup": "https://www.facebook.com/groups/1153864210494686/"
   },
   {
     "id": "housing-sacramento-ca",
@@ -2941,7 +2967,8 @@
         "photoAlt": "Hornet Commons in Sacramento, CA, from the property's official website",
         "photoApproved": true
       }
-    ]
+    ],
+    "facebookGroup": "https://www.facebook.com/groups/1769167408547278/"
   },
   {
     "id": "housing-greensboro-nc",
@@ -3004,6 +3031,830 @@
         "photoAlt": "West Quad in Greensboro, NC, from the property's official website",
         "photoApproved": true
       }
+    ],
+    "facebookGroup": "https://www.facebook.com/groups/1670073367846669/"
+  },
+  {
+    "id": "housing-college-park-md",
+    "file": "housing-college-park-md.html",
+    "school": "University of Maryland",
+    "place": "College Park, MD",
+    "description": "Renters and students in College Park use the AstroPro Facebook group to find apartments, subleases, and roommates near University of Maryland. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/collegeparkhousing/",
+    "properties": []
+  },
+  {
+    "id": "housing-berkeley-ca",
+    "file": "housing-berkeley-ca.html",
+    "school": "UC Berkeley",
+    "place": "Berkeley, CA",
+    "description": "Renters and students in Berkeley use the AstroPro Facebook group to find apartments, subleases, and roommates near UC Berkeley. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/berkeleyapartments/",
+    "properties": []
+  },
+  {
+    "id": "housing-morris-mn",
+    "file": "housing-morris-mn.html",
+    "school": "University of Minnesota Morris",
+    "place": "Morris, MN",
+    "description": "Renters and students in Morris use the AstroPro Facebook group to find apartments, subleases, and roommates near University of Minnesota Morris. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/1162640656270479/",
+    "properties": []
+  },
+  {
+    "id": "housing-dillon-mt",
+    "file": "housing-dillon-mt.html",
+    "school": "University of Montana Western",
+    "place": "Dillon, MT",
+    "description": "Renters and students in Dillon use the AstroPro Facebook group to find apartments, subleases, and roommates near University of Montana Western. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/1263598289320471/",
+    "properties": []
+  },
+  {
+    "id": "housing-wayne-ne",
+    "file": "housing-wayne-ne.html",
+    "school": "Wayne State College",
+    "place": "Wayne, NE",
+    "description": "Renters and students in Wayne use the AstroPro Facebook group to find apartments, subleases, and roommates near Wayne State College. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/1174701891648802/",
+    "properties": []
+  },
+  {
+    "id": "housing-arkadelphia-ar",
+    "file": "housing-arkadelphia-ar.html",
+    "school": "Henderson State University & Ouachita Baptist University",
+    "place": "Arkadelphia, AR",
+    "description": "Renters and students in Arkadelphia use the AstroPro Facebook group to find apartments, subleases, and roommates near Henderson State University & Ouachita Baptist University. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/28903571629335624/",
+    "properties": []
+  },
+  {
+    "id": "housing-alamosa-co",
+    "file": "housing-alamosa-co.html",
+    "school": "Adams State University",
+    "place": "Alamosa, CO",
+    "description": "Renters and students in Alamosa use the AstroPro Facebook group to find apartments, subleases, and roommates near Adams State University. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/2129455631043350/",
+    "properties": []
+  },
+  {
+    "id": "housing-largo-md",
+    "file": "housing-largo-md.html",
+    "school": "University of Maryland Global Campus",
+    "place": "Largo, MD",
+    "description": "Renters and students in Largo use the AstroPro Facebook group to find apartments, subleases, and roommates near University of Maryland Global Campus. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/largoapartments/",
+    "properties": []
+  },
+  {
+    "id": "housing-lawrenceburg-in",
+    "file": "housing-lawrenceburg-in.html",
+    "school": "Ivy Tech Community College",
+    "place": "Lawrenceburg, IN",
+    "description": "Renters and students in Lawrenceburg use the AstroPro Facebook group to find apartments, subleases, and roommates near Ivy Tech Community College. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/471967277206445/",
+    "properties": []
+  },
+  {
+    "id": "housing-raleigh-nc",
+    "file": "housing-raleigh-nc.html",
+    "school": "NC State University & Raleigh-area colleges",
+    "place": "Raleigh, NC",
+    "description": "Renters and students in Raleigh use the AstroPro Facebook group to find apartments, subleases, and roommates near NC State University & Raleigh-area colleges. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/raleighrentals/",
+    "properties": []
+  },
+  {
+    "id": "housing-carmel-in",
+    "file": "housing-carmel-in.html",
+    "school": "Colleges and universities near Carmel",
+    "place": "Carmel, IN",
+    "description": "Renters and students in Carmel use the AstroPro Facebook group to find apartments, subleases, and roommates near campus. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/carmelapartments/",
+    "properties": []
+  },
+  {
+    "id": "housing-college-station-tx",
+    "file": "housing-college-station-tx.html",
+    "school": "Texas A&M University",
+    "place": "College Station, TX",
+    "description": "Renters and students in College Station use the AstroPro Facebook group to find apartments, subleases, and roommates near Texas A&M University. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/543357719344215/",
+    "properties": []
+  },
+  {
+    "id": "housing-cazenovia-ny",
+    "file": "housing-cazenovia-ny.html",
+    "school": "Cazenovia College",
+    "place": "Cazenovia, NY",
+    "description": "Renters and students in Cazenovia use the AstroPro Facebook group to find apartments, subleases, and roommates near Cazenovia College. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/207103106885709/",
+    "properties": []
+  },
+  {
+    "id": "housing-greeley-co",
+    "file": "housing-greeley-co.html",
+    "school": "Colleges and universities near Greeley",
+    "place": "Greeley, CO",
+    "description": "Renters and students in Greeley use the AstroPro Facebook group to find apartments, subleases, and roommates near campus. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/318899342193821/",
+    "properties": []
+  },
+  {
+    "id": "housing-lewiston-me",
+    "file": "housing-lewiston-me.html",
+    "school": "Colleges and universities near Lewiston",
+    "place": "Lewiston, ME",
+    "description": "Renters and students in Lewiston use the AstroPro Facebook group to find apartments, subleases, and roommates near campus. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/lewistonmaineapartments/",
+    "properties": []
+  },
+  {
+    "id": "housing-purchase-ny",
+    "file": "housing-purchase-ny.html",
+    "school": "Manhattanville College",
+    "place": "Purchase, NY",
+    "description": "Renters and students in Purchase use the AstroPro Facebook group to find apartments, subleases, and roommates near Manhattanville College. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/327906211139313/",
+    "properties": []
+  },
+  {
+    "id": "housing-nampa-id",
+    "file": "housing-nampa-id.html",
+    "school": "Northwest Nazarene University",
+    "place": "Nampa, ID",
+    "description": "Renters and students in Nampa use the AstroPro Facebook group to find apartments, subleases, and roommates near Northwest Nazarene University. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/2396364364232187/",
+    "properties": [],
+    "facebookGroupsMore": [
+      {
+        "label": "Nampa apartments & roommates",
+        "url": "https://www.facebook.com/groups/nampaapartments/"
+      }
     ]
+  },
+  {
+    "id": "housing-claremont-ca",
+    "file": "housing-claremont-ca.html",
+    "school": "The Claremont Colleges",
+    "place": "Claremont, CA",
+    "description": "Renters and students in Claremont use the AstroPro Facebook group to find apartments, subleases, and roommates near The Claremont Colleges. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/464637737369236/",
+    "properties": []
+  },
+  {
+    "id": "housing-south-padre-island-tx",
+    "file": "housing-south-padre-island-tx.html",
+    "school": "Colleges and universities near South Padre Island",
+    "place": "South Padre Island, TX",
+    "description": "Renters and students in South Padre Island use the AstroPro Facebook group to find apartments, subleases, and roommates near campus. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/southpadreislandapartments/",
+    "properties": []
+  },
+  {
+    "id": "housing-malibu-ca",
+    "file": "housing-malibu-ca.html",
+    "school": "Pepperdine University",
+    "place": "Malibu, CA",
+    "description": "Renters and students in Malibu use the AstroPro Facebook group to find apartments, subleases, and roommates near Pepperdine University. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/malibuapartments/",
+    "properties": []
+  },
+  {
+    "id": "housing-san-jose-ca",
+    "file": "housing-san-jose-ca.html",
+    "school": "San José State University",
+    "place": "San Jose, CA",
+    "description": "Renters and students in San Jose use the AstroPro Facebook group to find apartments, subleases, and roommates near San José State University. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/sjsuapartments/",
+    "properties": [],
+    "facebookGroupsMore": [
+      {
+        "label": "North San Jose",
+        "url": "https://www.facebook.com/groups/724192308726615/"
+      }
+    ]
+  },
+  {
+    "id": "housing-billings-mt",
+    "file": "housing-billings-mt.html",
+    "school": "Colleges and universities near Billings",
+    "place": "Billings, MT",
+    "description": "Renters and students in Billings use the AstroPro Facebook group to find apartments, subleases, and roommates near campus. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/billingsapartments/",
+    "properties": []
+  },
+  {
+    "id": "housing-provo-ut",
+    "file": "housing-provo-ut.html",
+    "school": "Brigham Young University",
+    "place": "Provo, UT",
+    "description": "Renters and students in Provo use the AstroPro Facebook group to find apartments, subleases, and roommates near Brigham Young University. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/781574775524955/",
+    "properties": []
+  },
+  {
+    "id": "housing-independence-mo",
+    "file": "housing-independence-mo.html",
+    "school": "Colleges and universities near Independence",
+    "place": "Independence, MO",
+    "description": "Renters and students in Independence use the AstroPro Facebook group to find apartments, subleases, and roommates near campus. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/independencemissouriapartments/",
+    "properties": []
+  },
+  {
+    "id": "housing-fishers-in",
+    "file": "housing-fishers-in.html",
+    "school": "Colleges and universities near Fishers",
+    "place": "Fishers, IN",
+    "description": "Renters and students in Fishers use the AstroPro Facebook group to find apartments, subleases, and roommates near campus. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/fishersapartment/",
+    "properties": []
+  },
+  {
+    "id": "housing-fort-collins-co",
+    "file": "housing-fort-collins-co.html",
+    "school": "Colorado State University",
+    "place": "Fort Collins, CO",
+    "description": "Renters and students in Fort Collins use the AstroPro Facebook group to find apartments, subleases, and roommates near Colorado State University. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/40635080362745769/",
+    "properties": []
+  },
+  {
+    "id": "housing-greenville-nc",
+    "file": "housing-greenville-nc.html",
+    "school": "East Carolina University",
+    "place": "Greenville, NC",
+    "description": "Renters and students in Greenville use the AstroPro Facebook group to find apartments, subleases, and roommates near East Carolina University. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/1114267574523808/",
+    "properties": []
+  },
+  {
+    "id": "housing-murfreesboro-tn",
+    "file": "housing-murfreesboro-tn.html",
+    "school": "Middle Tennessee State University",
+    "place": "Murfreesboro, TN",
+    "description": "Renters and students in Murfreesboro use the AstroPro Facebook group to find apartments, subleases, and roommates near Middle Tennessee State University. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/1611003420259893/",
+    "properties": []
+  },
+  {
+    "id": "housing-san-marcos-tx",
+    "file": "housing-san-marcos-tx.html",
+    "school": "Texas State University",
+    "place": "San Marcos, TX",
+    "description": "Renters and students in San Marcos use the AstroPro Facebook group to find apartments, subleases, and roommates near Texas State University. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/1825381478489467/",
+    "properties": []
+  },
+  {
+    "id": "housing-greer-sc",
+    "file": "housing-greer-sc.html",
+    "school": "Greenville Technical College",
+    "place": "Greer, SC",
+    "description": "Renters and students in Greer use the AstroPro Facebook group to find apartments, subleases, and roommates near Greenville Technical College. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/1139937671861189/",
+    "properties": []
+  },
+  {
+    "id": "housing-gallatin-tn",
+    "file": "housing-gallatin-tn.html",
+    "school": "Volunteer State Community College",
+    "place": "Gallatin, TN",
+    "description": "Renters and students in Gallatin use the AstroPro Facebook group to find apartments, subleases, and roommates near Volunteer State Community College. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/1705925217812630/",
+    "properties": []
+  },
+  {
+    "id": "housing-bluffton-sc",
+    "file": "housing-bluffton-sc.html",
+    "school": "University of South Carolina Beaufort",
+    "place": "Bluffton, SC",
+    "description": "Renters and students in Bluffton use the AstroPro Facebook group to find apartments, subleases, and roommates near University of South Carolina Beaufort. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/1600227734680242/",
+    "properties": []
+  },
+  {
+    "id": "housing-newnan-ga",
+    "file": "housing-newnan-ga.html",
+    "school": "University of West Georgia Newnan",
+    "place": "Newnan, GA",
+    "description": "Renters and students in Newnan use the AstroPro Facebook group to find apartments, subleases, and roommates near University of West Georgia Newnan. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/28905433089066199/",
+    "properties": []
+  },
+  {
+    "id": "housing-athens-al",
+    "file": "housing-athens-al.html",
+    "school": "Athens State University",
+    "place": "Athens, AL",
+    "description": "Renters and students in Athens use the AstroPro Facebook group to find apartments, subleases, and roommates near Athens State University. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/1132184636225044/",
+    "properties": []
+  },
+  {
+    "id": "housing-brookings-sd",
+    "file": "housing-brookings-sd.html",
+    "school": "South Dakota State University",
+    "place": "Brookings, SD",
+    "description": "Renters and students in Brookings use the AstroPro Facebook group to find apartments, subleases, and roommates near South Dakota State University. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/983417581507353/",
+    "properties": []
+  },
+  {
+    "id": "housing-conway-ar",
+    "file": "housing-conway-ar.html",
+    "school": "University of Central Arkansas",
+    "place": "Conway, AR",
+    "description": "Renters and students in Conway use the AstroPro Facebook group to find apartments, subleases, and roommates near University of Central Arkansas. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/1645715680533070/",
+    "properties": []
+  },
+  {
+    "id": "housing-hurricane-ut",
+    "file": "housing-hurricane-ut.html",
+    "school": "Utah Tech University",
+    "place": "Hurricane, UT",
+    "description": "Renters and students in Hurricane use the AstroPro Facebook group to find apartments, subleases, and roommates near Utah Tech University. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/1159000029905601/",
+    "properties": []
+  },
+  {
+    "id": "housing-georgetown-tx",
+    "file": "housing-georgetown-tx.html",
+    "school": "Southwestern University",
+    "place": "Georgetown, TX",
+    "description": "Renters and students in Georgetown use the AstroPro Facebook group to find apartments, subleases, and roommates near Southwestern University. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/1799924737906533/",
+    "properties": []
+  },
+  {
+    "id": "housing-boston-ma",
+    "file": "housing-boston-ma.html",
+    "school": "Boston University & Northeastern University",
+    "place": "Boston, MA",
+    "description": "Renters and students in Boston use the AstroPro Facebook group to find apartments, subleases, and roommates near Boston University & Northeastern University. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/1798191001418379/",
+    "properties": []
+  },
+  {
+    "id": "housing-phoenix-az",
+    "file": "housing-phoenix-az.html",
+    "school": "ASU Downtown & Grand Canyon University",
+    "place": "Phoenix, AZ",
+    "description": "Renters and students in Phoenix use the AstroPro Facebook group to find apartments, subleases, and roommates near ASU Downtown & Grand Canyon University. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/943678481948118/",
+    "properties": []
+  },
+  {
+    "id": "housing-san-diego-ca",
+    "file": "housing-san-diego-ca.html",
+    "school": "SDSU & UC San Diego",
+    "place": "San Diego, CA",
+    "description": "Renters and students in San Diego use the AstroPro Facebook group to find apartments, subleases, and roommates near SDSU & UC San Diego. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/1425789229536216/",
+    "properties": []
+  },
+  {
+    "id": "housing-seattle-wa",
+    "file": "housing-seattle-wa.html",
+    "school": "University of Washington",
+    "place": "Seattle, WA",
+    "description": "Renters and students in Seattle use the AstroPro Facebook group to find apartments, subleases, and roommates near University of Washington. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/1591649698893348/",
+    "properties": []
+  },
+  {
+    "id": "housing-philadelphia-pa",
+    "file": "housing-philadelphia-pa.html",
+    "school": "Temple University & University of Pennsylvania",
+    "place": "Philadelphia, PA",
+    "description": "Renters and students in Philadelphia use the AstroPro Facebook group to find apartments, subleases, and roommates near Temple University & University of Pennsylvania. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/2383463272426294/",
+    "properties": []
+  },
+  {
+    "id": "housing-chicago-il",
+    "file": "housing-chicago-il.html",
+    "school": "University of Illinois Chicago",
+    "place": "Chicago, IL",
+    "description": "Renters and students in Chicago use the AstroPro Facebook group to find apartments, subleases, and roommates near University of Illinois Chicago. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/1664635285074262/",
+    "properties": []
+  },
+  {
+    "id": "housing-los-angeles-ca",
+    "file": "housing-los-angeles-ca.html",
+    "school": "UCLA & USC",
+    "place": "Los Angeles, CA",
+    "description": "Renters and students in Los Angeles use the AstroPro Facebook group to find apartments, subleases, and roommates near UCLA & USC. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/1441002644078646/",
+    "properties": [],
+    "facebookGroupsMore": [
+      {
+        "label": "Downtown Los Angeles",
+        "url": "https://www.facebook.com/groups/699275711588329/"
+      }
+    ]
+  },
+  {
+    "id": "housing-tempe-az",
+    "file": "housing-tempe-az.html",
+    "school": "Arizona State University",
+    "place": "Tempe, AZ",
+    "description": "Renters and students in Tempe use the AstroPro Facebook group to find apartments, subleases, and roommates near Arizona State University. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/29133244253027071/",
+    "properties": []
+  },
+  {
+    "id": "housing-austin-tx",
+    "file": "housing-austin-tx.html",
+    "school": "University of Texas at Austin",
+    "place": "Austin, TX",
+    "description": "Renters and students in Austin use the AstroPro Facebook group to find apartments, subleases, and roommates near University of Texas at Austin. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/1580209497481415/",
+    "properties": [],
+    "facebookGroupsMore": [
+      {
+        "label": "Austin subleases",
+        "url": "https://www.facebook.com/groups/austinsublease/"
+      },
+      {
+        "label": "UT Austin sublets & roommates",
+        "url": "https://www.facebook.com/groups/AustinSublet/"
+      },
+      {
+        "label": "Austin rooms & apartments",
+        "url": "https://www.facebook.com/groups/austinrentals/"
+      },
+      {
+        "label": "Austin houses near campus",
+        "url": "https://www.facebook.com/groups/austinhouses/"
+      },
+      {
+        "label": "Austin homes for rent",
+        "url": "https://www.facebook.com/groups/AustinHomesForRent/"
+      }
+    ]
+  },
+  {
+    "id": "housing-boca-raton-fl",
+    "file": "housing-boca-raton-fl.html",
+    "school": "Florida Atlantic University",
+    "place": "Boca Raton, FL",
+    "description": "Renters and students in Boca Raton use the AstroPro Facebook group to find apartments, subleases, and roommates near Florida Atlantic University. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/bocaratonapartments/",
+    "properties": []
+  },
+  {
+    "id": "housing-bowling-green-oh",
+    "file": "housing-bowling-green-oh.html",
+    "school": "Bowling Green State University",
+    "place": "Bowling Green, OH",
+    "description": "Renters and students in Bowling Green use the AstroPro Facebook group to find apartments, subleases, and roommates near Bowling Green State University. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/bowlinggreenapartments/",
+    "properties": []
+  },
+  {
+    "id": "housing-kennesaw-ga",
+    "file": "housing-kennesaw-ga.html",
+    "school": "Kennesaw State University",
+    "place": "Kennesaw, GA",
+    "description": "Renters and students in Kennesaw use the AstroPro Facebook group to find apartments, subleases, and roommates near Kennesaw State University. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/kennesawstateapartments/",
+    "properties": []
+  },
+  {
+    "id": "housing-fairfax-va",
+    "file": "housing-fairfax-va.html",
+    "school": "George Mason University",
+    "place": "Fairfax, VA",
+    "description": "Renters and students in Fairfax use the AstroPro Facebook group to find apartments, subleases, and roommates near George Mason University. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/georgemasonapartments/",
+    "properties": []
+  },
+  {
+    "id": "housing-orem-ut",
+    "file": "housing-orem-ut.html",
+    "school": "Utah Valley University",
+    "place": "Orem, UT",
+    "description": "Renters and students in Orem use the AstroPro Facebook group to find apartments, subleases, and roommates near Utah Valley University. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/utahvalleyapartments/",
+    "properties": []
+  },
+  {
+    "id": "housing-williamsburg-va",
+    "file": "housing-williamsburg-va.html",
+    "school": "William & Mary",
+    "place": "Williamsburg, VA",
+    "description": "Renters and students in Williamsburg use the AstroPro Facebook group to find apartments, subleases, and roommates near William & Mary. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/williamsburgapartments/",
+    "properties": []
+  },
+  {
+    "id": "housing-kalamazoo-mi",
+    "file": "housing-kalamazoo-mi.html",
+    "school": "Western Michigan University",
+    "place": "Kalamazoo, MI",
+    "description": "Renters and students in Kalamazoo use the AstroPro Facebook group to find apartments, subleases, and roommates near Western Michigan University. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/kalamazooapartments/",
+    "properties": []
+  },
+  {
+    "id": "housing-boone-nc",
+    "file": "housing-boone-nc.html",
+    "school": "Appalachian State University",
+    "place": "Boone, NC",
+    "description": "Renters and students in Boone use the AstroPro Facebook group to find apartments, subleases, and roommates near Appalachian State University. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/appstateapartments/",
+    "properties": []
+  },
+  {
+    "id": "housing-cullowhee-nc",
+    "file": "housing-cullowhee-nc.html",
+    "school": "Western Carolina University",
+    "place": "Cullowhee, NC",
+    "description": "Renters and students in Cullowhee use the AstroPro Facebook group to find apartments, subleases, and roommates near Western Carolina University. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/cullowheeapartments/",
+    "properties": []
+  },
+  {
+    "id": "housing-new-braunfels-tx",
+    "file": "housing-new-braunfels-tx.html",
+    "school": "Colleges and universities near New Braunfels",
+    "place": "New Braunfels, TX",
+    "description": "Renters and students in New Braunfels use the AstroPro Facebook group to find apartments, subleases, and roommates near campus. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/newbraunfelsapartments/",
+    "properties": []
+  },
+  {
+    "id": "housing-reading-pa",
+    "file": "housing-reading-pa.html",
+    "school": "Colleges and universities near Reading",
+    "place": "Reading, PA",
+    "description": "Renters and students in Reading use the AstroPro Facebook group to find apartments, subleases, and roommates near campus. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/readingapartments/",
+    "properties": []
+  },
+  {
+    "id": "housing-san-bernardino-ca",
+    "file": "housing-san-bernardino-ca.html",
+    "school": "Cal State San Bernardino",
+    "place": "San Bernardino, CA",
+    "description": "Renters and students in San Bernardino use the AstroPro Facebook group to find apartments, subleases, and roommates near Cal State San Bernardino. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/sanbernardinoapartments/",
+    "properties": []
+  },
+  {
+    "id": "housing-anchorage-ak",
+    "file": "housing-anchorage-ak.html",
+    "school": "University of Alaska Anchorage",
+    "place": "Anchorage, AK",
+    "description": "Renters and students in Anchorage use the AstroPro Facebook group to find apartments, subleases, and roommates near University of Alaska Anchorage. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/anchorageapartments/",
+    "properties": []
+  },
+  {
+    "id": "housing-gilbert-az",
+    "file": "housing-gilbert-az.html",
+    "school": "Colleges and universities near Gilbert",
+    "place": "Gilbert, AZ",
+    "description": "Renters and students in Gilbert use the AstroPro Facebook group to find apartments, subleases, and roommates near campus. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/gilbertarizonaapartments/",
+    "properties": []
+  },
+  {
+    "id": "housing-irvine-ca",
+    "file": "housing-irvine-ca.html",
+    "school": "UC Irvine",
+    "place": "Irvine, CA",
+    "description": "Renters and students in Irvine use the AstroPro Facebook group to find apartments, subleases, and roommates near UC Irvine. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/irvinesubleases/",
+    "properties": []
+  },
+  {
+    "id": "housing-missoula-mt",
+    "file": "housing-missoula-mt.html",
+    "school": "University of Montana",
+    "place": "Missoula, MT",
+    "description": "Renters and students in Missoula use the AstroPro Facebook group to find apartments, subleases, and roommates near University of Montana. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/missoulaapartments/",
+    "properties": []
+  },
+  {
+    "id": "housing-key-west-fl",
+    "file": "housing-key-west-fl.html",
+    "school": "Florida Keys Community College",
+    "place": "Key West, FL",
+    "description": "Renters and students in Key West use the AstroPro Facebook group to find apartments, subleases, and roommates near Florida Keys Community College. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/keywestfloridaapartments/",
+    "properties": []
+  },
+  {
+    "id": "housing-topeka-ks",
+    "file": "housing-topeka-ks.html",
+    "school": "Washburn University",
+    "place": "Topeka, KS",
+    "description": "Renters and students in Topeka use the AstroPro Facebook group to find apartments, subleases, and roommates near Washburn University. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/topekaapartments/",
+    "properties": []
+  },
+  {
+    "id": "housing-frankfort-ky",
+    "file": "housing-frankfort-ky.html",
+    "school": "Kentucky State University",
+    "place": "Frankfort, KY",
+    "description": "Renters and students in Frankfort use the AstroPro Facebook group to find apartments, subleases, and roommates near Kentucky State University. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/frankfortapartments/",
+    "properties": []
+  },
+  {
+    "id": "housing-little-rock-ar",
+    "file": "housing-little-rock-ar.html",
+    "school": "University of Arkansas at Little Rock",
+    "place": "Little Rock, AR",
+    "description": "Renters and students in Little Rock use the AstroPro Facebook group to find apartments, subleases, and roommates near University of Arkansas at Little Rock. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/littlerockapartments/",
+    "properties": []
+  },
+  {
+    "id": "housing-fredericton-nb",
+    "file": "housing-fredericton-nb.html",
+    "school": "University of New Brunswick",
+    "place": "Fredericton, NB",
+    "description": "Renters and students in Fredericton use the AstroPro Facebook group to find apartments, subleases, and roommates near University of New Brunswick. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/frederictionapartments/",
+    "properties": []
+  },
+  {
+    "id": "housing-churchill-mb",
+    "file": "housing-churchill-mb.html",
+    "school": "Colleges and universities near Churchill",
+    "place": "Churchill, MB",
+    "description": "Renters and students in Churchill use the AstroPro Facebook group to find apartments, subleases, and roommates near campus. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/churchhillmanitobaapartments/",
+    "properties": []
+  },
+  {
+    "id": "housing-regina-sk",
+    "file": "housing-regina-sk.html",
+    "school": "University of Regina",
+    "place": "Regina, SK",
+    "description": "Renters and students in Regina use the AstroPro Facebook group to find apartments, subleases, and roommates near University of Regina. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/reginaapartments/",
+    "properties": []
+  },
+  {
+    "id": "housing-yellowknife-nt",
+    "file": "housing-yellowknife-nt.html",
+    "school": "Colleges and universities near Yellowknife",
+    "place": "Yellowknife, NT",
+    "description": "Renters and students in Yellowknife use the AstroPro Facebook group to find apartments, subleases, and roommates near campus. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/yellowknifeapartments/",
+    "properties": []
+  },
+  {
+    "id": "housing-troy-al",
+    "file": "housing-troy-al.html",
+    "school": "Troy University",
+    "place": "Troy, AL",
+    "description": "Renters and students in Troy use the AstroPro Facebook group to find apartments, subleases, and roommates near Troy University. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/troyapartments/",
+    "properties": []
+  },
+  {
+    "id": "housing-kingston-on",
+    "file": "housing-kingston-on.html",
+    "school": "Queen's University, St. Lawrence College & Royal Military College",
+    "place": "Kingston, ON",
+    "description": "Renters and students in Kingston use the AstroPro Facebook group to find apartments, subleases, and roommates near Queen's University, St. Lawrence College & Royal Military College. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/kingstonapartments/",
+    "properties": []
+  },
+  {
+    "id": "housing-henderson-nv",
+    "file": "housing-henderson-nv.html",
+    "school": "Nevada State University",
+    "place": "Henderson, NV",
+    "description": "Renters and students in Henderson use the AstroPro Facebook group to find apartments, subleases, and roommates near Nevada State University. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/hendersonapartments/",
+    "properties": []
+  },
+  {
+    "id": "housing-memphis-tn",
+    "file": "housing-memphis-tn.html",
+    "school": "Colleges and universities near Memphis",
+    "place": "Memphis, TN",
+    "description": "Renters and students in Memphis use the AstroPro Facebook group to find apartments, subleases, and roommates near campus. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/memphisrentals/",
+    "properties": []
+  },
+  {
+    "id": "housing-el-paso-tx",
+    "file": "housing-el-paso-tx.html",
+    "school": "Colleges and universities near El Paso",
+    "place": "El Paso, TX",
+    "description": "Renters and students in El Paso use the AstroPro Facebook group to find apartments, subleases, and roommates near campus. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/elpasorentals/",
+    "properties": []
+  },
+  {
+    "id": "housing-battle-creek-mi",
+    "file": "housing-battle-creek-mi.html",
+    "school": "Colleges and universities near Battle Creek",
+    "place": "Battle Creek, MI",
+    "description": "Renters and students in Battle Creek use the AstroPro Facebook group to find apartments, subleases, and roommates near campus. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/battlecreekrentals/",
+    "properties": []
+  },
+  {
+    "id": "housing-cedar-city-ut",
+    "file": "housing-cedar-city-ut.html",
+    "school": "Southern Utah University",
+    "place": "Cedar City, UT",
+    "description": "Renters and students in Cedar City use the AstroPro Facebook group to find apartments, subleases, and roommates near Southern Utah University. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/cedarcityapartments/",
+    "properties": []
+  },
+  {
+    "id": "housing-enterprise-nv",
+    "file": "housing-enterprise-nv.html",
+    "school": "Colleges and universities near Enterprise",
+    "place": "Enterprise, NV",
+    "description": "Renters and students in Enterprise use the AstroPro Facebook group to find apartments, subleases, and roommates near campus. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/enterpriseapartments/",
+    "properties": []
+  },
+  {
+    "id": "housing-vancouver-bc",
+    "file": "housing-vancouver-bc.html",
+    "school": "UBC & Langara College",
+    "place": "Vancouver, BC",
+    "description": "Renters and students in Vancouver use the AstroPro Facebook group to find apartments, subleases, and roommates near UBC & Langara College. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/2049357515277048/",
+    "properties": []
+  },
+  {
+    "id": "housing-kissimmee-fl",
+    "file": "housing-kissimmee-fl.html",
+    "school": "Colleges and universities near Kissimmee",
+    "place": "Kissimmee, FL",
+    "description": "Renters and students in Kissimmee use the AstroPro Facebook group to find apartments, subleases, and roommates near campus. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/kissimmeeapartments/",
+    "properties": []
+  },
+  {
+    "id": "housing-bend-or",
+    "file": "housing-bend-or.html",
+    "school": "Oregon State University–Cascades",
+    "place": "Bend, OR",
+    "description": "Renters and students in Bend use the AstroPro Facebook group to find apartments, subleases, and roommates near Oregon State University–Cascades. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/bendapartments/",
+    "properties": []
+  },
+  {
+    "id": "housing-bronx-ny",
+    "file": "housing-bronx-ny.html",
+    "school": "Manhattan College",
+    "place": "Bronx, NY",
+    "description": "Renters and students in Bronx use the AstroPro Facebook group to find apartments, subleases, and roommates near Manhattan College. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/manhattanhomes/",
+    "properties": []
+  },
+  {
+    "id": "housing-long-island-city-ny",
+    "file": "housing-long-island-city-ny.html",
+    "school": "Colleges and universities near Long Island City",
+    "place": "Long Island City, NY",
+    "description": "Renters and students in Long Island City use the AstroPro Facebook group to find apartments, subleases, and roommates near campus. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/longislandrentals/",
+    "properties": []
+  },
+  {
+    "id": "housing-hilo-hi",
+    "file": "housing-hilo-hi.html",
+    "school": "University of Hawaiʻi at Hilo",
+    "place": "Hilo, HI",
+    "description": "Renters and students in Hilo use the AstroPro Facebook group to find apartments, subleases, and roommates near University of Hawaiʻi at Hilo. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/hiloapartments/",
+    "properties": []
+  },
+  {
+    "id": "housing-east-honolulu-hi",
+    "file": "housing-east-honolulu-hi.html",
+    "school": "Colleges and universities near East Honolulu",
+    "place": "East Honolulu, HI",
+    "description": "Renters and students in East Honolulu use the AstroPro Facebook group to find apartments, subleases, and roommates near campus. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/easthonoluluapartments/",
+    "properties": []
+  },
+  {
+    "id": "housing-bangor-me",
+    "file": "housing-bangor-me.html",
+    "school": "Colleges and universities near Bangor",
+    "place": "Bangor, ME",
+    "description": "Renters and students in Bangor use the AstroPro Facebook group to find apartments, subleases, and roommates near campus. Top picks from our team are on the way.",
+    "facebookGroup": "https://www.facebook.com/groups/bangorapartments/",
+    "properties": []
   }
 ]

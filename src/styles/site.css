@@ -3440,3 +3440,8 @@ body:is(
 .state-group {
   margin-bottom: 26px;
 }
+.more-groups {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}

@@ -1,3 +1,4 @@
+import { marketLinks } from "./market-links.mjs";
 const PREFIX = "/studentresourcecenter";
 const ALIAS_HOSTS = [
   "www.astroprostudentresourcecenter.com",
@@ -740,6 +741,15 @@ export async function handleRequest(request, env) {
     const destination = new URL(request.url);
     destination.pathname += "/";
     return Response.redirect(destination.href, 308);
+  }
+  const go = path.match(/^\/go\/([a-z0-9-]+)\/?$/i);
+  if (go && Object.hasOwn(marketLinks, go[1].toLowerCase())) {
+    const dest = new URL(request.url);
+    dest.pathname =
+      (url.pathname.startsWith(PREFIX) ? PREFIX : "") +
+      "/" +
+      marketLinks[go[1].toLowerCase()];
+    return Response.redirect(dest.href, 302);
   }
   const assetURL = new URL(request.url);
   assetURL.pathname =
