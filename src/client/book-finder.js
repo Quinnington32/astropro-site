@@ -1,5 +1,5 @@
 // Amazon Associates tracking ID, e.g. "astropro-20". Leave empty until the account is approved.
-const AMAZON_TAG = "";
+const AMAZON_TAG = "astroprostude-20";
 const form = document.querySelector("[data-book-finder]");
 if (form) {
   const input = form.querySelector("input[name=q]");
