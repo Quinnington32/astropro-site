@@ -224,7 +224,6 @@ const home = `
     </figure>
   </div>
 </section>
-${interestDrawer}
 <section id="resources" class="home-resources">
   <div class="wrap">
     <div class="section-head section-head-row"><div><p class="eyebrow">Find your next step</p><h2>What can we help you with?</h2></div><p>You’ve got options. Let’s find yours.</p></div>
