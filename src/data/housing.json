@@ -3474,7 +3474,49 @@
     "place": "Seattle, WA",
     "description": "Renters and students in Seattle use the AstroPro Facebook group to find apartments, subleases, and roommates near University of Washington. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/1591649698893348/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-seattle-wa-property-hub-u-district-seattle",
+        "name": "Hub U District Seattle",
+        "website": "https://www.americancampus.com/student-apartments/wa/seattle/hub-u-district-seattle",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Hub%20U%20District%20Seattle%2C%20Seattle%2C%20WA",
+        "source": "https://www.americancampus.com/student-apartments/wa/seattle/hub-u-district-seattle",
+        "address": "5000 University Way NE, Seattle, WA 98105",
+        "summary": "Student apartments in the University District with studio through 4-bedroom floor plans, furnished options, and a study center. Listed by the property as a choice for University of Washington students.",
+        "pick": 1,
+        "photo": "assets/housing/housing-seattle-wa-property-hub-u-district-seattle.jpg",
+        "photoAlt": "Hub U District Seattle in Seattle, WA, from the property's official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-seattle-wa-property-twelve-at-u-district",
+        "name": "TWELVE at U District",
+        "website": "https://www.americancampus.com/student-apartments/wa/seattle/TWELVE-at-u-district",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=TWELVE%20at%20U%20District%2C%20Seattle%2C%20WA",
+        "source": "https://www.americancampus.com/student-apartments/wa/seattle/TWELVE-at-u-district",
+        "address": "4535 12th Ave NE, Seattle, WA 98105",
+        "summary": "Green-built student community in the U District with studio, 1- and 2-bedroom apartments for University of Washington students.",
+        "pick": 2,
+        "photo": "assets/housing/housing-seattle-wa-property-twelve-at-u-district.jpg",
+        "photoAlt": "TWELVE at U District in Seattle, WA, from the property's official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-seattle-wa-property-bridges-at-11th",
+        "name": "Bridges at 11th",
+        "website": "https://americancampus.com/Student-Apartments/WA/Seattle/Bridges-at-11th",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Bridges%20at%2011th%2C%20Seattle%2C%20WA",
+        "source": "https://americancampus.com/Student-Apartments/WA/Seattle/Bridges-at-11th",
+        "summary": "U District apartments near the University of Washington. Check floor plans, pricing and availability on the property site.",
+        "pick": 3,
+        "photo": "assets/housing/housing-seattle-wa-property-bridges-at-11th.jpg",
+        "photoAlt": "Bridges at 11th in Seattle, WA, from the property's official website",
+        "photoApproved": true
+      }
+    ]
   },
   {
     "id": "housing-philadelphia-pa",
