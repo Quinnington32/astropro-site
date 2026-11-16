@@ -31,7 +31,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Statehouse%20Highline%20on%209th%2C%20Columbus%2C%20OH",
         "source": "https://statehousecolumbus.com/",
         "pick": 1,
-        "photo": "https://statehousecolumbus.com/wp-content/uploads/2024/07/SHC-Featured-Image.jpg",
+        "photo": "assets/housing/housing-columbus-property-statehouse-highline-on-9th.jpg",
         "photoAlt": "Statehouse Highline on 9th in Columbus, OH, from the property's official website",
         "photoApproved": true
       },
@@ -45,7 +45,7 @@
         "summary": "Student apartments at 2020 N High St with 1- to 5-bedroom floor plans, from a 596 sq ft one-bedroom up to 2,289 sq ft five-bedrooms. The official site is currently advertising a $250 gift card for signing a lease within 48 hours of touring. Confirm the offer and its terms with the property.",
         "address": "2020 N High St, Columbus, OH 43201",
         "pick": 3,
-        "photo": "https://theviewonhigh.com/images/TheViewonHigh.jpg",
+        "photo": "assets/housing/housing-columbus-property-the-view-on-high.jpg",
         "photoAlt": "The View on High in Columbus, OH, from the property's official website",
         "photoApproved": true,
         "spotlight": {
@@ -60,7 +60,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=University%20Village%2C%20Columbus%2C%20OH",
         "summary": "Student apartment community near Ohio State with a campus bus service listed on its official site. Confirm floor plans, pricing, and availability with the property.",
         "source": "https://universityvillageosu.prospectportal.com/",
-        "photo": "https://medialibrarycfo.entrata.com/15024/MLv3/9/36/2022/3/25/100146/5bd755371db3e6.59137789255.jpg",
+        "photo": "assets/housing/housing-columbus-property-university-village.jpg",
         "photoAlt": "University Village in Columbus, OH, from the property's official website",
         "photoApproved": true,
         "pick": 2
@@ -84,7 +84,7 @@
         "pick": 1,
         "source": "https://riverpark.prospectportal.com/",
         "summary": "Apartment homes in Athens, OH listed on the official River Park/River Edge site. Confirm floor plans, pricing, and availability directly with the property.",
-        "photo": "https://medialibrarycfo.entrata.com/15024/MLv3/3/21/2023/03/08/092116/6408b5fc82fe83.52807201165.jpg",
+        "photo": "assets/housing/housing-athens-property-river-park-on-south-green.jpg",
         "photoApproved": true,
         "photoAlt": "River Park on South Green in Athens, OH, from the property's official website"
       },
@@ -104,7 +104,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=University%20Courtyard%2C%20Athens%2C%20OH",
         "source": "https://www.ucathens.com/",
         "pick": 2,
-        "photo": "https://resource.rentcafe.com/image/upload/x_0,y_0,w_2500,h_1200,c_crop/q_auto,f_auto,c_fill,w_1680,ar_1.4,g_auto/s3/2/94685/homepage-uptown.jpg",
+        "photo": "assets/housing/housing-athens-property-university-courtyard.jpg",
         "photoAlt": "University Courtyard in Athens, OH, from the property's official website",
         "photoApproved": true
       },
@@ -116,7 +116,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Campus%20Heights%2C%20Athens%2C%20OH",
         "source": "https://www.livecampusheights.com/",
         "pick": 3,
-        "photo": "https://lirp.cdn-website.com/6de27339/dms3rep/multi/opt/campus+heights+1+Ricky+Hysell-1920w.jpg",
+        "photo": "assets/housing/housing-athens-property-campus-heights.jpg",
         "photoAlt": "Campus Heights in Athens, OH, from the property's official website",
         "photoApproved": true
       },
@@ -129,7 +129,7 @@
         "address": "363 Richland Ave, Athens, OH 45701",
         "summary": "Student apartments just across the Hocking River from Ohio University. The official site lists 2-, 3- and 4-bedroom floor plans from 922 to 1,519 sq ft, with 2-bed/2-bath layouts listed at $1,350 per installment on its current lease terms. Lease terms run from semester-length to annual, so ask which fits your dates.",
         "source": "https://thesummitatcoates.prospectportal.com/athens-oh-apartments/the-summit-at-coates-run/",
-        "photo": "https://medialibrarycfo.entrata.com/15647/MLv3/3/21/2026/01/20/020207/9589_100143630_60b7989e9a3f95.45543131661.jpg",
+        "photo": "assets/housing/housing-athens-property-the-summit-at-coates-run.jpg",
         "photoAlt": "The Summit at Coates Run in Athens, OH, from the property's official website",
         "photoApproved": true,
         "spotlight": {
@@ -156,7 +156,7 @@
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Allure%20Hermann%20Park%20at%20Med%20Center%2C%20Houston%2C%20TX",
         "pick": 1,
-        "photo": "https://resource.rentcafe.com/image/upload/x_0,y_0,w_4000,h_2250,c_crop/q_auto,f_auto,c_fill,w_1920,ar_1.628/s3/2/2966/aerial%20view%20of%20pool%20courtyard(1).jpg",
+        "photo": "assets/housing/housing-houston-property-allure-hermann-park-at-med-center.jpg",
         "photoAlt": "Allure Hermann Park at Med Center in Houston, TX, from the property's official website",
         "photoApproved": true
       },
@@ -171,7 +171,7 @@
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Hermann%20Park%20Lofts%2C%20Houston%2C%20TX",
         "pick": 2,
-        "photo": "https://hermannparklofts.com/assets/images/cache/open-graph-image-3b670fb64abb340aec4e2e254f5ef037.jpg",
+        "photo": "assets/housing/housing-houston-property-hermann-park-lofts.jpg",
         "photoAlt": "Hermann Park Lofts in Houston, TX, from the property's official website",
         "photoApproved": true
       },
@@ -186,7 +186,7 @@
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Forme%2C%20Houston%2C%20TX",
         "pick": 3,
-        "photo": "https://static.wixstatic.com/media/b64108_10947aa7c3624e53a2a341cc588521a6%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/b64108_10947aa7c3624e53a2a341cc588521a6%7Emv2.jpg",
+        "photo": "assets/housing/housing-houston-property-forme.jpg",
         "photoAlt": "Forme in Houston, TX, from the property's official website",
         "photoApproved": true
       },
@@ -244,7 +244,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Vireo%20Medical%20District%2C%20McKinney%2C%20TX",
         "source": "https://vireomedicaldistrict.com/",
         "pick": 1,
-        "photo": "https://vireomedicaldistrict.com/assets/images/cache/NRP-Vireo_Medical_District-McKinney-TX-sRGB-081-6fb49d0ccb892ccd95efa7a00a7541bb.jpg",
+        "photo": "assets/housing/housing-mckinney-property-vireo-medical-district.jpg",
         "photoAlt": "Vireo Medical District in McKinney, TX, from the property's official website",
         "photoApproved": true
       },
@@ -256,7 +256,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Greenhaven%20McKinney%2C%20McKinney%2C%20TX",
         "source": "https://www.liveatgreenhaven.com/",
         "pick": 2,
-        "photo": "https://resource.rentcafe.com/image/upload/x_430,y_0,w_3067,h_2560,c_crop/q_auto,f_auto,c_fill,w_1704,ar_0.666,g_auto/s3/2/110939/greenhaven-apartments%20(16)_cleanup.png",
+        "photo": "assets/housing/housing-mckinney-property-greenhaven-mckinney.jpg",
         "photoAlt": "Greenhaven McKinney in McKinney, TX, from the property's official website",
         "photoApproved": true
       },
@@ -268,7 +268,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Aspire%20McKinney%20Ranch%2C%20McKinney%2C%20TX",
         "source": "https://aspiremckinneyranchapts.com/",
         "pick": 3,
-        "photo": "https://aspiremckinneyranchapts.com/assets/images/cache/AspireMcKinney_Pool_02_72ppi-da683089a2190c95420c07b2f89ffa40.jpg",
+        "photo": "assets/housing/housing-mckinney-property-aspire-mckinney-ranch.jpg",
         "photoAlt": "Aspire McKinney Ranch in McKinney, TX, from the property's official website",
         "photoApproved": true
       }
@@ -296,7 +296,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Mid%20Elm%20Lofts%2C%20Dallas%2C%20TX",
         "source": "https://www.midelmlofts.com/",
         "pick": 1,
-        "photo": "https://resource.rentcafe.com/image/upload/q_auto,f_auto/s3/2/31151/mid%20elm%20lofts.jpg",
+        "photo": "assets/housing/housing-dallas-property-mid-elm-lofts.jpg",
         "photoAlt": "Mid Elm Lofts in Dallas, TX, from the property's official website",
         "photoApproved": true
       },
@@ -309,7 +309,7 @@
         "pick": 3,
         "summary": "One- and two-bedroom apartments in the historic West End district next to downtown Dallas, with a pool and fitness center.",
         "source": "https://arrivewestend.prospectportal.com/",
-        "photo": "https://medialibrarycfo.entrata.com/pp_template_slots/abyss_v1_1/images/slots/landing_main.jpg?ver=3452220",
+        "photo": "assets/housing/housing-dallas-property-arrive-west-end.jpg",
         "photoAlt": "Arrive West End in Dallas, TX, from the property's official website",
         "photoApproved": true
       },
@@ -321,7 +321,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=The%20Griffin%2C%20Dallas%2C%20TX",
         "source": "https://www.thegriffindallas.com/amenities",
         "pick": 2,
-        "photo": "https://lh3.googleusercontent.com/AHnc-xiJ3KdzdMjcmwZvTjlmI7jzWNFLXVrb-jhlRXDRGvbOpPAJbahoUoHQD-XDv22pRFUZixsyDLk3hB8DDhatB5oBxZfl35mP3Q=s3000-rw",
+        "photo": "assets/housing/housing-dallas-property-the-griffin.jpg",
         "photoAlt": "The Griffin in Dallas, TX, from the property's official website",
         "photoApproved": true
       }
@@ -350,7 +350,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Villas%20on%20Ware%2C%20McAllen%2C%20TX",
         "source": "https://rhodesliving.com/communities/villas-on-ware",
         "pick": 1,
-        "photo": "https://framerusercontent.com/images/EQmkgAeTqpQMYbICu9Zzor6LQgA.png",
+        "photo": "assets/housing/housing-mcallen-property-villas-on-ware.jpg",
         "photoAlt": "Villas on Ware in McAllen, TX, from the property's official website",
         "photoApproved": true
       },
@@ -362,7 +362,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Padre%20De%20Vida%20Apartments%2C%20McAllen%2C%20TX",
         "source": "https://www.padredevida.com/",
         "pick": 2,
-        "photo": "https://media.apts247.info/b9/b924c3d5ef2e4b138d0dcccadb5f36ed/hero_shot/community/GettyImages-1390149037_1.jpg",
+        "photo": "assets/housing/housing-mcallen-property-padre-de-vida-apartments.jpg",
         "photoAlt": "Padre De Vida Apartments in McAllen, TX, from the property's official website",
         "photoApproved": true
       },
@@ -382,7 +382,7 @@
         "source": "https://www.villaregale.com/",
         "summary": "Spacious one- and two-bedroom floor plans in McAllen.",
         "pick": 3,
-        "photo": "https://spherexxcdn.cachefly.net/common/dynamic.asp?p=/common/uploads/www_apartmentwebsites_com/property_photos/13872-pho-Villa-Regale-WEB-1.jpg",
+        "photo": "assets/housing/housing-mcallen-property-villa-regale.jpg",
         "photoAlt": "Villa Regale in McAllen, TX, from the property's official website",
         "photoApproved": true
       }
@@ -405,7 +405,7 @@
         "summary": "One-, two- and three-bedroom apartments with an in-home washer and dryer.",
         "address": "8200 N Laurelglen Blvd, Bakersfield, CA",
         "pick": 1,
-        "photo": "https://images.apts247.info/209624/1920x1080.webp",
+        "photo": "assets/housing/housing-bakersfield-property-cambridge-village-bakersfield.jpg",
         "photoAlt": "Cambridge Village Apartments in Bakersfield, CA, from the property's official website",
         "photoApproved": true
       },
@@ -419,7 +419,7 @@
         "summary": "Pet-friendly 1-, 2- and 3-bedroom apartments with upscale amenities.",
         "address": "4930 Gosford Rd, Bakersfield, CA",
         "pick": 2,
-        "photo": "https://media.apts247.info/7b/7bed487dc1a440f4b0b594a7f81d4bb7/hero_shot/community/amenitiesIMG_8865.jpg",
+        "photo": "assets/housing/housing-bakersfield-property-watermark-bakersfield.jpg",
         "photoAlt": "Watermark in Bakersfield, CA, from the property's official website",
         "photoApproved": true
       },
@@ -433,7 +433,7 @@
         "summary": "Pet-friendly loft, 1-, 2- and 3-bedroom apartments. The property says all applicants are welcome.",
         "address": "6500 White Ln, Bakersfield, CA",
         "pick": 3,
-        "photo": "https://media.apts247.info/a5/a5169365704c49dd866803eca0f7be5a/hero_shot/community/laurelwood-oaks-apartments-bakersfield-ca_13.jpg",
+        "photo": "assets/housing/housing-bakersfield-property-laurelwood-oaks-bakersfield.jpg",
         "photoAlt": "Laurelwood Oaks in Bakersfield, CA, from the property's official website",
         "photoApproved": true
       }
@@ -462,7 +462,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=The%20Quarters%20Lincoln%2C%20Lincoln%2C%20NE",
         "source": "https://thequarterslincoln.com/contact/",
         "pick": 2,
-        "photo": "https://thequarterslincoln.com/wp-content/uploads/2026/01/The-Quarters-Lincoln-Clubhouse-11202025_102525.webp",
+        "photo": "assets/housing/housing-lincoln-property-the-quarters-lincoln.jpg",
         "photoAlt": "The Quarters Lincoln in Lincoln, NE, from the property's official website",
         "photoApproved": true
       },
@@ -474,7 +474,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Lionsgate%20Apartments%2C%20Lincoln%2C%20NE",
         "source": "https://www.vinestreetapts.com/sisterpropertiesdetailedview",
         "pick": 3,
-        "photo": "https://resource.rentcafe.com/image/upload/x_0,y_0,w_1600,h_947,c_crop/q_auto,f_auto,c_lfill,w_1600,ar_2.2222222222222223,g_auto/s3/2/4716/lga-fitness-2022(1).png",
+        "photo": "assets/housing/housing-lincoln-property-lionsgate-apartments.jpg",
         "photoAlt": "Lionsgate Apartments in Lincoln, NE, from the property's official website",
         "photoApproved": true
       },
@@ -487,7 +487,7 @@
         "address": "1040 Y St, Lincoln, NE 68508",
         "summary": "Student apartments near UNL’s City Campus and downtown Lincoln, listed on the property’s official site. Confirm floor plans, pricing, and availability with the property.",
         "source": "https://www.primeplacelincoln.com/",
-        "photo": "https://medialibrarycfo.entrata.com/15512/MLv3/3/21/2023/03/17/104231/641498778c5fa6.29311330426.jpg",
+        "photo": "assets/housing/housing-lincoln-property-prime-place-lincoln.jpg",
         "photoAlt": "Prime Place Lincoln in Lincoln, NE, from the property's official website",
         "photoApproved": true,
         "pick": 1
@@ -509,7 +509,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=The%20Social%20on%20Hovey%2C%20Normal%2C%20IL",
         "source": "https://thesocialonhovey.com/gallery/",
         "pick": 1,
-        "photo": "https://thesocialonhovey.com/wp-content/uploads/2025/10/2026-06-the-social-on-hovey-apartment-homes-for-rent-normal-il-61761-twilight-exterior-3-scaled.jpg",
+        "photo": "assets/housing/housing-normal-property-the-social-on-hovey.jpg",
         "photoAlt": "The Social on Hovey in Normal, IL, from the property's official website",
         "photoApproved": true
       },
@@ -528,7 +528,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Pinecrest%20Apartments%2C%20Normal%2C%20IL",
         "source": "https://www.pinecrest-apts.com/",
         "pick": 2,
-        "photo": "https://irp.cdn-website.com/55738d78/dms3rep/multi/Photo+Jun+11-+11+21+59+AM.jpg",
+        "photo": "assets/housing/housing-normal-property-pinecrest-apartments.jpg",
         "photoAlt": "Pinecrest Apartments in Normal, IL, from the property's official website",
         "photoApproved": true
       },
@@ -542,7 +542,7 @@
         "summary": "Illinois State University student housing community right next to campus.",
         "address": "100 S Fell Ave, Normal, IL",
         "pick": 3,
-        "photo": "https://collegeplaceuptown.com/wp-content/uploads/2022/01/SEO-Landing-1-01.png",
+        "photo": "assets/housing/housing-normal-property-collegeplace-uptown.jpg",
         "photoAlt": "CollegePlace Uptown in Normal, IL, from the property's official website",
         "photoApproved": true
       }
@@ -563,7 +563,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Elevation%20at%20the%20U%2C%20Reno%2C%20NV",
         "source": "https://elevationattheu.com/",
         "pick": 1,
-        "photo": "https://elevationattheu.com/wp-content/uploads/2025/10/Lev-Pic-1-Exterior.jpg.jpeg",
+        "photo": "assets/housing/housing-reno-property-elevation-at-the-u.jpg",
         "photoAlt": "Elevation at the U in Reno, NV, from the property's official website",
         "photoApproved": true
       },
@@ -575,7 +575,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Fifteen51%2C%20Reno%2C%20NV",
         "source": "https://livefifteen51.prospectportal.com/",
         "pick": 2,
-        "photo": "https://medialibrarycfo.entrata.com/15647/MLv3/3/21/2025/06/17/053059/115980_100102568_67198714ce1ea5.39421362112.jpg",
+        "photo": "assets/housing/housing-reno-property-fifteen51.jpg",
         "photoAlt": "Fifteen51 in Reno, NV, from the property's official website",
         "photoApproved": true
       },
@@ -587,7 +587,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Gravitate%20Reno%2C%20Reno%2C%20NV",
         "source": "https://gravitatereno.com/contact/",
         "pick": 3,
-        "photo": "https://gravitatereno.com/wp-content/uploads/sites/123/2026/03/Aerial-view-of-an-apartment-complex-near-a-green-landscape.jpg",
+        "photo": "assets/housing/housing-reno-property-gravitate-reno.jpg",
         "photoAlt": "Gravitate Reno in Reno, NV, from the property's official website",
         "photoApproved": true
       },
@@ -630,7 +630,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Alta%20Mile%20High%2C%20Denver%2C%20CO",
         "source": "https://altamilehigh.com/",
         "summary": "Apartment community in Denver listed on its official site. Confirm floor plans, pricing, and availability with the property.",
-        "photo": "https://altamilehigh.com/wp-content/uploads/2025/09/gallery-hero.jpg",
+        "photo": "assets/housing/housing-denver-property-alta-mile-high.jpg",
         "photoApproved": true,
         "photoAlt": "Alta Mile High in Denver, CO, from the property's official website",
         "pick": 1
@@ -643,7 +643,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=NOVEL%20Uptown%20by%20Crescent%20Communities%2C%20Denver%2C%20CO",
         "source": "https://www.noveluptown.com/",
         "pick": 2,
-        "photo": "https://www.noveluptown.com/media/gnundujn/novel_uptown_property_lifestyle_486_websize.jpg",
+        "photo": "assets/housing/housing-denver-property-novel-uptown-by-crescent-communities.jpg",
         "photoAlt": "NOVEL Uptown by Crescent Communities in Denver, CO, from the property's official website",
         "photoApproved": true
       },
@@ -655,7 +655,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=X%20Denver%2C%20Denver%2C%20CO",
         "source": "https://entrata.xdenverliving.com/denver/x-denver-1a/conventional/",
         "pick": 3,
-        "photo": "https://cdn.prod.website-files.com/68d59b021acdf8a86f338525/68d5ac7f9e85108457dbcbc4_bedroom-p-800.avif",
+        "photo": "assets/housing/housing-denver-property-x-denver.jpg",
         "photoAlt": "X Denver in Denver, CO, from the property's official website",
         "photoApproved": true
       }
@@ -693,7 +693,7 @@
         "summary": "Pet-friendly renovated 1-, 2- and 3-bedroom floor plans with a clubhouse and laundry.",
         "address": "6550 Phelan Blvd, Beaumont, TX",
         "pick": 2,
-        "photo": "https://media.apts247.info/ba/baae932c4dbd4f15b4b375946a2bb868/hero_shot/community/0O7A2006.jpg",
+        "photo": "assets/housing/housing-beaumont-property-west-end-crossing.jpg",
         "photoAlt": "West End Crossing Apartments in Beaumont, TX, from the property's official website",
         "photoApproved": true
       },
@@ -706,7 +706,7 @@
         "source": "https://www.westendlodgeapthome.com/",
         "summary": "One- and two-bedroom floor plans with a pool and other amenities.",
         "pick": 3,
-        "photo": "https://media.multihub.io/cdn-cgi/image/format=auto,w=1280/property/6737460151192630/019e84a1-1e4d-70d1-bc4b-c1d57228544a.webp",
+        "photo": "assets/housing/housing-beaumont-property-west-end-lodge.jpg",
         "photoAlt": "West End Lodge in Beaumont, TX, from the property's official website",
         "photoApproved": true
       },
@@ -718,7 +718,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Cardinal%20Oaks%2C%20Beaumont%2C%20TX",
         "summary": "Apartment community in Beaumont near Lamar University, listed on its official site. Confirm floor plans, pricing, and availability with the property.",
         "source": "https://cardinaloakstx.com/",
-        "photo": "https://cardinaloakstx.com/wp-content/uploads/2022/11/cardinal-oaks-beaumont-tx-primary-photo-1.jpg",
+        "photo": "assets/housing/housing-beaumont-property-cardinal-oaks.jpg",
         "photoAlt": "Cardinal Oaks in Beaumont, TX, from the property's official website",
         "photoApproved": true,
         "pick": 1
@@ -740,7 +740,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Northview%2C%20Kilgore%2C%20TX",
         "source": "https://meganmanagement.com/_northview/",
         "pick": 1,
-        "photo": "https://meganmanagement.com/_northview/images/hero-site.jpg",
+        "photo": "assets/housing/housing-kilgore-property-northview.jpg",
         "photoAlt": "Northview in Kilgore, TX, from the property's official website",
         "photoApproved": true
       },
@@ -752,7 +752,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Stoneridge%20Apartments%2C%20Kilgore%2C%20TX",
         "source": "https://www.vdiapartments.com/apartments/tx/kilgore/stoneridge/",
         "pick": 2,
-        "photo": "https://g5-assets-cld-res.cloudinary.com/image/upload/x_0,y_0,h_1080,w_1619,c_crop/q_auto,f_auto,c_fill,g_center,h_665,w_998/v1751556106/g5/g5-c-66a3wtfxb-vickery-development-singledomain/g5-cl-1pqtcysl5i-vickery-development-singledomain-kilgore-tx/uploads/gcy0tzvfsz2qjcie9174_icn8dd.jpg",
+        "photo": "assets/housing/housing-kilgore-property-stoneridge-apartments.jpg",
         "photoAlt": "Stoneridge Apartments in Kilgore, TX, from the property's official website",
         "photoApproved": true
       },
@@ -766,7 +766,7 @@
         "summary": "Pet-friendly 1-, 2- and 3-bedroom apartment homes.",
         "address": "505 Danville Rd, Kilgore, TX",
         "pick": 3,
-        "photo": "https://media.apts247.info/7a/7a2554691e9b4e7b9298d5d047572a5e/hero_shot/community/012A4530.jpg",
+        "photo": "assets/housing/housing-kilgore-property-glen-hollow-kilgore.jpg",
         "photoAlt": "Glen Hollow in Kilgore, TX, from the property's official website",
         "photoApproved": true
       }
@@ -796,7 +796,7 @@
         "summary": "27 apartment homes walkable to downtown Brenham.",
         "address": "2307 S Austin St, Brenham, TX",
         "pick": 2,
-        "photo": "https://parkplacebrenham.com/photos/01.jpg",
+        "photo": "assets/housing/housing-brenham-property-park-place-apartments.jpg",
         "photoAlt": "Park Place Apartments in Brenham, TX, from the property's official website",
         "photoApproved": true
       },
@@ -810,7 +810,7 @@
         "summary": "Pet-friendly apartments with flexible leasing options.",
         "address": "2401 Stone Hollow Dr, Brenham, TX",
         "pick": 1,
-        "photo": "https://media.apts247.info/9e/9eb0d17d637340149844cbed0d06c118/hero_shot/community/_MG_0014.jpg",
+        "photo": "assets/housing/housing-brenham-property-stone-hollow-apartments.jpg",
         "photoAlt": "Stone Hollow Apartments in Brenham, TX, from the property's official website",
         "photoApproved": true
       },
@@ -824,7 +824,7 @@
         "summary": "Apartment community with resort-style amenities.",
         "address": "2475 S Chappell Hill St, Brenham, TX",
         "pick": 3,
-        "photo": "https://cdn.prod.website-files.com/67ec28ea8f1a5cb3c74854f9/67ec2b1f0b32a4582c57537a_3%20Bedroom.jpg",
+        "photo": "assets/housing/housing-brenham-property-brenham-oaks.jpg",
         "photoAlt": "Brenham Oaks in Brenham, TX, from the property's official website",
         "photoApproved": true
       }
@@ -859,7 +859,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=The%20Gallery%20Apartments%2C%20Grand%20Forks%2C%20ND",
         "source": "https://www.immapartments.com/the-gallery",
         "pick": 1,
-        "photo": "https://irp.cdn-website.com/d8b26706/dms3rep/multi/opt/100061320_hdp_gallery_int_fit_2021-1920w.jpg",
+        "photo": "assets/housing/housing-grand-forks-property-the-gallery-apartments.jpg",
         "photoAlt": "The Gallery Apartments in Grand Forks, ND, from the property's official website",
         "photoApproved": true
       },
@@ -871,7 +871,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Columbia%20West%2C%20Grand%20Forks%2C%20ND",
         "source": "https://www.liveatcolumbiawest.com/",
         "pick": 2,
-        "photo": "https://resource.rentcafe.com/image/upload/x_0,y_0,w_6985,h_4657,c_crop/q_auto,f_auto,c_fill,w_1920,ar_0.862,g_auto/s3/2/85711/305_kitchen-a_21c_columbia-west.jpg",
+        "photo": "assets/housing/housing-grand-forks-property-columbia-west.jpg",
         "photoAlt": "Columbia West in Grand Forks, ND, from the property's official website",
         "photoApproved": true
       },
@@ -883,7 +883,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Library%20Lane%2C%20Grand%20Forks%2C%20ND",
         "source": "https://www.liveatlibrarylane.com/",
         "pick": 3,
-        "photo": "https://resource.rentcafe.com/image/upload/q_auto,f_auto/s3/2/85711/librarylane-2bdrm-rehab-2-207-kitcheni%281%29.jpg",
+        "photo": "assets/housing/housing-grand-forks-property-library-lane.jpg",
         "photoAlt": "Library Lane in Grand Forks, ND, from the property's official website",
         "photoApproved": true
       }
@@ -905,7 +905,7 @@
         "pick": 3,
         "summary": "Furnished 1, 2 and 4 bedroom apartments marketed to UNT and TWU students.",
         "source": "https://www.americancampus.com/student-apartments/tx/denton/city-parc-at-fry-street/floor-plans",
-        "photo": "https://www.americancampus.com/getmedia/39b85379-0a1f-4e17-858e-203ad5b49cad/690_Second-Hero_1920x450.jpg",
+        "photo": "assets/housing/housing-denton-property-city-parc-at-fry-street.jpg",
         "photoAlt": "City Parc at Fry Street in Denton, TX, from the property's official website",
         "photoApproved": true
       },
@@ -918,7 +918,7 @@
         "source": "https://www.americancampus.com/student-apartments/tx/denton",
         "pick": 1,
         "summary": "American Campus lists U Centre at Fry Street among its student apartments near the University of North Texas and Texas Woman's University. Confirm distance to TWU, pricing and availability with the property.",
-        "photo": "https://www.americancampus.com/getmedia/9f4a6c1e-2df1-4fd9-a868-2ea38696b19c/ACC-1550x635-Market-Pg-Hero-Images-7-10-2415.jpg",
+        "photo": "assets/housing/housing-denton-property-u-centre-at-fry-street.jpg",
         "photoAlt": "U Centre at Fry Street in Denton, TX, from the property's official website",
         "photoApproved": true
       },
@@ -931,7 +931,7 @@
         "source": "https://www.americancampus.com/student-apartments/tx/denton/uptown",
         "pick": 2,
         "summary": "American Campus lists Uptown Apartments among its student apartments near the University of North Texas and Texas Woman's University. Confirm distance to TWU, pricing and availability with the property.",
-        "photo": "https://www.americancampus.com/getmedia/a0781b02-d771-44e2-89f4-2931e91c911c/689_Main-Hero_1440x576.jpg",
+        "photo": "assets/housing/housing-denton-property-uptown-apartments.jpg",
         "photoAlt": "Uptown Apartments in Denton, TX, from the property's official website",
         "photoApproved": true
       }
@@ -953,7 +953,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Swivel%2C%20Omaha%2C%20NE",
         "source": "https://www.liveswivel.com/",
         "pick": 1,
-        "photo": "https://resource.rentcafe.com/image/upload/x_0,y_0,w_6720,h_4480,c_crop/q_auto,f_auto,c_lfill,w_1440,ar_1.36,g_auto/s3/2/186105/william_22-06-23_22875-edit.jpg",
+        "photo": "assets/housing/housing-omaha-property-swivel.jpg",
         "photoAlt": "Swivel in Omaha, NE, from the property's official website",
         "photoApproved": true
       },
@@ -965,7 +965,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=ZAG%2C%20Omaha%2C%20NE",
         "source": "https://www.zagapts.com/omaha/zag/map-and-directions/",
         "pick": 2,
-        "photo": "https://medialibrarycfo.entrata.com/10737/MLv3/9/36/2026/09/25/084300/6ab688745d92b4.08949716996.jpg",
+        "photo": "assets/housing/housing-omaha-property-zag.jpg",
         "photoAlt": "ZAG in Omaha, NE, from the property's official website",
         "photoApproved": true
       },
@@ -984,7 +984,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Clove%2C%20Omaha%2C%20NE",
         "source": "https://www.clove-omaha.com/floorplans",
         "pick": 3,
-        "photo": "https://resource.rentcafe.com/image/upload/x_0,y_1565,w_4458,h_5122,c_crop/q_auto,f_auto,c_limit,w_4458/s3/2/186105/William_24-05-31_4704-Edit.jpg",
+        "photo": "assets/housing/housing-omaha-property-clove.jpg",
         "photoAlt": "Clove in Omaha, NE, from the property's official website",
         "photoApproved": true
       },
@@ -1014,7 +1014,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=The%20Fountains%20Apartments%2C%20Pensacola%2C%20FL",
         "source": "https://www.fountainspensacola.com/",
         "pick": 1,
-        "photo": "https://resource.rentcafe.com/image/upload/x_0,y_0,w_4000,h_2250,c_crop/q_auto,f_auto,c_lfill,w_3200,ar_1.7777777777777777,g_auto/s3/2/129655/emmer%20management-fountains-pns%201.jpg",
+        "photo": "assets/housing/housing-pensacola-property-the-fountains-apartments.jpg",
         "photoAlt": "The Fountains Apartments in Pensacola, FL, from the property's official website",
         "photoApproved": true
       },
@@ -1028,7 +1028,7 @@
         "summary": "Modern apartments near the University of West Florida.",
         "address": "10300 University Pkwy, Pensacola, FL",
         "pick": 2,
-        "photo": "https://res.cloudinary.com/g5-assets-cld/image/upload/x_0,y_600,h_1900,w_3999,c_crop/q_auto,f_auto,fl_lossy,g_center,h_950,w_2000/g5/g5-c-5x7s6ipfl-b-and-m-management/g5-cl-1ps0bv493r-b-m-management-company-llc-pensacola-fl/uploads/YqdyGmgQke-KX9A0558_d2yxvn.jpg",
+        "photo": "assets/housing/housing-pensacola-property-the-edge-pensacola.jpg",
         "photoAlt": "The Edge in Pensacola, FL, from the property's official website",
         "photoApproved": true
       },
@@ -1042,7 +1042,7 @@
         "summary": "Furnished student housing near UWF (College Vue and College Vue on University).",
         "address": "9823 Utopia Dr, Pensacola, FL",
         "pick": 3,
-        "photo": "https://mycollegevue.com/wp-content/uploads/sites/122/2026/02/Aerial-view-of-College-Vue-student-apartments.jpg",
+        "photo": "assets/housing/housing-pensacola-property-college-vue-pensacola.jpg",
         "photoAlt": "College Vue in Pensacola, FL, from the property's official website",
         "photoApproved": true
       }
@@ -1081,7 +1081,7 @@
         "summary": "Pet-friendly apartments with spacious floor plans and a pool.",
         "address": "6400 Bell St, Amarillo, TX 79109",
         "pick": 3,
-        "photo": "https://medialibrarycfo.entrata.com/101578/MLv3/3/21/2025/11/05/114143/690b9a67218951.77277183924.jpg",
+        "photo": "assets/housing/housing-amarillo-property-stonegate-amarillo.jpg",
         "photoAlt": "Stonegate in Amarillo, TX, from the property's official website",
         "photoApproved": true
       },
@@ -1094,7 +1094,7 @@
         "address": "4711 S Virginia St, Amarillo, TX 79109",
         "summary": "Apartment community in Amarillo with floor plans and specials on its official site. Confirm pricing and availability with the property.",
         "source": "https://www.thereserveatfourtyseven.com/",
-        "photo": "https://media.apts247.info/a1/a1e238166c5c4243899421a62c4281a1/hero_shot/community/community-amenities.jpg",
+        "photo": "assets/housing/housing-amarillo-property-the-reserve-at-forty-seven.jpg",
         "photoAlt": "The Reserve at Forty-Seven in Amarillo, TX, from the property's official website",
         "photoApproved": true,
         "pick": 1
@@ -1107,7 +1107,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=The%20Colonies%20at%20Hillside%2C%20Amarillo%2C%20TX",
         "summary": "Pet-friendly Amarillo apartments with pools and a fitness center, listed on the operator’s official site. Confirm pricing and availability with the property.",
         "source": "https://www.caseusa.com/apartments/tx/amarillo/the-colonies-at-hillside/",
-        "photo": "https://media.multihub.io/cdn-cgi/image/format=auto,w=1280/property/6767906449167037/019cfb50-7643-74ed-a9f7-5320d688a856.webp",
+        "photo": "assets/housing/housing-amarillo-property-the-colonies-at-hillside.jpg",
         "photoAlt": "The Colonies at Hillside in Amarillo, TX, from the property's official website",
         "photoApproved": true,
         "pick": 2
@@ -1129,7 +1129,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Windsor%20Creek%2C%20Goldsboro%2C%20NC",
         "source": "https://www.jwhunter.com/401-windsor-creek-parkway/default",
         "pick": 1,
-        "photo": "https://resource.rentcafe.com/image/upload/x_0,y_0,w_1024,h_680,c_crop/q_auto,f_auto,c_lfill,w_1024,ar_2.5396825396825395,g_auto/s3/2/135321/windsorcreek5-21-12030_original.jpg",
+        "photo": "assets/housing/housing-goldsboro-property-windsor-creek.jpg",
         "photoAlt": "Windsor Creek in Goldsboro, NC, from the property's official website",
         "photoApproved": true
       },
@@ -1143,7 +1143,7 @@
         "summary": "Brand new apartments in Goldsboro.",
         "address": "403 N Oak Forest Rd, Goldsboro, NC",
         "pick": 2,
-        "photo": "https://lh3.googleusercontent.com/BhMAsG5TxlxszALoOlOMvKCV7CmKaqiE1KbLp_DUEnUxoKq92x8PNLttAQ9En8ZavvJbrIjugp6E0iUKug9_5ZbFxEqOh0kxLFbtrrE=s3000-rw",
+        "photo": "assets/housing/housing-goldsboro-property-403-north-apartments.jpg",
         "photoAlt": "403 North Apartments in Goldsboro, NC, from the property's official website",
         "photoApproved": true
       },
@@ -1157,7 +1157,7 @@
         "summary": "Spacious 2-bedroom, 1.5-bath homes with washer/dryer connections. Pet-friendly.",
         "address": "271 Sheridan Forest, Goldsboro, NC 27534",
         "pick": 3,
-        "photo": "https://www.sheridanforest.net/wp-content/uploads/2025/08/SF-16.jpg",
+        "photo": "assets/housing/housing-goldsboro-property-sheridan-forest-apartments.jpg",
         "photoAlt": "Sheridan Forest Apartments in Goldsboro, NC, from the property's official website",
         "photoApproved": true
       }
@@ -1179,7 +1179,7 @@
         "pick": 2,
         "source": "https://campuslivingvillages.com/united-states/university-of-texas-at-tyler/university-pines-ut-tyler-housing/",
         "summary": "On-campus apartment community at UT Tyler, listed on the operator’s official site. Confirm eligibility, pricing, and availability with the property.",
-        "photo": "https://cdn.campuslivingvillages.com/public/GalleryItem/Images/UMP-7911__FocusFillWyIwLjAwIiwiMC4wMCIsOTI3LDYxOF0.jpg",
+        "photo": "assets/housing/housing-tyler-property-university-pines.jpg",
         "photoApproved": true,
         "photoAlt": "University Pines in Tyler, TX, from the property's official website"
       },
@@ -1191,7 +1191,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Varsity%20View%2C%20Tyler%2C%20TX",
         "source": "https://www.varsityview.com/availability",
         "pick": 1,
-        "photo": "https://irp.cdn-website.com/d30cea44/dms3rep/multi/opt/Varsity-View-1920w.jpg",
+        "photo": "assets/housing/housing-tyler-property-varsity-view.jpg",
         "photoAlt": "Varsity View in Tyler, TX, from the property's official website",
         "photoApproved": true
       },
@@ -1211,7 +1211,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=The%20Woodlands%2C%20Tyler%2C%20TX",
         "source": "https://www.thewoodlandstyler.com/contact/",
         "pick": 3,
-        "photo": "https://swifty-media.s3.us-east-1.amazonaws.com/sites/23087/2025/04/The-Woodlands_REV.png",
+        "photo": "assets/housing/housing-tyler-property-the-woodlands.jpg",
         "photoAlt": "The Woodlands in Tyler, TX, from the property's official website",
         "photoApproved": true
       }
@@ -1239,7 +1239,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=ReNew%20Fairmont%20Park%2C%20Midland%2C%20TX",
         "source": "https://www.renewfairmontpark.com/Apartments/module/application_authentication/",
         "pick": 1,
-        "photo": "https://medialibrarycfo.entrata.com/3482/MLv3/3/21/2025/08/13/040427/689d0beaefadc9.72109362434.jpg",
+        "photo": "assets/housing/housing-midland-property-renew-fairmont-park.jpg",
         "photoAlt": "ReNew Fairmont Park in Midland, TX, from the property's official website",
         "photoApproved": true
       },
@@ -1253,7 +1253,7 @@
         "summary": "Apartments in Midland with floor plans, photos and community amenities.",
         "address": "1301 E Mockingbird Ln, Midland, TX",
         "pick": 2,
-        "photo": "https://resource.rentcafe.com/image/upload/x_0,y_0,w_2048,h_1365,c_crop/q_auto,f_auto,c_lfill,w_1920,ar_1.628/s3/2/58193/dsc06308-hdr.jpg",
+        "photo": "assets/housing/housing-midland-property-the-drake-midland.jpg",
         "photoAlt": "The Drake in Midland, TX, from the property's official website",
         "photoApproved": true
       },
@@ -1266,7 +1266,7 @@
         "source": "https://www.monacomidland.com/",
         "summary": "Apartments in Midland with floor plans, photos and community amenities.",
         "pick": 3,
-        "photo": "https://resource.rentcafe.com/image/upload/x_0,y_0,w_1920,h_1282,c_crop/q_auto,f_auto,c_lfill,w_1920,ar_1.628/s3/2/58193/bedroom_monaco-midland-tx-building-photo-1920x1282.jpg",
+        "photo": "assets/housing/housing-midland-property-monaco-midland.jpg",
         "photoAlt": "Monaco in Midland, TX, from the property's official website",
         "photoApproved": true
       }
@@ -1295,7 +1295,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Oak%20Hill%20Apartments%2C%20Toledo%2C%20OH",
         "source": "https://rentoakhill.com/",
         "pick": 2,
-        "photo": "https://rentoakhill.com/wp-content/uploads/2022/04/Garden-4-exterior.jpg",
+        "photo": "assets/housing/housing-toledo-property-oak-hill-apartments.jpg",
         "photoAlt": "Oak Hill Apartments in Toledo, OH, from the property's official website",
         "photoApproved": true
       },
@@ -1307,7 +1307,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Hamlet%20at%20Maumee%2C%20Toledo%2C%20OH",
         "source": "https://www.hamletatmaumee.com/",
         "pick": 3,
-        "photo": "https://capi.myleasestar.com/v2/dimg-crop/79483325/1200x1200/79483325.png",
+        "photo": "assets/housing/housing-toledo-property-hamlet-at-maumee.jpg",
         "photoAlt": "Hamlet at Maumee in Toledo, OH, from the property's official website",
         "photoApproved": true
       },
@@ -1327,7 +1327,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Fox%20Chase%20Apartments%2C%20Toledo%2C%20OH",
         "source": "https://villagegreen.com/oh/holland/fox-chase/",
         "summary": "Apartment community in Holland, OH near Toledo, listed on its official site. Confirm floor plans, pricing, and availability with the property.",
-        "photo": "https://villagegreen.com/wp-content/uploads/2022/10/fox-chase-apartments-2.jpg",
+        "photo": "assets/housing/housing-toledo-property-fox-chase-apartments.jpg",
         "photoApproved": true,
         "photoAlt": "Fox Chase Apartments in Toledo, OH, from the property's official website",
         "pick": 1
@@ -1351,7 +1351,7 @@
         "address": "10210 S Zarzamora St, San Antonio, TX 78224",
         "summary": "2- and 3-bedroom floor plans (2BR from $1,024, 3BR from $1,200 at last review), with a lounge, business center, 24/7 fitness center and pets welcome. A short drive from Texas A&M-San Antonio.",
         "source": "https://www.losarcosvida.com/",
-        "photo": "https://resource.rentcafe.com/image/upload/x_0,y_0,w_2048,h_1365,c_crop/q_auto,f_auto,c_fill,w_1910,ar_1.4,g_auto/s3/2/46285/38-web-or-mls-10210-s-zarzamora-st.jpg",
+        "photo": "assets/housing/housing-san-antonio-property-los-arcos-at-vida.jpg",
         "photoAlt": "Los Arcos at VIDA in San Antonio, TX, from the property's official website",
         "photoApproved": true
       },
@@ -1363,7 +1363,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=The%20Landings%20at%20Brooks%20City-Base%2C%20San%20Antonio%2C%20TX",
         "source": "https://www.thelandingsatbrookscity-base.com/mapsanddirections",
         "pick": 1,
-        "photo": "https://resource.rentcafe.com/image/upload/q_auto,f_auto/s3/2/85483/moxdurhamheightsg09a4915-hdr-edit.jpg",
+        "photo": "assets/housing/housing-san-antonio-property-the-landings-at-brooks-city-base.jpg",
         "photoAlt": "The Landings at Brooks City-Base in San Antonio, TX, from the property's official website",
         "photoApproved": true
       },
@@ -1377,7 +1377,7 @@
         "address": "7722 Calle Coyote, San Antonio, TX 78235",
         "summary": "New 2- to 4-bedroom single-family homes and townhomes with private backyards and two-car garages, plus pool, pet park and clubhouse.",
         "source": "https://www.greystar.com/properties/san-antonio-tx/los-cielos-at-brooks-luxury-rentals/floorplans",
-        "photo": "https://s7d9.scene7.com/is/image/greystarprod/21945BDG2",
+        "photo": "assets/housing/housing-san-antonio-property-los-cielos-at-brooks-luxury-rentals.jpg",
         "photoAlt": "Los Cielos at Brooks Luxury Rentals in San Antonio, TX, from the property's official website",
         "photoApproved": true
       }
@@ -1414,7 +1414,7 @@
         "summary": "One- and two-bedroom apartments and cottages near Northeastern State University. Pet-friendly.",
         "address": "1390 N Heritage Ln, Tahlequah, OK 74464",
         "pick": 1,
-        "photo": "https://medialibrarycfo.entrata.com/101599/MLv3/3/21/2025/12/03/085958/69305e7eb01e28.82645734508.jpg",
+        "photo": "assets/housing/housing-tahlequah-property-pleasant-view-apartments.jpg",
         "photoAlt": "Pleasant View Apartments in Tahlequah, OK, from the property's official website",
         "photoApproved": true
       },
@@ -1428,7 +1428,7 @@
         "summary": "Pet-friendly 1- and 2-bedroom apartments with a pet park and laundry facility.",
         "address": "1300 N Jones Ave, Tahlequah, OK",
         "pick": 2,
-        "photo": "https://media.apts247.info/1a/1a5a36eb1b234119ae94ce565874f4ee/hero_shot/community/GT3A4405.jpg",
+        "photo": "assets/housing/housing-tahlequah-property-twin-oaks-tahlequah.jpg",
         "photoAlt": "Twin Oaks in Tahlequah, OK, from the property's official website",
         "photoApproved": true
       },
@@ -1442,7 +1442,7 @@
         "summary": "Pet-friendly apartments with spacious floor plans and large closets.",
         "address": "201 Southridge Rd, Tahlequah, OK 74464",
         "pick": 3,
-        "photo": "https://medialibrarycfo.entrata.com/101578/MLv3/3/21/2026/01/20/021332/696feffc04fba4.65153656887.jpg",
+        "photo": "assets/housing/housing-tahlequah-property-pines-at-southridge.jpg",
         "photoAlt": "Pines at Southridge in Tahlequah, OK, from the property's official website",
         "photoApproved": true
       }
@@ -1473,7 +1473,7 @@
         "source": "https://berkshiresmithfield.com/",
         "summary": "Apartments with private patio or balcony, washer/dryer hookups and off-street parking. Pets welcome.",
         "pick": 2,
-        "photo": "https://berkshiresmithfield.com/wp-content/uploads/2025/03/IMG_3724-1.jpg",
+        "photo": "assets/housing/housing-smithfield-property-berkshire-apartments-smithfield.jpg",
         "photoAlt": "Berkshire Apartments in Smithfield, NC, from the property's official website",
         "photoApproved": true
       },
@@ -1486,7 +1486,7 @@
         "source": "https://cambridgesmithfield.com/",
         "summary": "Two-story community with 2-bedroom, 2.5-bath units and washer/dryer hookups. Pets welcome.",
         "pick": 3,
-        "photo": "https://cambridgesmithfield.com/wp-content/uploads/2025/04/IMG_3737-1.jpg",
+        "photo": "assets/housing/housing-smithfield-property-cambridge-apartments-smithfield.jpg",
         "photoAlt": "Cambridge Apartments in Smithfield, NC, from the property's official website",
         "photoApproved": true
       }
@@ -1507,7 +1507,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Weston%20Corsicana%2C%20Corsicana%2C%20TX",
         "source": "https://www.westoncorsicana.com/corsicana/weston-corsicana/conventional/",
         "pick": 1,
-        "photo": "https://medialibrarycfo.entrata.com/18369/MLv3/9/36/2026/07/08/122832/6a4e96d01ae327.45139829548.png",
+        "photo": "assets/housing/housing-corsicana-property-weston-corsicana.jpg",
         "photoAlt": "Weston Corsicana in Corsicana, TX, from the property's official website",
         "photoApproved": true
       },
@@ -1526,7 +1526,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Arbors%20of%20Corsicana%2C%20Corsicana%2C%20TX",
         "source": "https://www.arborsofcorsicana.com/",
         "pick": 2,
-        "photo": "https://resource.rentcafe.com/image/upload/x_0,y_0,w_3000,h_2000,c_crop/q_auto,f_auto,c_lfill,w_1920,ar_1.7777777777777777,g_auto/s3/2/4573/arbors%20of%20corsicana%20-%202025-56.jpg",
+        "photo": "assets/housing/housing-corsicana-property-arbors-of-corsicana.jpg",
         "photoAlt": "Arbors of Corsicana in Corsicana, TX, from the property's official website",
         "photoApproved": true
       },
@@ -1545,7 +1545,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Northwood%20Village%20Apartments%2C%20Corsicana%2C%20TX",
         "source": "https://www.northwoodcorsicana.com/",
         "pick": 3,
-        "photo": "https://images.myrazz.com/uc-image/27abeec1-0678-4f47-924e-c2e2a56fca37/-/scale_crop/1200x630/smart/-/format/webp/-/quality/lighter/Northwood%20Village.jpeg",
+        "photo": "assets/housing/housing-corsicana-property-northwood-village-apartments.jpg",
         "photoAlt": "Northwood Village Apartments in Corsicana, TX, from the property's official website",
         "photoApproved": true
       }
@@ -1566,7 +1566,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=The%20Linden%2C%20Portland%2C%20ME",
         "source": "https://www.thelindenportland.com/",
         "pick": 1,
-        "photo": "https://www.thelindenportland.com/uploads/1-2-1024x683.png",
+        "photo": "assets/housing/housing-portland-me-property-the-linden.jpg",
         "photoAlt": "The Linden in Portland, ME, from the property's official website",
         "photoApproved": true
       },
@@ -1578,7 +1578,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Back%20Bay%20Tower%2C%20Portland%2C%20ME",
         "source": "https://backbaytower.com/",
         "pick": 2,
-        "photo": "https://capi.myleasestar.com/v2/dimg-crop/11414086/1200x1200/11414086.png",
+        "photo": "assets/housing/housing-portland-me-property-back-bay-tower.jpg",
         "photoAlt": "Back Bay Tower in Portland, ME, from the property's official website",
         "photoApproved": true
       },
@@ -1590,7 +1590,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Princeton%20Pines%2C%20Portland%2C%20ME",
         "source": "https://www.princetonpinesapts.com/",
         "pick": 3,
-        "photo": "https://medialibrarycfo.entrata.com/1346/MLv3/3/21/2022/2/4/15606/5abce8a505e657.83357982611.jpg",
+        "photo": "assets/housing/housing-portland-me-property-princeton-pines.jpg",
         "photoAlt": "Princeton Pines in Portland, ME, from the property's official website",
         "photoApproved": true
       },
@@ -1619,7 +1619,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Park%20Colony%20Apartments%2C%20Des%20Plaines%2C%20IL",
         "source": "https://www.parkcolonydesplaines.com/",
         "pick": 1,
-        "photo": "https://media.apts247.info/e4/e45308d473a440feab56db0c37b71868/hero_shot/community/r301A3675.jpg",
+        "photo": "assets/housing/housing-des-plaines-property-park-colony-apartments.jpg",
         "photoAlt": "Park Colony Apartments in Des Plaines, IL, from the property's official website",
         "photoApproved": true
       },
@@ -1633,7 +1633,7 @@
         "summary": "Upgraded 1- and 2-bedroom apartments near Glenview.",
         "address": "10020 Holly Ln, Des Plaines, IL",
         "pick": 2,
-        "photo": "https://g5-assets-cld-res.cloudinary.com/image/upload/q_auto,f_auto,c_fill,g_center,h_798,w_1198/v1724787145/g5/g5-c-5vj8dieta-clk-multifamily-management/g5-cl-1mrcc1f481-clk-multifamily-management-des-plaines-il/uploads/Courtyards_Playground_Photoshopped_dvwppn.jpg",
+        "photo": "assets/housing/housing-des-plaines-property-courtyards-on-the-park.jpg",
         "photoAlt": "Courtyards on the Park in Des Plaines, IL, from the property's official website",
         "photoApproved": true
       },
@@ -1647,7 +1647,7 @@
         "summary": "Studio to 3-bedroom apartments with easy access to I-294 and O'Hare.",
         "address": "150 N East River Rd, Des Plaines, IL",
         "pick": 3,
-        "photo": "https://static1.squarespace.com/static/64ff1764b398782a3c36ce36/t/64ff6e487ba6f7293a3d6d8d/1694461512140/20_150NEastRiverRd_2020_HiRes.jpg",
+        "photo": "assets/housing/housing-des-plaines-property-the-monarch-des-plaines.jpg",
         "photoAlt": "The Monarch in Des Plaines, IL, from the property's official website",
         "photoApproved": true
       }
@@ -1675,7 +1675,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Cascade%20Ridge%20Apartments%2C%20Jackson%2C%20MI",
         "source": "https://www.cascaderidgeapartments.com/",
         "pick": 1,
-        "photo": "https://resource.rentcafe.com/image/upload/x_0,y_0,w_5254,h_3503,c_crop/q_auto,f_auto,c_lfill,w_1920,ar_0.939,g_auto/s3/2/160107/cascade-ridge-apartments%20(5).jpg",
+        "photo": "assets/housing/housing-jackson-mi-property-cascade-ridge-apartments.jpg",
         "photoAlt": "Cascade Ridge Apartments in Jackson, MI, from the property's official website",
         "photoApproved": true
       },
@@ -1689,7 +1689,7 @@
         "summary": "Apartments near freeways and shopping with a number of amenities.",
         "address": "1300 W Tanbark Ln, Jackson, MI",
         "pick": 2,
-        "photo": "https://www.theoaksjackson.com/wp-content/uploads/sites/700/2018/05/slider1.jpg",
+        "photo": "assets/housing/housing-jackson-mi-property-the-oaks-jackson.jpg",
         "photoAlt": "The Oaks Apartments in Jackson, MI, from the property's official website",
         "photoApproved": true
       },
@@ -1703,7 +1703,7 @@
         "summary": "Spacious floor plans with resident services.",
         "address": "2659 Ruff Rd, Jackson, MI",
         "pick": 3,
-        "photo": "https://resource.rentcafe.com/image/upload/q_auto,f_auto/s3/2/106385/MRD-Apartments-Bell-Estates-Apartment-Slider-7.jpg",
+        "photo": "assets/housing/housing-jackson-mi-property-withington-apartments.jpg",
         "photoAlt": "Withington Apartments in Jackson, MI, from the property's official website",
         "photoApproved": true
       }
@@ -1726,7 +1726,7 @@
         "address": "7402 Springfield Ave, Laredo, TX 78045",
         "summary": "Apartment community at 7402 Springfield Ave listed on the operator's official Greystar page, which describes its location in the TAMIU area. Confirm distance to your campus, pricing and availability with the property.",
         "pick": 1,
-        "photo": "https://s7d9.scene7.com/is/image/greystarprod/14672CLB1",
+        "photo": "assets/housing/housing-laredo-property-la-contessa-apartments.jpg",
         "photoAlt": "La Contessa Apartments in Laredo, TX, from the property's official website",
         "photoApproved": true
       },
@@ -1740,7 +1740,7 @@
         "address": "4907 University Blvd, Laredo, TX 78041",
         "summary": "Student-oriented community near TAMIU. Its official Greystar page lists fully furnished apartments, private bedrooms and bathrooms, free on-site laundry and a pool. Confirm pricing and availability with the property.",
         "pick": 2,
-        "photo": "https://s7d9.scene7.com/is/image/greystarprod/20801BDG1",
+        "photo": "assets/housing/housing-laredo-property-university-village.jpg",
         "photoAlt": "University Village in Laredo, TX, from the property's official website",
         "photoApproved": true
       },
@@ -1754,7 +1754,7 @@
         "summary": "Apartment community in Laredo.",
         "address": "1415 Hospitality Dr, Laredo, TX",
         "pick": 3,
-        "photo": "https://theparkapartmentslaredo.com/wp-content/uploads/2025/01/thepark_home_hero2.jpg",
+        "photo": "assets/housing/housing-laredo-property-the-park-laredo.jpg",
         "photoAlt": "The Park in Laredo, TX, from the property's official website",
         "photoApproved": true
       }
@@ -1782,7 +1782,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Cru%2C%20Odessa%2C%20TX",
         "source": "https://livecruapartments.com/",
         "pick": 1,
-        "photo": "https://livecruapartments.com/images/photo_gallery/photo-01.jpg",
+        "photo": "assets/housing/housing-odessa-property-cru.jpg",
         "photoAlt": "Cru in Odessa, TX, from the property's official website",
         "photoApproved": true
       },
@@ -1794,7 +1794,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Tuscany%20at%20Faudree%20Apartment%20Homes%2C%20Odessa%2C%20TX",
         "source": "https://www.tuscanyatfaudree.com/gallery/",
         "pick": 2,
-        "photo": "https://media.multihub.io/cdn-cgi/image/format=auto,w=1280/property/6767906449167129/019d0217-75c2-756d-aa63-c866125be8e4.webp",
+        "photo": "assets/housing/housing-odessa-property-tuscany-at-faudree-apartment-homes.jpg",
         "photoAlt": "Tuscany at Faudree Apartment Homes in Odessa, TX, from the property's official website",
         "photoApproved": true
       },
@@ -1809,7 +1809,7 @@
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Sedona%20Ranch%2C%20Odessa%2C%20TX",
         "pick": 3,
-        "photo": "https://resource.rentcafe.com/image/upload/x_0,y_0,w_1800,h_1200,c_crop/q_auto,f_auto,c_lfill,w_1034,ar_0.862,g_auto/s3/2/251474/shp04810-2_1.jpg",
+        "photo": "assets/housing/housing-odessa-property-sedona-ranch.jpg",
         "photoAlt": "Sedona Ranch in Odessa, TX, from the property's official website",
         "photoApproved": true
       },
@@ -1838,7 +1838,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Element%2030%20Apartments%2C%20Kearney%2C%20NE",
         "source": "https://www.liveelement30.com/faq",
         "pick": 1,
-        "photo": "https://images.squarespace-cdn.com/content/v1/5e71413dc88f23128190728a/32f42c0e-282f-4f92-9976-3c6f4f18e9b3/DJI_0055.jpg",
+        "photo": "assets/housing/housing-kearney-property-element-30-apartments.jpg",
         "photoAlt": "Element 30 Apartments in Kearney, NE, from the property's official website",
         "photoApproved": true
       },
@@ -1850,7 +1850,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Kearney%20Apartment%20Homes%2C%20Kearney%2C%20NE",
         "source": "https://www.kearneyapartmenthomes.com/",
         "pick": 2,
-        "photo": "https://images.squarespace-cdn.com/content/v1/6769936b9be6ac685313884d/2d1a9c56-334c-4023-aac0-47cb3078f3f3/BuildingPhoto+%289%29.jpg",
+        "photo": "assets/housing/housing-kearney-property-kearney-apartment-homes.jpg",
         "photoAlt": "Kearney Apartment Homes in Kearney, NE, from the property's official website",
         "photoApproved": true
       },
@@ -1862,7 +1862,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Village%20at%20Kearney%20Apartments%2C%20Kearney%2C%20NE",
         "source": "https://www.villageatkearneyapartments.com/",
         "pick": 3,
-        "photo": "https://media.apts247.info/66/663e65f18d634b049038ab4f7468f913/hero_shot/community/0O7A3520.jpg",
+        "photo": "assets/housing/housing-kearney-property-village-at-kearney-apartments.jpg",
         "photoAlt": "Village at Kearney Apartments in Kearney, NE, from the property's official website",
         "photoApproved": true
       },
@@ -1891,7 +1891,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Trade%20Center%20Apartments%2C%20New%20Hampshire",
         "source": "https://www.tradecenterapartments.com/",
         "pick": 1,
-        "photo": "https://static.wixstatic.com/media/cc8217_257f60c1aea242669f558a844e247515f000.jpg",
+        "photo": "assets/housing/housing-new-hampshire-property-trade-center-apartments.jpg",
         "photoAlt": "Trade Center Apartments in New Hampshire (statewide), from the property's official website",
         "photoApproved": true
       },
@@ -1903,7 +1903,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=75%20Canal%20St%2C%20New%20Hampshire",
         "source": "https://www.75canal.com/",
         "pick": 2,
-        "photo": "https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_992,dpr_2/s3/2/112955/75_canal_st_manchester_nh_03101_usa-kitchen-a7300119.jpg",
+        "photo": "assets/housing/housing-new-hampshire-property-75-canal-st.jpg",
         "photoAlt": "75 Canal St in New Hampshire (statewide), from the property's official website",
         "photoApproved": true
       },
@@ -1921,7 +1921,7 @@
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=The%20Flats%20on%20High%20Street%2C%20New%20Hampshire",
         "source": "https://flatsonhighst.com/",
-        "photo": "https://flatsonhighst.com/assets/images/cache/44_High_St_Nashua_NH_03063_USA-Exterior_2-DJI_0648-3f6fc3a6244df27ebf6127d855f62c0c.jpg",
+        "photo": "assets/housing/housing-new-hampshire-property-the-flats-on-high-street.jpg",
         "photoAlt": "The Flats on High Street in New Hampshire (statewide), from the property's official website",
         "photoApproved": true
       }
@@ -1974,7 +1974,7 @@
         "source": "https://www.rentinkirksville.com/",
         "summary": "Kirksville rental company specializing in upscale student housing for university students and local residents.",
         "pick": 1,
-        "photo": "https://static.wixstatic.com/media/8b4db3_e57eb7610e3347a4819edbb058b15c6b~mv2_d_2313_1513_s_2.jpg/v1/fill/w_1569,h_918,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/8b4db3_e57eb7610e3347a4819edbb058b15c6b~mv2_d_2313_1513_s_2.jpg",
+        "photo": "assets/housing/housing-kirksville-mo-property-vicki-benson-properties.jpg",
         "photoAlt": "Vicki Benson Properties in Kirksville, MO, from the property's official website",
         "photoApproved": true
       },
@@ -1988,7 +1988,7 @@
         "summary": "Kirksville rental listings from a local property office near Truman State.",
         "address": "703 N Marion St, Kirksville, MO",
         "pick": 2,
-        "photo": "https://static.wixstatic.com/media/13cc85_69d10f5a3dd540e98b91f5f9ee0a31bc~mv2_d_2400_3000_s_4_2.jpg",
+        "photo": "assets/housing/housing-kirksville-mo-property-truman-rentals.jpg",
         "photoAlt": "Truman Rentals in Kirksville, MO, from the property's official website",
         "photoApproved": true
       },
@@ -2002,7 +2002,7 @@
         "summary": "Local property management office with available Kirksville rentals.",
         "address": "2424 S Franklin St, Suite B, Kirksville, MO",
         "pick": 3,
-        "photo": "https://irp.cdn-website.com//5fe2fbb8/dms3rep/multi/opt/slide1+%286%29-1152w.jpg",
+        "photo": "assets/housing/housing-kirksville-mo-property-kirksville-property-management.jpg",
         "photoAlt": "Kirksville Property Management in Kirksville, MO, from the property's official website",
         "photoApproved": true
       }
@@ -2056,7 +2056,7 @@
         "summary": "Student housing next to Western Illinois University.",
         "address": "900 Linden Ln, Macomb, IL 61455",
         "pick": 1,
-        "photo": "https://irp.cdn-website.com/9a10d8d3/dms3rep/multi/opt/lexington-54-1920w.jpg",
+        "photo": "assets/housing/housing-macomb-il-property-lexington-concord-apartments.jpg",
         "photoAlt": "Lexington Concord Apartments in Macomb, IL, from the property's official website",
         "photoApproved": true
       },
@@ -2070,7 +2070,7 @@
         "summary": "Apartment community serving the WIU community with a full set of amenities.",
         "address": "201 Wigwam Hollow Rd, Macomb, IL 61455",
         "pick": 2,
-        "photo": "https://lirp.cdn-website.com/26cc9faf/dms3rep/multi/opt/IMG_0310-1920w.jpg",
+        "photo": "assets/housing/housing-macomb-il-property-turnberry-apartments.jpg",
         "photoAlt": "Turnberry Apartments in Macomb, IL, from the property's official website",
         "photoApproved": true
       },
@@ -2083,7 +2083,7 @@
         "source": "https://www.smithandroyer.com/",
         "summary": "1-, 2- and 4-bedroom apartments three blocks from the university, each with washer, dryer, stove and refrigerator. Not pet friendly.",
         "pick": 3,
-        "photo": "https://www.smithandroyer.com/wp-content/uploads/2019/01/MG_9826-e1548436103600.jpg",
+        "photo": "assets/housing/housing-macomb-il-property-smith-and-royer.jpg",
         "photoAlt": "Smith & Royer Apartments in Macomb, IL, from the property's official website",
         "photoApproved": true
       }
@@ -2137,7 +2137,7 @@
         "address": "185 S Hickory St, Platteville, WI 53818",
         "summary": "Fully furnished studios and 4-bedroom units rented by the bedroom, with high-speed internet, study rooms and a fitness room. The property describes itself as steps from UW-Platteville.",
         "pick": 1,
-        "photo": "https://irp.cdn-website.com//876415c3/dms3rep/multi/opt/Newman-heights-35-1920w.jpg",
+        "photo": "assets/housing/housing-platteville-wi-property-newman-heights.jpg",
         "photoAlt": "Newman Heights in Platteville, WI, from the property's official website",
         "photoApproved": true
       },
@@ -2151,7 +2151,7 @@
         "summary": "Apartment homes in the heart of Platteville near UW-Platteville.",
         "address": "250 N Washington St, Platteville, WI 53818",
         "pick": 2,
-        "photo": "https://irp.cdn-website.com/86cbe1bd/dms3rep/multi/opt/2PRCB7T_2025-03-11-192800_tjky-9e0ae5cc-1920w.webp",
+        "photo": "assets/housing/housing-platteville-wi-property-platteville-apartments-washington-place.jpg",
         "photoAlt": "Platteville Apartments in Platteville, WI, from the property's official website",
         "photoApproved": true
       },
@@ -2165,7 +2165,7 @@
         "summary": "Residential apartments with amenities in Platteville.",
         "address": "890 Stonebridge Rd, Platteville, WI 53818",
         "pick": 3,
-        "photo": "https://www.stonebridgeaptswi.com/wp-content/uploads/sites/429/2021/11/kitchen.jpg",
+        "photo": "assets/housing/housing-platteville-wi-property-stonebridge-apartments.jpg",
         "photoAlt": "Stonebridge Apartments in Platteville, WI, from the property's official website",
         "photoApproved": true
       }
@@ -2219,7 +2219,7 @@
         "summary": "Modern apartments in Vermillion near the University of South Dakota.",
         "address": "1523 Roosevelt St, Vermillion, SD 57069",
         "pick": 1,
-        "photo": "https://mlc3hojpfqxl.i.optimole.com/w:1200/h:630/q:mauto/f:best/https://solarasd.com/wp-content/uploads/2026/03/Solara-Exterior-Rendering2_Web.jpg",
+        "photo": "assets/housing/housing-vermillion-sd-property-solara-vermillion.jpg",
         "photoAlt": "Solara in Vermillion, SD, from the property's official website",
         "photoApproved": true
       },
@@ -2233,7 +2233,7 @@
         "summary": "Modern student apartments in Vermillion.",
         "address": "1129 Cottage Ave, Vermillion, SD",
         "pick": 2,
-        "photo": "https://thequartersvermillion.com/wp-content/uploads/2026/01/The-Quarters-Vermillion-Amenities-Pool2.webp",
+        "photo": "assets/housing/housing-vermillion-sd-property-the-quarters-vermillion.jpg",
         "photoAlt": "The Quarters Vermillion in Vermillion, SD, from the property's official website",
         "photoApproved": true
       },
@@ -2246,7 +2246,7 @@
         "source": "https://vermillion.myheightsliving.com/",
         "summary": "Brand new student apartments for hassle-free student living in Vermillion.",
         "pick": 3,
-        "photo": "https://vermillion.myheightsliving.com/wp-content/uploads/2019/10/190730-123.jpg",
+        "photo": "assets/housing/housing-vermillion-sd-property-the-heights-vermillion.jpg",
         "photoAlt": "The Heights Vermillion in Vermillion, SD, from the property's official website",
         "photoApproved": true
       }
@@ -2300,7 +2300,7 @@
         "summary": "Apartments for rent in Emporia with floor plans, photos and amenities on the property site.",
         "address": "1839 Merchant St, Emporia, KS 66801",
         "pick": 1,
-        "photo": "https://medialibrarycfo.entrata.com/10292/MLv3/9/36/2026/11/13/120322/6af75ef9d41175.73149983110.jpg",
+        "photo": "assets/housing/housing-emporia-ks-property-the-villas-at-emporia.jpg",
         "photoAlt": "The Villas at Emporia in Emporia, KS, from the property's official website",
         "photoApproved": true
       },
@@ -2314,7 +2314,7 @@
         "summary": "Studio and 1- to 4-bedroom options.",
         "address": "736 E 12th Ave, Emporia, KS",
         "pick": 2,
-        "photo": "https://irp.cdn-website.com/99c44dae/dms3rep/multi/opt/Courtyard+Apartments_r6dWL48nTIOtnQkHP65A-1920w.jpg",
+        "photo": "assets/housing/housing-emporia-ks-property-courtyard-apartments-emporia.jpg",
         "photoAlt": "Courtyard Apartments in Emporia, KS, from the property's official website",
         "photoApproved": true
       },
@@ -2327,7 +2327,7 @@
         "source": "https://www.parkviewemporia.com/",
         "summary": "Spacious studio, 1-, 2- and 3-bedroom options in Emporia.",
         "pick": 3,
-        "photo": "https://irp.cdn-website.com/d4b47d09/dms3rep/multi/opt/Parkview+5-1920w.jpg",
+        "photo": "assets/housing/housing-emporia-ks-property-parkview-emporia.jpg",
         "photoAlt": "Parkview Apartments in Emporia, KS, from the property's official website",
         "photoApproved": true
       }
@@ -2395,7 +2395,7 @@
         "summary": "Studio to 5-bedroom floor plans with a 24/7 fitness center, covered garage parking, a barista bar and a full-court basketball court.",
         "address": "416 Billy Sunday Rd, Ames, IA 50010",
         "pick": 2,
-        "photo": "https://thelandingames.com/wp-content/uploads/2026/01/TheLandingAmes-13.webp",
+        "photo": "assets/housing/housing-ames-ia-property-the-landing-ames.jpg",
         "photoAlt": "The Landing Ames in Ames, IA, from the property's official website",
         "photoApproved": true
       },
@@ -2409,7 +2409,7 @@
         "summary": "Fully furnished 1- to 4-bedroom apartments and townhomes with a 24-hour fitness center, resort-style pool and free parking.",
         "address": "1717 S Grand Ave, Ames, IA 50010",
         "pick": 3,
-        "photo": "https://static1.squarespace.com/static/68f7b3754e7560024fa0df64/t/6a0c8c63649cf547bdc5ed64/1779207267847/Copper+Beech+-+23.jpg",
+        "photo": "assets/housing/housing-ames-ia-property-copper-beech-at-ames.jpg",
         "photoAlt": "Copper Beech at Ames in Ames, IA, from the property's official website",
         "photoApproved": true
       }
@@ -2463,7 +2463,7 @@
         "summary": "Studio, 1-, 2- and 3-bedroom student apartments near the University of Iowa.",
         "address": "435 S Linn St, Iowa City, IA",
         "pick": 1,
-        "photo": "https://riseatriverfrontcrossings.com/images/RiseatRiverfrontCrossings.jpg",
+        "photo": "assets/housing/housing-iowa-city-ia-property-rise-at-riverfront-crossings.jpg",
         "photoAlt": "RISE at Riverfront Crossings in Iowa City, IA, from the property's official website",
         "photoApproved": true
       },
@@ -2477,7 +2477,7 @@
         "summary": "Fully furnished 1-, 2- and 4-bedroom student apartments near the University of Iowa. Pet-friendly.",
         "address": "100 Hawk Ridge Dr, Iowa City, IA",
         "pick": 2,
-        "photo": "https://irp.cdn-website.com/8b31c66d/dms3rep/multi/opt/18_CLS_HawksRidge_053-f40cdfe2-1920w.jpg",
+        "photo": "assets/housing/housing-iowa-city-ia-property-hawks-ridge.jpg",
         "photoAlt": "Hawks Ridge in Iowa City, IA, from the property's official website",
         "photoApproved": true
       },
@@ -2491,7 +2491,7 @@
         "summary": "Student apartments near the University of Iowa.",
         "address": "112 E Bloomington St, Iowa City, IA",
         "pick": 3,
-        "photo": "https://irp.cdn-website.com/5e62c4f3/dms3rep/multi/opt/Dome+4+2-1920w.jpg",
+        "photo": "assets/housing/housing-iowa-city-ia-property-campus-view-apartments.jpg",
         "photoAlt": "Campus View Apartments in Iowa City, IA, from the property's official website",
         "photoApproved": true
       }
@@ -2544,7 +2544,7 @@
         "source": "https://livehelix24.com/",
         "summary": "Furnished student apartments with resort-style amenities near the University of Kansas.",
         "pick": 1,
-        "photo": "https://selfstarter-network.com/wp-content/uploads/2025/11/R_250207_N463-scaled.jpg",
+        "photo": "assets/housing/housing-lawrence-ks-property-helix-24.jpg",
         "photoAlt": "Helix 24 in Lawrence, KS, from the property's official website",
         "photoApproved": true
       },
@@ -2558,7 +2558,7 @@
         "summary": "Modern student apartments near the University of Kansas.",
         "address": "2511 W 31st St, Lawrence, KS",
         "pick": 2,
-        "photo": "https://thelandinglawrence.com/wp-content/uploads/2026/01/The-Landing-Lawrence-Amenity-Photo-11.webp",
+        "photo": "assets/housing/housing-lawrence-ks-property-the-landing-lawrence.jpg",
         "photoAlt": "The Landing Lawrence in Lawrence, KS, from the property's official website",
         "photoApproved": true
       },
@@ -2571,7 +2571,7 @@
         "source": "https://www.collectivelawrence.com/",
         "summary": "Spacious student homes in a prime location near the University of Kansas.",
         "pick": 3,
-        "photo": "https://collectivelawrence.b-cdn.net/wp-content/uploads/2024/10/collective-at-lawrence-apartments-near-university-of-kansas-townhomes.jpg",
+        "photo": "assets/housing/housing-lawrence-ks-property-the-collective-at-lawrence.jpg",
         "photoAlt": "The Collective at Lawrence in Lawrence, KS, from the property's official website",
         "photoApproved": true
       }
@@ -2625,7 +2625,7 @@
         "summary": "Pet-friendly student apartments near K-State with a balcony and air conditioning in every unit.",
         "address": "1532 College Ave, Manhattan, KS 66502",
         "pick": 1,
-        "photo": "https://medialibrarycfo.entrata.com/15512/MLv3/3/21/2023/03/17/013027/6414bfd38111b3.85867834153.jpg",
+        "photo": "assets/housing/housing-manhattan-ks-property-prime-place-mhk.jpg",
         "photoAlt": "Prime Place MHK in Manhattan, KS, from the property's official website",
         "photoApproved": true
       },
@@ -2639,7 +2639,7 @@
         "summary": "Modern student apartments in Manhattan, Kansas.",
         "address": "2215 College Ave, Manhattan, KS",
         "pick": 2,
-        "photo": "https://thequartersmanhattan.com/wp-content/uploads/2026/01/The-Quarters-Manhattan-Clubhouse-Lounge2.webp",
+        "photo": "assets/housing/housing-manhattan-ks-property-the-quarters-manhattan.jpg",
         "photoAlt": "The Quarters Manhattan in Manhattan, KS, from the property's official website",
         "photoApproved": true
       },
@@ -2652,7 +2652,7 @@
         "source": "https://homeatsandstone.com/",
         "summary": "Apartments in Manhattan, KS with modern floor plans and community amenities.",
         "pick": 3,
-        "photo": "https://capi.myleasestar.com/v2/dimg-crop/127802743/1200x1200/127802743.png",
+        "photo": "assets/housing/housing-manhattan-ks-property-sandstone-apartments.jpg",
         "photoAlt": "Sandstone Apartments in Manhattan, KS, from the property's official website",
         "photoApproved": true
       }
@@ -2706,7 +2706,7 @@
         "summary": "Modern student apartments steps from Oklahoma State University.",
         "address": "801 W 4th Ave, Stillwater, OK",
         "pick": 1,
-        "photo": "https://www.midtownsw.com/wp-content/uploads/sites/7/2024/02/ezgif-2-e9c15d5279.jpg",
+        "photo": "assets/housing/housing-stillwater-ok-property-midtown-stillwater.jpg",
         "photoAlt": "Midtown in Stillwater, OK, from the property's official website",
         "photoApproved": true
       },
@@ -2720,7 +2720,7 @@
         "summary": "Student apartments in the heart of Stillwater.",
         "address": "312 Elm Ave, Stillwater, OK",
         "pick": 2,
-        "photo": "https://medialibrarycfo.entrata.com/15512/MLv3/3/21/2026/04/02/084742/69ce818e1b2007.60713300430.jpg",
+        "photo": "assets/housing/housing-stillwater-ok-property-prime-place-stw.jpg",
         "photoAlt": "Prime Place STW in Stillwater, OK, from the property's official website",
         "photoApproved": true
       },
@@ -2734,7 +2734,7 @@
         "summary": "Student apartments with furnishings and amenities near Oklahoma State University, in 1-, 2- and 3-bedroom layouts.",
         "address": "800 E Hall of Fame Ave, Stillwater, OK",
         "pick": 3,
-        "photo": "https://alight-stillwater.com/wp-content/uploads/sites/16/2024/09/Alight-Stillwater-POI-005-scaled-e1779293205269.jpg",
+        "photo": "assets/housing/housing-stillwater-ok-property-alight-stillwater.jpg",
         "photoAlt": "Alight Stillwater in Stillwater, OK, from the property's official website",
         "photoApproved": true
       }
@@ -2788,7 +2788,7 @@
         "summary": "Student apartments near the University of Arizona.",
         "address": "950 N Tyndall Ave, Tucson, AZ",
         "pick": 1,
-        "photo": "https://wp.propertyjs.app/live-aspire-tucson/wp-content/uploads/sites/25/2025/11/Aspire-Tuscon-Leasing-9.jpg",
+        "photo": "assets/housing/housing-tucson-az-property-aspire-tucson.jpg",
         "photoAlt": "Aspire in Tucson, AZ, from the property's official website",
         "photoApproved": true
       },
@@ -2816,7 +2816,7 @@
         "summary": "Modern student apartments near the University of Arizona.",
         "address": "819 N 1st Ave, Tucson, AZ",
         "pick": 3,
-        "photo": "https://resource.rentcafe.com/image/upload/x_0,y_0,w_5760,h_3840,c_crop/q_auto,f_auto,c_fill,w_1920,ar_0.884,g_auto/s3/2/109237/courty~1.jpg",
+        "photo": "assets/housing/housing-tucson-az-property-university-lofts-tucson.jpg",
         "photoAlt": "University Lofts in Tucson, AZ, from the property's official website",
         "photoApproved": true
       }
@@ -2855,7 +2855,7 @@
         "summary": "Apartment community near the University of New Mexico.",
         "address": "1901 University Blvd SE, Albuquerque, NM 87106",
         "pick": 1,
-        "photo": "https://www.universityvillageliving.com/wp-content/uploads/2026/04/Social-Room_001.jpg",
+        "photo": "assets/housing/housing-albuquerque-nm-property-university-village-albuquerque.jpg",
         "photoAlt": "University Village in Albuquerque, NM, from the property's official website",
         "photoApproved": true
       },
@@ -2868,7 +2868,7 @@
         "source": "https://broadstonenobhill.com/",
         "summary": "Apartment homes in Albuquerque near UNM with modern finishes.",
         "pick": 2,
-        "photo": "https://capi.myleasestar.com/v2/dimg-crop/144535341/1200x1200/144535341.png",
+        "photo": "assets/housing/housing-albuquerque-nm-property-broadstone-nob-hill.jpg",
         "photoAlt": "Broadstone Nob Hill in Albuquerque, NM, from the property's official website",
         "photoApproved": true
       },
@@ -2881,7 +2881,7 @@
         "source": "https://www.liveatnobhill.com/",
         "summary": "Pet-friendly apartments with spacious floor plans in Albuquerque's Nob Hill area.",
         "pick": 3,
-        "photo": "https://assets.marketapts.com/assets/converted/1163NOBH/images/apartments/photos/3aiaka6g5w199upz1jv9zvggxkd96xj8.jpg.800x600.jpg",
+        "photo": "assets/housing/housing-albuquerque-nm-property-nob-hill-apartments.jpg",
         "photoAlt": "Nob Hill Apartments in Albuquerque, NM, from the property's official website",
         "photoApproved": true
       }
@@ -2920,7 +2920,7 @@
         "summary": "Two- and four-bedroom student apartments in Fresno.",
         "address": "1680 E Barstow Ave, Fresno, CA",
         "pick": 1,
-        "photo": "https://media.apts247.info/c9/c973e828a2494bf6b017680d0b8a990b/hero_shot/community/1X6A9768.jpg",
+        "photo": "assets/housing/housing-fresno-ca-property-university-village-fresno.jpg",
         "photoAlt": "University Village in Fresno, CA, from the property's official website",
         "photoApproved": true
       },
@@ -2933,7 +2933,7 @@
         "source": "https://www.fresnouniversityplace.com/",
         "summary": "Two-bedroom student layouts with modern kitchens, high-speed internet and a fully gated entry.",
         "pick": 2,
-        "photo": "https://medialibrarycfo.entrata.com/10502/MLv3/9/36/2026/04/27/041105/69efdef8dd6626.90819356155.jpg",
+        "photo": "assets/housing/housing-fresno-ca-property-university-place-fresno.jpg",
         "photoAlt": "University Place Apartments in Fresno, CA, from the property's official website",
         "photoApproved": true
       },
@@ -2947,7 +2947,7 @@
         "summary": "Apartment community in Fresno.",
         "address": "5164 Primitivo Way, Fresno, CA 93710",
         "pick": 3,
-        "photo": "https://palazzofresno.com/wp-content/uploads/2024/03/PalazzoHeaderSlider_Pool-1920x1080.jpg",
+        "photo": "assets/housing/housing-fresno-ca-property-palazzo-at-campus-pointe.jpg",
         "photoAlt": "Palazzo at Campus Pointe in Fresno, CA, from the property's official website",
         "photoApproved": true
       }
@@ -2986,7 +2986,7 @@
         "summary": "2- and 3-bedroom student apartments designed around Sacramento State, minutes from campus.",
         "address": "3075 Redding Ave, Sacramento, CA",
         "pick": 1,
-        "photo": "https://larksacramento.com/wp-content/uploads/sites/13/2024/04/LSAC_N24-scaled.jpg",
+        "photo": "assets/housing/housing-sacramento-ca-property-lark-sacramento.jpg",
         "photoAlt": "Lark in Sacramento, CA, from the property's official website",
         "photoApproved": true
       },
@@ -2999,7 +2999,7 @@
         "source": "https://www.academy65.com/",
         "summary": "Brand new, furnished student apartments with luxury amenities near Sac State.",
         "pick": 2,
-        "photo": "https://www.academy65.com/wp-content/uploads/2025/09/academy65-index-hero.webp",
+        "photo": "assets/housing/housing-sacramento-ca-property-academy65.jpg",
         "photoAlt": "Academy65 in Sacramento, CA, from the property's official website",
         "photoApproved": true
       },
@@ -3013,7 +3013,7 @@
         "summary": "Student-focused apartments next to Sacramento State.",
         "address": "3001 State University Dr, Sacramento, CA 95826",
         "pick": 3,
-        "photo": "https://medialibrarycfo.entrata.com/15027/MLv3/9/36/2025/03/13/064044/67d37b0c554b46.30420258441.jpg",
+        "photo": "assets/housing/housing-sacramento-ca-property-hornet-commons.jpg",
         "photoAlt": "Hornet Commons in Sacramento, CA, from the property's official website",
         "photoApproved": true
       }
@@ -3052,7 +3052,7 @@
         "summary": "Furnished apartments with resort-style amenities near UNC Greensboro and NC A&T.",
         "address": "107 Grovecrest Way, Greensboro, NC",
         "pick": 1,
-        "photo": "https://reserve-greensboro.com/wp-content/uploads/sites/30/2025/12/The-Reserve-at-Greensboro_D3_2x2-scaled.png",
+        "photo": "assets/housing/housing-greensboro-nc-property-the-reserve-at-greensboro.jpg",
         "photoAlt": "The Reserve at Greensboro in Greensboro, NC, from the property's official website",
         "photoApproved": true
       },
@@ -3065,7 +3065,7 @@
         "source": "https://www.theprovincegreensboro.com/",
         "summary": "Student apartments a short ride from UNC Greensboro.",
         "pick": 2,
-        "photo": "https://www.theprovincegreensboro.com/wp-content/uploads/2024/02/theprovincegreensboro-exterior-greensboro-nc-2.jpg",
+        "photo": "assets/housing/housing-greensboro-nc-property-the-province-greensboro.jpg",
         "photoAlt": "The Province Greensboro in Greensboro, NC, from the property's official website",
         "photoApproved": true
       },
@@ -3079,7 +3079,7 @@
         "summary": "Furnished apartments with student-oriented amenities near UNC Greensboro.",
         "address": "2111 Spring Garden St, Greensboro, NC",
         "pick": 3,
-        "photo": "https://live-westquad.com/wp-content/uploads/sites/25/2025/12/West-Quad_D3_4x2-scaled.png",
+        "photo": "assets/housing/housing-greensboro-nc-property-west-quad-greensboro.jpg",
         "photoAlt": "West Quad in Greensboro, NC, from the property's official website",
         "photoApproved": true
       }
