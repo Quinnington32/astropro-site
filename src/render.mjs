@@ -103,9 +103,57 @@ export function resourceCard(item, type) {
       : description;
   return `<article class="resource-card listing-card" data-resource="${escape(item.id)}" data-category="${escape(item.category || "")}" data-status="${s}" data-deadline="${item.deadline || ""}" data-opens="${item.opens || ""}" data-search="${escape([item.name, item.description, item.category, item.categoryLabel, item.state].filter(Boolean).join(" ").toLowerCase())}"><div class="card-heading"><p class="tag">${escape(type === "discounts" ? item.category : label(item.category))}</p>${saveButton(item)}</div><h2>${escape(item.name)}</h2><p class="award">${escape(item.amount)}</p><p class="description">${escape(excerpt)}</p>${type === "discounts" ? "" : `<div class="listing-meta"><span class="status ${s}">${statusText}</span><p>${escape(item.deadlineLabel)}</p></div>`}<details class="listing-details"><summary>Details & eligibility</summary><div><p>${escape(description)}</p><p class="review-date">${item.verifiedAt ? `Source reviewed ${dateLabel(item.verifiedAt)}. Confirm current terms with the provider.` : "Confirm current terms with the provider before applying."}</p></div></details><div class="card-bottom">${external(item.url, type === "internships" ? "View program" : type === "discounts" ? "View offer" : "View scholarship")}</div></article>`;
 }
-export function directory({ title, description, items, type }) {
+
+const tagRules = [
+  [/\bno[- ]essay\b/i, "No essay"],
+  [/financial need|need-based|low-income|pell/i, "Need-based"],
+  [/\bSTEM\b|engineering|computer science|mathematics/i, "STEM"],
+  [/high school (senior|junior|student)|\bseniors?\b/i, "High school"],
+  [/undergraduate|college student|community college/i, "College"],
+  [/graduate student|graduate degree|graduate and|graduate-level/i, "Graduate"],
+  [/first-generation|first generation/i, "First-gen"],
+  [/\bwomen\b|\bfemale\b/i, "Women"],
+  [/hispanic|latino|latina/i, "Hispanic/Latino"],
+  [/black\/african|african american|\bblack students?\b/i, "Black students"],
+  [/asian american|pacific islander/i, "AAPI"],
+  [/native american|american indian|alaska native/i, "Native students"],
+  [/veteran|military|service member/i, "Military-connected"],
+  [/disabilit|blind|deaf|hearing impaired/i, "Disability"],
+  [/nursing|health ?care|medical/i, "Health"],
+  [/rolling|monthly|drawing/i, "Rolling entry"],
+];
+export function scholarshipTags(item) {
+  const text = [item.description, item.name, item.deadlineLabel].join(" ");
+  const out = [];
+  for (const [re, tag] of tagRules) if (re.test(text) && !out.includes(tag)) out.push(tag);
+  if (item.state) out.push(item.state);
+  return out.filter((t) => t !== label(item.category) && !(item.category === "no-essay" && t === "No essay")).slice(0, 3);
+}
+export function scholarshipCard(item) {
+  const s = statusFor(item);
+  const statusText =
+    { closed: "Cycle closed", upcoming: "Upcoming", "check-sponsor": "Check sponsor", open: "Open" }[s] || "Check sponsor";
+  const description = String(item.description || "");
+  const excerpt = description.length > 170 ? description.slice(0, 167).replace(/\s+\S*$/, "") + "…" : description;
+  let due;
+  if (item.deadline) {
+    const d = new Date(item.deadline + "T12:00:00Z");
+    const mon = d.toLocaleDateString("en-US", { month: "short", timeZone: "UTC" }).toUpperCase();
+    due = `<span class="due-label">Deadline</span><span class="due-mon">${mon}</span><span class="due-day">${d.getUTCDate()}</span><span class="due-year">${d.getUTCFullYear()}</span><span class="due-left" data-due-left></span>`;
+  } else {
+    due = `<span class="due-label">Deadline</span><span class="due-text">${/rolling|monthly|drawing/i.test(item.deadlineLabel) ? "Rolling" : "Check sponsor"}</span>`;
+  }
+  const tags = [label(item.category), ...scholarshipTags(item)];
+  return `<article class="resource-card listing-card sch-card" data-resource="${escape(item.id)}" data-category="${escape(item.category || "")}" data-status="${s}" data-deadline="${item.deadline || ""}" data-opens="${item.opens || ""}" data-search="${escape([item.name, item.description, item.category, item.categoryLabel, item.state, ...tags].filter(Boolean).join(" ").toLowerCase())}"><div class="sch-due ${item.deadline ? "has-date" : "no-date"}">${due}</div><div class="sch-main"><div class="card-heading"><h2>${escape(item.name)}</h2>${saveButton(item)}</div><p class="award">${escape(item.amount)}</p><div class="sch-tags">${tags.map((t, i) => `<span class="sch-tag${i === 0 ? " primary" : ""}">${escape(t)}</span>`).join("")}<span class="status ${s}">${statusText}</span></div><p class="description">${escape(excerpt)}</p><p class="sch-deadline-note">${escape(item.deadlineLabel)}</p><details class="listing-details"><summary>Details & eligibility</summary><div><p>${escape(description)}</p><p class="review-date">${item.verifiedAt ? `Source reviewed ${dateLabel(item.verifiedAt)}. Confirm current terms with the provider.` : "Confirm current terms with the provider before applying."}</p></div></details><div class="card-bottom">${external(item.url, "View scholarship", "btn btn-primary sch-cta")}</div></div></article>`;
+}
+export function directory({ title, description, items, type, afterHero = "" }) {
+  if (type === "scholarships") {
+    const today = new Intl.DateTimeFormat("en-CA", { timeZone: "America/Chicago" }).format(new Date());
+    const key = (x) => (x.deadline && x.deadline < today ? "z" + x.deadline : x.deadline || "9999");
+    items = [...items].sort((a, b) => key(a).localeCompare(key(b)));
+  }
   const cats = [...new Set(items.map((x) => x.category))];
-  const controls = `<div class="directory-controls"><div class="search-field"><label for="directorySearch">Search</label><div class="input-wrap">${icon("search")}<input id="directorySearch" type="search" placeholder="${type === "internships" ? "Company, field, or keyword" : type === "scholarships" ? "Name, eligibility, or keyword" : "Brand or category"}" autocomplete="off"></div></div><div><label for="categoryFilter">Category</label><select id="categoryFilter"><option value="all">All categories</option>${cats.map((c) => `<option value="${escape(c)}">${escape(type === "discounts" ? c : label(c))}</option>`).join("")}</select></div><details class="more-filters"><summary>${icon("filters")} More filters</summary><div class="filter-popover">${type !== "discounts" ? '<div><label for="statusFilter">Application window</label><select id="statusFilter"><option value="all">All cycles</option><option value="not-closed">Exclude closed cycles</option><option value="closed">Closed cycles</option><option value="upcoming">Upcoming cycles</option></select></div>' : ""}<div><label for="directorySort">Sort by</label><select id="directorySort"><option value="featured">Featured order</option><option value="name">Name A–Z</option>${type !== "discounts" ? '<option value="deadline">Known deadline first</option>' : ""}</select></div></div></details></div>`;
+  const controls = `<div class="directory-controls"><div class="search-field"><label for="directorySearch">Search</label><div class="input-wrap">${icon("search")}<input id="directorySearch" type="search" placeholder="${type === "internships" ? "Company, field, or keyword" : type === "scholarships" ? "Name, eligibility, or keyword" : "Brand or category"}" autocomplete="off"></div></div><div><label for="categoryFilter">Category</label><select id="categoryFilter"><option value="all">All categories</option>${cats.map((c) => `<option value="${escape(c)}">${escape(type === "discounts" ? c : label(c))}</option>`).join("")}</select></div><details class="more-filters"><summary>${icon("filters")} More filters</summary><div class="filter-popover">${type !== "discounts" ? '<div><label for="statusFilter">Application window</label><select id="statusFilter"><option value="all">All cycles</option><option value="not-closed">Exclude closed cycles</option><option value="closed">Closed cycles</option><option value="upcoming">Upcoming cycles</option></select></div>' : ""}<div><label for="directorySort">Sort by</label><select id="directorySort">${type === "scholarships" ? '<option value="deadline">Soonest deadline</option><option value="featured">Featured order</option><option value="name">Name A–Z</option>' : '<option value="featured">Featured order</option><option value="name">Name A–Z</option>' + (type !== "discounts" ? '<option value="deadline">Known deadline first</option>' : "")}</select></div></div></details></div>`;
   return (
     hero(
       title,
@@ -117,7 +165,8 @@ export function directory({ title, description, items, type }) {
           ? "Student discounts"
           : "Scholarships",
     ) +
-    `<section class="directory wrap" data-directory="${type}">${controls}<div class="results-heading"><p id="resultCount" class="result-count" role="status" aria-live="polite">${items.length} results</p><button type="button" class="text-button" data-reset-filters>Reset filters</button></div><div class="listing-grid" id="listingGrid">${items.map((x) => resourceCard(x, type)).join("")}</div><div class="load-more"><button id="moreResources" class="btn btn-ghost" type="button" hidden>Show more resources</button></div><div class="empty-state" id="noResults" hidden><h2>No matches yet</h2><p>Try another keyword or reset your filters.</p><button class="btn btn-primary" type="button" data-reset-filters>Reset filters</button></div><p class="source-note">${type === "internships" ? "Program listings may have no open roles today. Check current openings with the employer." : type === "discounts" ? "Offers and renewal prices change. Check current terms with the provider." : "Listings include closed and recurring cycles. Confirm deadlines and eligibility with the sponsor."}</p></section><section class="wrap"><div class="callout compact-callout"><div><h2>Something we should add?</h2><p>Help us keep this a useful place to start.</p></div><a class="btn btn-ghost" href="index.html#organizations">Suggest a listing ${icon("arrow")}</a></div></section>`
+    afterHero +
+    `<section class="directory wrap" data-directory="${type}">${controls}${type === "scholarships" ? `<div class="chip-row" role="group" aria-label="Quick filters"><button type="button" class="chip is-on" data-chip="all">All</button><button type="button" class="chip" data-chip="closing">Closing soon</button>${cats.map((c) => `<button type="button" class="chip" data-chip="cat:${escape(c)}">${escape(label(c))}</button>`).join("")}</div><p class="due-summary" id="dueSummary" hidden></p>` : ""}<div class="results-heading"><p id="resultCount" class="result-count" role="status" aria-live="polite">${items.length} results</p><button type="button" class="text-button" data-reset-filters>Reset filters</button></div><div class="listing-grid" id="listingGrid">${items.map((x) => (type === "scholarships" ? scholarshipCard(x) : resourceCard(x, type))).join("")}</div><div class="load-more"><button id="moreResources" class="btn btn-ghost" type="button" hidden>Show more resources</button></div><div class="empty-state" id="noResults" hidden><h2>No matches yet</h2><p>Try another keyword or reset your filters.</p><button class="btn btn-primary" type="button" data-reset-filters>Reset filters</button></div><p class="source-note">${type === "internships" ? "Program listings may have no open roles today. Check current openings with the employer." : type === "discounts" ? "Offers and renewal prices change. Check current terms with the provider." : "Listings include closed and recurring cycles. Confirm deadlines and eligibility with the sponsor."}</p></section><section class="wrap"><div class="callout compact-callout"><div><h2>Something we should add?</h2><p>Help us keep this a useful place to start.</p></div><a class="btn btn-ghost" href="index.html#organizations">Suggest a listing ${icon("arrow")}</a></div></section>`
   );
 }
 export function field(
@@ -146,5 +195,5 @@ export function form({ type, fields, button, disclosure = "" }) {
     /\b(id|for|aria-describedby)="([^"]+)"/g,
     (_, attr, value) => `${attr}="${type}-${value}"`,
   );
-  return `<form class="intake-form" data-intake="${type}" method="post" action="api/submissions"><input type="hidden" name="type" value="${type}"><div class="form-fields">${fields}<div class="honeypot" aria-hidden="true"><label>Leave this field empty<input name="website" type="text" tabindex="-1" autocomplete="off"></label></div><label class="consent"><input type="checkbox" name="consent" required value="yes"><span>${type === "unsubscribe" ? "Record this email preference for the Student Resource Center." : "I agree to have AstroPro store this request and contact me about it."} <a href="privacy.html">Privacy details</a>.</span></label><p class="fineprint">${disclosure || "No marketing signup. Please keep sensitive personal information out of this form."}</p><button class="btn btn-primary" type="submit">${escape(button)}</button></div><div class="form-status" role="status" aria-live="polite" tabindex="-1"></div><noscript><p class="notice">Enable JavaScript to send this form securely, or email <a href="mailto:leasesolutions3@gmail.com">leasesolutions3@gmail.com</a>.</p></noscript></form>`;
+  return `<form class="intake-form" data-intake="${type}" method="post" action="api/submissions"><input type="hidden" name="type" value="${type}"><div class="form-fields">${fields}<div class="honeypot" aria-hidden="true"><label>Leave this field empty<input name="website" type="text" tabindex="-1" autocomplete="off"></label></div><label class="consent"><input type="checkbox" name="consent" required value="yes"><span>${type === "unsubscribe" ? "Record this email preference for the Student Resource Center." : type === "scholarship-interest" ? "Email me about scholarship help, new scholarships, and deadlines from AstroPro. I can unsubscribe any time." : "I agree to have AstroPro store this request and contact me about it."} <a href="privacy.html">Privacy details</a>.</span></label><p class="fineprint">${disclosure || "No marketing signup. Please keep sensitive personal information out of this form."}</p><button class="btn btn-primary" type="submit">${escape(button)}</button></div><div class="form-status" role="status" aria-live="polite" tabindex="-1"></div><noscript><p class="notice">Enable JavaScript to send this form securely, or email <a href="mailto:leasesolutions3@gmail.com">leasesolutions3@gmail.com</a>.</p></noscript></form>`;
 }

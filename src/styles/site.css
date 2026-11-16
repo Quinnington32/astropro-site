@@ -2840,3 +2840,499 @@ body:is(
   .directory-controls { grid-template-columns: minmax(0, 1fr); gap: 14px; }
   .directory-controls input, .directory-controls select { width: 100%; box-sizing: border-box; }
 }
+
+/* ---- Scholarship list: scannable rows with a clear deadline ---- */
+.chip-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 4px 0 14px;
+}
+.chip {
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 560;
+  padding: 8px 15px;
+  min-height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.chip:hover {
+  border-color: #c9ced8;
+  background: #f6f7fa;
+}
+.chip.is-on {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+.due-summary {
+  margin: 0 0 14px;
+  padding: 11px 16px;
+  border-radius: 12px;
+  background: #fbefe5;
+  color: #8a4519;
+  font-size: 0.88rem;
+  font-weight: 560;
+}
+[data-directory="scholarships"] .listing-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.sch-card {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
+  border-color: #e4e6ec;
+  box-shadow: 0 1px 2px rgba(23, 36, 71, 0.04), 0 8px 24px rgba(23, 36, 71, 0.05);
+  transition: box-shadow 0.18s, transform 0.18s;
+}
+.sch-card:hover {
+  box-shadow: 0 2px 4px rgba(23, 36, 71, 0.06), 0 14px 34px rgba(23, 36, 71, 0.1);
+  transform: translateY(-1px);
+}
+.sch-card[hidden] {
+  display: none;
+}
+.sch-due {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  padding: 16px 8px;
+  text-align: center;
+  background: #eef1f8;
+  color: var(--ink);
+  border-right: 1px solid #e4e6ec;
+}
+.due-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  opacity: 0.62;
+  margin-bottom: 3px;
+}
+.due-mon {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+.due-day {
+  font-family: Sora, sans-serif;
+  font-size: 2.3rem;
+  line-height: 1;
+  font-weight: 650;
+  letter-spacing: -0.04em;
+}
+.due-year {
+  font-size: 0.72rem;
+  opacity: 0.7;
+}
+.due-left {
+  margin-top: 8px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(23, 36, 71, 0.09);
+  white-space: nowrap;
+}
+.due-left:empty {
+  display: none;
+}
+.due-text {
+  font-family: Sora, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.25;
+  padding: 0 4px;
+}
+.sch-due.no-date {
+  background: #f3f3f0;
+  color: #5d6455;
+}
+.sch-due.tone-soon {
+  background: #fbe6d8;
+  color: #8f3f12;
+}
+.sch-due.tone-soon .due-left {
+  background: #b95c22;
+  color: #fff;
+}
+.sch-due.tone-near {
+  background: #fbf1d4;
+  color: #7a5c0c;
+}
+.sch-due.tone-near .due-left {
+  background: rgba(122, 92, 12, 0.14);
+}
+.sch-due.tone-open {
+  background: #e7f1e6;
+  color: #2f5c3a;
+}
+.sch-due.tone-open .due-left {
+  background: rgba(47, 92, 58, 0.13);
+}
+.sch-due.tone-closed {
+  background: #f1eceb;
+  color: #8a5148;
+}
+.sch-main {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 20px 24px 18px;
+  min-width: 0;
+}
+.sch-main .card-heading {
+  align-items: flex-start;
+  margin: 0;
+}
+.sch-main h2 {
+  font-size: 1.14rem;
+  line-height: 1.35;
+}
+.sch-main .award {
+  font-size: 1.12rem;
+  color: #2f5c3a;
+  line-height: 1.35;
+}
+.sch-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+.sch-tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #f0f2f6;
+  color: #4a5368;
+}
+.sch-tag.primary {
+  background: #e8efe3;
+  color: #3f6040;
+}
+.sch-main .status {
+  margin-left: 2px;
+}
+.sch-main .description {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #566052;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.sch-deadline-note {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+}
+.sch-main .listing-details {
+  border-top: 0;
+  padding-top: 0;
+}
+.sch-main .card-bottom {
+  margin-top: 4px;
+}
+.sch-cta {
+  display: inline-flex;
+  padding: 10px 18px;
+  font-size: 0.86rem;
+}
+@media (max-width: 700px) {
+  .chip-row {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin-inline: -20px;
+    padding: 2px 20px 6px;
+    scrollbar-width: none;
+  }
+  .chip-row::-webkit-scrollbar {
+    display: none;
+  }
+  .chip {
+    flex: 0 0 auto;
+  }
+  .sch-card {
+    grid-template-columns: 1fr;
+  }
+  .sch-due {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 8px;
+    padding: 11px 18px;
+    border-right: 0;
+    border-bottom: 1px solid #e4e6ec;
+    text-align: left;
+    flex-wrap: wrap;
+  }
+  .due-label {
+    margin: 0 4px 0 0;
+  }
+  .due-day {
+    font-size: 1.25rem;
+  }
+  .due-mon,
+  .due-year {
+    font-size: 0.85rem;
+    opacity: 1;
+  }
+  .due-left {
+    margin: 0 0 0 auto;
+  }
+  .due-text {
+    font-size: 0.92rem;
+    padding: 0;
+  }
+  .sch-main {
+    padding: 16px 18px 16px;
+  }
+  .sch-cta {
+    width: 100%;
+    justify-content: center;
+  }
+}
+.sch-main .status.open,
+.sch-main .status.check-sponsor {
+  display: none;
+}
+@media (min-width: 701px) {
+  .sch-main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 28px;
+    row-gap: 9px;
+    align-content: center;
+  }
+  .sch-main > * {
+    grid-column: 1;
+  }
+  .sch-main > .card-bottom {
+    grid-column: 2;
+    grid-row: 1 / span 6;
+    align-self: center;
+    margin: 0;
+  }
+}
+
+/* ---- Scholarship-help email signup ---- */
+.interest-band {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.interest-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 40px;
+  align-items: center;
+  padding: 38px 42px;
+  border-radius: 26px;
+  background: linear-gradient(135deg, #fdf1e6 0%, #f6efe6 60%, #eef1f8 100%);
+  border: 1px solid #efdcc9;
+}
+.interest-copy h2 {
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  line-height: 1.25;
+  max-width: 20ch;
+}
+.interest-copy > p:not(.eyebrow) {
+  margin-top: 12px;
+  color: #5b5f6c;
+  font-size: 0.93rem;
+}
+.interest-points {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+  font-size: 0.84rem;
+  color: #3f4a5e;
+}
+.interest-points li {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+.interest-points .icon {
+  width: 17px;
+  height: 17px;
+  margin-top: 2px;
+  color: #3d6742;
+  flex-shrink: 0;
+}
+.interest-form.form-panel {
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(23, 36, 71, 0.08);
+}
+.interest-drawer {
+  background: #fff;
+  border: 1px solid #efdcc9;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #fff8f1, #fff);
+  overflow: hidden;
+}
+.interest-drawer > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 22px;
+  cursor: pointer;
+  list-style: none;
+}
+.interest-drawer > summary::-webkit-details-marker {
+  display: none;
+}
+.interest-sum {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+.interest-sum strong {
+  display: block;
+  font-size: 1rem;
+}
+.interest-sum small {
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+}
+.interest-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--primary);
+  padding: 9px 16px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.interest-action .icon {
+  width: 15px;
+  height: 15px;
+}
+.interest-drawer[open] .interest-action .icon {
+  transform: rotate(45deg);
+}
+.interest-drawer .interest-card {
+  border: 0;
+  border-top: 1px solid #efdcc9;
+  border-radius: 0;
+}
+.interest-drawer-wrap {
+  padding-top: 22px;
+  padding-bottom: 0;
+}
+/* Home page: "I need…" starter links and support cards */
+.need-links a {
+  font-weight: 560;
+  padding: 6px 12px;
+  border: 1px solid #d6dbe6;
+  border-radius: 999px;
+  background: #fff;
+}
+.need-links a:hover {
+  border-color: var(--primary);
+}
+.support-cards .support-text {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+.support-cards .support-text strong {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.support-cards .support-text small {
+  font-size: 0.74rem;
+  color: #aeb8cb;
+  line-height: 1.45;
+}
+.support-cards a {
+  align-items: flex-start;
+  padding: 16px;
+}
+.support-cards a .icon {
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+@media (max-width: 860px) {
+  .interest-card {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 26px 20px;
+    border-radius: 22px;
+  }
+  .interest-drawer > summary {
+    padding: 14px 16px;
+  }
+  .interest-action {
+    padding: 8px 13px;
+  }
+  .interest-sum small {
+    display: none;
+  }
+}
+@media (max-width: 700px) {
+  /* compact home cards: icon on the left, text on the right */
+  .category-grid {
+    gap: 12px;
+  }
+  .category-card {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: 14px;
+    row-gap: 2px;
+    align-items: center;
+    padding: 16px 18px;
+    border-radius: 18px;
+  }
+  .category-card .category-top {
+    grid-row: 1 / span 3;
+    margin: 0;
+  }
+  .category-card .category-arrow {
+    display: none;
+  }
+  .category-card h3 {
+    font-size: 1.05rem;
+    margin: 0;
+  }
+  .category-card > p {
+    margin: 0;
+    font-size: 0.82rem;
+  }
+  .category-card .category-foot {
+    margin: 4px 0 0;
+    padding: 0;
+    border: 0;
+    font-size: 0.74rem;
+  }
+  .support-cards {
+    grid-template-columns: 1fr;
+  }
+}
+.sch-main .card-bottom {
+  border-top: 0;
+  padding-top: 0;
+}
+.home-resources + .home-aid + .interest-band,
+.home-aid + .interest-band {
+  margin-top: 28px;
+  margin-bottom: 28px;
+}

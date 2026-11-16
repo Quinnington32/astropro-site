@@ -22,6 +22,7 @@ const types = {
   mentor: ["name", "email", "field", "availability"],
   "data-request": ["email", "requestType", "description"],
   unsubscribe: ["email"],
+  "scholarship-interest": ["name", "email", "helpWith"],
   "partner-campaign": [
     "market",
     "marketName",
@@ -51,6 +52,7 @@ const required = {
   mentor: ["name", "email", "field", "availability"],
   "data-request": ["email", "requestType"],
   unsubscribe: ["email"],
+  "scholarship-interest": ["email"],
   "partner-campaign": [
     "market",
     "marketName",
@@ -73,6 +75,7 @@ const maxima = {
   graduationYear: 4,
   availability: 80,
   requestType: 80,
+  helpWith: 80,
   market: 60,
   marketName: 150,
   orderRef: 20,
@@ -98,6 +101,12 @@ const choices = {
     "30 minutes per month",
     "One hour per month",
     "A few hours per semester",
+  ],
+  helpWith: [
+    "Finding scholarships that fit me",
+    "Writing my essays and answers",
+    "Keeping track of deadlines",
+    "All of the above",
   ],
   requestType: [
     "Access my information",
@@ -378,6 +387,7 @@ const LABELS = {
   listing: "Listing suggestion",
   "data-request": "Data request",
   unsubscribe: "Email preference / unsubscribe",
+  "scholarship-interest": "Scholarship help sign-up",
 };
 export async function notifySubmission(env, data) {
   if (data.type === "partner-campaign") return notifyPartnerCampaign(env, data);
@@ -786,7 +796,9 @@ export default {
   async scheduled(_event, env) {
     if (!env.DB) return;
     await env.DB.batch([
-      env.DB.prepare("DELETE FROM submissions WHERE created_at < ?").bind(
+      env.DB.prepare(
+        "DELETE FROM submissions WHERE created_at < ? AND type != 'scholarship-interest'",
+      ).bind(
         new Date(Date.now() - 90 * 86400000).toISOString(),
       ),
       env.DB.prepare("DELETE FROM rate_limits WHERE expires_at < ?").bind(

@@ -176,13 +176,33 @@ const homeCategories = [
   ],
 ];
 const supportLinks = [
-  ["mentorship", "mentorship.html", "Find a mentor"],
-  ["tutoring", "tutoring.html", "Study help"],
-  ["wellbeing", "wellbeing.html", "Wellbeing"],
-  ["money", "money-basics.html", "Money basics"],
-  ["scholarships", "financial-aid.html", "Financial aid"],
-  ["guides", "career-guides.html", "Career guides"],
+  ["mentorship", "mentorship.html", "Find a mentor", "Connect with someone a few steps ahead of you"],
+  ["tutoring", "tutoring.html", "Study help", "Tutoring and academic support when you’re stuck"],
+  ["wellbeing", "wellbeing.html", "Wellbeing", "Support for stress, health, and balance"],
+  ["money", "money-basics.html", "Money basics", "Budgeting, credit, and everyday money skills"],
+  ["scholarships", "financial-aid.html", "Financial aid", "FAFSA, grants, and deadlines explained"],
+  ["guides", "career-guides.html", "Career guides", "Resumes, interviews, and applications"],
 ];
+const helpChoices = [
+  "Finding scholarships that fit me",
+  "Writing my essays and answers",
+  "Keeping track of deadlines",
+  "All of the above",
+];
+const interestForm = () =>
+  form({
+    type: "scholarship-interest",
+    button: "Get early access",
+    fields:
+      field("name", "First name", "text", { required: false, placeholder: "Your first name" }) +
+      field("email", "Email", "email", { placeholder: "you@example.com" }) +
+      field("helpWith", "What would help most?", "text", { options: helpChoices }),
+    disclosure:
+      "We only email about scholarships and student resources, and never sell your information. Unsubscribe any time.",
+  });
+const interestCopy = `<p class="eyebrow">Coming soon</p><h2>Want help applying to scholarships?</h2><p>We’re building an application helper. It organizes the scholarships you pick, drafts your answers for you to review, and tracks every deadline. Join the list to try it first.</p><ul class="interest-points"><li>${icon("check")} You stay in control and submit every application yourself.</li><li>${icon("check")} Free early access for the first students on the list.</li></ul>`;
+const interestBand = `<section class="wrap interest-band" id="get-help"><div class="interest-card"><div class="interest-copy">${interestCopy}</div><div class="form-panel interest-form">${interestForm()}</div></div></section>`;
+const interestDrawer = `<section class="wrap interest-band interest-drawer-wrap" id="get-help"><details class="interest-drawer"><summary><span class="interest-sum"><span class="category-icon tone-peach">${icon("scholarships")}</span><span><strong>Want help applying to scholarships?</strong><small>Get early access to our application helper</small></span></span><span class="interest-action">Join the list ${icon("plus")}</span></summary><div class="interest-card"><div class="interest-copy">${interestCopy}</div><div class="form-panel interest-form">${interestForm()}</div></div></details></section>`;
 const home = `
 <section class="home-hero">
   <div class="wrap hero-grid">
@@ -192,9 +212,9 @@ const home = `
       <p class="lede">Scholarships, careers, housing, and support for life at college. Find a good place to start.</p>
       <form class="home-search" action="search.html" method="get" role="search">
         <label class="sr-only" for="homeSearch">Search all student resources</label>
-        ${icon("search")}<input id="homeSearch" name="q" type="search" placeholder="Scholarships, housing, career help…" maxlength="120" required><button class="btn btn-primary" type="submit">Search ${icon("arrow")}</button>
+        ${icon("search")}<input id="homeSearch" name="q" type="search" placeholder="Search scholarships & more" maxlength="120" required><button class="btn btn-primary" type="submit">Search ${icon("arrow")}</button>
       </form>
-      <div class="popular-links"><span>Start with</span><a href="financial-aid.html">Financial aid ↗</a><a href="housing.html">Housing ↗</a><a href="school-resources.html">Campus help ↗</a></div>
+      <div class="popular-links need-links"><span>I need…</span><a href="scholarships.html">Money for school</a><a href="housing.html">A place to live</a><a href="internships.html">A job or internship</a><a href="school-resources.html">Help at my school</a></div>
       <p class="hero-note">${icon("check")} Free to explore. No account needed.</p>
     </div>
     <figure class="campus-visual">
@@ -220,10 +240,11 @@ const home = `
     </div>
   </div>
 </section>
+${interestBand}
 <section id="mission" class="home-support">
   <div class="wrap support-panel">
     <div><p class="eyebrow">A little help goes a long way</p><h2>You don’t have to figure it all out alone.</h2><p>Find support for the college stuff—and the life stuff.</p><a class="btn btn-light" href="school-resources.html">Find help at my school ${icon("arrow")}</a></div>
-    <div class="support-links">${supportLinks.map(([symbol, href, title]) => `<a href="${href}">${icon(symbol)}<span>${title}</span><span aria-hidden="true">↗</span></a>`).join("")}</div>
+    <div class="support-links support-cards">${supportLinks.map(([symbol, href, title, blurb]) => `<a href="${href}">${icon(symbol)}<span class="support-text"><strong>${title}</strong><small>${blurb}</small></span><span aria-hidden="true">↗</span></a>`).join("")}</div>
   </div>
 </section>
 <section class="wrap submission-section">
@@ -248,6 +269,7 @@ emit(
       "Explore funding by interest, eligibility, and application window.",
     items: scholarships,
     type: "scholarships",
+    afterHero: interestDrawer,
   }),
 );
 emit(
@@ -566,7 +588,7 @@ emit(
   ) +
     `<section class="wrap"><form class="school-search" id="schoolSearch" action="https://www.google.com/search" method="get" role="search"><div><label for="schoolName">College or university name</label><input id="schoolName" name="as_q" type="search" required maxlength="150" placeholder="e.g. University of Houston" autocomplete="organization"></div><div><label for="schoolTopic">I’m looking for</label><select name="as_epq" id="schoolTopic">${topics.map((t) => `<option>${e(t)}</option>`).join("")}</select></div><button class="btn btn-primary" type="submit">Search campus support ${icon("arrow")}</button><p class="fineprint">Opens Google search results for your school and topic. Choose your school’s official website.</p></form><div class="callout"><h2>Still choosing a school?</h2><p>Explore accredited institutions and official college information through the U.S. Department of Education.</p>${external("https://nces.ed.gov/collegenavigator/", "Open College Navigator", "btn btn-ghost")}</div></section>`,
 );
-const privacy = `<section class="wrap prose"><p class="fineprint">Effective October 31, 2026</p><h2>What this resource center collects</h2><p>You can browse without an account. Saving a resource stores its identifier in your browser’s local storage. Your saved list stays on your device unless you choose to export or share it.</p><p>If you submit a resource, mentoring interest, or data request, we collect the fields you provide, your agreement to the request-specific privacy notice, and a receipt identifier. These records are stored privately using Cloudflare D1 so the AstroPro team can review and respond. Forms do not subscribe you to a newsletter.</p><h2>Request handling and security</h2><p>Submission records are accessible only through an authenticated staff interface. We use short-lived, hashed network identifiers for abuse prevention; we do not store raw IP addresses in the submission database. Our hosting provider may process technical request information to operate and protect the service.</p><p>Resource and mentoring requests are retained for up to 90 days. Data requests are retained for up to 90 days while handled by the team. Communication preferences retain an email address and a dated do-not-contact record until changed or removed through a verified data request. Browser storage for a pending form may retain its receipt identifier and content in your current tab until it is accepted or you close the tab.</p><h2>How information is used</h2><p>We use a submitted request to review a resource, assess a mentoring inquiry, respond to you, or handle your data or communication preference request. We do not publish form submissions automatically or sell your contact information. We do not share a school-provided student directory through this service.</p><h2>External sites</h2><p>Applications and provider offers open on third-party sites with their own terms and privacy practices. Their cookies, eligibility checks, and data collection are outside this resource center. Our school finder opens a search with Google. Fonts and site assets are served from our own origin.</p><h2>Your choices</h2><p>Use <a href="data-requests.html">Your data</a> to request access, correction, or deletion. We may ask you to verify your email or identity before disclosing or changing a record. Use <a href="unsubscribe.html">Email preferences</a> to record a do-not-contact preference for this resource center.</p><p>If you already receive an AstroPro email from another system, use the unsubscribe link in that message or contact us. This site cannot confirm the state of a separate mailing list.</p><h2>Contact</h2><p>Email <a href="mailto:leasesolutions3@gmail.com">leasesolutions3@gmail.com</a>. Please do not submit health details, passwords, government identifiers, financial account information, or other sensitive personal information through these forms.</p></section>`;
+const privacy = `<section class="wrap prose"><p class="fineprint">Effective October 31, 2026</p><h2>What this resource center collects</h2><p>You can browse without an account. Saving a resource stores its identifier in your browser’s local storage. Your saved list stays on your device unless you choose to export or share it.</p><p>If you submit a resource, mentoring interest, or data request, we collect the fields you provide, your agreement to the request-specific privacy notice, and a receipt identifier. These records are stored privately using Cloudflare D1 so the AstroPro team can review and respond. Most forms do not subscribe you to a newsletter. The one exception is the scholarship help sign-up, where you choose to give us your email.</p><h2>Scholarship help sign-ups</h2><p>If you join the scholarship help list, we store your email, your optional first name, and the kind of help you chose in the same private database. We use them to email you about our scholarship application helper, new scholarships, and deadlines. We keep them until you unsubscribe or ask us to delete them, and we do not sell or share them. Use <a href="unsubscribe.html">Email preferences</a> or the link in any message to opt out.</p><h2>Request handling and security</h2><p>Submission records are accessible only through an authenticated staff interface. We use short-lived, hashed network identifiers for abuse prevention; we do not store raw IP addresses in the submission database. Our hosting provider may process technical request information to operate and protect the service.</p><p>Resource and mentoring requests are retained for up to 90 days. Data requests are retained for up to 90 days while handled by the team. Communication preferences retain an email address and a dated do-not-contact record until changed or removed through a verified data request. Browser storage for a pending form may retain its receipt identifier and content in your current tab until it is accepted or you close the tab.</p><h2>How information is used</h2><p>We use a submitted request to review a resource, assess a mentoring inquiry, respond to you, or handle your data or communication preference request. We do not publish form submissions automatically or sell your contact information. We do not share a school-provided student directory through this service.</p><h2>External sites</h2><p>Applications and provider offers open on third-party sites with their own terms and privacy practices. Their cookies, eligibility checks, and data collection are outside this resource center. Our school finder opens a search with Google. Fonts and site assets are served from our own origin.</p><h2>Your choices</h2><p>Use <a href="data-requests.html">Your data</a> to request access, correction, or deletion. We may ask you to verify your email or identity before disclosing or changing a record. Use <a href="unsubscribe.html">Email preferences</a> to record a do-not-contact preference for this resource center.</p><p>If you already receive an AstroPro email from another system, use the unsubscribe link in that message or contact us. This site cannot confirm the state of a separate mailing list.</p><h2>Contact</h2><p>Email <a href="mailto:leasesolutions3@gmail.com">leasesolutions3@gmail.com</a>. Please do not submit health details, passwords, government identifiers, financial account information, or other sensitive personal information through these forms.</p></section>`;
 emit(
   "privacy.html",
   "Privacy policy",
@@ -604,7 +626,7 @@ emit(
     "Useful starting points. Clear expectations.",
     "We collect resources that help students navigate college and take their next step.",
   ) +
-    `<section class="wrap prose"><h2>What we do</h2><p>Student Resource Center is a free directory and guide collection, and a project by AstroPro. We link to scholarship sponsors, employers, providers, property sources, and campus services. Those organizations make their own decisions and set their own rules.</p><h2>How resources are reviewed</h2><p>We prefer official sources. A “source reviewed” date means we checked the linked source for the specified information; it does not promise the provider will keep the same terms. Other entries remain starting points whose current rules need confirmation. Closed and upcoming cycles are labeled where dates are known.</p><p>Resources without a verifiable current source may be withheld. We don’t invent deadlines, availability, partnerships, rankings, or review scores. Listing counts are generated from published records.</p><h2>Housing and commercial offers</h2><p>A property mention is not a guarantee of rental suitability or an endorsement. Map links are searches, not verified listings. We do not collect rental applications or payments. Discounts may involve paid subscriptions, renewals, or third-party verification; read the terms before signing up.</p><h2>Corrections and submissions</h2><p>Spot something wrong? <a href="index.html#organizations">Send the official source and a correction</a>. Submissions are reviewed by people and are not automatically published. Our directory currently has no paid-placement ordering.</p><h2>What is available here</h2><p>Browse directories, use guides, save a shortlist on your device, find campus resources, or send a request. We do not provide automatic scholarship matching, a live job feed, personalized financial or medical advice, or a student email list.</p></section>`,
+    `<section class="wrap prose"><h2>What we do</h2><p>Student Resource Center is a free directory and guide collection, and a project by AstroPro. We link to scholarship sponsors, employers, providers, property sources, and campus services. Those organizations make their own decisions and set their own rules.</p><h2>How resources are reviewed</h2><p>We prefer official sources. A “source reviewed” date means we checked the linked source for the specified information; it does not promise the provider will keep the same terms. Other entries remain starting points whose current rules need confirmation. Closed and upcoming cycles are labeled where dates are known.</p><p>Resources without a verifiable current source may be withheld. We don’t invent deadlines, availability, partnerships, rankings, or review scores. Listing counts are generated from published records.</p><h2>Housing and commercial offers</h2><p>A property mention is not a guarantee of rental suitability or an endorsement. Map links are searches, not verified listings. We do not collect rental applications or payments. Discounts may involve paid subscriptions, renewals, or third-party verification; read the terms before signing up.</p><h2>Corrections and submissions</h2><p>Spot something wrong? <a href="index.html#organizations">Send the official source and a correction</a>. Submissions are reviewed by people and are not automatically published. Our directory currently has no paid-placement ordering.</p><h2>What is available here</h2><p>Browse directories, use guides, save a shortlist on your device, find campus resources, or send a request. We do not provide automatic scholarship matching, a live job feed, or personalized financial or medical advice. If you join the scholarship help list, we email only you, only about scholarships and student resources.</p></section>`,
 );
 const PARTNER_CAMPAIGN_PRICE = 499;
 const PAYPAL_BUSINESS_EMAIL = (

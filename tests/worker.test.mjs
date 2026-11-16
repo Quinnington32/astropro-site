@@ -42,6 +42,7 @@ before(async () => {
   for (const file of [
     "migrations/0001_resource_center.sql",
     "migrations/0002_partner_campaign_type.sql",
+    "migrations/0003_scholarship_interest_type.sql",
   ]) {
     const schema = await readFile(file, "utf8");
     await db.batch(
@@ -90,6 +91,7 @@ test("all five forms persist only validated fields and return receipts", async (
     ],
     ["data-request", { requestType: "Access my information" }],
     ["unsubscribe", {}],
+    ["scholarship-interest", { helpWith: "All of the above" }],
   ]) {
     const payload = body(type, { ...extra, unexpected: "must not persist" });
     const r = await send(payload);
@@ -104,6 +106,12 @@ test("all five forms persist only validated fields and return receipts", async (
     assert.equal(JSON.parse(row.payload_json).unexpected, undefined);
     assert.equal(row.consent_version, "2026-10-31");
   }
+});
+test("scholarship help sign-ups validate their choice and keep a valid email", () => {
+  const ok = { requestId: randomUUID(), type: "scholarship-interest", email: "Student@Example.com", helpWith: "Keeping track of deadlines", consent: true };
+  assert.equal(validateSubmission(ok).payload.email, "student@example.com");
+  assert.throws(() => validateSubmission({ ...ok, helpWith: "anything else" }));
+  assert.throws(() => validateSubmission({ ...ok, email: "not-an-email" }));
 });
 test("partner campaign orders validate the market, order reference, and flyer choice", async () => {
   const partnerBody = (extra = {}) => ({

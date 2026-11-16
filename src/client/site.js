@@ -45,7 +45,12 @@ function setupDirectory() {
     status = $("#statusFilter"),
     sort = $("#directorySort");
   const cards = $$(".listing-card", root);
-  let shown = 12;
+  const isSch = root.dataset.directory === "scholarships";
+  const defaultSort = isSch ? "deadline" : "featured";
+  let shown = isSch ? Infinity : 12;
+  let closingOnly = false;
+  const chips = $$("[data-chip]", root);
+  const orderOf = new Map(cards.map((c, i) => [c, i]));
   const params = new URLSearchParams(location.search);
   search.value = params.get("q") || "";
   if ([...category.options].some((o) => o.value === params.get("category")))
@@ -58,6 +63,33 @@ function setupDirectory() {
   if ([...sort.options].some((o) => o.value === params.get("sort")))
     sort.value = params.get("sort");
   const today = dateToday();
+  const daysUntil = (iso) =>
+    Math.round((Date.parse(iso + "T12:00:00Z") - Date.parse(today + "T12:00:00Z")) / 86400000);
+  if (isSch) {
+    let soon = 0;
+    cards.forEach((card) => {
+      const due = $(".sch-due", card);
+      const iso = card.dataset.deadline;
+      if (!due || !iso) return;
+      const days = daysUntil(iso);
+      const left = $("[data-due-left]", due);
+      let tone = "open";
+      let text = days + " days left";
+      if (days < 0) { tone = "closed"; text = "Closed"; }
+      else if (days === 0) { tone = "soon"; text = "Due today"; soon++; }
+      else if (days === 1) { tone = "soon"; text = "1 day left"; soon++; }
+      else if (days <= 14) { tone = "soon"; soon++; }
+      else if (days <= 45) { tone = "near"; if (days <= 30) soon++; }
+      card.dataset.days = String(days);
+      due.classList.add("tone-" + tone);
+      if (left) left.textContent = text;
+    });
+    const sum = $("#dueSummary");
+    if (sum && soon) {
+      sum.hidden = false;
+      sum.textContent = soon + (soon === 1 ? " scholarship closes" : " scholarships close") + " in the next 30 days.";
+    }
+  }
   cards.forEach((card) => {
     if (card.dataset.deadline && card.dataset.deadline < today) {
       card.dataset.status = "closed";
@@ -96,20 +128,23 @@ function setupDirectory() {
         (status.value === "not-closed"
           ? card.dataset.status !== "closed"
           : card.dataset.status === status.value);
-      card.hidden = !(cat && match && windowMatch);
+      const closeMatch =
+        !closingOnly ||
+        (card.dataset.days !== undefined && card.dataset.days !== "" && +card.dataset.days >= 0 && +card.dataset.days <= 30);
+      card.hidden = !(cat && match && windowMatch && closeMatch);
       if (!card.hidden) count++;
     }
-    const ordered = [...cards];
+    const ordered = [...cards].sort((a, b) => orderOf.get(a) - orderOf.get(b));
+    const keyOf = (c) =>
+      c.dataset.deadline && c.dataset.deadline < today
+        ? "z" + c.dataset.deadline
+        : c.dataset.deadline || "9999";
     if (sort.value === "name")
       ordered.sort((a, b) =>
         $("h2", a).textContent.localeCompare($("h2", b).textContent),
       );
     if (sort.value === "deadline")
-      ordered.sort((a, b) =>
-        (a.dataset.deadline || "9999").localeCompare(
-          b.dataset.deadline || "9999",
-        ),
-      );
+      ordered.sort((a, b) => keyOf(a).localeCompare(keyOf(b)));
     let displayed = 0;
     for (const card of ordered) {
       if (!card.hidden) card.hidden = ++displayed > shown;
@@ -123,7 +158,17 @@ function setupDirectory() {
     if (search.value.trim()) next.set("q", search.value.trim());
     if (category.value !== "all") next.set("category", category.value);
     if (status && status.value !== "all") next.set("status", status.value);
-    if (sort.value !== "featured") next.set("sort", sort.value);
+    if (sort.value !== defaultSort) next.set("sort", sort.value);
+    chips.forEach((chip) => {
+      const on =
+        chip.dataset.chip === "closing"
+          ? closingOnly
+          : chip.dataset.chip.startsWith("cat:")
+            ? category.value === chip.dataset.chip.slice(4)
+            : !closingOnly && category.value === "all";
+      chip.classList.toggle("is-on", on);
+      chip.setAttribute("aria-pressed", String(on));
+    });
     history.replaceState(
       null,
       "",
@@ -131,9 +176,17 @@ function setupDirectory() {
     );
   }
   const changed = () => {
-    shown = 12;
+    shown = isSch ? Infinity : 12;
     apply();
   };
+  chips.forEach((chip) =>
+    chip.addEventListener("click", () => {
+      const v = chip.dataset.chip;
+      closingOnly = v === "closing";
+      category.value = v.startsWith("cat:") ? v.slice(4) : "all";
+      changed();
+    }),
+  );
   search.addEventListener("input", changed);
   category.addEventListener("change", changed);
   sort.addEventListener("change", changed);
@@ -147,7 +200,8 @@ function setupDirectory() {
       search.value = "";
       category.value = "all";
       if (status) status.value = "all";
-      sort.value = "featured";
+      sort.value = defaultSort;
+      closingOnly = false;
       shown = 12;
       apply();
       search.focus();
@@ -577,6 +631,10 @@ function setupForms() {
           unsubscribe: [
             "Preference recorded",
             "Your do-not-contact preference is stored for the Student Resource Center. Use the link in an existing email for any separate mailing list.",
+          ],
+          "scholarship-interest": [
+            "You\u2019re on the list",
+            "Thanks! We\u2019ll email you when our scholarship application helper opens, plus new scholarships and deadlines. You can unsubscribe any time.",
           ],
           "partner-campaign": [
             "Order received",
