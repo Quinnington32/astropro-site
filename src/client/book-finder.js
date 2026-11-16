@@ -6,6 +6,7 @@ if (form) {
   const out = document.querySelector("[data-book-results]");
   const enc = encodeURIComponent;
   const site = (host, q) => `https://www.google.com/search?q=${enc(`${q} site:${host}`)}`;
+  const amazonUrl = (q) => `https://www.amazon.com/s?k=${enc(q)}&i=stripbooks${AMAZON_TAG ? "&tag=" + enc(AMAZON_TAG) : ""}`;
   const groups = [
     ["Free to read or borrow", [
       ["Open Library", "Borrow or read online for free", (q) => `https://openlibrary.org/search?q=${enc(q)}`],
@@ -18,7 +19,6 @@ if (form) {
     ]],
     ["Compare prices across sellers", [
       ["BookFinder", "Compares many used, new, and rental sellers at once", (q) => `https://www.bookfinder.com/search/?keywords=${enc(q)}&st=sh&ac=qr&mode=basic&lang=en&destination=us&currency=USD`],
-      ["Amazon", "New, used, and rental copies", (q) => `https://www.amazon.com/s?k=${enc(q)}&i=stripbooks${AMAZON_TAG ? "&tag=" + enc(AMAZON_TAG) : ""}`],
       ["AbeBooks", "Used and out-of-print copies", (q) => `https://www.abebooks.com/servlet/SearchResults?kn=${enc(q)}`],
     ]],
     ["Used and rental", [
@@ -38,6 +38,29 @@ if (form) {
       ? "Searching by ISBN gives the most exact match."
       : "Tip: add the edition or ISBN from your syllabus to avoid the wrong edition.";
     out.append(note);
+    const feat = document.createElement("a");
+    feat.className = "book-featured";
+    feat.href = amazonUrl(q);
+    feat.target = "_blank";
+    feat.rel = "noopener noreferrer sponsored";
+    const fh = document.createElement("strong");
+    fh.textContent = "Shop Amazon for “" + q + "”";
+    const fp = document.createElement("span");
+    fp.textContent = "New, used, and rental copies with fast shipping. Check the edition and ISBN before you order.";
+    const fb = document.createElement("span");
+    fb.className = "btn btn-primary";
+    fb.textContent = "See it on Amazon →";
+    feat.append(fh, fp, fb);
+    if (AMAZON_TAG) {
+      const fd = document.createElement("small");
+      fd.textContent = "As an Amazon Associate we earn from qualifying purchases. This never changes your price.";
+      feat.append(fd);
+    }
+    out.append(feat);
+    const sub = document.createElement("p");
+    sub.className = "fineprint";
+    sub.textContent = "Want to pay less or nothing? Compare the free, library, and used options below.";
+    out.append(sub);
     for (const [title, items] of groups) {
       const h = document.createElement("h3");
       h.textContent = title;

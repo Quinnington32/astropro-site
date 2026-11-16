@@ -3493,3 +3493,7 @@ a.tool-card{display:block;text-decoration:none;color:inherit}
 .book-match:hover,.book-match:focus-visible{border-color:#172447;outline:2px solid #172447}
 .book-match img{width:60px;height:90px;object-fit:cover;border-radius:.25rem;flex:none}
 .book-match small{display:block;color:#4a5370}
+
+.book-featured{display:grid;gap:.5rem;justify-items:start;padding:1.2rem 1.4rem;margin:.8rem 0 1rem;border:2px solid #172447;border-radius:.8rem;background:#fff8e6;text-decoration:none;color:inherit}
+.book-featured strong{font-size:1.2rem}
+.book-featured:hover,.book-featured:focus-visible{outline:3px solid #172447}
