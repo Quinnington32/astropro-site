@@ -3755,7 +3755,21 @@
     "place": "Phoenix, AZ",
     "description": "Renters and students in Phoenix use the AstroPro Facebook group to find apartments, subleases, and roommates near ASU Downtown & Grand Canyon University. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/943678481948118/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-phoenix-az-property-joy-on-4th",
+        "name": "Joy on 4th",
+        "website": "https://www.joyon4th.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Joy%20on%204th%2C%20Phoenix%2C%20AZ",
+        "summary": "Downtown Phoenix apartments within walking distance of the ASU Downtown campus.",
+        "source": "https://www.joyon4th.com/",
+        "pick": 1,
+        "photo": "assets/housing/housing-phoenix-az-property-joy-on-4th.jpg",
+        "photoAlt": "Joy on 4th in Phoenix, AZ, from the property's official website",
+        "photoApproved": true
+      }
+    ]
   },
   {
     "id": "housing-san-diego-ca",
