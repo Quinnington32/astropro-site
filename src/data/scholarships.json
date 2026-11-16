@@ -1,27 +1,5 @@
 [
   {
-    "id": "scholarships-jack-kent-cooke-foundation-college-scholarship",
-    "name": "Jack Kent Cooke Foundation College Scholarship",
-    "category": "need-based",
-    "categoryLabel": "Need-based",
-    "amount": "Up to $55K/yr",
-    "description": "U.S. high school seniors graduating spring 2027 and entering an accredited four-year college in fall 2027; minimum unweighted GPA 3.75, required SAT/ACT/AP/IB test score, and financial need with family income reviewed up to $95,000.",
-    "deadlineLabel": "November 11, 2026",
-    "url": "https://www.jkcf.org/our-scholarships/college-scholarship-program/how-to-apply/",
-    "status": "check-sponsor",
-    "verifiedAt": "2026-10-31",
-    "legacyDeadline": "Mid-Nov 2026*",
-    "deadline": "2026-11-11",
-    "opens": null,
-    "state": null,
-    "source": "https://www.jkcf.org/our-scholarships/college-scholarship-program/how-to-apply/",
-    "verifiedFields": [
-      "deadline",
-      "deadline_label",
-      "eligibility"
-    ]
-  },
-  {
     "id": "scholarships-ron-brown-scholar-program",
     "name": "Ron Brown Scholar Program",
     "category": "leadership",
@@ -88,50 +66,6 @@
     ]
   },
   {
-    "id": "scholarships-u-s-bank-student-scholarship-program",
-    "name": "U.S. Bank Student Scholarship Program",
-    "category": "no-essay",
-    "categoryLabel": "Need-based",
-    "amount": "$2,500–$20,000",
-    "description": "Legal U.S. residents age 17+, accepted or enrolled in an eligible undergraduate college or trade/vocational program. Financial education modules required; a sweepstakes rather than a need-based award.",
-    "deadlineLabel": "October 30, 2026",
-    "url": "https://usbank.com/scholarship",
-    "status": "closed",
-    "verifiedAt": "2026-10-31",
-    "legacyDeadline": "10/30/26",
-    "deadline": "2026-10-30",
-    "opens": null,
-    "state": null,
-    "source": "https://www.usbank.com/dam/en/documents/pdfs/about-us-bank/2026-US-Bank-Student-Scholarship-Sweepstakes-Rules.pdf",
-    "verifiedFields": [
-      "category",
-      "deadline",
-      "eligibility"
-    ]
-  },
-  {
-    "id": "scholarships-chick-fil-a-community-scholars-program",
-    "name": "Chick-fil-A Community Scholars Program",
-    "category": "leadership",
-    "categoryLabel": "Leadership & service",
-    "amount": "$25,000",
-    "description": "Thirteen $25,000 awards recognize students for academic success, community service and financial need. Includes a one-year leadership development and mentoring program; review the sponsor application for full eligibility.",
-    "deadlineLabel": "November 3, 2026",
-    "url": "https://www.chick-fil-a.com/community-scholars",
-    "status": "open",
-    "verifiedAt": "2026-10-31",
-    "legacyDeadline": "11/3/26",
-    "deadline": "2026-11-03",
-    "source": "https://www.chick-fil-a.com/community-scholars",
-    "verifiedFields": [
-      "description",
-      "deadline",
-      "deadlineLabel",
-      "amount",
-      "status"
-    ]
-  },
-  {
     "id": "scholarships-mensa-foundation-u-s-scholarship",
     "name": "Mensa Foundation U.S. Scholarship",
     "category": "essay",
@@ -151,28 +85,6 @@
       "category",
       "essay_required",
       "deadline"
-    ]
-  },
-  {
-    "id": "scholarships-vfw-voice-of-democracy-scholarship-contest",
-    "name": "VFW Voice of Democracy Scholarship Contest",
-    "category": "creative",
-    "categoryLabel": "Creative & video",
-    "amount": "National top award $35,000",
-    "description": "For eligible students in grades 9–12. Submit an original audio essay on the current patriotic theme with an entry form through a participating local VFW Post. National, state and local awards vary.",
-    "deadlineLabel": "October 31, 2026, midnight; submit through your participating VFW Post",
-    "url": "https://www.vfw.org/VOD/",
-    "status": "open",
-    "verifiedAt": "2026-10-31",
-    "legacyDeadline": "Late Oct–Nov (annual)*",
-    "deadline": "2026-10-31",
-    "source": "https://www.vfw.org/VOD/",
-    "verifiedFields": [
-      "description",
-      "amount",
-      "deadline",
-      "deadlineLabel",
-      "status"
     ]
   },
   {
@@ -329,92 +241,25 @@
     ]
   },
   {
-    "id": "scholarships-coca-cola-scholars-program",
-    "name": "Coca-Cola Scholars Program",
-    "category": "leadership",
-    "categoryLabel": "Leadership & service",
-    "amount": "$20,000",
-    "description": "Achievement-based awards recognizing leadership and service among eligible students in their final year of high school. The program selects 150 students for $20,000 awards; current citizenship/residency, GPA and school requirements apply.",
-    "deadlineLabel": "2027 application is closed; check sponsor for next cycle",
-    "url": "https://www.coca-colascholarsfoundation.org/apply/",
-    "status": "closed",
-    "verifiedAt": "2026-10-31",
-    "legacyDeadline": "Varies (annual)",
-    "deadline": null,
-    "source": "https://www.coca-colascholarsfoundation.org/apply/",
-    "verifiedFields": [
-      "description",
-      "amount",
-      "url",
-      "deadline",
-      "deadlineLabel",
-      "status"
-    ]
-  },
-  {
-    "id": "scholarships-the-gates-scholarship",
-    "name": "The Gates Scholarship",
-    "category": "need-based",
-    "categoryLabel": "Need-based",
-    "amount": "Last-dollar college funding",
-    "description": "A highly selective, last-dollar scholarship for outstanding high school seniors from low-income households. Check the official application for current eligibility, funding coverage, required materials and deadlines.",
-    "deadlineLabel": "2027-cycle deadline was September 15, 2026 (opened July 15, 2026); now closed — check sponsor for next cycle",
-    "url": "https://www.thegatesscholarship.org",
-    "status": "closed",
-    "verifiedAt": "2026-10-31",
-    "legacyDeadline": "Varies (annual)",
-    "deadline": "2026-09-15",
-    "source": "https://www.thegatesscholarship.org/",
-    "verifiedFields": [
-      "description",
-      "amount",
-      "deadline",
-      "deadlineLabel",
-      "status"
-    ],
-    "opens": "2026-07-15"
-  },
-  {
     "id": "scholarships-dell-scholars-program",
     "name": "Dell Scholars Program",
     "category": "need-based",
     "categoryLabel": "Need-based",
-    "amount": "$20,000",
-    "description": "For the 2027 cycle: Texas high school seniors planning to attend an accredited four-year PUBLIC college or university in Texas; participation in an approved college-readiness program in grades11–12, Pell eligibility and GPA2.4+ required.",
+    "amount": "$20,000 plus laptop and support",
+    "description": "Texas high school seniors who are Pell Grant eligible, have at least a 2.4 GPA, took part in an approved college readiness program in grades 11–12 and plan to attend an accredited four-year public college in Texas. Includes a laptop, book credits and emergency funds.",
     "deadlineLabel": "January 12, 2027",
-    "url": "https://www.dellscholars.org",
-    "status": "check-sponsor",
-    "verifiedAt": "2026-10-31",
+    "url": "https://www.dellscholars.org/students/",
+    "status": "open",
+    "verifiedAt": "2026-11-15",
     "legacyDeadline": "Varies (annual)",
     "deadline": "2027-01-12",
-    "opens": null,
+    "opens": "2026-10-01",
     "state": "TX",
     "source": "https://www.dellscholars.org/students/",
     "verifiedFields": [
       "deadline",
       "state",
       "eligibility"
-    ]
-  },
-  {
-    "id": "scholarships-questbridge-national-college-match",
-    "name": "QuestBridge National College Match",
-    "category": "need-based",
-    "categoryLabel": "Need-based",
-    "amount": "Full four-year Match Scholarship",
-    "description": "Connects high-achieving high school seniors from low-income backgrounds with partner colleges and full four-year Match Scholarships. Review citizenship, academic and financial criteria and the binding Match process before ranking colleges.",
-    "deadlineLabel": "2026 Match applicants have been selected as Finalists; check sponsor for next entry cycle",
-    "url": "https://www.questbridge.org",
-    "status": "closed",
-    "verifiedAt": "2026-10-31",
-    "legacyDeadline": "Late September (annual)",
-    "deadline": null,
-    "source": "https://www.questbridge.org/",
-    "verifiedFields": [
-      "description",
-      "amount",
-      "status",
-      "deadlineLabel"
     ]
   },
   {
@@ -441,29 +286,6 @@
     ]
   },
   {
-    "id": "scholarships-elks-national-foundation-most-valuable-student-scholarship",
-    "name": "Elks MVS Scholarship",
-    "category": "leadership",
-    "categoryLabel": "Leadership & service",
-    "amount": "$4,000–$30,000 over four years",
-    "description": "Current high school seniors who are U.S. citizens and plan full-time four-year undergraduate study at an accredited U.S. college. Elks membership/relationship not required.",
-    "deadlineLabel": "November 12, 2026, 11:59 p.m. Pacific",
-    "url": "https://www.elks.org/scholars/scholarships/MVS.cfm",
-    "status": "check-sponsor",
-    "verifiedAt": "2026-10-31",
-    "legacyDeadline": "Varies (annual)",
-    "deadline": "2026-11-12",
-    "opens": null,
-    "state": null,
-    "source": "https://www.elks.org/scholars/scholarships/MVS.cfm",
-    "verifiedFields": [
-      "amount",
-      "deadline",
-      "deadline_label",
-      "eligibility"
-    ]
-  },
-  {
     "id": "scholarships-point-foundation-scholarship",
     "name": "Point Foundation Flagship Scholarship",
     "category": "need-based",
@@ -484,30 +306,6 @@
       "amount",
       "deadline_label",
       "eligibility"
-    ]
-  },
-  {
-    "id": "scholarships-hispanic-scholarship-fund",
-    "name": "Hispanic Scholarship Fund Scholar Program",
-    "category": "need-based",
-    "categoryLabel": "Need-based",
-    "amount": "$500–$5,000, subject to funding",
-    "description": "Merit-selected HSF Scholars receive support services and may receive a cash award based on need and available funding. Hispanic-heritage students must meet citizenship/residency, GPA and full-time enrollment requirements; a Scholar designation does not guarantee a cash award.",
-    "deadlineLabel": "2026 application closed; check sponsor for the next cycle",
-    "url": "https://www.hsf.net/scholarship/",
-    "status": "closed",
-    "verifiedAt": "2026-10-31",
-    "legacyDeadline": "Varies (annual)",
-    "deadline": "2026-02-15",
-    "source": "https://www.hsf.net/scholarship/",
-    "verifiedFields": [
-      "name",
-      "amount",
-      "description",
-      "url",
-      "deadline",
-      "deadlineLabel",
-      "status"
     ]
   },
   {
@@ -1039,28 +837,6 @@
     ]
   },
   {
-    "id": "scholarships-youngarts",
-    "name": "YoungArts",
-    "category": "creative",
-    "categoryLabel": "Creative & video",
-    "amount": "$250–$10,000 cash awards",
-    "description": "A national visual, literary and performing arts competition for eligible students in grades 10–12 or ages 15–18, with U.S. citizenship, residency or taxable-income eligibility requirements. Winners receive cash awards and career/mentorship support.",
-    "deadlineLabel": "Current application closed; next 2028 application opens summer 2027",
-    "url": "https://youngarts.org/apply/",
-    "status": "closed",
-    "verifiedAt": "2026-10-31",
-    "legacyDeadline": "Varies — check site",
-    "deadline": null,
-    "source": "https://youngarts.org/apply/",
-    "verifiedFields": [
-      "description",
-      "amount",
-      "deadline",
-      "deadlineLabel",
-      "status"
-    ]
-  },
-  {
     "id": "scholarships-society-of-women-engineers-swe-scholarship-program",
     "name": "Society of Women Engineers (SWE) Scholarship Program",
     "category": "major",
@@ -1525,27 +1301,6 @@
     ]
   },
   {
-    "id": "scholarships-hispanic-heritage-youth-awards",
-    "name": "Hispanic Heritage Youth Awards",
-    "category": "leadership",
-    "categoryLabel": "Leadership & service",
-    "amount": "Gold/Silver/Bronze one-time innovation grants per category (amount not published; funds can go toward college or a community-service project)",
-    "description": "For high school seniors (unweighted GPA 3.0+ on a 4.0 scale, or 7.5+ on a 10.0 scale) graduating spring 2027 and planning to enroll at an accredited higher-education institution in 2027-2028. Recognizes leadership and achievement across categories such as STEM, business/entrepreneurship, education, and the arts; selected honorees must attend a virtual regional awards ceremony.",
-    "deadlineLabel": "November 1, 2026 (current cycle; now closed — check sponsor for next cycle)",
-    "url": "https://hispanicheritage.org/programs/leadership/youth-awards/",
-    "status": "closed",
-    "verifiedAt": "2026-11-06",
-    "legacyDeadline": "Nov 1, 2026",
-    "deadline": "2026-11-01",
-    "opens": null,
-    "state": null,
-    "source": "https://hispanicheritage.org/programs/leadership/youth-awards/",
-    "verifiedFields": [
-      "deadline",
-      "eligibility"
-    ]
-  },
-  {
     "id": "scholarships-tillman-scholars-program",
     "name": "Tillman Scholars Program",
     "category": "need-based",
@@ -1676,50 +1431,6 @@
     ]
   },
   {
-    "id": "scholarships-ny-excelsior-scholarship-program",
-    "name": "New York Excelsior Scholarship Program",
-    "category": "need-based",
-    "categoryLabel": "Need-based",
-    "amount": "Last-dollar award covering tuition at a SUNY or CUNY college after other aid (e.g., Pell, TAP) is applied, for 2–5 years depending on the degree program",
-    "description": "For U.S. citizens or eligible noncitizens with 12 continuous months of New York State residency, household combined federal adjusted gross income of $125,000 or less, pursuing an undergraduate degree full-time (12+ credits/term, 30+ credits/year) at a SUNY or CUNY college. Non-residents, including undocumented students, apply through the NYS DREAM Act instead. Recipients who move out of New York after graduating must repay the award as a loan, and award years used count against a service/residency requirement to live and work in New York after graduation.",
-    "deadlineLabel": "The NYS Excelsior Scholarship program is now closed for the 2026-27 academic year — check hesc.ny.gov for the next application window",
-    "url": "https://hesc.ny.gov/find-aid/nys-grants-scholarships/excelsior-scholarship-program",
-    "status": "closed",
-    "verifiedAt": "2026-11-06",
-    "legacyDeadline": "Closed for 2026-27",
-    "deadline": null,
-    "opens": null,
-    "state": "NY",
-    "source": "https://hesc.ny.gov/find-aid/nys-grants-scholarships/excelsior-scholarship-program",
-    "verifiedFields": [
-      "status",
-      "amount",
-      "eligibility"
-    ]
-  },
-  {
-    "id": "scholarships-tennessee-promise",
-    "name": "Tennessee Promise",
-    "category": "need-based",
-    "categoryLabel": "Need-based",
-    "amount": "Last-dollar scholarship covering tuition and mandatory fees not covered by the Pell Grant, HOPE Scholarship, or Tennessee Student Assistance Award at Tennessee's community colleges, Colleges of Applied Technology, or eligible four-year institutions offering an associate degree",
-    "description": "For Tennessee high school seniors (class of 2027) who complete the TN Promise application, attend a mandatory meeting coordinated by their partnering mentoring organization (the Ayers Foundation Trust or tnAchieves, depending on county), submit the 2027-28 FAFSA by April 1, 2027, enroll full-time starting spring 2027, and complete 16 hours of community service (first 16 hours due August 1, 2027).",
-    "deadlineLabel": "Class of 2027 application was due November 2, 2026 — now closed; check collegefortn.org/TNPromise for the next cycle",
-    "url": "https://collegefortn.org/TNPromise",
-    "status": "closed",
-    "verifiedAt": "2026-11-06",
-    "legacyDeadline": "Nov 2, 2026",
-    "deadline": "2026-11-02",
-    "opens": null,
-    "state": "TN",
-    "source": "https://collegefortn.org/TNPromise",
-    "verifiedFields": [
-      "deadline",
-      "eligibility",
-      "amount"
-    ]
-  },
-  {
     "id": "scholarships-california-cal-grant-community-college-entitlement-award",
     "name": "California Cal Grant Community College Entitlement Award",
     "category": "need-based",
@@ -1738,6 +1449,147 @@
     "verifiedFields": [
       "eligibility",
       "deadline_label"
+    ]
+  },
+  {
+    "id": "scholarships-equitable-excellence-scholarship",
+    "name": "Equitable Excellence Scholarship",
+    "category": "need-based",
+    "categoryLabel": "Need-based",
+    "amount": "$5,000/yr, renewable (up to 100 awards)",
+    "description": "Seniors at public high schools in the U.S. who plan to enroll full-time at an accredited two- or four-year college, have at least a 2.5 GPA and show financial need. Awards renew for up to three more years. Private and home-school students are not eligible.",
+    "deadlineLabel": "December 22, 2026, 3:00 p.m. Central",
+    "url": "https://scholarshipamerica.org/scholarship/equitableexcellence/",
+    "status": "open",
+    "verifiedAt": "2026-11-15",
+    "legacyDeadline": "December 22, 2026, 3:00 p.m. Central",
+    "deadline": "2026-12-22",
+    "state": null,
+    "source": "https://scholarshipamerica.org/scholarship/equitableexcellence/",
+    "verifiedFields": [
+      "description",
+      "deadline",
+      "deadlineLabel",
+      "amount",
+      "status"
+    ]
+  },
+  {
+    "id": "scholarships-smart-scholarship-for-service",
+    "name": "SMART Scholarship-for-Service Program",
+    "category": "major",
+    "categoryLabel": "Major-specific",
+    "amount": "Tuition and annual stipend (service commitment)",
+    "description": "Department of Defense program for STEM students who are citizens of the U.S., Australia, Canada, New Zealand or the U.K. Recipients accept a civilian employment commitment with the Department after graduation.",
+    "deadlineLabel": "December 4, 2026, 5:00 p.m. Eastern",
+    "url": "https://scholarshipamerica.org/scholarship/smart-scholarship-program/",
+    "status": "open",
+    "verifiedAt": "2026-11-15",
+    "legacyDeadline": "December 4, 2026, 5:00 p.m. Eastern",
+    "deadline": "2026-12-04",
+    "opens": "2026-08-01",
+    "state": null,
+    "source": "https://scholarshipamerica.org/scholarship/smart-scholarship-program/",
+    "verifiedFields": [
+      "description",
+      "deadline",
+      "deadlineLabel",
+      "amount",
+      "status"
+    ]
+  },
+  {
+    "id": "scholarships-jfk-profile-in-courage-essay-contest",
+    "name": "JFK Profile in Courage Essay Contest",
+    "category": "essay",
+    "categoryLabel": "Essay",
+    "amount": "Up to $10,000",
+    "description": "U.S. students in grades 9–12 write an original essay (about 700–1,000 words, at least five sources) on an act of political courage by a U.S. elected official who served during or after 1917. Free to enter.",
+    "deadlineLabel": "January 11, 2027, 11:59 p.m. Eastern",
+    "url": "https://www.jfklibrary.org/learn/education/profile-in-courage-essay-contest/getting-started",
+    "status": "open",
+    "verifiedAt": "2026-11-15",
+    "legacyDeadline": "January 11, 2027, 11:59 p.m. Eastern",
+    "deadline": "2027-01-11",
+    "opens": "2026-09-01",
+    "state": null,
+    "source": "https://www.jfklibrary.org/learn/education/profile-in-courage-essay-contest/getting-started",
+    "verifiedFields": [
+      "description",
+      "deadline",
+      "deadlineLabel",
+      "amount",
+      "status"
+    ]
+  },
+  {
+    "id": "scholarships-elie-wiesel-prize-in-ethics",
+    "name": "Elie Wiesel Prize in Ethics Essay Contest",
+    "category": "essay",
+    "categoryLabel": "Essay",
+    "amount": "Scholarship prizes (five awarded)",
+    "description": "Full-time undergraduates at accredited four-year U.S. colleges for spring 2027 write a 2,500–3,500 word original essay on an ethical issue. Not open to part-time, two-year or graduate students.",
+    "deadlineLabel": "January 20, 2027, 5:00 p.m. Pacific",
+    "url": "https://eliewieselfoundation.org/prize-in-ethics/",
+    "status": "open",
+    "verifiedAt": "2026-11-15",
+    "legacyDeadline": "January 20, 2027, 5:00 p.m. Pacific",
+    "deadline": "2027-01-20",
+    "state": null,
+    "source": "https://eliewieselfoundation.org/prize-in-ethics/",
+    "verifiedFields": [
+      "description",
+      "deadline",
+      "deadlineLabel",
+      "amount",
+      "status"
+    ]
+  },
+  {
+    "id": "scholarships-penguin-random-house-creative-writing-awards",
+    "name": "Penguin Random House Creative Writing Awards",
+    "category": "creative",
+    "categoryLabel": "Creative",
+    "amount": "$10,000",
+    "description": "For public high school seniors in the U.S. graduating in spring 2027, age 21 or under, who submit one original, unpublished piece (poetry, spoken word, fiction, personal essay, graphic novel or the book bans prompt). Only the first 1,000 applications are accepted.",
+    "deadlineLabel": "January 15, 2027, 3:00 p.m. Central (or when 1,000 applications are received)",
+    "url": "https://scholarshipamerica.org/scholarship/penguinrandomhouse/",
+    "status": "open",
+    "verifiedAt": "2026-11-15",
+    "legacyDeadline": "January 15, 2027, 3:00 p.m. Central (or when 1,000 applications are received)",
+    "deadline": "2027-01-15",
+    "state": null,
+    "source": "https://scholarshipamerica.org/scholarship/penguinrandomhouse/",
+    "verifiedFields": [
+      "description",
+      "deadline",
+      "deadlineLabel",
+      "amount",
+      "status"
+    ]
+  },
+  {
+    "id": "scholarships-kfc-foundation-scholarship",
+    "name": "KFC Foundation Scholarship",
+    "category": "need-based",
+    "categoryLabel": "Need-based",
+    "amount": "$5,000, $10,000 or $20,000",
+    "description": "For KFC restaurant team members at participating U.S. restaurants who have graduated high school, earned a GED or will graduate in 2027 and will enroll in a trade school, college or graduate program for 2027-28. Minimum GPA 2.5 for $5,000 awards and 3.5 for $10,000 or $20,000 awards.",
+    "deadlineLabel": "Window January 4 – February 8, 2027",
+    "url": "https://kfcfoundation.org/scholarships/",
+    "status": "upcoming",
+    "verifiedAt": "2026-11-15",
+    "legacyDeadline": "Window January 4 – February 8, 2027",
+    "deadline": "2027-02-08",
+    "opens": "2027-01-04",
+    "state": null,
+    "source": "https://kfcfoundation.org/scholarships/",
+    "verifiedFields": [
+      "description",
+      "deadline",
+      "deadlineLabel",
+      "amount",
+      "status"
     ]
   }
 ]
