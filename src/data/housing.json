@@ -26,7 +26,8 @@
         "website": "https://statehousecolumbus.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Statehouse%20Highline%20on%209th%2C%20Columbus%2C%20OH",
-        "source": "https://statehousecolumbus.com/"
+        "source": "https://statehousecolumbus.com/",
+        "pick": 1
       }
     ]
   },
@@ -50,7 +51,8 @@
         "website": "https://homesteadu.prospectportal.com/athens/river-gate/student/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Rivergate%20Apartments%2C%20Athens%2C%20OH",
-        "source": "https://homesteadu.prospectportal.com/athens/river-gate/student/"
+        "source": "https://homesteadu.prospectportal.com/athens/river-gate/student/",
+        "pick": 1
       },
       {
         "id": "housing-athens-property-university-courtyard",
@@ -58,7 +60,8 @@
         "website": "https://www.ucathens.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=University%20Courtyard%2C%20Athens%2C%20OH",
-        "source": "https://www.ucathens.com/"
+        "source": "https://www.ucathens.com/",
+        "pick": 2
       },
       {
         "id": "housing-athens-property-campus-heights",
@@ -66,7 +69,8 @@
         "website": "https://www.livecampusheights.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Campus%20Heights%2C%20Athens%2C%20OH",
-        "source": "https://www.livecampusheights.com/"
+        "source": "https://www.livecampusheights.com/",
+        "pick": 3
       }
     ]
   },
@@ -86,7 +90,8 @@
         "summary": "1, 2 and 4 bedroom layouts listed by the property",
         "source": "https://www.allurehermannpark.com/floorplans",
         "verifiedAt": "2026-10-31",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Allure%20Hermann%20Park%20at%20Med%20Center%2C%20Houston%2C%20TX"
+        "maps": "https://www.google.com/maps/search/?api=1&query=Allure%20Hermann%20Park%20at%20Med%20Center%2C%20Houston%2C%20TX",
+        "pick": 1
       },
       {
         "id": "housing-houston-property-hermann-park-lofts",
@@ -97,7 +102,8 @@
         "summary": "Studios, 1, 2 and 3 bedroom layouts listed by the property",
         "source": "https://hermannparklofts.com/floorplans/",
         "verifiedAt": "2026-10-31",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Hermann%20Park%20Lofts%2C%20Houston%2C%20TX"
+        "maps": "https://www.google.com/maps/search/?api=1&query=Hermann%20Park%20Lofts%2C%20Houston%2C%20TX",
+        "pick": 2
       },
       {
         "id": "housing-houston-property-forme",
@@ -108,7 +114,8 @@
         "summary": "Studios, 1, 2 and 3 bedroom homes; co-living suites described on property website",
         "source": "https://www.formehtx.com/residences",
         "verifiedAt": "2026-10-31",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Forme%2C%20Houston%2C%20TX"
+        "maps": "https://www.google.com/maps/search/?api=1&query=Forme%2C%20Houston%2C%20TX",
+        "pick": 3
       },
       {
         "id": "housing-houston-property-marquis-enclave",
@@ -161,7 +168,8 @@
         "website": "https://vireomedicaldistrict.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Vireo%20Medical%20District%2C%20McKinney%2C%20TX",
-        "source": "https://vireomedicaldistrict.com/"
+        "source": "https://vireomedicaldistrict.com/",
+        "pick": 1
       },
       {
         "id": "housing-mckinney-property-greenhaven-mckinney",
@@ -169,7 +177,8 @@
         "website": "https://www.liveatgreenhaven.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Greenhaven%20McKinney%2C%20McKinney%2C%20TX",
-        "source": "https://www.liveatgreenhaven.com/"
+        "source": "https://www.liveatgreenhaven.com/",
+        "pick": 2
       },
       {
         "id": "housing-mckinney-property-aspire-mckinney-ranch",
@@ -177,7 +186,8 @@
         "website": "https://aspiremckinneyranchapts.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Aspire%20McKinney%20Ranch%2C%20McKinney%2C%20TX",
-        "source": "https://aspiremckinneyranchapts.com/"
+        "source": "https://aspiremckinneyranchapts.com/",
+        "pick": 3
       }
     ]
   },
@@ -201,7 +211,8 @@
         "website": "https://www.midelmlofts.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Mid%20Elm%20Lofts%2C%20Dallas%2C%20TX",
-        "source": "https://www.midelmlofts.com/"
+        "source": "https://www.midelmlofts.com/",
+        "pick": 1
       },
       {
         "id": "housing-dallas-property-arrive-west-end",
@@ -216,7 +227,8 @@
         "website": "https://www.thegriffindallas.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=The%20Griffin%2C%20Dallas%2C%20TX",
-        "source": "https://www.thegriffindallas.com/amenities"
+        "source": "https://www.thegriffindallas.com/amenities",
+        "pick": 2
       }
     ]
   },
@@ -240,7 +252,8 @@
         "website": "https://rhodesliving.com/communities/villas-on-ware",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Villas%20on%20Ware%2C%20McAllen%2C%20TX",
-        "source": "https://rhodesliving.com/communities/villas-on-ware"
+        "source": "https://rhodesliving.com/communities/villas-on-ware",
+        "pick": 1
       },
       {
         "id": "housing-mcallen-property-padre-de-vida-apartments",
@@ -248,7 +261,8 @@
         "website": "https://www.padredevida.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Padre%20De%20Vida%20Apartments%2C%20McAllen%2C%20TX",
-        "source": "https://www.padredevida.com/"
+        "source": "https://www.padredevida.com/",
+        "pick": 2
       },
       {
         "id": "housing-mcallen-property-district-apartments",
@@ -280,7 +294,8 @@
         "website": "https://atmospherelincoln.prospectportal.com/lincoln/atmosphere-lincoln/student/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Atmosphere%20Lincoln%2C%20Lincoln%2C%20NE",
-        "source": "https://atmospherelincoln.prospectportal.com/lincoln/atmosphere-lincoln/student/"
+        "source": "https://atmospherelincoln.prospectportal.com/lincoln/atmosphere-lincoln/student/",
+        "pick": 1
       },
       {
         "id": "housing-lincoln-property-the-quarters-lincoln",
@@ -288,7 +303,8 @@
         "website": "https://thequarterslincoln.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=The%20Quarters%20Lincoln%2C%20Lincoln%2C%20NE",
-        "source": "https://thequarterslincoln.com/contact/"
+        "source": "https://thequarterslincoln.com/contact/",
+        "pick": 2
       },
       {
         "id": "housing-lincoln-property-lionsgate-apartments",
@@ -296,7 +312,8 @@
         "website": "https://www.vinestreetapts.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Lionsgate%20Apartments%2C%20Lincoln%2C%20NE",
-        "source": "https://www.vinestreetapts.com/sisterpropertiesdetailedview"
+        "source": "https://www.vinestreetapts.com/sisterpropertiesdetailedview",
+        "pick": 3
       }
     ]
   },
@@ -313,7 +330,8 @@
         "website": "https://thesocialonhovey.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=The%20Social%20on%20Hovey%2C%20Normal%2C%20IL",
-        "source": "https://thesocialonhovey.com/gallery/"
+        "source": "https://thesocialonhovey.com/gallery/",
+        "pick": 1
       },
       {
         "id": "housing-normal-property-university-row-townhomes",
@@ -328,7 +346,8 @@
         "website": "https://www.pinecrest-apts.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Pinecrest%20Apartments%2C%20Normal%2C%20IL",
-        "source": "https://www.pinecrest-apts.com/"
+        "source": "https://www.pinecrest-apts.com/",
+        "pick": 2
       }
     ]
   },
@@ -345,7 +364,8 @@
         "website": "https://elevationattheu.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Elevation%20at%20the%20U%2C%20Reno%2C%20NV",
-        "source": "https://elevationattheu.com/"
+        "source": "https://elevationattheu.com/",
+        "pick": 1
       },
       {
         "id": "housing-reno-property-fifteen51",
@@ -353,7 +373,8 @@
         "website": "https://livefifteen51.prospectportal.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Fifteen51%2C%20Reno%2C%20NV",
-        "source": "https://livefifteen51.prospectportal.com/"
+        "source": "https://livefifteen51.prospectportal.com/",
+        "pick": 2
       },
       {
         "id": "housing-reno-property-gravitate-reno",
@@ -361,7 +382,8 @@
         "website": "https://gravitatereno.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Gravitate%20Reno%2C%20Reno%2C%20NV",
-        "source": "https://gravitatereno.com/contact/"
+        "source": "https://gravitatereno.com/contact/",
+        "pick": 3
       },
       {
         "id": "housing-reno-property-the-towers-at-pink-hill",
@@ -392,7 +414,8 @@
         "website": "https://theaurarialofts.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Auraria%20Lofts%2C%20Denver%2C%20CO",
-        "source": "https://theaurarialofts.com/contact/"
+        "source": "https://theaurarialofts.com/contact/",
+        "pick": 1
       },
       {
         "id": "housing-denver-property-alta-mile-high",
@@ -407,7 +430,8 @@
         "website": "https://www.noveluptown.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=NOVEL%20Uptown%20by%20Crescent%20Communities%2C%20Denver%2C%20CO",
-        "source": "https://www.noveluptown.com/"
+        "source": "https://www.noveluptown.com/",
+        "pick": 2
       },
       {
         "id": "housing-denver-property-x-denver",
@@ -415,7 +439,8 @@
         "website": "https://www.xdenverliving.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=X%20Denver%2C%20Denver%2C%20CO",
-        "source": "https://entrata.xdenverliving.com/denver/x-denver-1a/conventional/"
+        "source": "https://entrata.xdenverliving.com/denver/x-denver-1a/conventional/",
+        "pick": 3
       }
     ]
   },
@@ -432,7 +457,8 @@
         "website": "https://prutzmanplaceapartments.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Prutzman%20Place%20Apartments%2C%20Beaumont%2C%20TX",
-        "source": "https://prutzmanplaceapartments.com/"
+        "source": "https://prutzmanplaceapartments.com/",
+        "pick": 1
       },
       {
         "id": "housing-beaumont-property-arthur-place-apartments",
@@ -456,7 +482,8 @@
         "website": "https://meganmanagement.com/_northview/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Northview%2C%20Kilgore%2C%20TX",
-        "source": "https://meganmanagement.com/_northview/"
+        "source": "https://meganmanagement.com/_northview/",
+        "pick": 1
       },
       {
         "id": "housing-kilgore-property-stoneridge-apartments",
@@ -464,7 +491,8 @@
         "website": "https://www.vdiapartments.com/apartments/tx/kilgore/stoneridge/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Stoneridge%20Apartments%2C%20Kilgore%2C%20TX",
-        "source": "https://www.vdiapartments.com/apartments/tx/kilgore/stoneridge/"
+        "source": "https://www.vdiapartments.com/apartments/tx/kilgore/stoneridge/",
+        "pick": 2
       }
     ]
   },
@@ -518,7 +546,8 @@
         "website": "https://www.immapartments.com/the-gallery",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=The%20Gallery%20Apartments%2C%20Grand%20Forks%2C%20ND",
-        "source": "https://www.immapartments.com/the-gallery"
+        "source": "https://www.immapartments.com/the-gallery",
+        "pick": 1
       },
       {
         "id": "housing-grand-forks-property-columbia-west",
@@ -526,7 +555,8 @@
         "website": "https://www.liveatcolumbiawest.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Columbia%20West%2C%20Grand%20Forks%2C%20ND",
-        "source": "https://www.liveatcolumbiawest.com/"
+        "source": "https://www.liveatcolumbiawest.com/",
+        "pick": 2
       },
       {
         "id": "housing-grand-forks-property-library-lane",
@@ -534,7 +564,8 @@
         "website": "https://www.liveatlibrarylane.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Library%20Lane%2C%20Grand%20Forks%2C%20ND",
-        "source": "https://www.liveatlibrarylane.com/"
+        "source": "https://www.liveatlibrarylane.com/",
+        "pick": 3
       }
     ]
   },
@@ -581,7 +612,8 @@
         "website": "https://www.liveswivel.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Swivel%2C%20Omaha%2C%20NE",
-        "source": "https://www.liveswivel.com/"
+        "source": "https://www.liveswivel.com/",
+        "pick": 1
       },
       {
         "id": "housing-omaha-property-zag",
@@ -589,7 +621,8 @@
         "website": "https://www.zagapts.com/omaha/zag/map-and-directions/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=ZAG%2C%20Omaha%2C%20NE",
-        "source": "https://www.zagapts.com/omaha/zag/map-and-directions/"
+        "source": "https://www.zagapts.com/omaha/zag/map-and-directions/",
+        "pick": 2
       },
       {
         "id": "housing-omaha-property-broadmoor-at-aksarben-village",
@@ -604,7 +637,8 @@
         "website": "https://www.clove-omaha.com/floorplans",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Clove%2C%20Omaha%2C%20NE",
-        "source": "https://www.clove-omaha.com/floorplans"
+        "source": "https://www.clove-omaha.com/floorplans",
+        "pick": 3
       },
       {
         "id": "housing-omaha-property-the-traveler-apartments",
@@ -629,7 +663,8 @@
         "website": "https://www.fountainspensacola.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=The%20Fountains%20Apartments%2C%20Pensacola%2C%20FL",
-        "source": "https://www.fountainspensacola.com/"
+        "source": "https://www.fountainspensacola.com/",
+        "pick": 1
       }
     ]
   },
@@ -646,7 +681,8 @@
         "website": "https://pacerealtytexas.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=The%20Badgers%20on%20Jackson%2C%20Amarillo%2C%20TX",
-        "source": "https://amarillocollege.com/offcampushousing/properties/95/The-Badgers-on-Jackson"
+        "source": "https://amarillocollege.com/offcampushousing/properties/95/The-Badgers-on-Jackson",
+        "pick": 1
       },
       {
         "id": "housing-amarillo-property-georgia-villas",
@@ -654,7 +690,8 @@
         "website": "https://georgiavillas.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Georgia%20Villas%2C%20Amarillo%2C%20TX",
-        "source": "https://georgiavillas.com/"
+        "source": "https://georgiavillas.com/",
+        "pick": 2
       }
     ]
   },
@@ -671,7 +708,8 @@
         "website": "https://www.jwhunter.com/401-windsor-creek-parkway/default",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Windsor%20Creek%2C%20Goldsboro%2C%20NC",
-        "source": "https://www.jwhunter.com/401-windsor-creek-parkway/default"
+        "source": "https://www.jwhunter.com/401-windsor-creek-parkway/default",
+        "pick": 1
       }
     ]
   },
@@ -695,7 +733,8 @@
         "website": "https://www.varsityview.com/availability",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Varsity%20View%2C%20Tyler%2C%20TX",
-        "source": "https://www.varsityview.com/availability"
+        "source": "https://www.varsityview.com/availability",
+        "pick": 1
       },
       {
         "id": "housing-tyler-property-haverhill-place",
@@ -703,7 +742,8 @@
         "website": "https://www.haverhillplace.com/about-us/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Haverhill%20Place%2C%20Tyler%2C%20TX",
-        "source": "https://www.haverhillplace.com/about-us/"
+        "source": "https://www.haverhillplace.com/about-us/",
+        "pick": 2
       },
       {
         "id": "housing-tyler-property-the-woodlands",
@@ -711,7 +751,8 @@
         "website": "https://www.thewoodlandstyler.com/contact/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=The%20Woodlands%2C%20Tyler%2C%20TX",
-        "source": "https://www.thewoodlandstyler.com/contact/"
+        "source": "https://www.thewoodlandstyler.com/contact/",
+        "pick": 3
       }
     ]
   },
@@ -735,7 +776,8 @@
         "website": "https://www.renewfairmontpark.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=ReNew%20Fairmont%20Park%2C%20Midland%2C%20TX",
-        "source": "https://www.renewfairmontpark.com/Apartments/module/application_authentication/"
+        "source": "https://www.renewfairmontpark.com/Apartments/module/application_authentication/",
+        "pick": 1
       }
     ]
   },
@@ -752,7 +794,8 @@
         "website": "https://choiceproperties.com/community/lake-view-shores/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Lake%20View%20Shores%20Apartments%2C%20Toledo%2C%20OH",
-        "source": "https://choiceproperties.com/community/lake-view-shores/"
+        "source": "https://choiceproperties.com/community/lake-view-shores/",
+        "pick": 1
       },
       {
         "id": "housing-toledo-property-oak-hill-apartments",
@@ -760,7 +803,8 @@
         "website": "https://rentoakhill.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Oak%20Hill%20Apartments%2C%20Toledo%2C%20OH",
-        "source": "https://rentoakhill.com/"
+        "source": "https://rentoakhill.com/",
+        "pick": 2
       },
       {
         "id": "housing-toledo-property-hamlet-at-maumee",
@@ -768,7 +812,8 @@
         "website": "https://www.hamletatmaumee.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Hamlet%20at%20Maumee%2C%20Toledo%2C%20OH",
-        "source": "https://www.hamletatmaumee.com/"
+        "source": "https://www.hamletatmaumee.com/",
+        "pick": 3
       },
       {
         "id": "housing-toledo-property-quail-hollow-at-the-lakes",
@@ -807,7 +852,8 @@
         "website": "https://www.thelandingsatbrookscity-base.com/mapsanddirections",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=The%20Landings%20at%20Brooks%20City-Base%2C%20San%20Antonio%2C%20TX",
-        "source": "https://www.thelandingsatbrookscity-base.com/mapsanddirections"
+        "source": "https://www.thelandingsatbrookscity-base.com/mapsanddirections",
+        "pick": 1
       },
       {
         "id": "housing-san-antonio-property-los-cielos-at-brooks-luxury-rentals",
@@ -855,7 +901,8 @@
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Glen%20Lake%20Apartments%2C%20Smithfield%2C%20NC",
         "source": "https://glen-lake-apartments0.rentcafewebsite.com/",
-        "summary": "Income restrictions apply. Confirm eligibility directly with the property before applying."
+        "summary": "Income restrictions apply. Confirm eligibility directly with the property before applying.",
+        "pick": 1
       }
     ]
   },
@@ -872,7 +919,8 @@
         "website": "https://www.westoncorsicana.com/corsicana/weston-corsicana/conventional/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Weston%20Corsicana%2C%20Corsicana%2C%20TX",
-        "source": "https://www.westoncorsicana.com/corsicana/weston-corsicana/conventional/"
+        "source": "https://www.westoncorsicana.com/corsicana/weston-corsicana/conventional/",
+        "pick": 1
       },
       {
         "id": "housing-corsicana-property-tcg-at-corsicana",
@@ -887,7 +935,8 @@
         "website": "https://www.arborsofcorsicana.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Arbors%20of%20Corsicana%2C%20Corsicana%2C%20TX",
-        "source": "https://www.arborsofcorsicana.com/"
+        "source": "https://www.arborsofcorsicana.com/",
+        "pick": 2
       },
       {
         "id": "housing-corsicana-property-oak-lawn-place",
@@ -902,7 +951,8 @@
         "website": "https://www.northwoodcorsicana.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Northwood%20Village%20Apartments%2C%20Corsicana%2C%20TX",
-        "source": "https://www.northwoodcorsicana.com/"
+        "source": "https://www.northwoodcorsicana.com/",
+        "pick": 3
       }
     ]
   },
@@ -919,7 +969,8 @@
         "website": "https://www.thelindenportland.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=The%20Linden%2C%20Portland%2C%20ME",
-        "source": "https://www.thelindenportland.com/"
+        "source": "https://www.thelindenportland.com/",
+        "pick": 1
       },
       {
         "id": "housing-portland-me-property-back-bay-tower",
@@ -927,7 +978,8 @@
         "website": "https://backbaytower.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Back%20Bay%20Tower%2C%20Portland%2C%20ME",
-        "source": "https://backbaytower.com/"
+        "source": "https://backbaytower.com/",
+        "pick": 2
       },
       {
         "id": "housing-portland-me-property-princeton-pines",
@@ -935,7 +987,8 @@
         "website": "https://www.princetonpinesapts.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Princeton%20Pines%2C%20Portland%2C%20ME",
-        "source": "https://www.princetonpinesapts.com/"
+        "source": "https://www.princetonpinesapts.com/",
+        "pick": 3
       },
       {
         "id": "housing-portland-me-property-redbank-village",
@@ -960,7 +1013,8 @@
         "website": "https://www.parkcolonydesplaines.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Park%20Colony%20Apartments%2C%20Des%20Plaines%2C%20IL",
-        "source": "https://www.parkcolonydesplaines.com/"
+        "source": "https://www.parkcolonydesplaines.com/",
+        "pick": 1
       }
     ]
   },
@@ -984,7 +1038,8 @@
         "website": "https://www.cascaderidgeapartments.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Cascade%20Ridge%20Apartments%2C%20Jackson%2C%20MI",
-        "source": "https://www.cascaderidgeapartments.com/"
+        "source": "https://www.cascaderidgeapartments.com/",
+        "pick": 1
       }
     ]
   },
@@ -1024,7 +1079,8 @@
         "website": "https://livecruapartments.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Cru%2C%20Odessa%2C%20TX",
-        "source": "https://livecruapartments.com/"
+        "source": "https://livecruapartments.com/",
+        "pick": 1
       },
       {
         "id": "housing-odessa-property-tuscany-at-faudree-apartment-homes",
@@ -1032,7 +1088,8 @@
         "website": "https://www.tuscanyatfaudree.com/gallery/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Tuscany%20at%20Faudree%20Apartment%20Homes%2C%20Odessa%2C%20TX",
-        "source": "https://www.tuscanyatfaudree.com/gallery/"
+        "source": "https://www.tuscanyatfaudree.com/gallery/",
+        "pick": 2
       },
       {
         "id": "housing-odessa-property-sedona-ranch",
@@ -1043,7 +1100,8 @@
         "summary": "1 and 2 bedroom apartments described on property website",
         "source": "https://www.sedonaranchapartments.com/",
         "verifiedAt": "2026-10-31",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Sedona%20Ranch%2C%20Odessa%2C%20TX"
+        "maps": "https://www.google.com/maps/search/?api=1&query=Sedona%20Ranch%2C%20Odessa%2C%20TX",
+        "pick": 3
       },
       {
         "id": "housing-odessa-property-latitude-31",
@@ -1068,7 +1126,8 @@
         "website": "https://www.liveelement30.com/faq",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Element%2030%20Apartments%2C%20Kearney%2C%20NE",
-        "source": "https://www.liveelement30.com/faq"
+        "source": "https://www.liveelement30.com/faq",
+        "pick": 1
       },
       {
         "id": "housing-kearney-property-kearney-apartment-homes",
@@ -1076,7 +1135,8 @@
         "website": "https://www.kearneyapartmenthomes.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Kearney%20Apartment%20Homes%2C%20Kearney%2C%20NE",
-        "source": "https://www.kearneyapartmenthomes.com/"
+        "source": "https://www.kearneyapartmenthomes.com/",
+        "pick": 2
       },
       {
         "id": "housing-kearney-property-village-at-kearney-apartments",
@@ -1084,7 +1144,8 @@
         "website": "https://www.villageatkearneyapartments.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Village%20at%20Kearney%20Apartments%2C%20Kearney%2C%20NE",
-        "source": "https://www.villageatkearneyapartments.com/"
+        "source": "https://www.villageatkearneyapartments.com/",
+        "pick": 3
       },
       {
         "id": "housing-kearney-property-the-sterling-apartments-at-kearney",
@@ -1109,7 +1170,8 @@
         "website": "https://www.tradecenterapartments.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Trade%20Center%20Apartments%2C%20New%20Hampshire",
-        "source": "https://www.tradecenterapartments.com/"
+        "source": "https://www.tradecenterapartments.com/",
+        "pick": 1
       },
       {
         "id": "housing-new-hampshire-property-75-canal-st",
@@ -1117,7 +1179,8 @@
         "website": "https://www.75canal.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=75%20Canal%20St%2C%20New%20Hampshire",
-        "source": "https://www.75canal.com/"
+        "source": "https://www.75canal.com/",
+        "pick": 2
       },
       {
         "id": "housing-new-hampshire-property-the-apartments-at-cotton-mill",
@@ -1132,7 +1195,8 @@
         "website": "https://flatsonhighst.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=The%20Flats%20on%20High%20Street%2C%20New%20Hampshire",
-        "source": "https://flatsonhighst.com/"
+        "source": "https://flatsonhighst.com/",
+        "pick": 3
       }
     ]
   },

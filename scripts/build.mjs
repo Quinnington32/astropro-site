@@ -277,7 +277,7 @@ emit(
 const marketCards = markets
   .map(
     (m, i) =>
-      `<a class="market-card" href="${m.file}" data-order="${i}" data-city="${e(m.place)}" data-state="${e(m.place.includes(",") ? m.place.split(",").at(-1).trim() : "NH")}" data-search="${e((m.school + " " + m.place + " " + m.description).toLowerCase())}"><span class="school">${e(m.school)}</span><h2>${e(m.place)}</h2><p>${e(m.description)}</p><span class="link">${m.properties.some((p) => p.spotlight) ? "See rental spotlights" : "Explore this market"} →</span></a>`,
+      `<a class="market-card" href="${m.file}" data-order="${i}" data-city="${e(m.place)}" data-state="${e(m.place.includes(",") ? m.place.split(",").at(-1).trim() : "NH")}" data-search="${e((m.school + " " + m.place + " " + m.description).toLowerCase())}"><span class="school">${e(m.school)}</span><h2>${e(m.place)}</h2><p>${e(m.description)}</p><span class="link">${m.properties.some((p) => p.spotlight) ? "See available rentals" : "Explore this market"} →</span></a>`,
   )
   .join("");
 const housingFaq = [
@@ -344,19 +344,47 @@ emit(
     `<section class="wrap" id="markets" data-markets><div class="directory-controls"><div><label for="marketSearch">School, city, or state</label><input type="search" id="marketSearch" placeholder="Try Houston or Ohio" autocomplete="off"></div><div><label for="marketSort">Sort markets</label><select id="marketSort"><option value="default">Featured order</option><option value="city">City A–Z</option><option value="state">State A–Z</option></select></div></div><p id="marketCount" class="result-count" role="status" aria-live="polite">${markets.length} markets</p><div class="market-grid" id="marketGrid">${marketCards}</div><div class="empty-state" id="marketEmpty" hidden><h2>No matching markets</h2><p>Try the city or state name, or find housing support through your school.</p><a class="btn btn-primary" href="school-resources.html?topic=housing">Find campus housing support</a></div><p class="source-note">A directory mention is not an endorsement or a paid partnership. Check the property’s current terms and eligibility directly.</p></section>` +
     faqs(),
 );
+const initials = (name) =>
+  name.replace(/[^A-Za-z0-9 ]/g, "").split(/\s+/).filter(Boolean).slice(0, 2).map((w) => w[0]).join("").toUpperCase();
+// Photos only appear once someone has marked them approved (photoApproved) and written alt text.
+function rentalVisual(p, m, badge) {
+  const src = p.photoApproved && p.photo ? p.photo : p.spotlight?.photo && p.spotlight?.photoAlt ? p.spotlight.photo : "";
+  const alt = p.photoAlt || p.spotlight?.photoAlt || "";
+  const tag = badge ? `<span class="rental-badge">${e(badge)}</span>` : "";
+  if (src && alt) return `<div class="rental-visual"><img src="${e(src)}" alt="${e(alt)}" loading="lazy" decoding="async">${tag}</div>`;
+  return `<div class="rental-visual"><div class="rental-art" aria-hidden="true"><span class="rental-mark">${e(initials(p.name))}</span><small>${e(m.place)}</small></div>${tag}</div>`;
+}
+function rentalCard(p, m, { badge, feed }) {
+  const site = p.website ? external(p.website, "Visit website", "btn btn-primary") : external(p.maps, "Find on Maps", "btn btn-primary");
+  const maps = p.website ? external(p.maps, "View on Maps", "btn btn-ghost") : "";
+  const post = feed && p.spotlight?.facebookPost ? external(p.spotlight.facebookPost, "See the group post", "link") : "";
+  const when = feed && p.spotlight?.publishedAt ? `<p class="rental-meta">Posted ${dateLabel(p.spotlight.publishedAt)} by our team</p>` : "";
+  const fallback = "Official source reviewed. Confirm current floor plans, pricing, and availability directly with the property.";
+  return `<article class="rental-card" id="${e(p.id)}">${rentalVisual(p, m, badge)}<div class="rental-body"><div class="card-heading"><h3>${e(p.name)}</h3>${saveButton({ ...p, name: p.name })}</div>${when}${p.address ? `<p class="rental-meta">${e(p.address)}</p>` : ""}<p>${e(p.summary || fallback)}</p><div class="cta-row">${site}${maps}${post}</div><p class="review-date">${p.verifiedAt ? "Official source reviewed " + dateLabel(p.verifiedAt) + ". Check current pricing and availability with the property." : "Not independently verified. Confirm details with the property."}</p></div></article>`;
+}
 for (const m of markets) {
-  const properties = [...m.properties].sort(
-    (a, b) => (b.spotlight?.publishedAt || "").localeCompare(a.spotlight?.publishedAt || ""),
-  );
+  const picks = m.properties.filter((p) => p.pick).sort((a, b) => a.pick - b.pick).slice(0, 3);
+  const feed = m.properties
+    .filter((p) => p.spotlight)
+    .sort((a, b) => (b.spotlight.publishedAt || "").localeCompare(a.spotlight.publishedAt || ""));
+  const more = m.properties.filter((p) => !p.pick && !p.spotlight);
+  const groupId = (m.facebookGroup || feed.map((p) => p.spotlight.facebookPost).find(Boolean) || "").match(/facebook\.com\/groups\/(\d+)/)?.[1];
+  const groupUrl = m.facebookGroup || (groupId ? `https://www.facebook.com/groups/${groupId}/` : "");
+  const groupBtn = groupUrl ? external(groupUrl, "Join the Facebook group", "btn btn-ghost") : "";
+  const picksHtml = picks.length
+    ? `<section class="wrap market-section" id="top-picks"><div class="section-head-row"><div><p class="eyebrow">Near ${e(m.school)}</p><h2>${picks.length === 3 ? "Our top 3 picks" : "Our top picks"}</h2></div></div><div class="rental-grid">${picks.map((p) => rentalCard(p, m, { badge: "Top pick " + p.pick })).join("")}</div><p class="source-note">Picks come from properties whose official sites our team has reviewed. A mention is not an endorsement or a paid partnership; confirm terms with the property.</p></section>`
+    : `<section class="wrap market-section" id="top-picks"><div class="empty-feed"><h2>Top picks for ${e(m.place)} are on the way</h2><p>We only feature properties after reviewing their official sites. Check back soon, or suggest one below.</p></div></section>`;
+  const feedHtml = `<section class="wrap market-section" id="available-rentals"><div class="section-head-row"><div><p class="eyebrow">Updated by our team</p><h2>Available Rentals</h2><p class="feed-note">Our team scans the ${e(m.place)} market for available rentals, lease specials, and new listings, then posts the best ones here. Always confirm price and availability with the property.</p></div>${groupBtn}</div>${feed.length ? `<div class="rental-grid">${feed.map((p) => rentalCard(p, m, { badge: "Available", feed: true })).join("")}</div>` : `<div class="empty-feed"><h3>No rentals posted for ${e(m.place)} yet</h3><p>Our team is scanning the market. Know a good rental or manage one here? Send it our way.</p><div class="cta-row"><a class="btn btn-primary" href="index.html#organizations">Suggest a rental</a>${groupBtn}</div></div>`}</section>`;
+  const moreHtml = more.length
+    ? `<section class="wrap market-section" id="more-research"><div class="section-head-row"><div><p class="eyebrow">Keep researching</p><h2>More places to look</h2></div></div><div class="property-grid">${more.map(housingPropertyCard).join("")}</div></section>`
+    : "";
   const body =
     `<div class="wrap breadcrumb"><a href="housing.html">← All housing markets</a></div>` +
-    hero(
-      m.place,
-      `Explore housing options near ${m.school}.`,
-      "",
-      "Off-campus housing",
-    ) +
-    `<section class="wrap"><p class="notice">${e(m.description)} Check eligibility, commute, and availability directly with each property.</p><div class="property-grid">${properties.map(housingPropertyCard).join("")}</div></section>` +
+    hero(m.place, `Explore housing options near ${m.school}.`, "", "Off-campus housing") +
+    `<section class="wrap"><p class="notice">${e(m.description)} Check eligibility, commute, and availability directly with each property.</p></section>` +
+    picksHtml +
+    feedHtml +
+    moreHtml +
     faqs() +
     `<section class="wrap"><div class="callout"><h2>Need help closer to your campus?</h2><p>Your school’s housing office may have rental guidance, emergency support, and off-campus listings.</p><div class="cta-row"><a class="btn btn-primary" href="school-resources.html?school=${encodeURIComponent(m.school)}&topic=housing">Find campus housing resources</a><a class="btn btn-ghost" href="index.html#organizations">Suggest a correction or property</a></div></div></section>`;
   emit(
