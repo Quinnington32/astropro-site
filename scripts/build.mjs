@@ -126,54 +126,12 @@ const listingForm = form({
     }),
 });
 const homeCategories = [
-  [
-    "scholarships",
-    "scholarships.html",
-    "Scholarships",
-    "Find your scholarship.",
-    `${scholarships.length} scholarships`,
-    "mint",
-  ],
-  [
-    "internships",
-    "internships.html",
-    "Jobs & internships",
-    "Turn your interests into experience.",
-    `${internships.length} career programs`,
-    "lavender",
-  ],
-  [
-    "housing",
-    "housing.html",
-    "Off-campus housing",
-    "Find a place to make your own.",
-    `${markets.length} campus markets`,
-    "peach",
-  ],
-  [
-    "discounts",
-    "discounts.html",
-    "Student discounts",
-    "A student budget can go further.",
-    `${discounts.length} resources`,
-    "butter",
-  ],
-  [
-    "guides",
-    "apply-to-college.html",
-    "College guides",
-    "The next step, made a little clearer.",
-    "Applications, resumes & more",
-    "blue",
-  ],
-  [
-    "campus",
-    "school-resources.html",
-    "Campus support",
-    "Start with the help around you.",
-    "Find your school’s resources",
-    "rose",
-  ],
+  ["scholarships", "scholarships.html", "Scholarships", "mint"],
+  ["internships", "internships.html", "Internships", "lavender"],
+  ["housing", "housing.html", "Off-Campus Housing", "peach"],
+  ["discounts", "discounts.html", "Student Discounts", "butter"],
+  ["guides", "apply-to-college.html", "Apply for College", "blue"],
+  ["money", "financial-aid.html", "Financial Aid", "rose"],
 ];
 const supportLinks = [
   ["mentorship", "mentorship.html", "Find a mentor", "Connect with someone a few steps ahead of you"],
@@ -227,17 +185,7 @@ const home = `
 <section id="resources" class="home-resources">
   <div class="wrap">
     <div class="section-head section-head-row"><div><p class="eyebrow">Student Resource Center</p><h2>Scroll through the resources below</h2></div><p>You’ve got options. Let’s find yours.</p></div>
-    <div class="category-grid">${homeCategories.map(([symbol, href, title, description, count, tone]) => `<a class="category-card" href="${href}"><div class="category-top"><span class="category-icon tone-${tone}">${icon(symbol)}</span><span class="category-arrow" aria-hidden="true">↗</span></div><h3>${title}</h3><p>${description}</p><span class="category-foot">${count} ${icon("arrow")}</span></a>`).join("")}</div>
-  </div>
-</section>
-<section class="home-aid" id="financial-aid" aria-labelledby="aidHeading">
-  <div class="wrap aid-panel">
-    <div class="aid-intro"><p class="eyebrow">Financial aid</p><h2 id="aidHeading">Make sense of paying for college.</h2><p>FAFSA, grants, work-study, and college costs. Start with clear guidance and official tools.</p><a class="btn btn-primary" href="financial-aid.html">Explore financial aid ${icon("arrow")}</a></div>
-    <div class="aid-links">
-      <a href="financial-aid.html#guide-step-1"><span class="category-icon tone-butter">${icon("scholarships")}</span><span><strong>FAFSA & aid tools</strong><small>Official places to start</small></span><span aria-hidden="true">↗</span></a>
-      <a href="financial-aid.html#guide-step-2"><span class="category-icon tone-butter">${icon("guides")}</span><span><strong>Dates & deadlines</strong><small>Plan your next step</small></span><span aria-hidden="true">↗</span></a>
-      <a href="financial-aid.html#guide-step-4"><span class="category-icon tone-butter">${icon("money")}</span><span><strong>Understand college costs</strong><small>Find your school’s net price calculator</small></span><span aria-hidden="true">↗</span></a>
-    </div>
+    <div class="resource-tiles">${homeCategories.map(([symbol, href, title, tone]) => `<a class="resource-tile" href="${href}"><span class="category-icon tone-${tone}">${icon(symbol)}</span><h3>${title}</h3></a>`).join("")}</div>
   </div>
 </section>
 <section id="mission" class="home-support">
