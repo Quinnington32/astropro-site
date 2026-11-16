@@ -797,6 +797,7 @@ for (const data of pages) {
   const html = page(data);
   const $ = load(html);
   $('a[target="_blank"]').attr("rel", "noopener noreferrer");
+  if (markets.some((m) => m.file === data.file)) $('meta[name="viewport"]').attr("content", "width=1200");
   $("style,script:not([src])").remove();
   $("[style]").removeAttr("style");
   $('a[href="#"]').each(() => {
