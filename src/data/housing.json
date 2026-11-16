@@ -10,8 +10,12 @@
         "id": "housing-columbus-property-statehouse-lane",
         "name": "StateHouse Lane",
         "website": "https://housing.osu.edu/hms/roomsearch/statehouse-lane",
-        "verifiedAt": null,
-        "maps": "https://www.google.com/maps/search/?api=1&query=StateHouse%20Lane%2C%20Columbus%2C%20OH"
+        "verifiedAt": "2026-11-15",
+        "maps": "https://www.google.com/maps/search/?api=1&query=StateHouse%20Lane%2C%20Columbus%2C%20OH",
+        "pick": 2,
+        "address": "150 West Lane Avenue, Columbus, OH 43201",
+        "summary": "Ohio State housing listing: shared two-person rooms in 1- to 4-bedroom apartments with kitchens, laundry and study/lounge space. Part of the university's master-leased housing.",
+        "source": "https://housing.osu.edu/hms/roomsearch/statehouse-lane"
       },
       {
         "id": "housing-columbus-property-lumen-on-ninth",
@@ -218,8 +222,11 @@
         "id": "housing-dallas-property-arrive-west-end",
         "name": "Arrive West End",
         "website": "https://arrivewestend.prospectportal.com",
-        "verifiedAt": null,
-        "maps": "https://www.google.com/maps/search/?api=1&query=Arrive%20West%20End%2C%20Dallas%2C%20TX"
+        "verifiedAt": "2026-11-15",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Arrive%20West%20End%2C%20Dallas%2C%20TX",
+        "pick": 3,
+        "summary": "One- and two-bedroom apartments in the historic West End district next to downtown Dallas, with a pool and fitness center.",
+        "source": "https://arrivewestend.prospectportal.com/"
       },
       {
         "id": "housing-dallas-property-the-griffin",
@@ -580,8 +587,11 @@
         "id": "housing-denton-property-city-parc-at-fry-street",
         "name": "City Parc at Fry Street",
         "website": "https://www.americancampus.com/student-apartments/tx/denton/city-parc-at-fry-street/floor-plans",
-        "verifiedAt": null,
-        "maps": "https://www.google.com/maps/search/?api=1&query=City%20Parc%20at%20Fry%20Street%2C%20Denton%2C%20TX"
+        "verifiedAt": "2026-11-15",
+        "maps": "https://www.google.com/maps/search/?api=1&query=City%20Parc%20at%20Fry%20Street%2C%20Denton%2C%20TX",
+        "pick": 3,
+        "summary": "Furnished 1, 2 and 4 bedroom apartments marketed to UNT and TWU students.",
+        "source": "https://www.americancampus.com/student-apartments/tx/denton/city-parc-at-fry-street/floor-plans"
       },
       {
         "id": "housing-denton-property-u-centre-at-fry-street",
@@ -849,8 +859,12 @@
         "id": "housing-san-antonio-property-los-arcos-at-vida",
         "name": "Los Arcos at VIDA",
         "website": "https://www.losarcosvida.com/",
-        "verifiedAt": null,
-        "maps": "https://www.google.com/maps/search/?api=1&query=Los%20Arcos%20at%20VIDA%2C%20San%20Antonio%2C%20TX"
+        "verifiedAt": "2026-11-15",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Los%20Arcos%20at%20VIDA%2C%20San%20Antonio%2C%20TX",
+        "pick": 2,
+        "address": "10210 S Zarzamora St, San Antonio, TX 78224",
+        "summary": "2- and 3-bedroom floor plans (2BR from $1,024, 3BR from $1,200 at last review), with a lounge, business center, 24/7 fitness center and pets welcome. A short drive from Texas A&M-San Antonio.",
+        "source": "https://www.losarcosvida.com/"
       },
       {
         "id": "housing-san-antonio-property-the-landings-at-brooks-city-base",
@@ -865,8 +879,12 @@
         "id": "housing-san-antonio-property-los-cielos-at-brooks-luxury-rentals",
         "name": "Los Cielos at Brooks Luxury Rentals",
         "website": "https://www.greystar.com/properties/san-antonio-tx/los-cielos-at-brooks-luxury-rentals/floorplans",
-        "verifiedAt": null,
-        "maps": "https://www.google.com/maps/search/?api=1&query=Los%20Cielos%20at%20Brooks%20Luxury%20Rentals%2C%20San%20Antonio%2C%20TX"
+        "verifiedAt": "2026-11-15",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Los%20Cielos%20at%20Brooks%20Luxury%20Rentals%2C%20San%20Antonio%2C%20TX",
+        "pick": 3,
+        "address": "7722 Calle Coyote, San Antonio, TX 78235",
+        "summary": "New 2- to 4-bedroom single-family homes and townhomes with private backyards and two-car garages, plus pool, pet park and clubhouse.",
+        "source": "https://www.greystar.com/properties/san-antonio-tx/los-cielos-at-brooks-luxury-rentals/floorplans"
       }
     ]
   },
