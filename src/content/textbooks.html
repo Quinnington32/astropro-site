@@ -14,11 +14,18 @@
       <span class="kicker-sm">Book finder</span>
       <h2>Find your book across every option</h2>
     </div>
+    <a class="book-featured" href="https://www.amazon.com/s?i=stripbooks&amp;k=college+textbooks&amp;tag=astroprostude-20" target="_blank" rel="noopener noreferrer sponsored">
+      <strong>Buy or rent your textbooks on Amazon</strong>
+      <span>New, used, and rental copies with fast shipping. Type your book below to search Amazon for it, or browse textbooks now.</span>
+      <span class="btn btn-primary">Shop textbooks on Amazon →</span>
+      <small>As an Amazon Associate we earn from qualifying purchases. This never changes your price.</small>
+    </a>
     <form class="book-finder" data-book-finder role="search" aria-label="Find a textbook">
       <label for="book-q">Title, author, or ISBN</label>
       <div class="book-finder-row">
         <input id="book-q" name="q" type="search" autocomplete="off" placeholder="e.g. Campbell Biology, or 9780134093413" required minlength="2">
         <button class="btn btn-primary" type="submit">Search all options</button>
+        <button class="btn btn-amazon" type="submit" data-amazon>Search Amazon</button>
       </div>
       <p class="fineprint">We look up matching editions here, then link you to Amazon plus free, library, and used options. We don’t store what you type, and we don’t show live seller prices, so use the price-comparison sites to see the cheapest seller today.</p>
     </form>

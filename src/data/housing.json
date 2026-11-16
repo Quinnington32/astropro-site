@@ -615,14 +615,6 @@
     "description": "An urban commuter market on the Auraria campus, with RTD's student fare program covering downtown Denver.",
     "properties": [
       {
-        "id": "housing-denver-property-auraria-lofts",
-        "name": "Auraria Lofts",
-        "website": "https://theaurarialofts.com/",
-        "verifiedAt": "2026-10-31",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Auraria%20Lofts%2C%20Denver%2C%20CO",
-        "source": "https://theaurarialofts.com/contact/"
-      },
-      {
         "id": "housing-denver-property-alta-mile-high",
         "name": "Alta Mile High",
         "website": "https://altamilehigh.com/",

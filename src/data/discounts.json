@@ -644,9 +644,9 @@
     "category": "Verification platforms (the fastest way to unlock most of these)",
     "amount": "$30/year membership",
     "description": "Student Advantage is a paid student savings membership/app ($30 for a year of access, often distributed through college ID/card offices) that advertises deals at brands including Greyhound, Target.com, Choice Hotels, 1-800-Flowers.com and Foot Locker, among others. Unlike UNiDAYS/Student Beans/SheerID, this is a paid membership rather than a free verification platform; check which of its listed deals are current before relying on any one brand's offer.",
-    "url": "https://www.uvm.edu/catcard/join-student-advantage",
+    "url": "https://studentadvantage.com/",
     "verifiedAt": "2026-11-06",
-    "source": "https://www.uvm.edu/catcard/join-student-advantage",
+    "source": "https://studentadvantage.com/",
     "verifiedFields": [
       "amount",
       "description",

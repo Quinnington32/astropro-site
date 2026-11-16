@@ -147,6 +147,7 @@ if (form) {
       return;
     }
     render(q);
+    if (e.submitter && e.submitter.hasAttribute("data-amazon")) window.open(amazonUrl(q), "_blank", "noopener");
     matches.textContent = "Looking up matching books…";
     const mine = ++token;
     try {
