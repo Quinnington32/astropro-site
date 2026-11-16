@@ -34,8 +34,13 @@ export const navigationResources = [
   ],
   [
     "textbooks",
-    "Textbooks & course supplies",
-    "Free textbooks, used books, rentals, open textbooks, library reserves, and ways to save on course materials.",
+    "Book Store",
+    "Find your textbook and compare free books, used books, rentals, open textbooks, and library reserves.",
+  ],
+  [
+    "student-products",
+    "Student Products",
+    "Tech, software, dorm and apartment essentials, and school supplies for students.",
   ],
   [
     "test-prep",

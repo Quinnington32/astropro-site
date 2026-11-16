@@ -27,6 +27,7 @@ const guides = [
   "tutoring",
   "wellbeing",
   "textbooks",
+  "student-products",
   "test-prep",
 ];
 const sourceCommit = process.env.GITHUB_SHA || null;
@@ -93,8 +94,14 @@ const resourceTypes = [
   [
     "textbooks",
     "College costs",
-    "Textbooks & course supplies",
-    "Free textbooks, cheap rentals, used books, and money-saving tips.",
+    "Book Store",
+    "Find your textbook and compare free, library, used, and rental options.",
+  ],
+  [
+    "student-products",
+    "College costs",
+    "Student Products",
+    "Tech, software, dorm essentials, and school supplies for less.",
   ],
   [
     "test-prep",
@@ -146,7 +153,8 @@ const homeCategories = [
   ["discounts", "discounts.html", "Student Discounts", "butter"],
   ["guides", "apply-to-college.html", "Apply for College", "blue"],
   ["money", "financial-aid.html", "Financial Aid", "rose"],
-  ["textbooks", "textbooks.html", "Textbooks & Course Supplies", "mint"],
+  ["textbooks", "textbooks.html", "Book Store", "mint"],
+  ["products", "student-products.html", "Student Products", "peach"],
   ["testprep", "test-prep.html", "Test Prep", "lavender"],
 ];
 const supportLinks = [
@@ -431,6 +439,10 @@ for (const slug of guides) {
       "Textbooks, without the sticker shock.",
       "We know not every student can afford to buy books brand new, and you shouldn’t have to. Start with the free and low-cost options below.",
     ],
+    "student-products": [
+      "Everything for college, for less.",
+      "Tech, dorm and apartment basics, and school supplies. Start with free and secondhand.",
+    ],
     "test-prep": [
       "Prep for your test without overpaying.",
       "Official free practice, fee waivers, and credit-by-exam options.",
@@ -500,7 +512,8 @@ for (const slug of guides) {
       "Your checklist",
     ],
     "money-basics": ["Aid refunds", "Budgeting", "Taxes", "Banking", "Earning"],
-    textbooks: ["Free books", "Rent or buy used", "Saving tips", "Supplies"],
+    textbooks: ["Book finder", "Free books", "Rent or buy used", "Saving tips", "More products"],
+    "student-products": ["Tech & software", "Furnish for less", "Essentials", "School supplies"],
     "test-prep": ["SAT, ACT & AP", "Credit by exam", "Graduate school", "Study tips"],
     tutoring: ["Campus help", "Online resources"],
     wellbeing: ["Wellbeing", "Basic needs"],
