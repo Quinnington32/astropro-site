@@ -4810,7 +4810,21 @@
     "place": "Troy, AL",
     "description": "Renters and students in Troy use the AstroPro Facebook group to find apartments, subleases, and roommates near Troy University. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/troyapartments/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-troy-al-property-ivy-row-at-troy",
+        "name": "Ivy Row at Troy",
+        "website": "https://www.ivyrowattroy.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Ivy+Row+at+Troy%2C+Troy%2C+AL",
+        "summary": "Student apartments near Troy University with a fitness center, listed on the property’s official site.",
+        "source": "https://www.ivyrowattroy.com/",
+        "pick": 1,
+        "photo": "assets/housing/housing-troy-al-property-ivy-row-at-troy.jpg",
+        "photoAlt": "Fitness center at Ivy Row at Troy, from the property’s official website",
+        "photoApproved": true
+      }
+    ]
   },
   {
     "id": "housing-kingston-on",
