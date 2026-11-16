@@ -3733,7 +3733,36 @@
     "place": "Missoula, MT",
     "description": "Renters and students in Missoula use the AstroPro Facebook group to find apartments, subleases, and roommates near University of Montana. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/missoulaapartments/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-missoula-mt-property-lewis-and-clark-village",
+        "name": "Lewis and Clark Village",
+        "website": "https://www.umt.edu/housing/lcv/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Lewis%20and%20Clark%20Village%2C%20Missoula%2C%20MT",
+        "address": "3000 S. Higgins Ave, Missoula, MT",
+        "summary": "University of Montana apartment-style housing for students, run by UM Residence Life.",
+        "source": "https://www.umt.edu/housing/lcv/",
+        "pick": 1,
+        "photo": "assets/housing/housing-missoula-mt-property-lewis-and-clark-village.jpg",
+        "photoAlt": "Lewis and Clark Village apartment buildings at the University of Montana, from the university housing website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-missoula-mt-property-roam-student-living",
+        "name": "ROAM Student Living",
+        "website": "https://liveatroam.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=ROAM%20Student%20Living%2C%20Missoula%2C%20MT",
+        "address": "305 E Front St, Missoula, MT",
+        "summary": "Student apartments in downtown Missoula with a fitness center and floor plans listed on the property site.",
+        "source": "https://liveatroam.com/",
+        "pick": 2,
+        "photo": "assets/housing/housing-missoula-mt-property-roam-student-living.jpg",
+        "photoAlt": "ROAM Student Living fitness center in Missoula, from the property website",
+        "photoApproved": true
+      }
+    ]
   },
   {
     "id": "housing-key-west-fl",
