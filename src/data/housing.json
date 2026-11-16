@@ -3969,6 +3969,32 @@
         "photo": "assets/housing/housing-tempe-az-property-the-district-on-apache.jpg",
         "photoAlt": "The District on Apache in Tempe, AZ, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-tempe-az-property-verve-tempe",
+        "name": "Verve Tempe",
+        "website": "https://vervetempe.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Verve%20Tempe%2C%20Tempe%2C%20AZ",
+        "summary": "Student housing in Tempe with a design-forward lobby and lounge, near Arizona State University.",
+        "source": "https://vervetempe.com/",
+        "pick": 2,
+        "photo": "assets/housing/housing-tempe-az-property-verve-tempe.jpg",
+        "photoAlt": "Verve Tempe in Tempe, AZ, from the property's official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-tempe-az-property-alight-tempe",
+        "name": "Alight Tempe",
+        "website": "https://alight-tempe.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Alight%20Tempe%2C%20Tempe%2C%20AZ",
+        "summary": "Furnished multi-bedroom student apartments near Arizona State University.",
+        "source": "https://alight-tempe.com/",
+        "pick": 3,
+        "photo": "assets/housing/housing-tempe-az-property-alight-tempe.jpg",
+        "photoAlt": "Alight Tempe in Tempe, AZ, from the property's official website",
+        "photoApproved": true
       }
     ]
   },
