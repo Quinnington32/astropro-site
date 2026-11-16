@@ -1867,9 +1867,9 @@
   {
     "id": "housing-new-hampshire",
     "file": "housing-new-hampshire.html",
-    "school": "Community College System of New Hampshire",
-    "place": "New Hampshire (statewide)",
-    "description": "A statewide system across several NH campuses — students look for housing near whichever campus they attend.",
+    "school": "Manchester Community College",
+    "place": "Manchester, NH",
+    "description": "Downtown Manchester is the closest city housing market for students at Manchester Community College and nearby Southern New Hampshire University.",
     "properties": [
       {
         "id": "housing-new-hampshire-property-trade-center-apartments",
@@ -1909,7 +1909,6 @@
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=The%20Flats%20on%20High%20Street%2C%20New%20Hampshire",
         "source": "https://flatsonhighst.com/",
-        "pick": 3,
         "photo": "https://flatsonhighst.com/assets/images/cache/44_High_St_Nashua_NH_03063_USA-Exterior_2-DJI_0648-3f6fc3a6244df27ebf6127d855f62c0c.jpg",
         "photoAlt": "The Flats on High Street in New Hampshire (statewide), from the property's official website",
         "photoApproved": true

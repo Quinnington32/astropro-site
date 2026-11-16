@@ -296,12 +296,17 @@ emit(
     type: "discounts",
   }),
 );
-const marketCards = markets
-  .map(
-    (m, i) =>
-      `<a class="market-card" href="${m.file}" data-order="${i}" data-city="${e(m.place)}" data-state="${e(m.place.includes(",") ? m.place.split(",").at(-1).trim() : "NH")}" data-search="${e((m.school + " " + m.place + " " + m.description).toLowerCase())}"><h2>${e(m.place)}</h2><span class="school">${e(m.school)}</span><span class="link">${m.properties.some((p) => p.spotlight) ? "See available rentals" : "Explore this market"} →</span></a>`,
-  )
-  .join("");
+const stateNames = {AL:"Alabama",AK:"Alaska",AZ:"Arizona",AR:"Arkansas",CA:"California",CO:"Colorado",CT:"Connecticut",DE:"Delaware",DC:"Washington, DC",FL:"Florida",GA:"Georgia",HI:"Hawaii",ID:"Idaho",IL:"Illinois",IN:"Indiana",IA:"Iowa",KS:"Kansas",KY:"Kentucky",LA:"Louisiana",ME:"Maine",MD:"Maryland",MA:"Massachusetts",MI:"Michigan",MN:"Minnesota",MS:"Mississippi",MO:"Missouri",MT:"Montana",NE:"Nebraska",NV:"Nevada",NH:"New Hampshire",NJ:"New Jersey",NM:"New Mexico",NY:"New York",NC:"North Carolina",ND:"North Dakota",OH:"Ohio",OK:"Oklahoma",OR:"Oregon",PA:"Pennsylvania",RI:"Rhode Island",SC:"South Carolina",SD:"South Dakota",TN:"Tennessee",TX:"Texas",UT:"Utah",VT:"Vermont",VA:"Virginia",WA:"Washington",WV:"West Virginia",WI:"Wisconsin",WY:"Wyoming",AB:"Alberta",BC:"British Columbia",MB:"Manitoba",NB:"New Brunswick",NL:"Newfoundland and Labrador",NS:"Nova Scotia",NT:"Northwest Territories",ON:"Ontario",PE:"Prince Edward Island",QC:"Quebec",SK:"Saskatchewan",YT:"Yukon"};
+const stateOf = (m) => m.place.split(",").at(-1).trim();
+const marketCard = (m, i) =>
+  `<a class="market-card" href="${m.file}" data-order="${i}" data-city="${e(m.place)}" data-state="${e(stateOf(m))}" data-search="${e((m.school + " " + m.place + " " + (stateNames[stateOf(m)] || "") + " " + m.description).toLowerCase())}"><h2>${e(m.place)}</h2><span class="school">${e(m.school)}</span><span class="link">${m.properties.some((p) => p.spotlight) ? "See available rentals" : "Explore this market"} →</span></a>`;
+const stateGroups = Object.entries(
+  markets.reduce((acc, m, i) => ((acc[stateOf(m)] ||= []).push([m, i]), acc), {}),
+).sort((a, b) => (stateNames[a[0]] || a[0]).localeCompare(stateNames[b[0]] || b[0]));
+const stateJump = `<nav class="state-jump" aria-label="Jump to a state">${stateGroups.map(([st, list]) => `<a href="#state-${st}" data-jump="${st}">${e(st)}<span>${list.length}</span></a>`).join("")}</nav>`;
+const marketCards = `<div id="marketGroups">${stateGroups
+  .map(([st, list]) => `<section class="state-group" id="state-${st}" data-state-group="${st}"><h2 class="state-heading">${e(stateNames[st] || st)} <span>${list.length}</span></h2><div class="market-grid">${list.sort((x, y) => x[0].place.localeCompare(y[0].place)).map(([m, i]) => marketCard(m, i)).join("")}</div></section>`)
+  .join("")}</div><div class="market-grid" id="marketGrid" hidden></div>`;
 const housingFaq = [
   [
     "What will rent actually cost?",
@@ -363,7 +368,7 @@ emit(
     "Search by school, city, or state. These are research starting points, not verified available rentals.",
     `<div class="cta-row"><a class="btn btn-primary" href="#markets">Find your market</a><a class="btn btn-ghost" href="index.html#organizations">Suggest a property</a></div>`,
   ) +
-    `<section class="wrap" id="markets" data-markets><div class="directory-controls"><div><label for="marketSearch">School, city, or state</label><input type="search" id="marketSearch" placeholder="Try Houston or Ohio" autocomplete="off"></div><div><label for="marketSort">Sort markets</label><select id="marketSort"><option value="default">Featured order</option><option value="city">City A–Z</option><option value="state">State A–Z</option></select></div></div><p id="marketCount" class="result-count" role="status" aria-live="polite">${markets.length} markets</p><div class="market-grid" id="marketGrid">${marketCards}</div><div class="empty-state" id="marketEmpty" hidden><h2>No matching markets</h2><p>Try the city or state name, or find housing support through your school.</p><a class="btn btn-primary" href="school-resources.html?topic=housing">Find campus housing support</a></div><p class="source-note">A directory mention is not an endorsement or a paid partnership. Check the property’s current terms and eligibility directly.</p></section>` +
+    `<section class="wrap" id="markets" data-markets><div class="directory-controls"><div><label for="marketSearch">School, city, or state</label><input type="search" id="marketSearch" placeholder="Try Houston or Ohio" autocomplete="off"></div><div><label for="marketSort">Sort markets</label><select id="marketSort"><option value="state">Group by state</option><option value="city">City A–Z</option></select></div></div><p id="marketCount" class="result-count" role="status" aria-live="polite">${markets.length} markets</p>${stateJump}${marketCards}<div class="empty-state" id="marketEmpty" hidden><h2>No matching markets</h2><p>Try the city or state name, or find housing support through your school.</p><a class="btn btn-primary" href="school-resources.html?topic=housing">Find campus housing support</a></div><p class="source-note">A directory mention is not an endorsement or a paid partnership. Check the property’s current terms and eligibility directly.</p></section>` +
     faqs(),
 );
 const initials = (name) =>

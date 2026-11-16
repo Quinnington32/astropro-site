@@ -214,27 +214,40 @@ function setupMarkets() {
   if (!root) return;
   const cards = $$(".market-card"),
     search = $("#marketSearch"),
-    sort = $("#marketSort");
+    sort = $("#marketSort"),
+    groups = $("#marketGroups"),
+    flat = $("#marketGrid"),
+    jump = $(".state-jump");
+  const home = new Map(cards.map((c) => [c, c.parentElement]));
+  const homeOrder = new Map(cards.map((c, i) => [c, i]));
   function apply() {
-    const terms = search.value
-      .trim()
-      .toLowerCase()
-      .split(/\s+/)
-      .filter(Boolean);
+    const terms = search.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
     let n = 0;
     cards.forEach((c) => {
       c.hidden = !terms.every((t) => c.dataset.search.includes(t));
       if (!c.hidden) n++;
     });
-    const ordered = [...cards].sort((a, b) =>
-      sort.value === "default"
-        ? Number(a.dataset.order) - Number(b.dataset.order)
-        : sort.value === "city"
-          ? a.dataset.city.localeCompare(b.dataset.city)
-          : a.dataset.state.localeCompare(b.dataset.state) ||
-            a.dataset.city.localeCompare(b.dataset.city),
-    );
-    ordered.forEach((c) => $("#marketGrid").append(c));
+    const byCity = sort.value === "city";
+    if (byCity) {
+      [...cards]
+        .sort((a, b) => a.dataset.city.localeCompare(b.dataset.city))
+        .forEach((c) => flat.append(c));
+    } else {
+      [...cards]
+        .sort((a, b) => homeOrder.get(a) - homeOrder.get(b))
+        .forEach((c) => home.get(c).append(c));
+    }
+    flat.hidden = !byCity;
+    groups.hidden = byCity;
+    if (jump) jump.hidden = byCity;
+    $$(".state-group", groups).forEach((g) => {
+      const visible = $$(".market-card:not([hidden])", g).length;
+      g.hidden = visible === 0;
+      const count = $(".state-heading span", g);
+      if (count) count.textContent = visible;
+      const chip = jump && $(`[data-jump="${g.dataset.stateGroup}"]`, jump);
+      if (chip) chip.hidden = visible === 0;
+    });
     $("#marketCount").textContent =
       `${n} ${n === 1 ? "market" : "markets"}${search.value ? " matching “" + search.value.trim() + "”" : ""}`;
     $("#marketEmpty").hidden = n > 0;
