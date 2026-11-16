@@ -775,6 +775,7 @@ await cp("public", "dist", { recursive: true });
 await cp("src/styles/site.css", "dist/assets/site.css");
 await cp("src/client/site.js", "dist/assets/site.js");
 await cp("src/client/resource-search.js", "dist/assets/resource-search.js");
+await cp("src/client/book-finder.js", "dist/assets/book-finder.js");
 await cp("src/client/private-session.js", "dist/assets/private-session.js");
 const catalog = [
   ...scholarships.map((x) => ({

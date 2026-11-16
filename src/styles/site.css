@@ -3481,3 +3481,10 @@ body:is(
   .resource-tiles { grid-template-columns: repeat(2, 1fr); gap: 16px; }
 }
 .resource-tile h3 { text-wrap: balance; }
+
+.book-finder{display:grid;gap:.6rem;max-width:44rem;margin-bottom:1.5rem}
+.book-finder label{font-weight:700}
+.book-finder-row{display:flex;gap:.6rem;flex-wrap:wrap}
+.book-finder-row input{flex:1 1 16rem;min-height:3rem;padding:.6rem .9rem;border:1px solid #9aa3b8;border-radius:.6rem;font:inherit}
+[data-book-results] h3{margin:1.5rem 0 .75rem}
+a.tool-card{display:block;text-decoration:none;color:inherit}
