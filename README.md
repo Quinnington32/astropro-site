@@ -81,7 +81,7 @@ npx wrangler d1 migrations apply astropro-student-resource-center --remote
 npx wrangler deploy
 ```
 
-Pushes to `main` deploy automatically through `.github/workflows/deploy.yml` (tests, D1 migrations, Worker deploy, health check). Required GitHub Actions secrets: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`; optional: `PAYPAL_BUSINESS_EMAIL`, `ADMIN_TOKEN`, `BREVO_API_KEY`.
+Pushes to `main` deploy automatically through Cloudflare Workers Builds (connected to this repo in the Cloudflare dashboard): `npm run check`, then `npx wrangler d1 migrations apply DB --remote && npx wrangler deploy`. No GitHub secrets are needed.
 
 Keep deployment IDs and verification evidence in a release receipt. Validate the canonical domain, the compatibility entry path, a real synthetic submission/receipt, unauthorized inbox rejection, local downloads, and mobile layout before announcing a release. A deploy command alone is not proof the custom domain routes correctly.
 
