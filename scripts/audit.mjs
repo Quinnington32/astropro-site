@@ -76,9 +76,10 @@ for (const [file, $] of docs) {
   });
 }
 // Every Available Rentals post must carry a photo (and alt text) so no card shows the initials placeholder.
+// Exception: a post flagged photoPending (the source post had no usable photo) publishes with the placeholder until one is added.
 for (const m of JSON.parse(await readFile("src/data/housing.json")))
   for (const p of m.properties)
-    if (p.spotlight && !((p.spotlight.photo && p.spotlight.photoAlt) || (p.photoApproved && p.photo && p.photoAlt)))
+    if (p.spotlight && !p.spotlight.photoPending && !((p.spotlight.photo && p.spotlight.photoAlt) || (p.photoApproved && p.photo && p.photoAlt)))
       errors.push(`Available Rentals post without a photo: ${p.id}`);
 const catalog = JSON.parse(await readFile("dist/assets/catalog.json"));
 const known = new Set();
