@@ -22,7 +22,7 @@ if (!token) {
 }
 const origin = local
   ? "http://localhost:4174/studentresourcecenter/"
-  : "https://students.goastropro.com/";
+  : "https://astroprostudentresourcecenter.com/";
 let cursor;
 let count = 0;
 do {

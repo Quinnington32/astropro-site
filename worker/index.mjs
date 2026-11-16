@@ -1,4 +1,9 @@
 const PREFIX = "/studentresourcecenter";
+const ALIAS_HOSTS = [
+  "www.astroprostudentresourcecenter.com",
+  "astroprostudentresourcecenter.org",
+  "www.astroprostudentresourcecenter.org",
+];
 const MAX_BODY = 2500000;
 const JSON_HEADERS = {
   "content-type": "application/json; charset=utf-8",
@@ -600,20 +605,15 @@ function secure(response, isHtml = false) {
 export async function handleRequest(request, env) {
   const url = new URL(request.url);
   let path = url.pathname;
-  if (
-    url.hostname === "astropromarketing.com" &&
-    (path === PREFIX || path.startsWith(PREFIX + "/"))
-  ) {
-    const target = new URL("https://students.goastropro.com/");
-    target.pathname = path.slice(PREFIX.length) || "/";
+  if (ALIAS_HOSTS.includes(url.hostname)) {
+    const target = new URL("https://astroprostudentresourcecenter.com/");
+    target.pathname = path;
     target.search = url.search;
     return Response.redirect(target.href, 308);
   }
   if (path === PREFIX)
     return Response.redirect(url.origin + PREFIX + "/" + url.search, 308);
   if (path.startsWith(PREFIX + "/")) path = path.slice(PREFIX.length);
-  else if (["goastropro.com", "www.goastropro.com"].includes(url.hostname))
-    return new Response("Not found", { status: 404 });
   if (path.startsWith("/api/")) {
     if (path === "/api/health" && ["GET", "HEAD"].includes(request.method)) {
       let ready = false;

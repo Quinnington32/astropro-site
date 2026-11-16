@@ -1,7 +1,7 @@
 import { readFile, readdir, writeFile, mkdir } from "node:fs/promises";
 import { createHash, randomUUID } from "node:crypto";
 import assert from "node:assert/strict";
-const origin = "https://students.goastropro.com";
+const origin = "https://astroprostudentresourcecenter.com";
 const digest = (bytes) => createHash("sha256").update(bytes).digest("hex");
 const results = [];
 const manifest = JSON.parse(await readFile("dist/build.json", "utf8"));
@@ -86,11 +86,11 @@ const invalidBody = await fetch(origin + "/api/submissions", {
   body: "null",
 });
 assert.equal(invalidBody.status, 400);
-const alias = await fetch("https://goastropro.com/studentresourcecenter/", {
+const alias = await fetch("https://astroprostudentresourcecenter.org/", {
   signal: AbortSignal.timeout(15000),
 });
 assert.equal(alias.status, 200);
-assert.equal(new URL(alias.url).hostname, "students.goastropro.com");
+assert.equal(new URL(alias.url).hostname, "astroprostudentresourcecenter.com");
 const receipts = [];
 if (process.argv.includes("--exercise-forms")) {
   const token =

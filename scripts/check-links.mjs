@@ -7,7 +7,7 @@ for (const file of (await readdir("dist")).filter((x) => x.endsWith(".html"))) {
     const url = $(el).attr("href");
     if (
       url.startsWith("https://goastropro.com/") ||
-      url.startsWith("https://students.goastropro.com/") ||
+      url.startsWith("https://astroprostudentresourcecenter.com/") ||
       url.includes("google.com/maps") ||
       url.includes("google.com/search")
     )

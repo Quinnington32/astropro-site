@@ -1,8 +1,8 @@
 # Student Resource Center operating guide
 
-- Public site: [students.goastropro.com](https://students.goastropro.com/)
+- Public site: [astroprostudentresourcecenter.com](https://astroprostudentresourcecenter.com/)
 - Compatibility entry: [goastropro.com/studentresourcecenter](https://goastropro.com/studentresourcecenter/)
-- Private review inbox: [staff access](https://students.goastropro.com/admin.html)
+- Private review inbox: [staff access](https://astroprostudentresourcecenter.com/admin.html)
 
 ## Daily review
 

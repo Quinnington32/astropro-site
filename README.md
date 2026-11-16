@@ -1,6 +1,6 @@
 # AstroPro Student Resource Center
 
-Free student resource directory at **https://students.goastropro.com/**. Source belongs to `Quinnington32/astropro-site`; the application is hosted independently on AstroPro’s existing Cloudflare account.
+Free student resource directory at **https://astroprostudentresourcecenter.com/**. Source belongs to `Quinnington32/astropro-site`; the application is hosted independently on AstroPro’s existing Cloudflare account.
 
 ## Local development
 
@@ -70,8 +70,8 @@ See [the operating guide](docs/OPERATIONS.md) for the daily review routine, pref
 - Worker: `astropro-student-resource-center`
 - Account: `604bc8f6fd70f62522869abae693396b`
 - D1: `astropro-student-resource-center` (`c4a3ed6f-7f10-490e-9c09-d3db46448850`)
-- Canonical domain: `students.goastropro.com`
-- Narrow compatibility routes: `astropromarketing.com/studentresourcecenter` and its children. These redirect to the canonical domain and preserve the path/query. The existing HighLevel redirect on `goastropro.com` is left in place.
+- Canonical domain: `astroprostudentresourcecenter.com`
+- Alias domains: `astroprostudentresourcecenter.org` and the `www` hosts redirect to the canonical domain, preserving path and query.
 
 ```sh
 npm run check
@@ -81,7 +81,7 @@ npx wrangler d1 migrations apply astropro-student-resource-center --remote
 npx wrangler deploy
 ```
 
-This Mac’s existing `amos-setup` profile can manage D1; its `default` profile can deploy Workers/routes. Neither credential is in the repo. The private inbox key is installed as `ADMIN_TOKEN` through Wrangler’s secret command via stdin, never command-line arguments. GitHub checks do not auto-publish production; the owner’s Cloudflare credentials remain local.
+Pushes to `main` deploy automatically through `.github/workflows/deploy.yml` (tests, D1 migrations, Worker deploy, health check). Required GitHub Actions secrets: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`; optional: `PAYPAL_BUSINESS_EMAIL`, `ADMIN_TOKEN`, `BREVO_API_KEY`.
 
 Keep deployment IDs and verification evidence in a release receipt. Validate the canonical domain, the compatibility entry path, a real synthetic submission/receipt, unauthorized inbox rejection, local downloads, and mobile layout before announcing a release. A deploy command alone is not proof the custom domain routes correctly.
 

@@ -6,7 +6,7 @@ export const escape = (value) =>
         c
       ],
   );
-export const canonicalRoot = "https://students.goastropro.com/";
+export const canonicalRoot = "https://astroprostudentresourcecenter.com/";
 export const label = (value) =>
   ({
     "no-essay": "No essay",

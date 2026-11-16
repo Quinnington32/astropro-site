@@ -35,5 +35,5 @@ Warm, straightforward, practical. Help students find a useful starting point. Ke
 ARTWORK
 The custom student logo was created with the built-in image_gen tool using AstroPro's existing master logo as the reference/edit target. The campus photo is generated editorial imagery and does not represent a named school, an actual partnership, or a testimonial. No photo subject is identified as an AstroPro customer.
 
-Guide: https://students.goastropro.com/brand/
-Website: https://students.goastropro.com/
+Guide: https://astroprostudentresourcecenter.com/brand/
+Website: https://astroprostudentresourcecenter.com/

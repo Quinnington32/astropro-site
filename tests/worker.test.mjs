@@ -378,13 +378,13 @@ test("mounted asset lookup stays scoped and serves a real 404", async () => {
     },
   };
   const home = await worker.fetch(
-    new Request("https://goastropro.com/studentresourcecenter/"),
+    new Request("https://astroprostudentresourcecenter.com/studentresourcecenter/"),
     env,
   );
   assert.equal(home.status, 200);
   assert.equal(paths[0], "/index.html");
   const missing = await worker.fetch(
-    new Request("https://goastropro.com/studentresourcecenter/not-found"),
+    new Request("https://astroprostudentresourcecenter.com/studentresourcecenter/not-found"),
     env,
   );
   assert.equal(missing.status, 404);
@@ -392,7 +392,7 @@ test("mounted asset lookup stays scoped and serves a real 404", async () => {
   assert.equal(
     (
       await worker.fetch(
-        new Request("https://goastropro.com/unrelated-path"),
+        new Request("https://astroprostudentresourcecenter.com/unrelated-path"),
         env,
       )
     ).status,
