@@ -32,6 +32,17 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Statehouse%20Highline%20on%209th%2C%20Columbus%2C%20OH",
         "source": "https://statehousecolumbus.com/",
         "pick": 1
+      },
+      {
+        "id": "housing-columbus-property-the-view-on-high",
+        "name": "The View on High",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20View%20on%20High%2C%20Columbus%2C%20OH",
+        "website": "https://theviewonhigh.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://theviewonhigh.com/",
+        "summary": "Fully furnished student apartments directly across from Ohio State University.",
+        "address": "2020 N High St, Columbus, OH",
+        "pick": 3
       }
     ]
   },
@@ -277,6 +288,16 @@
         "website": null,
         "verifiedAt": null,
         "maps": "https://www.google.com/maps/search/?api=1&query=District%20Apartments%2C%20McAllen%2C%20TX"
+      },
+      {
+        "id": "housing-mcallen-property-villa-regale",
+        "name": "Villa Regale",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Villa%20Regale%2C%20McAllen%2C%20TX",
+        "website": "https://www.villaregale.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.villaregale.com/",
+        "summary": "Spacious one- and two-bedroom floor plans in McAllen.",
+        "pick": 3
       }
     ]
   },
@@ -286,7 +307,41 @@
     "school": "Kern Community College District",
     "place": "Bakersfield, CA",
     "description": "A Central Valley market, with GET Bus offering free rides for Bakersfield College students.",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-bakersfield-property-cambridge-village-bakersfield",
+        "name": "Cambridge Village Apartments",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Cambridge%20Village%20Apartments%2C%20Bakersfield%2C%20CA",
+        "website": "https://www.cambridgevillageapts.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.cambridgevillageapts.com/",
+        "summary": "One-, two- and three-bedroom apartments with an in-home washer and dryer.",
+        "address": "8200 N Laurelglen Blvd, Bakersfield, CA",
+        "pick": 1
+      },
+      {
+        "id": "housing-bakersfield-property-watermark-bakersfield",
+        "name": "Watermark",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Watermark%2C%20Bakersfield%2C%20CA",
+        "website": "https://www.watermarkbakersfield.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.watermarkbakersfield.com/",
+        "summary": "Pet-friendly 1-, 2- and 3-bedroom apartments with upscale amenities.",
+        "address": "4930 Gosford Rd, Bakersfield, CA",
+        "pick": 2
+      },
+      {
+        "id": "housing-bakersfield-property-laurelwood-oaks-bakersfield",
+        "name": "Laurelwood Oaks",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Laurelwood%20Oaks%2C%20Bakersfield%2C%20CA",
+        "website": "https://www.laurelwoodoaks.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.laurelwoodoaks.com/",
+        "summary": "Pet-friendly loft, 1-, 2- and 3-bedroom apartments. The property says all applicants are welcome.",
+        "address": "6500 White Ln, Bakersfield, CA",
+        "pick": 3
+      }
+    ]
   },
   {
     "id": "housing-lincoln",
@@ -355,6 +410,17 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Pinecrest%20Apartments%2C%20Normal%2C%20IL",
         "source": "https://www.pinecrest-apts.com/",
         "pick": 2
+      },
+      {
+        "id": "housing-normal-property-collegeplace-uptown",
+        "name": "CollegePlace Uptown",
+        "maps": "https://www.google.com/maps/search/?api=1&query=CollegePlace%20Uptown%2C%20Normal%2C%20IL",
+        "website": "https://collegeplaceuptown.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://collegeplaceuptown.com/",
+        "summary": "Illinois State University student housing community right next to campus.",
+        "address": "100 S Fell Ave, Normal, IL",
+        "pick": 3
       }
     ]
   },
@@ -473,6 +539,27 @@
         "website": null,
         "verifiedAt": null,
         "maps": "https://www.google.com/maps/search/?api=1&query=Arthur%20Place%20Apartments%2C%20Beaumont%2C%20TX"
+      },
+      {
+        "id": "housing-beaumont-property-west-end-crossing",
+        "name": "West End Crossing Apartments",
+        "maps": "https://www.google.com/maps/search/?api=1&query=West%20End%20Crossing%20Apartments%2C%20Beaumont%2C%20TX",
+        "website": "https://www.westendcrossing.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.westendcrossing.com/",
+        "summary": "Pet-friendly renovated 1-, 2- and 3-bedroom floor plans with a clubhouse and laundry.",
+        "address": "6550 Phelan Blvd, Beaumont, TX",
+        "pick": 2
+      },
+      {
+        "id": "housing-beaumont-property-west-end-lodge",
+        "name": "West End Lodge",
+        "maps": "https://www.google.com/maps/search/?api=1&query=West%20End%20Lodge%2C%20Beaumont%2C%20TX",
+        "website": "https://www.westendlodgeapthome.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.westendlodgeapthome.com/",
+        "summary": "One- and two-bedroom floor plans with a pool and other amenities.",
+        "pick": 3
       }
     ]
   },
@@ -520,9 +607,35 @@
       {
         "id": "housing-brenham-property-park-place-apartments",
         "name": "Park Place Apartments",
-        "website": null,
-        "verifiedAt": null,
-        "maps": "https://www.google.com/maps/search/?api=1&query=Park%20Place%20Apartments%2C%20Brenham%2C%20TX"
+        "website": "https://parkplacebrenham.com/",
+        "verifiedAt": "2026-11-15",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Park%20Place%20Apartments%2C%20Brenham%2C%20TX",
+        "source": "https://parkplacebrenham.com/",
+        "summary": "27 apartment homes walkable to downtown Brenham.",
+        "address": "2307 S Austin St, Brenham, TX",
+        "pick": 2
+      },
+      {
+        "id": "housing-brenham-property-stone-hollow-apartments",
+        "name": "Stone Hollow Apartments",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Stone%20Hollow%20Apartments%2C%20Brenham%2C%20TX",
+        "website": "https://www.mystonehollowapts.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.mystonehollowapts.com/",
+        "summary": "Pet-friendly apartments with flexible leasing options.",
+        "address": "2401 Stone Hollow Dr, Brenham, TX",
+        "pick": 1
+      },
+      {
+        "id": "housing-brenham-property-brenham-oaks",
+        "name": "Brenham Oaks",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Brenham%20Oaks%2C%20Brenham%2C%20TX",
+        "website": "https://www.brenhamoaks.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.brenhamoaks.com/",
+        "summary": "Apartment community with resort-style amenities.",
+        "address": "2475 S Chappell Hill St, Brenham, TX",
+        "pick": 3
       }
     ]
   },
@@ -681,6 +794,28 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=The%20Fountains%20Apartments%2C%20Pensacola%2C%20FL",
         "source": "https://www.fountainspensacola.com/",
         "pick": 1
+      },
+      {
+        "id": "housing-pensacola-property-the-edge-pensacola",
+        "name": "The Edge",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Edge%2C%20Pensacola%2C%20FL",
+        "website": "https://www.edgepensacola.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.edgepensacola.com/",
+        "summary": "Modern apartments near the University of West Florida.",
+        "address": "10300 University Pkwy, Pensacola, FL",
+        "pick": 2
+      },
+      {
+        "id": "housing-pensacola-property-college-vue-pensacola",
+        "name": "College Vue",
+        "maps": "https://www.google.com/maps/search/?api=1&query=College%20Vue%2C%20Pensacola%2C%20FL",
+        "website": "https://mycollegevue.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://mycollegevue.com/",
+        "summary": "Furnished student housing near UWF (College Vue and College Vue on University).",
+        "address": "9823 Utopia Dr, Pensacola, FL",
+        "pick": 3
       }
     ]
   },
@@ -726,6 +861,17 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Windsor%20Creek%2C%20Goldsboro%2C%20NC",
         "source": "https://www.jwhunter.com/401-windsor-creek-parkway/default",
         "pick": 1
+      },
+      {
+        "id": "housing-goldsboro-property-403-north-apartments",
+        "name": "403 North Apartments",
+        "maps": "https://www.google.com/maps/search/?api=1&query=403%20North%20Apartments%2C%20Goldsboro%2C%20NC",
+        "website": "https://www.liveat403north.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.liveat403north.com/",
+        "summary": "Brand new apartments in Goldsboro.",
+        "address": "403 N Oak Forest Rd, Goldsboro, NC",
+        "pick": 2
       }
     ]
   },
@@ -794,6 +940,27 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=ReNew%20Fairmont%20Park%2C%20Midland%2C%20TX",
         "source": "https://www.renewfairmontpark.com/Apartments/module/application_authentication/",
         "pick": 1
+      },
+      {
+        "id": "housing-midland-property-the-drake-midland",
+        "name": "The Drake",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Drake%2C%20Midland%2C%20TX",
+        "website": "https://www.thedrakemidland.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.thedrakemidland.com/",
+        "summary": "Apartments in Midland with floor plans, photos and community amenities.",
+        "address": "1301 E Mockingbird Ln, Midland, TX",
+        "pick": 2
+      },
+      {
+        "id": "housing-midland-property-monaco-midland",
+        "name": "Monaco",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Monaco%2C%20Midland%2C%20TX",
+        "website": "https://www.monacomidland.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.monacomidland.com/",
+        "summary": "Apartments in Midland with floor plans, photos and community amenities.",
+        "pick": 3
       }
     ]
   },
@@ -905,9 +1072,24 @@
       {
         "id": "housing-tahlequah-property-pleasant-view-apartments",
         "name": "Pleasant View Apartments",
-        "website": null,
-        "verifiedAt": null,
-        "maps": "https://www.google.com/maps/search/?api=1&query=Pleasant%20View%20Apartments%2C%20Tahlequah%2C%20OK"
+        "website": "https://www.pleasantviewapartments.net/",
+        "verifiedAt": "2026-11-15",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Pleasant%20View%20Apartments%2C%20Tahlequah%2C%20OK",
+        "source": "https://www.pleasantviewapartments.net/",
+        "summary": "One- and two-bedroom apartments and cottages near Northeastern State University. Pet-friendly.",
+        "address": "1390 N Heritage Ln, Tahlequah, OK 74464",
+        "pick": 1
+      },
+      {
+        "id": "housing-tahlequah-property-twin-oaks-tahlequah",
+        "name": "Twin Oaks",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Twin%20Oaks%2C%20Tahlequah%2C%20OK",
+        "website": "https://www.twinoakstahlequah.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.twinoakstahlequah.com/",
+        "summary": "Pet-friendly 1- and 2-bedroom apartments with a pet park and laundry facility.",
+        "address": "1300 N Jones Ave, Tahlequah, OK",
+        "pick": 2
       }
     ]
   },
@@ -1039,6 +1221,28 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Park%20Colony%20Apartments%2C%20Des%20Plaines%2C%20IL",
         "source": "https://www.parkcolonydesplaines.com/",
         "pick": 1
+      },
+      {
+        "id": "housing-des-plaines-property-courtyards-on-the-park",
+        "name": "Courtyards on the Park",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Courtyards%20on%20the%20Park%2C%20Des%20Plaines%2C%20IL",
+        "website": "https://www.courtyardsontheparkapts.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.courtyardsontheparkapts.com/",
+        "summary": "Upgraded 1- and 2-bedroom apartments near Glenview.",
+        "address": "10020 Holly Ln, Des Plaines, IL",
+        "pick": 2
+      },
+      {
+        "id": "housing-des-plaines-property-the-monarch-des-plaines",
+        "name": "The Monarch",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Monarch%2C%20Des%20Plaines%2C%20IL",
+        "website": "https://www.liveatthemonarch.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.liveatthemonarch.com/",
+        "summary": "Studio to 3-bedroom apartments with easy access to I-294 and O'Hare.",
+        "address": "150 N East River Rd, Des Plaines, IL",
+        "pick": 3
       }
     ]
   },
@@ -1064,6 +1268,28 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Cascade%20Ridge%20Apartments%2C%20Jackson%2C%20MI",
         "source": "https://www.cascaderidgeapartments.com/",
         "pick": 1
+      },
+      {
+        "id": "housing-jackson-mi-property-the-oaks-jackson",
+        "name": "The Oaks Apartments",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Oaks%20Apartments%2C%20Jackson%2C%20MI",
+        "website": "https://www.theoaksjackson.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.theoaksjackson.com/",
+        "summary": "Apartments near freeways and shopping with a number of amenities.",
+        "address": "1300 W Tanbark Ln, Jackson, MI",
+        "pick": 2
+      },
+      {
+        "id": "housing-jackson-mi-property-withington-apartments",
+        "name": "Withington Apartments",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Withington%20Apartments%2C%20Jackson%2C%20MI",
+        "website": "https://www.withingtonapts.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.withingtonapts.com/",
+        "summary": "Spacious floor plans with resident services.",
+        "address": "2659 Ruff Rd, Jackson, MI",
+        "pick": 3
       }
     ]
   },
@@ -1095,6 +1321,17 @@
         "address": "4907 University Blvd, Laredo, TX 78041",
         "summary": "Student-oriented community near TAMIU. Its official Greystar page lists fully furnished apartments, private bedrooms and bathrooms, free on-site laundry and a pool. Confirm pricing and availability with the property.",
         "pick": 2
+      },
+      {
+        "id": "housing-laredo-property-the-park-laredo",
+        "name": "The Park",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Park%2C%20Laredo%2C%20TX",
+        "website": "https://theparkapartmentslaredo.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://theparkapartmentslaredo.com/",
+        "summary": "Apartment community in Laredo.",
+        "address": "1415 Hospitality Dr, Laredo, TX",
+        "pick": 3
       }
     ]
   },
@@ -1271,6 +1508,27 @@
           "publishedAt": "2026-11-14",
           "facebookPost": "https://www.facebook.com/groups/2205622230329742/posts/2208933583331940/"
         }
+      },
+      {
+        "id": "housing-kirksville-mo-property-vicki-benson-properties",
+        "name": "Vicki Benson Properties",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Vicki%20Benson%20Properties%2C%20Kirksville%2C%20MO",
+        "website": "https://www.rentinkirksville.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.rentinkirksville.com/",
+        "summary": "Kirksville rental company specializing in upscale student housing for university students and local residents.",
+        "pick": 1
+      },
+      {
+        "id": "housing-kirksville-mo-property-truman-rentals",
+        "name": "Truman Rentals",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Truman%20Rentals%2C%20Kirksville%2C%20MO",
+        "website": "https://www.trumanrentals.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.trumanrentals.com/",
+        "summary": "Kirksville rental listings from a local property office near Truman State.",
+        "address": "703 N Marion St, Kirksville, MO",
+        "pick": 2
       }
     ]
   },
@@ -1306,6 +1564,28 @@
           "publishedAt": "2026-11-14",
           "facebookPost": "https://www.facebook.com/groups/1125547753567026/posts/1128687193253082/"
         }
+      },
+      {
+        "id": "housing-macomb-il-property-lexington-concord-apartments",
+        "name": "Lexington Concord Apartments",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Lexington%20Concord%20Apartments%2C%20Macomb%2C%20IL",
+        "website": "https://www.macombapartments.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.macombapartments.com/",
+        "summary": "Student housing next to Western Illinois University.",
+        "address": "900 Linden Ln, Macomb, IL 61455",
+        "pick": 1
+      },
+      {
+        "id": "housing-macomb-il-property-turnberry-apartments",
+        "name": "Turnberry Apartments",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Turnberry%20Apartments%2C%20Macomb%2C%20IL",
+        "website": "https://www.turnberrymacomb.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.turnberrymacomb.com/",
+        "summary": "Apartment community serving the WIU community with a full set of amenities.",
+        "address": "201 Wigwam Hollow Rd, Macomb, IL 61455",
+        "pick": 2
       }
     ]
   },
@@ -1352,6 +1632,28 @@
         "address": "185 S Hickory St, Platteville, WI 53818",
         "summary": "Fully furnished studios and 4-bedroom units rented by the bedroom, with high-speed internet, study rooms and a fitness room. The property describes itself as steps from UW-Platteville.",
         "pick": 1
+      },
+      {
+        "id": "housing-platteville-wi-property-platteville-apartments-washington-place",
+        "name": "Platteville Apartments",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Platteville%20Apartments%2C%20Platteville%2C%20WI",
+        "website": "https://www.plattevilleapts.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.plattevilleapts.com/",
+        "summary": "Apartment homes in the heart of Platteville near UW-Platteville.",
+        "address": "250 N Washington St, Platteville, WI 53818",
+        "pick": 2
+      },
+      {
+        "id": "housing-platteville-wi-property-stonebridge-apartments",
+        "name": "Stonebridge Apartments",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Stonebridge%20Apartments%2C%20Platteville%2C%20WI",
+        "website": "https://www.stonebridgeaptswi.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.stonebridgeaptswi.com/",
+        "summary": "Residential apartments with amenities in Platteville.",
+        "address": "890 Stonebridge Rd, Platteville, WI 53818",
+        "pick": 3
       }
     ]
   },
@@ -1387,6 +1689,38 @@
           "publishedAt": "2026-11-14",
           "facebookPost": "https://www.facebook.com/groups/2979932512339316/posts/2983532955312605/"
         }
+      },
+      {
+        "id": "housing-vermillion-sd-property-solara-vermillion",
+        "name": "Solara",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Solara%2C%20Vermillion%2C%20SD",
+        "website": "https://solarasd.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://solarasd.com/",
+        "summary": "Modern apartments in Vermillion near the University of South Dakota.",
+        "address": "1523 Roosevelt St, Vermillion, SD 57069",
+        "pick": 1
+      },
+      {
+        "id": "housing-vermillion-sd-property-the-quarters-vermillion",
+        "name": "The Quarters Vermillion",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Quarters%20Vermillion%2C%20Vermillion%2C%20SD",
+        "website": "https://thequartersvermillion.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://thequartersvermillion.com/",
+        "summary": "Modern student apartments in Vermillion.",
+        "address": "1129 Cottage Ave, Vermillion, SD",
+        "pick": 2
+      },
+      {
+        "id": "housing-vermillion-sd-property-the-heights-vermillion",
+        "name": "The Heights Vermillion",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Heights%20Vermillion%2C%20Vermillion%2C%20SD",
+        "website": "https://vermillion.myheightsliving.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://vermillion.myheightsliving.com/",
+        "summary": "Brand new student apartments for hassle-free student living in Vermillion.",
+        "pick": 3
       }
     ]
   },
@@ -1422,6 +1756,38 @@
           "publishedAt": "2026-11-14",
           "facebookPost": "https://www.facebook.com/groups/1129982866618268/posts/1133180946298460/"
         }
+      },
+      {
+        "id": "housing-emporia-ks-property-the-villas-at-emporia",
+        "name": "The Villas at Emporia",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Villas%20at%20Emporia%2C%20Emporia%2C%20KS",
+        "website": "https://www.thevillasatemporia.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.thevillasatemporia.com/",
+        "summary": "Apartments for rent in Emporia with floor plans, photos and amenities on the property site.",
+        "address": "1839 Merchant St, Emporia, KS 66801",
+        "pick": 1
+      },
+      {
+        "id": "housing-emporia-ks-property-courtyard-apartments-emporia",
+        "name": "Courtyard Apartments",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Courtyard%20Apartments%2C%20Emporia%2C%20KS",
+        "website": "https://www.courtyardemporia.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.courtyardemporia.com/",
+        "summary": "Studio and 1- to 4-bedroom options.",
+        "address": "736 E 12th Ave, Emporia, KS",
+        "pick": 2
+      },
+      {
+        "id": "housing-emporia-ks-property-parkview-emporia",
+        "name": "Parkview Apartments",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Parkview%20Apartments%2C%20Emporia%2C%20KS",
+        "website": "https://www.parkviewemporia.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.parkviewemporia.com/",
+        "summary": "Spacious studio, 1-, 2- and 3-bedroom options in Emporia.",
+        "pick": 3
       }
     ]
   },
@@ -1457,6 +1823,39 @@
           "publishedAt": "2026-11-14",
           "facebookPost": "https://www.facebook.com/groups/951828424471864/posts/953300094324697/"
         }
+      },
+      {
+        "id": "housing-ames-ia-property-block-one-ames",
+        "name": "Block One Ames",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Block%20One%20Ames%2C%20Ames%2C%20IA",
+        "website": "https://blockoneames.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://blockoneames.com/",
+        "summary": "Furnished studio to 4-bedroom apartments marketed to Iowa State students, with a fitness center, clubhouse game room and study lounge.",
+        "address": "2320 Lincoln Way, Ames, IA",
+        "pick": 1
+      },
+      {
+        "id": "housing-ames-ia-property-the-landing-ames",
+        "name": "The Landing Ames",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Landing%20Ames%2C%20Ames%2C%20IA",
+        "website": "https://thelandingames.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://thelandingames.com/",
+        "summary": "Studio to 5-bedroom floor plans with a 24/7 fitness center, covered garage parking, a barista bar and a full-court basketball court.",
+        "address": "416 Billy Sunday Rd, Ames, IA 50010",
+        "pick": 2
+      },
+      {
+        "id": "housing-ames-ia-property-copper-beech-at-ames",
+        "name": "Copper Beech at Ames",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Copper%20Beech%20at%20Ames%2C%20Ames%2C%20IA",
+        "website": "https://www.livecbeechames.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.livecbeechames.com/",
+        "summary": "Fully furnished 1- to 4-bedroom apartments and townhomes with a 24-hour fitness center, resort-style pool and free parking.",
+        "address": "1717 S Grand Ave, Ames, IA 50010",
+        "pick": 3
       }
     ]
   },
@@ -1492,6 +1891,39 @@
           "publishedAt": "2026-11-14",
           "facebookPost": "https://www.facebook.com/groups/3199654480425813/posts/3201733690217892/"
         }
+      },
+      {
+        "id": "housing-iowa-city-ia-property-rise-at-riverfront-crossings",
+        "name": "RISE at Riverfront Crossings",
+        "maps": "https://www.google.com/maps/search/?api=1&query=RISE%20at%20Riverfront%20Crossings%2C%20Iowa%20City%2C%20IA",
+        "website": "https://riseatriverfrontcrossings.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://riseatriverfrontcrossings.com/",
+        "summary": "Studio, 1-, 2- and 3-bedroom student apartments near the University of Iowa.",
+        "address": "435 S Linn St, Iowa City, IA",
+        "pick": 1
+      },
+      {
+        "id": "housing-iowa-city-ia-property-hawks-ridge",
+        "name": "Hawks Ridge",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Hawks%20Ridge%2C%20Iowa%20City%2C%20IA",
+        "website": "https://www.livehawksridge.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.livehawksridge.com/",
+        "summary": "Fully furnished 1-, 2- and 4-bedroom student apartments near the University of Iowa. Pet-friendly.",
+        "address": "100 Hawk Ridge Dr, Iowa City, IA",
+        "pick": 2
+      },
+      {
+        "id": "housing-iowa-city-ia-property-campus-view-apartments",
+        "name": "Campus View Apartments",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Campus%20View%20Apartments%2C%20Iowa%20City%2C%20IA",
+        "website": "https://www.campus-view.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.campus-view.com/",
+        "summary": "Student apartments near the University of Iowa.",
+        "address": "112 E Bloomington St, Iowa City, IA",
+        "pick": 3
       }
     ]
   },
@@ -1527,6 +1959,37 @@
           "publishedAt": "2026-11-14",
           "facebookPost": "https://www.facebook.com/groups/1378086194245280/posts/1379633584090541/"
         }
+      },
+      {
+        "id": "housing-lawrence-ks-property-helix-24",
+        "name": "Helix 24",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Helix%2024%2C%20Lawrence%2C%20KS",
+        "website": "https://livehelix24.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://livehelix24.com/",
+        "summary": "Furnished student apartments with resort-style amenities near the University of Kansas.",
+        "pick": 1
+      },
+      {
+        "id": "housing-lawrence-ks-property-the-landing-lawrence",
+        "name": "The Landing Lawrence",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Landing%20Lawrence%2C%20Lawrence%2C%20KS",
+        "website": "https://thelandinglawrence.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://thelandinglawrence.com/",
+        "summary": "Modern student apartments near the University of Kansas.",
+        "address": "2511 W 31st St, Lawrence, KS",
+        "pick": 2
+      },
+      {
+        "id": "housing-lawrence-ks-property-the-collective-at-lawrence",
+        "name": "The Collective at Lawrence",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Collective%20at%20Lawrence%2C%20Lawrence%2C%20KS",
+        "website": "https://www.collectivelawrence.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.collectivelawrence.com/",
+        "summary": "Spacious student homes in a prime location near the University of Kansas.",
+        "pick": 3
       }
     ]
   },
@@ -1562,6 +2025,38 @@
           "publishedAt": "2026-11-14",
           "facebookPost": "https://www.facebook.com/groups/2120989008519297/posts/2122794788338719/"
         }
+      },
+      {
+        "id": "housing-manhattan-ks-property-prime-place-mhk",
+        "name": "Prime Place MHK",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Prime%20Place%20MHK%2C%20Manhattan%2C%20KS",
+        "website": "https://www.primeplacemhk.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.primeplacemhk.com/",
+        "summary": "Pet-friendly student apartments near K-State with a balcony and air conditioning in every unit.",
+        "address": "1532 College Ave, Manhattan, KS 66502",
+        "pick": 1
+      },
+      {
+        "id": "housing-manhattan-ks-property-the-quarters-manhattan",
+        "name": "The Quarters Manhattan",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Quarters%20Manhattan%2C%20Manhattan%2C%20KS",
+        "website": "https://thequartersmanhattan.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://thequartersmanhattan.com/",
+        "summary": "Modern student apartments in Manhattan, Kansas.",
+        "address": "2215 College Ave, Manhattan, KS",
+        "pick": 2
+      },
+      {
+        "id": "housing-manhattan-ks-property-sandstone-apartments",
+        "name": "Sandstone Apartments",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Sandstone%20Apartments%2C%20Manhattan%2C%20KS",
+        "website": "https://homeatsandstone.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://homeatsandstone.com/",
+        "summary": "Apartments in Manhattan, KS with modern floor plans and community amenities.",
+        "pick": 3
       }
     ]
   },
@@ -1597,6 +2092,39 @@
           "publishedAt": "2026-11-14",
           "facebookPost": "https://www.facebook.com/groups/1887445796015247/posts/1889210402505453/"
         }
+      },
+      {
+        "id": "housing-stillwater-ok-property-midtown-stillwater",
+        "name": "Midtown",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Midtown%2C%20Stillwater%2C%20OK",
+        "website": "https://www.midtownsw.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.midtownsw.com/",
+        "summary": "Modern student apartments steps from Oklahoma State University.",
+        "address": "801 W 4th Ave, Stillwater, OK",
+        "pick": 1
+      },
+      {
+        "id": "housing-stillwater-ok-property-prime-place-stw",
+        "name": "Prime Place STW",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Prime%20Place%20STW%2C%20Stillwater%2C%20OK",
+        "website": "https://www.primeplacestw.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.primeplacestw.com/",
+        "summary": "Student apartments in the heart of Stillwater.",
+        "address": "312 Elm Ave, Stillwater, OK",
+        "pick": 2
+      },
+      {
+        "id": "housing-stillwater-ok-property-alight-stillwater",
+        "name": "Alight Stillwater",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Alight%20Stillwater%2C%20Stillwater%2C%20OK",
+        "website": "https://alight-stillwater.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://alight-stillwater.com/",
+        "summary": "Student apartments with furnishings and amenities near Oklahoma State University, in 1-, 2- and 3-bedroom layouts.",
+        "address": "800 E Hall of Fame Ave, Stillwater, OK",
+        "pick": 3
       }
     ]
   },
@@ -1632,6 +2160,39 @@
           "publishedAt": "2026-11-14",
           "facebookPost": "https://www.facebook.com/groups/1128748779953964/posts/1129636036531905/"
         }
+      },
+      {
+        "id": "housing-tucson-az-property-aspire-tucson",
+        "name": "Aspire",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Aspire%2C%20Tucson%2C%20AZ",
+        "website": "https://www.liveaspiretucson.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.liveaspiretucson.com/",
+        "summary": "Student apartments near the University of Arizona.",
+        "address": "950 N Tyndall Ave, Tucson, AZ",
+        "pick": 1
+      },
+      {
+        "id": "housing-tucson-az-property-the-mark-tucson",
+        "name": "The Mark Tucson",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Mark%20Tucson%2C%20Tucson%2C%20AZ",
+        "website": "https://themarkua.landmark-properties.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://themarkua.landmark-properties.com/",
+        "summary": "Furnished student apartments with a wide range of amenities near the University of Arizona.",
+        "address": "55 N Park Ave, Tucson, AZ 85719",
+        "pick": 2
+      },
+      {
+        "id": "housing-tucson-az-property-university-lofts-tucson",
+        "name": "University Lofts",
+        "maps": "https://www.google.com/maps/search/?api=1&query=University%20Lofts%2C%20Tucson%2C%20AZ",
+        "website": "https://www.univlofts.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.univlofts.com/",
+        "summary": "Modern student apartments near the University of Arizona.",
+        "address": "819 N 1st Ave, Tucson, AZ",
+        "pick": 3
       }
     ]
   },
@@ -1654,6 +2215,17 @@
           "publishedAt": "2026-11-14",
           "facebookPost": "https://www.facebook.com/groups/2548132042348043/posts/2549068832254364/"
         }
+      },
+      {
+        "id": "housing-albuquerque-nm-property-university-village-albuquerque",
+        "name": "University Village",
+        "maps": "https://www.google.com/maps/search/?api=1&query=University%20Village%2C%20Albuquerque%2C%20NM",
+        "website": "https://www.universityvillageliving.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.universityvillageliving.com/",
+        "summary": "Apartment community near the University of New Mexico.",
+        "address": "1901 University Blvd SE, Albuquerque, NM 87106",
+        "pick": 1
       }
     ]
   },
@@ -1676,6 +2248,38 @@
           "publishedAt": "2026-11-14",
           "facebookPost": "https://www.facebook.com/groups/1153864210494686/posts/1154728423741598/"
         }
+      },
+      {
+        "id": "housing-fresno-ca-property-university-village-fresno",
+        "name": "University Village",
+        "maps": "https://www.google.com/maps/search/?api=1&query=University%20Village%2C%20Fresno%2C%20CA",
+        "website": "https://www.uvfresno.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.uvfresno.com/",
+        "summary": "Two- and four-bedroom student apartments in Fresno.",
+        "address": "1680 E Barstow Ave, Fresno, CA",
+        "pick": 1
+      },
+      {
+        "id": "housing-fresno-ca-property-university-place-fresno",
+        "name": "University Place Apartments",
+        "maps": "https://www.google.com/maps/search/?api=1&query=University%20Place%20Apartments%2C%20Fresno%2C%20CA",
+        "website": "https://www.fresnouniversityplace.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.fresnouniversityplace.com/",
+        "summary": "Two-bedroom student layouts with modern kitchens, high-speed internet and a fully gated entry.",
+        "pick": 2
+      },
+      {
+        "id": "housing-fresno-ca-property-palazzo-at-campus-pointe",
+        "name": "Palazzo at Campus Pointe",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Palazzo%20at%20Campus%20Pointe%2C%20Fresno%2C%20CA",
+        "website": "https://palazzofresno.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://palazzofresno.com/",
+        "summary": "Apartment community in Fresno.",
+        "address": "5164 Primitivo Way, Fresno, CA 93710",
+        "pick": 3
       }
     ]
   },
@@ -1698,6 +2302,38 @@
           "publishedAt": "2026-11-14",
           "facebookPost": "https://www.facebook.com/groups/1769167408547278/posts/1770165568447462/"
         }
+      },
+      {
+        "id": "housing-sacramento-ca-property-lark-sacramento",
+        "name": "Lark",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Lark%2C%20Sacramento%2C%20CA",
+        "website": "https://larksacramento.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://larksacramento.com/",
+        "summary": "2- and 3-bedroom student apartments designed around Sacramento State, minutes from campus.",
+        "address": "3075 Redding Ave, Sacramento, CA",
+        "pick": 1
+      },
+      {
+        "id": "housing-sacramento-ca-property-academy65",
+        "name": "Academy65",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Academy65%2C%20Sacramento%2C%20CA",
+        "website": "https://www.academy65.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.academy65.com/",
+        "summary": "Brand new, furnished student apartments with luxury amenities near Sac State.",
+        "pick": 2
+      },
+      {
+        "id": "housing-sacramento-ca-property-hornet-commons",
+        "name": "Hornet Commons",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Hornet%20Commons%2C%20Sacramento%2C%20CA",
+        "website": "https://www.hornetcommons.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.hornetcommons.com/",
+        "summary": "Student-focused apartments next to Sacramento State.",
+        "address": "3001 State University Dr, Sacramento, CA 95826",
+        "pick": 3
       }
     ]
   },
@@ -1720,6 +2356,38 @@
           "publishedAt": "2026-11-14",
           "facebookPost": "https://www.facebook.com/groups/1670073367846669/posts/1670999884420684/"
         }
+      },
+      {
+        "id": "housing-greensboro-nc-property-the-reserve-at-greensboro",
+        "name": "The Reserve at Greensboro",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Reserve%20at%20Greensboro%2C%20Greensboro%2C%20NC",
+        "website": "https://reserve-greensboro.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://reserve-greensboro.com/",
+        "summary": "Furnished apartments with resort-style amenities near UNC Greensboro and NC A&T.",
+        "address": "107 Grovecrest Way, Greensboro, NC",
+        "pick": 1
+      },
+      {
+        "id": "housing-greensboro-nc-property-the-province-greensboro",
+        "name": "The Province Greensboro",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Province%20Greensboro%2C%20Greensboro%2C%20NC",
+        "website": "https://www.theprovincegreensboro.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.theprovincegreensboro.com/",
+        "summary": "Student apartments a short ride from UNC Greensboro.",
+        "pick": 2
+      },
+      {
+        "id": "housing-greensboro-nc-property-west-quad-greensboro",
+        "name": "West Quad",
+        "maps": "https://www.google.com/maps/search/?api=1&query=West%20Quad%2C%20Greensboro%2C%20NC",
+        "website": "https://live-westquad.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://live-westquad.com/",
+        "summary": "Furnished apartments with student-oriented amenities near UNC Greensboro.",
+        "address": "2111 Spring Garden St, Greensboro, NC",
+        "pick": 3
       }
     ]
   }
