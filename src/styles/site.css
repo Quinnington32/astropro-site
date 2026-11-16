@@ -3470,3 +3470,9 @@ body:is(
 .resource-tile { justify-content: flex-start; }
 @media (min-width: 701px) { .resource-tile { padding-top: 36px; } }
 @media (max-width: 700px) { .resource-tile { padding-top: 24px; } }
+/* Keep the longer menu labels on one line; tighten spacing on mid-size screens. */
+.desktop-nav a { white-space: nowrap; }
+@media (min-width: 961px) and (max-width: 1180px) {
+  .desktop-nav { gap: 14px; }
+  .desktop-nav a { font-size: 0.8rem; }
+}

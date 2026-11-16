@@ -319,7 +319,7 @@ function savedCard(item) {
   const type =
     {
       housing: "Housing",
-      internships: "Careers",
+      internships: "Internships",
       scholarships: "Scholarships",
       discounts: "Discounts",
       guides: "Guides & support",

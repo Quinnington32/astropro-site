@@ -43,19 +43,19 @@ const resourceTypes = [
   [
     "internships",
     "Careers",
-    "Jobs & internships",
+    "Internships",
     "Explore student programs and check current openings with employers.",
   ],
   [
     "housing",
     "Living",
-    "Off-campus housing",
+    "Off-Campus Housing",
     "Find your campus market and compare property sources.",
   ],
   [
     "discounts",
     "Savings",
-    "Student discounts",
+    "Student Discounts",
     "Check student pricing and eligibility directly with the provider.",
   ],
   [
@@ -67,7 +67,7 @@ const resourceTypes = [
   [
     "financial-aid",
     "College costs",
-    "Financial aid",
+    "Financial Aid",
     "Official FAFSA tools and a practical starting checklist.",
   ],
   [
@@ -519,7 +519,7 @@ emit(
     "",
     "Find your next step",
   ) +
-    `<section class="wrap search-page"><form id="resourceSearchForm" class="home-search" action="search.html" method="get" role="search"><label class="sr-only" for="resourceSearch">Search all resources</label>${icon("search")}<input id="resourceSearch" name="q" type="search" maxlength="120" placeholder="Try NASA, nursing, or Athens" autocomplete="off"><button class="btn btn-primary">Search ${icon("arrow")}</button></form><div class="search-categories"><a href="scholarships.html">Scholarships</a><a href="internships.html">Careers</a><a href="housing.html">Housing</a><a href="discounts.html">Discounts</a></div><p class="result-count" id="resourceSearchCount" role="status" aria-live="polite"></p><div class="listing-grid" id="resourceSearchResults"></div><div class="empty-state" id="resourceSearchEmpty"><span class="empty-icon">${icon("search")}</span><h2>What’s on your mind?</h2><p>Search a name, interest, school, or city—or choose a category above.</p></div><div class="load-more"><button class="btn btn-ghost" id="moreSearchResults" type="button" hidden>Show more results</button></div><noscript><p class="notice">Choose a category above to browse resources. Enable JavaScript to search the full directory.</p></noscript></section>`,
+    `<section class="wrap search-page"><form id="resourceSearchForm" class="home-search" action="search.html" method="get" role="search"><label class="sr-only" for="resourceSearch">Search all resources</label>${icon("search")}<input id="resourceSearch" name="q" type="search" maxlength="120" placeholder="Try NASA, nursing, or Athens" autocomplete="off"><button class="btn btn-primary">Search ${icon("arrow")}</button></form><div class="search-categories"><a href="scholarships.html">Scholarships</a><a href="internships.html">Internships</a><a href="housing.html">Housing</a><a href="discounts.html">Discounts</a></div><p class="result-count" id="resourceSearchCount" role="status" aria-live="polite"></p><div class="listing-grid" id="resourceSearchResults"></div><div class="empty-state" id="resourceSearchEmpty"><span class="empty-icon">${icon("search")}</span><h2>What’s on your mind?</h2><p>Search a name, interest, school, or city—or choose a category above.</p></div><div class="load-more"><button class="btn btn-ghost" id="moreSearchResults" type="button" hidden>Show more results</button></div><noscript><p class="notice">Choose a category above to browse resources. Enable JavaScript to search the full directory.</p></noscript></section>`,
   { noindex: true },
 );
 emit(
