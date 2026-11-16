@@ -586,16 +586,22 @@
       {
         "id": "housing-denton-property-u-centre-at-fry-street",
         "name": "U Centre at Fry Street",
-        "website": "https://www.americancampus.com/student-apartments/tx/denton/u-centre-at-fry-street/floor-plans",
-        "verifiedAt": null,
-        "maps": "https://www.google.com/maps/search/?api=1&query=U%20Centre%20at%20Fry%20Street%2C%20Denton%2C%20TX"
+        "website": "https://www.americancampus.com/student-apartments/tx/denton",
+        "verifiedAt": "2026-11-15",
+        "maps": "https://www.google.com/maps/search/?api=1&query=U%20Centre%20at%20Fry%20Street%2C%20Denton%2C%20TX",
+        "source": "https://www.americancampus.com/student-apartments/tx/denton",
+        "pick": 1,
+        "summary": "American Campus lists U Centre at Fry Street among its student apartments near the University of North Texas and Texas Woman's University. Confirm distance to TWU, pricing and availability with the property."
       },
       {
         "id": "housing-denton-property-uptown-apartments",
         "name": "Uptown Apartments",
-        "website": "https://www.americancampus.com/student-apartments/tx/denton/uptown/floor-plans",
-        "verifiedAt": null,
-        "maps": "https://www.google.com/maps/search/?api=1&query=Uptown%20Apartments%2C%20Denton%2C%20TX"
+        "website": "https://www.americancampus.com/student-apartments/tx/denton/uptown",
+        "verifiedAt": "2026-11-15",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Uptown%20Apartments%2C%20Denton%2C%20TX",
+        "source": "https://www.americancampus.com/student-apartments/tx/denton/uptown",
+        "pick": 2,
+        "summary": "American Campus lists Uptown Apartments among its student apartments near the University of North Texas and Texas Woman's University. Confirm distance to TWU, pricing and availability with the property."
       }
     ]
   },
@@ -1053,9 +1059,24 @@
       {
         "id": "housing-laredo-property-la-contessa-apartments",
         "name": "La Contessa Apartments",
-        "website": "https://www.greystar.com/properties/laredo-tx/la-contessa-apartments/floorplans",
-        "verifiedAt": null,
-        "maps": "https://www.google.com/maps/search/?api=1&query=La%20Contessa%20Apartments%2C%20Laredo%2C%20TX"
+        "website": "https://www.greystar.com/la-contessa-apartments-laredo/p_14672",
+        "verifiedAt": "2026-11-15",
+        "maps": "https://www.google.com/maps/search/?api=1&query=La%20Contessa%20Apartments%2C%20Laredo%2C%20TX",
+        "source": "https://www.greystar.com/la-contessa-apartments-laredo/p_14672",
+        "address": "7402 Springfield Ave, Laredo, TX 78045",
+        "summary": "Apartment community at 7402 Springfield Ave listed on the operator's official Greystar page, which describes its location in the TAMIU area. Confirm distance to your campus, pricing and availability with the property.",
+        "pick": 1
+      },
+      {
+        "id": "housing-laredo-property-university-village",
+        "name": "University Village",
+        "website": "https://www.greystar.com/university-village-laredo/p_20801",
+        "verifiedAt": "2026-11-15",
+        "maps": "https://www.google.com/maps/search/?api=1&query=University%20Village%204907%20University%20Blvd%2C%20Laredo%2C%20TX",
+        "source": "https://www.greystar.com/university-village-laredo/p_20801",
+        "address": "4907 University Blvd, Laredo, TX 78041",
+        "summary": "Student-oriented community near TAMIU. Its official Greystar page lists fully furnished apartments, private bedrooms and bathrooms, free on-site laundry and a pool. Confirm pricing and availability with the property.",
+        "pick": 2
       }
     ]
   },
