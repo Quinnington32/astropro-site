@@ -1341,6 +1341,17 @@
           "publishedAt": "2026-11-14",
           "facebookPost": "https://www.facebook.com/groups/1672495207705371/posts/1675915460696679/"
         }
+      },
+      {
+        "id": "housing-platteville-wi-property-newman-heights",
+        "name": "Newman Heights",
+        "website": "https://www.newmanheights.com/",
+        "verifiedAt": "2026-11-15",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Newman%20Heights%2C%20185%20S%20Hickory%20St%2C%20Platteville%2C%20WI",
+        "source": "https://www.newmanheights.com/",
+        "address": "185 S Hickory St, Platteville, WI 53818",
+        "summary": "Fully furnished studios and 4-bedroom units rented by the bedroom, with high-speed internet, study rooms and a fitness room. The property describes itself as steps from UW-Platteville.",
+        "pick": 1
       }
     ]
   },
