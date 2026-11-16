@@ -2879,7 +2879,8 @@ body:is(
   font-size: 0.88rem;
   font-weight: 560;
 }
-[data-directory="scholarships"] .listing-grid {
+[data-directory="scholarships"] .listing-grid,
+[data-directory="internships"] .listing-grid {
   display: flex;
   flex-direction: column;
   gap: 14px;

@@ -221,12 +221,12 @@ emit(
 );
 emit(
   "internships.html",
-  "Jobs & internships",
+  "Internships",
   "Browse student internship and early-career programs, search by field, and check current openings on employer websites.",
   directory({
     title: "Find your next opportunity.",
     description:
-      "Explore internships and early-career programs. Check current openings with each employer.",
+      "Scroll through every program below, filter by field, and check current openings with each employer.",
     items: internships,
     type: "internships",
   }),

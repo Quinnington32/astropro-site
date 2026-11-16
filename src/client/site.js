@@ -45,7 +45,8 @@ function setupDirectory() {
     status = $("#statusFilter"),
     sort = $("#directorySort");
   const cards = $$(".listing-card", root);
-  const isSch = root.dataset.directory === "scholarships";
+  const isSch = root.dataset.directory === "scholarships" || root.dataset.directory === "internships";
+  const noun = root.dataset.directory === "internships" ? "program" : "scholarship";
   const defaultSort = isSch ? "deadline" : "featured";
   let shown = isSch ? Infinity : 12;
   let closingOnly = false;
@@ -87,7 +88,7 @@ function setupDirectory() {
     const sum = $("#dueSummary");
     if (sum && soon) {
       sum.hidden = false;
-      sum.textContent = soon + (soon === 1 ? " scholarship closes" : " scholarships close") + " in the next 30 days.";
+      sum.textContent = soon + (soon === 1 ? " " + noun + " closes" : " " + noun + "s close") + " in the next 30 days.";
     }
   }
   cards.forEach((card) => {
