@@ -272,54 +272,48 @@ async function quota(db, key, maximum, expires) {
     .first();
   return !!row;
 }
-async function notifyPartnerCampaign(env, data) {
-  if (!env.BREVO_API_KEY) return;
+const NOTIFY_TO = "leasesolutions3@gmail.com";
+const NOTIFY_FROM = "orders@astroprostudentresourcecenter.com";
+const esc = (v) =>
+  String(v ?? "").replace(
+    /[&<>"']/g,
+    (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c],
+  );
+export async function notifyPartnerCampaign(env, data) {
+  if (!env.EMAIL?.send) return;
   try {
     const p = data.payload;
-    await fetch("https://api.brevo.com/v3/smtp/email", {
-      method: "POST",
-      headers: {
-        accept: "application/json",
-        "content-type": "application/json",
-        "api-key": env.BREVO_API_KEY,
-      },
-      body: JSON.stringify({
-        sender: {
-          email: env.PARTNER_NOTIFY_FROM || "noreply@goastropro.com",
-          name: "AstroPro Resource Center",
-        },
-        to: [{ email: "michael@goastropro.com" }, { email: "cory@goastropro.com" }],
-        subject:
-          "New partner campaign order — " +
-          p.marketName +
-          " (" +
-          p.orderRef +
-          ")",
-        htmlContent:
-          "<p>A property partner submitted a paid campaign order.</p><ul>" +
-          "<li><strong>Order ref:</strong> " +
-          p.orderRef +
-          "</li><li><strong>Market:</strong> " +
-          p.marketName +
-          "</li><li><strong>Contact:</strong> " +
-          p.contactName +
-          " — " +
-          p.email +
-          (p.phone ? " — " + p.phone : "") +
-          "</li><li><strong>Subject line:</strong> " +
-          p.subject +
-          "</li><li><strong>Link to include:</strong> " +
-          (p.url || "(none provided)") +
-          "</li><li><strong>Flyer:</strong> " +
-          (p.flyerName
-            ? "Uploaded (" + p.flyerName + ")"
-            : p.wantsFlyerDesigned === "yes"
-              ? "Asked AstroPro to design one"
-              : "(none)") +
-          "</li></ul><p><strong>Instructions from partner:</strong><br>" +
-          p.instructions.replace(/\n/g, "<br>") +
-          "</p><p>Full details and the flyer file are in the admin inbox.</p>",
-      }),
+    const flyer = p.flyerName
+      ? "Uploaded (" + p.flyerName + ")"
+      : p.wantsFlyerDesigned === "yes"
+        ? "Asked AstroPro to design one"
+        : "(none)";
+    await env.EMAIL.send({
+      to: env.PARTNER_NOTIFY_TO || NOTIFY_TO,
+      from: { email: NOTIFY_FROM, name: "AstroPro Resource Center" },
+      replyTo: p.email,
+      subject:
+        "New partner campaign order — " + p.marketName + " (" + p.orderRef + ")",
+      html:
+        "<p>A property partner submitted a campaign order.</p><ul>" +
+        "<li><strong>Order ref:</strong> " + esc(p.orderRef) +
+        "</li><li><strong>Market:</strong> " + esc(p.marketName) +
+        "</li><li><strong>Contact:</strong> " + esc(p.contactName) + " — " + esc(p.email) +
+        (p.phone ? " — " + esc(p.phone) : "") +
+        "</li><li><strong>Subject line:</strong> " + esc(p.subject) +
+        "</li><li><strong>Link to include:</strong> " + esc(p.url || "(none provided)") +
+        "</li><li><strong>Flyer:</strong> " + esc(flyer) +
+        "</li></ul><p><strong>Instructions from partner:</strong><br>" +
+        esc(p.instructions).replace(/\n/g, "<br>") +
+        "</p><p>Check PayPal for a payment matching the order ref. Full details are in the admin inbox.</p>",
+      text:
+        "New partner campaign order\nOrder ref: " + p.orderRef +
+        "\nMarket: " + p.marketName +
+        "\nContact: " + p.contactName + " — " + p.email + (p.phone ? " — " + p.phone : "") +
+        "\nSubject line: " + p.subject +
+        "\nLink: " + (p.url || "(none provided)") +
+        "\nFlyer: " + flyer +
+        "\n\nInstructions:\n" + p.instructions,
     });
   } catch {
     console.error("Partner campaign notification email failed");

@@ -13,6 +13,7 @@
     { "pattern": "astroprostudentresourcecenter.org", "custom_domain": true },
     { "pattern": "www.astroprostudentresourcecenter.org", "custom_domain": true },
   ],
+  "send_email": [{ "name": "EMAIL" }],
   "assets": {
     "directory": "dist",
     "binding": "ASSETS",

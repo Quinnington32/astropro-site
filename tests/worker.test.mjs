@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { Miniflare, convertV4MiniflareOptions } from "miniflare";
 import { randomUUID, createHash } from "node:crypto";
-import { validateSubmission } from "../worker/index.mjs";
+import { validateSubmission, notifyPartnerCampaign } from "../worker/index.mjs";
 let mf, db;
 const token = "local-test-only-secret-".repeat(3);
 const origin = "https://local.test";
@@ -178,11 +178,17 @@ test("cross-origin, malformed, oversized, spam, and invalid requests cannot crea
     (await send(body(), { "Idempotency-Key": randomUUID() })).status,
     400,
   );
-  const r = await mf.dispatchFetch(origin + "/api/submissions", {
-    method: "POST",
-    headers: { Origin: origin, "Content-Type": "application/json" },
-    body: "x".repeat(2600000),
-  });
+  let r;
+  for (let attempt = 0; attempt < 3 && !r; attempt++)
+    try {
+      r = await mf.dispatchFetch(origin + "/api/submissions", {
+        method: "POST",
+        headers: { Origin: origin, "Content-Type": "application/json" },
+        body: "x".repeat(2600000),
+      });
+    } catch (err) {
+      if (attempt === 2) throw err; // large local uploads can reset the connection
+    }
   assert.equal(r.status, 413);
 });
 test("private inbox denies unauthenticated reads and supports reviewed status", async () => {
@@ -588,4 +594,30 @@ test("health reports real storage readiness without exposing private details", a
     assert.equal(response.headers.get("cache-control"), "no-store");
     assert.equal((await response.json()).ok, false);
   }
+});
+test("partner campaign orders email the staff inbox with escaped details", async () => {
+  const sent = [];
+  const env = { EMAIL: { send: async (m) => sent.push(m) } };
+  await notifyPartnerCampaign(env, {
+    payload: {
+      orderRef: "ASRC-TEST",
+      marketName: "Test Market",
+      contactName: "<b>Pat</b>",
+      email: "pat@example.com",
+      phone: "",
+      subject: "Hello",
+      url: "https://example.com",
+      wantsFlyerDesigned: "yes",
+      instructions: "Line one\nLine two",
+    },
+  });
+  assert.equal(sent.length, 1);
+  assert.equal(sent[0].to, "leasesolutions3@gmail.com");
+  assert.match(sent[0].from.email, /@astroprostudentresourcecenter\.com$/);
+  assert.match(sent[0].html, /&lt;b&gt;Pat&lt;\/b&gt;/);
+  assert.match(sent[0].subject, /ASRC-TEST/);
+  await notifyPartnerCampaign(
+    { EMAIL: { send: async () => { throw new Error("down"); } } },
+    { payload: { orderRef: "x", marketName: "x", contactName: "x", email: "x", subject: "x", instructions: "x" } },
+  );
 });

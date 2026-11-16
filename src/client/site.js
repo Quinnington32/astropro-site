@@ -679,7 +679,7 @@ function setupPartnerPay() {
         payLink.removeAttribute("aria-disabled");
         payLink.classList.remove("is-disabled");
       } else {
-        payLink.href = "mailto:michael@goastropro.com";
+        payLink.href = "mailto:leasesolutions3@gmail.com";
         payLink.setAttribute("aria-disabled", "true");
         payLink.classList.add("is-disabled");
       }
