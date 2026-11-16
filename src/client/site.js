@@ -634,7 +634,7 @@ function setupForms() {
           ],
           "scholarship-interest": [
             "You\u2019re on the list",
-            "Thanks! We\u2019ll email you when our scholarship application helper opens, plus new scholarships and deadlines. You can unsubscribe any time.",
+            "Thanks! We\u2019ll email you first if this opens, plus new scholarships and deadlines. You can unsubscribe any time.",
           ],
           "partner-campaign": [
             "Order received",

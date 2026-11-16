@@ -3336,3 +3336,24 @@ body:is(
   margin-top: 28px;
   margin-bottom: 28px;
 }
+.home-hero + .interest-drawer-wrap {
+  padding-top: 0;
+  padding-bottom: 34px;
+}
+@media (max-width: 700px) {
+  .interest-drawer > summary {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .interest-sum {
+    flex: 1 1 100%;
+  }
+  .interest-sum strong {
+    font-size: 0.98rem;
+    line-height: 1.35;
+  }
+  .interest-action {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+}

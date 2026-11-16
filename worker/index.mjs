@@ -103,6 +103,7 @@ const choices = {
     "A few hours per semester",
   ],
   helpWith: [
+    "Applying to several scholarships for me",
     "Finding scholarships that fit me",
     "Writing my essays and answers",
     "Keeping track of deadlines",
