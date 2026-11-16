@@ -12,7 +12,6 @@
         "website": "https://housing.osu.edu/hms/roomsearch/statehouse-lane",
         "verifiedAt": "2026-11-15",
         "maps": "https://www.google.com/maps/search/?api=1&query=StateHouse%20Lane%2C%20Columbus%2C%20OH",
-        "pick": 2,
         "address": "150 West Lane Avenue, Columbus, OH 43201",
         "summary": "Ohio State housing listing: shared two-person rooms in 1- to 4-bedroom apartments with kitchens, laundry and study/lounge space. Part of the university's master-leased housing.",
         "source": "https://housing.osu.edu/hms/roomsearch/statehouse-lane"
@@ -49,6 +48,19 @@
         "photo": "https://theviewonhigh.com/images/TheViewonHigh.jpg",
         "photoAlt": "The View on High in Columbus, OH, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-columbus-property-university-village",
+        "name": "University Village",
+        "website": "https://universityvillageosu.prospectportal.com/",
+        "verifiedAt": "2026-11-15",
+        "maps": "https://www.google.com/maps/search/?api=1&query=University%20Village%2C%20Columbus%2C%20OH",
+        "summary": "Student apartment community near Ohio State with a campus bus service listed on its official site. Confirm floor plans, pricing, and availability with the property.",
+        "source": "https://universityvillageosu.prospectportal.com/",
+        "photo": "https://medialibrarycfo.entrata.com/15024/MLv3/9/36/2022/3/25/100146/5bd755371db3e6.59137789255.jpg",
+        "photoAlt": "University Village in Columbus, OH, from the property's official website",
+        "photoApproved": true,
+        "pick": 2
       }
     ]
   },
@@ -418,8 +430,7 @@
         "website": "https://atmospherelincoln.prospectportal.com/lincoln/atmosphere-lincoln/student/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Atmosphere%20Lincoln%2C%20Lincoln%2C%20NE",
-        "source": "https://atmospherelincoln.prospectportal.com/lincoln/atmosphere-lincoln/student/",
-        "pick": 1
+        "source": "https://atmospherelincoln.prospectportal.com/lincoln/atmosphere-lincoln/student/"
       },
       {
         "id": "housing-lincoln-property-the-quarters-lincoln",
@@ -444,6 +455,20 @@
         "photo": "https://resource.rentcafe.com/image/upload/x_0,y_0,w_1600,h_947,c_crop/q_auto,f_auto,c_lfill,w_1600,ar_2.2222222222222223,g_auto/s3/2/4716/lga-fitness-2022(1).png",
         "photoAlt": "Lionsgate Apartments in Lincoln, NE, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-lincoln-property-prime-place-lincoln",
+        "name": "Prime Place Lincoln",
+        "website": "https://www.primeplacelincoln.com/",
+        "verifiedAt": "2026-11-15",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Prime%20Place%20Lincoln%2C%20Lincoln%2C%20NE",
+        "address": "1040 Y St, Lincoln, NE 68508",
+        "summary": "Student apartments near UNL’s City Campus and downtown Lincoln, listed on the property’s official site. Confirm floor plans, pricing, and availability with the property.",
+        "source": "https://www.primeplacelincoln.com/",
+        "photo": "https://medialibrarycfo.entrata.com/15512/MLv3/3/21/2023/03/17/104231/641498778c5fa6.29311330426.jpg",
+        "photoAlt": "Prime Place Lincoln in Lincoln, NE, from the property's official website",
+        "photoApproved": true,
+        "pick": 1
       }
     ]
   },
@@ -573,15 +598,20 @@
         "website": "https://theaurarialofts.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Auraria%20Lofts%2C%20Denver%2C%20CO",
-        "source": "https://theaurarialofts.com/contact/",
-        "pick": 1
+        "source": "https://theaurarialofts.com/contact/"
       },
       {
         "id": "housing-denver-property-alta-mile-high",
         "name": "Alta Mile High",
-        "website": "https://altamilehigh.com",
-        "verifiedAt": null,
-        "maps": "https://www.google.com/maps/search/?api=1&query=Alta%20Mile%20High%2C%20Denver%2C%20CO"
+        "website": "https://altamilehigh.com/",
+        "verifiedAt": "2026-11-15",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Alta%20Mile%20High%2C%20Denver%2C%20CO",
+        "source": "https://altamilehigh.com/",
+        "summary": "Apartment community in Denver listed on its official site. Confirm floor plans, pricing, and availability with the property.",
+        "photo": "https://altamilehigh.com/wp-content/uploads/2025/09/gallery-hero.jpg",
+        "photoApproved": true,
+        "photoAlt": "Alta Mile High in Denver, CO, from the property's official website",
+        "pick": 1
       },
       {
         "id": "housing-denver-property-novel-uptown-by-crescent-communities",
@@ -622,8 +652,7 @@
         "website": "https://prutzmanplaceapartments.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Prutzman%20Place%20Apartments%2C%20Beaumont%2C%20TX",
-        "source": "https://prutzmanplaceapartments.com/",
-        "pick": 1
+        "source": "https://prutzmanplaceapartments.com/"
       },
       {
         "id": "housing-beaumont-property-arthur-place-apartments",
@@ -658,6 +687,19 @@
         "photo": "https://media.multihub.io/cdn-cgi/image/format=auto,w=1280/property/6737460151192630/019e84a1-1e4d-70d1-bc4b-c1d57228544a.webp",
         "photoAlt": "West End Lodge in Beaumont, TX, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-beaumont-property-cardinal-oaks",
+        "name": "Cardinal Oaks",
+        "website": "https://cardinaloakstx.com/",
+        "verifiedAt": "2026-11-15",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Cardinal%20Oaks%2C%20Beaumont%2C%20TX",
+        "summary": "Apartment community in Beaumont near Lamar University, listed on its official site. Confirm floor plans, pricing, and availability with the property.",
+        "source": "https://cardinaloakstx.com/",
+        "photo": "https://cardinaloakstx.com/wp-content/uploads/2022/11/cardinal-oaks-beaumont-tx-primary-photo-1.jpg",
+        "photoAlt": "Cardinal Oaks in Beaumont, TX, from the property's official website",
+        "photoApproved": true,
+        "pick": 1
       }
     ]
   },
@@ -995,8 +1037,7 @@
         "website": "https://pacerealtytexas.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=The%20Badgers%20on%20Jackson%2C%20Amarillo%2C%20TX",
-        "source": "https://amarillocollege.com/offcampushousing/properties/95/The-Badgers-on-Jackson",
-        "pick": 1
+        "source": "https://amarillocollege.com/offcampushousing/properties/95/The-Badgers-on-Jackson"
       },
       {
         "id": "housing-amarillo-property-georgia-villas",
@@ -1004,8 +1045,7 @@
         "website": "https://georgiavillas.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Georgia%20Villas%2C%20Amarillo%2C%20TX",
-        "source": "https://georgiavillas.com/",
-        "pick": 2
+        "source": "https://georgiavillas.com/"
       },
       {
         "id": "housing-amarillo-property-stonegate-amarillo",
@@ -1020,6 +1060,33 @@
         "photo": "https://medialibrarycfo.entrata.com/101578/MLv3/3/21/2025/11/05/114143/690b9a67218951.77277183924.jpg",
         "photoAlt": "Stonegate in Amarillo, TX, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-amarillo-property-the-reserve-at-forty-seven",
+        "name": "The Reserve at Forty-Seven",
+        "website": "https://www.thereserveatfourtyseven.com/",
+        "verifiedAt": "2026-11-15",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Reserve%20at%20Forty-Seven%2C%20Amarillo%2C%20TX",
+        "address": "4711 S Virginia St, Amarillo, TX 79109",
+        "summary": "Apartment community in Amarillo with floor plans and specials on its official site. Confirm pricing and availability with the property.",
+        "source": "https://www.thereserveatfourtyseven.com/",
+        "photo": "https://media.apts247.info/a1/a1e238166c5c4243899421a62c4281a1/hero_shot/community/community-amenities.jpg",
+        "photoAlt": "The Reserve at Forty-Seven in Amarillo, TX, from the property's official website",
+        "photoApproved": true,
+        "pick": 1
+      },
+      {
+        "id": "housing-amarillo-property-the-colonies-at-hillside",
+        "name": "The Colonies at Hillside",
+        "website": "https://www.caseusa.com/apartments/tx/amarillo/the-colonies-at-hillside/",
+        "verifiedAt": "2026-11-15",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Colonies%20at%20Hillside%2C%20Amarillo%2C%20TX",
+        "summary": "Pet-friendly Amarillo apartments with pools and a fitness center, listed on the operator’s official site. Confirm pricing and availability with the property.",
+        "source": "https://www.caseusa.com/apartments/tx/amarillo/the-colonies-at-hillside/",
+        "photo": "https://media.multihub.io/cdn-cgi/image/format=auto,w=1280/property/6767906449167037/019cfb50-7643-74ed-a9f7-5320d688a856.webp",
+        "photoAlt": "The Colonies at Hillside in Amarillo, TX, from the property's official website",
+        "photoApproved": true,
+        "pick": 2
       }
     ]
   },
@@ -1194,8 +1261,7 @@
         "website": "https://choiceproperties.com/community/lake-view-shores/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Lake%20View%20Shores%20Apartments%2C%20Toledo%2C%20OH",
-        "source": "https://choiceproperties.com/community/lake-view-shores/",
-        "pick": 1
+        "source": "https://choiceproperties.com/community/lake-view-shores/"
       },
       {
         "id": "housing-toledo-property-oak-hill-apartments",
@@ -1232,9 +1298,15 @@
       {
         "id": "housing-toledo-property-fox-chase-apartments",
         "name": "Fox Chase Apartments",
-        "website": "https://villagegreen.com/oh/holland/fox-chase/#Floorplans",
-        "verifiedAt": null,
-        "maps": "https://www.google.com/maps/search/?api=1&query=Fox%20Chase%20Apartments%2C%20Toledo%2C%20OH"
+        "website": "https://villagegreen.com/oh/holland/fox-chase/",
+        "verifiedAt": "2026-11-15",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Fox%20Chase%20Apartments%2C%20Toledo%2C%20OH",
+        "source": "https://villagegreen.com/oh/holland/fox-chase/",
+        "summary": "Apartment community in Holland, OH near Toledo, listed on its official site. Confirm floor plans, pricing, and availability with the property.",
+        "photo": "https://villagegreen.com/wp-content/uploads/2022/10/fox-chase-apartments-2.jpg",
+        "photoApproved": true,
+        "photoAlt": "Fox Chase Apartments in Toledo, OH, from the property's official website",
+        "pick": 1
       }
     ]
   },
@@ -1359,8 +1431,7 @@
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Glen%20Lake%20Apartments%2C%20Smithfield%2C%20NC",
         "source": "https://glen-lake-apartments0.rentcafewebsite.com/",
-        "summary": "Income restrictions apply. Confirm eligibility directly with the property before applying.",
-        "pick": 1
+        "summary": "Income restrictions apply. Confirm eligibility directly with the property before applying."
       },
       {
         "id": "housing-smithfield-property-berkshire-apartments-smithfield",
