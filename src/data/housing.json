@@ -3738,6 +3738,19 @@
         "photo": "assets/housing/housing-san-marcos-tx-property-bishops-square.jpg",
         "photoAlt": "Bishop's Square in San Marcos, TX, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-san-marcos-tx-property-the-social-san-marcos",
+        "name": "The Social San Marcos",
+        "website": "https://thesocialsmtx.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The+Social+San+Marcos%2C+San+Marcos%2C+TX",
+        "summary": "Student apartments near Texas State with a resort-style pool, listed on the property’s official site.",
+        "source": "https://thesocialsmtx.com/",
+        "pick": 3,
+        "photo": "assets/housing/housing-san-marcos-tx-property-the-social-san-marcos.jpg",
+        "photoAlt": "Pool at The Social San Marcos near Texas State, from the property’s official website",
+        "photoApproved": true
       }
     ]
   },
@@ -3857,6 +3870,19 @@
         "photo": "assets/housing/housing-boston-ma-property-lightview.jpg",
         "photoAlt": "LightView in Boston, MA, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-boston-ma-property-the-fenway",
+        "name": "The Fenway",
+        "website": "https://thefenway.com/student-apartments/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The+Fenway%2C+Boston%2C+MA",
+        "summary": "Student-friendly apartments in Boston’s Fenway area, listed on the property’s official site.",
+        "source": "https://thefenway.com/student-apartments/",
+        "pick": 2,
+        "photo": "assets/housing/housing-boston-ma-property-the-fenway.jpg",
+        "photoAlt": "The Fenway apartment building in Boston, from the property’s official website",
+        "photoApproved": true
       }
     ]
   },
@@ -3915,6 +3941,19 @@
         "pick": 2,
         "photo": "assets/housing/housing-san-diego-ca-property-6nineteen.jpg",
         "photoAlt": "6Nineteen in San Diego, CA, from the property's official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-san-diego-ca-property-college-area-living",
+        "name": "College Area Living",
+        "website": "https://www.collegearealiving.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=College+Area+Living%2C+San+Diego%2C+CA",
+        "summary": "Off-campus student housing near SDSU, listed on the property’s official site.",
+        "source": "https://www.collegearealiving.com/",
+        "pick": 3,
+        "photo": "assets/housing/housing-san-diego-ca-property-college-area-living.jpg",
+        "photoAlt": "College Area Living apartment building near SDSU, from the property’s official website",
         "photoApproved": true
       }
     ]
@@ -4301,6 +4340,19 @@
         "pick": 2,
         "photo": "assets/housing/housing-kennesaw-ga-property-the-nest.jpg",
         "photoAlt": "The Nest in Kennesaw, GA, from the property's official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-kennesaw-ga-property-the-collective-at-kennesaw",
+        "name": "The Collective at Kennesaw",
+        "website": "https://www.collectivekennesaw.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The+Collective+at+Kennesaw%2C+Kennesaw%2C+GA",
+        "summary": "Student housing near Kennesaw State with a resort-style pool, listed on the property’s official site.",
+        "source": "https://www.collectivekennesaw.com/",
+        "pick": 3,
+        "photo": "assets/housing/housing-kennesaw-ga-property-the-collective-at-kennesaw.jpg",
+        "photoAlt": "Pool at The Collective at Kennesaw, from the property’s official website",
         "photoApproved": true
       }
     ]
