@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { Miniflare, convertV4MiniflareOptions } from "miniflare";
 import { randomUUID, createHash } from "node:crypto";
-import { validateSubmission, notifyPartnerCampaign, buildRawEmail } from "../worker/index.mjs";
+import { validateSubmission, notifyPartnerCampaign, notifySubmission, buildRawEmail } from "../worker/index.mjs";
 let mf, db;
 const token = "local-test-only-secret-".repeat(3);
 const origin = "https://local.test";
@@ -625,4 +625,18 @@ test("partner campaign orders email the staff inbox with escaped details", async
     { EMAIL: { send: async () => { throw new Error("down"); } } },
     { payload: { orderRef: "x", marketName: "x", contactName: "x", email: "x", subject: "x", instructions: "x" } },
   );
+});
+
+test("student form submissions email the staff inbox", async () => {
+  const sent = [];
+  const env = { EMAIL: { send: async (m) => sent.push(m) } };
+  await notifySubmission(env, {
+    type: "mentee",
+    payload: { name: "A <i>Student</i>", email: "s@example.com", field: "Engineering", flyerBase64: "SECRET" },
+  });
+  assert.equal(sent.length, 1);
+  assert.equal(sent[0].to, "leasesolutions3@gmail.com");
+  assert.match(sent[0].subject, /Mentee request/);
+  assert.match(sent[0].html, /&lt;i&gt;Student/);
+  assert.doesNotMatch(sent[0].html + sent[0].text, /SECRET/);
 });

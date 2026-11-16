@@ -372,6 +372,47 @@ export async function notifyPartnerCampaign(env, data) {
     console.error("Partner campaign notification email failed");
   }
 }
+const LABELS = {
+  mentee: "Mentee request",
+  mentor: "Mentor sign-up",
+  listing: "Listing suggestion",
+  "data-request": "Data request",
+  unsubscribe: "Email preference / unsubscribe",
+};
+export async function notifySubmission(env, data) {
+  if (data.type === "partner-campaign") return notifyPartnerCampaign(env, data);
+  if (!env.EMAIL?.send) return;
+  try {
+    const label = LABELS[data.type] || data.type;
+    const rows = Object.entries(data.payload || {}).filter(
+      ([k, v]) => v !== "" && v != null && !/base64/i.test(k),
+    );
+    const message = {
+      to: env.PARTNER_NOTIFY_TO || NOTIFY_TO,
+      from: NOTIFY_FROM,
+      replyTo: data.payload?.email,
+      subject: "New " + label + " — Student Resource Center",
+      html:
+        "<p>New <strong>" + esc(label) + "</strong> submitted on the Student Resource Center.</p><ul>" +
+        rows.map(([k, v]) => "<li><strong>" + esc(k) + ":</strong> " + esc(v).replace(/\n/g, "<br>") + "</li>").join("") +
+        "</ul><p>Also saved in the admin inbox.</p>",
+      text:
+        "New " + label + " submitted\n\n" +
+        rows.map(([k, v]) => k + ": " + v).join("\n"),
+    };
+    let EmailMessage;
+    try {
+      ({ EmailMessage } = await import("cloudflare:email"));
+    } catch {}
+    await env.EMAIL.send(
+      EmailMessage
+        ? new EmailMessage(message.from, message.to, buildRawEmail(message))
+        : message,
+    );
+  } catch {
+    console.error("Submission notification email failed");
+  }
+}
 async function submissions(request, env) {
   if (request.method !== "POST")
     return json({ error: "Method not allowed." }, 405, { allow: "POST" });
@@ -503,8 +544,7 @@ async function submissions(request, env) {
         },
         409,
       );
-    if (data.type === "partner-campaign")
-      await notifyPartnerCampaign(env, data);
+    await notifySubmission(env, data);
     return json({ receipt: stored.id, receivedAt: stored.created_at }, 201);
   } catch {
     console.error("Resource Center submission persistence failed");
