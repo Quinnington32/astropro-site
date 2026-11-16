@@ -3906,6 +3906,32 @@
         "photo": "assets/housing/housing-phoenix-az-property-joy-on-4th.jpg",
         "photoAlt": "Joy on 4th in Phoenix, AZ, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-phoenix-az-property-roosevelt-row",
+        "name": "Roosevelt Row",
+        "website": "https://www.liveatroosevelt.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Roosevelt+Row%2C+Phoenix%2C+AZ",
+        "summary": "Downtown Phoenix apartments with a resort-style pool, a short ride from ASU Downtown, listed on the property’s official site.",
+        "source": "https://www.liveatroosevelt.com/",
+        "pick": 2,
+        "photo": "assets/housing/housing-phoenix-az-property-roosevelt-row.jpg",
+        "photoAlt": "Pool at Roosevelt Row apartments in downtown Phoenix, from the property’s official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-phoenix-az-property-roosevelt-square",
+        "name": "Roosevelt Square",
+        "website": "https://rooseveltsquareapts.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Roosevelt+Square%2C+Phoenix%2C+AZ",
+        "summary": "Downtown Phoenix apartments with a landscaped courtyard, a short ride from ASU Downtown, listed on the property’s official site.",
+        "source": "https://rooseveltsquareapts.com/",
+        "pick": 3,
+        "photo": "assets/housing/housing-phoenix-az-property-roosevelt-square.jpg",
+        "photoAlt": "Courtyard at Roosevelt Square apartments in downtown Phoenix, from the property’s official website",
+        "photoApproved": true
       }
     ]
   },
