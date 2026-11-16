@@ -1923,7 +1923,8 @@
         "source": "https://flatsonhighst.com/",
         "photo": "assets/housing/housing-new-hampshire-property-the-flats-on-high-street.jpg",
         "photoAlt": "The Flats on High Street in New Hampshire (statewide), from the property's official website",
-        "photoApproved": true
+        "photoApproved": true,
+        "pick": 3
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/hooksettapartments/"
@@ -4261,6 +4262,32 @@
         "pick": 1,
         "photo": "assets/housing/housing-boone-nc-property-university-highlands.jpg",
         "photoAlt": "University Highlands in Boone, NC, from the property's official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-boone-nc-property-highpointe-boone",
+        "name": "Highpointe Boone",
+        "website": "https://highpointeboone.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Highpointe+Boone%2C+Boone%2C+NC",
+        "summary": "Student apartments near Appalachian State with resort-style pool, clubhouse and lounge, listed on the property’s official site.",
+        "source": "https://highpointeboone.com/",
+        "pick": 2,
+        "photo": "assets/housing/housing-boone-nc-property-highpointe-boone.jpg",
+        "photoAlt": "Highpointe Boone buildings and pool near Appalachian State, from the property’s official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-boone-nc-property-mountaineer-village",
+        "name": "Mountaineer Village",
+        "website": "https://mountaineervillage.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Mountaineer+Village%2C+Boone%2C+NC",
+        "summary": "Student apartments near Appalachian State with pool and furnished floor plans, listed on the property’s official site.",
+        "source": "https://mountaineervillage.com/",
+        "pick": 3,
+        "photo": "assets/housing/housing-boone-nc-property-mountaineer-village.jpg",
+        "photoAlt": "Mountaineer Village apartment buildings and pool in Boone, from the property’s official website",
         "photoApproved": true
       }
     ]
