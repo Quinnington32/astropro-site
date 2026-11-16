@@ -42,12 +42,15 @@
         "website": "https://theviewonhigh.com/",
         "verifiedAt": "2026-11-15",
         "source": "https://theviewonhigh.com/",
-        "summary": "Fully furnished student apartments directly across from Ohio State University.",
-        "address": "2020 N High St, Columbus, OH",
+        "summary": "Student apartments at 2020 N High St with 1- to 5-bedroom floor plans, from a 596 sq ft one-bedroom up to 2,289 sq ft five-bedrooms. The official site is currently advertising a $250 gift card for signing a lease within 48 hours of touring. Confirm the offer and its terms with the property.",
+        "address": "2020 N High St, Columbus, OH 43201",
         "pick": 3,
         "photo": "https://theviewonhigh.com/images/TheViewonHigh.jpg",
         "photoAlt": "The View on High in Columbus, OH, from the property's official website",
-        "photoApproved": true
+        "photoApproved": true,
+        "spotlight": {
+          "publishedAt": "2026-11-15"
+        }
       },
       {
         "id": "housing-columbus-property-university-village",
@@ -115,6 +118,22 @@
         "photo": "https://lirp.cdn-website.com/6de27339/dms3rep/multi/opt/campus+heights+1+Ricky+Hysell-1920w.jpg",
         "photoAlt": "Campus Heights in Athens, OH, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-athens-property-the-summit-at-coates-run",
+        "name": "The Summit at Coates Run",
+        "website": "https://thesummitatcoates.prospectportal.com/athens-oh-apartments/the-summit-at-coates-run/",
+        "verifiedAt": "2026-11-15",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Summit%20at%20Coates%20Run%2C%20363%20Richland%20Ave%2C%20Athens%2C%20OH",
+        "address": "363 Richland Ave, Athens, OH 45701",
+        "summary": "Student apartments just across the Hocking River from Ohio University. The official site lists 2-, 3- and 4-bedroom floor plans from 922 to 1,519 sq ft, with 2-bed/2-bath layouts listed at $1,350 per installment on its current lease terms. Lease terms run from semester-length to annual, so ask which fits your dates.",
+        "source": "https://thesummitatcoates.prospectportal.com/athens-oh-apartments/the-summit-at-coates-run/",
+        "photo": "https://medialibrarycfo.entrata.com/15647/MLv3/3/21/2026/01/20/020207/9589_100143630_60b7989e9a3f95.45543131661.jpg",
+        "photoAlt": "The Summit at Coates Run in Athens, OH, from the property's official website",
+        "photoApproved": true,
+        "spotlight": {
+          "publishedAt": "2026-11-15"
+        }
       }
     ]
   },
