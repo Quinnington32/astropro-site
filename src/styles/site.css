@@ -3455,7 +3455,7 @@ body:is(
   #top-picks .rental-visual img { position: absolute; inset: 0; }
 }
 /* Home resource tiles: six equal, centered, title-only tiles in a 3x2 grid (2x3 on phones). */
-.resource-tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 8px; }
+.resource-tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 8px; }
 .resource-tile { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; min-height: 168px; padding: 28px 16px; text-align: center; border: 1px solid var(--line); border-radius: 22px; background: #fff; color: var(--ink); text-decoration: none; box-shadow: 0 6px 20px rgba(20, 30, 60, 0.05); transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease; }
 .resource-tile:hover, .resource-tile:focus-visible { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(20, 30, 60, 0.12); border-color: var(--primary); }
 .resource-tile .category-icon { width: 56px; height: 56px; display: grid; place-items: center; border-radius: 18px; margin: 0; }
@@ -3476,3 +3476,8 @@ body:is(
   .desktop-nav { gap: 14px; }
   .desktop-nav a { font-size: 0.8rem; }
 }
+/* Eight home tiles: 4x2 on wide screens, 2x4 on tablets and phones. */
+@media (min-width: 701px) and (max-width: 1000px) {
+  .resource-tiles { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+}
+.resource-tile h3 { text-wrap: balance; }

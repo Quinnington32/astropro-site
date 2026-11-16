@@ -33,6 +33,16 @@ export const navigationResources = [
     "Mental health, counseling, crisis support, food, and housing assistance.",
   ],
   [
+    "textbooks",
+    "Textbooks & course supplies",
+    "Free textbooks, used books, rentals, open textbooks, library reserves, and ways to save on course materials.",
+  ],
+  [
+    "test-prep",
+    "Test prep",
+    "Free SAT, ACT, AP, CLEP, LSAT, GRE, GMAT, and MCAT practice, plus fee waivers.",
+  ],
+  [
     "money-basics",
     "Student money basics",
     "Budgeting, financial aid refunds, banking, and student tax basics.",

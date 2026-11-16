@@ -26,6 +26,8 @@ const guides = [
   "money-basics",
   "tutoring",
   "wellbeing",
+  "textbooks",
+  "test-prep",
 ];
 const sourceCommit = process.env.GITHUB_SHA || null;
 if (sourceCommit && !/^[0-9a-f]{40}$/.test(sourceCommit))
@@ -89,6 +91,18 @@ const resourceTypes = [
     "Find counseling, crisis support, food, and housing assistance.",
   ],
   [
+    "textbooks",
+    "College costs",
+    "Textbooks & course supplies",
+    "Free textbooks, cheap rentals, used books, and money-saving tips.",
+  ],
+  [
+    "test-prep",
+    "Learning",
+    "Test prep",
+    "Official free practice and fee waivers for the SAT, ACT, CLEP, LSAT, GRE, and MCAT.",
+  ],
+  [
     "money-basics",
     "Everyday life",
     "Student finances",
@@ -132,6 +146,8 @@ const homeCategories = [
   ["discounts", "discounts.html", "Student Discounts", "butter"],
   ["guides", "apply-to-college.html", "Apply for College", "blue"],
   ["money", "financial-aid.html", "Financial Aid", "rose"],
+  ["textbooks", "textbooks.html", "Textbooks & Course Supplies", "mint"],
+  ["testprep", "test-prep.html", "Test Prep", "lavender"],
 ];
 const supportLinks = [
   ["mentorship", "mentorship.html", "Find a mentor", "Connect with someone a few steps ahead of you"],
@@ -411,6 +427,14 @@ for (const slug of guides) {
       "A little more money confidence.",
       "Understand aid refunds, build a budget, and get the basics in place.",
     ],
+    textbooks: [
+      "Textbooks, without the sticker shock.",
+      "We know not every student can afford to buy books brand new, and you shouldn’t have to. Start with the free and low-cost options below.",
+    ],
+    "test-prep": [
+      "Prep for your test without overpaying.",
+      "Official free practice, fee waivers, and credit-by-exam options.",
+    ],
     tutoring: [
       "You don’t have to study solo.",
       "Find campus tutoring, writing help, and free learning resources.",
@@ -476,6 +500,8 @@ for (const slug of guides) {
       "Your checklist",
     ],
     "money-basics": ["Aid refunds", "Budgeting", "Taxes", "Banking", "Earning"],
+    textbooks: ["Free books", "Rent or buy used", "Saving tips", "Supplies"],
+    "test-prep": ["SAT, ACT & AP", "Credit by exam", "Graduate school", "Study tips"],
     tutoring: ["Campus help", "Online resources"],
     wellbeing: ["Wellbeing", "Basic needs"],
   }[slug];
