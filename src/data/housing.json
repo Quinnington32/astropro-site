@@ -3802,7 +3802,21 @@
     "place": "Conway, AR",
     "description": "Renters and students in Conway use the AstroPro Facebook group to find apartments, subleases, and roommates near University of Central Arkansas. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/1645715680533070/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-conway-ar-property-the-edge-at-conway",
+        "name": "The Edge at Conway",
+        "website": "https://liveattheedgeconway.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The+Edge+at+Conway%2C+Conway%2C+AR",
+        "summary": "Student apartments near the University of Central Arkansas with a resort-style pool, listed on the property’s official site.",
+        "source": "https://liveattheedgeconway.com/",
+        "pick": 1,
+        "photo": "assets/housing/housing-conway-ar-property-the-edge-at-conway.jpg",
+        "photoAlt": "Pool at The Edge at Conway, from the property’s official website",
+        "photoApproved": true
+      }
+    ]
   },
   {
     "id": "housing-hurricane-ut",
@@ -4370,7 +4384,21 @@
     "place": "Williamsburg, VA",
     "description": "Renters and students in Williamsburg use the AstroPro Facebook group to find apartments, subleases, and roommates near William & Mary. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/williamsburgapartments/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-williamsburg-va-property-current-midtown",
+        "name": "Current Midtown",
+        "website": "https://currentmidtown.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Current+Midtown%2C+Williamsburg%2C+VA",
+        "summary": "Apartments near William & Mary, listed on the property’s official site.",
+        "source": "https://currentmidtown.com/",
+        "pick": 1,
+        "photo": "assets/housing/housing-williamsburg-va-property-current-midtown.jpg",
+        "photoAlt": "Current Midtown apartment building near William & Mary, from the property’s official website",
+        "photoApproved": true
+      }
+    ]
   },
   {
     "id": "housing-kalamazoo-mi",
@@ -4464,7 +4492,34 @@
     "place": "Cullowhee, NC",
     "description": "Renters and students in Cullowhee use the AstroPro Facebook group to find apartments, subleases, and roommates near Western Carolina University. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/cullowheeapartments/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-cullowhee-nc-property-the-husk",
+        "name": "The Husk",
+        "website": "https://www.thehusk.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The+Husk%2C+Cullowhee%2C+NC",
+        "summary": "Student apartments near Western Carolina University with a resort-style pool, listed on the property’s official site.",
+        "source": "https://www.thehusk.com/",
+        "pick": 1,
+        "photo": "assets/housing/housing-cullowhee-nc-property-the-husk.jpg",
+        "photoAlt": "Pool and buildings at The Husk near Western Carolina University, from the property’s official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-cullowhee-nc-property-mountain-village",
+        "name": "Mountain Village",
+        "website": "https://wcuapts.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Mountain+Village%2C+Cullowhee%2C+NC",
+        "summary": "Student apartments near Western Carolina University, listed on the property’s official site.",
+        "source": "https://wcuapts.com/",
+        "pick": 2,
+        "photo": "assets/housing/housing-cullowhee-nc-property-mountain-village.jpg",
+        "photoAlt": "Mountain Village apartments near Western Carolina University, from the property’s official website",
+        "photoApproved": true
+      }
+    ]
   },
   {
     "id": "housing-new-braunfels-tx",
@@ -4745,7 +4800,21 @@
     "place": "Cedar City, UT",
     "description": "Renters and students in Cedar City use the AstroPro Facebook group to find apartments, subleases, and roommates near Southern Utah University. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/cedarcityapartments/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-cedar-city-ut-property-stonebrook-apartments",
+        "name": "Stonebrook Apartments",
+        "website": "https://stonebrooksuu.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Stonebrook+Apartments%2C+Cedar+City%2C+UT",
+        "summary": "Student apartments near Southern Utah University, listed on the property’s official site.",
+        "source": "https://stonebrooksuu.com/",
+        "pick": 1,
+        "photo": "assets/housing/housing-cedar-city-ut-property-stonebrook-apartments.jpg",
+        "photoAlt": "Stonebrook Apartments sign and buildings near Southern Utah University, from the property’s official website",
+        "photoApproved": true
+      }
+    ]
   },
   {
     "id": "housing-enterprise-nv",
