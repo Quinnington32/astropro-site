@@ -351,7 +351,7 @@ function rentalVisual(p, m, badge) {
   const src = p.photoApproved && p.photo ? p.photo : p.spotlight?.photo && p.spotlight?.photoAlt ? p.spotlight.photo : "";
   const alt = p.photoAlt || p.spotlight?.photoAlt || "";
   const tag = badge ? `<span class="rental-badge">${e(badge)}</span>` : "";
-  if (src && alt) return `<div class="rental-visual"><img src="${e(src)}" alt="${e(alt)}" loading="lazy" decoding="async">${tag}</div>`;
+  if (src && alt) return `<div class="rental-visual"><img src="${e(src)}" alt="${e(alt)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">${tag}</div>`;
   return `<div class="rental-visual"><div class="rental-art" aria-hidden="true"><span class="rental-mark">${e(initials(p.name))}</span><small>${e(m.place)}</small></div>${tag}</div>`;
 }
 function rentalCard(p, m, { badge, feed }) {
