@@ -3567,7 +3567,49 @@
     "place": "Austin, TX",
     "description": "Renters and students in Austin use the AstroPro Facebook group to find apartments, subleases, and roommates near University of Texas at Austin. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/1580209497481415/",
-    "properties": [],
+    "properties": [
+      {
+        "id": "housing-austin-tx-property-the-block",
+        "name": "The Block",
+        "website": "https://www.americancampus.com/student-apartments/tx/austin/the-block",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Block%2C%20Austin%2C%20TX",
+        "address": null,
+        "summary": "West Campus student apartments near UT Austin with furnished 1- to 5-bedroom options.",
+        "source": "https://www.americancampus.com/student-apartments/tx/austin/the-block",
+        "pick": 1,
+        "photo": "assets/housing/housing-austin-tx-property-the-block.jpg",
+        "photoAlt": "The Block in Austin, TX, from the property's official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-austin-tx-property-26-west",
+        "name": "26 West",
+        "website": "https://www.americancampus.com/student-apartments/tx/austin/26-west",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=26%20West%2C%20Austin%2C%20TX",
+        "address": "600 W 26th St, Austin, TX 78705",
+        "summary": "Furnished 1-, 2- and 4-bedroom apartments in West Campus with a pool, fitness center and rooftop basketball court.",
+        "source": "https://www.americancampus.com/student-apartments/tx/austin/26-west",
+        "pick": 2,
+        "photo": "assets/housing/housing-austin-tx-property-26-west.jpg",
+        "photoAlt": "26 West in Austin, TX, from the property's official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-austin-tx-property-regents-west-at-26th",
+        "name": "Regents West at 26th",
+        "website": "https://www.regentswest26.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Regents%20West%20at%2026th%2C%20Austin%2C%20TX",
+        "summary": "West Campus student apartments within walking distance of UT Austin, with studio to 5-bedroom floor plans.",
+        "source": "https://www.regentswest26.com/",
+        "pick": 3,
+        "photo": "assets/housing/housing-austin-tx-property-regents-west-at-26th.jpg",
+        "photoAlt": "Regents West at 26th in Austin, TX, from the property's official website",
+        "photoApproved": true
+      }
+    ],
     "facebookGroupsMore": [
       {
         "label": "Austin subleases",
