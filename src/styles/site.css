@@ -3445,3 +3445,11 @@ body:is(
   font-size: 0.8rem;
   color: var(--ink-soft);
 }
+/* Photos always render in the same fixed frame, whatever the source image's shape. */
+.rental-visual { overflow: hidden; }
+.rental-visual img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: center; }
+.rental-visual { height: auto; }
+@media (max-width: 700px) {
+  #top-picks .rental-visual { contain: none; }
+  #top-picks .rental-visual img { position: absolute; inset: 0; }
+}
