@@ -239,5 +239,10 @@ export const marketLinks = {
   "east-honolulu-hi": "housing-east-honolulu-hi.html",
   "east-honolulu": "housing-east-honolulu-hi.html",
   "bangor-me": "housing-bangor-me.html",
-  "bangor": "housing-bangor-me.html"
+  "bangor": "housing-bangor-me.html",
+  "madison": "housing-madison.html",
+  "minneapolis": "housing-minneapolis.html",
+  "tampa": "housing-tampa.html",
+  "ann-arbor": "housing-ann-arbor.html",
+  "gainesville": "housing-gainesville.html"
 };

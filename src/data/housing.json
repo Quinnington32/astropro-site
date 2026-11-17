@@ -6588,5 +6588,250 @@
         "photoApproved": true
       }
     ]
+  },
+  {
+    "id": "housing-madison",
+    "file": "housing-madison.html",
+    "school": "University of Wisconsin–Madison",
+    "place": "Madison, WI",
+    "description": "A downtown isthmus campus market where students rent in the Mifflin, Langdon and State Street areas, with high-rise apartments close to Bascom Hill.",
+    "properties": [
+      {
+        "id": "housing-madison-property-hub-madison",
+        "name": "Hub Madison",
+        "website": "https://www.hubmadison.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Hub+Madison%2C+Madison%2C+WI",
+        "summary": "Student apartment community near UW–Madison, with floor plans, amenities and leasing information on its official site.",
+        "source": "https://www.hubmadison.com/",
+        "pick": 1,
+        "photo": "assets/housing/housing-madison-property-hub-madison.jpg",
+        "photoAlt": "Rooftop pool deck at Hub Madison",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-madison-property-chapter-madison",
+        "name": "Chapter at Madison",
+        "website": "https://www.chapteratmadison.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Chapter+at+Madison%2C+Madison%2C+WI",
+        "summary": "Student apartment community near UW–Madison, with floor plans, amenities and leasing information on its official site.",
+        "source": "https://www.chapteratmadison.com/",
+        "pick": 2,
+        "photo": "assets/housing/housing-madison-property-chapter-madison.jpg",
+        "photoAlt": "Exterior of Chapter at Madison",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-madison-property-palisade-madison",
+        "name": "Palisade",
+        "website": "https://www.palisadeapts.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Palisade%2C+Madison%2C+WI",
+        "summary": "Student apartment community near UW–Madison, with floor plans, amenities and leasing information on its official site.",
+        "source": "https://www.palisadeapts.com/",
+        "pick": 3,
+        "photo": "assets/housing/housing-madison-property-palisade-madison.jpg",
+        "photoAlt": "Rooftop pool at Palisade apartments in Madison",
+        "photoApproved": true
+      }
+    ],
+    "facebookGroup": "https://www.facebook.com/groups/1786944512518241/"
+  },
+  {
+    "id": "housing-minneapolis",
+    "file": "housing-minneapolis.html",
+    "school": "University of Minnesota Twin Cities",
+    "place": "Minneapolis, MN",
+    "description": "Students at the U of M rent mostly in Dinkytown, Stadium Village and Marcy-Holmes, with newer apartment buildings within walking distance of campus.",
+    "properties": [
+      {
+        "id": "housing-minneapolis-property-venue-dinkytown",
+        "name": "Venue at Dinkytown",
+        "website": "https://venueatdinkytown.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Venue+at+Dinkytown%2C+Minneapolis%2C+MN",
+        "summary": "Student apartment community near the University of Minnesota, with floor plans, amenities and leasing information on its official site.",
+        "source": "https://venueatdinkytown.com/",
+        "pick": 1,
+        "photo": "assets/housing/housing-minneapolis-property-venue-dinkytown.jpg",
+        "photoAlt": "Entrance of Venue at Dinkytown",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-minneapolis-property-radius-15th",
+        "name": "Radius at 15th",
+        "website": "https://www.liveradiusat15th.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Radius+at+15th%2C+Minneapolis%2C+MN",
+        "summary": "Student apartment community near the University of Minnesota, with floor plans, amenities and leasing information on its official site.",
+        "source": "https://www.liveradiusat15th.com/",
+        "pick": 2,
+        "photo": "assets/housing/housing-minneapolis-property-radius-15th.jpg",
+        "photoAlt": "Resident lounge at Radius at 15th",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-minneapolis-property-standard-dinkytown",
+        "name": "The Standard at Dinkytown",
+        "website": "https://www.thestandarddinkytown.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The+Standard+at+Dinkytown%2C+Minneapolis%2C+MN",
+        "summary": "Student apartment community near the University of Minnesota, with floor plans, amenities and leasing information on its official site.",
+        "source": "https://www.thestandarddinkytown.com/",
+        "pick": 3,
+        "photo": "assets/housing/housing-minneapolis-property-standard-dinkytown.jpg",
+        "photoAlt": "Rooftop pool at The Standard at Dinkytown",
+        "photoApproved": true
+      }
+    ],
+    "facebookGroup": "https://www.facebook.com/groups/3683290235184747/"
+  },
+  {
+    "id": "housing-tampa",
+    "file": "housing-tampa.html",
+    "school": "University of South Florida",
+    "place": "Tampa, FL",
+    "description": "A large commuter-heavy campus where most students live off campus along Fowler Avenue and in the surrounding University area.",
+    "properties": [
+      {
+        "id": "housing-tampa-property-met-tampa",
+        "name": "The Met Tampa",
+        "website": "https://www.themettampa.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The+Met+Tampa%2C+Tampa%2C+FL",
+        "summary": "Student apartment community near USF, with floor plans, amenities and leasing information on its official site.",
+        "source": "https://www.themettampa.com/",
+        "pick": 1,
+        "photo": "assets/housing/housing-tampa-property-met-tampa.jpg",
+        "photoAlt": "Pool at The Met Tampa",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-tampa-property-mark-tampa",
+        "name": "The Mark Tampa",
+        "website": "https://www.themarktampa.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The+Mark+Tampa%2C+Tampa%2C+FL",
+        "summary": "Student apartment community near USF, with floor plans, amenities and leasing information on its official site.",
+        "source": "https://www.themarktampa.com/",
+        "pick": 2,
+        "photo": "assets/housing/housing-tampa-property-mark-tampa.jpg",
+        "photoAlt": "Resident lounge at The Mark Tampa",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-tampa-property-hub-tampa",
+        "name": "Hub Tampa",
+        "website": "https://huboncampus.com/tampa/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Hub+Tampa%2C+Tampa%2C+FL",
+        "summary": "Student apartment community near USF, with floor plans, amenities and leasing information on its official site.",
+        "source": "https://huboncampus.com/tampa/",
+        "pick": 3,
+        "photo": "assets/housing/housing-tampa-property-hub-tampa.jpg",
+        "photoAlt": "Pool deck at Hub Tampa",
+        "photoApproved": true
+      }
+    ],
+    "facebookGroup": "https://www.facebook.com/groups/1870011444003854/"
+  },
+  {
+    "id": "housing-ann-arbor",
+    "file": "housing-ann-arbor.html",
+    "school": "University of Michigan",
+    "place": "Ann Arbor, MI",
+    "description": "A competitive market where many students sign leases a year ahead, with apartments concentrated around Central Campus, South University and Kerrytown.",
+    "properties": [
+      {
+        "id": "housing-ann-arbor-property-landmark-ann-arbor",
+        "name": "Landmark Ann Arbor",
+        "website": "https://livethelandmark.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Landmark+Ann+Arbor%2C+Ann+Arbor%2C+MI",
+        "summary": "Student apartment community near the University of Michigan, with floor plans, amenities and leasing information on its official site.",
+        "source": "https://livethelandmark.com/",
+        "pick": 1,
+        "photo": "assets/housing/housing-ann-arbor-property-landmark-ann-arbor.jpg",
+        "photoAlt": "Resident lounge at Landmark Ann Arbor",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-ann-arbor-property-hub-state-street",
+        "name": "Hub Ann Arbor State Street",
+        "website": "https://huboncampus.com/ann-arbor-state-street/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Hub+Ann+Arbor+State+Street%2C+Ann+Arbor%2C+MI",
+        "summary": "Student apartment community near the University of Michigan, with floor plans, amenities and leasing information on its official site.",
+        "source": "https://huboncampus.com/ann-arbor-state-street/",
+        "pick": 2,
+        "photo": "assets/housing/housing-ann-arbor-property-hub-state-street.jpg",
+        "photoAlt": "Rooftop at Hub Ann Arbor State Street",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-ann-arbor-property-hub-church-street",
+        "name": "Hub Ann Arbor Church Street",
+        "website": "https://huboncampus.com/ann-arbor-church-street/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Hub+Ann+Arbor+Church+Street%2C+Ann+Arbor%2C+MI",
+        "summary": "Student apartment community near the University of Michigan, with floor plans, amenities and leasing information on its official site.",
+        "source": "https://huboncampus.com/ann-arbor-church-street/",
+        "pick": 3,
+        "photo": "assets/housing/housing-ann-arbor-property-hub-church-street.jpg",
+        "photoAlt": "Bedroom at Hub Ann Arbor Church Street",
+        "photoApproved": true
+      }
+    ],
+    "facebookGroup": "https://www.facebook.com/groups/1678444180440573/"
+  },
+  {
+    "id": "housing-gainesville",
+    "file": "housing-gainesville.html",
+    "school": "University of Florida",
+    "place": "Gainesville, FL",
+    "description": "Off-campus living around UF is the norm, with large apartment communities along Archer Road, Southwest 13th Street and near midtown.",
+    "properties": [
+      {
+        "id": "housing-gainesville-property-hub-gainesville",
+        "name": "Hub Gainesville",
+        "website": "https://huboncampus.com/gainesville-university/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Hub+Gainesville%2C+Gainesville%2C+FL",
+        "summary": "Student apartment community near UF, with floor plans, amenities and leasing information on its official site.",
+        "source": "https://huboncampus.com/gainesville-university/",
+        "pick": 1,
+        "photo": "assets/housing/housing-gainesville-property-hub-gainesville.jpg",
+        "photoAlt": "Courtyard at Hub Gainesville",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-gainesville-property-redpoint-gainesville",
+        "name": "Redpoint Gainesville",
+        "website": "https://redpoint-gainesville.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Redpoint+Gainesville%2C+Gainesville%2C+FL",
+        "summary": "Student apartment community near UF, with floor plans, amenities and leasing information on its official site.",
+        "source": "https://redpoint-gainesville.com/",
+        "pick": 2,
+        "photo": "assets/housing/housing-gainesville-property-redpoint-gainesville.jpg",
+        "photoAlt": "Exterior of Redpoint Gainesville",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-gainesville-property-alight-gainesville",
+        "name": "Alight Gainesville",
+        "website": "https://alight-gainesville.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Alight+Gainesville%2C+Gainesville%2C+FL",
+        "summary": "Student apartment community near UF, with floor plans, amenities and leasing information on its official site.",
+        "source": "https://alight-gainesville.com/",
+        "pick": 3,
+        "photo": "assets/housing/housing-gainesville-property-alight-gainesville.jpg",
+        "photoAlt": "Pool at Alight Gainesville",
+        "photoApproved": true
+      }
+    ],
+    "facebookGroup": "https://www.facebook.com/groups/1930302061660730/"
   }
 ]
