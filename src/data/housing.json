@@ -3454,11 +3454,11 @@
         "website": "https://www.thegradsanjose.com/",
         "verifiedAt": "2026-11-16",
         "maps": "https://www.google.com/maps/search/?api=1&query=The+Grad+San+Jose%2C+San+Jose%2C+CA",
-        "summary": "High-rise student housing near San Jose State with a pool deck, listed on the property’s official site.",
+        "summary": "Apartment community near San Jose State University; the official site shows floor plans, amenities and how to apply.",
         "source": "https://www.thegradsanjose.com/",
-        "pick": 1,
+        "pick": 3,
         "photo": "assets/housing/housing-san-jose-ca-property-the-grad-san-jose.jpg",
-        "photoAlt": "Pool deck at The Grad San Jose, from the property’s official website",
+        "photoAlt": "The Grad San Jose apartment tower and pool deck",
         "photoApproved": true
       },
       {
@@ -3822,11 +3822,11 @@
         "website": "https://liveattheedgeconway.com/",
         "verifiedAt": "2026-11-16",
         "maps": "https://www.google.com/maps/search/?api=1&query=The+Edge+at+Conway%2C+Conway%2C+AR",
-        "summary": "Student apartments near the University of Central Arkansas with a resort-style pool, listed on the property’s official site.",
+        "summary": "Student apartment community near the University of Central Arkansas; the official site lists floor plans, amenities and leasing contact.",
         "source": "https://liveattheedgeconway.com/",
-        "pick": 1,
+        "pick": 2,
         "photo": "assets/housing/housing-conway-ar-property-the-edge-at-conway.jpg",
-        "photoAlt": "Pool at The Edge at Conway, from the property’s official website",
+        "photoAlt": "Pool and clubhouse area at The Edge at Conway",
         "photoApproved": true
       }
     ]
@@ -3882,6 +3882,19 @@
         "pick": 2,
         "photo": "assets/housing/housing-boston-ma-property-the-fenway.jpg",
         "photoAlt": "The Fenway apartment building in Boston, from the property’s official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-boston-ma-property-continuum-allston",
+        "name": "Continuum Allston",
+        "website": "https://continuumallston.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Continuum+Allston%2C+Boston%2C+MA",
+        "summary": "Apartment community in Allston near Boston University and the Charles River; the official site lists floor plans, amenities and leasing contact.",
+        "source": "https://continuumallston.com/",
+        "pick": 3,
+        "photo": "assets/housing/housing-boston-ma-property-continuum-allston.jpg",
+        "photoAlt": "Continuum Allston apartment buildings and lawn in Boston",
         "photoApproved": true
       }
     ]
@@ -4501,6 +4514,19 @@
         "photo": "assets/housing/housing-williamsburg-va-property-current-midtown.jpg",
         "photoAlt": "Current Midtown apartment building near William & Mary, from the property’s official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-williamsburg-va-property-the-current-midtown",
+        "name": "The Current Midtown",
+        "website": "https://currentmidtown.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The+Current+Midtown%2C+Williamsburg%2C+VA",
+        "summary": "Apartment community near William & Mary; the official site has floor plans, amenities and leasing info.",
+        "source": "https://currentmidtown.com/",
+        "pick": 2,
+        "photo": "assets/housing/housing-williamsburg-va-property-the-current-midtown.jpg",
+        "photoAlt": "The Current Midtown apartment building in Williamsburg",
+        "photoApproved": true
       }
     ]
   },
@@ -4964,11 +4990,24 @@
         "website": "https://stonebrooksuu.com/",
         "verifiedAt": "2026-11-16",
         "maps": "https://www.google.com/maps/search/?api=1&query=Stonebrook+Apartments%2C+Cedar+City%2C+UT",
-        "summary": "Student apartments near Southern Utah University, listed on the property’s official site.",
+        "summary": "Apartments near Southern Utah University in Cedar City; the official site lists unit types and leasing contact.",
         "source": "https://stonebrooksuu.com/",
-        "pick": 1,
+        "pick": 3,
         "photo": "assets/housing/housing-cedar-city-ut-property-stonebrook-apartments.jpg",
-        "photoAlt": "Stonebrook Apartments sign and buildings near Southern Utah University, from the property’s official website",
+        "photoAlt": "Brick townhome-style buildings at Stonebrook Apartments in Cedar City",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-cedar-city-ut-property-mountain-vista",
+        "name": "Mountain Vista",
+        "website": "https://mountainvistacedar.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Mountain+Vista%2C+Cedar+City%2C+UT",
+        "summary": "Apartments in Cedar City near Southern Utah University; the official site has floor plans and leasing info.",
+        "source": "https://mountainvistacedar.com/",
+        "pick": 2,
+        "photo": "assets/housing/housing-cedar-city-ut-property-mountain-vista.jpg",
+        "photoAlt": "Mountain Vista apartment building in Cedar City",
         "photoApproved": true
       }
     ]
