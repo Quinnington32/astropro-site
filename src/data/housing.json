@@ -4357,6 +4357,19 @@
         "photo": "assets/housing/housing-bowling-green-oh-property-falcon-landing.jpg",
         "photoAlt": "Falcon Landing in Bowling Green, OH, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-bowling-green-oh-property-mecca-management",
+        "name": "Mecca Management",
+        "website": "https://www.meccabg.com/bowling-green-apartments",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Mecca+Management%2C+Bowling+Green%2C+OH",
+        "summary": "Long-running Bowling Green rental manager with apartments near BGSU; its site lists available units and contact info.",
+        "source": "https://www.meccabg.com/bowling-green-apartments",
+        "pick": 3,
+        "photo": "assets/housing/housing-bowling-green-oh-property-mecca-management.jpg",
+        "photoAlt": "Brick townhome-style apartment buildings managed by Mecca in Bowling Green",
+        "photoApproved": true
       }
     ]
   },
@@ -4995,6 +5008,19 @@
         "pick": 2,
         "photo": "assets/housing/housing-cedar-city-ut-property-stonebrook-apartments.jpg",
         "photoAlt": "Brick townhome-style buildings at Stonebrook Apartments in Cedar City",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-cedar-city-ut-property-suu-college-suites",
+        "name": "College Suites",
+        "website": "https://www.suucollegesuites.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=College+Suites%2C+Cedar+City%2C+UT",
+        "summary": "Student apartments near Southern Utah University in Cedar City; the official site covers floor plans and leasing contact.",
+        "source": "https://www.suucollegesuites.com/",
+        "pick": 3,
+        "photo": "assets/housing/housing-cedar-city-ut-property-suu-college-suites.jpg",
+        "photoAlt": "Furnished living room at College Suites near Southern Utah University",
         "photoApproved": true
       }
     ]
