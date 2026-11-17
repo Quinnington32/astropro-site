@@ -19,7 +19,7 @@ for (const [file, $] of docs) {
   check(!!$("meta[name=description]").attr("content"), "missing description");
   check(!!$("link[rel=canonical]").attr("href"), "missing canonical");
   check(!$("[style]").length, "unexpected inline styles");
-  check(!$("script:not([src])").length, "unexpected inline scripts");
+  check(!$("script:not([src]):not([type=\"application/ld+json\"])").length, "unexpected inline scripts");
   const ids = new Set();
   $("[id]").each((_, el) => {
     const id = $(el).attr("id");

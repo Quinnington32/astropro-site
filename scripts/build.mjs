@@ -826,7 +826,7 @@ for (const data of pages) {
   const html = page(data);
   const $ = load(html);
   $('a[target="_blank"]').attr("rel", "noopener noreferrer");
-  $("style,script:not([src])").remove();
+  $("style,script:not([src]):not([type=\"application/ld+json\"])").remove();
   $("[style]").removeAttr("style");
   $('a[href="#"]').each(() => {
     throw new Error(`Placeholder link in ${data.file}`);
@@ -865,7 +865,7 @@ await writeFile(
       .filter((x) => !x.noindex && x.file !== "saved.html")
       .map(
         (x) =>
-          `<url><loc>${canonicalRoot + (x.file === "index.html" ? "" : x.file)}</loc></url>`,
+          `<url><loc>${canonicalRoot + (x.file === "index.html" ? "" : x.file)}</loc><lastmod>${new Date().toISOString().slice(0, 10)}</lastmod></url>`,
       )
       .join("") +
     "</urlset>",
