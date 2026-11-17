@@ -4143,6 +4143,19 @@
         "photo": "assets/housing/housing-los-angeles-ca-property-university-gateway.jpg",
         "photoAlt": "Courtyard at University Gateway near USC, from the property’s official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-los-angeles-ca-property-west-27th-place",
+        "name": "West 27th Place",
+        "website": "https://www.west27thplace.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=West+27th+Place%2C+Los+Angeles%2C+CA",
+        "summary": "Student apartments near USC in Los Angeles; the official site shows floor plans, amenities and how to contact leasing.",
+        "source": "https://www.west27thplace.com/",
+        "pick": 3,
+        "photo": "assets/housing/housing-los-angeles-ca-property-west-27th-place.jpg",
+        "photoAlt": "Resident lounge with study counter at West 27th Place near USC in Los Angeles",
+        "photoApproved": true
       }
     ],
     "facebookGroupsMore": [
@@ -4294,6 +4307,19 @@
         "pick": 1,
         "photo": "assets/housing/housing-boca-raton-fl-property-vie-villas.jpg",
         "photoAlt": "Vie Villas at Boca Raton in Boca Raton, FL, from the property's official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-boca-raton-fl-property-vie-villas-boca-raton",
+        "name": "Vie Villas at Boca Raton",
+        "website": "https://www.vievillasbr.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Vie+Villas+at+Boca+Raton%2C+Boca+Raton%2C+FL",
+        "summary": "Student townhome-style apartments near Florida Atlantic University and Lynn University; the official site has floor plans and leasing info.",
+        "source": "https://www.vievillasbr.com/",
+        "pick": 2,
+        "photo": "assets/housing/housing-boca-raton-fl-property-vie-villas-boca-raton.jpg",
+        "photoAlt": "Townhome buildings at Vie Villas at Boca Raton",
         "photoApproved": true
       }
     ]
@@ -4754,6 +4780,19 @@
         "photo": "assets/housing/housing-missoula-mt-property-roam-student-living.jpg",
         "photoAlt": "ROAM Student Living fitness center in Missoula, from the property website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-missoula-mt-property-corso-apartments",
+        "name": "The Corso",
+        "website": "https://www.livecorso.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The+Corso%2C+Missoula%2C+MT",
+        "summary": "Missoula apartment community with its own site for floor plans, amenities and leasing.",
+        "source": "https://www.livecorso.com/",
+        "pick": 3,
+        "photo": "assets/housing/housing-missoula-mt-property-corso-apartments.jpg",
+        "photoAlt": "Fireplace lounge at The Corso apartments in Missoula",
+        "photoApproved": true
       }
     ]
   },
@@ -4889,6 +4928,19 @@
         "pick": 1,
         "photo": "assets/housing/housing-memphis-tn-property-the-nine-at-memphis.jpg",
         "photoAlt": "The Nine at Memphis in Memphis, TN, from the property's official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-memphis-tn-property-highland-row",
+        "name": "Highland Row",
+        "website": "https://www.highlandrow.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Highland+Row%2C+Memphis%2C+TN",
+        "summary": "Residences and shops on Highland Street in Memphis, near the University of Memphis; the official site lists floor plans and leasing contact.",
+        "source": "https://www.highlandrow.com/",
+        "pick": 2,
+        "photo": "assets/housing/housing-memphis-tn-property-highland-row.jpg",
+        "photoAlt": "Highland Row apartment building and monument sign in Memphis",
         "photoApproved": true
       }
     ]
