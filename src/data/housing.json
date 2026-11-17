@@ -3895,6 +3895,19 @@
           "facebookPost": "https://www.facebook.com/groups/2396364364232187/posts/2408607796341177/",
           "photoPending": true
         }
+      },
+      {
+        "id": "housing-nampa-id-property-olson-apartments-nnu",
+        "name": "Olson Apartments at Northwest Nazarene University",
+        "website": "https://nnu.edu/campus-spiritual-life/our-campus/olsen-apartments/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Olson+Apartments+at+Northwest+Nazarene+University%2C+Nampa%2C+ID",
+        "summary": "University-owned apartments on the Northwest Nazarene University campus in Nampa; the university page covers unit types and how to apply.",
+        "source": "https://nnu.edu/campus-spiritual-life/our-campus/olsen-apartments/",
+        "pick": 1,
+        "photo": "assets/housing/housing-nampa-id-property-olson-apartments-nnu.jpg",
+        "photoAlt": "Courtyard and apartment buildings at NNU's Olson Apartments in Nampa",
+        "photoApproved": true
       }
     ],
     "facebookGroupsMore": [
@@ -4956,6 +4969,19 @@
           "facebookPost": "https://www.facebook.com/groups/1664635285074262/posts/1676513450553112/",
           "photoPending": true
         }
+      },
+      {
+        "id": "housing-chicago-il-property-roosevelt-collection-lofts",
+        "name": "Roosevelt Collection Lofts",
+        "website": "https://www.rooseveltcollection.com/lofts/gallery",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Roosevelt+Collection+Lofts%2C+Chicago%2C+IL",
+        "summary": "Loft apartments on Roosevelt Road in Chicago's South Loop, near several campuses; the official site has floor plans and a photo gallery.",
+        "source": "https://www.rooseveltcollection.com/lofts/gallery",
+        "pick": 2,
+        "photo": "assets/housing/housing-chicago-il-property-roosevelt-collection-lofts.jpg",
+        "photoAlt": "Rooftop terrace with Chicago skyline view at Roosevelt Collection Lofts",
+        "photoApproved": true
       }
     ]
   },
