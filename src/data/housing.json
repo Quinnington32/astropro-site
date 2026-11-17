@@ -4452,6 +4452,19 @@
         "photo": "assets/housing/housing-orem-ut-property-wolverine-crossing.jpg",
         "photoAlt": "Pool at Wolverine Crossing near UVU, from the property’s official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-orem-ut-property-the-green-on-campus-drive",
+        "name": "The Green on Campus Drive",
+        "website": "https://thegreenoncampusdrive.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The+Green+on+Campus+Drive%2C+Orem%2C+UT",
+        "summary": "Student apartment community on Campus Drive in Orem, near Utah Valley University; its site has a photo gallery, floor plans and leasing info.",
+        "source": "https://thegreenoncampusdrive.com/",
+        "pick": 3,
+        "photo": "assets/housing/housing-orem-ut-property-the-green-on-campus-drive.jpg",
+        "photoAlt": "Furnished apartment living room at The Green on Campus Drive in Orem",
+        "photoApproved": true
       }
     ]
   },
@@ -4510,6 +4523,19 @@
         "pick": 2,
         "photo": "assets/housing/housing-kalamazoo-mi-property-the-paddock.jpg",
         "photoAlt": "Furnished living area at The Paddock in Kalamazoo, from the property’s official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-kalamazoo-mi-property-tate-on-howard",
+        "name": "The Tate on Howard",
+        "website": "https://www.thetateonhoward.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The+Tate+on+Howard%2C+Kalamazoo%2C+MI",
+        "summary": "Student apartment community on Howard Street near Western Michigan University; its site lists floor plans, amenities and leasing contact.",
+        "source": "https://www.thetateonhoward.com/",
+        "pick": 3,
+        "photo": "assets/housing/housing-kalamazoo-mi-property-tate-on-howard.jpg",
+        "photoAlt": "Clubhouse lounge and fitness area at The Tate on Howard in Kalamazoo",
         "photoApproved": true
       }
     ]
