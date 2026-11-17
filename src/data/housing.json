@@ -3594,7 +3594,21 @@
     "place": "Alamosa, CO",
     "description": "Renters and students in Alamosa use the AstroPro Facebook group to find apartments, subleases, and roommates near Adams State University. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/2129455631043350/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-alamosa-co-property-adams-state-residence-halls",
+        "name": "Adams State University Residence Halls",
+        "website": "https://www.adams.edu/students/housing/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Adams+State+University+Residence+Halls%2C+Alamosa%2C+CO",
+        "summary": "On-campus housing at Adams State University in Alamosa, with hall options, rates and application steps from the university.",
+        "source": "https://www.adams.edu/students/housing/",
+        "pick": 1,
+        "photo": "assets/housing/housing-alamosa-co-property-adams-state-residence-halls.jpg",
+        "photoAlt": "Residence hall building with the San Luis Valley mountains behind it at Adams State",
+        "photoApproved": true
+      }
+    ]
   },
   {
     "id": "housing-largo-md",
