@@ -3852,6 +3852,19 @@
           "facebookPost": "https://www.facebook.com/groups/318899342193821/posts/2348726292544439/",
           "photoPending": true
         }
+      },
+      {
+        "id": "housing-greeley-co-property-unco-arlington-park",
+        "name": "UNCO Arlington Park Apartments",
+        "website": "https://www.unco.edu/campus-life/housing/arlington-park-apartments/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=UNCO+Arlington+Park+Apartments%2C+Greeley%2C+CO",
+        "summary": "University of Northern Colorado apartment housing for upper-division, graduate and family residents, with floor plans and application details.",
+        "source": "https://www.unco.edu/campus-life/housing/arlington-park-apartments/",
+        "pick": 2,
+        "photo": "assets/housing/housing-greeley-co-property-unco-arlington-park.jpg",
+        "photoAlt": "Shared living room in UNCO Arlington Park Apartments",
+        "photoApproved": true
       }
     ]
   },
@@ -6148,6 +6161,32 @@
           "facebookPost": "https://www.facebook.com/groups/troyapartments/posts/4747204085498931/",
           "photoPending": true
         }
+      },
+      {
+        "id": "housing-troy-al-property-university-corners",
+        "name": "University Corners",
+        "website": "https://fosheeresidential.com/communities/university-corners/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=University+Corners%2C+Troy%2C+AL",
+        "summary": "Apartment community near Troy University, with floor plans and leasing details from the property manager.",
+        "source": "https://fosheeresidential.com/communities/university-corners/",
+        "pick": 2,
+        "photo": "assets/housing/housing-troy-al-property-university-corners.jpg",
+        "photoAlt": "Courtyard walkway at University Corners apartments in Troy",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-troy-al-property-spm-troy",
+        "name": "SPM Troy Apartments",
+        "website": "https://www.spm-troy.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=SPM+Troy+Apartments%2C+Troy%2C+AL",
+        "summary": "Student-oriented apartments and duplex-style homes near Troy University, with property details from the manager.",
+        "source": "https://www.spm-troy.com/",
+        "pick": 3,
+        "photo": "assets/housing/housing-troy-al-property-spm-troy.jpg",
+        "photoAlt": "Apartment building exterior at SPM Troy",
+        "photoApproved": true
       }
     ]
   },
@@ -6275,6 +6314,19 @@
           "publishedAt": "2026-11-17",
           "facebookPost": "https://www.facebook.com/groups/memphisrentals/posts/1836019600780012/"
         }
+      },
+      {
+        "id": "housing-memphis-tn-property-um-graduate-family-housing",
+        "name": "University of Memphis Graduate and Family Housing",
+        "website": "https://www.memphis.edu/reslife/reshalls/gsfh.php",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=University+of+Memphis+Graduate+and+Family+Housing%2C+Memphis%2C+TN",
+        "summary": "On-campus apartment housing for graduate students and families at the University of Memphis, with rates and application information.",
+        "source": "https://www.memphis.edu/reslife/reshalls/gsfh.php",
+        "pick": 3,
+        "photo": "assets/housing/housing-memphis-tn-property-um-graduate-family-housing.jpg",
+        "photoAlt": "Brick apartment buildings and lawn in University of Memphis graduate housing",
+        "photoApproved": true
       }
     ]
   },
