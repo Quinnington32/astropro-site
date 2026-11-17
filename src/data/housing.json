@@ -5951,6 +5951,19 @@
           "facebookPost": "https://www.facebook.com/groups/littlerockapartments/posts/1789640602311542/",
           "photoPending": true
         }
+      },
+      {
+        "id": "housing-little-rock-ar-property-ualr-residence-halls",
+        "name": "UA Little Rock Residence Life",
+        "website": "https://ualr.edu/housing/options/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=UA+Little+Rock+Residence+Life%2C+Little+Rock%2C+AR",
+        "summary": "On-campus housing options at the University of Arkansas at Little Rock, with halls, apartments and application info from the university.",
+        "source": "https://ualr.edu/housing/options/",
+        "pick": 1,
+        "photo": "assets/housing/housing-little-rock-ar-property-ualr-residence-halls.jpg",
+        "photoAlt": "Residence hall buildings on the UA Little Rock campus",
+        "photoApproved": true
       }
     ]
   },
