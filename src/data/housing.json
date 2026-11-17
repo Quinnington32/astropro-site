@@ -3984,6 +3984,19 @@
           "facebookPost": "https://www.facebook.com/groups/malibuapartments/posts/1640073200941405/",
           "photoPending": true
         }
+      },
+      {
+        "id": "housing-malibu-ca-property-pepperdine-housing",
+        "name": "Pepperdine University Housing and Residence Life",
+        "website": "https://community.pepperdine.edu/housing/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Pepperdine+University+Housing+and+Residence+Life%2C+Malibu%2C+CA",
+        "summary": "Official Pepperdine housing and residence life page covering on-campus apartments and halls, plus off-campus housing resources.",
+        "source": "https://community.pepperdine.edu/housing/",
+        "pick": 1,
+        "photo": "assets/housing/housing-malibu-ca-property-pepperdine-housing.jpg",
+        "photoAlt": "Pepperdine residence apartment building with palm trees and the Pacific behind it",
+        "photoApproved": true
       }
     ]
   },
