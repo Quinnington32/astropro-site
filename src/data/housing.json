@@ -6459,7 +6459,21 @@
     "place": "Hilo, HI",
     "description": "Renters and students in Hilo use the AstroPro Facebook group to find apartments, subleases, and roommates near University of Hawaiʻi at Hilo. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/hiloapartments/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-hilo-hi-property-uh-hilo-residence-halls",
+        "name": "UH Hilo Residence Halls",
+        "website": "https://hilo.hawaii.edu/housing/oncampus/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=UH+Hilo+Residence+Halls%2C+Hilo%2C+HI",
+        "summary": "On-campus residence halls at the University of Hawaii at Hilo, with hall details and application steps from the university.",
+        "source": "https://hilo.hawaii.edu/housing/oncampus/",
+        "pick": 1,
+        "photo": "assets/housing/housing-hilo-hi-property-uh-hilo-residence-halls.jpg",
+        "photoAlt": "Residence hall buildings and lawn at UH Hilo",
+        "photoApproved": true
+      }
+    ]
   },
   {
     "id": "housing-east-honolulu-hi",
