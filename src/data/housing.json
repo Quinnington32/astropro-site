@@ -5903,6 +5903,19 @@
           "facebookPost": "https://www.facebook.com/groups/topekaapartments/posts/1471178321812388/",
           "photoPending": true
         }
+      },
+      {
+        "id": "housing-topeka-ks-property-washburn-south-apartments",
+        "name": "Washburn South Apartments",
+        "website": "https://www.washburnsouthtopeka.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Washburn+South+Apartments%2C+Topeka%2C+KS",
+        "summary": "Apartments near Washburn University in Topeka; the official site has unit info and leasing contact.",
+        "source": "https://www.washburnsouthtopeka.com/",
+        "pick": 1,
+        "photo": "assets/housing/housing-topeka-ks-property-washburn-south-apartments.jpg",
+        "photoAlt": "Brick apartment buildings at Washburn South in Topeka",
+        "photoApproved": true
       }
     ]
   },
@@ -6106,6 +6119,32 @@
           "facebookPost": "https://www.facebook.com/groups/kingstonapartments/posts/2361075671302923/",
           "photoPending": true
         }
+      },
+      {
+        "id": "housing-kingston-on-property-foundry-princess",
+        "name": "Foundry Princess",
+        "website": "https://www.foundryprincess.ca/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Foundry+Princess%2C+Kingston%2C+ON",
+        "summary": "Student rooms and apartments near Queen's University in Kingston; the official site covers room types and leasing.",
+        "source": "https://www.foundryprincess.ca/",
+        "pick": 1,
+        "photo": "assets/housing/housing-kingston-on-property-foundry-princess.jpg",
+        "photoAlt": "Furnished student bedroom and desk at Foundry Princess in Kingston",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-kingston-on-property-queens-henglee-houses",
+        "name": "Queen's Henglee Student Houses",
+        "website": "https://www.queenshenglee.ca/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Queen%27s+Henglee+Student+Houses%2C+Kingston%2C+ON",
+        "summary": "Student houses near Queen's University in Kingston, listed on the property manager's own site.",
+        "source": "https://www.queenshenglee.ca/",
+        "pick": 2,
+        "photo": "assets/housing/housing-kingston-on-property-queens-henglee-houses.jpg",
+        "photoAlt": "Sunroom dining area in a Henglee student house in Kingston",
+        "photoApproved": true
       }
     ]
   },
@@ -6130,6 +6169,19 @@
           "facebookPost": "https://www.facebook.com/groups/hendersonapartments/posts/1862747784966213/",
           "photoPending": true
         }
+      },
+      {
+        "id": "housing-henderson-nv-property-the-village-nevada-state",
+        "name": "The Village at Nevada State",
+        "website": "https://www.livethevillagenevadastate.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The+Village+at+Nevada+State%2C+Henderson%2C+NV",
+        "summary": "Student apartments by Nevada State University in Henderson; the official site has floor plans, amenities and leasing info.",
+        "source": "https://www.livethevillagenevadastate.com/",
+        "pick": 1,
+        "photo": "assets/housing/housing-henderson-nv-property-the-village-nevada-state.jpg",
+        "photoAlt": "Leasing center and apartment buildings at The Village in Henderson",
+        "photoApproved": true
       }
     ]
   },
@@ -6454,6 +6506,19 @@
           "facebookPost": "https://www.facebook.com/groups/bangorapartments/posts/1192704600378525/",
           "photoPending": true
         }
+      },
+      {
+        "id": "housing-bangor-me-property-the-reserve-at-orono",
+        "name": "The Reserve at Orono",
+        "website": "https://reserve-orono.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The+Reserve+at+Orono%2C+Bangor%2C+ME",
+        "summary": "Student apartment community in Orono, the University of Maine town just outside Bangor; the official site has floor plans and leasing contact.",
+        "source": "https://reserve-orono.com/",
+        "pick": 1,
+        "photo": "assets/housing/housing-bangor-me-property-the-reserve-at-orono.jpg",
+        "photoAlt": "Pool and clubhouse at The Reserve at Orono near Bangor, Maine",
+        "photoApproved": true
       }
     ]
   }
