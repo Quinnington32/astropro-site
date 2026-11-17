@@ -64,6 +64,20 @@
         "website": "https://lumenonninth.prospectportal.com/columbus/lumen-on-ninth/floorplans/",
         "verifiedAt": null,
         "maps": "https://www.google.com/maps/search/?api=1&query=Lumen%20on%20Ninth%2C%20Columbus%2C%20OH"
+      },
+      {
+        "id": "housing-columbus-property-the-griff",
+        "name": "The Griff",
+        "website": "https://www.thegriffosu.com/floor-plans",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Griff%2C%20Columbus%2C%20OH",
+        "summary": "The Griff near Ohio State lists furnished one-, two-, three- and four-bedroom apartments. Its roommate layouts include two-bed/two-bath, three-bed/three-bath and four-bed/four-bath floor plans.",
+        "source": "https://www.thegriffosu.com/floor-plans",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/1144174901392309/posts/1156622420147557/",
+          "photoPending": true
+        }
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/1144174901392309/"
@@ -211,6 +225,20 @@
         "source": "https://www.livelifetower.com/apartments/tx/houston/floor-plans",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Life%20Tower%2C%20Houston%2C%20TX"
+      },
+      {
+        "id": "housing-houston-property-the-icon",
+        "name": "The Icon",
+        "website": "https://livetheicon.com/floorplan/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Icon%2C%20Houston%2C%20TX",
+        "summary": "The Icon near the University of Houston shows options from studios to five-bedroom layouts across its Icon and Lofts buildings. The floor-plan page lists bedrooms and bathrooms for each layout.",
+        "source": "https://livetheicon.com/floorplan/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/2206417083419058/posts/2218474938879939/",
+          "photoPending": true
+        }
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/2206417083419058/"
@@ -324,6 +352,20 @@
         "website": "https://rent.brookfieldproperties.com/property/the-wilson",
         "verifiedAt": null,
         "maps": "https://www.google.com/maps/search/?api=1&query=The%20Wilson%20Building%2C%20Dallas%2C%20TX"
+      },
+      {
+        "id": "housing-dallas-property-ash-at-the-branch",
+        "name": "Ash at the Branch",
+        "website": "https://www.liveattheash.com/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Ash%20at%20the%20Branch%2C%20Dallas%2C%20TX",
+        "summary": "Ash at the Branch in Northeast Dallas lists one-, two- and three-bedroom apartments. It's an option to compare if you're looking near SMU.",
+        "source": "https://www.liveattheash.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/1122350230172459/posts/1133607279046754/",
+          "photoPending": true
+        }
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/1122350230172459/"
@@ -926,6 +968,20 @@
         "photo": "assets/housing/housing-denton-property-city-parc-at-fry-street.jpg",
         "photoAlt": "City Parc at Fry Street in Denton, TX, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-denton-property-university-view-denton",
+        "name": "University View Denton",
+        "website": "https://universityviewdenton.com/floor-plans/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=University%20View%20Denton%2C%20Denton%2C%20TX",
+        "summary": "University View Denton lists one-bedroom, one-bath apartments near UNT. The property describes a full kitchen and in-unit laundry in each home.",
+        "source": "https://universityviewdenton.com/floor-plans/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/1060528837017948/posts/1070439506026881/",
+          "photoPending": true
+        }
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/1060528837017948/"
@@ -987,6 +1043,20 @@
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=The%20Traveler%20Apartments%2C%20Omaha%2C%20NE",
         "source": "https://www.thetravelerapts.com/floorplans"
+      },
+      {
+        "id": "housing-omaha-property-pinhook-flats-at-aksarben-village",
+        "name": "Pinhook Flats at Aksarben Village",
+        "website": "https://pinhookflats.roberthancockco.com/floorplans.aspx",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Pinhook%20Flats%20at%20Aksarben%20Village%2C%20Omaha%2C%20NE",
+        "summary": "Pinhook Flats at Aksarben Village lists studios and one- and two-bedroom floor plans. It's worth comparing if you're looking near UNO's Scott Campus.",
+        "source": "https://pinhookflats.roberthancockco.com/floorplans.aspx",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/omahahomes/posts/1445534933791226/",
+          "photoPending": true
+        }
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/omahahomes/"
@@ -1372,6 +1442,20 @@
         "photo": "assets/housing/housing-san-antonio-property-los-cielos-at-brooks-luxury-rentals.jpg",
         "photoAlt": "Los Cielos at Brooks Luxury Rentals in San Antonio, TX, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-san-antonio-property-avalon-place",
+        "name": "Avalon Place",
+        "website": "https://www.avalonplaceutsa.com/floor-plans",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Avalon%20Place%2C%20San%20Antonio%2C%20TX",
+        "summary": "Avalon Place near UTSA lists furnished one-, two- and four-bedroom layouts. The property highlights private bedrooms and bathrooms, individual leases and in-unit laundry.",
+        "source": "https://www.avalonplaceutsa.com/floor-plans",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/2632597287255622/posts/2645993475916003/",
+          "photoPending": true
+        }
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/2632597287255622/",
@@ -1917,6 +2001,20 @@
         "website": "https://cottonmillnh.com",
         "verifiedAt": null,
         "maps": "https://www.google.com/maps/search/?api=1&query=The%20Apartments%20at%20Cotton%20Mill%2C%20New%20Hampshire%20(statewide)"
+      },
+      {
+        "id": "housing-new-hampshire-property-university-heights",
+        "name": "University Heights",
+        "website": "https://livewelluniversityheights.com/floorplans/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=University%20Heights%2C%20Manchester%2C%20NH",
+        "summary": "University Heights in Hooksett lists studios and one- and two-bedroom apartments. Compare layouts and check your commute to Southern New Hampshire University.",
+        "source": "https://livewelluniversityheights.com/floorplans/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/hooksettapartments/posts/3334007383459362/",
+          "photoPending": true
+        }
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/hooksettapartments/"
@@ -1998,6 +2096,21 @@
           "photo": "assets/housing/kirksville-mo-property-park-place.jpg",
           "photoAlt": "Park Place in Kirksville, MO, photo from our team's Facebook post"
         }
+      },
+      {
+        "id": "housing-kirksville-mo-property-heritage-house-rentals",
+        "name": "Heritage House Rentals",
+        "website": "https://heritagehouserentalsllc.com/listing/31742/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Heritage%20House%20Rentals%20416%20South%20First%20Street%2C%20Kirksville%2C%20MO",
+        "address": "416 South First Street, Kirksville, MO",
+        "summary": "Heritage House Rentals lists one-bedroom, one-bath apartments at 416 South First Street. The property manager places the building within walking distance of Truman State and A.T. Still University.",
+        "source": "https://heritagehouserentalsllc.com/listing/31742/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/2205622230329742/posts/2211030889788876/",
+          "photoPending": true
+        }
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/2205622230329742/"
@@ -2078,6 +2191,20 @@
           "facebookPost": "https://www.facebook.com/groups/1125547753567026/posts/1128687193253082/",
           "photo": "assets/housing/macomb-il-property-adams-street-apartments-townhomes.jpg",
           "photoAlt": "Adams Street Apartments & Townhomes in Macomb, IL, photo from our team's Facebook post"
+        }
+      },
+      {
+        "id": "housing-macomb-il-property-raintree-court",
+        "name": "Raintree Court",
+        "website": "https://raintreecourt.com/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Raintree%20Court%2C%20Macomb%2C%20IL",
+        "summary": "Raintree Court in Macomb lists one-bedroom duplexes, plus one-, two- and three-bedroom houses. The operator places the community about half a mile south of Western Illinois University.",
+        "source": "https://raintreecourt.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/1125547753567026/posts/1130794256375709/",
+          "photoPending": true
         }
       }
     ],
@@ -2161,6 +2288,20 @@
           "photo": "assets/housing/platteville-wi-property-pioneer-ridge.jpg",
           "photoAlt": "Pioneer Ridge in Platteville, WI, photo from our team's Facebook post"
         }
+      },
+      {
+        "id": "housing-platteville-wi-property-538-n-washington",
+        "name": "538 N. Washington",
+        "website": "https://plattevilleapartments.com/538wash.php",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=538%20N.%20Washington%2C%20Platteville%2C%20WI",
+        "summary": "538 N. Washington in Platteville has a furnished lower-level two-bedroom, one-bath layout. The operator lists it three blocks north of UW–Platteville and includes in-unit laundry.",
+        "source": "https://plattevilleapartments.com/538wash.php",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/1672495207705371/posts/1678104547144437/",
+          "photoPending": true
+        }
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/1672495207705371/"
@@ -2242,6 +2383,21 @@
           "photo": "assets/housing/vermillion-sd-property-cottage-co.jpg",
           "photoAlt": "Cottage & Co. in Vermillion, SD, photo from our team's Facebook post"
         }
+      },
+      {
+        "id": "housing-vermillion-sd-property-214-bower",
+        "name": "214 Bower",
+        "website": "https://www.rentingvermillion.com/214-bower-102-2bed-1-bath",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=214%20Bower%20214%20Bower%2C%20Vermillion%2C%20SD",
+        "address": "214 Bower, Vermillion, SD",
+        "summary": "Maloney Property Management lists a first-floor two-bedroom, one-bath apartment at 214 Bower in Vermillion. The listing notes large closets in both bedrooms.",
+        "source": "https://www.rentingvermillion.com/214-bower-102-2bed-1-bath",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/2979932512339316/posts/2986408175025083/",
+          "photoPending": true
+        }
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/2979932512339316/"
@@ -2322,6 +2478,20 @@
           "facebookPost": "https://www.facebook.com/groups/1129982866618268/posts/1133180946298460/",
           "photo": "assets/housing/emporia-ks-property-brookfield-apartments.jpg",
           "photoAlt": "Brookfield Apartments in Emporia, KS, photo from our team's Facebook post"
+        }
+      },
+      {
+        "id": "housing-emporia-ks-property-college-hill-apartments",
+        "name": "College Hill Apartments",
+        "website": "https://emporiarentals.com/properties/apartments/college-hill-apartments-2-bed-p17.html?rid=606",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=College%20Hill%20Apartments%2C%20Emporia%2C%20KS",
+        "summary": "College Hill Apartments lists a two-bedroom layout on Center Street in Emporia. The property manager places it one block west of Emporia State University.",
+        "source": "https://emporiarentals.com/properties/apartments/college-hill-apartments-2-bed-p17.html?rid=606",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/1129982866618268/posts/1135270096089545/",
+          "photoPending": true
         }
       }
     ],
@@ -2405,6 +2575,20 @@
           "photo": "assets/housing/ames-ia-property-the-quarters-ames.jpg",
           "photoAlt": "The Quarters Ames in Ames, IA, photo from our team's Facebook post"
         }
+      },
+      {
+        "id": "housing-ames-ia-property-copper-beech-ames",
+        "name": "Copper Beech Ames",
+        "website": "https://www.livecbeechames.com/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Copper%20Beech%20Ames%2C%20Ames%2C%20IA",
+        "summary": "Copper Beech near Iowa State lists one-, two-, three- and four-bedroom apartments and townhomes. The property highlights private bathrooms and in-unit laundry.",
+        "source": "https://www.livecbeechames.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/951828424471864/posts/955190310802342/",
+          "photoPending": true
+        }
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/951828424471864/"
@@ -2487,6 +2671,20 @@
           "photo": "assets/housing/iowa-city-ia-property-the-quarters-iowa-city.jpg",
           "photoAlt": "The Quarters Iowa City in Iowa City, IA, photo from our team's Facebook post"
         }
+      },
+      {
+        "id": "housing-iowa-city-ia-property-replay-iowa-city",
+        "name": "Replay Iowa City",
+        "website": "https://replayiowacity.com/floor-plans/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Replay%20Iowa%20City%2C%20Iowa%20City%2C%20IA",
+        "summary": "Replay Iowa City lists one-, two- and three-bedroom student apartments. Use its floor-plan page to compare layouts and check what is open for your move-in date.",
+        "source": "https://replayiowacity.com/floor-plans/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/3199654480425813/posts/3204611159930145/",
+          "photoPending": true
+        }
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/3199654480425813/"
@@ -2523,7 +2721,11 @@
         "pick": 2,
         "photo": "assets/housing/housing-lawrence-ks-property-the-landing-lawrence.jpg",
         "photoAlt": "The Landing Lawrence in Lawrence, KS, from the property's official website",
-        "photoApproved": true
+        "photoApproved": true,
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/1378086194245280/posts/1381550773898822/"
+        }
       },
       {
         "id": "housing-lawrence-ks-property-the-collective-at-lawrence",
@@ -2566,6 +2768,20 @@
           "facebookPost": "https://www.facebook.com/groups/1378086194245280/posts/1379633584090541/",
           "photo": "assets/housing/lawrence-ks-property-the-connection-at-lawrence.jpg",
           "photoAlt": "The Connection at Lawrence in Lawrence, KS, photo from our team's Facebook post"
+        }
+      },
+      {
+        "id": "housing-lawrence-ks-property-the-rockland",
+        "name": "The Rockland",
+        "website": "https://www.rocklandku.com/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Rockland%2C%20Lawrence%2C%20KS",
+        "summary": "If you commute to KU by bus, The Rockland in Lawrence says its apartments are on both KU and Lawrence bus routes.",
+        "source": "https://www.rocklandku.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-16",
+          "facebookPost": "https://www.facebook.com/groups/1378086194245280/posts/1380718483982051/",
+          "photoPending": true
         }
       }
     ],
@@ -2648,6 +2864,34 @@
           "photo": "assets/housing/manhattan-ks-property-12b-lofts-avenue-m.jpg",
           "photoAlt": "12b Lofts & Avenue M in Manhattan, KS, photo from our team's Facebook post"
         }
+      },
+      {
+        "id": "housing-manhattan-ks-property-prime-place",
+        "name": "Prime Place",
+        "website": "https://www.primeplacemhk.com/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Prime%20Place%2C%20Manhattan%2C%20KS",
+        "summary": "Prime Place in Manhattan lists layouts from studios to four-bedroom, four-bath apartments near Kansas State. Start with its leasing site to compare openings and layouts.",
+        "source": "https://www.primeplacemhk.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/2120989008519297/posts/2124814464803418/",
+          "photoPending": true
+        }
+      },
+      {
+        "id": "housing-manhattan-ks-property-highland-ridge",
+        "name": "Highland Ridge",
+        "website": "https://www.highlandridgeliving.com/Features.aspx",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Highland%20Ridge%2C%20Manhattan%2C%20KS",
+        "summary": "Highland Ridge in Manhattan, KS, lists two- and three-bedroom apartments for renters comparing layouts around town.",
+        "source": "https://www.highlandridgeliving.com/Features.aspx",
+        "spotlight": {
+          "publishedAt": "2026-11-16",
+          "facebookPost": "https://www.facebook.com/groups/2120989008519297/posts/2123941124890752/",
+          "photoPending": true
+        }
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/2120989008519297/"
@@ -2671,7 +2915,11 @@
         "pick": 1,
         "photo": "assets/housing/housing-stillwater-ok-property-midtown-stillwater.jpg",
         "photoAlt": "Midtown in Stillwater, OK, from the property's official website",
-        "photoApproved": true
+        "photoApproved": true,
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/1887445796015247/posts/1891254365634390/"
+        }
       },
       {
         "id": "housing-stillwater-ok-property-prime-place-stw",
@@ -2729,6 +2977,20 @@
           "facebookPost": "https://www.facebook.com/groups/1887445796015247/posts/1889210402505453/",
           "photo": "assets/housing/stillwater-ok-property-apple-creek-stillwater.jpg",
           "photoAlt": "Apple Creek Stillwater in Stillwater, OK, photo from our team's Facebook post"
+        }
+      },
+      {
+        "id": "housing-stillwater-ok-property-prime-place",
+        "name": "Prime Place",
+        "website": "https://www.primeplacestw.com/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Prime%20Place%2C%20Stillwater%2C%20OK",
+        "summary": "Prime Place at 312 Elm Ave. in Stillwater is one block from Oklahoma State University, according to the property.",
+        "source": "https://www.primeplacestw.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-16",
+          "facebookPost": "https://www.facebook.com/groups/1887445796015247/posts/1890372749055885/",
+          "photoPending": true
         }
       }
     ],
@@ -2812,6 +3074,20 @@
           "photo": "assets/housing/tucson-az-property-hub-speedway.jpg",
           "photoAlt": "Hub Speedway in Tucson, AZ, photo from our team's Facebook post"
         }
+      },
+      {
+        "id": "housing-tucson-az-property-the-link-at-4th-ave",
+        "name": "The Link at 4th Ave",
+        "website": "https://www.thelinktucson.com/floorplans",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Link%20at%204th%20Ave%2C%20Tucson%2C%20AZ",
+        "summary": "The Link at 4th Ave near the University of Arizona lists studios, one-bedroom and two-bedroom apartments. Its leasing site has a floor-plan comparison and photo gallery.",
+        "source": "https://www.thelinktucson.com/floorplans",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/1128748779953964/posts/1131704516325057/",
+          "photoPending": true
+        }
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/1128748779953964/"
@@ -2876,6 +3152,20 @@
           "facebookPost": "https://www.facebook.com/groups/2548132042348043/posts/2549068832254364/",
           "photo": "assets/housing/albuquerque-nm-property-lobo-village.jpg",
           "photoAlt": "Lobo Village in Albuquerque, NM, photo from our team's Facebook post"
+        }
+      },
+      {
+        "id": "housing-albuquerque-nm-property-the-q-at-nob-hill",
+        "name": "The Q at Nob Hill",
+        "website": "https://www.theqdifference.com/albuquerque-apartments-nob-hill",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Q%20at%20Nob%20Hill%2C%20Albuquerque%2C%20NM",
+        "summary": "The Q at Nob Hill in Albuquerque lists one- and two-bedroom floor plans. It's a local option to compare if you commute to UNM from the Nob Hill area.",
+        "source": "https://www.theqdifference.com/albuquerque-apartments-nob-hill",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/2548132042348043/posts/2551958778632036/",
+          "photoPending": true
         }
       }
     ],
@@ -2943,6 +3233,20 @@
           "photo": "assets/housing/fresno-ca-property-topanga-ridge.jpg",
           "photoAlt": "Topanga Ridge in Fresno, CA, photo from our team's Facebook post"
         }
+      },
+      {
+        "id": "housing-fresno-ca-property-bulldog-village",
+        "name": "Bulldog Village",
+        "website": "https://bv.prospectportal.com/fresno/bulldog-village/student/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Bulldog%20Village%2C%20Fresno%2C%20CA",
+        "summary": "Bulldog Village near Fresno State lists three-bedroom/one-bath and four-bedroom/one-and-a-half-bath layouts. The image shows the three-bedroom floor plan from the property's leasing site.",
+        "source": "https://bv.prospectportal.com/fresno/bulldog-village/student/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/1153864210494686/posts/1156774170203690/",
+          "photoPending": true
+        }
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/1153864210494686/"
@@ -2979,7 +3283,11 @@
         "pick": 2,
         "photo": "assets/housing/housing-sacramento-ca-property-academy65.jpg",
         "photoAlt": "Academy65 in Sacramento, CA, from the property's official website",
-        "photoApproved": true
+        "photoApproved": true,
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/1769167408547278/posts/1773203021477050/"
+        }
       },
       {
         "id": "housing-sacramento-ca-property-hornet-commons",
@@ -3032,7 +3340,11 @@
         "pick": 1,
         "photo": "assets/housing/housing-greensboro-nc-property-the-reserve-at-greensboro.jpg",
         "photoAlt": "The Reserve at Greensboro in Greensboro, NC, from the property's official website",
-        "photoApproved": true
+        "photoApproved": true,
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/1670073367846669/posts/1673250420862297/"
+        }
       },
       {
         "id": "housing-greensboro-nc-property-the-province-greensboro",
@@ -3074,6 +3386,20 @@
           "facebookPost": "https://www.facebook.com/groups/1670073367846669/posts/1670999884420684/",
           "photo": "assets/housing/greensboro-nc-property-spartan-crossing.jpg",
           "photoAlt": "Spartan Crossing in Greensboro, NC, photo from our team's Facebook post"
+        }
+      },
+      {
+        "id": "housing-greensboro-nc-property-the-province",
+        "name": "The Province",
+        "website": "https://www.theprovincegreensboro.com/amenities/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Province%2C%20Greensboro%2C%20NC",
+        "summary": "Renting with roommates near UNC Greensboro? The Province lists layouts with private bedrooms and bathrooms.",
+        "source": "https://www.theprovincegreensboro.com/amenities/",
+        "spotlight": {
+          "publishedAt": "2026-11-16",
+          "facebookPost": "https://www.facebook.com/groups/1670073367846669/posts/1672367444283928/",
+          "photoPending": true
         }
       }
     ],
@@ -3124,7 +3450,11 @@
         "pick": 3,
         "photo": "assets/housing/housing-college-park-md-property-tempo.jpg",
         "photoAlt": "Tempo College Park in College Park, MD, from the property's official website",
-        "photoApproved": true
+        "photoApproved": true,
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/collegeparkhousing/posts/2054221668620287/"
+        }
       }
     ]
   },
@@ -3174,6 +3504,20 @@
         "photo": "assets/housing/housing-berkeley-ca-property-2430-prospect.jpg",
         "photoAlt": "2430 Prospect in Berkeley, CA, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-berkeley-ca-property-the-durant",
+        "name": "The Durant",
+        "website": "https://livethedurant.com/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Durant%2C%20Berkeley%2C%20CA",
+        "summary": "The Durant one block from UC Berkeley lists furnished studio and two-bedroom apartments. The property describes kitchenettes and bathrooms in each apartment.",
+        "source": "https://livethedurant.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/berkeleyapartments/posts/2149690705631106/",
+          "photoPending": true
+        }
       }
     ]
   },
@@ -3184,7 +3528,22 @@
     "place": "Morris, MN",
     "description": "Renters and students in Morris use the AstroPro Facebook group to find apartments, subleases, and roommates near University of Minnesota Morris. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/1162640656270479/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-morris-mn-property-the-homestead",
+        "name": "The Homestead",
+        "website": "https://timmermanproperties.com/the-homestead",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Homestead%2C%20Morris%2C%20MN",
+        "summary": "Timmerman Properties lists two- and four-bedroom options at The Homestead in Morris. The operator describes its four-bedroom apartment as across the street from the University of Minnesota Morris.",
+        "source": "https://timmermanproperties.com/the-homestead",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/1162640656270479/posts/1169719562229255/",
+          "photoPending": true
+        }
+      }
+    ]
   },
   {
     "id": "housing-dillon-mt",
@@ -3211,7 +3570,22 @@
     "place": "Arkadelphia, AR",
     "description": "Renters and students in Arkadelphia use the AstroPro Facebook group to find apartments, subleases, and roommates near Henderson State University & Ouachita Baptist University. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/28903571629335624/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-arkadelphia-ar-property-milestone-apartments",
+        "name": "Milestone Apartments",
+        "website": "https://www.milestonepropertiesllc.com/apartment-pricing",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Milestone%20Apartments%2C%20Arkadelphia%2C%20AR",
+        "summary": "Milestone Apartments in Arkadelphia lists a 690-square-foot one-bedroom layout and two-bedroom options of 871 and 891 square feet. Compare one- and two-bath two-bedroom plans on the operator's site.",
+        "source": "https://www.milestonepropertiesllc.com/apartment-pricing",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/28903571629335624/posts/29001793289513457/",
+          "photoPending": true
+        }
+      }
+    ]
   },
   {
     "id": "housing-alamosa-co",
@@ -3229,7 +3603,22 @@
     "place": "Largo, MD",
     "description": "Renters and students in Largo use the AstroPro Facebook group to find apartments, subleases, and roommates near University of Maryland Global Campus. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/largoapartments/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-largo-md-property-somerset-apartments",
+        "name": "Somerset Apartments",
+        "website": "https://www.somersetlargo.com/floorplans",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Somerset%20Apartments%2C%20Largo%2C%20MD",
+        "summary": "Somerset Apartments in Largo lists a 640-square-foot one-bedroom layout and a 980-square-foot two-bedroom layout. Check the site for openings and unit details.",
+        "source": "https://www.somersetlargo.com/floorplans",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/largoapartments/posts/28042708445405589/",
+          "photoPending": true
+        }
+      }
+    ]
   },
   {
     "id": "housing-lawrenceburg-in",
@@ -3287,6 +3676,20 @@
         "photo": "assets/housing/housing-raleigh-nc-property-hub-raleigh.jpg",
         "photoAlt": "Rooftop pool at Hub Raleigh near NC State, from the property’s official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-raleigh-nc-property-redpoint-raleigh",
+        "name": "Redpoint Raleigh",
+        "website": "https://redpoint-raleigh.com/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Redpoint%20Raleigh%2C%20Raleigh%2C%20NC",
+        "summary": "Redpoint Raleigh near NC State lists three- and four-bedroom cottage layouts with private bathrooms. Its leasing site describes in-unit laundry and optional furniture packages.",
+        "source": "https://redpoint-raleigh.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/raleighrentals/posts/1130686856619921/",
+          "photoPending": true
+        }
       }
     ]
   },
@@ -3297,7 +3700,22 @@
     "place": "Carmel, IN",
     "description": "Renters and students in Carmel use the AstroPro Facebook group to find apartments, subleases, and roommates near campus. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/carmelapartments/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-carmel-in-property-the-seasons-of-carmel",
+        "name": "The Seasons of Carmel",
+        "website": "https://theseasonsofcarmel.com/floorplans/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Seasons%20of%20Carmel%2C%20Carmel%2C%20IN",
+        "summary": "The Seasons of Carmel lists one-, two- and three-bedroom apartments. Visit the floor-plan page to compare layouts and check openings for your preferred move-in date.",
+        "source": "https://theseasonsofcarmel.com/floorplans/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/carmelapartments/posts/1121497917262492/",
+          "photoPending": true
+        }
+      }
+    ]
   },
   {
     "id": "housing-college-station-tx",
@@ -3345,6 +3763,20 @@
         "photo": "assets/housing/housing-college-station-tx-property-u-club-townhomes.jpg",
         "photoAlt": "U Club Townhomes on Marion Pugh in College Station, TX, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-college-station-tx-property-rise-at-northgate",
+        "name": "Rise at Northgate",
+        "website": "https://www.riseatnorthgate.com/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Rise%20at%20Northgate%2C%20College%20Station%2C%20TX",
+        "summary": "Rise at Northgate near Texas A&M lists furnished one- through six-bedroom apartments. Compare layouts for living solo or splitting a place with roommates.",
+        "source": "https://www.riseatnorthgate.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/543357719344215/posts/3097099373970024/",
+          "photoPending": true
+        }
       }
     ]
   },
@@ -3355,7 +3787,22 @@
     "place": "Cazenovia, NY",
     "description": "Renters and students in Cazenovia use the AstroPro Facebook group to find apartments, subleases, and roommates near Cazenovia College. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/207103106885709/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-cazenovia-ny-property-cazenovia-village-apartments",
+        "name": "Cazenovia Village Apartments",
+        "website": "https://crmrentalmgmt.com/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Cazenovia%20Village%20Apartments%2C%20Cazenovia%2C%20NY",
+        "summary": "Cazenovia Village Apartments offers one-bedroom floor plans. The property manager describes this as an affordable housing community for people 62 and older or with a disability. See the official listing for eligibility and availability.",
+        "source": "https://crmrentalmgmt.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/207103106885709/posts/2227664308162902/",
+          "photoPending": true
+        }
+      }
+    ]
   },
   {
     "id": "housing-greeley-co",
@@ -3377,6 +3824,20 @@
         "photo": "assets/housing/housing-greeley-co-property-university-flats.jpg",
         "photoAlt": "University Flats in Greeley, CO, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-greeley-co-property-creekstone-apartments",
+        "name": "Creekstone Apartments",
+        "website": "https://www.creekstoneaptsliving.com/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Creekstone%20Apartments%2C%20Greeley%2C%20CO",
+        "summary": "Creekstone Apartments in Greeley lists one-, two- and three-bedroom layouts. The property offers virtual tours for all three sizes.",
+        "source": "https://www.creekstoneaptsliving.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/318899342193821/posts/2348726292544439/",
+          "photoPending": true
+        }
       }
     ]
   },
@@ -3396,7 +3857,22 @@
     "place": "Purchase, NY",
     "description": "Renters and students in Purchase use the AstroPro Facebook group to find apartments, subleases, and roommates near Manhattanville College. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/327906211139313/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-purchase-ny-property-the-altos-in-white-plains",
+        "name": "The Altos in White Plains",
+        "website": "https://thealtoswhiteplains.com/floorplans/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Altos%20in%20White%20Plains%2C%20Purchase%2C%20NY",
+        "summary": "The Altos in White Plains lists studios and one-, two- and three-bedroom apartments and townhomes. If you're comparing rentals near Purchase, check the size and the commute to campus for each option.",
+        "source": "https://thealtoswhiteplains.com/floorplans/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/327906211139313/posts/2180619075868008/",
+          "photoPending": true
+        }
+      }
+    ]
   },
   {
     "id": "housing-nampa-id",
@@ -3405,7 +3881,22 @@
     "place": "Nampa, ID",
     "description": "Renters and students in Nampa use the AstroPro Facebook group to find apartments, subleases, and roommates near Northwest Nazarene University. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/2396364364232187/",
-    "properties": [],
+    "properties": [
+      {
+        "id": "housing-nampa-id-property-the-station-apartments-at-gateway",
+        "name": "The Station Apartments at Gateway",
+        "website": "https://www.live-thestation.com/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Station%20Apartments%20at%20Gateway%2C%20Nampa%2C%20ID",
+        "summary": "The Station Apartments at Gateway in Nampa lists studios and one-, two- and three-bedroom apartments. Compare the layouts, then check the commute to your campus.",
+        "source": "https://www.live-thestation.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/2396364364232187/posts/2408607796341177/",
+          "photoPending": true
+        }
+      }
+    ],
     "facebookGroupsMore": [
       {
         "label": "Nampa apartments & roommates",
@@ -3420,7 +3911,22 @@
     "place": "Claremont, CA",
     "description": "Renters and students in Claremont use the AstroPro Facebook group to find apartments, subleases, and roommates near The Claremont Colleges. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/464637737369236/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-claremont-ca-property-college-park-apartment-homes",
+        "name": "College Park Apartment Homes",
+        "website": "https://www.liveatcollegepark.com/floorplans",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=College%20Park%20Apartment%20Homes%2C%20Claremont%2C%20CA",
+        "summary": "College Park Apartment Homes in Claremont lists one-bedroom/one-bath, two-bedroom/two-bath and three-bedroom/two-bath layouts. Check the property site for openings near the Claremont Colleges.",
+        "source": "https://www.liveatcollegepark.com/floorplans",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/464637737369236/posts/2590172914815697/",
+          "photoPending": true
+        }
+      }
+    ]
   },
   {
     "id": "housing-south-padre-island-tx",
@@ -3438,7 +3944,21 @@
     "place": "Malibu, CA",
     "description": "Renters and students in Malibu use the AstroPro Facebook group to find apartments, subleases, and roommates near Pepperdine University. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/malibuapartments/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-malibu-ca-property-coastline-drive-condo",
+        "name": "Coastline Drive Condo",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Coastline%20Drive%20Condo%2C%20Malibu%2C%20CA",
+        "summary": "This Coastline Drive rental in Malibu is listed as a split-level two-bedroom, two-bath condo with 1,200 square feet. The listing highlights an ocean-view balcony and shows the layout in the photo gallery.",
+        "source": "https://www.facebook.com/groups/malibuapartments/posts/1640073200941405/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/malibuapartments/posts/1640073200941405/",
+          "photoPending": true
+        }
+      }
+    ]
   },
   {
     "id": "housing-san-jose-ca",
@@ -3473,6 +3993,20 @@
         "photo": "assets/housing/housing-san-jose-ca-property-the-grad-san-jose.jpg",
         "photoAlt": "The Grad San Jose apartment tower and pool deck",
         "photoApproved": true
+      },
+      {
+        "id": "housing-san-jose-ca-property-the-grad",
+        "name": "The Grad",
+        "website": "https://www.thegradsanjose.com/floor-plans",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Grad%2C%20San%20Jose%2C%20CA",
+        "summary": "The Grad one block from San José State lists furnished one-, two-, three- and four-bedroom floor plans. The leasing site describes a fully equipped kitchen in each apartment.",
+        "source": "https://www.thegradsanjose.com/floor-plans",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/sjsuapartments/posts/3591664291008922/",
+          "photoPending": true
+        }
       }
     ],
     "facebookGroupsMore": [
@@ -3489,7 +4023,22 @@
     "place": "Billings, MT",
     "description": "Renters and students in Billings use the AstroPro Facebook group to find apartments, subleases, and roommates near campus. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/billingsapartments/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-billings-mt-property-rocky-meadows",
+        "name": "Rocky Meadows",
+        "website": "https://www.rockymeadowsliving.com/floorplans",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Rocky%20Meadows%2C%20Billings%2C%20MT",
+        "summary": "Rocky Meadows in Billings lists studios and one-, two- and three-bedroom apartments. Its floor-plan page shows sizes and lets you check openings by move-in date.",
+        "source": "https://www.rockymeadowsliving.com/floorplans",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/billingsapartments/posts/1394947039381640/",
+          "photoPending": true
+        }
+      }
+    ]
   },
   {
     "id": "housing-provo-ut",
@@ -3537,6 +4086,20 @@
         "photo": "assets/housing/housing-provo-ut-property-collegeplace-provo.jpg",
         "photoAlt": "Furnished apartment living area at CollegePlace Provo, from the property’s official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-provo-ut-property-liberty-on-freedom",
+        "name": "Liberty on Freedom",
+        "website": "https://chooseliberty.com/liberty-on-freedom/floor-plans/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Liberty%20on%20Freedom%2C%20Provo%2C%20UT",
+        "summary": "Liberty on Freedom near BYU lists furnished two- and three-bedroom apartments. The three-bedroom layout has two bathrooms, and the leasing page includes a plan for comparison.",
+        "source": "https://chooseliberty.com/liberty-on-freedom/floor-plans/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/781574775524955/posts/3072819383067138/",
+          "photoPending": true
+        }
       }
     ]
   },
@@ -3547,7 +4110,22 @@
     "place": "Independence, MO",
     "description": "Renters and students in Independence use the AstroPro Facebook group to find apartments, subleases, and roommates near campus. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/independencemissouriapartments/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-independence-mo-property-cedar-brooke-apartments",
+        "name": "Cedar Brooke Apartments",
+        "website": "https://www.cedar-brooke.com/availableunits",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Cedar%20Brooke%20Apartments%2C%20Independence%2C%20MO",
+        "summary": "Cedar Brooke Apartments in Independence lists a one-bedroom, one-bath floor plan. Use its leasing page to compare unit sizes and openings for your move-in date.",
+        "source": "https://www.cedar-brooke.com/availableunits",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/independencemissouriapartments/posts/1481342580730068/",
+          "photoPending": true
+        }
+      }
+    ]
   },
   {
     "id": "housing-fishers-in",
@@ -3556,7 +4134,22 @@
     "place": "Fishers, IN",
     "description": "Renters and students in Fishers use the AstroPro Facebook group to find apartments, subleases, and roommates near campus. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/fishersapartment/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-fishers-in-property-the-depot-at-nickel-plate",
+        "name": "The Depot at Nickel Plate",
+        "website": "https://thedepotatnickelplate.com/floorplans/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Depot%20at%20Nickel%20Plate%2C%20Fishers%2C%20IN",
+        "summary": "The Depot at Nickel Plate in downtown Fishers lists one-, two- and three-bedroom apartments. Compare the layouts on its leasing site and check availability for your dates.",
+        "source": "https://thedepotatnickelplate.com/floorplans/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/fishersapartment/posts/1665836275034310/",
+          "photoPending": true
+        }
+      }
+    ]
   },
   {
     "id": "housing-fort-collins-co",
@@ -3604,6 +4197,20 @@
         "photo": "assets/housing/housing-fort-collins-co-property-cottages-of-fort-collins.jpg",
         "photoAlt": "The Cottages of Fort Collins in Fort Collins, CO, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-fort-collins-co-property-the-outpost",
+        "name": "The Outpost",
+        "website": "https://outpostfortcollins.com/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Outpost%2C%20Fort%20Collins%2C%20CO",
+        "summary": "The Outpost near Colorado State lists two-, three-, four- and five-bedroom layouts. The property describes a private bathroom for every bedroom.",
+        "source": "https://outpostfortcollins.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/40635080362745769/posts/40898307853089684/",
+          "photoPending": true
+        }
       }
     ]
   },
@@ -3702,6 +4309,20 @@
         "photo": "assets/housing/housing-murfreesboro-tn-property-cobalt-row.jpg",
         "photoAlt": "Cobalt Row entrance sign and townhomes in Murfreesboro, from the property’s official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-murfreesboro-tn-property-the-grove-at-murfreesboro",
+        "name": "The Grove at Murfreesboro",
+        "website": "https://groveatmurfreesboro.com/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Grove%20at%20Murfreesboro%2C%20Murfreesboro%2C%20TN",
+        "summary": "The Grove at Murfreesboro near MTSU lists two-bedroom/two-bath, three-bedroom/three-bath and four-bedroom/four-bath apartments. The property highlights furnished layouts with in-unit laundry.",
+        "source": "https://groveatmurfreesboro.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/1611003420259893/posts/1620269749333260/",
+          "photoPending": true
+        }
       }
     ]
   },
@@ -3751,6 +4372,20 @@
         "photo": "assets/housing/housing-san-marcos-tx-property-the-social-san-marcos.jpg",
         "photoAlt": "Pool at The Social San Marcos near Texas State, from the property’s official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-san-marcos-tx-property-the-lyndon",
+        "name": "The Lyndon",
+        "website": "https://thelyndon.com/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Lyndon%2C%20San%20Marcos%2C%20TX",
+        "summary": "The Lyndon near Texas State lists one-, two- and four-bedroom layouts with private bathrooms. The property describes furnished apartments with in-unit laundry.",
+        "source": "https://thelyndon.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/1825381478489467/posts/1835356367491978/",
+          "photoPending": true
+        }
       }
     ]
   },
@@ -3761,7 +4396,22 @@
     "place": "Greer, SC",
     "description": "Renters and students in Greer use the AstroPro Facebook group to find apartments, subleases, and roommates near Greenville Technical College. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/1139937671861189/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-greer-sc-property-parkview-greer",
+        "name": "Parkview Greer",
+        "website": "https://www.parkviewgreersc.com/floorplans",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Parkview%20Greer%2C%20Greer%2C%20SC",
+        "summary": "Parkview Greer lists studios plus one- and two-bedroom apartments. Floor plans range from approximately 463 to 1,605 square feet.",
+        "source": "https://www.parkviewgreersc.com/floorplans",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/1139937671861189/posts/1150413674146922/",
+          "photoPending": true
+        }
+      }
+    ]
   },
   {
     "id": "housing-gallatin-tn",
@@ -3770,7 +4420,22 @@
     "place": "Gallatin, TN",
     "description": "Renters and students in Gallatin use the AstroPro Facebook group to find apartments, subleases, and roommates near Volunteer State Community College. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/1705925217812630/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-gallatin-tn-property-banner-at-westfield",
+        "name": "Banner at Westfield",
+        "website": "https://www.banneratwestfield.com/floorplans",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Banner%20at%20Westfield%2C%20Gallatin%2C%20TN",
+        "summary": "Banner at Westfield in Gallatin lists one-, two- and three-bedroom apartments. The property highlights plank-style flooring and stainless steel appliances.",
+        "source": "https://www.banneratwestfield.com/floorplans",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/1705925217812630/posts/1717722453299573/",
+          "photoPending": true
+        }
+      }
+    ]
   },
   {
     "id": "housing-bluffton-sc",
@@ -3779,7 +4444,22 @@
     "place": "Bluffton, SC",
     "description": "Renters and students in Bluffton use the AstroPro Facebook group to find apartments, subleases, and roommates near University of South Carolina Beaufort. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/1600227734680242/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-bluffton-sc-property-enclave-at-bluffton-park",
+        "name": "Enclave at Bluffton Park",
+        "website": "https://www.enclavebluffton.com/floorplans",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Enclave%20at%20Bluffton%20Park%2C%20Bluffton%2C%20SC",
+        "summary": "Enclave at Bluffton Park near Old Town lists one-, two- and three-bedroom apartments. Its leasing site shows several layouts to compare by size and move-in date.",
+        "source": "https://www.enclavebluffton.com/floorplans",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/1600227734680242/posts/1609751133727902/",
+          "photoPending": true
+        }
+      }
+    ]
   },
   {
     "id": "housing-newnan-ga",
@@ -3788,7 +4468,22 @@
     "place": "Newnan, GA",
     "description": "Renters and students in Newnan use the AstroPro Facebook group to find apartments, subleases, and roommates near University of West Georgia Newnan. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/28905433089066199/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-newnan-ga-property-wrenley",
+        "name": "Wrenley",
+        "website": "https://www.liveatwrenley.com/floorplans",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Wrenley%2C%20Newnan%2C%20GA",
+        "summary": "Wrenley near Ashley Park in Newnan lists one-, two- and three-bedroom apartments. The image is a rendering from the property. Visit the site for current openings.",
+        "source": "https://www.liveatwrenley.com/floorplans",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/28905433089066199/posts/29050169204592586/",
+          "photoPending": true
+        }
+      }
+    ]
   },
   {
     "id": "housing-athens-al",
@@ -3797,7 +4492,22 @@
     "place": "Athens, AL",
     "description": "Renters and students in Athens use the AstroPro Facebook group to find apartments, subleases, and roommates near Athens State University. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/1132184636225044/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-athens-al-property-cottonwood-apartments",
+        "name": "Cottonwood Apartments",
+        "website": "https://cottonwood-athens.com/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Cottonwood%20Apartments%2C%20Athens%2C%20AL",
+        "summary": "Cottonwood Apartments in Athens lists one-, two- and three-bedroom units. Its site shows both flat and townhome layouts for renters comparing options in town.",
+        "source": "https://cottonwood-athens.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/1132184636225044/posts/1142972975146210/",
+          "photoPending": true
+        }
+      }
+    ]
   },
   {
     "id": "housing-brookings-sd",
@@ -3806,7 +4516,22 @@
     "place": "Brookings, SD",
     "description": "Renters and students in Brookings use the AstroPro Facebook group to find apartments, subleases, and roommates near South Dakota State University. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/983417581507353/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-brookings-sd-property-paragon-on-campanile",
+        "name": "Paragon on Campanile",
+        "website": "https://www.paragonbrookings.com/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Paragon%20on%20Campanile%2C%20Brookings%2C%20SD",
+        "summary": "Paragon on Campanile in Brookings lists studios and one- and two-bedroom apartments. Its Summit plan includes two bedrooms, one bathroom and in-unit laundry. The image is the property's rendering.",
+        "source": "https://www.paragonbrookings.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/983417581507353/posts/994544433728001/",
+          "photoPending": true
+        }
+      }
+    ]
   },
   {
     "id": "housing-conway-ar",
@@ -3828,6 +4553,20 @@
         "photo": "assets/housing/housing-conway-ar-property-the-edge-at-conway.jpg",
         "photoAlt": "Pool and clubhouse area at The Edge at Conway",
         "photoApproved": true
+      },
+      {
+        "id": "housing-conway-ar-property-university-park-apartments",
+        "name": "University Park Apartments",
+        "website": "https://www.universityparkconway.com/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=University%20Park%20Apartments%2C%20Conway%2C%20AR",
+        "summary": "University Park Apartments in Conway lists two-bedroom floor plans. The property is a local option to compare if you're looking for an apartment near the University of Central Arkansas.",
+        "source": "https://www.universityparkconway.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/1645715680533070/posts/1657118236059481/",
+          "photoPending": true
+        }
       }
     ]
   },
@@ -3847,7 +4586,22 @@
     "place": "Georgetown, TX",
     "description": "Renters and students in Georgetown use the AstroPro Facebook group to find apartments, subleases, and roommates near Southwestern University. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/1799924737906533/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-georgetown-tx-property-two-rivers",
+        "name": "Two Rivers",
+        "website": "https://www.tworiversgt.com/floorplans",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Two%20Rivers%2C%20Georgetown%2C%20TX",
+        "summary": "Two Rivers in Georgetown lists one- and two-bedroom apartments. The property's leasing page shows layout details and openings near downtown Georgetown.",
+        "source": "https://www.tworiversgt.com/floorplans",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/1799924737906533/posts/1811857916713215/",
+          "photoPending": true
+        }
+      }
+    ]
   },
   {
     "id": "housing-boston-ma",
@@ -3896,6 +4650,19 @@
         "photo": "assets/housing/housing-boston-ma-property-continuum-allston.jpg",
         "photoAlt": "Continuum Allston apartment buildings and lawn in Boston",
         "photoApproved": true
+      },
+      {
+        "id": "housing-boston-ma-property-the-tremont",
+        "name": "The Tremont",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Tremont%2C%20Boston%2C%20MA",
+        "summary": "The Tremont in Mission Hill lists studios and one-, two- and three-bedroom apartments. Northeastern's off-campus housing site puts it about half a mile from the Boston campus.",
+        "source": "https://www.facebook.com/groups/1798191001418379/posts/1809488190288660/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/1798191001418379/posts/1809488190288660/",
+          "photoPending": true
+        }
       }
     ]
   },
@@ -3945,6 +4712,20 @@
         "photo": "assets/housing/housing-phoenix-az-property-roosevelt-square.jpg",
         "photoAlt": "Courtyard at Roosevelt Square apartments in downtown Phoenix, from the property’s official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-phoenix-az-property-derby-in-roosevelt-row",
+        "name": "Derby in Roosevelt Row",
+        "website": "https://www.derbyphx.com/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Derby%20in%20Roosevelt%20Row%2C%20Phoenix%2C%20AZ",
+        "summary": "Derby in Roosevelt Row lists furnished and unfurnished studios and one- and two-bedroom apartments in downtown Phoenix. Check the property site to compare options near ASU Downtown.",
+        "source": "https://www.derbyphx.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/943678481948118/posts/953889897593643/",
+          "photoPending": true
+        }
       }
     ]
   },
@@ -3994,6 +4775,20 @@
         "photo": "assets/housing/housing-san-diego-ca-property-college-area-living.jpg",
         "photoAlt": "College Area Living apartment building near SDSU, from the property’s official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-san-diego-ca-property-fifty-twenty-five",
+        "name": "Fifty Twenty-Five",
+        "website": "https://live5025.prospectportal.com/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Fifty%20Twenty-Five%2C%20San%20Diego%2C%20CA",
+        "summary": "Fifty Twenty-Five near San Diego State lists studio and shared apartment layouts, including two-bedroom/two-bath and three-bedroom/two-bath plans. The leasing site describes individual, by-the-bedroom options.",
+        "source": "https://live5025.prospectportal.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/1425789229536216/posts/1436948355086970/",
+          "photoPending": true
+        }
       }
     ]
   },
@@ -4045,6 +4840,20 @@
         "photo": "assets/housing/housing-seattle-wa-property-bridges-at-11th.jpg",
         "photoAlt": "Bridges at 11th in Seattle, WA, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-seattle-wa-property-the-m",
+        "name": "The M",
+        "website": "https://themseattle.com/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20M%2C%20Seattle%2C%20WA",
+        "summary": "The M in Seattle's U-District lists studios and one-, two- and four-bedroom plans near the University of Washington. Its leasing site shows layouts for living alone or with roommates.",
+        "source": "https://themseattle.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/1591649698893348/posts/1602222351169416/",
+          "photoPending": true
+        }
       }
     ]
   },
@@ -4095,6 +4904,20 @@
         "photo": "assets/housing/housing-philadelphia-pa-property-university-village-temple.jpg",
         "photoAlt": "University Village sign and building near Temple University, from the property website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-philadelphia-pa-property-the-york",
+        "name": "The York",
+        "website": "https://www.theyorkphilly.com/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20York%2C%20Philadelphia%2C%20PA",
+        "summary": "The York is a North Philadelphia student housing option near Temple University. Its leasing site has a dedicated page for two-bedroom apartments and a photo gallery.",
+        "source": "https://www.theyorkphilly.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/2383463272426294/posts/2396452074460747/",
+          "photoPending": true
+        }
       }
     ]
   },
@@ -4119,6 +4942,20 @@
         "photo": "assets/housing/housing-chicago-il-property-university-center.jpg",
         "photoAlt": "University Center building on State Street in Chicago, from the Chicago Loop Alliance listing",
         "photoApproved": true
+      },
+      {
+        "id": "housing-chicago-il-property-tailor-lofts",
+        "name": "Tailor Lofts",
+        "website": "https://tailorlofts.com/floor-plans/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Tailor%20Lofts%2C%20Chicago%2C%20IL",
+        "summary": "Tailor Lofts in the West Loop lists several four-bedroom layouts, including the Taylor and Jefferson, near UIC. The apartments are in the historic White Tower Building.",
+        "source": "https://tailorlofts.com/floor-plans/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/1664635285074262/posts/1676513450553112/",
+          "photoPending": true
+        }
       }
     ]
   },
@@ -4169,6 +5006,20 @@
         "photo": "assets/housing/housing-los-angeles-ca-property-west-27th-place.jpg",
         "photoAlt": "Resident lounge with study counter at West 27th Place near USC in Los Angeles",
         "photoApproved": true
+      },
+      {
+        "id": "housing-los-angeles-ca-property-the-atrium",
+        "name": "The Atrium",
+        "website": "https://www.atrium-westwood.com/floor-plans/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Atrium%2C%20Los%20Angeles%2C%20CA",
+        "summary": "The Atrium in Westwood near UCLA lists one-bedroom, one-bath and two-bedroom, two-bath layouts. Compare sizes and current openings on the leasing site.",
+        "source": "https://www.atrium-westwood.com/floor-plans/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/1441002644078646/posts/1451507699694807/",
+          "photoPending": true
+        }
       }
     ],
     "facebookGroupsMore": [
@@ -4225,6 +5076,20 @@
         "photo": "assets/housing/housing-tempe-az-property-alight-tempe.jpg",
         "photoAlt": "Alight Tempe in Tempe, AZ, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-tempe-az-property-university-house-tempe",
+        "name": "University House Tempe",
+        "website": "https://uhtempe.com/features/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=University%20House%20Tempe%2C%20Tempe%2C%20AZ",
+        "summary": "University House Tempe near ASU lists studio through five-bedroom floor plans. The property describes furnished units with private bathrooms available on some layouts.",
+        "source": "https://uhtempe.com/features/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/29133244253027071/posts/29333300883021406/",
+          "photoPending": true
+        }
       }
     ]
   },
@@ -4248,7 +5113,11 @@
         "pick": 1,
         "photo": "assets/housing/housing-austin-tx-property-the-block.jpg",
         "photoAlt": "The Block in Austin, TX, from the property's official website",
-        "photoApproved": true
+        "photoApproved": true,
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/1580209497481415/posts/1593816156120749/"
+        }
       },
       {
         "id": "housing-austin-tx-property-26-west",
@@ -4321,6 +5190,20 @@
         "photo": "assets/housing/housing-boca-raton-fl-property-vie-villas.jpg",
         "photoAlt": "Vie Villas at Boca Raton in Boca Raton, FL, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-boca-raton-fl-property-the-yard-university-apartments",
+        "name": "The Yard University Apartments",
+        "website": "https://www.theyardapartments.com/floorplans",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Yard%20University%20Apartments%2C%20Boca%20Raton%2C%20FL",
+        "summary": "The Yard University Apartments near FAU offers furnished two-bedroom, two-bath and three-bedroom, three-bath floor plans. The property leases by the bedroom and describes private and shared options.",
+        "source": "https://www.theyardapartments.com/floorplans",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/bocaratonapartments/posts/1864643178218646/",
+          "photoPending": true
+        }
       }
     ]
   },
@@ -4370,6 +5253,20 @@
         "photo": "assets/housing/housing-bowling-green-oh-property-mecca-management.jpg",
         "photoAlt": "Brick townhome-style apartment buildings managed by Mecca in Bowling Green",
         "photoApproved": true
+      },
+      {
+        "id": "housing-bowling-green-oh-property-the-columns-on-kentucky-street",
+        "name": "The Columns on Kentucky Street",
+        "website": "https://columnsbg.com/floorplans",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Columns%20on%20Kentucky%20Street%2C%20Bowling%20Green%2C%20OH",
+        "summary": "The Columns on Kentucky Street lists one-bedroom/one-bath, two-bedroom/two-bath and three-bedroom/two-bath apartments. Browse floor plans close to Western Kentucky University.",
+        "source": "https://columnsbg.com/floorplans",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/bowlinggreenapartments/posts/1162828666430922/",
+          "photoPending": true
+        }
       }
     ]
   },
@@ -4419,6 +5316,20 @@
         "photo": "assets/housing/housing-kennesaw-ga-property-the-collective-at-kennesaw.jpg",
         "photoAlt": "Pool at The Collective at Kennesaw, from the property’s official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-kennesaw-ga-property-west-22",
+        "name": "West 22",
+        "website": "https://www.west22.com/apartments/ga/kennesaw/floor-plans",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=West%2022%2C%20Kennesaw%2C%20GA",
+        "summary": "West 22 near Kennesaw State lists one- through five-bedroom floor plans. Its site highlights four- and five-bedroom cottages and a five-bedroom manor option.",
+        "source": "https://www.west22.com/apartments/ga/kennesaw/floor-plans",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/kennesawstateapartments/posts/2789957118066166/",
+          "photoPending": true
+        }
       }
     ]
   },
@@ -4441,7 +5352,11 @@
         "pick": 1,
         "photo": "assets/housing/housing-fairfax-va-property-the-flats-on-university.jpg",
         "photoAlt": "The Flats on University near George Mason University, from the property’s official website",
-        "photoApproved": true
+        "photoApproved": true,
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/georgemasonapartments/posts/968983795969426/"
+        }
       },
       {
         "id": "housing-fairfax-va-property-the-main-on-university",
@@ -4490,7 +5405,11 @@
         "pick": 2,
         "photo": "assets/housing/housing-orem-ut-property-wolverine-crossing.jpg",
         "photoAlt": "Pool at Wolverine Crossing near UVU, from the property’s official website",
-        "photoApproved": true
+        "photoApproved": true,
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/utahvalleyapartments/posts/1149390107480697/"
+        }
       },
       {
         "id": "housing-orem-ut-property-the-green-on-campus-drive",
@@ -4527,6 +5446,20 @@
         "photo": "assets/housing/housing-williamsburg-va-property-current-midtown.jpg",
         "photoAlt": "Current Midtown apartment building near William & Mary, from the property’s official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-williamsburg-va-property-high-street-view-apartments",
+        "name": "High Street View Apartments",
+        "website": "https://highstreetviewapts.com/floorplans/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=High%20Street%20View%20Apartments%2C%20Williamsburg%2C%20VA",
+        "summary": "High Street View Apartments in Williamsburg lists studios and one-, two- and three-bedroom layouts. Check its floor-plan page for current openings near William & Mary.",
+        "source": "https://highstreetviewapts.com/floorplans/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/williamsburgapartments/posts/1156097673775074/",
+          "photoPending": true
+        }
       }
     ]
   },
@@ -4576,6 +5509,20 @@
         "photo": "assets/housing/housing-kalamazoo-mi-property-tate-on-howard.jpg",
         "photoAlt": "Clubhouse lounge and fitness area at The Tate on Howard in Kalamazoo",
         "photoApproved": true
+      },
+      {
+        "id": "housing-kalamazoo-mi-property-arcadia-grove",
+        "name": "Arcadia Grove",
+        "website": "https://www.arcadiagroveapartments.com/floorplans",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Arcadia%20Grove%2C%20Kalamazoo%2C%20MI",
+        "summary": "Arcadia Grove in Kalamazoo lists studio through three-bedroom apartments, plus four- and six-bedroom townhomes. Browse the leasing site for layout drawings and openings.",
+        "source": "https://www.arcadiagroveapartments.com/floorplans",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/kalamazooapartments/posts/1270670898614985/",
+          "photoPending": true
+        }
       }
     ]
   },
@@ -4661,6 +5608,20 @@
         "photo": "assets/housing/housing-cullowhee-nc-property-mountain-village.jpg",
         "photoAlt": "Mountain Village apartments near Western Carolina University, from the property’s official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-cullowhee-nc-property-summit-at-cullowhee",
+        "name": "Summit at Cullowhee",
+        "website": "https://www.summitatcullowhee.com/floorplans",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Summit%20at%20Cullowhee%2C%20Cullowhee%2C%20NC",
+        "summary": "Summit at Cullowhee near Western Carolina University lists one-bed/one-bath, two-bed/two-bath, three-bed/three-bath and four-bed/four-bath layouts. The property lists furnished and unfurnished options.",
+        "source": "https://www.summitatcullowhee.com/floorplans",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/cullowheeapartments/posts/4743511305924632/",
+          "photoPending": true
+        }
       }
     ]
   },
@@ -4671,7 +5632,22 @@
     "place": "New Braunfels, TX",
     "description": "Renters and students in New Braunfels use the AstroPro Facebook group to find apartments, subleases, and roommates near campus. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/newbraunfelsapartments/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-new-braunfels-tx-property-the-landmark",
+        "name": "The Landmark",
+        "website": "https://www.landmarklofts.com/floorplans",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Landmark%2C%20New%20Braunfels%2C%20TX",
+        "summary": "The Landmark in New Braunfels lists studio, one- and two-bedroom apartments. Its gallery includes a one-bedroom loft with an open living area.",
+        "source": "https://www.landmarklofts.com/floorplans",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/newbraunfelsapartments/posts/1159033660005419/",
+          "photoPending": true
+        }
+      }
+    ]
   },
   {
     "id": "housing-reading-pa",
@@ -4680,7 +5656,22 @@
     "place": "Reading, PA",
     "description": "Renters and students in Reading use the AstroPro Facebook group to find apartments, subleases, and roommates near campus. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/readingapartments/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-reading-pa-property-the-lofts-at-narrow",
+        "name": "The Lofts at Narrow",
+        "website": "https://mmgapts.com/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Lofts%20at%20Narrow%2C%20Reading%2C%20PA",
+        "summary": "The Lofts at Narrow in West Reading lists one-bedroom/one-bath and two-bedroom/two-bath lofts with in-unit laundry. The image shows one of the floor plans from the property's site.",
+        "source": "https://mmgapts.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/readingapartments/posts/1564422928780287/",
+          "photoPending": true
+        }
+      }
+    ]
   },
   {
     "id": "housing-san-bernardino-ca",
@@ -4689,7 +5680,22 @@
     "place": "San Bernardino, CA",
     "description": "Renters and students in San Bernardino use the AstroPro Facebook group to find apartments, subleases, and roommates near Cal State San Bernardino. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/sanbernardinoapartments/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-san-bernardino-ca-property-sixteen60-apartment-homes",
+        "name": "Sixteen60 Apartment Homes",
+        "website": "https://www.livesixteen60.com/floorplans",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Sixteen60%20Apartment%20Homes%2C%20San%20Bernardino%2C%20CA",
+        "summary": "Sixteen60 Apartment Homes in San Bernardino lists two- and three-bedroom plans, including cottage-style options. Compare units on the leasing site if you're looking near CSUSB.",
+        "source": "https://www.livesixteen60.com/floorplans",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/sanbernardinoapartments/posts/1553144113382137/",
+          "photoPending": true
+        }
+      }
+    ]
   },
   {
     "id": "housing-anchorage-ak",
@@ -4698,7 +5704,22 @@
     "place": "Anchorage, AK",
     "description": "Renters and students in Anchorage use the AstroPro Facebook group to find apartments, subleases, and roommates near University of Alaska Anchorage. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/anchorageapartments/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-anchorage-ak-property-alpine-apartment-homes",
+        "name": "Alpine Apartment Homes",
+        "website": "https://www.alpineapartmenthomes.com/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Alpine%20Apartment%20Homes%2C%20Anchorage%2C%20AK",
+        "summary": "Alpine Apartment Homes in Anchorage lists studios and one- and two-bedroom apartments. Compare plans and see which units the property lists as furnished.",
+        "source": "https://www.alpineapartmenthomes.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/anchorageapartments/posts/1555476863279547/",
+          "photoPending": true
+        }
+      }
+    ]
   },
   {
     "id": "housing-gilbert-az",
@@ -4707,7 +5728,22 @@
     "place": "Gilbert, AZ",
     "description": "Renters and students in Gilbert use the AstroPro Facebook group to find apartments, subleases, and roommates near campus. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/gilbertarizonaapartments/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-gilbert-az-property-santan-by-baron",
+        "name": "SanTan by Baron",
+        "website": "https://www.santanbybaron.com/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=SanTan%20by%20Baron%2C%20Gilbert%2C%20AZ",
+        "summary": "SanTan by Baron in Gilbert lists studios and one-, two- and three-bedroom apartments. The property highlights in-home laundry and private balconies.",
+        "source": "https://www.santanbybaron.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/gilbertarizonaapartments/posts/2184565542176825/",
+          "photoPending": true
+        }
+      }
+    ]
   },
   {
     "id": "housing-irvine-ca",
@@ -4755,6 +5791,20 @@
         "photo": "assets/housing/housing-irvine-ca-property-camino-del-sol.jpg",
         "photoAlt": "Camino del Sol in Irvine, CA, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-irvine-ca-property-ambrose-at-university-town-center",
+        "name": "Ambrose at University Town Center",
+        "website": "https://www.irvinecompanyapartments.com/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Ambrose%20at%20University%20Town%20Center%2C%20Irvine%2C%20CA",
+        "summary": "Ambrose at University Town Center lists studios and one- and two-bedroom plans near UC Irvine. The property says its one- and two-bedroom homes include an in-unit washer and dryer.",
+        "source": "https://www.irvinecompanyapartments.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/irvinesubleases/posts/3552350774942034/",
+          "photoPending": true
+        }
       }
     ]
   },
@@ -4806,6 +5856,20 @@
         "photo": "assets/housing/housing-missoula-mt-property-corso-apartments.jpg",
         "photoAlt": "Fireplace lounge at The Corso apartments in Missoula",
         "photoApproved": true
+      },
+      {
+        "id": "housing-missoula-mt-property-the-sawyer",
+        "name": "The Sawyer",
+        "website": "https://www.sawyerliving.com/floor-plans-2/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Sawyer%2C%20Missoula%2C%20MT",
+        "summary": "The Sawyer in Missoula's Old Sawmill District lists three-bedroom, three-bath and four-bedroom, four-bath options. Its floor-plan page highlights in-unit laundry and private bathrooms.",
+        "source": "https://www.sawyerliving.com/floor-plans-2/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/missoulaapartments/posts/30354026380854173/",
+          "photoPending": true
+        }
       }
     ]
   },
@@ -4825,7 +5889,22 @@
     "place": "Topeka, KS",
     "description": "Renters and students in Topeka use the AstroPro Facebook group to find apartments, subleases, and roommates near Washburn University. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/topekaapartments/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-topeka-ks-property-washburn-villas",
+        "name": "Washburn Villas",
+        "website": "https://www.washburnvillastopeka.com/floor-plans",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Washburn%20Villas%2C%20Topeka%2C%20KS",
+        "summary": "Washburn Villas in Topeka lists a 550-square-foot one-bedroom and a 900-square-foot two-bedroom, each with one bath. Its leasing site shows the layouts side by side.",
+        "source": "https://www.washburnvillastopeka.com/floor-plans",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/topekaapartments/posts/1471178321812388/",
+          "photoPending": true
+        }
+      }
+    ]
   },
   {
     "id": "housing-frankfort-ky",
@@ -4834,7 +5913,22 @@
     "place": "Frankfort, KY",
     "description": "Renters and students in Frankfort use the AstroPro Facebook group to find apartments, subleases, and roommates near Kentucky State University. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/frankfortapartments/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-frankfort-ky-property-riverview-apartments",
+        "name": "Riverview Apartments",
+        "website": "https://www.riverviewaptsky.com/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Riverview%20Apartments%2C%20Frankfort%2C%20KY",
+        "summary": "Riverview Apartments in Frankfort lists studios and one- and two-bedroom apartments. Its leasing site shows layout details and lets you check openings for your move-in date.",
+        "source": "https://www.riverviewaptsky.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/frankfortapartments/posts/1171453358651291/",
+          "photoPending": true
+        }
+      }
+    ]
   },
   {
     "id": "housing-little-rock-ar",
@@ -4843,7 +5937,22 @@
     "place": "Little Rock, AR",
     "description": "Renters and students in Little Rock use the AstroPro Facebook group to find apartments, subleases, and roommates near University of Arkansas at Little Rock. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/littlerockapartments/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-little-rock-ar-property-fitzroy-promenade",
+        "name": "Fitzroy Promenade",
+        "website": "https://www.fitzroypromenade.com/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Fitzroy%20Promenade%2C%20Little%20Rock%2C%20AR",
+        "summary": "Fitzroy Promenade in Little Rock lists studios and one-, two- and three-bedroom apartments. Compare floor-plan drawings and openings on its leasing site.",
+        "source": "https://www.fitzroypromenade.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/littlerockapartments/posts/1789640602311542/",
+          "photoPending": true
+        }
+      }
+    ]
   },
   {
     "id": "housing-fredericton-nb",
@@ -4852,7 +5961,22 @@
     "place": "Fredericton, NB",
     "description": "Renters and students in Fredericton use the AstroPro Facebook group to find apartments, subleases, and roommates near University of New Brunswick. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/frederictionapartments/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-fredericton-nb-property-forest-hill-towers",
+        "name": "Forest Hill Towers",
+        "website": "https://www.killamreit.com/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Forest%20Hill%20Towers%2C%20Fredericton%2C%20NB",
+        "summary": "Forest Hill Towers in Fredericton lists studios and one- and two-bedroom apartments. Compare layouts and openings on the building's leasing page.",
+        "source": "https://www.killamreit.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/frederictionapartments/posts/1679305030492814/",
+          "photoPending": true
+        }
+      }
+    ]
   },
   {
     "id": "housing-churchill-mb",
@@ -4870,7 +5994,22 @@
     "place": "Regina, SK",
     "description": "Renters and students in Regina use the AstroPro Facebook group to find apartments, subleases, and roommates near University of Regina. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/reginaapartments/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-regina-sk-property-college-manor",
+        "name": "College Manor",
+        "website": "https://www.collegemanorliving.ca/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=College%20Manor%2C%20Regina%2C%20SK",
+        "summary": "College Manor in Regina lists one- and two-bedroom apartments, including layouts with dens. The property highlights in-suite laundry and air conditioning.",
+        "source": "https://www.collegemanorliving.ca/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/reginaapartments/posts/1722366039309486/",
+          "photoPending": true
+        }
+      }
+    ]
   },
   {
     "id": "housing-yellowknife-nt",
@@ -4879,7 +6018,22 @@
     "place": "Yellowknife, NT",
     "description": "Renters and students in Yellowknife use the AstroPro Facebook group to find apartments, subleases, and roommates near campus. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/yellowknifeapartments/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-yellowknife-nt-property-lanky-court",
+        "name": "Lanky Court",
+        "website": "https://www.rentnorthview.com/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Lanky%20Court%2C%20Yellowknife%2C%20NT",
+        "summary": "Lanky Court in Yellowknife lists one-, two-, three- and four-bedroom plans. The leasing page shows availability and waitlist options for each layout.",
+        "source": "https://www.rentnorthview.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/yellowknifeapartments/posts/1496005149041498/",
+          "photoPending": true
+        }
+      }
+    ]
   },
   {
     "id": "housing-troy-al",
@@ -4901,6 +6055,20 @@
         "photo": "assets/housing/housing-troy-al-property-ivy-row-at-troy.jpg",
         "photoAlt": "Fitness center at Ivy Row at Troy, from the property’s official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-troy-al-property-pointe-at-troy",
+        "name": "Pointe at Troy",
+        "website": "https://www.pointetroy.com/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Pointe%20at%20Troy%2C%20Troy%2C%20AL",
+        "summary": "Pointe at Troy near Troy University lists two-bedroom and four-bedroom floor plans. Compare the property's layouts and leasing options on its website.",
+        "source": "https://www.pointetroy.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/troyapartments/posts/4747204085498931/",
+          "photoPending": true
+        }
       }
     ]
   },
@@ -4911,7 +6079,22 @@
     "place": "Kingston, ON",
     "description": "Renters and students in Kingston use the AstroPro Facebook group to find apartments, subleases, and roommates near Queen's University, St. Lawrence College & Royal Military College. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/kingstonapartments/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-kingston-on-property-geocentral",
+        "name": "GEOcentral",
+        "website": "https://geokingston.ca/geo-central/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=GEOcentral%2C%20Kingston%2C%20ON",
+        "summary": "GEOcentral in Kingston offers student apartments near Queen's University. Its site lists studio and two-bedroom options and shows suite floor plans and building amenities.",
+        "source": "https://geokingston.ca/geo-central/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/kingstonapartments/posts/2361075671302923/",
+          "photoPending": true
+        }
+      }
+    ]
   },
   {
     "id": "housing-henderson-nv",
@@ -4920,7 +6103,22 @@
     "place": "Henderson, NV",
     "description": "Renters and students in Henderson use the AstroPro Facebook group to find apartments, subleases, and roommates near Nevada State University. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/hendersonapartments/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-henderson-nv-property-80-on-gibson",
+        "name": "80 on Gibson",
+        "website": "https://www.80ongibsonapts.com/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=80%20on%20Gibson%2C%20Henderson%2C%20NV",
+        "summary": "80 on Gibson in Henderson lists one-, two- and three-bedroom apartments. The property gallery shows the buildings and the outdoor pool area.",
+        "source": "https://www.80ongibsonapts.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/hendersonapartments/posts/1862747784966213/",
+          "photoPending": true
+        }
+      }
+    ]
   },
   {
     "id": "housing-memphis-tn",
@@ -4954,7 +6152,11 @@
         "pick": 2,
         "photo": "assets/housing/housing-memphis-tn-property-highland-row.jpg",
         "photoAlt": "Highland Row apartment building and monument sign in Memphis",
-        "photoApproved": true
+        "photoApproved": true,
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/memphisrentals/posts/1836019600780012/"
+        }
       }
     ]
   },
@@ -4965,7 +6167,22 @@
     "place": "El Paso, TX",
     "description": "Renters and students in El Paso use the AstroPro Facebook group to find apartments, subleases, and roommates near campus. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/elpasorentals/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-el-paso-tx-property-mountain-village",
+        "name": "Mountain Village",
+        "website": "https://www.caseusa.com/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Mountain%20Village%2C%20El%20Paso%2C%20TX",
+        "summary": "Mountain Village in West El Paso lists one-bedroom, one-bath apartments and two-bedroom layouts with either two or two-and-a-half bathrooms. Its two-bedroom options include a two-story layout.",
+        "source": "https://www.caseusa.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/elpasorentals/posts/2703496483436969/",
+          "photoPending": true
+        }
+      }
+    ]
   },
   {
     "id": "housing-battle-creek-mi",
@@ -4974,7 +6191,22 @@
     "place": "Battle Creek, MI",
     "description": "Renters and students in Battle Creek use the AstroPro Facebook group to find apartments, subleases, and roommates near campus. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/battlecreekrentals/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-battle-creek-mi-property-limewood-apartments",
+        "name": "Limewood Apartments",
+        "website": "https://www.limewoodapts.com/availableunits",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Limewood%20Apartments%2C%20Battle%20Creek%2C%20MI",
+        "summary": "Limewood Apartments lists studios and one- and two-bedroom floor plans near Kellogg Community College. The image is a rendering from the property website.",
+        "source": "https://www.limewoodapts.com/availableunits",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/battlecreekrentals/posts/2955270021494124/",
+          "photoPending": true
+        }
+      }
+    ]
   },
   {
     "id": "housing-cedar-city-ut",
@@ -5032,7 +6264,22 @@
     "place": "Enterprise, NV",
     "description": "Renters and students in Enterprise use the AstroPro Facebook group to find apartments, subleases, and roommates near campus. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/enterpriseapartments/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-enterprise-nv-property-trend-apartments",
+        "name": "Trend Apartments",
+        "website": "https://www.rentcafe.com/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Trend%20Apartments%2C%20Enterprise%2C%20NV",
+        "summary": "Trend Apartments on Silverado Ranch Boulevard lists one-, two- and three-bedroom apartments. The two- and three-bedroom examples on the leasing listing have two bathrooms.",
+        "source": "https://www.rentcafe.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/enterpriseapartments/posts/2582911842228530/",
+          "photoPending": true
+        }
+      }
+    ]
   },
   {
     "id": "housing-vancouver-bc",
@@ -5041,7 +6288,22 @@
     "place": "Vancouver, BC",
     "description": "Renters and students in Vancouver use the AstroPro Facebook group to find apartments, subleases, and roommates near UBC & Langara College. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/2049357515277048/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-vancouver-bc-property-haven",
+        "name": "Haven",
+        "website": "https://www.havenapartments.ca/floorplans",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Haven%2C%20Vancouver%2C%20BC",
+        "summary": "Haven on the UBC Vancouver campus lists studio, one-, two- and three-bedroom apartments. Its gallery shows the property's finishes, including the penthouse interior pictured here.",
+        "source": "https://www.havenapartments.ca/floorplans",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/2049357515277048/posts/4462612110618231/",
+          "photoPending": true
+        }
+      }
+    ]
   },
   {
     "id": "housing-kissimmee-fl",
@@ -5050,7 +6312,22 @@
     "place": "Kissimmee, FL",
     "description": "Renters and students in Kissimmee use the AstroPro Facebook group to find apartments, subleases, and roommates near campus. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/kissimmeeapartments/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-kissimmee-fl-property-san-mateo-crossing",
+        "name": "San Mateo Crossing",
+        "website": "https://www.sanmateocrossing.com/floorplans",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=San%20Mateo%20Crossing%2C%20Kissimmee%2C%20FL",
+        "summary": "San Mateo Crossing in Kissimmee lists one-, two- and three-bedroom layouts. The leasing site lets you compare unit sizes and search for openings by move-in date.",
+        "source": "https://www.sanmateocrossing.com/floorplans",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/kissimmeeapartments/posts/2299667913939068/",
+          "photoPending": true
+        }
+      }
+    ]
   },
   {
     "id": "housing-bend-or",
@@ -5068,7 +6345,22 @@
     "place": "Bronx, NY",
     "description": "Renters and students in Bronx use the AstroPro Facebook group to find apartments, subleases, and roommates near Manhattan College. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/manhattanhomes/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-bronx-ny-property-riverdale-parc",
+        "name": "Riverdale Parc",
+        "website": "https://riverdaleparcny.com/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Riverdale%20Parc%2C%20Bronx%2C%20NY",
+        "summary": "Riverdale Parc in the Bronx lists studios and one-, two- and three-bedroom apartments. The property describes balconies or terraces with many layouts.",
+        "source": "https://riverdaleparcny.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/manhattanhomes/posts/3494778580702822/",
+          "photoPending": true
+        }
+      }
+    ]
   },
   {
     "id": "housing-long-island-city-ny",
@@ -5077,7 +6369,23 @@
     "place": "Long Island City, NY",
     "description": "Renters and students in Long Island City use the AstroPro Facebook group to find apartments, subleases, and roommates near campus. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/longislandrentals/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-long-island-city-ny-property-the-forge",
+        "name": "The Forge",
+        "website": "https://www.renttheforge.com/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Forge%2044-28%20Purves%20Street%2C%20Long%20Island%20City%2C%20NY",
+        "address": "44-28 Purves Street, Long Island City, NY",
+        "summary": "The Forge in Long Island City lists studio, one- and two-bedroom homes at 44-28 Purves Street. See the property's leasing site for current availability and photos.",
+        "source": "https://www.renttheforge.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/longislandrentals/posts/1839200243992230/",
+          "photoPending": true
+        }
+      }
+    ]
   },
   {
     "id": "housing-hilo-hi",
@@ -5095,7 +6403,21 @@
     "place": "East Honolulu, HI",
     "description": "Renters and students in East Honolulu use the AstroPro Facebook group to find apartments, subleases, and roommates near campus. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/easthonoluluapartments/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-east-honolulu-hi-property-hawaii-kai-affordable-housing-listing",
+        "name": "Hawaii Kai Affordable Housing Listing",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Hawaii%20Kai%20Affordable%20Housing%20Listing%2C%20East%20Honolulu%2C%20HI",
+        "summary": "This Hawaii Kai property listing describes two-bedroom, one-bath apartments with a full kitchen. The property participates in Honolulu's Affordable Housing Program, so check the listing for eligibility and availability.",
+        "source": "https://www.facebook.com/groups/easthonoluluapartments/posts/1167924299101063/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/easthonoluluapartments/posts/1167924299101063/",
+          "photoPending": true
+        }
+      }
+    ]
   },
   {
     "id": "housing-bangor-me",
@@ -5104,6 +6426,22 @@
     "place": "Bangor, ME",
     "description": "Renters and students in Bangor use the AstroPro Facebook group to find apartments, subleases, and roommates near campus. Top picks from our team are on the way.",
     "facebookGroup": "https://www.facebook.com/groups/bangorapartments/",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-bangor-me-property-41-hemlock-street",
+        "name": "41 Hemlock Street",
+        "website": "https://www.blapartments.com/",
+        "verifiedAt": "2026-11-17",
+        "maps": "https://www.google.com/maps/search/?api=1&query=41%20Hemlock%20Street%2041%20Hemlock%20Street%2C%20Bangor%2C%20ME",
+        "address": "41 Hemlock Street, Bangor, ME",
+        "summary": "B&L Properties lists a two-bedroom, one-bath apartment at 41 Hemlock Street in Bangor, with an eat-in kitchen and separate living area. Check the listing for current leasing details.",
+        "source": "https://www.blapartments.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-17",
+          "facebookPost": "https://www.facebook.com/groups/bangorapartments/posts/1192704600378525/",
+          "photoPending": true
+        }
+      }
+    ]
   }
 ]
