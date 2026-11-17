@@ -7,23 +7,6 @@
     "description": "One of the largest campus housing markets in the country, with a dense ring of off-campus neighborhoods — Old North Columbus, Victorian Village, Grandview — around OSU.",
     "properties": [
       {
-        "id": "housing-columbus-property-statehouse-lane",
-        "name": "StateHouse Lane",
-        "website": "https://housing.osu.edu/hms/roomsearch/statehouse-lane",
-        "verifiedAt": "2026-11-15",
-        "maps": "https://www.google.com/maps/search/?api=1&query=StateHouse%20Lane%2C%20Columbus%2C%20OH",
-        "address": "150 West Lane Avenue, Columbus, OH 43201",
-        "summary": "Ohio State housing listing: shared two-person rooms in 1- to 4-bedroom apartments with kitchens, laundry and study/lounge space. Part of the university's master-leased housing.",
-        "source": "https://housing.osu.edu/hms/roomsearch/statehouse-lane"
-      },
-      {
-        "id": "housing-columbus-property-lumen-on-ninth",
-        "name": "Lumen on Ninth",
-        "website": "https://lumenonninth.prospectportal.com/columbus/lumen-on-ninth/floorplans/",
-        "verifiedAt": null,
-        "maps": "https://www.google.com/maps/search/?api=1&query=Lumen%20on%20Ninth%2C%20Columbus%2C%20OH"
-      },
-      {
         "id": "housing-columbus-property-statehouse-highline-on-9th",
         "name": "Statehouse Highline on 9th",
         "website": "https://statehousecolumbus.com/",
@@ -34,6 +17,19 @@
         "photo": "assets/housing/housing-columbus-property-statehouse-highline-on-9th.jpg",
         "photoAlt": "Statehouse Highline on 9th in Columbus, OH, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-columbus-property-university-village",
+        "name": "University Village",
+        "website": "https://universityvillageosu.prospectportal.com/",
+        "verifiedAt": "2026-11-15",
+        "maps": "https://www.google.com/maps/search/?api=1&query=University%20Village%2C%20Columbus%2C%20OH",
+        "summary": "Student apartment community near Ohio State with a campus bus service listed on its official site. Confirm floor plans, pricing, and availability with the property.",
+        "source": "https://universityvillageosu.prospectportal.com/",
+        "photo": "assets/housing/housing-columbus-property-university-village.jpg",
+        "photoAlt": "University Village in Columbus, OH, from the property's official website",
+        "photoApproved": true,
+        "pick": 2
       },
       {
         "id": "housing-columbus-property-the-view-on-high",
@@ -53,17 +49,21 @@
         }
       },
       {
-        "id": "housing-columbus-property-university-village",
-        "name": "University Village",
-        "website": "https://universityvillageosu.prospectportal.com/",
+        "id": "housing-columbus-property-statehouse-lane",
+        "name": "StateHouse Lane",
+        "website": "https://housing.osu.edu/hms/roomsearch/statehouse-lane",
         "verifiedAt": "2026-11-15",
-        "maps": "https://www.google.com/maps/search/?api=1&query=University%20Village%2C%20Columbus%2C%20OH",
-        "summary": "Student apartment community near Ohio State with a campus bus service listed on its official site. Confirm floor plans, pricing, and availability with the property.",
-        "source": "https://universityvillageosu.prospectportal.com/",
-        "photo": "assets/housing/housing-columbus-property-university-village.jpg",
-        "photoAlt": "University Village in Columbus, OH, from the property's official website",
-        "photoApproved": true,
-        "pick": 2
+        "maps": "https://www.google.com/maps/search/?api=1&query=StateHouse%20Lane%2C%20Columbus%2C%20OH",
+        "address": "150 West Lane Avenue, Columbus, OH 43201",
+        "summary": "Ohio State housing listing: shared two-person rooms in 1- to 4-bedroom apartments with kitchens, laundry and study/lounge space. Part of the university's master-leased housing.",
+        "source": "https://housing.osu.edu/hms/roomsearch/statehouse-lane"
+      },
+      {
+        "id": "housing-columbus-property-lumen-on-ninth",
+        "name": "Lumen on Ninth",
+        "website": "https://lumenonninth.prospectportal.com/columbus/lumen-on-ninth/floorplans/",
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=Lumen%20on%20Ninth%2C%20Columbus%2C%20OH"
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/1144174901392309/"
@@ -89,14 +89,6 @@
         "photoAlt": "River Park on South Green in Athens, OH, from the property's official website"
       },
       {
-        "id": "housing-athens-property-rivergate-apartments",
-        "name": "Rivergate Apartments",
-        "website": "https://homesteadu.prospectportal.com/athens/river-gate/student/",
-        "verifiedAt": "2026-10-31",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Rivergate%20Apartments%2C%20Athens%2C%20OH",
-        "source": "https://homesteadu.prospectportal.com/athens/river-gate/student/"
-      },
-      {
         "id": "housing-athens-property-university-courtyard",
         "name": "University Courtyard",
         "website": "https://www.ucathens.com/",
@@ -119,6 +111,14 @@
         "photo": "assets/housing/housing-athens-property-campus-heights.jpg",
         "photoAlt": "Campus Heights in Athens, OH, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-athens-property-rivergate-apartments",
+        "name": "Rivergate Apartments",
+        "website": "https://homesteadu.prospectportal.com/athens/river-gate/student/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Rivergate%20Apartments%2C%20Athens%2C%20OH",
+        "source": "https://homesteadu.prospectportal.com/athens/river-gate/student/"
       },
       {
         "id": "housing-athens-property-the-summit-at-coates-run",
@@ -223,20 +223,6 @@
     "description": "A multi-campus system across Collin County, so most students look near whichever campus they attend rather than one shared area.",
     "properties": [
       {
-        "id": "housing-mckinney-property-heritage-mckinney-square",
-        "name": "Heritage McKinney Square",
-        "website": "https://www.willowbridgepc.com/properties/heritage-mckinney-square-mckinney-tx",
-        "verifiedAt": null,
-        "maps": "https://www.google.com/maps/search/?api=1&query=Heritage%20McKinney%20Square%2C%20McKinney%2C%20TX"
-      },
-      {
-        "id": "housing-mckinney-property-davis-at-the-square",
-        "name": "Davis at the Square",
-        "website": "https://www.willowbridgepc.com/properties/davis-at-square-mckinney-tx/",
-        "verifiedAt": null,
-        "maps": "https://www.google.com/maps/search/?api=1&query=Davis%20at%20the%20Square%2C%20McKinney%2C%20TX"
-      },
-      {
         "id": "housing-mckinney-property-vireo-medical-district",
         "name": "Vireo Medical District",
         "website": "https://vireomedicaldistrict.com/",
@@ -271,6 +257,20 @@
         "photo": "assets/housing/housing-mckinney-property-aspire-mckinney-ranch.jpg",
         "photoAlt": "Aspire McKinney Ranch in McKinney, TX, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-mckinney-property-heritage-mckinney-square",
+        "name": "Heritage McKinney Square",
+        "website": "https://www.willowbridgepc.com/properties/heritage-mckinney-square-mckinney-tx",
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=Heritage%20McKinney%20Square%2C%20McKinney%2C%20TX"
+      },
+      {
+        "id": "housing-mckinney-property-davis-at-the-square",
+        "name": "Davis at the Square",
+        "website": "https://www.willowbridgepc.com/properties/davis-at-square-mckinney-tx/",
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=Davis%20at%20the%20Square%2C%20McKinney%2C%20TX"
       }
     ]
   },
@@ -282,13 +282,6 @@
     "description": "Seven campuses spread across the metro, with DART light rail and bus opening up housing options near each one.",
     "properties": [
       {
-        "id": "housing-dallas-property-the-wilson-building",
-        "name": "The Wilson Building",
-        "website": "https://rent.brookfieldproperties.com/property/the-wilson",
-        "verifiedAt": null,
-        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Wilson%20Building%2C%20Dallas%2C%20TX"
-      },
-      {
         "id": "housing-dallas-property-mid-elm-lofts",
         "name": "Mid Elm Lofts",
         "website": "https://www.midelmlofts.com/",
@@ -298,6 +291,18 @@
         "pick": 1,
         "photo": "assets/housing/housing-dallas-property-mid-elm-lofts.jpg",
         "photoAlt": "Mid Elm Lofts in Dallas, TX, from the property's official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-dallas-property-the-griffin",
+        "name": "The Griffin",
+        "website": "https://www.thegriffindallas.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Griffin%2C%20Dallas%2C%20TX",
+        "source": "https://www.thegriffindallas.com/amenities",
+        "pick": 2,
+        "photo": "assets/housing/housing-dallas-property-the-griffin.jpg",
+        "photoAlt": "The Griffin in Dallas, TX, from the property's official website",
         "photoApproved": true
       },
       {
@@ -314,16 +319,11 @@
         "photoApproved": true
       },
       {
-        "id": "housing-dallas-property-the-griffin",
-        "name": "The Griffin",
-        "website": "https://www.thegriffindallas.com/",
-        "verifiedAt": "2026-10-31",
-        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Griffin%2C%20Dallas%2C%20TX",
-        "source": "https://www.thegriffindallas.com/amenities",
-        "pick": 2,
-        "photo": "assets/housing/housing-dallas-property-the-griffin.jpg",
-        "photoAlt": "The Griffin in Dallas, TX, from the property's official website",
-        "photoApproved": true
+        "id": "housing-dallas-property-the-wilson-building",
+        "name": "The Wilson Building",
+        "website": "https://rent.brookfieldproperties.com/property/the-wilson",
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Wilson%20Building%2C%20Dallas%2C%20TX"
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/1122350230172459/"
@@ -335,13 +335,6 @@
     "place": "McAllen, TX",
     "description": "A Rio Grande Valley market serving a multi-campus system across McAllen and the surrounding area.",
     "properties": [
-      {
-        "id": "housing-mcallen-property-kerria-square-apartments",
-        "name": "Kerria Square Apartments",
-        "website": null,
-        "verifiedAt": null,
-        "maps": "https://www.google.com/maps/search/?api=1&query=Kerria%20Square%20Apartments%2C%20McAllen%2C%20TX"
-      },
       {
         "id": "housing-mcallen-property-villas-on-ware",
         "name": "Villas on Ware",
@@ -367,13 +360,6 @@
         "photoApproved": true
       },
       {
-        "id": "housing-mcallen-property-district-apartments",
-        "name": "District Apartments",
-        "website": null,
-        "verifiedAt": null,
-        "maps": "https://www.google.com/maps/search/?api=1&query=District%20Apartments%2C%20McAllen%2C%20TX"
-      },
-      {
         "id": "housing-mcallen-property-villa-regale",
         "name": "Villa Regale",
         "maps": "https://www.google.com/maps/search/?api=1&query=Villa%20Regale%2C%20McAllen%2C%20TX",
@@ -385,6 +371,20 @@
         "photo": "assets/housing/housing-mcallen-property-villa-regale.jpg",
         "photoAlt": "Villa Regale in McAllen, TX, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-mcallen-property-kerria-square-apartments",
+        "name": "Kerria Square Apartments",
+        "website": null,
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=Kerria%20Square%20Apartments%2C%20McAllen%2C%20TX"
+      },
+      {
+        "id": "housing-mcallen-property-district-apartments",
+        "name": "District Apartments",
+        "website": null,
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=District%20Apartments%2C%20McAllen%2C%20TX"
       }
     ]
   },
@@ -447,12 +447,18 @@
     "description": "A classic college-town market around UNL's city and east campuses, served by StarTran city buses.",
     "properties": [
       {
-        "id": "housing-lincoln-property-atmosphere-lincoln",
-        "name": "Atmosphere Lincoln",
-        "website": "https://atmospherelincoln.prospectportal.com/lincoln/atmosphere-lincoln/student/",
-        "verifiedAt": "2026-10-31",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Atmosphere%20Lincoln%2C%20Lincoln%2C%20NE",
-        "source": "https://atmospherelincoln.prospectportal.com/lincoln/atmosphere-lincoln/student/"
+        "id": "housing-lincoln-property-prime-place-lincoln",
+        "name": "Prime Place Lincoln",
+        "website": "https://www.primeplacelincoln.com/",
+        "verifiedAt": "2026-11-15",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Prime%20Place%20Lincoln%2C%20Lincoln%2C%20NE",
+        "address": "1040 Y St, Lincoln, NE 68508",
+        "summary": "Student apartments near UNL’s City Campus and downtown Lincoln, listed on the property’s official site. Confirm floor plans, pricing, and availability with the property.",
+        "source": "https://www.primeplacelincoln.com/",
+        "photo": "assets/housing/housing-lincoln-property-prime-place-lincoln.jpg",
+        "photoAlt": "Prime Place Lincoln in Lincoln, NE, from the property's official website",
+        "photoApproved": true,
+        "pick": 1
       },
       {
         "id": "housing-lincoln-property-the-quarters-lincoln",
@@ -479,18 +485,12 @@
         "photoApproved": true
       },
       {
-        "id": "housing-lincoln-property-prime-place-lincoln",
-        "name": "Prime Place Lincoln",
-        "website": "https://www.primeplacelincoln.com/",
-        "verifiedAt": "2026-11-15",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Prime%20Place%20Lincoln%2C%20Lincoln%2C%20NE",
-        "address": "1040 Y St, Lincoln, NE 68508",
-        "summary": "Student apartments near UNL’s City Campus and downtown Lincoln, listed on the property’s official site. Confirm floor plans, pricing, and availability with the property.",
-        "source": "https://www.primeplacelincoln.com/",
-        "photo": "assets/housing/housing-lincoln-property-prime-place-lincoln.jpg",
-        "photoAlt": "Prime Place Lincoln in Lincoln, NE, from the property's official website",
-        "photoApproved": true,
-        "pick": 1
+        "id": "housing-lincoln-property-atmosphere-lincoln",
+        "name": "Atmosphere Lincoln",
+        "website": "https://atmospherelincoln.prospectportal.com/lincoln/atmosphere-lincoln/student/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Atmosphere%20Lincoln%2C%20Lincoln%2C%20NE",
+        "source": "https://atmospherelincoln.prospectportal.com/lincoln/atmosphere-lincoln/student/"
       }
     ]
   },
@@ -512,13 +512,6 @@
         "photo": "assets/housing/housing-normal-property-the-social-on-hovey.jpg",
         "photoAlt": "The Social on Hovey in Normal, IL, from the property's official website",
         "photoApproved": true
-      },
-      {
-        "id": "housing-normal-property-university-row-townhomes",
-        "name": "University Row Townhomes",
-        "website": null,
-        "verifiedAt": null,
-        "maps": "https://www.google.com/maps/search/?api=1&query=University%20Row%20Townhomes%2C%20Normal%2C%20IL"
       },
       {
         "id": "housing-normal-property-pinecrest-apartments",
@@ -545,6 +538,13 @@
         "photo": "assets/housing/housing-normal-property-collegeplace-uptown.jpg",
         "photoAlt": "CollegePlace Uptown in Normal, IL, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-normal-property-university-row-townhomes",
+        "name": "University Row Townhomes",
+        "website": null,
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=University%20Row%20Townhomes%2C%20Normal%2C%20IL"
       }
     ]
   },
@@ -661,19 +661,17 @@
     "description": "A Southeast Texas market served by Beaumont Municipal Transit near Lamar's campus.",
     "properties": [
       {
-        "id": "housing-beaumont-property-prutzman-place-apartments",
-        "name": "Prutzman Place Apartments",
-        "website": "https://prutzmanplaceapartments.com/",
-        "verifiedAt": "2026-10-31",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Prutzman%20Place%20Apartments%2C%20Beaumont%2C%20TX",
-        "source": "https://prutzmanplaceapartments.com/"
-      },
-      {
-        "id": "housing-beaumont-property-arthur-place-apartments",
-        "name": "Arthur Place Apartments",
-        "website": null,
-        "verifiedAt": null,
-        "maps": "https://www.google.com/maps/search/?api=1&query=Arthur%20Place%20Apartments%2C%20Beaumont%2C%20TX"
+        "id": "housing-beaumont-property-cardinal-oaks",
+        "name": "Cardinal Oaks",
+        "website": "https://cardinaloakstx.com/",
+        "verifiedAt": "2026-11-15",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Cardinal%20Oaks%2C%20Beaumont%2C%20TX",
+        "summary": "Apartment community in Beaumont near Lamar University, listed on its official site. Confirm floor plans, pricing, and availability with the property.",
+        "source": "https://cardinaloakstx.com/",
+        "photo": "assets/housing/housing-beaumont-property-cardinal-oaks.jpg",
+        "photoAlt": "Cardinal Oaks in Beaumont, TX, from the property's official website",
+        "photoApproved": true,
+        "pick": 1
       },
       {
         "id": "housing-beaumont-property-west-end-crossing",
@@ -703,17 +701,19 @@
         "photoApproved": true
       },
       {
-        "id": "housing-beaumont-property-cardinal-oaks",
-        "name": "Cardinal Oaks",
-        "website": "https://cardinaloakstx.com/",
-        "verifiedAt": "2026-11-15",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Cardinal%20Oaks%2C%20Beaumont%2C%20TX",
-        "summary": "Apartment community in Beaumont near Lamar University, listed on its official site. Confirm floor plans, pricing, and availability with the property.",
-        "source": "https://cardinaloakstx.com/",
-        "photo": "assets/housing/housing-beaumont-property-cardinal-oaks.jpg",
-        "photoAlt": "Cardinal Oaks in Beaumont, TX, from the property's official website",
-        "photoApproved": true,
-        "pick": 1
+        "id": "housing-beaumont-property-prutzman-place-apartments",
+        "name": "Prutzman Place Apartments",
+        "website": "https://prutzmanplaceapartments.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Prutzman%20Place%20Apartments%2C%20Beaumont%2C%20TX",
+        "source": "https://prutzmanplaceapartments.com/"
+      },
+      {
+        "id": "housing-beaumont-property-arthur-place-apartments",
+        "name": "Arthur Place Apartments",
+        "website": null,
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=Arthur%20Place%20Apartments%2C%20Beaumont%2C%20TX"
       }
     ]
   },
@@ -772,11 +772,18 @@
     "description": "Home to Blinn's main campus, part of a multi-campus district also serving the Bryan–College Station area.",
     "properties": [
       {
-        "id": "housing-brenham-property-washington-court-apartments",
-        "name": "Washington Court Apartments",
-        "website": null,
-        "verifiedAt": null,
-        "maps": "https://www.google.com/maps/search/?api=1&query=Washington%20Court%20Apartments%2C%20Brenham%2C%20TX"
+        "id": "housing-brenham-property-stone-hollow-apartments",
+        "name": "Stone Hollow Apartments",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Stone%20Hollow%20Apartments%2C%20Brenham%2C%20TX",
+        "website": "https://www.mystonehollowapts.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.mystonehollowapts.com/",
+        "summary": "Pet-friendly apartments with flexible leasing options.",
+        "address": "2401 Stone Hollow Dr, Brenham, TX",
+        "pick": 1,
+        "photo": "assets/housing/housing-brenham-property-stone-hollow-apartments.jpg",
+        "photoAlt": "Stone Hollow Apartments in Brenham, TX, from the property's official website",
+        "photoApproved": true
       },
       {
         "id": "housing-brenham-property-park-place-apartments",
@@ -793,20 +800,6 @@
         "photoApproved": true
       },
       {
-        "id": "housing-brenham-property-stone-hollow-apartments",
-        "name": "Stone Hollow Apartments",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Stone%20Hollow%20Apartments%2C%20Brenham%2C%20TX",
-        "website": "https://www.mystonehollowapts.com/",
-        "verifiedAt": "2026-11-15",
-        "source": "https://www.mystonehollowapts.com/",
-        "summary": "Pet-friendly apartments with flexible leasing options.",
-        "address": "2401 Stone Hollow Dr, Brenham, TX",
-        "pick": 1,
-        "photo": "assets/housing/housing-brenham-property-stone-hollow-apartments.jpg",
-        "photoAlt": "Stone Hollow Apartments in Brenham, TX, from the property's official website",
-        "photoApproved": true
-      },
-      {
         "id": "housing-brenham-property-brenham-oaks",
         "name": "Brenham Oaks",
         "maps": "https://www.google.com/maps/search/?api=1&query=Brenham%20Oaks%2C%20Brenham%2C%20TX",
@@ -819,6 +812,13 @@
         "photo": "assets/housing/housing-brenham-property-brenham-oaks.jpg",
         "photoAlt": "Brenham Oaks in Brenham, TX, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-brenham-property-washington-court-apartments",
+        "name": "Washington Court Apartments",
+        "website": null,
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=Washington%20Court%20Apartments%2C%20Brenham%2C%20TX"
       }
     ]
   },
@@ -829,20 +829,6 @@
     "place": "Grand Forks, ND",
     "description": "A compact Northern Plains market served by Cities Area Transit near UND's campus.",
     "properties": [
-      {
-        "id": "housing-grand-forks-property-williamsburg",
-        "name": "Williamsburg",
-        "website": null,
-        "verifiedAt": null,
-        "maps": "https://www.google.com/maps/search/?api=1&query=Williamsburg%2C%20Grand%20Forks%2C%20ND"
-      },
-      {
-        "id": "housing-grand-forks-property-berkeley-drive-apartments",
-        "name": "Berkeley Drive Apartments",
-        "website": "https://und.edu/student-life/housing/campus-housing/berkeley.html",
-        "verifiedAt": null,
-        "maps": "https://www.google.com/maps/search/?api=1&query=Berkeley%20Drive%20Apartments%2C%20Grand%20Forks%2C%20ND"
-      },
       {
         "id": "housing-grand-forks-property-the-gallery-apartments",
         "name": "The Gallery Apartments",
@@ -878,6 +864,20 @@
         "photo": "assets/housing/housing-grand-forks-property-library-lane.jpg",
         "photoAlt": "Library Lane in Grand Forks, ND, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-grand-forks-property-williamsburg",
+        "name": "Williamsburg",
+        "website": null,
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=Williamsburg%2C%20Grand%20Forks%2C%20ND"
+      },
+      {
+        "id": "housing-grand-forks-property-berkeley-drive-apartments",
+        "name": "Berkeley Drive Apartments",
+        "website": "https://und.edu/student-life/housing/campus-housing/berkeley.html",
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=Berkeley%20Drive%20Apartments%2C%20Grand%20Forks%2C%20ND"
       }
     ]
   },
@@ -888,19 +888,6 @@
     "place": "Denton, TX",
     "description": "A North Texas college town also home to UNT, with DCTA's GoZone service documented for TWU students specifically.",
     "properties": [
-      {
-        "id": "housing-denton-property-city-parc-at-fry-street",
-        "name": "City Parc at Fry Street",
-        "website": "https://www.americancampus.com/student-apartments/tx/denton/city-parc-at-fry-street/floor-plans",
-        "verifiedAt": "2026-11-15",
-        "maps": "https://www.google.com/maps/search/?api=1&query=City%20Parc%20at%20Fry%20Street%2C%20Denton%2C%20TX",
-        "pick": 3,
-        "summary": "Furnished 1, 2 and 4 bedroom apartments marketed to UNT and TWU students.",
-        "source": "https://www.americancampus.com/student-apartments/tx/denton/city-parc-at-fry-street/floor-plans",
-        "photo": "assets/housing/housing-denton-property-city-parc-at-fry-street.jpg",
-        "photoAlt": "City Parc at Fry Street in Denton, TX, from the property's official website",
-        "photoApproved": true
-      },
       {
         "id": "housing-denton-property-u-centre-at-fry-street",
         "name": "U Centre at Fry Street",
@@ -925,6 +912,19 @@
         "summary": "American Campus lists Uptown Apartments among its student apartments near the University of North Texas and Texas Woman's University. Confirm distance to TWU, pricing and availability with the property.",
         "photo": "assets/housing/housing-denton-property-uptown-apartments.jpg",
         "photoAlt": "Uptown Apartments in Denton, TX, from the property's official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-denton-property-city-parc-at-fry-street",
+        "name": "City Parc at Fry Street",
+        "website": "https://www.americancampus.com/student-apartments/tx/denton/city-parc-at-fry-street/floor-plans",
+        "verifiedAt": "2026-11-15",
+        "maps": "https://www.google.com/maps/search/?api=1&query=City%20Parc%20at%20Fry%20Street%2C%20Denton%2C%20TX",
+        "pick": 3,
+        "summary": "Furnished 1, 2 and 4 bedroom apartments marketed to UNT and TWU students.",
+        "source": "https://www.americancampus.com/student-apartments/tx/denton/city-parc-at-fry-street/floor-plans",
+        "photo": "assets/housing/housing-denton-property-city-parc-at-fry-street.jpg",
+        "photoAlt": "City Parc at Fry Street in Denton, TX, from the property's official website",
         "photoApproved": true
       }
     ],
@@ -962,13 +962,6 @@
         "photoApproved": true
       },
       {
-        "id": "housing-omaha-property-broadmoor-at-aksarben-village",
-        "name": "Broadmoor at Aksarben Village",
-        "website": "https://broadmoor.cc",
-        "verifiedAt": null,
-        "maps": "https://www.google.com/maps/search/?api=1&query=Broadmoor%20at%20Aksarben%20Village%2C%20Omaha%2C%20NE"
-      },
-      {
         "id": "housing-omaha-property-clove",
         "name": "Clove",
         "website": "https://www.clove-omaha.com/floorplans",
@@ -979,6 +972,13 @@
         "photo": "assets/housing/housing-omaha-property-clove.jpg",
         "photoAlt": "Clove in Omaha, NE, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-omaha-property-broadmoor-at-aksarben-village",
+        "name": "Broadmoor at Aksarben Village",
+        "website": "https://broadmoor.cc",
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=Broadmoor%20at%20Aksarben%20Village%2C%20Omaha%2C%20NE"
       },
       {
         "id": "housing-omaha-property-the-traveler-apartments",
@@ -1048,36 +1048,6 @@
     "description": "A Texas Panhandle market served by Amarillo City Transit, with Wolflin among the areas students look at.",
     "properties": [
       {
-        "id": "housing-amarillo-property-the-badgers-on-jackson",
-        "name": "The Badgers on Jackson",
-        "website": "https://pacerealtytexas.com/",
-        "verifiedAt": "2026-10-31",
-        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Badgers%20on%20Jackson%2C%20Amarillo%2C%20TX",
-        "source": "https://amarillocollege.com/offcampushousing/properties/95/The-Badgers-on-Jackson"
-      },
-      {
-        "id": "housing-amarillo-property-georgia-villas",
-        "name": "Georgia Villas",
-        "website": "https://georgiavillas.com/",
-        "verifiedAt": "2026-10-31",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Georgia%20Villas%2C%20Amarillo%2C%20TX",
-        "source": "https://georgiavillas.com/"
-      },
-      {
-        "id": "housing-amarillo-property-stonegate-amarillo",
-        "name": "Stonegate",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Stonegate%2C%20Amarillo%2C%20TX",
-        "website": "https://www.stonegateamarillo.com/",
-        "verifiedAt": "2026-11-15",
-        "source": "https://www.stonegateamarillo.com/",
-        "summary": "Pet-friendly apartments with spacious floor plans and a pool.",
-        "address": "6400 Bell St, Amarillo, TX 79109",
-        "pick": 3,
-        "photo": "assets/housing/housing-amarillo-property-stonegate-amarillo.jpg",
-        "photoAlt": "Stonegate in Amarillo, TX, from the property's official website",
-        "photoApproved": true
-      },
-      {
         "id": "housing-amarillo-property-the-reserve-at-forty-seven",
         "name": "The Reserve at Forty-Seven",
         "website": "https://www.thereserveatfourtyseven.com/",
@@ -1103,6 +1073,36 @@
         "photoAlt": "The Colonies at Hillside in Amarillo, TX, from the property's official website",
         "photoApproved": true,
         "pick": 2
+      },
+      {
+        "id": "housing-amarillo-property-stonegate-amarillo",
+        "name": "Stonegate",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Stonegate%2C%20Amarillo%2C%20TX",
+        "website": "https://www.stonegateamarillo.com/",
+        "verifiedAt": "2026-11-15",
+        "source": "https://www.stonegateamarillo.com/",
+        "summary": "Pet-friendly apartments with spacious floor plans and a pool.",
+        "address": "6400 Bell St, Amarillo, TX 79109",
+        "pick": 3,
+        "photo": "assets/housing/housing-amarillo-property-stonegate-amarillo.jpg",
+        "photoAlt": "Stonegate in Amarillo, TX, from the property's official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-amarillo-property-the-badgers-on-jackson",
+        "name": "The Badgers on Jackson",
+        "website": "https://pacerealtytexas.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Badgers%20on%20Jackson%2C%20Amarillo%2C%20TX",
+        "source": "https://amarillocollege.com/offcampushousing/properties/95/The-Badgers-on-Jackson"
+      },
+      {
+        "id": "housing-amarillo-property-georgia-villas",
+        "name": "Georgia Villas",
+        "website": "https://georgiavillas.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Georgia%20Villas%2C%20Amarillo%2C%20TX",
+        "source": "https://georgiavillas.com/"
       }
     ]
   },
@@ -1163,6 +1163,18 @@
     "description": "An East Texas market served by Tyler Transit, with the Azalea District among the areas near campus.",
     "properties": [
       {
+        "id": "housing-tyler-property-varsity-view",
+        "name": "Varsity View",
+        "website": "https://www.varsityview.com/availability",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Varsity%20View%2C%20Tyler%2C%20TX",
+        "source": "https://www.varsityview.com/availability",
+        "pick": 1,
+        "photo": "assets/housing/housing-tyler-property-varsity-view.jpg",
+        "photoAlt": "Varsity View in Tyler, TX, from the property's official website",
+        "photoApproved": true
+      },
+      {
         "id": "housing-tyler-property-university-pines",
         "name": "University Pines",
         "website": "https://campuslivingvillages.com/united-states/university-of-texas-at-tyler/university-pines-ut-tyler-housing/",
@@ -1176,26 +1188,6 @@
         "photoAlt": "University Pines in Tyler, TX, from the property's official website"
       },
       {
-        "id": "housing-tyler-property-varsity-view",
-        "name": "Varsity View",
-        "website": "https://www.varsityview.com/availability",
-        "verifiedAt": "2026-10-31",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Varsity%20View%2C%20Tyler%2C%20TX",
-        "source": "https://www.varsityview.com/availability",
-        "pick": 1,
-        "photo": "assets/housing/housing-tyler-property-varsity-view.jpg",
-        "photoAlt": "Varsity View in Tyler, TX, from the property's official website",
-        "photoApproved": true
-      },
-      {
-        "id": "housing-tyler-property-haverhill-place",
-        "name": "Haverhill Place",
-        "website": "https://www.haverhillplace.com/about-us/",
-        "verifiedAt": "2026-10-31",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Haverhill%20Place%2C%20Tyler%2C%20TX",
-        "source": "https://www.haverhillplace.com/about-us/"
-      },
-      {
         "id": "housing-tyler-property-the-woodlands",
         "name": "The Woodlands",
         "website": "https://www.thewoodlandstyler.com/contact/",
@@ -1206,6 +1198,14 @@
         "photo": "assets/housing/housing-tyler-property-the-woodlands.jpg",
         "photoAlt": "The Woodlands in Tyler, TX, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-tyler-property-haverhill-place",
+        "name": "Haverhill Place",
+        "website": "https://www.haverhillplace.com/about-us/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Haverhill%20Place%2C%20Tyler%2C%20TX",
+        "source": "https://www.haverhillplace.com/about-us/"
       }
     ]
   },
@@ -1216,13 +1216,6 @@
     "place": "Midland, TX",
     "description": "A Permian Basin market served by EZ-RIDER, the regional transit system shared with nearby Odessa.",
     "properties": [
-      {
-        "id": "housing-midland-property-midland-village-apartments",
-        "name": "Midland Village Apartments",
-        "website": null,
-        "verifiedAt": null,
-        "maps": "https://www.google.com/maps/search/?api=1&query=Midland%20Village%20Apartments%2C%20Midland%2C%20TX"
-      },
       {
         "id": "housing-midland-property-renew-fairmont-park",
         "name": "ReNew Fairmont Park",
@@ -1261,6 +1254,13 @@
         "photo": "assets/housing/housing-midland-property-monaco-midland.jpg",
         "photoAlt": "Monaco in Midland, TX, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-midland-property-midland-village-apartments",
+        "name": "Midland Village Apartments",
+        "website": null,
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=Midland%20Village%20Apartments%2C%20Midland%2C%20TX"
       }
     ]
   },
@@ -1272,12 +1272,17 @@
     "description": "A Northwest Ohio market, with Owens' main campus in Perrysburg Township just outside Toledo, served by TARTA.",
     "properties": [
       {
-        "id": "housing-toledo-property-lake-view-shores-apartments",
-        "name": "Lake View Shores Apartments",
-        "website": "https://choiceproperties.com/community/lake-view-shores/",
-        "verifiedAt": "2026-10-31",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Lake%20View%20Shores%20Apartments%2C%20Toledo%2C%20OH",
-        "source": "https://choiceproperties.com/community/lake-view-shores/"
+        "id": "housing-toledo-property-fox-chase-apartments",
+        "name": "Fox Chase Apartments",
+        "website": "https://villagegreen.com/oh/holland/fox-chase/",
+        "verifiedAt": "2026-11-15",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Fox%20Chase%20Apartments%2C%20Toledo%2C%20OH",
+        "source": "https://villagegreen.com/oh/holland/fox-chase/",
+        "summary": "Apartment community in Holland, OH near Toledo, listed on its official site. Confirm floor plans, pricing, and availability with the property.",
+        "photo": "assets/housing/housing-toledo-property-fox-chase-apartments.jpg",
+        "photoApproved": true,
+        "photoAlt": "Fox Chase Apartments in Toledo, OH, from the property's official website",
+        "pick": 1
       },
       {
         "id": "housing-toledo-property-oak-hill-apartments",
@@ -1304,25 +1309,20 @@
         "photoApproved": true
       },
       {
+        "id": "housing-toledo-property-lake-view-shores-apartments",
+        "name": "Lake View Shores Apartments",
+        "website": "https://choiceproperties.com/community/lake-view-shores/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Lake%20View%20Shores%20Apartments%2C%20Toledo%2C%20OH",
+        "source": "https://choiceproperties.com/community/lake-view-shores/"
+      },
+      {
         "id": "housing-toledo-property-quail-hollow-at-the-lakes",
         "name": "Quail Hollow at the Lakes",
         "website": "https://www.quailhollowatthelakesholland.com/",
         "verifiedAt": "2026-10-31",
         "maps": "https://www.google.com/maps/search/?api=1&query=Quail%20Hollow%20at%20the%20Lakes%2C%20Toledo%2C%20OH",
         "source": "https://www.quailhollowatthelakesholland.com/"
-      },
-      {
-        "id": "housing-toledo-property-fox-chase-apartments",
-        "name": "Fox Chase Apartments",
-        "website": "https://villagegreen.com/oh/holland/fox-chase/",
-        "verifiedAt": "2026-11-15",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Fox%20Chase%20Apartments%2C%20Toledo%2C%20OH",
-        "source": "https://villagegreen.com/oh/holland/fox-chase/",
-        "summary": "Apartment community in Holland, OH near Toledo, listed on its official site. Confirm floor plans, pricing, and availability with the property.",
-        "photo": "assets/housing/housing-toledo-property-fox-chase-apartments.jpg",
-        "photoApproved": true,
-        "photoAlt": "Fox Chase Apartments in Toledo, OH, from the property's official website",
-        "pick": 1
       }
     ]
   },
@@ -1333,6 +1333,18 @@
     "place": "San Antonio, TX",
     "description": "A South Texas market near the Brooks/Southside area, served by VIA Metropolitan Transit.",
     "properties": [
+      {
+        "id": "housing-san-antonio-property-the-landings-at-brooks-city-base",
+        "name": "The Landings at Brooks City-Base",
+        "website": "https://www.thelandingsatbrookscity-base.com/mapsanddirections",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Landings%20at%20Brooks%20City-Base%2C%20San%20Antonio%2C%20TX",
+        "source": "https://www.thelandingsatbrookscity-base.com/mapsanddirections",
+        "pick": 1,
+        "photo": "assets/housing/housing-san-antonio-property-the-landings-at-brooks-city-base.jpg",
+        "photoAlt": "The Landings at Brooks City-Base in San Antonio, TX, from the property's official website",
+        "photoApproved": true
+      },
       {
         "id": "housing-san-antonio-property-los-arcos-at-vida",
         "name": "Los Arcos at VIDA",
@@ -1345,18 +1357,6 @@
         "source": "https://www.losarcosvida.com/",
         "photo": "assets/housing/housing-san-antonio-property-los-arcos-at-vida.jpg",
         "photoAlt": "Los Arcos at VIDA in San Antonio, TX, from the property's official website",
-        "photoApproved": true
-      },
-      {
-        "id": "housing-san-antonio-property-the-landings-at-brooks-city-base",
-        "name": "The Landings at Brooks City-Base",
-        "website": "https://www.thelandingsatbrookscity-base.com/mapsanddirections",
-        "verifiedAt": "2026-10-31",
-        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Landings%20at%20Brooks%20City-Base%2C%20San%20Antonio%2C%20TX",
-        "source": "https://www.thelandingsatbrookscity-base.com/mapsanddirections",
-        "pick": 1,
-        "photo": "assets/housing/housing-san-antonio-property-the-landings-at-brooks-city-base.jpg",
-        "photoAlt": "The Landings at Brooks City-Base in San Antonio, TX, from the property's official website",
         "photoApproved": true
       },
       {
@@ -1389,13 +1389,6 @@
     "place": "Tahlequah, OK",
     "description": "A Northeast Oklahoma market served by Cherokee Nation and KI BOIS transit routes.",
     "properties": [
-      {
-        "id": "housing-tahlequah-property-north-brook-apartments",
-        "name": "North Brook Apartments",
-        "website": null,
-        "verifiedAt": null,
-        "maps": "https://www.google.com/maps/search/?api=1&query=North%20Brook%20Apartments%2C%20Tahlequah%2C%20OK"
-      },
       {
         "id": "housing-tahlequah-property-pleasant-view-apartments",
         "name": "Pleasant View Apartments",
@@ -1437,6 +1430,13 @@
         "photo": "assets/housing/housing-tahlequah-property-pines-at-southridge.jpg",
         "photoAlt": "Pines at Southridge in Tahlequah, OK, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-tahlequah-property-north-brook-apartments",
+        "name": "North Brook Apartments",
+        "website": null,
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=North%20Brook%20Apartments%2C%20Tahlequah%2C%20OK"
       }
     ]
   },
@@ -1448,15 +1448,6 @@
     "description": "A Johnston County market served by JCATS, the county's public transit system.",
     "properties": [
       {
-        "id": "housing-smithfield-property-glen-lake-apartments",
-        "name": "Glen Lake Apartments",
-        "website": "https://glen-lake-apartments0.rentcafewebsite.com/",
-        "verifiedAt": "2026-10-31",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Glen%20Lake%20Apartments%2C%20Smithfield%2C%20NC",
-        "source": "https://glen-lake-apartments0.rentcafewebsite.com/",
-        "summary": "Income restrictions apply. Confirm eligibility directly with the property before applying."
-      },
-      {
         "id": "housing-smithfield-property-berkshire-apartments-smithfield",
         "name": "Berkshire Apartments",
         "maps": "https://www.google.com/maps/search/?api=1&query=Berkshire%20Apartments%2C%20Smithfield%2C%20NC",
@@ -1464,7 +1455,7 @@
         "verifiedAt": "2026-11-15",
         "source": "https://berkshiresmithfield.com/",
         "summary": "Apartments with private patio or balcony, washer/dryer hookups and off-street parking. Pets welcome.",
-        "pick": 2,
+        "pick": 1,
         "photo": "assets/housing/housing-smithfield-property-berkshire-apartments-smithfield.jpg",
         "photoAlt": "Berkshire Apartments in Smithfield, NC, from the property's official website",
         "photoApproved": true
@@ -1477,10 +1468,19 @@
         "verifiedAt": "2026-11-15",
         "source": "https://cambridgesmithfield.com/",
         "summary": "Two-story community with 2-bedroom, 2.5-bath units and washer/dryer hookups. Pets welcome.",
-        "pick": 3,
+        "pick": 2,
         "photo": "assets/housing/housing-smithfield-property-cambridge-apartments-smithfield.jpg",
         "photoAlt": "Cambridge Apartments in Smithfield, NC, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-smithfield-property-glen-lake-apartments",
+        "name": "Glen Lake Apartments",
+        "website": "https://glen-lake-apartments0.rentcafewebsite.com/",
+        "verifiedAt": "2026-10-31",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Glen%20Lake%20Apartments%2C%20Smithfield%2C%20NC",
+        "source": "https://glen-lake-apartments0.rentcafewebsite.com/",
+        "summary": "Income restrictions apply. Confirm eligibility directly with the property before applying."
       }
     ]
   },
@@ -1504,13 +1504,6 @@
         "photoApproved": true
       },
       {
-        "id": "housing-corsicana-property-tcg-at-corsicana",
-        "name": "TCG at Corsicana",
-        "website": null,
-        "verifiedAt": null,
-        "maps": "https://www.google.com/maps/search/?api=1&query=TCG%20at%20Corsicana%2C%20Corsicana%2C%20TX"
-      },
-      {
         "id": "housing-corsicana-property-arbors-of-corsicana",
         "name": "Arbors of Corsicana",
         "website": "https://www.arborsofcorsicana.com/",
@@ -1523,13 +1516,6 @@
         "photoApproved": true
       },
       {
-        "id": "housing-corsicana-property-oak-lawn-place",
-        "name": "Oak Lawn Place",
-        "website": null,
-        "verifiedAt": null,
-        "maps": "https://www.google.com/maps/search/?api=1&query=Oak%20Lawn%20Place%2C%20Corsicana%2C%20TX"
-      },
-      {
         "id": "housing-corsicana-property-northwood-village-apartments",
         "name": "Northwood Village Apartments",
         "website": "https://www.northwoodcorsicana.com/",
@@ -1540,6 +1526,20 @@
         "photo": "assets/housing/housing-corsicana-property-northwood-village-apartments.jpg",
         "photoAlt": "Northwood Village Apartments in Corsicana, TX, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-corsicana-property-tcg-at-corsicana",
+        "name": "TCG at Corsicana",
+        "website": null,
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=TCG%20at%20Corsicana%2C%20Corsicana%2C%20TX"
+      },
+      {
+        "id": "housing-corsicana-property-oak-lawn-place",
+        "name": "Oak Lawn Place",
+        "website": null,
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=Oak%20Lawn%20Place%2C%20Corsicana%2C%20TX"
       }
     ]
   },
@@ -1653,13 +1653,6 @@
     "description": "A South-Central Michigan market served by JATA, the local transit authority.",
     "properties": [
       {
-        "id": "housing-jackson-mi-property-park-crest-apartments",
-        "name": "Park Crest Apartments",
-        "website": null,
-        "verifiedAt": null,
-        "maps": "https://www.google.com/maps/search/?api=1&query=Park%20Crest%20Apartments%2C%20Jackson%2C%20MI"
-      },
-      {
         "id": "housing-jackson-mi-property-cascade-ridge-apartments",
         "name": "Cascade Ridge Apartments",
         "website": "https://www.cascaderidgeapartments.com/",
@@ -1698,6 +1691,13 @@
         "photo": "assets/housing/housing-jackson-mi-property-withington-apartments.jpg",
         "photoAlt": "Withington Apartments in Jackson, MI, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-jackson-mi-property-park-crest-apartments",
+        "name": "Park Crest Apartments",
+        "website": null,
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=Park%20Crest%20Apartments%2C%20Jackson%2C%20MI"
       }
     ]
   },
@@ -1760,13 +1760,6 @@
     "description": "A West Texas market sharing the EZ-RIDER regional transit system with nearby Midland.",
     "properties": [
       {
-        "id": "housing-odessa-property-west-winds-village-apartments",
-        "name": "West Winds Village Apartments",
-        "website": null,
-        "verifiedAt": null,
-        "maps": "https://www.google.com/maps/search/?api=1&query=West%20Winds%20Village%20Apartments%2C%20Odessa%2C%20TX"
-      },
-      {
         "id": "housing-odessa-property-cru",
         "name": "Cru",
         "website": "https://livecruapartments.com/",
@@ -1804,6 +1797,13 @@
         "photo": "assets/housing/housing-odessa-property-sedona-ranch.jpg",
         "photoAlt": "Sedona Ranch in Odessa, TX, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-odessa-property-west-winds-village-apartments",
+        "name": "West Winds Village Apartments",
+        "website": null,
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=West%20Winds%20Village%20Apartments%2C%20Odessa%2C%20TX"
       },
       {
         "id": "housing-odessa-property-latitude-31",
@@ -1900,13 +1900,6 @@
         "photoApproved": true
       },
       {
-        "id": "housing-new-hampshire-property-the-apartments-at-cotton-mill",
-        "name": "The Apartments at Cotton Mill",
-        "website": "https://cottonmillnh.com",
-        "verifiedAt": null,
-        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Apartments%20at%20Cotton%20Mill%2C%20New%20Hampshire%20(statewide)"
-      },
-      {
         "id": "housing-new-hampshire-property-the-flats-on-high-street",
         "name": "The Flats on High Street",
         "website": "https://flatsonhighst.com/",
@@ -1917,6 +1910,13 @@
         "photoAlt": "The Flats on High Street in New Hampshire (statewide), from the property's official website",
         "photoApproved": true,
         "pick": 3
+      },
+      {
+        "id": "housing-new-hampshire-property-the-apartments-at-cotton-mill",
+        "name": "The Apartments at Cotton Mill",
+        "website": "https://cottonmillnh.com",
+        "verifiedAt": null,
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Apartments%20at%20Cotton%20Mill%2C%20New%20Hampshire%20(statewide)"
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/hooksettapartments/"
@@ -1928,36 +1928,6 @@
     "place": "Kirksville, MO",
     "description": "Explore apartments and off-campus rentals in Kirksville near Truman State University.",
     "properties": [
-      {
-        "id": "housing-kirksville-mo-property-425-west-scott",
-        "name": "425 West Scott",
-        "website": "https://heritagehouserentalsllc.com/listing/425-west-scott-kirksville-missouri/",
-        "verifiedAt": "2026-11-13",
-        "maps": "https://www.google.com/maps/search/?api=1&query=425%20West%20Scott%2C%20Kirksville%2C%20MO",
-        "source": "https://heritagehouserentalsllc.com/listing/425-west-scott-kirksville-missouri/",
-        "summary": "Off-campus rental near Truman State and A.T. Still University in Kirksville, MO. This 2-bedroom, 1-bath apartment includes in-unit laundry. The manager provides lawn care, snow removal and 24-hour maintenance.",
-        "spotlight": {
-          "publishedAt": "2026-11-13",
-          "facebookPost": "https://www.facebook.com/groups/2205622230329742/posts/2207634086795223/",
-          "photo": "assets/housing/kirksville-mo-property-425-west-scott.jpg",
-          "photoAlt": "425 West Scott in Kirksville, MO, photo from our team's Facebook post"
-        }
-      },
-      {
-        "id": "housing-kirksville-mo-property-park-place",
-        "name": "Park Place",
-        "website": "https://4horizonsrealty.com/properties/park-place/",
-        "verifiedAt": "2026-11-14",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Park%20Place%2C%20Kirksville%2C%20MO",
-        "source": "https://4horizonsrealty.com/properties/park-place/",
-        "summary": "Park Place at 511 S. First St. in Kirksville lists two-bedroom, one-bath apartments about half a block from Truman State University. The listing notes a dishwasher, coin laundry and off-street parking.",
-        "spotlight": {
-          "publishedAt": "2026-11-14",
-          "facebookPost": "https://www.facebook.com/groups/2205622230329742/posts/2208933583331940/",
-          "photo": "assets/housing/kirksville-mo-property-park-place.jpg",
-          "photoAlt": "Park Place in Kirksville, MO, photo from our team's Facebook post"
-        }
-      },
       {
         "id": "housing-kirksville-mo-property-vicki-benson-properties",
         "name": "Vicki Benson Properties",
@@ -1998,6 +1968,36 @@
         "photo": "assets/housing/housing-kirksville-mo-property-kirksville-property-management.jpg",
         "photoAlt": "Kirksville Property Management in Kirksville, MO, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-kirksville-mo-property-425-west-scott",
+        "name": "425 West Scott",
+        "website": "https://heritagehouserentalsllc.com/listing/425-west-scott-kirksville-missouri/",
+        "verifiedAt": "2026-11-13",
+        "maps": "https://www.google.com/maps/search/?api=1&query=425%20West%20Scott%2C%20Kirksville%2C%20MO",
+        "source": "https://heritagehouserentalsllc.com/listing/425-west-scott-kirksville-missouri/",
+        "summary": "Off-campus rental near Truman State and A.T. Still University in Kirksville, MO. This 2-bedroom, 1-bath apartment includes in-unit laundry. The manager provides lawn care, snow removal and 24-hour maintenance.",
+        "spotlight": {
+          "publishedAt": "2026-11-13",
+          "facebookPost": "https://www.facebook.com/groups/2205622230329742/posts/2207634086795223/",
+          "photo": "assets/housing/kirksville-mo-property-425-west-scott.jpg",
+          "photoAlt": "425 West Scott in Kirksville, MO, photo from our team's Facebook post"
+        }
+      },
+      {
+        "id": "housing-kirksville-mo-property-park-place",
+        "name": "Park Place",
+        "website": "https://4horizonsrealty.com/properties/park-place/",
+        "verifiedAt": "2026-11-14",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Park%20Place%2C%20Kirksville%2C%20MO",
+        "source": "https://4horizonsrealty.com/properties/park-place/",
+        "summary": "Park Place at 511 S. First St. in Kirksville lists two-bedroom, one-bath apartments about half a block from Truman State University. The listing notes a dishwasher, coin laundry and off-street parking.",
+        "spotlight": {
+          "publishedAt": "2026-11-14",
+          "facebookPost": "https://www.facebook.com/groups/2205622230329742/posts/2208933583331940/",
+          "photo": "assets/housing/kirksville-mo-property-park-place.jpg",
+          "photoAlt": "Park Place in Kirksville, MO, photo from our team's Facebook post"
+        }
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/2205622230329742/"
@@ -2009,36 +2009,6 @@
     "place": "Macomb, IL",
     "description": "Explore apartments and off-campus rentals in Macomb near Western Illinois University.",
     "properties": [
-      {
-        "id": "housing-macomb-il-property-wheeler-street-townhomes-and-flats",
-        "name": "Wheeler Street Townhomes and Flats",
-        "website": "https://www.macombrentals.com/wheeler-street",
-        "verifiedAt": "2026-11-13",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Wheeler%20Street%20Townhomes%20and%20Flats%2C%20Macomb%2C%20IL",
-        "source": "https://www.macombrentals.com/wheeler-street",
-        "summary": "Looking for rentals near Western Illinois University in Macomb, IL? Wheeler Street Townhomes and Flats offers 1- and 2-bedroom layouts about a block from WIU. The manager lists water, trash and off-street parking as included. Ask which additional utilities come with your unit.",
-        "spotlight": {
-          "publishedAt": "2026-11-13",
-          "facebookPost": "https://www.facebook.com/groups/1125547753567026/posts/1127484226706712/",
-          "photo": "assets/housing/macomb-il-property-wheeler-street-townhomes-and-flats.jpg",
-          "photoAlt": "Wheeler Street Townhomes and Flats in Macomb, IL, photo from our team's Facebook post"
-        }
-      },
-      {
-        "id": "housing-macomb-il-property-adams-street-apartments-townhomes",
-        "name": "Adams Street Apartments & Townhomes",
-        "website": "https://www.macombrentals.com/adams-street",
-        "verifiedAt": "2026-11-14",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Adams%20Street%20Apartments%20%26%20Townhomes%2C%20Macomb%2C%20IL",
-        "source": "https://www.macombrentals.com/adams-street",
-        "summary": "Adams Street Apartments & Townhomes in Macomb lists apartment and townhome layouts near Western Illinois University. The property lists on-site laundry and off-street parking. See its site to compare floor plans and check lease terms.",
-        "spotlight": {
-          "publishedAt": "2026-11-14",
-          "facebookPost": "https://www.facebook.com/groups/1125547753567026/posts/1128687193253082/",
-          "photo": "assets/housing/macomb-il-property-adams-street-apartments-townhomes.jpg",
-          "photoAlt": "Adams Street Apartments & Townhomes in Macomb, IL, photo from our team's Facebook post"
-        }
-      },
       {
         "id": "housing-macomb-il-property-lexington-concord-apartments",
         "name": "Lexington Concord Apartments",
@@ -2079,6 +2049,36 @@
         "photo": "assets/housing/housing-macomb-il-property-smith-and-royer.jpg",
         "photoAlt": "Smith & Royer Apartments in Macomb, IL, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-macomb-il-property-wheeler-street-townhomes-and-flats",
+        "name": "Wheeler Street Townhomes and Flats",
+        "website": "https://www.macombrentals.com/wheeler-street",
+        "verifiedAt": "2026-11-13",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Wheeler%20Street%20Townhomes%20and%20Flats%2C%20Macomb%2C%20IL",
+        "source": "https://www.macombrentals.com/wheeler-street",
+        "summary": "Looking for rentals near Western Illinois University in Macomb, IL? Wheeler Street Townhomes and Flats offers 1- and 2-bedroom layouts about a block from WIU. The manager lists water, trash and off-street parking as included. Ask which additional utilities come with your unit.",
+        "spotlight": {
+          "publishedAt": "2026-11-13",
+          "facebookPost": "https://www.facebook.com/groups/1125547753567026/posts/1127484226706712/",
+          "photo": "assets/housing/macomb-il-property-wheeler-street-townhomes-and-flats.jpg",
+          "photoAlt": "Wheeler Street Townhomes and Flats in Macomb, IL, photo from our team's Facebook post"
+        }
+      },
+      {
+        "id": "housing-macomb-il-property-adams-street-apartments-townhomes",
+        "name": "Adams Street Apartments & Townhomes",
+        "website": "https://www.macombrentals.com/adams-street",
+        "verifiedAt": "2026-11-14",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Adams%20Street%20Apartments%20%26%20Townhomes%2C%20Macomb%2C%20IL",
+        "source": "https://www.macombrentals.com/adams-street",
+        "summary": "Adams Street Apartments & Townhomes in Macomb lists apartment and townhome layouts near Western Illinois University. The property lists on-site laundry and off-street parking. See its site to compare floor plans and check lease terms.",
+        "spotlight": {
+          "publishedAt": "2026-11-14",
+          "facebookPost": "https://www.facebook.com/groups/1125547753567026/posts/1128687193253082/",
+          "photo": "assets/housing/macomb-il-property-adams-street-apartments-townhomes.jpg",
+          "photoAlt": "Adams Street Apartments & Townhomes in Macomb, IL, photo from our team's Facebook post"
+        }
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/1125547753567026/"
@@ -2090,36 +2090,6 @@
     "place": "Platteville, WI",
     "description": "Explore apartments and off-campus rentals in Platteville near University of Wisconsin–Platteville.",
     "properties": [
-      {
-        "id": "housing-platteville-wi-property-330-pine-street",
-        "name": "330 Pine Street",
-        "website": "https://plattevilleapartments.com/pine.php",
-        "verifiedAt": "2026-11-13",
-        "maps": "https://www.google.com/maps/search/?api=1&query=330%20Pine%20Street%2C%20Platteville%2C%20WI",
-        "source": "https://plattevilleapartments.com/pine.php",
-        "summary": "Looking for off-campus housing near UW–Platteville? This 2-bedroom, 1-bath building at 330 Pine Street is one block east of campus. Rent includes water, sewer, trash, snow removal and off-street parking. The building has shared laundry.",
-        "spotlight": {
-          "publishedAt": "2026-11-13",
-          "facebookPost": "https://www.facebook.com/groups/1672495207705371/posts/1674594157495476/",
-          "photo": "assets/housing/platteville-wi-property-330-pine-street.jpg",
-          "photoAlt": "330 Pine Street in Platteville, WI, photo from our team's Facebook post"
-        }
-      },
-      {
-        "id": "housing-platteville-wi-property-pioneer-ridge",
-        "name": "Pioneer Ridge",
-        "website": "https://www.thinv.com/pioneer-ridge",
-        "verifiedAt": "2026-11-14",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Pioneer%20Ridge%2C%20Platteville%2C%20WI",
-        "source": "https://www.thinv.com/pioneer-ridge",
-        "summary": "Pioneer Ridge at 880 Union St. in Platteville lists three-bedroom, two-bath apartments two blocks north of UW–Platteville. The manager describes an extra den, a covered deck or patio, a dishwasher and free parking.",
-        "spotlight": {
-          "publishedAt": "2026-11-14",
-          "facebookPost": "https://www.facebook.com/groups/1672495207705371/posts/1675915460696679/",
-          "photo": "assets/housing/platteville-wi-property-pioneer-ridge.jpg",
-          "photoAlt": "Pioneer Ridge in Platteville, WI, photo from our team's Facebook post"
-        }
-      },
       {
         "id": "housing-platteville-wi-property-newman-heights",
         "name": "Newman Heights",
@@ -2161,6 +2131,36 @@
         "photo": "assets/housing/housing-platteville-wi-property-stonebridge-apartments.jpg",
         "photoAlt": "Stonebridge Apartments in Platteville, WI, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-platteville-wi-property-330-pine-street",
+        "name": "330 Pine Street",
+        "website": "https://plattevilleapartments.com/pine.php",
+        "verifiedAt": "2026-11-13",
+        "maps": "https://www.google.com/maps/search/?api=1&query=330%20Pine%20Street%2C%20Platteville%2C%20WI",
+        "source": "https://plattevilleapartments.com/pine.php",
+        "summary": "Looking for off-campus housing near UW–Platteville? This 2-bedroom, 1-bath building at 330 Pine Street is one block east of campus. Rent includes water, sewer, trash, snow removal and off-street parking. The building has shared laundry.",
+        "spotlight": {
+          "publishedAt": "2026-11-13",
+          "facebookPost": "https://www.facebook.com/groups/1672495207705371/posts/1674594157495476/",
+          "photo": "assets/housing/platteville-wi-property-330-pine-street.jpg",
+          "photoAlt": "330 Pine Street in Platteville, WI, photo from our team's Facebook post"
+        }
+      },
+      {
+        "id": "housing-platteville-wi-property-pioneer-ridge",
+        "name": "Pioneer Ridge",
+        "website": "https://www.thinv.com/pioneer-ridge",
+        "verifiedAt": "2026-11-14",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Pioneer%20Ridge%2C%20Platteville%2C%20WI",
+        "source": "https://www.thinv.com/pioneer-ridge",
+        "summary": "Pioneer Ridge at 880 Union St. in Platteville lists three-bedroom, two-bath apartments two blocks north of UW–Platteville. The manager describes an extra den, a covered deck or patio, a dishwasher and free parking.",
+        "spotlight": {
+          "publishedAt": "2026-11-14",
+          "facebookPost": "https://www.facebook.com/groups/1672495207705371/posts/1675915460696679/",
+          "photo": "assets/housing/platteville-wi-property-pioneer-ridge.jpg",
+          "photoAlt": "Pioneer Ridge in Platteville, WI, photo from our team's Facebook post"
+        }
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/1672495207705371/"
@@ -2172,36 +2172,6 @@
     "place": "Vermillion, SD",
     "description": "Explore apartments and off-campus rentals in Vermillion near University of South Dakota.",
     "properties": [
-      {
-        "id": "housing-vermillion-sd-property-pine-street-apartments",
-        "name": "Pine Street Apartments",
-        "website": "https://pinestreetapartments.com/",
-        "verifiedAt": "2026-11-13",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Pine%20Street%20Apartments%2C%20Vermillion%2C%20SD",
-        "source": "https://pinestreetapartments.com/",
-        "summary": "Sharing a rental near the University of South Dakota in Vermillion, SD? Pine Street Apartments offers 4-bedroom, 4-bath layouts across from campus. Each tenant has a private bathroom, and the property lists in-unit laundry and reserved parking.",
-        "spotlight": {
-          "publishedAt": "2026-11-13",
-          "facebookPost": "https://www.facebook.com/groups/2979932512339316/posts/2982130182119549/",
-          "photo": "assets/housing/vermillion-sd-property-pine-street-apartments.jpg",
-          "photoAlt": "Pine Street Apartments in Vermillion, SD, photo from our team's Facebook post"
-        }
-      },
-      {
-        "id": "housing-vermillion-sd-property-cottage-co",
-        "name": "Cottage & Co.",
-        "website": "https://www.rentingvermillion.com/cottagecoapartments",
-        "verifiedAt": "2026-11-14",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Cottage%20%26%20Co.%2C%20Vermillion%2C%20SD",
-        "source": "https://www.rentingvermillion.com/cottagecoapartments",
-        "summary": "Cottage & Co. on Cottage Street in Vermillion offers two-bedroom, two-bath layouts for renters comparing options near the University of South Dakota. The property lists private bathrooms for both bedrooms and a full-size washer and dryer.",
-        "spotlight": {
-          "publishedAt": "2026-11-14",
-          "facebookPost": "https://www.facebook.com/groups/2979932512339316/posts/2983532955312605/",
-          "photo": "assets/housing/vermillion-sd-property-cottage-co.jpg",
-          "photoAlt": "Cottage & Co. in Vermillion, SD, photo from our team's Facebook post"
-        }
-      },
       {
         "id": "housing-vermillion-sd-property-solara-vermillion",
         "name": "Solara",
@@ -2242,6 +2212,36 @@
         "photo": "assets/housing/housing-vermillion-sd-property-the-heights-vermillion.jpg",
         "photoAlt": "The Heights Vermillion in Vermillion, SD, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-vermillion-sd-property-pine-street-apartments",
+        "name": "Pine Street Apartments",
+        "website": "https://pinestreetapartments.com/",
+        "verifiedAt": "2026-11-13",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Pine%20Street%20Apartments%2C%20Vermillion%2C%20SD",
+        "source": "https://pinestreetapartments.com/",
+        "summary": "Sharing a rental near the University of South Dakota in Vermillion, SD? Pine Street Apartments offers 4-bedroom, 4-bath layouts across from campus. Each tenant has a private bathroom, and the property lists in-unit laundry and reserved parking.",
+        "spotlight": {
+          "publishedAt": "2026-11-13",
+          "facebookPost": "https://www.facebook.com/groups/2979932512339316/posts/2982130182119549/",
+          "photo": "assets/housing/vermillion-sd-property-pine-street-apartments.jpg",
+          "photoAlt": "Pine Street Apartments in Vermillion, SD, photo from our team's Facebook post"
+        }
+      },
+      {
+        "id": "housing-vermillion-sd-property-cottage-co",
+        "name": "Cottage & Co.",
+        "website": "https://www.rentingvermillion.com/cottagecoapartments",
+        "verifiedAt": "2026-11-14",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Cottage%20%26%20Co.%2C%20Vermillion%2C%20SD",
+        "source": "https://www.rentingvermillion.com/cottagecoapartments",
+        "summary": "Cottage & Co. on Cottage Street in Vermillion offers two-bedroom, two-bath layouts for renters comparing options near the University of South Dakota. The property lists private bathrooms for both bedrooms and a full-size washer and dryer.",
+        "spotlight": {
+          "publishedAt": "2026-11-14",
+          "facebookPost": "https://www.facebook.com/groups/2979932512339316/posts/2983532955312605/",
+          "photo": "assets/housing/vermillion-sd-property-cottage-co.jpg",
+          "photoAlt": "Cottage & Co. in Vermillion, SD, photo from our team's Facebook post"
+        }
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/2979932512339316/"
@@ -2253,36 +2253,6 @@
     "place": "Emporia, KS",
     "description": "Explore apartments and off-campus rentals in Emporia near Emporia State University.",
     "properties": [
-      {
-        "id": "housing-emporia-ks-property-the-ridge-of-emporia",
-        "name": "The Ridge of Emporia",
-        "website": "https://www.theridgeemporia.com/",
-        "verifiedAt": "2026-11-13",
-        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Ridge%20of%20Emporia%2C%20Emporia%2C%20KS",
-        "source": "https://www.theridgeemporia.com/",
-        "summary": "Comparing rentals in Emporia, KS while attending Emporia State? The Ridge of Emporia lists 1-, 2-, and 3-bedroom apartments and 4-bedroom townhomes. The property lists kitchens with a dishwasher and built-in microwave, plus a private balcony or patio.",
-        "spotlight": {
-          "publishedAt": "2026-11-13",
-          "facebookPost": "https://www.facebook.com/groups/1129982866618268/posts/1132033819746506/",
-          "photo": "assets/housing/emporia-ks-property-the-ridge-of-emporia.jpg",
-          "photoAlt": "The Ridge of Emporia in Emporia, KS, photo from our team's Facebook post"
-        }
-      },
-      {
-        "id": "housing-emporia-ks-property-brookfield-apartments",
-        "name": "Brookfield Apartments",
-        "website": "https://www.kansasbrookfield.com/floor-plans",
-        "verifiedAt": "2026-11-14",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Brookfield%20Apartments%2C%20Emporia%2C%20KS",
-        "source": "https://www.kansasbrookfield.com/floor-plans",
-        "summary": "Brookfield Apartments at 2935 W. 24th Ave. is one option to compare in Emporia if you’re looking near Emporia State. It lists one-bedroom and two-bedroom plans plus a three-bedroom, two-bath layout.",
-        "spotlight": {
-          "publishedAt": "2026-11-14",
-          "facebookPost": "https://www.facebook.com/groups/1129982866618268/posts/1133180946298460/",
-          "photo": "assets/housing/emporia-ks-property-brookfield-apartments.jpg",
-          "photoAlt": "Brookfield Apartments in Emporia, KS, photo from our team's Facebook post"
-        }
-      },
       {
         "id": "housing-emporia-ks-property-the-villas-at-emporia",
         "name": "The Villas at Emporia",
@@ -2323,6 +2293,36 @@
         "photo": "assets/housing/housing-emporia-ks-property-parkview-emporia.jpg",
         "photoAlt": "Parkview Apartments in Emporia, KS, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-emporia-ks-property-the-ridge-of-emporia",
+        "name": "The Ridge of Emporia",
+        "website": "https://www.theridgeemporia.com/",
+        "verifiedAt": "2026-11-13",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Ridge%20of%20Emporia%2C%20Emporia%2C%20KS",
+        "source": "https://www.theridgeemporia.com/",
+        "summary": "Comparing rentals in Emporia, KS while attending Emporia State? The Ridge of Emporia lists 1-, 2-, and 3-bedroom apartments and 4-bedroom townhomes. The property lists kitchens with a dishwasher and built-in microwave, plus a private balcony or patio.",
+        "spotlight": {
+          "publishedAt": "2026-11-13",
+          "facebookPost": "https://www.facebook.com/groups/1129982866618268/posts/1132033819746506/",
+          "photo": "assets/housing/emporia-ks-property-the-ridge-of-emporia.jpg",
+          "photoAlt": "The Ridge of Emporia in Emporia, KS, photo from our team's Facebook post"
+        }
+      },
+      {
+        "id": "housing-emporia-ks-property-brookfield-apartments",
+        "name": "Brookfield Apartments",
+        "website": "https://www.kansasbrookfield.com/floor-plans",
+        "verifiedAt": "2026-11-14",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Brookfield%20Apartments%2C%20Emporia%2C%20KS",
+        "source": "https://www.kansasbrookfield.com/floor-plans",
+        "summary": "Brookfield Apartments at 2935 W. 24th Ave. is one option to compare in Emporia if you’re looking near Emporia State. It lists one-bedroom and two-bedroom plans plus a three-bedroom, two-bath layout.",
+        "spotlight": {
+          "publishedAt": "2026-11-14",
+          "facebookPost": "https://www.facebook.com/groups/1129982866618268/posts/1133180946298460/",
+          "photo": "assets/housing/emporia-ks-property-brookfield-apartments.jpg",
+          "photoAlt": "Brookfield Apartments in Emporia, KS, photo from our team's Facebook post"
+        }
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/1129982866618268/"
@@ -2334,36 +2334,6 @@
     "place": "Ames, IA",
     "description": "Explore apartments and off-campus rentals in Ames near Iowa State University.",
     "properties": [
-      {
-        "id": "housing-ames-ia-property-the-foundry",
-        "name": "The Foundry",
-        "website": "https://www.foundrystudentliving.com/",
-        "verifiedAt": "2026-11-13",
-        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Foundry%2C%20Ames%2C%20IA",
-        "source": "https://www.foundrystudentliving.com/",
-        "summary": "Looking for Iowa State University apartments in Ames, IA? The Foundry offers furnished 2- and 4-bedroom floor plans. Apartments come with in-unit laundry, a dishwasher and stainless-steel appliances.",
-        "spotlight": {
-          "publishedAt": "2026-11-13",
-          "facebookPost": "https://www.facebook.com/groups/951828424471864/posts/952285037759536/",
-          "photo": "assets/housing/ames-ia-property-the-foundry.jpg",
-          "photoAlt": "The Foundry in Ames, IA, photo from our team's Facebook post"
-        }
-      },
-      {
-        "id": "housing-ames-ia-property-the-quarters-ames",
-        "name": "The Quarters Ames",
-        "website": "https://thequartersames.com/floor-plans/",
-        "verifiedAt": "2026-11-14",
-        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Quarters%20Ames%2C%20Ames%2C%20IA",
-        "source": "https://thequartersames.com/floor-plans/",
-        "summary": "The Quarters Ames offers two- and three-bedroom apartments for Iowa State renters comparing off-campus options. Its floor-plan page lists fully equipped kitchens and private bathrooms.",
-        "spotlight": {
-          "publishedAt": "2026-11-14",
-          "facebookPost": "https://www.facebook.com/groups/951828424471864/posts/953300094324697/",
-          "photo": "assets/housing/ames-ia-property-the-quarters-ames.jpg",
-          "photoAlt": "The Quarters Ames in Ames, IA, photo from our team's Facebook post"
-        }
-      },
       {
         "id": "housing-ames-ia-property-block-one-ames",
         "name": "Block One Ames",
@@ -2405,6 +2375,36 @@
         "photo": "assets/housing/housing-ames-ia-property-copper-beech-at-ames.jpg",
         "photoAlt": "Copper Beech at Ames in Ames, IA, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-ames-ia-property-the-foundry",
+        "name": "The Foundry",
+        "website": "https://www.foundrystudentliving.com/",
+        "verifiedAt": "2026-11-13",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Foundry%2C%20Ames%2C%20IA",
+        "source": "https://www.foundrystudentliving.com/",
+        "summary": "Looking for Iowa State University apartments in Ames, IA? The Foundry offers furnished 2- and 4-bedroom floor plans. Apartments come with in-unit laundry, a dishwasher and stainless-steel appliances.",
+        "spotlight": {
+          "publishedAt": "2026-11-13",
+          "facebookPost": "https://www.facebook.com/groups/951828424471864/posts/952285037759536/",
+          "photo": "assets/housing/ames-ia-property-the-foundry.jpg",
+          "photoAlt": "The Foundry in Ames, IA, photo from our team's Facebook post"
+        }
+      },
+      {
+        "id": "housing-ames-ia-property-the-quarters-ames",
+        "name": "The Quarters Ames",
+        "website": "https://thequartersames.com/floor-plans/",
+        "verifiedAt": "2026-11-14",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Quarters%20Ames%2C%20Ames%2C%20IA",
+        "source": "https://thequartersames.com/floor-plans/",
+        "summary": "The Quarters Ames offers two- and three-bedroom apartments for Iowa State renters comparing off-campus options. Its floor-plan page lists fully equipped kitchens and private bathrooms.",
+        "spotlight": {
+          "publishedAt": "2026-11-14",
+          "facebookPost": "https://www.facebook.com/groups/951828424471864/posts/953300094324697/",
+          "photo": "assets/housing/ames-ia-property-the-quarters-ames.jpg",
+          "photoAlt": "The Quarters Ames in Ames, IA, photo from our team's Facebook post"
+        }
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/951828424471864/"
@@ -2416,36 +2416,6 @@
     "place": "Iowa City, IA",
     "description": "Explore apartments and off-campus rentals in Iowa City near University of Iowa.",
     "properties": [
-      {
-        "id": "housing-iowa-city-ia-property-the-nest-iowa-city",
-        "name": "The Nest Iowa City",
-        "website": "https://thenestiowacity.com/floor-plans/",
-        "verifiedAt": "2026-11-13",
-        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Nest%20Iowa%20City%2C%20Iowa%20City%2C%20IA",
-        "source": "https://thenestiowacity.com/floor-plans/",
-        "summary": "Searching for off-campus housing near the University of Iowa in Iowa City? The Nest lists 1-, 2-, and 3-bedroom apartments. Its floor plans feature furnished packages, and the property lists a dishwasher and full-size washer and dryer in each unit.",
-        "spotlight": {
-          "publishedAt": "2026-11-13",
-          "facebookPost": "https://www.facebook.com/groups/3199654480425813/posts/3200304910360770/",
-          "photo": "assets/housing/iowa-city-ia-property-the-nest-iowa-city.jpg",
-          "photoAlt": "The Nest Iowa City in Iowa City, IA, photo from our team's Facebook post"
-        }
-      },
-      {
-        "id": "housing-iowa-city-ia-property-the-quarters-iowa-city",
-        "name": "The Quarters Iowa City",
-        "website": "https://thequartersiowacity.com/floor-plans/",
-        "verifiedAt": "2026-11-14",
-        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Quarters%20Iowa%20City%2C%20Iowa%20City%2C%20IA",
-        "source": "https://thequartersiowacity.com/floor-plans/",
-        "summary": "The Quarters Iowa City lists studio and one-, two-, and three-bedroom apartments for University of Iowa renters. The property describes in-home laundry, equipped kitchens, and a private patio or balcony.",
-        "spotlight": {
-          "publishedAt": "2026-11-14",
-          "facebookPost": "https://www.facebook.com/groups/3199654480425813/posts/3201733690217892/",
-          "photo": "assets/housing/iowa-city-ia-property-the-quarters-iowa-city.jpg",
-          "photoAlt": "The Quarters Iowa City in Iowa City, IA, photo from our team's Facebook post"
-        }
-      },
       {
         "id": "housing-iowa-city-ia-property-rise-at-riverfront-crossings",
         "name": "RISE at Riverfront Crossings",
@@ -2487,6 +2457,36 @@
         "photo": "assets/housing/housing-iowa-city-ia-property-campus-view-apartments.jpg",
         "photoAlt": "Campus View Apartments in Iowa City, IA, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-iowa-city-ia-property-the-nest-iowa-city",
+        "name": "The Nest Iowa City",
+        "website": "https://thenestiowacity.com/floor-plans/",
+        "verifiedAt": "2026-11-13",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Nest%20Iowa%20City%2C%20Iowa%20City%2C%20IA",
+        "source": "https://thenestiowacity.com/floor-plans/",
+        "summary": "Searching for off-campus housing near the University of Iowa in Iowa City? The Nest lists 1-, 2-, and 3-bedroom apartments. Its floor plans feature furnished packages, and the property lists a dishwasher and full-size washer and dryer in each unit.",
+        "spotlight": {
+          "publishedAt": "2026-11-13",
+          "facebookPost": "https://www.facebook.com/groups/3199654480425813/posts/3200304910360770/",
+          "photo": "assets/housing/iowa-city-ia-property-the-nest-iowa-city.jpg",
+          "photoAlt": "The Nest Iowa City in Iowa City, IA, photo from our team's Facebook post"
+        }
+      },
+      {
+        "id": "housing-iowa-city-ia-property-the-quarters-iowa-city",
+        "name": "The Quarters Iowa City",
+        "website": "https://thequartersiowacity.com/floor-plans/",
+        "verifiedAt": "2026-11-14",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Quarters%20Iowa%20City%2C%20Iowa%20City%2C%20IA",
+        "source": "https://thequartersiowacity.com/floor-plans/",
+        "summary": "The Quarters Iowa City lists studio and one-, two-, and three-bedroom apartments for University of Iowa renters. The property describes in-home laundry, equipped kitchens, and a private patio or balcony.",
+        "spotlight": {
+          "publishedAt": "2026-11-14",
+          "facebookPost": "https://www.facebook.com/groups/3199654480425813/posts/3201733690217892/",
+          "photo": "assets/housing/iowa-city-ia-property-the-quarters-iowa-city.jpg",
+          "photoAlt": "The Quarters Iowa City in Iowa City, IA, photo from our team's Facebook post"
+        }
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/3199654480425813/"
@@ -2498,36 +2498,6 @@
     "place": "Lawrence, KS",
     "description": "Explore apartments and off-campus rentals in Lawrence near University of Kansas.",
     "properties": [
-      {
-        "id": "housing-lawrence-ks-property-here-kansas",
-        "name": "HERE Kansas",
-        "website": "https://entrata.herekansas.com/lawrence/here-kansas/amenities/",
-        "verifiedAt": "2026-11-13",
-        "maps": "https://www.google.com/maps/search/?api=1&query=HERE%20Kansas%2C%20Lawrence%2C%20KS",
-        "source": "https://entrata.herekansas.com/lawrence/here-kansas/amenities/",
-        "summary": "Looking for a rental near the University of Kansas in Lawrence, KS? HERE Kansas at 1111 Indiana Street lists fully furnished apartments with an in-unit washer and dryer. The property also offers a fitness center and resident study space.",
-        "spotlight": {
-          "publishedAt": "2026-11-13",
-          "facebookPost": "https://www.facebook.com/groups/1378086194245280/posts/1378547094199190/",
-          "photo": "assets/housing/lawrence-ks-property-here-kansas.jpg",
-          "photoAlt": "HERE Kansas in Lawrence, KS, photo from our team's Facebook post"
-        }
-      },
-      {
-        "id": "housing-lawrence-ks-property-the-connection-at-lawrence",
-        "name": "The Connection at Lawrence",
-        "website": "https://www.connectionatlawrence.com/floor-plans/",
-        "verifiedAt": "2026-11-14",
-        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Connection%20at%20Lawrence%2C%20Lawrence%2C%20KS",
-        "source": "https://www.connectionatlawrence.com/floor-plans/",
-        "summary": "The Connection at Lawrence on Ousdahl Road lists one- to four-bedroom floor plans for KU students comparing off-campus options. The shared layouts include two-bed/two-bath, three-bed/three-bath, and four-bed/four-bath plans.",
-        "spotlight": {
-          "publishedAt": "2026-11-14",
-          "facebookPost": "https://www.facebook.com/groups/1378086194245280/posts/1379633584090541/",
-          "photo": "assets/housing/lawrence-ks-property-the-connection-at-lawrence.jpg",
-          "photoAlt": "The Connection at Lawrence in Lawrence, KS, photo from our team's Facebook post"
-        }
-      },
       {
         "id": "housing-lawrence-ks-property-helix-24",
         "name": "Helix 24",
@@ -2567,6 +2537,36 @@
         "photo": "assets/housing/housing-lawrence-ks-property-the-collective-at-lawrence.jpg",
         "photoAlt": "The Collective at Lawrence in Lawrence, KS, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-lawrence-ks-property-here-kansas",
+        "name": "HERE Kansas",
+        "website": "https://entrata.herekansas.com/lawrence/here-kansas/amenities/",
+        "verifiedAt": "2026-11-13",
+        "maps": "https://www.google.com/maps/search/?api=1&query=HERE%20Kansas%2C%20Lawrence%2C%20KS",
+        "source": "https://entrata.herekansas.com/lawrence/here-kansas/amenities/",
+        "summary": "Looking for a rental near the University of Kansas in Lawrence, KS? HERE Kansas at 1111 Indiana Street lists fully furnished apartments with an in-unit washer and dryer. The property also offers a fitness center and resident study space.",
+        "spotlight": {
+          "publishedAt": "2026-11-13",
+          "facebookPost": "https://www.facebook.com/groups/1378086194245280/posts/1378547094199190/",
+          "photo": "assets/housing/lawrence-ks-property-here-kansas.jpg",
+          "photoAlt": "HERE Kansas in Lawrence, KS, photo from our team's Facebook post"
+        }
+      },
+      {
+        "id": "housing-lawrence-ks-property-the-connection-at-lawrence",
+        "name": "The Connection at Lawrence",
+        "website": "https://www.connectionatlawrence.com/floor-plans/",
+        "verifiedAt": "2026-11-14",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Connection%20at%20Lawrence%2C%20Lawrence%2C%20KS",
+        "source": "https://www.connectionatlawrence.com/floor-plans/",
+        "summary": "The Connection at Lawrence on Ousdahl Road lists one- to four-bedroom floor plans for KU students comparing off-campus options. The shared layouts include two-bed/two-bath, three-bed/three-bath, and four-bed/four-bath plans.",
+        "spotlight": {
+          "publishedAt": "2026-11-14",
+          "facebookPost": "https://www.facebook.com/groups/1378086194245280/posts/1379633584090541/",
+          "photo": "assets/housing/lawrence-ks-property-the-connection-at-lawrence.jpg",
+          "photoAlt": "The Connection at Lawrence in Lawrence, KS, photo from our team's Facebook post"
+        }
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/1378086194245280/"
@@ -2578,36 +2578,6 @@
     "place": "Manhattan, KS",
     "description": "Explore apartments and off-campus rentals in Manhattan near Kansas State University.",
     "properties": [
-      {
-        "id": "housing-manhattan-ks-property-the-district-at-manhattan",
-        "name": "The District at Manhattan",
-        "website": "https://www.districtatmanhattanapts.com/amenities",
-        "verifiedAt": "2026-11-13",
-        "maps": "https://www.google.com/maps/search/?api=1&query=The%20District%20at%20Manhattan%2C%20Manhattan%2C%20KS",
-        "source": "https://www.districtatmanhattanapts.com/amenities",
-        "summary": "Looking for apartments near Kansas State University in Manhattan, KS? The District at Manhattan lists 1-, 2-, 3-, and 4-bedroom floor plans. Apartment kitchens include a dishwasher, and residents have access to a community pool.",
-        "spotlight": {
-          "publishedAt": "2026-11-13",
-          "facebookPost": "https://www.facebook.com/groups/2120989008519297/posts/2121553725129492/",
-          "photo": "assets/housing/manhattan-ks-property-the-district-at-manhattan.jpg",
-          "photoAlt": "The District at Manhattan in Manhattan, KS, photo from our team's Facebook post"
-        }
-      },
-      {
-        "id": "housing-manhattan-ks-property-12b-lofts-avenue-m",
-        "name": "12b Lofts & Avenue M",
-        "website": "https://12blofts.com/floor-plans/",
-        "verifiedAt": "2026-11-14",
-        "maps": "https://www.google.com/maps/search/?api=1&query=12b%20Lofts%20%26%20Avenue%20M%2C%20Manhattan%2C%20KS",
-        "source": "https://12blofts.com/floor-plans/",
-        "summary": "12b Lofts & Avenue M near Aggieville and Kansas State University lists one- through four-bedroom plans across its two Manhattan communities. Check the property’s floor-plan page to see which layouts are offered at each building.",
-        "spotlight": {
-          "publishedAt": "2026-11-14",
-          "facebookPost": "https://www.facebook.com/groups/2120989008519297/posts/2122794788338719/",
-          "photo": "assets/housing/manhattan-ks-property-12b-lofts-avenue-m.jpg",
-          "photoAlt": "12b Lofts & Avenue M in Manhattan, KS, photo from our team's Facebook post"
-        }
-      },
       {
         "id": "housing-manhattan-ks-property-prime-place-mhk",
         "name": "Prime Place MHK",
@@ -2648,6 +2618,36 @@
         "photo": "assets/housing/housing-manhattan-ks-property-sandstone-apartments.jpg",
         "photoAlt": "Sandstone Apartments in Manhattan, KS, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-manhattan-ks-property-the-district-at-manhattan",
+        "name": "The District at Manhattan",
+        "website": "https://www.districtatmanhattanapts.com/amenities",
+        "verifiedAt": "2026-11-13",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20District%20at%20Manhattan%2C%20Manhattan%2C%20KS",
+        "source": "https://www.districtatmanhattanapts.com/amenities",
+        "summary": "Looking for apartments near Kansas State University in Manhattan, KS? The District at Manhattan lists 1-, 2-, 3-, and 4-bedroom floor plans. Apartment kitchens include a dishwasher, and residents have access to a community pool.",
+        "spotlight": {
+          "publishedAt": "2026-11-13",
+          "facebookPost": "https://www.facebook.com/groups/2120989008519297/posts/2121553725129492/",
+          "photo": "assets/housing/manhattan-ks-property-the-district-at-manhattan.jpg",
+          "photoAlt": "The District at Manhattan in Manhattan, KS, photo from our team's Facebook post"
+        }
+      },
+      {
+        "id": "housing-manhattan-ks-property-12b-lofts-avenue-m",
+        "name": "12b Lofts & Avenue M",
+        "website": "https://12blofts.com/floor-plans/",
+        "verifiedAt": "2026-11-14",
+        "maps": "https://www.google.com/maps/search/?api=1&query=12b%20Lofts%20%26%20Avenue%20M%2C%20Manhattan%2C%20KS",
+        "source": "https://12blofts.com/floor-plans/",
+        "summary": "12b Lofts & Avenue M near Aggieville and Kansas State University lists one- through four-bedroom plans across its two Manhattan communities. Check the property’s floor-plan page to see which layouts are offered at each building.",
+        "spotlight": {
+          "publishedAt": "2026-11-14",
+          "facebookPost": "https://www.facebook.com/groups/2120989008519297/posts/2122794788338719/",
+          "photo": "assets/housing/manhattan-ks-property-12b-lofts-avenue-m.jpg",
+          "photoAlt": "12b Lofts & Avenue M in Manhattan, KS, photo from our team's Facebook post"
+        }
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/2120989008519297/"
@@ -2659,36 +2659,6 @@
     "place": "Stillwater, OK",
     "description": "Explore apartments and off-campus rentals in Stillwater near Oklahoma State University.",
     "properties": [
-      {
-        "id": "housing-stillwater-ok-property-milestone-stillwater",
-        "name": "Milestone Stillwater",
-        "website": "https://milestonestillwater.com/",
-        "verifiedAt": "2026-11-13",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Milestone%20Stillwater%2C%20Stillwater%2C%20OK",
-        "source": "https://milestonestillwater.com/",
-        "summary": "Looking for off-campus apartments near Oklahoma State University in Stillwater, OK? Milestone Stillwater lists in-unit laundry, a dishwasher and a fully equipped kitchen. Compare its floor plans for your roommate setup and ask about lease dates.",
-        "spotlight": {
-          "publishedAt": "2026-11-13",
-          "facebookPost": "https://www.facebook.com/groups/1887445796015247/posts/1888029899290170/",
-          "photo": "assets/housing/stillwater-ok-property-milestone-stillwater.jpg",
-          "photoAlt": "Milestone Stillwater in Stillwater, OK, photo from our team's Facebook post"
-        }
-      },
-      {
-        "id": "housing-stillwater-ok-property-apple-creek-stillwater",
-        "name": "Apple Creek Stillwater",
-        "website": "https://www.caseusa.com/apartments/ok/stillwater/apple-creek-stillwater/floor-plans/",
-        "verifiedAt": "2026-11-14",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Apple%20Creek%20Stillwater%2C%20Stillwater%2C%20OK",
-        "source": "https://www.caseusa.com/apartments/ok/stillwater/apple-creek-stillwater/floor-plans/",
-        "summary": "Apple Creek Stillwater on North Perkins Road lists one- and two-bedroom apartments. The two-bed, two-bath floor plan has bedrooms on opposite sides of the living area, a layout worth comparing if you’re sharing rent near Oklahoma State.",
-        "spotlight": {
-          "publishedAt": "2026-11-14",
-          "facebookPost": "https://www.facebook.com/groups/1887445796015247/posts/1889210402505453/",
-          "photo": "assets/housing/stillwater-ok-property-apple-creek-stillwater.jpg",
-          "photoAlt": "Apple Creek Stillwater in Stillwater, OK, photo from our team's Facebook post"
-        }
-      },
       {
         "id": "housing-stillwater-ok-property-midtown-stillwater",
         "name": "Midtown",
@@ -2730,6 +2700,36 @@
         "photo": "assets/housing/housing-stillwater-ok-property-alight-stillwater.jpg",
         "photoAlt": "Alight Stillwater in Stillwater, OK, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-stillwater-ok-property-milestone-stillwater",
+        "name": "Milestone Stillwater",
+        "website": "https://milestonestillwater.com/",
+        "verifiedAt": "2026-11-13",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Milestone%20Stillwater%2C%20Stillwater%2C%20OK",
+        "source": "https://milestonestillwater.com/",
+        "summary": "Looking for off-campus apartments near Oklahoma State University in Stillwater, OK? Milestone Stillwater lists in-unit laundry, a dishwasher and a fully equipped kitchen. Compare its floor plans for your roommate setup and ask about lease dates.",
+        "spotlight": {
+          "publishedAt": "2026-11-13",
+          "facebookPost": "https://www.facebook.com/groups/1887445796015247/posts/1888029899290170/",
+          "photo": "assets/housing/stillwater-ok-property-milestone-stillwater.jpg",
+          "photoAlt": "Milestone Stillwater in Stillwater, OK, photo from our team's Facebook post"
+        }
+      },
+      {
+        "id": "housing-stillwater-ok-property-apple-creek-stillwater",
+        "name": "Apple Creek Stillwater",
+        "website": "https://www.caseusa.com/apartments/ok/stillwater/apple-creek-stillwater/floor-plans/",
+        "verifiedAt": "2026-11-14",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Apple%20Creek%20Stillwater%2C%20Stillwater%2C%20OK",
+        "source": "https://www.caseusa.com/apartments/ok/stillwater/apple-creek-stillwater/floor-plans/",
+        "summary": "Apple Creek Stillwater on North Perkins Road lists one- and two-bedroom apartments. The two-bed, two-bath floor plan has bedrooms on opposite sides of the living area, a layout worth comparing if you’re sharing rent near Oklahoma State.",
+        "spotlight": {
+          "publishedAt": "2026-11-14",
+          "facebookPost": "https://www.facebook.com/groups/1887445796015247/posts/1889210402505453/",
+          "photo": "assets/housing/stillwater-ok-property-apple-creek-stillwater.jpg",
+          "photoAlt": "Apple Creek Stillwater in Stillwater, OK, photo from our team's Facebook post"
+        }
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/1887445796015247/"
@@ -2741,36 +2741,6 @@
     "place": "Tucson, AZ",
     "description": "Explore apartments and off-campus rentals in Tucson near University of Arizona.",
     "properties": [
-      {
-        "id": "housing-tucson-az-property-the-pacific",
-        "name": "The Pacific",
-        "website": "https://www.livethepacific.com/apartments/az/tucson/floor-plans",
-        "verifiedAt": "2026-11-13",
-        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Pacific%2C%20Tucson%2C%20AZ",
-        "source": "https://www.livethepacific.com/apartments/az/tucson/floor-plans",
-        "summary": "The Pacific in Tucson is two blocks from the University of Arizona. It lists furnished studios and one- through five-bedroom apartments with an in-unit washer and dryer, a private balcony, and stainless-steel kitchen appliances. The photo shows a model kitchen.",
-        "spotlight": {
-          "publishedAt": "2026-11-13",
-          "facebookPost": "https://www.facebook.com/groups/1128748779953964/posts/1128766493285526/",
-          "photo": "assets/housing/tucson-az-property-the-pacific.jpg",
-          "photoAlt": "The Pacific in Tucson, AZ, photo from our team's Facebook post"
-        }
-      },
-      {
-        "id": "housing-tucson-az-property-hub-speedway",
-        "name": "Hub Speedway",
-        "website": "https://huboncampus.com/tucson-speedway/",
-        "verifiedAt": "2026-11-14",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Hub%20Speedway%2C%20Tucson%2C%20AZ",
-        "source": "https://huboncampus.com/tucson-speedway/",
-        "summary": "Hub Speedway near the University of Arizona in Tucson lists one-, two-, four-, and five-bedroom layouts. The property lists furnished apartments with in-unit washers and dryers. Compare layouts and current lease terms on the property site.",
-        "spotlight": {
-          "publishedAt": "2026-11-14",
-          "facebookPost": "https://www.facebook.com/groups/1128748779953964/posts/1129636036531905/",
-          "photo": "assets/housing/tucson-az-property-hub-speedway.jpg",
-          "photoAlt": "Hub Speedway in Tucson, AZ, photo from our team's Facebook post"
-        }
-      },
       {
         "id": "housing-tucson-az-property-aspire-tucson",
         "name": "Aspire",
@@ -2812,6 +2782,36 @@
         "photo": "assets/housing/housing-tucson-az-property-university-lofts-tucson.jpg",
         "photoAlt": "University Lofts in Tucson, AZ, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-tucson-az-property-the-pacific",
+        "name": "The Pacific",
+        "website": "https://www.livethepacific.com/apartments/az/tucson/floor-plans",
+        "verifiedAt": "2026-11-13",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Pacific%2C%20Tucson%2C%20AZ",
+        "source": "https://www.livethepacific.com/apartments/az/tucson/floor-plans",
+        "summary": "The Pacific in Tucson is two blocks from the University of Arizona. It lists furnished studios and one- through five-bedroom apartments with an in-unit washer and dryer, a private balcony, and stainless-steel kitchen appliances. The photo shows a model kitchen.",
+        "spotlight": {
+          "publishedAt": "2026-11-13",
+          "facebookPost": "https://www.facebook.com/groups/1128748779953964/posts/1128766493285526/",
+          "photo": "assets/housing/tucson-az-property-the-pacific.jpg",
+          "photoAlt": "The Pacific in Tucson, AZ, photo from our team's Facebook post"
+        }
+      },
+      {
+        "id": "housing-tucson-az-property-hub-speedway",
+        "name": "Hub Speedway",
+        "website": "https://huboncampus.com/tucson-speedway/",
+        "verifiedAt": "2026-11-14",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Hub%20Speedway%2C%20Tucson%2C%20AZ",
+        "source": "https://huboncampus.com/tucson-speedway/",
+        "summary": "Hub Speedway near the University of Arizona in Tucson lists one-, two-, four-, and five-bedroom layouts. The property lists furnished apartments with in-unit washers and dryers. Compare layouts and current lease terms on the property site.",
+        "spotlight": {
+          "publishedAt": "2026-11-14",
+          "facebookPost": "https://www.facebook.com/groups/1128748779953964/posts/1129636036531905/",
+          "photo": "assets/housing/tucson-az-property-hub-speedway.jpg",
+          "photoAlt": "Hub Speedway in Tucson, AZ, photo from our team's Facebook post"
+        }
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/1128748779953964/"
@@ -2823,21 +2823,6 @@
     "place": "Albuquerque, NM",
     "description": "Explore apartments and off-campus rentals in Albuquerque near University of New Mexico.",
     "properties": [
-      {
-        "id": "housing-albuquerque-nm-property-lobo-village",
-        "name": "Lobo Village",
-        "website": "https://www.americancampus.com/student-apartments/nm/albuquerque/lobo-village/",
-        "verifiedAt": "2026-11-14",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Lobo%20Village%2C%20Albuquerque%2C%20NM",
-        "source": "https://www.americancampus.com/student-apartments/nm/albuquerque/lobo-village/",
-        "summary": "Lobo Village on UNM’s South Campus in Albuquerque lists furnished 4-bed, 4-bath apartments, with a private bedroom and bathroom for each resident. It lists a washer and dryer, internet, water, sewer, trash and parking as included.",
-        "spotlight": {
-          "publishedAt": "2026-11-14",
-          "facebookPost": "https://www.facebook.com/groups/2548132042348043/posts/2549068832254364/",
-          "photo": "assets/housing/albuquerque-nm-property-lobo-village.jpg",
-          "photoAlt": "Lobo Village in Albuquerque, NM, photo from our team's Facebook post"
-        }
-      },
       {
         "id": "housing-albuquerque-nm-property-university-village-albuquerque",
         "name": "University Village",
@@ -2877,6 +2862,21 @@
         "photo": "assets/housing/housing-albuquerque-nm-property-nob-hill-apartments.jpg",
         "photoAlt": "Nob Hill Apartments in Albuquerque, NM, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-albuquerque-nm-property-lobo-village",
+        "name": "Lobo Village",
+        "website": "https://www.americancampus.com/student-apartments/nm/albuquerque/lobo-village/",
+        "verifiedAt": "2026-11-14",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Lobo%20Village%2C%20Albuquerque%2C%20NM",
+        "source": "https://www.americancampus.com/student-apartments/nm/albuquerque/lobo-village/",
+        "summary": "Lobo Village on UNM’s South Campus in Albuquerque lists furnished 4-bed, 4-bath apartments, with a private bedroom and bathroom for each resident. It lists a washer and dryer, internet, water, sewer, trash and parking as included.",
+        "spotlight": {
+          "publishedAt": "2026-11-14",
+          "facebookPost": "https://www.facebook.com/groups/2548132042348043/posts/2549068832254364/",
+          "photo": "assets/housing/albuquerque-nm-property-lobo-village.jpg",
+          "photoAlt": "Lobo Village in Albuquerque, NM, photo from our team's Facebook post"
+        }
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/2548132042348043/"
@@ -2888,21 +2888,6 @@
     "place": "Fresno, CA",
     "description": "Explore apartments and off-campus rentals in Fresno near Fresno State.",
     "properties": [
-      {
-        "id": "housing-fresno-ca-property-topanga-ridge",
-        "name": "Topanga Ridge",
-        "website": "https://www.topangaridge.com/floorplans/",
-        "verifiedAt": "2026-11-14",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Topanga%20Ridge%2C%20Fresno%2C%20CA",
-        "source": "https://www.topangaridge.com/floorplans/",
-        "summary": "Topanga Ridge near Fresno State lists four furnished layouts: two 2-bed, 2-bath plans (including a corner layout), a 4-bed, 2-bath plan and a 4-bed, 4-bath plan. See the floor plans to compare how the bathrooms are shared.",
-        "spotlight": {
-          "publishedAt": "2026-11-14",
-          "facebookPost": "https://www.facebook.com/groups/1153864210494686/posts/1154728423741598/",
-          "photo": "assets/housing/fresno-ca-property-topanga-ridge.jpg",
-          "photoAlt": "Topanga Ridge in Fresno, CA, photo from our team's Facebook post"
-        }
-      },
       {
         "id": "housing-fresno-ca-property-university-village-fresno",
         "name": "University Village",
@@ -2943,6 +2928,21 @@
         "photo": "assets/housing/housing-fresno-ca-property-palazzo-at-campus-pointe.jpg",
         "photoAlt": "Palazzo at Campus Pointe in Fresno, CA, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-fresno-ca-property-topanga-ridge",
+        "name": "Topanga Ridge",
+        "website": "https://www.topangaridge.com/floorplans/",
+        "verifiedAt": "2026-11-14",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Topanga%20Ridge%2C%20Fresno%2C%20CA",
+        "source": "https://www.topangaridge.com/floorplans/",
+        "summary": "Topanga Ridge near Fresno State lists four furnished layouts: two 2-bed, 2-bath plans (including a corner layout), a 4-bed, 2-bath plan and a 4-bed, 4-bath plan. See the floor plans to compare how the bathrooms are shared.",
+        "spotlight": {
+          "publishedAt": "2026-11-14",
+          "facebookPost": "https://www.facebook.com/groups/1153864210494686/posts/1154728423741598/",
+          "photo": "assets/housing/fresno-ca-property-topanga-ridge.jpg",
+          "photoAlt": "Topanga Ridge in Fresno, CA, photo from our team's Facebook post"
+        }
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/1153864210494686/"
@@ -2954,21 +2954,6 @@
     "place": "Sacramento, CA",
     "description": "Explore apartments and off-campus rentals in Sacramento near Sacramento State.",
     "properties": [
-      {
-        "id": "housing-sacramento-ca-property-the-crossings",
-        "name": "The Crossings",
-        "website": "https://www.crossingssac.com/floor-plans/",
-        "verifiedAt": "2026-11-14",
-        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Crossings%2C%20Sacramento%2C%20CA",
-        "source": "https://www.crossingssac.com/floor-plans/",
-        "summary": "The Crossings at 2920 Ramona Ave. offers furnished apartments near Sacramento State. The floor-plan page lists 1-bed/1-bath, 2-bed/2-bath, 3-bed/3-bath and 4-bed/4-bath layouts. Check with the leasing office for current availability.",
-        "spotlight": {
-          "publishedAt": "2026-11-14",
-          "facebookPost": "https://www.facebook.com/groups/1769167408547278/posts/1770165568447462/",
-          "photo": "assets/housing/sacramento-ca-property-the-crossings.jpg",
-          "photoAlt": "The Crossings in Sacramento, CA, photo from our team's Facebook post"
-        }
-      },
       {
         "id": "housing-sacramento-ca-property-lark-sacramento",
         "name": "Lark",
@@ -3009,6 +2994,21 @@
         "photo": "assets/housing/housing-sacramento-ca-property-hornet-commons.jpg",
         "photoAlt": "Hornet Commons in Sacramento, CA, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-sacramento-ca-property-the-crossings",
+        "name": "The Crossings",
+        "website": "https://www.crossingssac.com/floor-plans/",
+        "verifiedAt": "2026-11-14",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Crossings%2C%20Sacramento%2C%20CA",
+        "source": "https://www.crossingssac.com/floor-plans/",
+        "summary": "The Crossings at 2920 Ramona Ave. offers furnished apartments near Sacramento State. The floor-plan page lists 1-bed/1-bath, 2-bed/2-bath, 3-bed/3-bath and 4-bed/4-bath layouts. Check with the leasing office for current availability.",
+        "spotlight": {
+          "publishedAt": "2026-11-14",
+          "facebookPost": "https://www.facebook.com/groups/1769167408547278/posts/1770165568447462/",
+          "photo": "assets/housing/sacramento-ca-property-the-crossings.jpg",
+          "photoAlt": "The Crossings in Sacramento, CA, photo from our team's Facebook post"
+        }
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/1769167408547278/"
@@ -3020,21 +3020,6 @@
     "place": "Greensboro, NC",
     "description": "Explore apartments and off-campus rentals in Greensboro near UNC Greensboro.",
     "properties": [
-      {
-        "id": "housing-greensboro-nc-property-spartan-crossing",
-        "name": "Spartan Crossing",
-        "website": "https://www.spartancrossing.com/apartments/",
-        "verifiedAt": "2026-11-14",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Spartan%20Crossing%2C%20Greensboro%2C%20NC",
-        "source": "https://www.spartancrossing.com/apartments/",
-        "summary": "Spartan Crossing on Granite Street near UNC Greensboro lists furnished 1-, 2- and 3-bedroom apartments with in-unit laundry. The layouts include a 1-bed/1-bath, 2-bedroom plans with 2 or 3 baths, and 3-bed/3-bath plans. Check the property site for current availability.",
-        "spotlight": {
-          "publishedAt": "2026-11-14",
-          "facebookPost": "https://www.facebook.com/groups/1670073367846669/posts/1670999884420684/",
-          "photo": "assets/housing/greensboro-nc-property-spartan-crossing.jpg",
-          "photoAlt": "Spartan Crossing in Greensboro, NC, photo from our team's Facebook post"
-        }
-      },
       {
         "id": "housing-greensboro-nc-property-the-reserve-at-greensboro",
         "name": "The Reserve at Greensboro",
@@ -3075,6 +3060,21 @@
         "photo": "assets/housing/housing-greensboro-nc-property-west-quad-greensboro.jpg",
         "photoAlt": "West Quad in Greensboro, NC, from the property's official website",
         "photoApproved": true
+      },
+      {
+        "id": "housing-greensboro-nc-property-spartan-crossing",
+        "name": "Spartan Crossing",
+        "website": "https://www.spartancrossing.com/apartments/",
+        "verifiedAt": "2026-11-14",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Spartan%20Crossing%2C%20Greensboro%2C%20NC",
+        "source": "https://www.spartancrossing.com/apartments/",
+        "summary": "Spartan Crossing on Granite Street near UNC Greensboro lists furnished 1-, 2- and 3-bedroom apartments with in-unit laundry. The layouts include a 1-bed/1-bath, 2-bedroom plans with 2 or 3 baths, and 3-bed/3-bath plans. Check the property site for current availability.",
+        "spotlight": {
+          "publishedAt": "2026-11-14",
+          "facebookPost": "https://www.facebook.com/groups/1670073367846669/posts/1670999884420684/",
+          "photo": "assets/housing/greensboro-nc-property-spartan-crossing.jpg",
+          "photoAlt": "Spartan Crossing in Greensboro, NC, photo from our team's Facebook post"
+        }
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/1670073367846669/"
@@ -3449,19 +3449,6 @@
     "facebookGroup": "https://www.facebook.com/groups/sjsuapartments/",
     "properties": [
       {
-        "id": "housing-san-jose-ca-property-the-grad-san-jose",
-        "name": "The Grad San Jose",
-        "website": "https://www.thegradsanjose.com/",
-        "verifiedAt": "2026-11-16",
-        "maps": "https://www.google.com/maps/search/?api=1&query=The+Grad+San+Jose%2C+San+Jose%2C+CA",
-        "summary": "Apartment community near San Jose State University; the official site shows floor plans, amenities and how to apply.",
-        "source": "https://www.thegradsanjose.com/",
-        "pick": 3,
-        "photo": "assets/housing/housing-san-jose-ca-property-the-grad-san-jose.jpg",
-        "photoAlt": "The Grad San Jose apartment tower and pool deck",
-        "photoApproved": true
-      },
-      {
         "id": "housing-san-jose-ca-property-state-on-6th",
         "name": "State on 6th",
         "website": "https://stateon6th.com/",
@@ -3469,9 +3456,22 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=State+on+6th%2C+San+Jose%2C+CA",
         "summary": "Apartments near San Jose State with a courtyard pool, listed on the property’s official site.",
         "source": "https://stateon6th.com/",
-        "pick": 2,
+        "pick": 1,
         "photo": "assets/housing/housing-san-jose-ca-property-state-on-6th.jpg",
         "photoAlt": "Courtyard pool at State on 6th in San Jose, from the property’s official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-san-jose-ca-property-the-grad-san-jose",
+        "name": "The Grad San Jose",
+        "website": "https://www.thegradsanjose.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The+Grad+San+Jose%2C+San+Jose%2C+CA",
+        "summary": "Apartment community near San Jose State University; the official site shows floor plans, amenities and how to apply.",
+        "source": "https://www.thegradsanjose.com/",
+        "pick": 2,
+        "photo": "assets/housing/housing-san-jose-ca-property-the-grad-san-jose.jpg",
+        "photoAlt": "The Grad San Jose apartment tower and pool deck",
         "photoApproved": true
       }
     ],
@@ -3824,7 +3824,7 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=The+Edge+at+Conway%2C+Conway%2C+AR",
         "summary": "Student apartment community near the University of Central Arkansas; the official site lists floor plans, amenities and leasing contact.",
         "source": "https://liveattheedgeconway.com/",
-        "pick": 2,
+        "pick": 1,
         "photo": "assets/housing/housing-conway-ar-property-the-edge-at-conway.jpg",
         "photoAlt": "Pool and clubhouse area at The Edge at Conway",
         "photoApproved": true
@@ -4514,19 +4514,6 @@
         "photo": "assets/housing/housing-williamsburg-va-property-current-midtown.jpg",
         "photoAlt": "Current Midtown apartment building near William & Mary, from the property’s official website",
         "photoApproved": true
-      },
-      {
-        "id": "housing-williamsburg-va-property-the-current-midtown",
-        "name": "The Current Midtown",
-        "website": "https://currentmidtown.com/",
-        "verifiedAt": "2026-11-16",
-        "maps": "https://www.google.com/maps/search/?api=1&query=The+Current+Midtown%2C+Williamsburg%2C+VA",
-        "summary": "Apartment community near William & Mary; the official site has floor plans, amenities and leasing info.",
-        "source": "https://currentmidtown.com/",
-        "pick": 2,
-        "photo": "assets/housing/housing-williamsburg-va-property-the-current-midtown.jpg",
-        "photoAlt": "The Current Midtown apartment building in Williamsburg",
-        "photoApproved": true
       }
     ]
   },
@@ -4985,19 +4972,6 @@
     "facebookGroup": "https://www.facebook.com/groups/cedarcityapartments/",
     "properties": [
       {
-        "id": "housing-cedar-city-ut-property-stonebrook-apartments",
-        "name": "Stonebrook Apartments",
-        "website": "https://stonebrooksuu.com/",
-        "verifiedAt": "2026-11-16",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Stonebrook+Apartments%2C+Cedar+City%2C+UT",
-        "summary": "Apartments near Southern Utah University in Cedar City; the official site lists unit types and leasing contact.",
-        "source": "https://stonebrooksuu.com/",
-        "pick": 3,
-        "photo": "assets/housing/housing-cedar-city-ut-property-stonebrook-apartments.jpg",
-        "photoAlt": "Brick townhome-style buildings at Stonebrook Apartments in Cedar City",
-        "photoApproved": true
-      },
-      {
         "id": "housing-cedar-city-ut-property-mountain-vista",
         "name": "Mountain Vista",
         "website": "https://mountainvistacedar.com/",
@@ -5005,9 +4979,22 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=Mountain+Vista%2C+Cedar+City%2C+UT",
         "summary": "Apartments in Cedar City near Southern Utah University; the official site has floor plans and leasing info.",
         "source": "https://mountainvistacedar.com/",
-        "pick": 2,
+        "pick": 1,
         "photo": "assets/housing/housing-cedar-city-ut-property-mountain-vista.jpg",
         "photoAlt": "Mountain Vista apartment building in Cedar City",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-cedar-city-ut-property-stonebrook-apartments",
+        "name": "Stonebrook Apartments",
+        "website": "https://stonebrooksuu.com/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Stonebrook+Apartments%2C+Cedar+City%2C+UT",
+        "summary": "Apartments near Southern Utah University in Cedar City; the official site lists unit types and leasing contact.",
+        "source": "https://stonebrooksuu.com/",
+        "pick": 2,
+        "photo": "assets/housing/housing-cedar-city-ut-property-stonebrook-apartments.jpg",
+        "photoAlt": "Brick townhome-style buildings at Stonebrook Apartments in Cedar City",
         "photoApproved": true
       }
     ]
