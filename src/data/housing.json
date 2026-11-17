@@ -4308,19 +4308,6 @@
         "photo": "assets/housing/housing-boca-raton-fl-property-vie-villas.jpg",
         "photoAlt": "Vie Villas at Boca Raton in Boca Raton, FL, from the property's official website",
         "photoApproved": true
-      },
-      {
-        "id": "housing-boca-raton-fl-property-vie-villas-boca-raton",
-        "name": "Vie Villas at Boca Raton",
-        "website": "https://www.vievillasbr.com/",
-        "verifiedAt": "2026-11-16",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Vie+Villas+at+Boca+Raton%2C+Boca+Raton%2C+FL",
-        "summary": "Student townhome-style apartments near Florida Atlantic University and Lynn University; the official site has floor plans and leasing info.",
-        "source": "https://www.vievillasbr.com/",
-        "pick": 2,
-        "photo": "assets/housing/housing-boca-raton-fl-property-vie-villas-boca-raton.jpg",
-        "photoAlt": "Townhome buildings at Vie Villas at Boca Raton",
-        "photoApproved": true
       }
     ]
   },
