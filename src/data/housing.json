@@ -4266,6 +4266,19 @@
           "facebookPost": "https://www.facebook.com/groups/sjsuapartments/posts/3591664291008922/",
           "photoPending": true
         }
+      },
+      {
+        "id": "housing-san-jose-ca-property-sjsu-housing",
+        "name": "San José State University Campus Housing",
+        "website": "https://sjsu.edu/housing-options/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=San+Jos%C3%A9+State+University+Campus+Housing%2C+San+Jose%2C+CA",
+        "summary": "SJSU housing options page covering Campus Village and other on-campus residence communities, with rates and application information.",
+        "source": "https://sjsu.edu/housing-options/",
+        "pick": 3,
+        "photo": "assets/housing/housing-san-jose-ca-property-sjsu-housing.jpg",
+        "photoAlt": "Campus Village residence towers at San José State University",
+        "photoApproved": true
       }
     ],
     "facebookGroupsMore": [
@@ -6596,6 +6609,32 @@
           "facebookPost": "https://www.facebook.com/groups/elpasorentals/posts/2703496483436969/",
           "photoPending": true
         }
+      },
+      {
+        "id": "housing-el-paso-tx-property-utep-housing",
+        "name": "UTEP Residence Life and Housing",
+        "website": "https://www.utep.edu/student-affairs/housing/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=UTEP+Residence+Life+and+Housing%2C+El+Paso%2C+TX",
+        "summary": "University of Texas at El Paso residence halls and apartments, with rates, floor plans and the application on the university site.",
+        "source": "https://www.utep.edu/student-affairs/housing/",
+        "pick": 1,
+        "photo": "assets/housing/housing-el-paso-tx-property-utep-housing.jpg",
+        "photoAlt": "Bicycles outside a UTEP residence building",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-el-paso-tx-property-live-here-housing-utep",
+        "name": "Live Here Housing near UTEP",
+        "website": "https://www.liveherehousing.com/utep",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Live+Here+Housing+near+UTEP%2C+El+Paso%2C+TX",
+        "summary": "Locally managed student rentals near UTEP, with property listings and leasing contact details.",
+        "source": "https://www.liveherehousing.com/utep",
+        "pick": 2,
+        "photo": "assets/housing/housing-el-paso-tx-property-live-here-housing-utep.jpg",
+        "photoAlt": "Townhome-style student housing near UTEP",
+        "photoApproved": true
       }
     ]
   },
