@@ -4826,6 +4826,32 @@
           "facebookPost": "https://www.facebook.com/groups/1645715680533070/posts/1657118236059481/",
           "photoPending": true
         }
+      },
+      {
+        "id": "housing-conway-ar-property-uca-bear-village",
+        "name": "UCA Bear Village",
+        "website": "https://uca.edu/housing/bear-village/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=UCA+Bear+Village%2C+Conway%2C+AR",
+        "summary": "University of Central Arkansas apartment-style housing, with unit types, rates and application steps on the university site.",
+        "source": "https://uca.edu/housing/bear-village/",
+        "pick": 2,
+        "photo": "assets/housing/housing-conway-ar-property-uca-bear-village.jpg",
+        "photoAlt": "Bedroom in a UCA Bear Village apartment",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-conway-ar-property-uca-stadium-park",
+        "name": "UCA Stadium Park",
+        "website": "https://uca.edu/housing/stadium-park/",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=UCA+Stadium+Park%2C+Conway%2C+AR",
+        "summary": "University of Central Arkansas apartment housing near the stadium, with unit information and application steps from the university.",
+        "source": "https://uca.edu/housing/stadium-park/",
+        "pick": 3,
+        "photo": "assets/housing/housing-conway-ar-property-uca-stadium-park.jpg",
+        "photoAlt": "Bedroom in a UCA Stadium Park apartment",
+        "photoApproved": true
       }
     ]
   },
@@ -5641,6 +5667,19 @@
         "pick": 2,
         "photo": "assets/housing/housing-fairfax-va-property-the-main-on-university.jpg",
         "photoAlt": "The Main on University building near George Mason University, from the property’s official website",
+        "photoApproved": true
+      },
+      {
+        "id": "housing-fairfax-va-property-camden-fairfax-corner",
+        "name": "Camden Fairfax Corner",
+        "website": "https://www.camdenliving.com/apartments/fairfax-va/camden-fairfax-corner",
+        "verifiedAt": "2026-11-16",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Camden+Fairfax+Corner%2C+Fairfax%2C+VA",
+        "summary": "Apartment community in Fairfax with floor plans and current availability from the property operator. Not student-specific, so confirm lease terms for students.",
+        "source": "https://www.camdenliving.com/apartments/fairfax-va/camden-fairfax-corner",
+        "pick": 3,
+        "photo": "assets/housing/housing-fairfax-va-property-camden-fairfax-corner.jpg",
+        "photoAlt": "Kitchen in a Camden Fairfax Corner apartment",
         "photoApproved": true
       }
     ]
