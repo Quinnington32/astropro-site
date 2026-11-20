@@ -3551,3 +3551,6 @@ a.tool-card{display:block;text-decoration:none;color:inherit}
 
 /* Guard against full-bleed scrollers widening the page on phones */
 html, body { overflow-x: clip; }
+.sl-market-feed[hidden],[data-sl-empty][hidden]{display:none}
+.sl-market-feed{margin-bottom:1.25rem}
+.sl-list-cta a{font-weight:600}

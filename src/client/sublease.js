@@ -314,6 +314,30 @@ async function managePage() {
   };
   render();
 }
+// ---------- Market pages: student posts inside "Available Rentals" ----------
+async function marketFeed() {
+  const box = $("[data-sl-market]");
+  if (!box) return;
+  try {
+    const { items } = await api("/listings?market=" + encodeURIComponent(box.dataset.slMarket));
+    if (!items.length) return;
+    box.innerHTML = items
+      .map(
+        (l) =>
+          `<article class="rental-card sl-student-post"><div class="rental-visual"><img loading="lazy" decoding="async" alt="${esc(l.title)}" src="/api/sublease/photo/${esc(l.id)}/0"><span class="rental-badge">${esc(typeLabel[l.type])}</span></div><div class="rental-body"><div class="card-heading"><h3>${esc(l.title)}</h3></div><p class="rental-meta">${esc(l.area)} · ${esc(bedText(l))} · ${dateText(l.startDate)} – ${dateText(l.endDate)}</p><p><strong>${money(l.rent)}/mo</strong>${l.utilities === "yes" ? ", utilities included" : ""}${l.furnished === "yes" ? ", furnished" : ""}</p><div class="cta-row"><a class="btn btn-primary" href="sublease-listing.html?id=${esc(l.id)}">View and message</a></div><p class="review-date">Posted by a student. Confirm landlord approval and see the place before you pay anyone.</p></div></article>`,
+      )
+      .join("");
+    box.hidden = false;
+    $("[data-sl-empty]")?.setAttribute("hidden", "");
+  } catch {}
+}
+// Preselect the market when arriving from a market page.
+{
+  const want = new URLSearchParams(location.search).get("market");
+  const sel = $("#slMarket");
+  if (want && sel && [...sel.options].some((o) => o.value === want)) sel.value = want;
+}
+marketFeed();
 startPage();
 browsePage();
 listingPage();
