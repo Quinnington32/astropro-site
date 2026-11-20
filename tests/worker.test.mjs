@@ -684,9 +684,9 @@ test("sublease war room: listing lifecycle, payment gate, leads and owner dashbo
   });
   assert.equal(created.status, 201);
   const { id, manageToken } = await created.json();
-  // live immediately on a free trial
-  assert.equal((await api("/listings/" + id)).status, 200);
-  assert.equal((await (await api("/listings")).json()).items.length, 1);
+  // not public until it is paid for
+  assert.equal((await api("/listings/" + id)).status, 404);
+  assert.equal((await (await api("/listings")).json()).items.length, 0);
   const lead = { listingId: id, name: "Ana", email: "ana@example.com", message: "Can I tour Friday?" };
   // admin activation requires the private key
   assert.equal((await api("/../api/admin/sublease/activate".replace("/../api", ""), { method: "POST", body: JSON.stringify({ id }) })).status, 404);
@@ -694,6 +694,7 @@ test("sublease war room: listing lifecycle, payment gate, leads and owner dashbo
   assert.equal(noKey.status, 401);
   const act = await mf.dispatchFetch(origin + "/api/admin/sublease/activate", { method: "POST", headers: { "Content-Type": "application/json", Authorization: "Bearer " + token }, body: JSON.stringify({ id }) });
   assert.equal((await act.json()).ok, true);
+  assert.equal((await (await api("/listings")).json()).items.length, 1);
   const pub = await (await api("/listings/" + id)).json();
   assert.equal(pub.listing.rent, 900);
   assert.equal(JSON.stringify(pub).includes("sam@example.com"), false);

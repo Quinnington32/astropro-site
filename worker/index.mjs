@@ -884,6 +884,12 @@ export default {
       env.DB.prepare(
         "UPDATE sublease_listings SET status='expired' WHERE status='live' AND expires_at < ?",
       ).bind(new Date().toISOString()),
+      env.DB.prepare(
+        "DELETE FROM sublease_photos WHERE listing_id IN (SELECT id FROM sublease_listings WHERE status='pending_payment' AND created_at < ?)",
+      ).bind(new Date(Date.now() - 14 * 86400000).toISOString()),
+      env.DB.prepare(
+        "DELETE FROM sublease_listings WHERE status='pending_payment' AND created_at < ?",
+      ).bind(new Date(Date.now() - 14 * 86400000).toISOString()),
       env.DB.prepare("DELETE FROM rate_limits WHERE expires_at < ?").bind(
         Date.now(),
       ),

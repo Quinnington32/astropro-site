@@ -6,7 +6,6 @@ const EMAIL = /^[^\s@]{1,64}@[^\s@]{1,190}\.[^\s@]{2,}$/;
 const PHOTO = /^data:image\/jpeg;base64,[A-Za-z0-9+/=]+$/;
 const MAX_PHOTO = 450000;
 const LIVE_DAYS = 60;
-const TRIAL_DAYS = 3;
 export const PAYPAL_DEFAULT_BUSINESS = "michael.squinn8989@gmail.com";
 export const PAYPAL_DEFAULT_PRICE = 39;
 // Decide whether a verified PayPal IPN pays for a listing. Pure so it can be tested.
@@ -294,14 +293,14 @@ export async function handleSublease(request, env, path, h) {
     await env.DB.batch([
       env.DB.prepare(
         "INSERT INTO sublease_listings (id,token_hash,status,market,market_name,owner_email,data_json,created_at,updated_at,expires_at) VALUES (?,?,?,?,?,?,?,?,?,?)",
-      ).bind(id, await h.digest(token), "live", data.market, data.marketName, data.ownerEmail, JSON.stringify(data), now, now, new Date(Date.now() + TRIAL_DAYS * 86400000).toISOString()),
+      ).bind(id, await h.digest(token), "pending_payment", data.market, data.marketName, data.ownerEmail, JSON.stringify(data), now, now, null),
       ...photos.map((p, i) =>
         env.DB.prepare("INSERT INTO sublease_photos (listing_id,n,data) VALUES (?,?,?)").bind(id, i, p),
       ),
     ]);
     await h.notify?.(
       "New Sublease War Room listing — " + data.marketName + " (" + id + ")",
-      "A student created a listing.\nReference: " + id + "\nMarket: " + data.marketName + "\nTitle: " + data.title + "\nRent: $" + data.rent + "/mo\nOwner: " + data.ownerName + " <" + data.ownerEmail + ">\n\nIt is live now with a " + TRIAL_DAYS + "-day trial. A PayPal payment with item number " + id + " extends it to " + LIVE_DAYS + " days automatically.",
+      "A student created a listing.\nReference: " + id + "\nMarket: " + data.marketName + "\nTitle: " + data.title + "\nRent: $" + data.rent + "/mo\nOwner: " + data.ownerName + " <" + data.ownerEmail + ">\n\nIt is waiting for payment. A PayPal payment with item number " + id + " makes it live for " + LIVE_DAYS + " days automatically.",
     );
     return json({ ok: true, id, manageToken: token }, 201);
   }
