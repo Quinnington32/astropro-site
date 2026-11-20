@@ -2037,7 +2037,13 @@
         "pick": 1,
         "photo": "assets/housing/housing-kirksville-mo-property-vicki-benson-properties.jpg",
         "photoAlt": "Vicki Benson Properties in Kirksville, MO, from the property's official website",
-        "photoApproved": true
+        "photoApproved": true,
+        "address": "802 West Normal Street, Kirksville, MO",
+        "spotlight": {
+          "publishedAt": "2026-11-19",
+          "facebookPost": "https://www.facebook.com/groups/2205622230329742/posts/2212876246271007/",
+          "photoPending": true
+        }
       },
       {
         "id": "housing-kirksville-mo-property-truman-rentals",
@@ -2346,6 +2352,21 @@
           "facebookPost": "https://www.facebook.com/groups/1672495207705371/posts/1678994457055446/",
           "photoPending": true
         }
+      },
+      {
+        "id": "housing-platteville-wi-property-bnl-485-southwest-road",
+        "name": "BNL, 485 Southwest Road",
+        "website": "",
+        "verifiedAt": "2026-11-20",
+        "maps": "https://www.google.com/maps/search/?api=1&query=BNL%20485%20Southwest%20Road%2C%20Platteville%2C%20WI",
+        "address": "485 Southwest Road, Platteville, WI",
+        "summary": "BNL lists a three-bedroom, one-bath duplex at 485 Southwest Road, two blocks from UW-Platteville. It has off-street parking and laundry hookups. Tenants pay utilities.",
+        "source": "https://www.facebook.com/groups/1672495207705371/posts/1679937163627842/",
+        "spotlight": {
+          "publishedAt": "2026-11-19",
+          "facebookPost": "https://www.facebook.com/groups/1672495207705371/posts/1679937163627842/",
+          "photoPending": true
+        }
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/1672495207705371/"
@@ -2565,6 +2586,21 @@
         "spotlight": {
           "publishedAt": "2026-11-17",
           "facebookPost": "https://www.facebook.com/groups/1129982866618268/posts/1136169099332978/",
+          "photoPending": true
+        }
+      },
+      {
+        "id": "housing-emporia-ks-property-prairie-sage-apartment-homes",
+        "name": "Prairie Sage Apartment Homes",
+        "website": "",
+        "verifiedAt": "2026-11-20",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Prairie%20Sage%20Apartment%20Homes%2C%20Emporia%2C%20KS",
+        "address": "Emporia, KS",
+        "summary": "Prairie Sage Apartment Homes lists a one-bedroom, one-bath layout across from Emporia State. The 600-square-foot plan has a kitchen bar and walk-in closet.",
+        "source": "https://www.facebook.com/groups/1129982866618268/posts/1137117009238187/",
+        "spotlight": {
+          "publishedAt": "2026-11-19",
+          "facebookPost": "https://www.facebook.com/groups/1129982866618268/posts/1137117009238187/",
           "photoPending": true
         }
       }
