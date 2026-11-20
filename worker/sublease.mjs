@@ -6,6 +6,23 @@ const EMAIL = /^[^\s@]{1,64}@[^\s@]{1,190}\.[^\s@]{2,}$/;
 const PHOTO = /^data:image\/jpeg;base64,[A-Za-z0-9+/=]+$/;
 const MAX_PHOTO = 450000;
 const LIVE_DAYS = 60;
+const TRIAL_DAYS = 3;
+export const PAYPAL_DEFAULT_BUSINESS = "michael.squinn8989@gmail.com";
+export const PAYPAL_DEFAULT_PRICE = 39;
+// Decide whether a verified PayPal IPN pays for a listing. Pure so it can be tested.
+export function ipnDecision(p, { business, price }) {
+  const get = (k) => (p.get(k) || "").trim();
+  if (get("payment_status") !== "Completed") return { ok: false, why: "not completed" };
+  if (get("receiver_email").toLowerCase() !== business.toLowerCase() && get("business").toLowerCase() !== business.toLowerCase())
+    return { ok: false, why: "wrong receiver" };
+  if (get("mc_currency") !== "USD") return { ok: false, why: "wrong currency" };
+  if (!(Number(get("mc_gross")) >= price)) return { ok: false, why: "amount too low" };
+  const id = get("item_number");
+  if (!ID.test(id)) return { ok: false, why: "no listing" };
+  const txn = get("txn_id");
+  if (!txn || txn.length > 40) return { ok: false, why: "no txn" };
+  return { ok: true, id, txn };
+}
 export const PERMISSION = ["approved", "pending", "not-asked", "not-allowed"];
 const SCAM =
   /(wire transfer|western union|gift ?card|bitcoin|crypto|cash ?app|venmo first|zelle first|send (the )?deposit|out of the (country|state)|overseas|mail (you )?the keys|ship the keys|before (seeing|viewing)|without (seeing|viewing)|paypal friends)/i;
@@ -161,6 +178,33 @@ export async function handleSublease(request, env, path, h) {
   const ip = request.headers.get("cf-connecting-ip") || "unknown";
   const day = new Date().toISOString().slice(0, 10);
 
+  // PayPal Instant Payment Notification: verified server-to-server, then extends the listing.
+  if (path === "/api/sublease/paypal-ipn" && request.method === "POST") {
+    const raw = await request.text();
+    if (raw.length > 8000) return new Response("too large", { status: 413 });
+    const verify = await (h.fetch || fetch)("https://ipnpb.paypal.com/cgi-bin/webscr", {
+      method: "POST",
+      headers: { "content-type": "application/x-www-form-urlencoded", "user-agent": "AstroPro-IPN" },
+      body: "cmd=_notify-validate&" + raw,
+    }).catch(() => null);
+    if (!verify || (await verify.text()).trim() !== "VERIFIED") return new Response("ignored");
+    const d = ipnDecision(new URLSearchParams(raw), {
+      business: env.PAYPAL_BUSINESS_EMAIL || PAYPAL_DEFAULT_BUSINESS,
+      price: Number(env.SUBLEASE_PRICE || PAYPAL_DEFAULT_PRICE),
+    });
+    if (!d.ok) return new Response("ignored");
+    const expires = new Date(Date.now() + LIVE_DAYS * 86400000).toISOString();
+    const r = await env.DB.prepare(
+      "UPDATE sublease_listings SET status=CASE WHEN status='filled' THEN status ELSE 'live' END, paid_at=?, expires_at=?, txn_id=?, updated_at=? WHERE id=? AND txn_id IS NULL",
+    )
+      .bind(now, expires, d.txn, now, d.id)
+      .run()
+      .catch(() => null);
+    if (r?.meta?.changes === 1)
+      await h.notify?.("Sublease War Room payment received (" + d.id + ")", "PayPal payment " + d.txn + " confirmed for listing " + d.id + ". It is live for " + LIVE_DAYS + " days.");
+    return new Response("ok");
+  }
+
   // Admin: list and activate (after payment is confirmed).
   if (path.startsWith("/api/admin/sublease")) {
     if (!(await h.authorize(request, env)))
@@ -192,7 +236,7 @@ export async function handleSublease(request, env, path, h) {
   let m = path.match(/^\/api\/sublease\/photo\/([a-z0-9]{12})\/(\d)$/);
   if (m && request.method === "GET") {
     const row = await env.DB.prepare(
-      "SELECT p.data FROM sublease_photos p JOIN sublease_listings l ON l.id=p.listing_id WHERE p.listing_id=? AND p.n=? AND l.status IN ('live','filled','pending_payment')",
+      "SELECT p.data FROM sublease_photos p JOIN sublease_listings l ON l.id=p.listing_id WHERE p.listing_id=? AND p.n=? AND l.status IN ('live','filled','paused','expired')",
     )
       .bind(m[1], Number(m[2]))
       .first();
@@ -226,9 +270,9 @@ export async function handleSublease(request, env, path, h) {
   m = path.match(/^\/api\/sublease\/listings\/([a-z0-9]{12})$/);
   if (m && request.method === "GET") {
     const row = await env.DB.prepare(
-      "SELECT * FROM sublease_listings WHERE id=? AND status IN ('live','filled')",
+      "SELECT * FROM sublease_listings WHERE id=? AND (status='filled' OR (status='live' AND (expires_at IS NULL OR expires_at > ?)))",
     )
-      .bind(m[1])
+      .bind(m[1], now)
       .first();
     if (!row) return json({ error: "That listing is no longer available." }, 404);
     const counts = await photoCounts(env, [row.id]);
@@ -248,15 +292,15 @@ export async function handleSublease(request, env, path, h) {
       token = rand(24);
     await env.DB.batch([
       env.DB.prepare(
-        "INSERT INTO sublease_listings (id,token_hash,status,market,market_name,owner_email,data_json,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?,?)",
-      ).bind(id, await h.digest(token), "pending_payment", data.market, data.marketName, data.ownerEmail, JSON.stringify(data), now, now),
+        "INSERT INTO sublease_listings (id,token_hash,status,market,market_name,owner_email,data_json,created_at,updated_at,expires_at) VALUES (?,?,?,?,?,?,?,?,?,?)",
+      ).bind(id, await h.digest(token), "live", data.market, data.marketName, data.ownerEmail, JSON.stringify(data), now, now, new Date(Date.now() + TRIAL_DAYS * 86400000).toISOString()),
       ...photos.map((p, i) =>
         env.DB.prepare("INSERT INTO sublease_photos (listing_id,n,data) VALUES (?,?,?)").bind(id, i, p),
       ),
     ]);
     await h.notify?.(
       "New Sublease War Room listing — " + data.marketName + " (" + id + ")",
-      "A student created a listing.\nReference: " + id + "\nMarket: " + data.marketName + "\nTitle: " + data.title + "\nRent: $" + data.rent + "/mo\nOwner: " + data.ownerName + " <" + data.ownerEmail + ">\n\nCheck PayPal for a payment with item number " + id + ", then activate the listing from the admin tools.",
+      "A student created a listing.\nReference: " + id + "\nMarket: " + data.marketName + "\nTitle: " + data.title + "\nRent: $" + data.rent + "/mo\nOwner: " + data.ownerName + " <" + data.ownerEmail + ">\n\nIt is live now with a " + TRIAL_DAYS + "-day trial. A PayPal payment with item number " + id + " extends it to " + LIVE_DAYS + " days automatically.",
     );
     return json({ ok: true, id, manageToken: token }, 201);
   }
@@ -270,9 +314,9 @@ export async function handleSublease(request, env, path, h) {
     if (!(await h.quota(env.DB, "sublease-lead:" + ip + ":" + day, 15, Date.now() + 86400000)))
       return json({ error: "Too many messages from this connection today." }, 429);
     const live = await env.DB.prepare(
-      "SELECT id FROM sublease_listings WHERE id=? AND status='live'",
+      "SELECT id FROM sublease_listings WHERE id=? AND status='live' AND (expires_at IS NULL OR expires_at > ?)",
     )
-      .bind(lead.listingId)
+      .bind(lead.listingId, now)
       .first();
     if (!live) return json({ error: "That listing is no longer taking messages." }, 404);
     await env.DB.prepare(

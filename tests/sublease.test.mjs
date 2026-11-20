@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { validateListing, validateLead } from "../worker/sublease.mjs";
+import { validateListing, validateLead, ipnDecision } from "../worker/sublease.mjs";
 const photo = "data:image/jpeg;base64," + "A".repeat(100);
 const good = () => ({
   market: "housing-madison", marketName: "Madison, WI", school: "UW", area: "Near campus",
@@ -29,4 +29,14 @@ test("flags scam-like lead messages", () => {
   assert.equal(validateLead({ ...base, message: "Can I tour on Friday?" }).flagged, 0);
   assert.equal(validateLead({ ...base, message: "I am out of the country, send the deposit by Zelle" }).flagged, 1);
   assert.throws(() => validateLead({ ...base, listingId: "x", message: "hello there" }), /not found/);
+});
+
+test("PayPal IPN decision checks status, receiver, currency, amount and listing", () => {
+  const opts = { business: "pay@example.com", price: 39 };
+  const ok = new URLSearchParams("payment_status=Completed&receiver_email=PAY@example.com&mc_currency=USD&mc_gross=39.00&item_number=abcdefghij12&txn_id=T123");
+  assert.deepEqual(ipnDecision(ok, opts), { ok: true, id: "abcdefghij12", txn: "T123" });
+  for (const [k, v] of [["payment_status", "Pending"], ["receiver_email", "x@evil.com"], ["mc_currency", "EUR"], ["mc_gross", "5.00"], ["item_number", "nope"], ["txn_id", ""]]) {
+    const p = new URLSearchParams(ok); p.set(k, v);
+    assert.equal(ipnDecision(p, opts).ok, false, k);
+  }
 });

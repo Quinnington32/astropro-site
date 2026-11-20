@@ -97,13 +97,13 @@ function startPage() {
       try {
         localStorage.setItem("astropro.sublease." + out.id, out.manageToken);
       } catch {}
-      showSuccess(out.id, link, body.marketName);
+      showSuccess(out.id, link, body.marketName, out.manageToken);
     } catch (e) {
       say(msg, e.message);
       btn.disabled = false;
     }
   });
-  function showSuccess(id, link, marketName) {
+  function showSuccess(id, link, marketName, token) {
     const box = $("#slSuccess");
     const pay = $("[data-sl-pay]");
     const url = new URL("https://www.paypal.com/cgi-bin/webscr");
@@ -114,6 +114,8 @@ function startPage() {
     url.searchParams.set("amount", Number(pay.dataset.price).toFixed(2));
     url.searchParams.set("currency_code", "USD");
     url.searchParams.set("no_shipping", "1");
+    url.searchParams.set("notify_url", location.origin + "/api/sublease/paypal-ipn");
+    url.searchParams.set("return", location.origin + "/sublease-manage.html#" + id + "." + token);
     pay.href = url.href;
     $("[data-sl-ref]").textContent = id;
     $("[data-sl-manage]").href = link;
@@ -172,7 +174,6 @@ async function listingPage() {
     document.title = l.title + " — Sublease War Room";
     const photos = Array.from({ length: l.photos }, (_, i) => `<img alt="${esc(l.title)} photo ${i + 1}" src="/api/sublease/photo/${esc(l.id)}/${i}" loading="${i ? "lazy" : "eager"}">`).join("");
     view.innerHTML = `<div class="sl-gallery">${photos}</div><div class="sl-head"><span class="sl-tag">${esc(typeLabel[l.type])}</span>${l.status === "filled" ? '<span class="sl-tag sl-filled">Filled</span>' : ""}<h2 class="sl-title">${esc(l.title)}</h2><p class="sl-price">${money(l.rent)}<small>/mo</small></p></div><dl class="sl-facts"><div><dt>Where</dt><dd>${esc(l.area)}, ${esc(l.marketName)}</dd></div><div><dt>Near</dt><dd>${esc(l.school || l.marketName)}</dd></div><div><dt>Dates</dt><dd>${dateText(l.startDate)} – ${dateText(l.endDate)}</dd></div><div><dt>Size</dt><dd>${esc(bedText(l))}</dd></div><div><dt>Furnished</dt><dd>${esc({ yes: "Yes", no: "No", partly: "Partly" }[l.furnished])}</dd></div><div><dt>Utilities</dt><dd>${esc({ yes: "Included", no: "Not included", some: "Some included" }[l.utilities])}</dd></div>${l.deposit ? `<div><dt>Deposit</dt><dd>${money(l.deposit)}</dd></div>` : ""}<div><dt>Landlord OK</dt><dd>${esc({ approved: "Approved in writing", pending: "Requested", "not-asked": "Being requested" }[l.permission] || "")}</dd></div></dl><div class="prose"><h2>About this place</h2><p>${esc(l.description).replace(/\n/g, "<br>")}</p></div>`;
-    $("#slListingTitle").textContent = l.title;
     if (l.status === "filled") form.hidden = true;
     form.dataset.listing = l.id;
   } catch (e) {
@@ -251,11 +252,13 @@ async function managePage() {
     l.ownerName = data.ownerName || "";
     const k = kit(l, groups[l.market]);
     const live = l.status === "live";
-    const pending = l.status === "pending_payment";
+    const paid = !!data.paidAt;
+    const pending = !paid && ["live", "expired"].includes(l.status);
+    const until = data.expiresAt ? new Date(data.expiresAt).toLocaleDateString("en-US", { month: "short", day: "numeric" }) : "";
     const steps = [
       ["Landlord permission", l.permission === "approved" ? "done" : "todo", l.permission === "approved" ? "Approved in writing." : "Send the email below and get approval in writing before you accept anyone."],
       ["Listing created", "done", "Your listing is built with photos and details."],
-      ["Listing live", live ? "done" : "todo", pending ? "Complete payment below. We turn it on after we confirm it." : live ? "Live on the Sublease War Room." : "Status: " + l.status + "."],
+      ["Listing live", live ? "done" : "todo", live ? (paid ? "Live until " + until + "." : "Live now on a free trial until " + until + ". Keep it live with the listing fee.") : l.status === "expired" ? "Expired. Pay the listing fee to bring it back." : "Status: " + l.status + "."],
       ["Get messages", data.leads.length ? "done" : "todo", data.leads.length ? data.leads.length + " message" + (data.leads.length === 1 ? "" : "s") + " so far." : "Post your listing using the launch kit below."],
       ["Tours and applications", "todo", "Show the place in person or on live video. Never take money before you've seen proof of identity and the landlord has approved."],
       ["Sign the agreement", "todo", "Use a written sublease or the landlord's own form. See the guide for what to include."],
@@ -269,11 +272,13 @@ async function managePage() {
     payUrl.searchParams.set("amount", Number(payBase.price).toFixed(2));
     payUrl.searchParams.set("currency_code", "USD");
     payUrl.searchParams.set("no_shipping", "1");
+    payUrl.searchParams.set("notify_url", location.origin + "/api/sublease/paypal-ipn");
+    payUrl.searchParams.set("return", location.origin + "/sublease-manage.html#" + id + "." + saved);
     const copy = (key, label, text) =>
       `<div class="sl-kit"><div class="sl-kit-head"><h3>${esc(label)}</h3><button class="btn btn-ghost" type="button" data-copy="${key}">Copy</button></div><pre>${esc(text)}</pre></div>`;
     dash.innerHTML = `
-      <div class="sl-status ${esc(l.status)}"><div><strong>${esc(l.title)}</strong><span>${esc(l.marketName)} · ${money(l.rent)}/mo</span></div><span class="sl-pill">${esc({ pending_payment: "Waiting for payment", live: "Live", paused: "Paused", filled: "Filled", expired: "Expired" }[l.status])}</span></div>
-      ${pending ? `<div class="callout"><h2>Turn your listing on</h2><p>Your listing is saved. Pay the one-time listing fee and we'll switch it on, usually within a few hours. Your reference code is <code>${esc(l.id)}</code>.</p><p><a class="btn btn-primary" href="${payUrl.href}" rel="noopener">Pay $${esc(payBase.price)} with PayPal</a></p><p class="fineprint">Questions? Email <a href="mailto:leasesolutions3@gmail.com">leasesolutions3@gmail.com</a> with your reference code.</p></div>` : ""}
+      <div class="sl-status ${esc(l.status)}"><div><strong>${esc(l.title)}</strong><span>${esc(l.marketName)} · ${money(l.rent)}/mo</span></div><span class="sl-pill">${esc({ pending_payment: "Waiting for payment", live: paid ? "Live" : "Live (trial)", paused: "Paused", filled: "Filled", expired: "Expired" }[l.status])}</span></div>
+      ${pending ? `<div class="callout"><h2>${l.status === "expired" ? "Bring your listing back" : "Keep your listing live"}</h2><p>${l.status === "expired" ? "Your trial ended." : "Your listing is live on a free trial until " + esc(until) + "."} Pay the one-time listing fee and it stays live for 60 days. It updates automatically within a minute or two of your payment. Your reference code is <code>${esc(l.id)}</code>.</p><p><a class="btn btn-primary" href="${payUrl.href}" rel="noopener">Pay $${esc(payBase.price)} with PayPal</a></p><p class="fineprint">Questions? Email <a href="mailto:leasesolutions3@gmail.com">leasesolutions3@gmail.com</a> with your reference code.</p></div>` : ""}
       <section><h2>Your sublease checklist</h2><ol class="sl-steps">${steps.map(([t, s, d]) => `<li class="${s}"><strong>${esc(t)}</strong><span>${esc(d)}</span></li>`).join("")}</ol></section>
       <section><h2>Messages from students (${data.leads.length})</h2>${data.leads.length ? data.leads.map((x) => `<article class="sl-lead${x.flagged ? " flagged" : ""}"><header><strong>${esc(x.name)}</strong><time>${new Date(x.created_at).toLocaleString()}</time></header>${x.flagged ? '<p class="sl-warn">Careful: this message uses wording common in rental scams. Don\'t send money or keys, and meet in person first.</p>' : ""}<p>${esc(x.message).replace(/\n/g, "<br>")}</p><p><a href="mailto:${esc(x.email)}">${esc(x.email)}</a>${x.phone ? " · " + esc(x.phone) : ""}</p></article>`).join("") : "<p>No messages yet. Use the launch kit below to get your first ones.</p>"}</section>
       <section><h2>Launch kit</h2><p>Everything below is written from your listing. Copy it, paste it, and you're posted.</p>

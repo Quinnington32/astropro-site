@@ -48,6 +48,7 @@ before(async () => {
     "migrations/0002_partner_campaign_type.sql",
     "migrations/0003_scholarship_interest_type.sql",
     "migrations/0004_sublease_war_room.sql",
+    "migrations/0005_sublease_payments.sql",
   ]) {
     const schema = await readFile(file, "utf8");
     await db.batch(
@@ -682,13 +683,10 @@ test("sublease war room: listing lifecycle, payment gate, leads and owner dashbo
   });
   assert.equal(created.status, 201);
   const { id, manageToken } = await created.json();
-  // not public until paid and activated
-  assert.equal((await api("/listings/" + id)).status, 404);
-  assert.equal((await api("/listings")).status, 200);
-  assert.equal((await (await api("/listings")).json()).items.length, 0);
-  // leads are refused while the listing is not live
+  // live immediately on a free trial
+  assert.equal((await api("/listings/" + id)).status, 200);
+  assert.equal((await (await api("/listings")).json()).items.length, 1);
   const lead = { listingId: id, name: "Ana", email: "ana@example.com", message: "Can I tour Friday?" };
-  assert.equal((await api("/leads", { method: "POST", body: JSON.stringify(lead) })).status, 404);
   // admin activation requires the private key
   assert.equal((await api("/../api/admin/sublease/activate".replace("/../api", ""), { method: "POST", body: JSON.stringify({ id }) })).status, 404);
   const noKey = await mf.dispatchFetch(origin + "/api/admin/sublease/activate", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id }) });
@@ -700,6 +698,10 @@ test("sublease war room: listing lifecycle, payment gate, leads and owner dashbo
   assert.equal(JSON.stringify(pub).includes("sam@example.com"), false);
   assert.equal((await api("/photo/" + id + "/0")).status, 200);
   assert.equal((await api("/leads", { method: "POST", body: JSON.stringify(lead) })).status, 201);
+  // a spoofed PayPal notification is ignored when PayPal can't verify it
+  const spoof = await mf.dispatchFetch(origin + "/api/sublease/paypal-ipn", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: "payment_status=Completed&item_number=" + id + "&txn_id=FAKE1&mc_gross=39&mc_currency=USD" });
+  assert.equal(spoof.status, 200);
+  assert.equal((await db.prepare("SELECT paid_at FROM sublease_listings WHERE id=?").bind(id).first()).paid_at !== null, true); // paid only by the admin activation above
   await api("/leads", { method: "POST", body: JSON.stringify({ ...lead, message: "Please wire the deposit, I am out of the country" }) });
   // owner dashboard needs the private token
   assert.equal((await api("/manage/" + id)).status, 404);
