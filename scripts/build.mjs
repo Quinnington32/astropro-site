@@ -778,7 +778,7 @@ emit(
 <div class="sl-row"><div class="field"><label for="slName">Your name</label><input id="slName" name="ownerName" maxlength="100" autocomplete="name" required></div><div class="field"><label for="slEmail">Your email</label><input id="slEmail" name="ownerEmail" type="email" maxlength="254" autocomplete="email" required></div></div>
 <div class="field"><label for="slPhone">Phone (optional, private)</label><input id="slPhone" name="ownerPhone" type="tel" maxlength="40" autocomplete="tel"></div>
 <div class="honeypot" aria-hidden="true"><label for="slWebsite">Leave this empty</label><input id="slWebsite" name="website" tabindex="-1" autocomplete="off"></div>
-<label class="checkbox-label"><input id="slConsent" type="checkbox" required> I have the right to list this place, and my landlord permits it or I will get permission before I accept anyone.</label>
+<label class="checkbox-label"><input id="slConsent" type="checkbox" required><span>I have the right to list this place, and my landlord permits it or I will get permission before I accept anyone.</span></label>
 <p class="fineprint">Your name and contact details are never shown on the public listing. Students message you through the page, and you see their messages in your private dashboard.</p>
 <p id="slFormMsg" class="sl-msg" role="alert" hidden></p>
 <button class="btn btn-primary" type="submit">Create my listing</button>

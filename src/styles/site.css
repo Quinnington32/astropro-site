@@ -3503,7 +3503,9 @@ a.tool-card{display:block;text-decoration:none;color:inherit}
 
 /* Sublease War Room */
 .sl-form .field{margin-bottom:1rem}
-.sl-form input,.sl-form select,.sl-form textarea{width:100%}
+.sl-form input,.sl-form select,.sl-form textarea{width:100%;max-width:100%}
+.sl-form input[type=checkbox]{width:18px}
+.sl-form .checkbox-label{margin:1rem 0}
 .sl-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 @media (max-width:600px){.sl-row{grid-template-columns:1fr}}
 .sl-previews{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.5rem}
@@ -3546,3 +3548,6 @@ a.tool-card{display:block;text-decoration:none;color:inherit}
 .sl-kit pre{white-space:pre-wrap;word-break:break-word;font:inherit;background:var(--surface-2);border-radius:10px;padding:.9rem;margin:.6rem 0 0}
 .sl-days li{margin:.35rem 0}
 .sl-actions .btn{margin:.25rem .4rem .25rem 0}
+
+/* Guard against full-bleed scrollers widening the page on phones */
+html, body { overflow-x: clip; }
