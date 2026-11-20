@@ -33,6 +33,7 @@ before(async () => {
       modules: [
         { type: "ESModule", path: "worker/index.mjs" },
         { type: "ESModule", path: "worker/market-links.mjs" },
+        { type: "ESModule", path: "worker/sublease.mjs" },
       ],
       modulesRoot: process.cwd(),
       compatibilityDate: "2026-10-01",
@@ -46,6 +47,7 @@ before(async () => {
     "migrations/0001_resource_center.sql",
     "migrations/0002_partner_campaign_type.sql",
     "migrations/0003_scholarship_interest_type.sql",
+    "migrations/0004_sublease_war_room.sql",
   ]) {
     const schema = await readFile(file, "utf8");
     await db.batch(
@@ -659,4 +661,52 @@ test("student form submissions email the staff inbox", async () => {
   assert.match(sent[0].subject, /Mentee request/);
   assert.match(sent[0].html, /&lt;i&gt;Student/);
   assert.doesNotMatch(sent[0].html + sent[0].text, /SECRET/);
+});
+
+test("sublease war room: listing lifecycle, payment gate, leads and owner dashboard", async () => {
+  const photo = "data:image/jpeg;base64," + "A".repeat(200);
+  const api = (path, init = {}) =>
+    mf.dispatchFetch(origin + "/api/sublease" + path, {
+      ...init,
+      headers: { Origin: origin, "Content-Type": "application/json", "CF-Connecting-IP": "192.0.2.77", ...(init.headers || {}) },
+    });
+  const created = await api("/listings", {
+    method: "POST",
+    body: JSON.stringify({
+      market: "housing-madison", marketName: "Madison, WI", school: "UW", area: "Near campus",
+      title: "Summer sublease", description: "A sunny two bedroom close to campus.",
+      ownerName: "Sam", ownerEmail: "sam@example.com", permission: "approved", type: "sublease",
+      furnished: "yes", utilities: "some", startDate: "2027-05-15", endDate: "2027-08-15",
+      rent: 900, bedrooms: 2, bathrooms: 1, photos: [photo], consent: true,
+    }),
+  });
+  assert.equal(created.status, 201);
+  const { id, manageToken } = await created.json();
+  // not public until paid and activated
+  assert.equal((await api("/listings/" + id)).status, 404);
+  assert.equal((await api("/listings")).status, 200);
+  assert.equal((await (await api("/listings")).json()).items.length, 0);
+  // leads are refused while the listing is not live
+  const lead = { listingId: id, name: "Ana", email: "ana@example.com", message: "Can I tour Friday?" };
+  assert.equal((await api("/leads", { method: "POST", body: JSON.stringify(lead) })).status, 404);
+  // admin activation requires the private key
+  assert.equal((await api("/../api/admin/sublease/activate".replace("/../api", ""), { method: "POST", body: JSON.stringify({ id }) })).status, 404);
+  const noKey = await mf.dispatchFetch(origin + "/api/admin/sublease/activate", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id }) });
+  assert.equal(noKey.status, 401);
+  const act = await mf.dispatchFetch(origin + "/api/admin/sublease/activate", { method: "POST", headers: { "Content-Type": "application/json", Authorization: "Bearer " + token }, body: JSON.stringify({ id }) });
+  assert.equal((await act.json()).ok, true);
+  const pub = await (await api("/listings/" + id)).json();
+  assert.equal(pub.listing.rent, 900);
+  assert.equal(JSON.stringify(pub).includes("sam@example.com"), false);
+  assert.equal((await api("/photo/" + id + "/0")).status, 200);
+  assert.equal((await api("/leads", { method: "POST", body: JSON.stringify(lead) })).status, 201);
+  await api("/leads", { method: "POST", body: JSON.stringify({ ...lead, message: "Please wire the deposit, I am out of the country" }) });
+  // owner dashboard needs the private token
+  assert.equal((await api("/manage/" + id)).status, 404);
+  const dash = await (await api("/manage/" + id, { headers: { "x-manage-token": manageToken } })).json();
+  assert.equal(dash.leads.length, 2);
+  assert.equal(dash.leads.filter((l) => l.flagged).length, 1);
+  assert.equal(dash.ownerName, "Sam");
+  const filled = await api("/manage/" + id, { method: "POST", headers: { "x-manage-token": manageToken }, body: JSON.stringify({ status: "filled" }) });
+  assert.equal(filled.status, 200);
 });

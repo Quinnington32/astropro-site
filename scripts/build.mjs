@@ -337,7 +337,7 @@ emit(
   hero(
     "Find your place near campus.",
     "Search by school, city, or state. These are research starting points, not verified available rentals.",
-    `<div class="cta-row"><a class="btn btn-primary" href="#markets">Find your market</a><a class="btn btn-ghost" href="subleasing.html">Sublease or relet guide</a><a class="btn btn-ghost" href="index.html#organizations">Suggest a property</a></div>`,
+    `<div class="cta-row"><a class="btn btn-primary" href="#markets">Find your market</a><a class="btn btn-ghost" href="sublease-war-room.html">Sublease War Room</a><a class="btn btn-ghost" href="index.html#organizations">Suggest a property</a></div>`,
   ) +
     `<section class="wrap" id="markets" data-markets><div class="directory-controls"><div><label for="marketSearch">School, city, or state</label><input type="search" id="marketSearch" placeholder="Try Houston or Ohio" autocomplete="off"></div><div><label for="marketSort">Sort markets</label><select id="marketSort"><option value="state">Group by state</option><option value="city">City A–Z</option></select></div></div><p id="marketCount" class="result-count" role="status" aria-live="polite">${markets.length} markets</p>${stateJump}${marketCards}<div class="empty-state" id="marketEmpty" hidden><h2>No matching markets</h2><p>Try the city or state name, or find housing support through your school.</p><a class="btn btn-primary" href="school-resources.html?topic=housing">Find campus housing support</a></div><p class="source-note">A directory mention is not an endorsement or a paid partnership. Check the property’s current terms and eligibility directly.</p></section>` +
     faqs(),
@@ -349,14 +349,14 @@ emit(
   hero(
     "Subleasing and reletting, made simpler.",
     "Plans change. If you need to move out early, or you need a place for a semester, here is how subleases and relets usually work and how to protect yourself.",
-    `<div class="cta-row"><a class="btn btn-primary" href="housing.html#markets">Find your housing market</a><a class="btn btn-ghost" href="#checklists">Jump to checklists</a></div>`,
+    `<div class="cta-row"><a class="btn btn-primary" href="sublease-war-room.html">Sublease War Room</a><a class="btn btn-ghost" href="#checklists">Jump to checklists</a></div>`,
     "Housing guide",
   ) +
     `<section class="wrap prose"><h2>Sublease, relet or assignment?</h2><p>The words get mixed up, and landlords use them differently. Ask your property which terms it uses before you advertise anything.</p><ul><li><strong>Sublease.</strong> You stay on the original lease and someone else lives in your place for part of the term. You are still responsible to the landlord.</li><li><strong>Relet (re-let).</strong> The property finds a new tenant and may release you from the lease, often for a fee. This is common at student apartment communities.</li><li><strong>Lease assignment or takeover.</strong> The new tenant takes over your lease. The landlord usually has to approve it in writing.</li></ul><p>Many leases ban subleasing without written permission. Read your lease and get the landlord’s approval before you list your place.</p></section>
 <section class="wrap prose" id="checklists"><h2>If you are leaving your place</h2><ul><li>Read the lease section on subleasing, assignment and early termination.</li><li>Ask the landlord or leasing office, in writing, whether they offer a relet program and what it costs.</li><li>Get any approval in writing before you advertise, including the new tenant’s screening requirements.</li><li>Post clear photos, the rent, the dates, deposit terms and what utilities cost.</li><li>Meet applicants in person or by live video, and never give out your lease login or personal ID numbers.</li><li>Sign a written sublease agreement with the exact dates, rent, deposit and who pays what.</li><li>Keep records of every payment and message.</li></ul></section>
 <section class="wrap prose"><h2>If you are taking over a place</h2><ul><li>Tour the unit in person or on live video before you send any money.</li><li>Confirm with the landlord, not just the current tenant, that the sublease is allowed.</li><li>Ask who the lease is with and whether the landlord will put you in writing.</li><li>Find out how the deposit works, and whether you pay the current tenant or the landlord.</li><li>Check what you will owe for utilities, parking, fees and damage already in the unit.</li><li>Take dated photos on move-in day and send them to the landlord.</li></ul></section>
 <section class="wrap prose"><h2>Avoiding sublease scams</h2><ul><li>Walk away if someone asks you to pay a deposit before you see the unit or sign anything.</li><li>Be wary of requests for gift cards, wire transfers, cash apps or cryptocurrency.</li><li>Be wary of a landlord who is “out of the country” and can only mail keys.</li><li>Search the address and compare photos. Scammers often reuse listings.</li><li>If a price looks far below similar places nearby, treat it as a warning sign.</li></ul><p>Reporting a scam: contact your campus housing office, your local police non-emergency line, and the platform where the listing was posted.</p></section>
-<section class="wrap prose"><h2>Where students find subleases</h2><p>Each market page on our housing directory links to its local student Facebook group where students post subleases and relets. Browse the group, read recent posts, and apply the checklist above before you commit.</p><p><a class="btn btn-primary" href="housing.html#markets">Browse housing markets</a></p><p class="source-note">This guide is general information, not legal advice. Lease rules and tenant rights vary by state and by property. For help, check your school’s student legal services or local tenant resources.</p></section>`,
+<section class="wrap prose"><h2>Where students find subleases</h2><p>Each market page on our housing directory links to its local student Facebook group where students post subleases and relets. Browse the group, read recent posts, and apply the checklist above before you commit.</p><p><a class="btn btn-primary" href="sublease-war-room.html">Open the Sublease War Room</a> <a class="btn btn-ghost" href="housing.html#markets">Browse housing markets</a></p><p class="source-note">This guide is general information, not legal advice. Lease rules and tenant rights vary by state and by property. For help, check your school’s student legal services or local tenant resources.</p></section>`,
 );
 const initials = (name) =>
   name.replace(/[^A-Za-z0-9 ]/g, "").split(/\s+/).filter(Boolean).slice(0, 2).map((w) => w[0]).join("").toUpperCase();
@@ -724,6 +724,89 @@ emit(
   "Send a paid campaign email to students in your campus market. Pay with PayPal, then tell us what you'd like to say.",
   partnerPayBody,
 );
+const SUBLEASE_PRICE = Number(process.env.SUBLEASE_PRICE || 39);
+const slMarketOptions = (all) =>
+  (all ? '<option value="">All markets</option>' : '<option value="">Choose your market</option>') +
+  markets
+    .slice()
+    .sort((a, b) => a.place.localeCompare(b.place))
+    .map((m) => `<option value="${e(m.id)}">${e(m.place)}</option>`)
+    .join("");
+const slGroups = Object.fromEntries(
+  markets
+    .map((m) => {
+      const id = (m.facebookGroup || m.properties.map((p) => p.spotlight?.facebookPost).find(Boolean) || "").match(/facebook\.com\/groups\/(\d+)/)?.[1];
+      return [m.id, m.facebookGroup || (id ? `https://www.facebook.com/groups/${id}/` : "")];
+    })
+    .filter(([, v]) => v),
+);
+const slScript = `<script type="module" src="assets/sublease.js"></script>`;
+const slWorkflow = [
+  ["Check permission", "We tell you whether you can sublease or relet, and write the email to your landlord."],
+  ["Build your listing", "Add your details and photos. We create a public page with your own link."],
+  ["Get it in front of students", "Your launch kit has the posts, replies and a 14-day plan, written from your listing."],
+  ["Handle the messages", "Every inquiry lands in your dashboard, with scam warnings on risky messages."],
+  ["Tour, sign and hand over", "A checklist takes you from tour to signed agreement to move-in photos."],
+];
+emit(
+  "sublease-war-room.html",
+  "Sublease War Room",
+  "The easiest way for a student to sublease, relet or hand off a lease. Build your listing, get a launch kit, collect messages and follow a step-by-step plan.",
+  hero(
+    "The Sublease War Room.",
+    "Need to leave your place early? We walk you through every step: permission, listing, posts, messages, tours and handover.",
+    `<div class="cta-row"><a class="btn btn-primary" href="#start">List my place</a><a class="btn btn-ghost" href="sublease-listings.html">Browse subleases</a></div>`,
+    "Student housing",
+  ) +
+    `<section class="wrap"><div class="section-head"><span class="kicker-sm">The process</span><h2>We take you from “now what?” to “it’s handled.”</h2></div><div class="step-list">${slWorkflow.map(([t, b], i) => `<div class="step"><div class="n">${i + 1}</div><div class="body"><h3>${e(t)}</h3><p>${e(b)}</p></div></div>`).join("")}</div></section>
+<section class="wrap prose"><h2>What you get for $${SUBLEASE_PRICE}</h2><ul><li>A public listing page with your photos, live for 60 days.</li><li>A private dashboard that collects messages from interested students.</li><li>A launch kit: Facebook and Reddit posts, a reply template and a landlord permission email, all written from your details.</li><li>A 14-day plan telling you what to do each day, with a link to your market’s student Facebook group.</li><li>A checklist from first message to move-in.</li></ul><p class="source-note">We don’t post to Facebook for you. Facebook doesn’t allow outside tools to post in groups, so we write the post and take you to the right group. This is general information, not legal advice. Subleasing rules depend on your lease and your state.</p></section>
+<section class="wrap" id="start" data-sublease-start data-business="${e(PAYPAL_BUSINESS_EMAIL)}" data-price="${SUBLEASE_PRICE}"><div class="callout"><h2>List your place</h2>
+<form id="slForm" class="sl-form" novalidate>
+<div class="field"><label for="slMarket">Campus market</label><select id="slMarket" name="market" required>${slMarketOptions(false)}</select></div>
+<div class="field"><label for="slSchool">School</label><input id="slSchool" name="school" maxlength="150" placeholder="e.g. University of Florida"></div>
+<div class="field"><label for="slType">What are you doing?</label><select id="slType" name="type" required><option value="sublease">Sublease (I stay on the lease)</option><option value="relet">Relet (the property finds a new tenant)</option><option value="assignment">Lease takeover (new tenant takes over my lease)</option></select></div>
+<div class="field"><label for="slPermission">Does your landlord allow it?</label><select id="slPermission" name="permission" required><option value="approved">Yes, I have approval in writing</option><option value="pending">I asked and I'm waiting</option><option value="not-asked">I haven't asked yet</option><option value="not-allowed">My lease says no</option></select><p id="slPermNote" class="fineprint" hidden></p></div>
+<div class="field"><label for="slTitle">Listing title</label><input id="slTitle" name="title" maxlength="120" placeholder="Sunny 2 bed near campus, summer sublease" required></div>
+<div class="field"><label for="slArea">Neighborhood or building</label><input id="slArea" name="area" maxlength="150" placeholder="e.g. The Hub, 2 blocks from campus" required><p class="fineprint">Don’t include your unit number. Share the exact address only with serious applicants.</p></div>
+<div class="sl-row"><div class="field"><label for="slRent">Rent per month ($)</label><input id="slRent" name="rent" type="number" min="1" max="20000" inputmode="numeric" required></div><div class="field"><label for="slDeposit">Deposit ($, optional)</label><input id="slDeposit" name="deposit" type="number" min="0" max="20000" inputmode="numeric"></div></div>
+<div class="sl-row"><div class="field"><label for="slStart">Move-in date</label><input id="slStart" name="startDate" type="date" required></div><div class="field"><label for="slEnd">Move-out date</label><input id="slEnd" name="endDate" type="date" required></div></div>
+<div class="sl-row"><div class="field"><label for="slBeds">Bedrooms (0 = studio)</label><input id="slBeds" name="bedrooms" type="number" min="0" max="10" required></div><div class="field"><label for="slBaths">Bathrooms</label><input id="slBaths" name="bathrooms" type="number" min="0.5" max="10" step="0.5" required></div></div>
+<div class="sl-row"><div class="field"><label for="slFurn">Furnished?</label><select id="slFurn" name="furnished" required><option value="yes">Yes</option><option value="partly">Partly</option><option value="no">No</option></select></div><div class="field"><label for="slUtil">Utilities</label><select id="slUtil" name="utilities" required><option value="yes">Included</option><option value="some">Some included</option><option value="no">Not included</option></select></div></div>
+<div class="field"><label for="slDesc">Describe your place</label><textarea id="slDesc" name="description" rows="6" maxlength="2000" placeholder="Roommates, parking, pets, what's nearby, why it's a good deal…" required></textarea></div>
+<div class="field"><label for="slPhotos">Photos (1 to 4)</label><input id="slPhotos" type="file" accept="image/*" multiple><div id="slPreviews" class="sl-previews"></div></div>
+<div class="sl-row"><div class="field"><label for="slName">Your name</label><input id="slName" name="ownerName" maxlength="100" autocomplete="name" required></div><div class="field"><label for="slEmail">Your email</label><input id="slEmail" name="ownerEmail" type="email" maxlength="254" autocomplete="email" required></div></div>
+<div class="field"><label for="slPhone">Phone (optional, private)</label><input id="slPhone" name="ownerPhone" type="tel" maxlength="40" autocomplete="tel"></div>
+<div class="honeypot" aria-hidden="true"><label for="slWebsite">Leave this empty</label><input id="slWebsite" name="website" tabindex="-1" autocomplete="off"></div>
+<label class="checkbox-label"><input id="slConsent" type="checkbox" required> I have the right to list this place, and my landlord permits it or I will get permission before I accept anyone.</label>
+<p class="fineprint">Your name and contact details are never shown on the public listing. Students message you through the page, and you see their messages in your private dashboard.</p>
+<p id="slFormMsg" class="sl-msg" role="alert" hidden></p>
+<button class="btn btn-primary" type="submit">Create my listing</button>
+</form>
+<div id="slSuccess" hidden><h2>Your listing is saved.</h2><p>Reference code: <code data-sl-ref></code></p><p><strong>Step 1:</strong> Pay the one-time $${SUBLEASE_PRICE} listing fee. We turn your listing on after we confirm payment, usually within a few hours.</p><p><a class="btn btn-primary" data-sl-pay data-business="${e(PAYPAL_BUSINESS_EMAIL)}" data-price="${SUBLEASE_PRICE}" href="mailto:leasesolutions3@gmail.com" rel="noopener">Pay $${SUBLEASE_PRICE} with PayPal</a></p><p><strong>Step 2:</strong> Save your private dashboard link. It’s how you reach your messages and launch kit. We can’t recover it, so copy it now.</p><div class="field"><label for="slManageUrl">Your private dashboard link</label><input id="slManageUrl" data-sl-manage-url readonly></div><p><button class="btn btn-ghost" type="button" data-sl-copy-link>Copy link</button> <a class="btn btn-primary" data-sl-manage href="sublease-manage.html">Open my dashboard</a></p></div>
+</div></section>${slScript}`,
+);
+emit(
+  "sublease-listings.html",
+  "Subleases and relets near campus",
+  "Browse student subleases, relets and lease takeovers by campus market.",
+  hero("Subleases near campus.", "Places that students are handing off right now. Choose your market to see what's available.", "", "Student housing") +
+    `<section class="wrap" id="slBrowse"><div class="directory-controls"><div><label for="slFilter">Campus market</label><select id="slFilter">${slMarketOptions(true)}</select></div></div><p id="slCount" class="result-count" role="status" aria-live="polite"></p><div id="slResults" class="sl-grid"></div><p class="source-note">Always see a place in person or on live video, confirm the landlord approves, and never send money before that. <a href="subleasing.html">Read the sublease guide.</a></p></section>${slScript}`,
+);
+emit(
+  "sublease-listing.html",
+  "Sublease listing",
+  "A student sublease listing on the Sublease War Room.",
+  `<div class="wrap breadcrumb"><a href="sublease-listings.html">← All subleases</a></div><section class="wrap sl-detail" id="slListing"><h1 class="sr-only">Sublease listing</h1><div id="slView"><p>Loading…</p></div><div class="callout" id="slContact"><h2>Message the student</h2><form id="slLead" class="sl-form" novalidate><div class="field"><label for="slLName">Your name</label><input id="slLName" name="name" maxlength="100" autocomplete="name" required></div><div class="field"><label for="slLEmail">Your email</label><input id="slLEmail" name="email" type="email" maxlength="254" autocomplete="email" required></div><div class="field"><label for="slLPhone">Phone (optional)</label><input id="slLPhone" name="phone" type="tel" maxlength="40" autocomplete="tel"></div><div class="field"><label for="slLMsg">Message</label><textarea id="slLMsg" name="message" rows="5" maxlength="1500" required placeholder="Hi! I'm interested. Can I tour on…?"></textarea></div><div class="honeypot" aria-hidden="true"><label for="slLWeb">Leave this empty</label><input id="slLWeb" name="website" tabindex="-1" autocomplete="off"></div><p class="fineprint">Never send a deposit or rent before you’ve seen the place and the landlord has approved. <span id="slListingTitle" hidden></span></p><p id="slLeadMsg" class="sl-msg" role="alert" hidden></p><button class="btn btn-primary" type="submit">Send message</button></form></div></section>${slScript}`,
+  { noindex: true },
+);
+emit(
+  "sublease-manage.html",
+  "Your Sublease War Room dashboard",
+  "Your private Sublease War Room dashboard.",
+  hero("Your sublease dashboard.", "Your checklist, your messages and your launch kit, all in one place.", "", "Sublease War Room") +
+    `<section class="wrap" id="slManage" data-business="${e(PAYPAL_BUSINESS_EMAIL)}" data-price="${SUBLEASE_PRICE}" data-groups="${e(JSON.stringify(slGroups))}"><div id="slDash"><p>Loading your dashboard…</p></div></section>${slScript}`,
+  { noindex: true },
+);
 const partnerCampaignForm = form({
   type: "partner-campaign",
   button: "Submit campaign order",
@@ -806,6 +889,7 @@ await cp("src/client/site.js", "dist/assets/site.js");
 await cp("src/client/resource-search.js", "dist/assets/resource-search.js");
 await cp("src/client/book-finder.js", "dist/assets/book-finder.js");
 await cp("src/client/private-session.js", "dist/assets/private-session.js");
+await cp("src/client/sublease.js", "dist/assets/sublease.js");
 const catalog = [
   ...scholarships.map((x) => ({
     ...x,

@@ -1,4 +1,5 @@
 import { marketLinks } from "./market-links.mjs";
+import { handleSublease } from "./sublease.mjs";
 const PREFIX = "/studentresourcecenter";
 const ALIAS_HOSTS = [
   "www.astroprostudentresourcecenter.com",
@@ -381,6 +382,29 @@ export async function notifyPartnerCampaign(env, data) {
     );
   } catch {
     console.error("Partner campaign notification email failed");
+  }
+}
+export async function notifyTeam(env, subject, text) {
+  if (!env.EMAIL?.send) return;
+  try {
+    const message = {
+      to: env.PARTNER_NOTIFY_TO || NOTIFY_TO,
+      from: NOTIFY_FROM,
+      subject,
+      text,
+      html: "<p>" + esc(text).replace(/\n/g, "<br>") + "</p>",
+    };
+    let EmailMessage;
+    try {
+      ({ EmailMessage } = await import("cloudflare:email"));
+    } catch {}
+    await env.EMAIL.send(
+      EmailMessage
+        ? new EmailMessage(message.from, message.to, buildRawEmail(message))
+        : message,
+    );
+  } catch {
+    console.error("Team notification email failed");
   }
 }
 const LABELS = {
@@ -774,6 +798,8 @@ export async function handleRequest(request, env) {
       );
     }
     if (path === "/api/books") return bookSearch(request);
+    if (path.startsWith("/api/sublease/") || path.startsWith("/api/admin/sublease/"))
+      return handleSublease(request, env, path, { json, readJson, isSameOrigin, quota, digest, authorize, notify: (subject, text) => notifyTeam(env, subject, text) });
     if (path === "/api/submissions") return submissions(request, env);
     if (path.startsWith("/api/admin/")) return admin(request, env, path);
     return json({ error: "Endpoint not found." }, 404);
@@ -855,6 +881,9 @@ export default {
       ).bind(
         new Date(Date.now() - 90 * 86400000).toISOString(),
       ),
+      env.DB.prepare(
+        "UPDATE sublease_listings SET status='expired' WHERE status='live' AND expires_at < ?",
+      ).bind(new Date().toISOString()),
       env.DB.prepare("DELETE FROM rate_limits WHERE expires_at < ?").bind(
         Date.now(),
       ),
