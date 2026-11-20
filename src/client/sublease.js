@@ -198,6 +198,29 @@ async function listingPage() {
 }
 
 // ---------- Page: owner dashboard (War Room) ----------
+// Where to post: free platforms, verified against each site's own pages. Rules and fees change, so we say so.
+const platforms = (l, groupUrl) => [
+  { id: "fbgroup", name: "Your market's Facebook group", tag: "Free · Best for students", url: groupUrl, why: "This is where most students look for subleases. Join the group, then post.", steps: ["Open the group and tap Join if you haven't.", "Tap Write something, paste the Facebook post from your launch kit, and add your photos.", "Add your listing link so students can see all the details."], copy: "fb" },
+  { id: "school", name: "Your school's off-campus housing board", tag: "Free · Students only", url: "https://www.google.com/search?q=" + encodeURIComponent((l.school || l.marketName) + " off campus housing post a sublet"), why: "Many schools run a free sublet board that only students and staff can use, which means fewer scams.", steps: ["Open the search result for your school's off-campus housing site.", "Sign in with your school account and choose Add a Listing or Post a Sublet.", "Paste the listing text and upload your photos."], copy: "long" },
+  { id: "marketplace", name: "Facebook Marketplace", tag: "Free · Huge reach", url: "https://www.facebook.com/marketplace/create/rental", why: "Free and local, with direct messaging. Choose Home for Rent.", steps: ["Choose Home for Rent and fill in the price, dates and bedrooms.", "Paste the listing text and add photos.", "Publish, then watch your messages for scams."], copy: "long" },
+  { id: "craigslist", name: "Craigslist", tag: "Free · Create a free account", url: "https://accounts.craigslist.org/login", why: "Free to post. Use the housing section's sublets & temporary category for your city.", steps: ["Make a free account so you can repost later.", "Choose your city, then housing, then sublets & temporary.", "Paste the listing text, add photos and a general location (no unit number)."], copy: "long" },
+  { id: "zillow", name: "Zillow, Trulia and HotPads", tag: "Free for a first listing · Needs landlord OK", url: "https://www.zillow.com/rental-manager/post-a-listing/", why: "One Zillow Rental Manager listing also shows on Trulia and HotPads. Check Zillow's current rules and fees first, and only post if your landlord has approved a sublease.", steps: ["Create a free Zillow Rental Manager account.", "Create a listing, paste the text and add photos.", "Publish, and reply to renters through Zillow."], copy: "long" },
+  { id: "zumper", name: "Zumper and PadMapper", tag: "Free for one listing", url: "https://www.zumper.com/", why: "Zumper lists for free and can share to Facebook Marketplace. Look for Post a rental or List a property.", steps: ["Create a free account.", "Choose List a property and paste your listing text.", "Add photos and publish."], copy: "long" },
+  { id: "sublet", name: "Sublet.com and LeaseBreak", tag: "Free · Built for subleases", url: "https://www.sublet.com/", why: "Sites made for subleases and lease transfers. LeaseBreak is at leasebreak.com.", steps: ["Create an account on Sublet.com.", "Add your listing with the dates and rent.", "Repeat on LeaseBreak if you want more reach."], copy: "long" },
+  { id: "reddit", name: "Reddit and campus groups", tag: "Free · Check each group's rules", url: "https://www.reddit.com/subreddits/search?q=" + encodeURIComponent(l.school || l.marketName), why: "Many campus and city subreddits have housing threads. Also try GroupMe, Discord and your school's housing Instagram.", steps: ["Find your school or city subreddit and read its housing rules.", "Paste the Reddit post from your launch kit where it's allowed.", "Share your listing link in student group chats."], copy: "reddit" },
+];
+const loadDone = (id) => {
+  try {
+    return JSON.parse(localStorage.getItem("astropro.sublease.done." + id) || "[]");
+  } catch {
+    return [];
+  }
+};
+const saveDone = (id, list) => {
+  try {
+    localStorage.setItem("astropro.sublease.done." + id, JSON.stringify(list));
+  } catch {}
+};
 const kit = (l, groupUrl) => {
   const bed = l.bedrooms === 0 ? "studio" : l.bedrooms + "-bedroom";
   const util = { yes: "utilities included", no: "utilities not included", some: "some utilities included" }[l.utilities];
@@ -220,7 +243,8 @@ const kit = (l, groupUrl) => {
     "Day 10: Repost everywhere. Ask your landlord whether they have a relet list.",
     "Day 14: Review what's working. Add new photos, then repost.",
   ];
-  return { fb, reddit, landlord, reply, days, groupUrl };
+  const long = `${l.title}\n\n${typeLabel[l.type]}: ${bed} near ${l.school || l.marketName}, ${money(l.rent)}/mo\nArea: ${l.area}\nDates: ${dates}\nBedrooms/baths: ${bed}, ${l.bathrooms} bath\nFurnished: ${furn}; ${util}\n${l.deposit ? "Deposit: " + money(l.deposit) + "\n" : ""}\n${l.description}\n\nMore photos and details: ${url}`;
+  return { fb, reddit, landlord, reply, days, groupUrl, long, title: l.title, url };
 };
 async function managePage() {
   const root = $("#slManage");
@@ -251,6 +275,8 @@ async function managePage() {
     const l = data.listing;
     l.ownerName = data.ownerName || "";
     const k = kit(l, groups[l.market]);
+    const plats = platforms(l, k.groupUrl).filter((p) => p.id !== "fbgroup" || p.url);
+    const done = loadDone(id).filter((x) => plats.some((p) => p.id === x));
     const live = l.status === "live";
     const paid = !!data.paidAt;
     const pending = !paid && ["live", "expired"].includes(l.status);
@@ -281,8 +307,13 @@ async function managePage() {
       ${pending ? `<div class="callout"><h2>${l.status === "expired" ? "Bring your listing back" : "Keep your listing live"}</h2><p>${l.status === "expired" ? "Your trial ended." : "Your listing is live on a free trial until " + esc(until) + "."} Pay the one-time listing fee and it stays live for 60 days. It updates automatically within a minute or two of your payment. Your reference code is <code>${esc(l.id)}</code>.</p><p><a class="btn btn-primary" href="${payUrl.href}" rel="noopener">Pay $${esc(payBase.price)} with PayPal</a></p><p class="fineprint">Questions? Email <a href="mailto:leasesolutions3@gmail.com">leasesolutions3@gmail.com</a> with your reference code.</p></div>` : ""}
       <section><h2>Your sublease checklist</h2><ol class="sl-steps">${steps.map(([t, s, d]) => `<li class="${s}"><strong>${esc(t)}</strong><span>${esc(d)}</span></li>`).join("")}</ol></section>
       <section><h2>Messages from students (${data.leads.length})</h2>${data.leads.length ? data.leads.map((x) => `<article class="sl-lead${x.flagged ? " flagged" : ""}"><header><strong>${esc(x.name)}</strong><time>${new Date(x.created_at).toLocaleString()}</time></header>${x.flagged ? '<p class="sl-warn">Careful: this message uses wording common in rental scams. Don\'t send money or keys, and meet in person first.</p>' : ""}<p>${esc(x.message).replace(/\n/g, "<br>")}</p><p><a href="mailto:${esc(x.email)}">${esc(x.email)}</a>${x.phone ? " · " + esc(x.phone) : ""}</p></article>`).join("") : "<p>No messages yet. Use the launch kit below to get your first ones.</p>"}</section>
-      <section><h2>Launch kit</h2><p>Everything below is written from your listing. Copy it, paste it, and you're posted.</p>
-        ${k.groupUrl ? `<p><a class="btn btn-primary" href="${esc(k.groupUrl)}" target="_blank" rel="noopener">Open your market's Facebook group ↗</a></p>` : ""}
+      <section><h2>Post it everywhere</h2><p>More places means more messages. Each one is free to start. Tap a site, paste the text we wrote, add your photos, then check it off. Sites can change their rules and fees, and only post if your landlord has approved.</p>
+        <div class="sl-progress"><div class="sl-bar"><span style="width:${Math.round((done.length / plats.length) * 100)}%"></span></div><p>${done.length} of ${plats.length} places posted</p></div>
+        <div class="sl-photos"><p><strong>Your photos</strong> (save them to upload elsewhere):</p>${Array.from({ length: l.photos }, (_, i) => `<a href="/api/sublease/photo/${esc(l.id)}/${i}" download="listing-photo-${i + 1}.jpg"><img alt="Photo ${i + 1}" src="/api/sublease/photo/${esc(l.id)}/${i}" width="96" height="72"><span>Save</span></a>`).join("")}</div>
+        <div class="sl-plats">${plats.map((p) => `<article class="sl-plat${done.includes(p.id) ? " done" : ""}"><header><div><h3>${esc(p.name)}</h3><span class="sl-tag">${esc(p.tag)}</span></div><label class="sl-check"><input type="checkbox" data-done="${p.id}"${done.includes(p.id) ? " checked" : ""}> Posted</label></header><p>${esc(p.why)}</p><ol>${p.steps.map((x) => `<li>${esc(x)}</li>`).join("")}</ol><p class="sl-plat-actions"><button class="btn btn-ghost" type="button" data-copy="${p.copy}">Copy the text</button>${p.url ? `<a class="btn btn-primary" href="${esc(p.url)}" target="_blank" rel="noopener">Open ${esc(p.name.split(" ")[0] === "Your" ? "it" : p.name.split(" ")[0])} ↗</a>` : ""}</p></article>`).join("")}</div>
+      </section>
+      <section><h2>Share your listing</h2><p>Send this link to friends, roommates and group chats:</p><div class="sl-share"><input readonly aria-label="Your public listing link" value="${esc(k.url)}"><button class="btn btn-ghost" type="button" data-copy="url">Copy link</button></div><p class="fineprint">${data.views || 0} view${data.views === 1 ? "" : "s"} of your public page so far.</p></section>
+      <section><h2>Launch kit</h2><p>Your posts and message templates, written from your listing.</p>
         ${copy("fb", "Facebook group post", k.fb)}${copy("reddit", "Reddit post", k.reddit)}${copy("landlord", "Email to your landlord", k.landlord)}${copy("reply", "Reply to new messages", k.reply)}
         <div class="sl-kit"><h3>Your next 14 days</h3><ul class="sl-days">${k.days.map((d) => `<li>${esc(d)}</li>`).join("")}</ul></div>
       </section>
@@ -290,7 +321,7 @@ async function managePage() {
         <p><a class="btn btn-ghost" href="sublease-listing.html?id=${esc(l.id)}">View public page</a>
         ${live ? '<button class="btn btn-ghost" data-status="paused" type="button">Pause listing</button>' : ""}
         ${l.status === "paused" ? '<button class="btn btn-ghost" data-status="live" type="button">Turn back on</button>' : ""}
-        ${["live", "paused"].includes(l.status) ? '<button class="btn btn-primary" data-status="filled" type="button">Mark as filled</button>' : ""}</p><p class="sl-msg" id="slActMsg" hidden></p></section>`;
+        ${["live", "paused"].includes(l.status) ? '<button class="btn btn-primary" data-status="filled" type="button">Mark as filled</button>' : ""}<button class="btn btn-ghost sl-danger" data-delete type="button">Delete listing</button></p><p class="sl-msg" id="slActMsg" hidden></p></section>`;
     $$("[data-copy]", dash).forEach((b) =>
       b.addEventListener("click", async () => {
         try {
@@ -301,6 +332,31 @@ async function managePage() {
         }
       }),
     );
+    $$("[data-done]", dash).forEach((b) =>
+      b.addEventListener("change", () => {
+        const set = new Set(loadDone(id));
+        b.checked ? set.add(b.dataset.done) : set.delete(b.dataset.done);
+        saveDone(id, [...set]);
+        render();
+      }),
+    );
+    $("[data-delete]", dash)?.addEventListener("click", async (ev) => {
+      const b = ev.currentTarget;
+      if (!b.dataset.sure) {
+        b.dataset.sure = "1";
+        b.textContent = "Click again to delete forever";
+        return;
+      }
+      try {
+        await api("/manage/" + id, { method: "POST", headers, body: JSON.stringify({ action: "delete" }) });
+        try {
+          localStorage.removeItem("astropro.sublease." + id);
+        } catch {}
+        dash.innerHTML = `<div class="empty-state"><h2>Your listing was deleted.</h2><p>It's gone from the site, along with its photos and messages.</p><p><a class="btn btn-primary" href="sublease-war-room.html">Start a new listing</a></p></div>`;
+      } catch (e) {
+        say($("#slActMsg"), e.message);
+      }
+    });
     $$("[data-status]", dash).forEach((b) =>
       b.addEventListener("click", async () => {
         try {

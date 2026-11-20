@@ -49,6 +49,7 @@ before(async () => {
     "migrations/0003_scholarship_interest_type.sql",
     "migrations/0004_sublease_war_room.sql",
     "migrations/0005_sublease_payments.sql",
+    "migrations/0006_sublease_views.sql",
   ]) {
     const schema = await readFile(file, "utf8");
     await db.batch(
@@ -709,6 +710,23 @@ test("sublease war room: listing lifecycle, payment gate, leads and owner dashbo
   assert.equal(dash.leads.length, 2);
   assert.equal(dash.leads.filter((l) => l.flagged).length, 1);
   assert.equal(dash.ownerName, "Sam");
+  assert.ok(dash.views >= 1);
   const filled = await api("/manage/" + id, { method: "POST", headers: { "x-manage-token": manageToken }, body: JSON.stringify({ status: "filled" }) });
   assert.equal(filled.status, 200);
+});
+
+test("sublease owner can delete a listing with its photos and messages", async () => {
+  const photo = "data:image/jpeg;base64," + "A".repeat(200);
+  const hdr = { Origin: origin, "Content-Type": "application/json", "CF-Connecting-IP": "192.0.2.88" };
+  const made = await mf.dispatchFetch(origin + "/api/sublease/listings", { method: "POST", headers: hdr, body: JSON.stringify({
+    market: "housing-austin-tx", marketName: "Austin, TX", area: "West Campus", title: "Delete me", description: "A place that will be deleted soon.",
+    ownerName: "Sam", ownerEmail: "sam@example.com", permission: "pending", type: "relet", furnished: "no", utilities: "no",
+    startDate: "2027-05-15", endDate: "2027-08-15", rent: 700, bedrooms: 1, bathrooms: 1, photos: [photo], consent: true }) });
+  const { id, manageToken } = await made.json();
+  const bad = await mf.dispatchFetch(origin + "/api/sublease/manage/" + id, { method: "POST", headers: { ...hdr, "x-manage-token": "x".repeat(48) }, body: JSON.stringify({ action: "delete" }) });
+  assert.equal(bad.status, 404);
+  const ok = await mf.dispatchFetch(origin + "/api/sublease/manage/" + id, { method: "POST", headers: { ...hdr, "x-manage-token": manageToken }, body: JSON.stringify({ action: "delete" }) });
+  assert.equal((await ok.json()).deleted, true);
+  assert.equal((await db.prepare("SELECT COUNT(*) c FROM sublease_photos WHERE listing_id=?").bind(id).first()).c, 0);
+  assert.equal((await mf.dispatchFetch(origin + "/api/sublease/listings/" + id)).status, 404);
 });

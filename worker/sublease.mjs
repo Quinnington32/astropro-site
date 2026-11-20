@@ -275,6 +275,7 @@ export async function handleSublease(request, env, path, h) {
       .bind(m[1], now)
       .first();
     if (!row) return json({ error: "That listing is no longer available." }, 404);
+    await env.DB.prepare("UPDATE sublease_listings SET views=views+1 WHERE id=?").bind(row.id).run().catch(() => {});
     const counts = await photoCounts(env, [row.id]);
     return json({ listing: publicListing(row, counts[row.id] || 0) });
   }
@@ -340,6 +341,7 @@ export async function handleSublease(request, env, path, h) {
     return json({
       listing: publicListing(row, counts[row.id] || 0),
       ownerName: JSON.parse(row.data_json).ownerName,
+      views: row.views || 0,
       paidAt: row.paid_at,
       expiresAt: row.expires_at,
       leads: results,
@@ -350,6 +352,14 @@ export async function handleSublease(request, env, path, h) {
     const row = await ownerRow(request, env, h, m[1]);
     if (!row) return json({ error: "That management link is not valid." }, 404);
     const body = await h.readJson(request);
+    if (body.action === "delete") {
+      await env.DB.batch([
+        env.DB.prepare("DELETE FROM sublease_leads WHERE listing_id=?").bind(row.id),
+        env.DB.prepare("DELETE FROM sublease_photos WHERE listing_id=?").bind(row.id),
+        env.DB.prepare("DELETE FROM sublease_listings WHERE id=?").bind(row.id),
+      ]);
+      return json({ ok: true, deleted: true });
+    }
     const next = clean(body.status, 10);
     const ok = { live: ["paused"], paused: ["live"], filled: [] };
     const allowed =
