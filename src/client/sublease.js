@@ -78,6 +78,71 @@ function startPage() {
       previews.innerHTML = "";
     }
   });
+  // Pay first: the PayPal button carries a one-time pay code; the form opens once the server has confirmed that payment.
+  const gate = $("#slPayGate"),
+    wrap = $("#slFormWrap"),
+    payMsg = $("#slPayMsg"),
+    payBtn = $("[data-sl-pay]");
+  const CODE_KEY = "astropro.sublease.paycode";
+  const newCode = () => [...crypto.getRandomValues(new Uint8Array(12))].map((x) => "abcdefghijklmnopqrstuvwxyz0123456789"[x % 36]).join("");
+  let payCode = "";
+  try {
+    payCode = localStorage.getItem(CODE_KEY) || "";
+  } catch {}
+  if (!/^[a-z0-9]{12}$/.test(payCode)) {
+    payCode = newCode();
+    try {
+      localStorage.setItem(CODE_KEY, payCode);
+    } catch {}
+  }
+  const buildPayUrl = () => {
+    const url = new URL("https://www.paypal.com/cgi-bin/webscr");
+    url.searchParams.set("cmd", "_xclick");
+    url.searchParams.set("business", payBtn.dataset.business);
+    url.searchParams.set("item_name", "Sublease War Room onboarding fee");
+    url.searchParams.set("item_number", payCode);
+    url.searchParams.set("amount", Number(payBtn.dataset.price).toFixed(2));
+    url.searchParams.set("currency_code", "USD");
+    url.searchParams.set("no_shipping", "1");
+    url.searchParams.set("notify_url", location.origin + "/api/sublease/paypal-ipn");
+    url.searchParams.set("return", location.origin + "/sublease-war-room.html?paid=1#start");
+    url.searchParams.set("cancel_return", location.origin + "/sublease-war-room.html#start");
+    return url.href;
+  };
+  payBtn.href = buildPayUrl();
+  const openForm = () => {
+    gate.hidden = true;
+    wrap.hidden = false;
+    wrap.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+  const creditStatus = async () => {
+    try {
+      return await api("/credit/" + payCode);
+    } catch {
+      return { paid: false, used: false };
+    }
+  };
+  (async () => {
+    const returning = /[?&]paid=1/.test(location.search);
+    let st = await creditStatus();
+    if (st.paid && !st.used) return openForm();
+    if (st.used) {
+      payCode = newCode();
+      try {
+        localStorage.setItem(CODE_KEY, payCode);
+      } catch {}
+      payBtn.href = buildPayUrl();
+      st = { paid: false };
+    }
+    if (!returning) return;
+    say(payMsg, "Confirming your payment with PayPal. This usually takes under a minute. Keep this page open.");
+    for (let i = 0; i < 45; i++) {
+      await new Promise((r) => setTimeout(r, 4000));
+      st = await creditStatus();
+      if (st.paid && !st.used) return openForm();
+    }
+    say(payMsg, "We haven't seen your payment yet. If you completed it, wait a few minutes and refresh this page. Your form opens automatically once it is confirmed. Questions? Email leasesolutions3@gmail.com.");
+  })();
   form.addEventListener("submit", async (ev) => {
     ev.preventDefault();
     say(msg, "");
@@ -87,6 +152,7 @@ function startPage() {
       ...fd,
       marketName: opt && opt.value ? opt.textContent : "",
       photos,
+      payCode,
       consent: $("#slConsent").checked,
     };
     const btn = $("button[type=submit]", form);
@@ -97,30 +163,24 @@ function startPage() {
       try {
         localStorage.setItem("astropro.sublease." + out.id, out.manageToken);
       } catch {}
-      showSuccess(out.id, link, body.marketName, out.manageToken);
+      showSuccess(out.id, link);
     } catch (e) {
       say(msg, e.message);
       btn.disabled = false;
     }
   });
-  function showSuccess(id, link, marketName, token) {
+  function showSuccess(id, link) {
     const box = $("#slSuccess");
-    const pay = $("[data-sl-pay]");
-    const url = new URL("https://www.paypal.com/cgi-bin/webscr");
-    url.searchParams.set("cmd", "_xclick");
-    url.searchParams.set("business", pay.dataset.business);
-    url.searchParams.set("item_name", "Sublease War Room listing — " + marketName);
-    url.searchParams.set("item_number", id);
-    url.searchParams.set("amount", Number(pay.dataset.price).toFixed(2));
-    url.searchParams.set("currency_code", "USD");
-    url.searchParams.set("no_shipping", "1");
-    url.searchParams.set("notify_url", location.origin + "/api/sublease/paypal-ipn");
-    url.searchParams.set("return", location.origin + "/sublease-manage.html#" + id + "." + token);
-    pay.href = url.href;
     $("[data-sl-ref]").textContent = id;
     $("[data-sl-manage]").href = link;
     $("[data-sl-manage-url]").value = new URL(link, location.href).href;
+    try {
+      localStorage.removeItem(CODE_KEY);
+    } catch {}
+    wrap.hidden = false;
     form.hidden = true;
+    wrap.querySelector("h2").hidden = true;
+    wrap.querySelector("h2 + p").hidden = true;
     box.hidden = false;
     box.scrollIntoView({ behavior: "smooth", block: "start" });
   }

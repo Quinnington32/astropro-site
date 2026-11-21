@@ -199,8 +199,19 @@ export async function handleSublease(request, env, path, h) {
       .bind(now, expires, d.txn, now, d.id)
       .run()
       .catch(() => null);
-    if (r?.meta?.changes === 1)
+    if (r?.meta?.changes === 1) {
       await h.notify?.("Sublease War Room payment received (" + d.id + ")", "PayPal payment " + d.txn + " confirmed for listing " + d.id + ". It is live for " + LIVE_DAYS + " days.");
+    } else {
+      const exists = await env.DB.prepare("SELECT 1 x FROM sublease_listings WHERE id=?").bind(d.id).first().catch(() => null);
+      if (!exists) {
+        const c = await env.DB.prepare("INSERT OR IGNORE INTO sublease_credits (code,txn_id,paid_at) VALUES (?,?,?)")
+          .bind(d.id, d.txn, now)
+          .run()
+          .catch(() => null);
+        if (c?.meta?.changes === 1)
+          await h.notify?.("Sublease War Room payment received", "PayPal payment " + d.txn + " confirmed (pay code " + d.id + "). The student can now fill out the onboarding form.");
+      }
+    }
     return new Response("ok");
   }
 
@@ -279,6 +290,12 @@ export async function handleSublease(request, env, path, h) {
     return json({ listing: publicListing(row, counts[row.id] || 0) });
   }
 
+  m = path.match(/^\/api\/sublease\/credit\/([a-z0-9]{12})$/);
+  if (m && request.method === "GET") {
+    const c = await env.DB.prepare("SELECT listing_id FROM sublease_credits WHERE code=?").bind(m[1]).first();
+    return json({ paid: !!c, used: !!(c && c.listing_id) });
+  }
+
   // Everything below mutates or reads private data.
   if (path === "/api/sublease/listings" && request.method === "POST") {
     if (!h.isSameOrigin(request)) return json({ error: "Send this from the Sublease War Room." }, 403);
@@ -290,17 +307,28 @@ export async function handleSublease(request, env, path, h) {
       return json({ error: "Too many listings from this connection today." }, 429);
     const id = slugId(),
       token = rand(24);
+    let paidCredit = null;
+    if (typeof raw.payCode === "string" && raw.payCode) {
+      if (!ID.test(raw.payCode)) throw fail("That payment code is not valid.");
+      const c = await env.DB.prepare("SELECT txn_id FROM sublease_credits WHERE code=? AND listing_id IS NULL").bind(raw.payCode).first();
+      if (!c) throw fail("We could not find an unused payment for that code. If you just paid, wait a minute and try again.", 402);
+      const claim = await env.DB.prepare("UPDATE sublease_credits SET listing_id=? WHERE code=? AND listing_id IS NULL").bind(id, raw.payCode).run();
+      if (claim?.meta?.changes !== 1) throw fail("That payment was already used.", 409);
+      paidCredit = c;
+    }
+    const expiresAt = paidCredit ? new Date(Date.now() + LIVE_DAYS * 86400000).toISOString() : null;
     await env.DB.batch([
       env.DB.prepare(
         "INSERT INTO sublease_listings (id,token_hash,status,market,market_name,owner_email,data_json,created_at,updated_at,expires_at) VALUES (?,?,?,?,?,?,?,?,?,?)",
-      ).bind(id, await h.digest(token), "pending_payment", data.market, data.marketName, data.ownerEmail, JSON.stringify(data), now, now, null),
+      ).bind(id, await h.digest(token), paidCredit ? "live" : "pending_payment", data.market, data.marketName, data.ownerEmail, JSON.stringify(data), now, now, expiresAt),
+      ...(paidCredit ? [env.DB.prepare("UPDATE sublease_listings SET paid_at=?, txn_id=? WHERE id=?").bind(now, paidCredit.txn_id, id)] : []),
       ...photos.map((p, i) =>
         env.DB.prepare("INSERT INTO sublease_photos (listing_id,n,data) VALUES (?,?,?)").bind(id, i, p),
       ),
     ]);
     await h.notify?.(
       "New Sublease War Room listing — " + data.marketName + " (" + id + ")",
-      "A student created a listing.\nReference: " + id + "\nMarket: " + data.marketName + "\nTitle: " + data.title + "\nRent: $" + data.rent + "/mo\nOwner: " + data.ownerName + " <" + data.ownerEmail + ">\n\nIt is waiting for payment. A PayPal payment with item number " + id + " makes it live for " + LIVE_DAYS + " days automatically.",
+      "A student created a listing.\nReference: " + id + "\nMarket: " + data.marketName + "\nTitle: " + data.title + "\nRent: $" + data.rent + "/mo\nOwner: " + data.ownerName + " <" + data.ownerEmail + ">" + (paidCredit ? "\n\nPaid in advance. It is live for " + LIVE_DAYS + " days." : "\n\nIt is waiting for payment. A PayPal payment with item number " + id + " makes it live for " + LIVE_DAYS + " days automatically."),
     );
     return json({ ok: true, id, manageToken: token }, 201);
   }

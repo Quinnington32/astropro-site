@@ -756,9 +756,9 @@ const slValue = [
   ["Landlord permission email", "A ready-to-send email asking your landlord for approval, so you stay protected."],
 ];
 const slSteps = [
-  ["Tell us about your place", "Fill out the short onboarding form below: your details, price, dates and photos."],
-  ["Pay your one-time $" + SUBLEASE_PRICE + " fee", "Right after the form you get a secure PayPal button. Your listing goes live a minute or two after payment."],
-  ["Do what we tell you", "Open your private dashboard. It shows exactly what to post, where, and what to say."],
+  ["Pay your one-time $" + SUBLEASE_PRICE + " onboarding fee", "One flat fee through secure PayPal. No subscription and no commission."],
+  ["Fill out your onboarding form", "The moment your payment is confirmed, the form opens right here. Add your details, price, dates and photos."],
+  ["Do what we tell you", "Your private dashboard shows exactly what to post, where, and what to say. Your listing is live for 60 days."],
 ];
 emit(
   "sublease-war-room.html",
@@ -767,12 +767,13 @@ emit(
   hero(
     "The Sublease War Room.",
     "Need to get out of your lease early? Every minute counts until rent is due on the 1st again. Our team of former apartment managers wants to help you, and we built the Sublease War Room to do it.",
-    `<div class="cta-row"><a class="btn btn-primary" href="#start">Get started for $${SUBLEASE_PRICE}</a><a class="btn btn-ghost" href="#what-you-get">See what you get</a></div>`,
+    `<div class="cta-row"><a class="btn btn-primary" href="#start">Get started</a></div>`,
     "Student housing",
   ) +
-    `<section class="wrap" id="what-you-get"><div class="section-head"><span class="kicker-sm">What you get</span><h2>Everything you need to sublease fast, for one flat $${SUBLEASE_PRICE}.</h2><p class="sl-price-line"><strong>$${SUBLEASE_PRICE} one-time fee.</strong> No subscription. No commission. No hidden costs.</p></div><div class="sl-value">${slValue.map(([t, b], i) => `<div class="sl-value-item"><span class="sl-value-n">${i + 1}</span><div><h3>${e(t)}</h3><p>${e(b)}</p></div></div>`).join("")}</div><p class="source-note">We write your posts and take you to every place to post them. Facebook and most sites don’t let outside tools post for you, so you press submit yourself. This is general information, not legal advice. Subleasing rules depend on your lease and your state.</p></section>
-<section class="wrap"><div class="section-head"><span class="kicker-sm">Next steps</span><h2>Three steps to a subleased place.</h2></div><div class="step-list">${slSteps.map(([t, b], i) => `<div class="step"><div class="n">${i + 1}</div><div class="body"><h3>${e(t)}</h3><p>${e(b)}</p></div></div>`).join("")}</div><div class="cta-row"><a class="btn btn-primary" href="#start">Start now: fill out the form</a></div></section>
-<section class="wrap" id="start" data-sublease-start data-business="${e(PAYPAL_BUSINESS_EMAIL)}" data-price="${SUBLEASE_PRICE}"><div class="callout"><h2>Step 1: Your onboarding form</h2><p>Takes about five minutes. After you submit, you pay the one-time $${SUBLEASE_PRICE} fee and your listing goes live.</p>
+    `<section class="wrap" id="what-you-get"><div class="section-head"><span class="kicker-sm">What you get</span><h2>We studied subleasing for over a decade and put everything we know here.</h2></div><div class="sl-value">${slValue.map(([t, b], i) => `<div class="sl-value-item"><span class="sl-value-n">${i + 1}</span><div><h3>${e(t)}</h3><p>${e(b)}</p></div></div>`).join("")}</div><p class="source-note">We write your posts and take you to every place to post them. Facebook and most sites don’t let outside tools post for you, so you press submit yourself. This is general information, not legal advice. Subleasing rules depend on your lease and your state.</p></section>
+<section class="wrap"><div class="section-head"><span class="kicker-sm">Next steps</span><h2>Three steps to a subleased place.</h2></div><div class="step-list">${slSteps.map(([t, b], i) => `<div class="step"><div class="n">${i + 1}</div><div class="body"><h3>${e(t)}</h3><p>${e(b)}</p></div></div>`).join("")}</div><div class="cta-row"><a class="btn btn-primary" href="#start">Get started</a></div></section>
+<section class="wrap" id="start" data-sublease-start data-business="${e(PAYPAL_BUSINESS_EMAIL)}" data-price="${SUBLEASE_PRICE}"><div class="callout" id="slPayGate"><h2>Get started</h2><p><strong>$${SUBLEASE_PRICE} one-time onboarding fee.</strong> Pay securely with PayPal. As soon as your payment is confirmed, your onboarding form opens right here.</p><p><a class="btn btn-primary" data-sl-pay data-business="${e(PAYPAL_BUSINESS_EMAIL)}" data-price="${SUBLEASE_PRICE}" href="mailto:leasesolutions3@gmail.com" rel="noopener">Pay $${SUBLEASE_PRICE} and get started</a></p><p id="slPayMsg" class="sl-msg" role="status" hidden></p></div>
+<div class="callout" id="slFormWrap" hidden><h2>Payment received. Now tell us about your place.</h2><p>This takes about five minutes. When you submit, your listing goes live for 60 days.</p>
 <form id="slForm" class="sl-form" novalidate>
 <div class="field"><label for="slMarket">Campus market</label><select id="slMarket" name="market" required>${slMarketOptions(false)}</select></div>
 <div class="field"><label for="slSchool">School</label><input id="slSchool" name="school" maxlength="150" placeholder="e.g. University of Florida"></div>
@@ -792,9 +793,10 @@ emit(
 <label class="checkbox-label"><input id="slConsent" type="checkbox" required><span>I have the right to list this place, and my landlord permits it or I will get permission before I accept anyone.</span></label>
 <p class="fineprint">Your name and contact details are never shown on the public listing. Students message you through the page, and you see their messages in your private dashboard.</p>
 <p id="slFormMsg" class="sl-msg" role="alert" hidden></p>
-<button class="btn btn-primary" type="submit">Continue to payment</button>
+<button class="btn btn-primary" type="submit">Publish my listing</button>
 </form>
-<div id="slSuccess" hidden><h2>Your listing is saved.</h2><p>Reference code: <code data-sl-ref></code></p><p><strong>Your listing is not live yet.</strong> Pay the one-time $${SUBLEASE_PRICE} listing fee with PayPal to publish it for 60 days. It goes live automatically within a minute or two of your payment.</p><p><a class="btn btn-primary" data-sl-pay data-business="${e(PAYPAL_BUSINESS_EMAIL)}" data-price="${SUBLEASE_PRICE}" href="mailto:leasesolutions3@gmail.com" rel="noopener">Pay $${SUBLEASE_PRICE} with PayPal</a></p><p><strong>Important:</strong> Save your private dashboard link. It’s how you reach your messages and launch kit. We can’t recover it, so copy it now.</p><div class="field"><label for="slManageUrl">Your private dashboard link</label><input id="slManageUrl" data-sl-manage-url readonly></div><p><button class="btn btn-ghost" type="button" data-sl-copy-link>Copy link</button> <a class="btn btn-primary" data-sl-manage href="sublease-manage.html">Open my dashboard</a></p></div>
+<div id="slSuccess" hidden><h2>You're in. Your listing is live!</h2><p>Reference code: <code data-sl-ref></code></p><p>Your listing is live for 60 days. Next, open your dashboard. It tells you exactly what to post, where, and what to say.</p><p><strong>Important:</strong> Save your private dashboard link. It’s how you reach your messages and launch kit. We can’t recover it, so copy it now.</p><div class="field"><label for="slManageUrl">Your private dashboard link</label><input id="slManageUrl" data-sl-manage-url readonly></div><p><button class="btn btn-ghost" type="button" data-sl-copy-link>Copy link</button> <a class="btn btn-primary" data-sl-manage href="sublease-manage.html">Open my dashboard</a></p></div>
+</div>
 </div></section>${slScript}`,
 );
 emit(

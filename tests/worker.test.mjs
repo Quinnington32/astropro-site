@@ -50,6 +50,7 @@ before(async () => {
     "migrations/0004_sublease_war_room.sql",
     "migrations/0005_sublease_payments.sql",
     "migrations/0006_sublease_views.sql",
+    "migrations/0007_sublease_credits.sql",
   ]) {
     const schema = await readFile(file, "utf8");
     await db.batch(
@@ -714,6 +715,32 @@ test("sublease war room: listing lifecycle, payment gate, leads and owner dashbo
   assert.ok(dash.views >= 1);
   const filled = await api("/manage/" + id, { method: "POST", headers: { "x-manage-token": manageToken }, body: JSON.stringify({ status: "filled" }) });
   assert.equal(filled.status, 200);
+});
+
+test("sublease war room: pay first, then the form redeems the payment once", async () => {
+  const api = (path, init = {}) =>
+    mf.dispatchFetch(origin + "/api/sublease" + path, {
+      ...init,
+      headers: { Origin: origin, "Content-Type": "application/json", "CF-Connecting-IP": "192.0.2.88", ...(init.headers || {}) },
+    });
+  const body = (extra) => JSON.stringify({
+    market: "housing-madison", marketName: "Madison, WI", school: "UW", area: "Near campus",
+    title: "Paid first", description: "A sunny two bedroom close to campus.",
+    ownerName: "Pat", ownerEmail: "pat@example.com", permission: "approved", type: "sublease",
+    furnished: "yes", utilities: "some", startDate: "2027-05-15", endDate: "2027-08-15",
+    rent: 800, bedrooms: 1, bathrooms: 1, photos: ["data:image/jpeg;base64," + "A".repeat(200)], consent: true, ...extra,
+  });
+  const code = "paycode12345";
+  assert.deepEqual(await (await api("/credit/" + code)).json(), { paid: false, used: false });
+  assert.equal((await api("/listings", { method: "POST", body: body({ payCode: code }) })).status, 402);
+  await db.prepare("INSERT INTO sublease_credits (code,txn_id,paid_at) VALUES (?,?,?)").bind(code, "TXNPAYFIRST", new Date().toISOString()).run();
+  assert.deepEqual(await (await api("/credit/" + code)).json(), { paid: true, used: false });
+  const ok = await api("/listings", { method: "POST", body: body({ payCode: code }) });
+  assert.equal(ok.status, 201);
+  const { id } = await ok.json();
+  assert.equal((await api("/listings/" + id)).status, 200); // live immediately
+  assert.equal((await api("/listings", { method: "POST", body: body({ payCode: code }) })).status, 402); // already used
+  assert.deepEqual(await (await api("/credit/" + code)).json(), { paid: true, used: true });
 });
 
 test("sublease owner can delete a listing with its photos and messages", async () => {
