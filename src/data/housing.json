@@ -2241,6 +2241,20 @@
           "facebookPost": "https://www.facebook.com/groups/1125547753567026/posts/1131682579620210/",
           "photoPending": true
         }
+      },
+      {
+        "id": "housing-macomb-il-property-creekside-park",
+        "name": "Creekside Park",
+        "website": "https://www.creeksidepark-apts.com/",
+        "verifiedAt": "2026-11-20",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Creekside%20Park%2C%20Macomb%2C%20IL",
+        "summary": "Two- and three-bedroom homes less than a mile from WIU with washer/dryer hookups and public transit access. Income-restricted community with student eligibility rules.",
+        "source": "https://www.creeksidepark-apts.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-18",
+          "facebookPost": "https://www.facebook.com/groups/1125547753567026/posts/1132599496195185/",
+          "photoPending": true
+        }
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/1125547753567026/"
@@ -2713,6 +2727,20 @@
           "facebookPost": "https://www.facebook.com/groups/951828424471864/posts/955975330723840/",
           "photoPending": true
         }
+      },
+      {
+        "id": "housing-ames-ia-property-the-social-west-ames",
+        "name": "The Social West Ames",
+        "website": "https://thesocialwestames.com/",
+        "verifiedAt": "2026-11-20",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Social%20West%20Ames%2C%20Ames%2C%20IA",
+        "summary": "One- through five-bedroom apartments and townhomes near Iowa State, with furnished options and a CyRide route.",
+        "source": "https://thesocialwestames.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-18",
+          "facebookPost": "https://www.facebook.com/groups/951828424471864/posts/956839607304079/",
+          "photoPending": true
+        }
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/951828424471864/"
@@ -2823,6 +2851,20 @@
           "facebookPost": "https://www.facebook.com/groups/3199654480425813/posts/3206054763119118/",
           "photoPending": true
         }
+      },
+      {
+        "id": "housing-iowa-city-ia-property-aspire-at-west-campus",
+        "name": "Aspire at West Campus",
+        "website": "https://www.aspireatwestcampus.com/",
+        "verifiedAt": "2026-11-20",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Aspire%20at%20West%20Campus%2C%20Iowa%20City%2C%20IA",
+        "summary": "One- and two-bedroom apartments for UI grad students, faculty and hospital staff, with a CAMBUS stop and included cable and internet. Check eligibility rules.",
+        "source": "https://www.aspireatwestcampus.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-18",
+          "facebookPost": "https://www.facebook.com/groups/3199654480425813/posts/3207188509672410/",
+          "photoPending": true
+        }
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/3199654480425813/"
@@ -2926,6 +2968,20 @@
           "facebookPost": "https://www.facebook.com/groups/1378086194245280/posts/1380718483982051/",
           "photoPending": true
         }
+      },
+      {
+        "id": "housing-lawrence-ks-property-proxi-lawrence",
+        "name": "Proxi Lawrence",
+        "website": "https://www.proxilawrence.com/",
+        "verifiedAt": "2026-11-20",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Proxi%20Lawrence%2C%20Lawrence%2C%20KS",
+        "summary": "Furnished studios and two-, three- and four-bedroom apartments near KU with study lounges.",
+        "source": "https://www.proxilawrence.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-18",
+          "facebookPost": "https://www.facebook.com/groups/1378086194245280/posts/1383243553729544/",
+          "photoPending": true
+        }
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/1378086194245280/"
@@ -2963,7 +3019,11 @@
         "pick": 2,
         "photo": "assets/housing/housing-manhattan-ks-property-the-quarters-manhattan.jpg",
         "photoAlt": "The Quarters Manhattan in Manhattan, KS, from the property's official website",
-        "photoApproved": true
+        "photoApproved": true,
+        "spotlight": {
+          "publishedAt": "2026-11-18",
+          "facebookPost": "https://www.facebook.com/groups/2120989008519297/posts/2126626564622208/"
+        }
       },
       {
         "id": "housing-manhattan-ks-property-sandstone-apartments",
@@ -3104,7 +3164,11 @@
         "pick": 3,
         "photo": "assets/housing/housing-stillwater-ok-property-alight-stillwater.jpg",
         "photoAlt": "Alight Stillwater in Stillwater, OK, from the property's official website",
-        "photoApproved": true
+        "photoApproved": true,
+        "spotlight": {
+          "publishedAt": "2026-11-18",
+          "facebookPost": "https://www.facebook.com/groups/1887445796015247/posts/1893099318783228/"
+        }
       },
       {
         "id": "housing-stillwater-ok-property-milestone-stillwater",
@@ -3273,6 +3337,20 @@
           "facebookPost": "https://www.facebook.com/groups/1128748779953964/posts/1132566809572161/",
           "photoPending": true
         }
+      },
+      {
+        "id": "housing-tucson-az-property-yugo-tucson-campus",
+        "name": "Yugo Tucson Campus",
+        "website": "https://yugotucsoncampus.prospectportal.com/tucson/yugo-tucson-campus/2-bedroom-apartments/",
+        "verifiedAt": "2026-11-20",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Yugo%20Tucson%20Campus%2C%20Tucson%2C%20AZ",
+        "summary": "Studios and one- through five-bedroom layouts on North Tyndall Avenue near the University of Arizona. Ask which renovated or classic layout is offered for your lease dates.",
+        "source": "https://yugotucsoncampus.prospectportal.com/tucson/yugo-tucson-campus/2-bedroom-apartments/",
+        "spotlight": {
+          "publishedAt": "2026-11-18",
+          "facebookPost": "https://www.facebook.com/groups/1128748779953964/posts/1133495662812609/",
+          "photoPending": true
+        }
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/1128748779953964/"
@@ -3309,7 +3387,11 @@
         "pick": 2,
         "photo": "assets/housing/housing-albuquerque-nm-property-broadstone-nob-hill.jpg",
         "photoAlt": "Broadstone Nob Hill in Albuquerque, NM, from the property's official website",
-        "photoApproved": true
+        "photoApproved": true,
+        "spotlight": {
+          "publishedAt": "2026-11-18",
+          "facebookPost": "https://www.facebook.com/groups/2548132042348043/posts/2554267485067832/"
+        }
       },
       {
         "id": "housing-albuquerque-nm-property-nob-hill-apartments",
@@ -3416,7 +3498,11 @@
         "pick": 3,
         "photo": "assets/housing/housing-fresno-ca-property-palazzo-at-campus-pointe.jpg",
         "photoAlt": "Palazzo at Campus Pointe in Fresno, CA, from the property's official website",
-        "photoApproved": true
+        "photoApproved": true,
+        "spotlight": {
+          "publishedAt": "2026-11-18",
+          "facebookPost": "https://www.facebook.com/groups/1153864210494686/posts/1158582613356179/"
+        }
       },
       {
         "id": "housing-fresno-ca-property-topanga-ridge",
@@ -3483,7 +3569,11 @@
         "pick": 1,
         "photo": "assets/housing/housing-sacramento-ca-property-lark-sacramento.jpg",
         "photoAlt": "Lark in Sacramento, CA, from the property's official website",
-        "photoApproved": true
+        "photoApproved": true,
+        "spotlight": {
+          "publishedAt": "2026-11-18",
+          "facebookPost": "https://www.facebook.com/groups/1769167408547278/posts/1775932841204068/"
+        }
       },
       {
         "id": "housing-sacramento-ca-property-academy65",
@@ -3641,6 +3731,20 @@
         "spotlight": {
           "publishedAt": "2026-11-17",
           "facebookPost": "https://www.facebook.com/groups/1670073367846669/posts/1674127257441280/",
+          "photoPending": true
+        }
+      },
+      {
+        "id": "housing-greensboro-nc-property-fulton-place",
+        "name": "Fulton Place",
+        "website": "https://livefultonplace.com/rates-floorplans/",
+        "verifiedAt": "2026-11-20",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Fulton%20Place%2C%20Greensboro%2C%20NC",
+        "summary": "Two-bedroom/two-bath and three-bedroom/three-bath apartments on Fulton Street near UNCG. Furnishings, in-unit laundry, internet, and water/sewer are listed as included.",
+        "source": "https://livefultonplace.com/rates-floorplans/",
+        "spotlight": {
+          "publishedAt": "2026-11-18",
+          "facebookPost": "https://www.facebook.com/groups/1670073367846669/posts/1675048784015794/",
           "photoPending": true
         }
       }
@@ -6979,7 +7083,11 @@
         "pick": 1,
         "photo": "assets/housing/housing-madison-property-hub-madison.jpg",
         "photoAlt": "Rooftop pool deck at Hub Madison",
-        "photoApproved": true
+        "photoApproved": true,
+        "spotlight": {
+          "publishedAt": "2026-11-18",
+          "facebookPost": "https://www.facebook.com/groups/1786944512518241/posts/1787873972425295/"
+        }
       },
       {
         "id": "housing-madison-property-chapter-madison",
@@ -7083,6 +7191,20 @@
           "facebookPost": "https://www.facebook.com/groups/3683290235184747/posts/3683332848513819/",
           "photoPending": true
         }
+      },
+      {
+        "id": "housing-minneapolis-property-the-quad-on-delaware",
+        "name": "The Quad on Delaware",
+        "website": "https://www.quadondelaware.com/",
+        "verifiedAt": "2026-11-20",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Quad%20on%20Delaware%2C%20Minneapolis%2C%20MN",
+        "summary": "Two-, three-, and four-bedroom apartments near the University of Minnesota. Compare the exact layout and route to campus buildings.",
+        "source": "https://www.quadondelaware.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-18",
+          "facebookPost": "https://www.facebook.com/groups/3683290235184747/posts/3684561298390974/",
+          "photoPending": true
+        }
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/3683290235184747/"
@@ -7144,6 +7266,20 @@
         "spotlight": {
           "publishedAt": "2026-11-17",
           "facebookPost": "https://www.facebook.com/groups/1870011444003854/posts/1870043890667276/",
+          "photoPending": true
+        }
+      },
+      {
+        "id": "housing-tampa-property-avalon-heights",
+        "name": "Avalon Heights",
+        "website": "https://www.americancampus.com/student-apartments/fl/tampa/avalon-heights/floor-plans",
+        "verifiedAt": "2026-11-20",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Avalon%20Heights%2C%20Tampa%2C%20FL",
+        "summary": "Three-bedroom/three-bath and four-bedroom/four-bath apartments near USF with a bathroom for each bedroom. Check the official floor plans and what is included in each lease.",
+        "source": "https://www.americancampus.com/student-apartments/fl/tampa/avalon-heights/floor-plans",
+        "spotlight": {
+          "publishedAt": "2026-11-18",
+          "facebookPost": "https://www.facebook.com/groups/1870011444003854/posts/1870966807241651/",
           "photoPending": true
         }
       }
@@ -7209,6 +7345,20 @@
           "facebookPost": "https://www.facebook.com/groups/1678444180440573/posts/1678474623770862/",
           "photoPending": true
         }
+      },
+      {
+        "id": "housing-ann-arbor-property-six11",
+        "name": "Six11",
+        "website": "https://livesix11.com/",
+        "verifiedAt": "2026-11-20",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Six11%2C%20Ann%20Arbor%2C%20MI",
+        "summary": "Studio, four-, five-, and six-bedroom layouts near the University of Michigan; four-bedroom plans include four bathrooms.",
+        "source": "https://livesix11.com/",
+        "spotlight": {
+          "publishedAt": "2026-11-18",
+          "facebookPost": "https://www.facebook.com/groups/1678444180440573/posts/1679428480342143/",
+          "photoPending": true
+        }
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/1678444180440573/"
@@ -7257,7 +7407,11 @@
         "pick": 3,
         "photo": "assets/housing/housing-gainesville-property-alight-gainesville.jpg",
         "photoAlt": "Pool at Alight Gainesville",
-        "photoApproved": true
+        "photoApproved": true,
+        "spotlight": {
+          "publishedAt": "2026-11-18",
+          "facebookPost": "https://www.facebook.com/groups/1930302061660730/posts/1931256621565274/"
+        }
       },
       {
         "id": "housing-gainesville-property-the-standard-gainesville",
