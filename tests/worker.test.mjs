@@ -51,6 +51,7 @@ before(async () => {
     "migrations/0005_sublease_payments.sql",
     "migrations/0006_sublease_views.sql",
     "migrations/0007_sublease_credits.sql",
+    "migrations/0008_sublease_pay_code.sql",
   ]) {
     const schema = await readFile(file, "utf8");
     await db.batch(
@@ -732,14 +733,20 @@ test("sublease war room: pay first, then the form redeems the payment once", asy
   });
   const code = "paycode12345";
   assert.deepEqual(await (await api("/credit/" + code)).json(), { paid: false, used: false });
-  assert.equal((await api("/listings", { method: "POST", body: body({ payCode: code }) })).status, 402);
+  // submitted before PayPal has confirmed: saved, not live, then the payment finds it by code
+  const early = await api("/listings", { method: "POST", body: body({ payCode: "earlycode123" }) });
+  assert.equal(early.status, 201);
+  const earlyOut = await early.json();
+  assert.equal(earlyOut.live, false);
+  assert.equal((await api("/listings/" + earlyOut.id)).status, 404);
+  assert.equal((await api("/listings", { method: "POST", body: body({ payCode: "earlycode123" }) })).status, 409);
   await db.prepare("INSERT INTO sublease_credits (code,txn_id,paid_at) VALUES (?,?,?)").bind(code, "TXNPAYFIRST", new Date().toISOString()).run();
   assert.deepEqual(await (await api("/credit/" + code)).json(), { paid: true, used: false });
   const ok = await api("/listings", { method: "POST", body: body({ payCode: code }) });
   assert.equal(ok.status, 201);
   const { id } = await ok.json();
   assert.equal((await api("/listings/" + id)).status, 200); // live immediately
-  assert.equal((await api("/listings", { method: "POST", body: body({ payCode: code }) })).status, 402); // already used
+  assert.equal((await api("/listings", { method: "POST", body: body({ payCode: code }) })).status, 409); // already used
   assert.deepEqual(await (await api("/credit/" + code)).json(), { paid: true, used: true });
 });
 

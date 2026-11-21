@@ -123,8 +123,9 @@ function startPage() {
     }
   };
   (async () => {
-    const returning = /[?&]paid=1/.test(location.search);
-    let st = await creditStatus();
+    // Coming back from PayPal: open the form right away. Confirmation can take a minute, so it never makes them wait.
+    if (/[?&]paid=1/.test(location.search)) return openForm();
+    const st = await creditStatus();
     if (st.paid && !st.used) return openForm();
     if (st.used) {
       payCode = newCode();
@@ -132,16 +133,7 @@ function startPage() {
         localStorage.setItem(CODE_KEY, payCode);
       } catch {}
       payBtn.href = buildPayUrl();
-      st = { paid: false };
     }
-    if (!returning) return;
-    say(payMsg, "Confirming your payment with PayPal. This usually takes under a minute. Keep this page open.");
-    for (let i = 0; i < 45; i++) {
-      await new Promise((r) => setTimeout(r, 4000));
-      st = await creditStatus();
-      if (st.paid && !st.used) return openForm();
-    }
-    say(payMsg, "We haven't seen your payment yet. If you completed it, wait a few minutes and refresh this page. Your form opens automatically once it is confirmed. Questions? Email leasesolutions3@gmail.com.");
   })();
   form.addEventListener("submit", async (ev) => {
     ev.preventDefault();
@@ -163,14 +155,16 @@ function startPage() {
       try {
         localStorage.setItem("astropro.sublease." + out.id, out.manageToken);
       } catch {}
-      showSuccess(out.id, link);
+      showSuccess(out.id, link, out.live);
     } catch (e) {
       say(msg, e.message);
       btn.disabled = false;
     }
   });
-  function showSuccess(id, link) {
+  function showSuccess(id, link, live) {
     const box = $("#slSuccess");
+    $("[data-sl-live]").hidden = !live;
+    $("[data-sl-confirming]").hidden = !!live;
     $("[data-sl-ref]").textContent = id;
     $("[data-sl-manage]").href = link;
     $("[data-sl-manage-url]").value = new URL(link, location.href).href;

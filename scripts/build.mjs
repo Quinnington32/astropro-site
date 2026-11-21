@@ -757,7 +757,7 @@ const slValue = [
 ];
 const slSteps = [
   ["Pay your one-time $" + SUBLEASE_PRICE + " onboarding fee", "One flat fee through secure PayPal. No subscription and no commission."],
-  ["Fill out your onboarding form", "The moment your payment is confirmed, the form opens right here. Add your details, price, dates and photos."],
+  ["Fill out your onboarding form", "As soon as you finish paying, the form opens right here. Add your details, price, dates and photos."],
   ["Do what we tell you", "Your private dashboard shows exactly what to post, where, and what to say. Your listing is live for 60 days."],
 ];
 emit(
@@ -772,8 +772,8 @@ emit(
   ) +
     `<section class="wrap" id="what-you-get"><div class="section-head"><span class="kicker-sm">What you get</span><h2>We studied subleasing for over a decade and put everything we know here.</h2></div><div class="sl-value">${slValue.map(([t, b], i) => `<div class="sl-value-item"><span class="sl-value-n">${i + 1}</span><div><h3>${e(t)}</h3><p>${e(b)}</p></div></div>`).join("")}</div><p class="source-note">We write your posts and take you to every place to post them. Facebook and most sites don’t let outside tools post for you, so you press submit yourself. This is general information, not legal advice. Subleasing rules depend on your lease and your state.</p></section>
 <section class="wrap"><div class="section-head"><span class="kicker-sm">Next steps</span><h2>Three steps to a subleased place.</h2></div><div class="step-list">${slSteps.map(([t, b], i) => `<div class="step"><div class="n">${i + 1}</div><div class="body"><h3>${e(t)}</h3><p>${e(b)}</p></div></div>`).join("")}</div><div class="cta-row"><a class="btn btn-primary" href="#start">Get started</a></div></section>
-<section class="wrap" id="start" data-sublease-start data-business="${e(PAYPAL_BUSINESS_EMAIL)}" data-price="${SUBLEASE_PRICE}"><div class="callout" id="slPayGate"><h2>Get started</h2><p><strong>$${SUBLEASE_PRICE} one-time onboarding fee.</strong> Pay securely with PayPal. As soon as your payment is confirmed, your onboarding form opens right here.</p><p><a class="btn btn-primary" data-sl-pay data-business="${e(PAYPAL_BUSINESS_EMAIL)}" data-price="${SUBLEASE_PRICE}" href="mailto:leasesolutions3@gmail.com" rel="noopener">Pay $${SUBLEASE_PRICE} and get started</a></p><p id="slPayMsg" class="sl-msg" role="status" hidden></p></div>
-<div class="callout" id="slFormWrap" hidden><h2>Payment received. Now tell us about your place.</h2><p>This takes about five minutes. When you submit, your listing goes live for 60 days.</p>
+<section class="wrap" id="start" data-sublease-start data-business="${e(PAYPAL_BUSINESS_EMAIL)}" data-price="${SUBLEASE_PRICE}"><div class="callout" id="slPayGate"><h2>Get started</h2><p><strong>$${SUBLEASE_PRICE} one-time onboarding fee.</strong> Pay securely with PayPal. When you come back from PayPal, your onboarding form opens right here.</p><p><a class="btn btn-primary" data-sl-pay data-business="${e(PAYPAL_BUSINESS_EMAIL)}" data-price="${SUBLEASE_PRICE}" href="mailto:leasesolutions3@gmail.com" rel="noopener">Pay $${SUBLEASE_PRICE} and get started</a></p><p id="slPayMsg" class="sl-msg" role="status" hidden></p></div>
+<div class="callout" id="slFormWrap" hidden><h2>Thank you! Now tell us about your place.</h2><p>This takes about five minutes. Your listing goes live for 60 days as soon as PayPal confirms your payment.</p>
 <form id="slForm" class="sl-form" novalidate>
 <div class="field"><label for="slMarket">Campus market</label><select id="slMarket" name="market" required>${slMarketOptions(false)}</select></div>
 <div class="field"><label for="slSchool">School</label><input id="slSchool" name="school" maxlength="150" placeholder="e.g. University of Florida"></div>
@@ -795,7 +795,7 @@ emit(
 <p id="slFormMsg" class="sl-msg" role="alert" hidden></p>
 <button class="btn btn-primary" type="submit">Publish my listing</button>
 </form>
-<div id="slSuccess" hidden><h2>You're in. Your listing is live!</h2><p>Reference code: <code data-sl-ref></code></p><p>Your listing is live for 60 days. Next, open your dashboard. It tells you exactly what to post, where, and what to say.</p><p><strong>Important:</strong> Save your private dashboard link. It’s how you reach your messages and launch kit. We can’t recover it, so copy it now.</p><div class="field"><label for="slManageUrl">Your private dashboard link</label><input id="slManageUrl" data-sl-manage-url readonly></div><p><button class="btn btn-ghost" type="button" data-sl-copy-link>Copy link</button> <a class="btn btn-primary" data-sl-manage href="sublease-manage.html">Open my dashboard</a></p></div>
+<div id="slSuccess" hidden><h2>You're in!</h2><p>Reference code: <code data-sl-ref></code></p><p data-sl-live hidden><strong>Your listing is live for 60 days.</strong></p><p data-sl-confirming hidden><strong>Your listing goes live automatically the moment PayPal confirms your payment, usually within a minute or two.</strong> You don't need to do anything.</p><p>Next, open your dashboard. It tells you exactly what to post, where, and what to say.</p><p><strong>Important:</strong> Save your private dashboard link. It’s how you reach your messages and launch kit. We can’t recover it, so copy it now.</p><div class="field"><label for="slManageUrl">Your private dashboard link</label><input id="slManageUrl" data-sl-manage-url readonly></div><p><button class="btn btn-ghost" type="button" data-sl-copy-link>Copy link</button> <a class="btn btn-primary" data-sl-manage href="sublease-manage.html">Open my dashboard</a></p></div>
 </div>
 </div></section>${slScript}`,
 );
