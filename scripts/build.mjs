@@ -743,26 +743,36 @@ const slGroups = Object.fromEntries(
     .filter(([, v]) => v),
 );
 const slScript = `<script type="module" src="assets/sublease.js"></script>`;
-const slWorkflow = [
-  ["Check permission", "We tell you whether you can sublease or relet, and write the email to your landlord."],
-  ["Build your listing", "Add your details and photos. We create a public page with your own link."],
-  ["Get it in front of students", "Your launch kit has the posts, replies and a 14-day plan, written from your listing."],
-  ["Handle the messages", "Every inquiry lands in your dashboard, with scam warnings on risky messages."],
-  ["Tour, sign and hand over", "A checklist takes you from tour to signed agreement to move-in photos."],
+const slValue = [
+  ["Your own public listing page", "Photos, details and your own link. It stays live for 60 days."],
+  ["In front of thousands of students", "Your listing shows on your campus market page, where thousands of students come to look for housing."],
+  ["Ready-to-post ads", "Facebook and Reddit posts written from your details. Copy, paste, done."],
+  ["10+ places to post, done for you", "We hand you a list of 10+ platforms with your post ready for each one and a direct link. You just paste it in and press submit."],
+  ["Every message in one place", "Interested students message you through your page. Your private dashboard collects them all."],
+  ["Scam protection", "Messages that use common rental-scam wording are flagged before you reply."],
+  ["Reply templates", "Know what to say to the first message, the tour request and the “is it still available?” question."],
+  ["A 14-day game plan", "A day-by-day plan so you always know the next move, with a link to your market’s student Facebook group."],
+  ["Tour, sign and hand-over checklist", "From first message to signed agreement to move-in photos, nothing gets missed."],
+  ["Landlord permission email", "A ready-to-send email asking your landlord for approval, so you stay protected."],
+];
+const slSteps = [
+  ["Tell us about your place", "Fill out the short onboarding form below: your details, price, dates and photos."],
+  ["Pay your one-time $" + SUBLEASE_PRICE + " fee", "Right after the form you get a secure PayPal button. Your listing goes live a minute or two after payment."],
+  ["Do what we tell you", "Open your private dashboard. It shows exactly what to post, where, and what to say."],
 ];
 emit(
   "sublease-war-room.html",
   "Sublease War Room",
-  "The easiest way for a student to sublease, relet or hand off a lease. Build your listing, get a launch kit, collect messages and follow a step-by-step plan.",
+  "Need to get out of your lease early? Our team of former apartment managers built the Sublease War Room to get your place subleased fast. One-time fee.",
   hero(
     "The Sublease War Room.",
-    "Need to leave your place early? We walk you through every step: permission, listing, posts, messages, tours and handover.",
-    `<div class="cta-row"><a class="btn btn-primary" href="#start">List my place</a><a class="btn btn-ghost" href="sublease-listings.html">Browse subleases</a></div>`,
+    "Need to get out of your lease early? Every minute counts until rent is due on the 1st again. Our team of former apartment managers wants to help you, and we built the Sublease War Room to do it.",
+    `<div class="cta-row"><a class="btn btn-primary" href="#start">Get started for $${SUBLEASE_PRICE}</a><a class="btn btn-ghost" href="#what-you-get">See what you get</a></div>`,
     "Student housing",
   ) +
-    `<section class="wrap"><div class="section-head"><span class="kicker-sm">The process</span><h2>We take you from “now what?” to “it’s handled.”</h2></div><div class="step-list">${slWorkflow.map(([t, b], i) => `<div class="step"><div class="n">${i + 1}</div><div class="body"><h3>${e(t)}</h3><p>${e(b)}</p></div></div>`).join("")}</div></section>
-<section class="wrap prose"><h2>What you get for $${SUBLEASE_PRICE}</h2><ul><li>A public listing page with your photos. Once your payment goes through it goes live and stays live for 60 days.</li><li>A private dashboard that collects messages from interested students.</li><li>A launch kit: Facebook and Reddit posts, a reply template and a landlord permission email, all written from your details.</li><li>A 14-day plan telling you what to do each day, with a link to your market’s student Facebook group.</li><li>A checklist from first message to move-in.</li></ul><p class="source-note">We don’t post to Facebook for you. Facebook doesn’t allow outside tools to post in groups, so we write the post and take you to the right group. This is general information, not legal advice. Subleasing rules depend on your lease and your state.</p></section>
-<section class="wrap" id="start" data-sublease-start data-business="${e(PAYPAL_BUSINESS_EMAIL)}" data-price="${SUBLEASE_PRICE}"><div class="callout"><h2>List your place</h2>
+    `<section class="wrap" id="what-you-get"><div class="section-head"><span class="kicker-sm">What you get</span><h2>Everything you need to sublease fast, for one flat $${SUBLEASE_PRICE}.</h2><p class="sl-price-line"><strong>$${SUBLEASE_PRICE} one-time fee.</strong> No subscription. No commission. No hidden costs.</p></div><div class="sl-value">${slValue.map(([t, b], i) => `<div class="sl-value-item"><span class="sl-value-n">${i + 1}</span><div><h3>${e(t)}</h3><p>${e(b)}</p></div></div>`).join("")}</div><p class="source-note">We write your posts and take you to every place to post them. Facebook and most sites don’t let outside tools post for you, so you press submit yourself. This is general information, not legal advice. Subleasing rules depend on your lease and your state.</p></section>
+<section class="wrap"><div class="section-head"><span class="kicker-sm">Next steps</span><h2>Three steps to a subleased place.</h2></div><div class="step-list">${slSteps.map(([t, b], i) => `<div class="step"><div class="n">${i + 1}</div><div class="body"><h3>${e(t)}</h3><p>${e(b)}</p></div></div>`).join("")}</div><div class="cta-row"><a class="btn btn-primary" href="#start">Start now: fill out the form</a></div></section>
+<section class="wrap" id="start" data-sublease-start data-business="${e(PAYPAL_BUSINESS_EMAIL)}" data-price="${SUBLEASE_PRICE}"><div class="callout"><h2>Step 1: Your onboarding form</h2><p>Takes about five minutes. After you submit, you pay the one-time $${SUBLEASE_PRICE} fee and your listing goes live.</p>
 <form id="slForm" class="sl-form" novalidate>
 <div class="field"><label for="slMarket">Campus market</label><select id="slMarket" name="market" required>${slMarketOptions(false)}</select></div>
 <div class="field"><label for="slSchool">School</label><input id="slSchool" name="school" maxlength="150" placeholder="e.g. University of Florida"></div>
@@ -782,7 +792,7 @@ emit(
 <label class="checkbox-label"><input id="slConsent" type="checkbox" required><span>I have the right to list this place, and my landlord permits it or I will get permission before I accept anyone.</span></label>
 <p class="fineprint">Your name and contact details are never shown on the public listing. Students message you through the page, and you see their messages in your private dashboard.</p>
 <p id="slFormMsg" class="sl-msg" role="alert" hidden></p>
-<button class="btn btn-primary" type="submit">Create my listing</button>
+<button class="btn btn-primary" type="submit">Continue to payment</button>
 </form>
 <div id="slSuccess" hidden><h2>Your listing is saved.</h2><p>Reference code: <code data-sl-ref></code></p><p><strong>Your listing is not live yet.</strong> Pay the one-time $${SUBLEASE_PRICE} listing fee with PayPal to publish it for 60 days. It goes live automatically within a minute or two of your payment.</p><p><a class="btn btn-primary" data-sl-pay data-business="${e(PAYPAL_BUSINESS_EMAIL)}" data-price="${SUBLEASE_PRICE}" href="mailto:leasesolutions3@gmail.com" rel="noopener">Pay $${SUBLEASE_PRICE} with PayPal</a></p><p><strong>Important:</strong> Save your private dashboard link. It’s how you reach your messages and launch kit. We can’t recover it, so copy it now.</p><div class="field"><label for="slManageUrl">Your private dashboard link</label><input id="slManageUrl" data-sl-manage-url readonly></div><p><button class="btn btn-ghost" type="button" data-sl-copy-link>Copy link</button> <a class="btn btn-primary" data-sl-manage href="sublease-manage.html">Open my dashboard</a></p></div>
 </div></section>${slScript}`,

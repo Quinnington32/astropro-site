@@ -3575,3 +3575,11 @@ html, body { overflow-x: clip; }
 .sl-share{display:flex;gap:.6rem;flex-wrap:wrap}
 .sl-share input{flex:1 1 220px;min-width:0}
 .sl-danger{color:#8a1f11;border-color:#c0392b}
+
+/* Sublease War Room value grid */
+.sl-price-line { font-size: 1.15rem; color: var(--orange, #e77b25); margin-top: 0.5rem; }
+.sl-value { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+.sl-value-item { display: flex; gap: 0.9rem; align-items: flex-start; background: #fff; border: 1px solid rgba(23, 36, 71, 0.12); border-radius: 14px; padding: 1.1rem 1.2rem; box-shadow: 0 2px 10px rgba(23, 36, 71, 0.06); }
+.sl-value-item h3 { margin: 0 0 0.25rem; font-size: 1.05rem; color: #172447; }
+.sl-value-item p { margin: 0; color: #4a5470; font-size: 0.95rem; line-height: 1.5; }
+.sl-value-n { flex: none; width: 2rem; height: 2rem; border-radius: 50%; background: #e77b25; color: #fff; font-weight: 700; display: grid; place-items: center; }
