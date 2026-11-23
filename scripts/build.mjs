@@ -340,7 +340,7 @@ emit(
     "Search by school, city, or state. These are research starting points, not verified available rentals.",
     `<div class="cta-row"><a class="btn btn-primary" href="#markets">Find your market</a><a class="btn btn-ghost" href="sublease-war-room.html">Sublease War Room</a><a class="btn btn-ghost" href="index.html#organizations">Suggest a property</a></div>`,
   ) +
-    `<section class="wrap" id="markets" data-markets><div class="directory-controls"><div><label for="marketSearch">School, city, or state</label><input type="search" id="marketSearch" placeholder="Try Houston or Ohio" autocomplete="off"></div><div><label for="marketSort">Sort markets</label><select id="marketSort"><option value="state">Group by state</option><option value="city">City A–Z</option></select></div></div><p id="marketCount" class="result-count" role="status" aria-live="polite">${markets.length} markets</p>${stateJump}${marketCards}<div class="empty-state" id="marketEmpty" hidden><h2>No matching markets</h2><p>Try the city or state name, or find housing support through your school.</p><a class="btn btn-primary" href="school-resources.html?topic=housing">Find campus housing support</a></div><p class="source-note">A directory mention is not an endorsement or a paid partnership. Check the property’s current terms and eligibility directly.</p></section>` +
+    `<section class="wrap" id="markets" data-markets><div class="directory-controls"><div><label for="marketSearch">School, city, or state</label><input type="search" id="marketSearch" placeholder="Try Houston or Ohio" autocomplete="off"></div><div><label for="marketSort">Sort markets</label><select id="marketSort"><option value="state">Group by state</option><option value="city">City A–Z</option></select></div></div><p id="marketCount" class="result-count" role="status" aria-live="polite">${markets.length} markets</p>${stateJump}${marketCards}<div class="empty-state" id="marketEmpty" hidden><h2>No matching markets</h2><p>Try the city or state name, or find housing support through your school.</p><a class="btn btn-primary" href="school-resources.html?topic=housing">Find campus housing support</a></div><section id="slNewMarkets" hidden><h2 class="state-heading">Added by students</h2><div class="market-grid" id="slNewMarketGrid"></div></section><p class="source-note">A directory mention is not an endorsement or a paid partnership. Check the property’s current terms and eligibility directly.</p></section><script type="module" src="assets/sublease.js"></script>` +
     faqs(),
 );
 emit(
@@ -377,7 +377,7 @@ function rentalCard(p, m, { badge, feed }) {
   const fallback = "Official source reviewed. Confirm current floor plans, pricing, and availability directly with the property.";
   return `<article class="rental-card" id="${feed ? "feed-" : ""}${e(p.id)}">${rentalVisual(p, m, badge)}<div class="rental-body"><div class="card-heading"><h3>${e(p.name)}</h3>${saveButton({ ...p, name: p.name })}</div>${when}${p.address ? `<p class="rental-meta">${e(p.address)}</p>` : ""}<p>${e(p.summary || fallback)}</p><div class="cta-row">${site}${maps}${post}</div><p class="review-date">${p.verifiedAt ? "Official source reviewed " + dateLabel(p.verifiedAt) + ". Check current pricing and availability with the property." : "Not independently verified. Confirm details with the property."}</p></div></article>`;
 }
-for (const m of markets) {
+const marketPageBody = (m) => {
   const picks = m.properties.filter((p) => p.pick).sort((a, b) => a.pick - b.pick).slice(0, 3);
   const feed = m.properties
     .filter((p) => p.spotlight)
@@ -404,12 +404,19 @@ for (const m of markets) {
     faqs() +
     `<script type="module" src="assets/sublease.js"></script>` +
     `<section class="wrap"><div class="callout"><h2>Need help closer to your campus?</h2><p>Your school’s housing office may have rental guidance, emergency support, and off-campus listings.</p><div class="cta-row"><a class="btn btn-primary" href="school-resources.html?school=${encodeURIComponent(m.school)}&topic=housing">Find campus housing resources</a><a class="btn btn-ghost" href="index.html#organizations">Suggest a correction or property</a></div></div></section>`;
+  return body;
+};
+for (const m of markets)
   emit(
     m.file,
     `Housing research in ${m.place}`,
     `Explore property sources and housing search questions near ${m.school} in ${m.place}.`,
-    body,
+    marketPageBody(m),
   );
+// Template for markets that students add. The Worker fills in the tokens.
+{
+  const tpl = { id: "c-tplmarket", file: "market-template.html", school: "TPL_SCHOOL", place: "TPL_PLACE", description: "Students near TPL_SCHOOL share places, lease takeovers and subleases here. Check eligibility, commute, and availability directly with each property.", properties: [] };
+  emit(tpl.file, "Housing research in TPL_PLACE", "Explore property sources and housing search questions near TPL_SCHOOL in TPL_PLACE.", marketPageBody(tpl), { noindex: true });
 }
 {
   const cityCount = {};
@@ -778,7 +785,7 @@ emit(
 <div class="callout" id="slFormWrap" hidden><h2>Thank you! Now tell us about your place.</h2><p>This takes about five minutes. Your listing goes live for 60 days as soon as PayPal confirms your payment.</p>
 <form id="slForm" class="sl-form" novalidate>
 <div class="field"><label for="slMarket">Campus market</label><select id="slMarket" name="market" required>${slMarketOptions(false)}<option value="__new">My school isn&#39;t listed</option></select></div>
-<div class="field" id="slNewWrap" hidden><label for="slNewSchool">Your school and city</label><input id="slNewSchool" maxlength="120" placeholder="e.g. Boise State University, Boise, ID"><p class="fineprint">We will add your school as a new market so other students there can find your place.</p></div>
+<div class="field" id="slNewWrap" hidden><label for="slNewSchool">City and state</label><input id="slNewSchool" maxlength="100" placeholder="e.g. Boise, ID"><p class="fineprint">Add your school below too. We will build a full housing page for your school so other students there can find your place.</p></div>
 <div class="field"><label for="slSchool">School</label><input id="slSchool" name="school" maxlength="150" placeholder="e.g. University of Florida"></div>
 <div class="field"><label for="slType">What are you doing?</label><select id="slType" name="type" required><option value="sublease">Sublease (I stay on the lease)</option><option value="relet">Relet (the property finds a new tenant)</option><option value="assignment">Lease takeover (new tenant takes over my lease)</option></select></div>
 <div class="field"><label for="slPermission">Does your landlord allow it?</label><select id="slPermission" name="permission" required><option value="approved">Yes, I have approval in writing</option><option value="pending">I asked and I'm waiting</option><option value="not-asked">I haven't asked yet</option><option value="not-allowed">My lease says no</option></select><p id="slPermNote" class="fineprint" hidden></p></div>

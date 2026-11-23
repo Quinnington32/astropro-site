@@ -144,9 +144,10 @@ function startPage() {
       marketName = opt && opt.value ? opt.textContent : "";
     if (fd.market === "__new") {
       marketName = ($("#slNewSchool").value || "").trim().replace(/\s+/g, " ");
+      const school = String(fd.school || "").trim();
       const slug = marketName.toLowerCase().replace(/&/g, " and ").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 56);
-      if (marketName.length < 3 || slug.length < 2) {
-        say(msg, "Tell us your school and city so we can add it.");
+      if (marketName.length < 3 || slug.length < 2 || school.length < 3) {
+        say(msg, "Add your city and state and your school name so we can build your housing page.");
         return;
       }
       market = "c-" + slug;
@@ -471,6 +472,13 @@ async function marketFeed() {
             o.textContent = m.name;
             sel.insertBefore(o, sel === form ? sel.querySelector('option[value="__new"]') : null);
           }
+        }
+        const grid = $("#slNewMarketGrid");
+        if (grid && (items || []).length) {
+          grid.innerHTML = items
+            .map((m) => `<a class="market-card" href="housing-${esc(m.id.slice(2))}.html"><h2>${esc(m.name)}</h2><span class="school">${esc(m.school || "")}</span><span class="link">Explore this market →</span></a>`)
+            .join("");
+          $("#slNewMarkets").hidden = false;
         }
         const want = new URLSearchParams(location.search).get("market");
         for (const sel of [form, filter]) if (want && sel && [...sel.options].some((o) => o.value === want)) sel.value = want;

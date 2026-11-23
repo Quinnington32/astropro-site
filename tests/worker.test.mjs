@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { Miniflare, convertV4MiniflareOptions } from "miniflare";
 import { randomUUID, createHash } from "node:crypto";
+import { customMarketPage } from "../worker/sublease.mjs";
 import { validateSubmission, notifyPartnerCampaign, notifySubmission, buildRawEmail } from "../worker/index.mjs";
 let mf, db;
 const token = "local-test-only-secret-".repeat(3);
@@ -718,6 +719,15 @@ test("sublease war room: listing lifecycle, payment gate, leads and owner dashbo
   assert.equal(mk.length, 1);
   assert.equal(mk[0].id, "c-boise-state-university");
   assert.equal(mk[0].name, "Boise State University, Boise, ID");
+  // the school gets a full housing page
+  const tpl = '<h1>TPL_PLACE</h1><p>near TPL_SCHOOL</p><div data-sl-market="c-tplmarket"></div><a href="market-template.html?school=TPL_SCHOOL">x</a>';
+  const html = await customMarketPage({ DB: db }, "boise-state-university", tpl);
+  assert.match(html, /<h1>Boise State University, Boise, ID<\/h1>/);
+  assert.match(html, /near Boise State/);
+  assert.match(html, /data-sl-market="c-boise-state-university"/);
+  assert.match(html, /housing-boise-state-university\.html\?school=Boise%20State/);
+  assert.doesNotMatch(html, /TPL_/);
+  assert.equal(await customMarketPage({ DB: db }, "nowhere-at-all", tpl), null);
   const pub = await (await api("/listings/" + id)).json();
   assert.equal(pub.listing.rent, 900);
   assert.equal(JSON.stringify(pub).includes("sam@example.com"), false);

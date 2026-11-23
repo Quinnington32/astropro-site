@@ -292,9 +292,9 @@ export async function handleSublease(request, env, path, h) {
   // Student-created markets (schools we did not list). Only live listings count.
   if (path === "/api/sublease/markets" && request.method === "GET") {
     const { results } = await env.DB.prepare(
-      "SELECT market, MAX(market_name) name, COUNT(*) n FROM sublease_listings WHERE status='live' AND market LIKE 'c-%' AND (expires_at IS NULL OR expires_at > ?) GROUP BY market ORDER BY name LIMIT 200",
+      "SELECT market, MAX(market_name) name, MAX(json_extract(data_json,'$.school')) school, COUNT(*) n FROM sublease_listings WHERE status='live' AND market LIKE 'c-%' AND (expires_at IS NULL OR expires_at > ?) GROUP BY market ORDER BY name LIMIT 200",
     ).bind(now).all();
-    return json({ items: results.map((r) => ({ id: r.market, name: r.name, n: r.n })) });
+    return json({ items: results.map((r) => ({ id: r.market, name: r.name, school: r.school, n: r.n })) });
   }
 
   // Public browse
@@ -445,4 +445,23 @@ export async function handleSublease(request, env, path, h) {
     return json({ ok: true, status: next });
   }
   return json({ error: "Endpoint not found." }, 404);
+}
+
+const htmlEsc = (v) => String(v).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+
+// Build a full housing page for a school that a student added. Returns null when no live listing backs it.
+export async function customMarketPage(env, slug, template) {
+  if (!/^[a-z0-9-]{2,58}$/.test(slug)) return null;
+  const row = await env.DB.prepare(
+    "SELECT market_name name, json_extract(data_json,'$.school') school FROM sublease_listings WHERE market=? AND status='live' AND (expires_at IS NULL OR expires_at > ?) ORDER BY created_at DESC LIMIT 1",
+  ).bind("c-" + slug, Date.now()).first();
+  if (!row) return null;
+  const place = String(row.name || "");
+  const school = String(row.school || row.name || "");
+  return template
+    .replace(/housing-tplmarket|c-tplmarket/g, "c-" + slug)
+    .replace(/market-template\.html/g, "housing-" + slug + ".html")
+    .replace(/school=TPL_SCHOOL/g, "school=" + encodeURIComponent(school))
+    .replace(/TPL_SCHOOL/g, htmlEsc(school))
+    .replace(/TPL_PLACE/g, htmlEsc(place));
 }

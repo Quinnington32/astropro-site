@@ -1,5 +1,5 @@
 import { marketLinks } from "./market-links.mjs";
-import { handleSublease } from "./sublease.mjs";
+import { handleSublease, customMarketPage } from "./sublease.mjs";
 const PREFIX = "/studentresourcecenter";
 const ALIAS_HOSTS = [
   "www.astroprostudentresourcecenter.com",
@@ -829,6 +829,19 @@ export async function handleRequest(request, env) {
         : path;
   let response = await env.ASSETS.fetch(new Request(assetURL, request));
   if (response.status === 404) {
+    const cm = path.match(/^\/housing-([a-z0-9-]{2,58})\.html$/);
+    if (cm && env.DB) {
+      const tplURL = new URL(assetURL);
+      tplURL.pathname = "/market-template.html";
+      const tpl = await env.ASSETS.fetch(new Request(tplURL, request));
+      if (tpl.status === 200) {
+        const page = await customMarketPage(env, cm[1], await tpl.text());
+        if (page)
+          return new Response(page, {
+            headers: { "content-type": "text/html; charset=utf-8", "cache-control": "public, max-age=300" },
+          });
+      }
+    }
     assetURL.pathname = "/404.html";
     const fallback = await env.ASSETS.fetch(new Request(assetURL, request));
     response = new Response(fallback.body, {
