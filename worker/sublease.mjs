@@ -289,6 +289,14 @@ export async function handleSublease(request, env, path, h) {
     });
   }
 
+  // Student-created markets (schools we did not list). Only live listings count.
+  if (path === "/api/sublease/markets" && request.method === "GET") {
+    const { results } = await env.DB.prepare(
+      "SELECT market, MAX(market_name) name, COUNT(*) n FROM sublease_listings WHERE status='live' AND market LIKE 'c-%' AND (expires_at IS NULL OR expires_at > ?) GROUP BY market ORDER BY name LIMIT 200",
+    ).bind(now).all();
+    return json({ items: results.map((r) => ({ id: r.market, name: r.name, n: r.n })) });
+  }
+
   // Public browse
   if (path === "/api/sublease/listings" && request.method === "GET") {
     const market = clean(new URL(request.url).searchParams.get("market") || "", 60);
@@ -363,7 +371,7 @@ export async function handleSublease(request, env, path, h) {
       ),
     ]);
     await h.notify?.(
-      "New Sublease War Room listing — " + data.marketName + " (" + id + ")",
+      (data.market.startsWith("c-") ? "NEW MARKET: " : "") + "New Sublease War Room listing — " + data.marketName + " (" + id + ")",
       "A student created a listing.\nReference: " + id + "\nMarket: " + data.marketName + "\nTitle: " + data.title + "\nRent: $" + data.rent + "/mo\nOwner: " + data.ownerName + " <" + data.ownerEmail + ">" + (paidCredit ? "\n\nPaid in advance. It is live for " + LIVE_DAYS + " days." : "\n\nIt is waiting for payment. A PayPal payment with item number " + id + " makes it live for " + LIVE_DAYS + " days automatically."),
     );
     return json({ ok: true, id, manageToken: token, live: !!paidCredit }, 201);

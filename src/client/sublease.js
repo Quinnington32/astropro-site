@@ -140,9 +140,21 @@ function startPage() {
     say(msg, "");
     const fd = Object.fromEntries(new FormData(form));
     const opt = $("#slMarket").selectedOptions[0];
+    let market = fd.market,
+      marketName = opt && opt.value ? opt.textContent : "";
+    if (fd.market === "__new") {
+      marketName = ($("#slNewSchool").value || "").trim().replace(/\s+/g, " ");
+      const slug = marketName.toLowerCase().replace(/&/g, " and ").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 56);
+      if (marketName.length < 3 || slug.length < 2) {
+        say(msg, "Tell us your school and city so we can add it.");
+        return;
+      }
+      market = "c-" + slug;
+    }
     const body = {
       ...fd,
-      marketName: opt && opt.value ? opt.textContent : "",
+      market,
+      marketName,
       photos,
       payCode,
       consent: $("#slConsent").checked,
@@ -440,6 +452,32 @@ async function marketFeed() {
     box.hidden = false;
     $("[data-sl-empty]")?.setAttribute("hidden", "");
   } catch {}
+}
+// Add student-created markets to the dropdowns, and reveal the "school is not listed" box.
+{
+  const form = $("#slMarket"),
+    filter = $("#slFilter");
+  const wrap = $("#slNewWrap");
+  if (form && wrap) form.addEventListener("change", () => (wrap.hidden = form.value !== "__new"));
+  if (form || filter) {
+    fetch("/api/sublease/markets")
+      .then((r) => r.json())
+      .then(({ items }) => {
+        for (const m of items || []) {
+          for (const sel of [form, filter]) {
+            if (!sel || [...sel.options].some((o) => o.value === m.id)) continue;
+            const o = document.createElement("option");
+            o.value = m.id;
+            o.textContent = m.name;
+            sel.insertBefore(o, sel === form ? sel.querySelector('option[value="__new"]') : null);
+          }
+        }
+        const want = new URLSearchParams(location.search).get("market");
+        for (const sel of [form, filter]) if (want && sel && [...sel.options].some((o) => o.value === want)) sel.value = want;
+        if (filter && want) filter.dispatchEvent(new Event("change"));
+      })
+      .catch(() => {});
+  }
 }
 // Preselect the market when arriving from a market page.
 {

@@ -698,6 +698,26 @@ test("sublease war room: listing lifecycle, payment gate, leads and owner dashbo
   const act = await mf.dispatchFetch(origin + "/api/admin/sublease/activate", { method: "POST", headers: { "Content-Type": "application/json", Authorization: "Bearer " + token }, body: JSON.stringify({ id }) });
   assert.equal((await act.json()).ok, true);
   assert.equal((await (await api("/listings")).json()).items.length, 1);
+  // a school we did not list becomes a market once its listing is live
+  assert.deepEqual((await (await api("/markets")).json()).items, []);
+  const custom = await api("/listings", {
+    method: "POST",
+    body: JSON.stringify({
+      market: "c-boise-state-university", marketName: "Boise State University, Boise, ID", school: "Boise State", area: "Near campus",
+      title: "Fall sublease", description: "A bright studio close to campus.",
+      ownerName: "Kai", ownerEmail: "kai@example.com", permission: "approved", type: "sublease",
+      furnished: "yes", utilities: "some", startDate: "2027-05-15", endDate: "2027-08-15",
+      rent: 700, bedrooms: 1, bathrooms: 1, photos: [photo], consent: true,
+    }),
+  });
+  assert.equal(custom.status, 201);
+  assert.deepEqual((await (await api("/markets")).json()).items, []);
+  const customId = (await custom.json()).id;
+  await mf.dispatchFetch(origin + "/api/admin/sublease/activate", { method: "POST", headers: { "Content-Type": "application/json", Authorization: "Bearer " + token }, body: JSON.stringify({ id: customId }) });
+  const mk = (await (await api("/markets")).json()).items;
+  assert.equal(mk.length, 1);
+  assert.equal(mk[0].id, "c-boise-state-university");
+  assert.equal(mk[0].name, "Boise State University, Boise, ID");
   const pub = await (await api("/listings/" + id)).json();
   assert.equal(pub.listing.rent, 900);
   assert.equal(JSON.stringify(pub).includes("sam@example.com"), false);
