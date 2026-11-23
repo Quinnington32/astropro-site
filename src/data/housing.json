@@ -2492,6 +2492,21 @@
           "facebookPost": "https://www.facebook.com/groups/2979932512339316/posts/2987724341560133/",
           "photoPending": true
         }
+      },
+      {
+        "id": "housing-vermillion-sd-property-dakota-realty-212-spruce-street",
+        "name": "Dakota Realty",
+        "website": "https://drrentals.managebuilding.com/Resident/public/rentals/332430",
+        "verifiedAt": "2026-11-22",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Dakota%20Realty%20212%20Spruce%20Street%2C%20Vermillion%2C%20SD",
+        "summary": "Dakota Realty lists a two-bedroom, 1.5-bath apartment at 212 Spruce Street, one block from USD and the DakotaDome. The listing has an 800-square-foot open layout and a shared balcony. Ask which utilities are included when comparing your monthly cost.",
+        "source": "https://drrentals.managebuilding.com/Resident/public/rentals/332430",
+        "address": "212 Spruce Street, Vermillion, SD",
+        "spotlight": {
+          "publishedAt": "2026-11-22",
+          "facebookPost": "https://www.facebook.com/groups/2979932512339316/posts/2988798588119375/",
+          "photoPending": true
+        }
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/2979932512339316/"
