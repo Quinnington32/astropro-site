@@ -6,6 +6,7 @@ const EMAIL = /^[^\s@]{1,64}@[^\s@]{1,190}\.[^\s@]{2,}$/;
 const PHOTO = /^data:image\/jpeg;base64,[A-Za-z0-9+/=]+$/;
 const MAX_PHOTO = 450000;
 const LIVE_DAYS = 60;
+const EVENTS = ["view","calc_used","preview_open","cta_click","pay_click","form_open","form_submit"];
 export const PAYPAL_DEFAULT_BUSINESS = "michael.squinn8989@gmail.com";
 export const PAYPAL_DEFAULT_PRICE = 39;
 // Decide whether a verified PayPal IPN pays for a listing. Pure so it can be tested.
@@ -225,6 +226,18 @@ export async function handleSublease(request, env, path, h) {
     return new Response("ok");
   }
 
+  // Anonymous funnel counts (no personal data): one counter per day and step.
+  if (path === "/api/sublease/event" && request.method === "POST") {
+    if (!h.isSameOrigin(request)) return json({ error: "Not allowed." }, 403);
+    const raw = await h.readJson(request).catch(() => ({}));
+    if (!EVENTS.includes(raw.name)) return json({ error: "Unknown event." }, 400);
+    await env.DB.prepare("INSERT INTO sublease_events (day,name,n) VALUES (?,?,1) ON CONFLICT(day,name) DO UPDATE SET n=n+1")
+      .bind(now.slice(0, 10), raw.name)
+      .run()
+      .catch(() => null);
+    return json({ ok: true });
+  }
+
   // Admin: list and activate (after payment is confirmed).
   if (path.startsWith("/api/admin/sublease")) {
     if (!(await h.authorize(request, env)))
@@ -236,6 +249,12 @@ export async function handleSublease(request, env, path, h) {
         "SELECT id,status,market_name,owner_email,created_at,paid_at,expires_at,json_extract(data_json,'$.title') title FROM sublease_listings ORDER BY created_at DESC LIMIT 100",
       ).all();
       return json({ items: results });
+    }
+    if (path === "/api/admin/sublease/stats" && request.method === "GET") {
+      const { results } = await env.DB.prepare("SELECT day,name,n FROM sublease_events WHERE day >= date('now','-30 day') ORDER BY day DESC").all();
+      const byDay = {};
+      for (const r of results) (byDay[r.day] ||= {})[r.name] = r.n;
+      return json({ events: EVENTS, days: byDay });
     }
     if (path === "/api/admin/sublease/activate" && request.method === "POST") {
       const body = await h.readJson(request);

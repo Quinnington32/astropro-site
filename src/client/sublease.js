@@ -452,3 +452,55 @@ startPage();
 browsePage();
 listingPage();
 managePage();
+
+// ---- Sublease War Room page: funnel counts, cost calculator, sample dashboard ----
+{
+  const track = (name) => {
+    try {
+      fetch("/api/sublease/event", { method: "POST", keepalive: true, headers: { "content-type": "application/json" }, body: JSON.stringify({ name }) }).catch(() => {});
+    } catch {}
+  };
+  const once = (name) => {
+    try {
+      if (sessionStorage.getItem("sl." + name)) return;
+      sessionStorage.setItem("sl." + name, "1");
+    } catch {}
+    track(name);
+  };
+  if ($("[data-sublease-start]")) {
+    once("view");
+    $$('a[href="#start"]').forEach((a) => a.addEventListener("click", () => once("cta_click")));
+    $("[data-sl-pay]")?.addEventListener("click", () => track("pay_click"));
+    new MutationObserver(() => {
+      if ($("#slFormWrap") && !$("#slFormWrap").hidden) once("form_open");
+    }).observe($("#slFormWrap") || document.body, { attributes: true, attributeFilter: ["hidden"] });
+    $("#slForm")?.addEventListener("submit", () => once("form_submit"));
+  }
+  const calc = $("#slCalc");
+  if (calc) {
+    const rent = $("#slCalcRent"),
+      months = $("#slCalcMonths"),
+      out = $("#slCalcOut");
+    const run = () => {
+      const r = Number(rent.value),
+        m = Number(months.value);
+      if (!(r > 0) || !(m > 0)) {
+        out.hidden = true;
+        return;
+      }
+      once("calc_used");
+      const owed = r * m,
+        week = Math.round((r * 12) / 52),
+        days = Math.max(1, Math.round(39 / (r / 30)));
+      out.hidden = false;
+      out.innerHTML =
+        `<p>If nobody takes over, you still owe about <strong>${money(Math.round(owed))}</strong> in rent for the rest of your lease.</p>` +
+        `<p>Every week the place sits empty costs you about <strong>${money(week)}</strong>.</p>` +
+        `<p>The Sublease War Room is <strong>$39 one time</strong>. That's about ${days} ${days === 1 ? "day" : "days"} of your rent.</p>` +
+        `<p><a class="btn btn-primary" href="#start">Get started</a></p>`;
+    };
+    rent.addEventListener("input", run);
+    months.addEventListener("input", run);
+  }
+  $("#slPreviewToggle")?.addEventListener("click", () => once("preview_open"));
+}

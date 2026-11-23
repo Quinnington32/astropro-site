@@ -52,6 +52,7 @@ before(async () => {
     "migrations/0006_sublease_views.sql",
     "migrations/0007_sublease_credits.sql",
     "migrations/0008_sublease_pay_code.sql",
+    "migrations/0009_sublease_events.sql",
   ]) {
     const schema = await readFile(file, "utf8");
     await db.batch(
@@ -748,6 +749,20 @@ test("sublease war room: pay first, then the form redeems the payment once", asy
   assert.equal((await api("/listings/" + id)).status, 200); // live immediately
   assert.equal((await api("/listings", { method: "POST", body: body({ payCode: code }) })).status, 409); // already used
   assert.deepEqual(await (await api("/credit/" + code)).json(), { paid: true, used: true });
+});
+
+test("sublease funnel events count anonymously and reject unknown names", async () => {
+  const post = (name) =>
+    mf.dispatchFetch(origin + "/api/sublease/event", {
+      method: "POST",
+      headers: { Origin: origin, "Content-Type": "application/json" },
+      body: JSON.stringify({ name }),
+    });
+  assert.equal((await post("view")).status, 200);
+  assert.equal((await post("view")).status, 200);
+  assert.equal((await post("evil")).status, 400);
+  const row = await db.prepare("SELECT n FROM sublease_events WHERE name='view'").first();
+  assert.equal(row.n, 2);
 });
 
 test("sublease owner can delete a listing with its photos and messages", async () => {
