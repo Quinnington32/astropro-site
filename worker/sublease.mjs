@@ -547,18 +547,28 @@ export async function customMarketPage(env, slug, template) {
 // ---------- Student email, sign-in links and follow-up jobs ----------
 const EMAIL_RE = /^[^\s@]{1,64}@[^\s@]{1,190}\.[^\s@]{2,}$/;
 const SITE = (env) => env.SITE_ORIGIN || "https://astroprostudentresourcecenter.com";
-const mailHtml = (heading, lines, label, url) =>
-  '<div style="font-family:Arial,Helvetica,sans-serif;max-width:560px;margin:0 auto;color:#172447">' +
-  '<div style="background:#172447;color:#fff;padding:18px 24px;border-radius:12px 12px 0 0;font-weight:700;letter-spacing:.2px">AstroPro &middot; Sublease War Room</div>' +
-  '<div style="border:1px solid #e5e2d8;border-top:0;padding:24px;border-radius:0 0 12px 12px;background:#fff">' +
-  '<h2 style="margin:0 0 12px;font-size:22px">' + htmlEsc(heading) + "</h2>" +
-  lines.map((l) => '<p style="line-height:1.55;margin:0 0 12px">' + htmlEsc(l) + "</p>").join("") +
-  '<p style="margin:24px 0"><a href="' + htmlEsc(url) + '" style="background:#E77B25;color:#fff;text-decoration:none;padding:13px 22px;border-radius:8px;font-weight:700;display:inline-block">' + htmlEsc(label) + "</a></p>" +
-  '<p style="font-size:12px;color:#667085;line-height:1.5">Button not working? Copy this link into your browser:<br>' + htmlEsc(url) + "</p>" +
-  '<p style="font-size:12px;color:#667085">Questions? Just reply to this email.</p></div></div>';
+const mailHtml = (heading, lines, label, url, site) => {
+  const base = site || "https://astroprostudentresourcecenter.com";
+  return (
+    '<div style="background:#f4f2ec;padding:24px 12px;font-family:Arial,Helvetica,sans-serif;color:#172447">' +
+    '<div style="max-width:560px;margin:0 auto;background:#fff;border-radius:14px;overflow:hidden;border:1px solid #e5e2d8">' +
+    '<div style="padding:22px 24px 16px;text-align:center"><a href="' + htmlEsc(base) + '"><img src="' + htmlEsc(base) + '/brand/email-logo.png" width="260" alt="AstroPro Student Resource Center" style="border:0;max-width:100%;height:auto"></a></div>' +
+    '<div style="height:5px;background:#E77B25"></div>' +
+    '<div style="padding:26px 28px 8px">' +
+    '<div style="font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:#E77B25;font-weight:700;margin-bottom:6px">Sublease War Room</div>' +
+    '<h2 style="margin:0 0 14px;font-size:22px;line-height:1.3">' + htmlEsc(heading) + "</h2>" +
+    lines.map((l) => '<p style="line-height:1.6;margin:0 0 12px;font-size:15px">' + htmlEsc(l) + "</p>").join("") +
+    '<p style="margin:22px 0"><a href="' + htmlEsc(url) + '" style="background:#E77B25;color:#fff;text-decoration:none;padding:14px 26px;border-radius:8px;font-weight:700;display:inline-block;font-size:15px">' + htmlEsc(label) + "</a></p>" +
+    '<p style="font-size:12px;color:#667085;line-height:1.5;word-break:break-all">Button not working? Copy this link into your browser:<br>' + htmlEsc(url) + "</p>" +
+    '<p style="font-size:14px;margin:18px 0 6px">Questions? Just reply to this email and a real person will help.</p>' +
+    '<p style="font-size:14px;margin:0 0 20px">&mdash; The AstroPro Team</p></div>' +
+    '<div style="background:#172447;color:#c9d1e6;text-align:center;padding:16px 20px;font-size:12px;line-height:1.6">AstroPro Student Resource Center<br><a href="' + htmlEsc(base) + '" style="color:#fff">astroprostudentresourcecenter.com</a></div>' +
+    "</div></div>"
+  );
+};
 const sendStudent = async (h, to, subject, lines, label, url) => {
   if (!h.mail || !EMAIL_RE.test(to || "")) return false;
-  return !!(await h.mail({ to, subject, text: lines.join("\n\n") + "\n\n" + label + ": " + url + "\n", html: mailHtml(subject, lines, label, url) }).catch(() => false));
+  return !!(await h.mail({ to, subject, text: lines.join("\n\n") + "\n\n" + label + ": " + url + "\n\n- The AstroPro Team\nAstroPro Student Resource Center\n", html: mailHtml(subject, lines, label, url, h.site) }).catch(() => false));
 };
 const bump = (env, name) =>
   env.DB.prepare("INSERT INTO sublease_events (day,name,n) VALUES (?,?,1) ON CONFLICT(day,name) DO UPDATE SET n=n+1")
