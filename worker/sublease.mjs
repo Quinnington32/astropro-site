@@ -460,7 +460,7 @@ export async function handleSublease(request, env, path, h) {
       h,
       data.ownerEmail,
       paidCredit ? "Your Sublease War Room is live" : "Your Sublease War Room listing is saved",
-      [paidCredit ? "Your listing is live and your dashboard is ready. Your ready-to-post ads, platform checklist and message inbox are all inside." : "Your listing is saved. It goes live as soon as your payment is confirmed.", "This is your private link. Keep this email, because it's how you get back in. You can also request a new link any time at " + SITE(env) + "/sublease-manage.html"],
+      [paidCredit ? "Your listing is live and your dashboard is ready. Your ready-to-post ads, platform checklist and message inbox are all inside." : "Your listing is saved. It goes live as soon as your payment is confirmed.", "This is your private link. Keep this email, because it's how you get back in. To get back in on any device, go to " + SITE(env) + "/sublease-manage.html, enter this email and we send you a fresh link. No password needed."],
       "Open my Sublease War Room",
       manageUrl,
     );
