@@ -54,6 +54,7 @@ before(async () => {
     "migrations/0007_sublease_credits.sql",
     "migrations/0008_sublease_pay_code.sql",
     "migrations/0009_sublease_events.sql",
+    "migrations/0010_sublease_intents.sql",
   ]) {
     const schema = await readFile(file, "utf8");
     await db.batch(
@@ -809,4 +810,59 @@ test("sublease owner can delete a listing with its photos and messages", async (
   assert.equal((await ok.json()).deleted, true);
   assert.equal((await db.prepare("SELECT COUNT(*) c FROM sublease_photos WHERE listing_id=?").bind(id).first()).c, 0);
   assert.equal((await mf.dispatchFetch(origin + "/api/sublease/listings/" + id)).status, 404);
+});
+
+test("sublease war room: checkout email capture, sign-in links and follow-up jobs", async () => {
+  const photo = "data:image/jpeg;base64," + "A".repeat(200);
+  const api = (path, init = {}) =>
+    mf.dispatchFetch(origin + "/api/sublease" + path, {
+      ...init,
+      headers: { Origin: origin, "Content-Type": "application/json", "CF-Connecting-IP": "192.0.2.91", ...(init.headers || {}) },
+    });
+  // checkout needs a valid email and code
+  assert.equal((await api("/intent", { method: "POST", body: JSON.stringify({ code: "abcdefghij12", email: "nope" }) })).status, 400);
+  assert.equal((await api("/intent", { method: "POST", body: JSON.stringify({ code: "abcdefghij12", email: "Pat@Example.com" }) })).status, 200);
+  const row = await db.prepare("SELECT email FROM sublease_intents WHERE code=?").bind("abcdefghij12").first();
+  assert.equal(row.email, "pat@example.com");
+  // sign-in never reveals whether an email exists
+  const unknown = await api("/signin", { method: "POST", body: JSON.stringify({ email: "nobody@example.com" }) });
+  assert.equal(unknown.status, 200);
+  assert.equal((await unknown.json()).ok, true);
+  assert.equal((await api("/signin", { method: "POST", body: JSON.stringify({ email: "bad" }) })).status, 400);
+  // a real listing: signing in issues a new private key and retires the old one
+  const created = await api("/listings", {
+    method: "POST",
+    body: JSON.stringify({
+      market: "housing-madison", marketName: "Madison, WI", school: "UW", area: "Near campus",
+      title: "Sign-in test", description: "A sunny two bedroom close to campus.",
+      ownerName: "Sam", ownerEmail: "sam-signin@example.com", permission: "approved", type: "sublease",
+      furnished: "yes", utilities: "some", startDate: "2027-05-15", endDate: "2027-08-15",
+      rent: 900, bedrooms: 2, bathrooms: 1, photos: [photo], consent: true,
+    }),
+  });
+  assert.equal(created.status, 201);
+  const made = await created.json();
+  assert.equal(made.emailed, false); // no mail provider in tests
+  const before = await db.prepare("SELECT token_hash FROM sublease_listings WHERE id=?").bind(made.id).first();
+  assert.equal((await api("/manage/" + made.id, { headers: { "x-manage-token": made.manageToken } })).status, 200);
+  assert.equal((await api("/signin", { method: "POST", body: JSON.stringify({ email: "sam-signin@example.com" }) })).status, 200);
+  const after = await db.prepare("SELECT token_hash FROM sublease_listings WHERE id=?").bind(made.id).first();
+  assert.notEqual(before.token_hash, after.token_hash);
+  assert.equal((await api("/manage/" + made.id, { headers: { "x-manage-token": made.manageToken } })).status, 404);
+  const dash = await (await api("/manage/" + made.id, { headers: { "x-manage-token": "x".repeat(40) } })).status;
+  assert.equal(dash, 404);
+  // follow-up job: paid but no form after 20 minutes sends one reminder and alerts the owner
+  await db.prepare("INSERT INTO sublease_credits (code,txn_id,paid_at) VALUES (?,?,?)").bind("abcdefghij12", "TXN-INTENT-1", new Date(Date.now() - 30 * 60000).toISOString()).run();
+  const alerts = [],
+    mails = [];
+  const { runSubleaseJobs } = await import("../worker/sublease.mjs");
+  await runSubleaseJobs({ DB: db }, { notify: async (s, t) => alerts.push([s, t]), mail: async (m) => (mails.push(m), true) });
+  assert.equal(mails.length, 1);
+  assert.equal(mails[0].to, "pat@example.com");
+  assert.match(mails[0].html, /sublease-war-room\.html\?code=abcdefghij12#start/);
+  assert.equal(alerts.length, 1);
+  assert.match(alerts[0][0], /Paid but has not filled out the form/);
+  // it does not nag again right away
+  await runSubleaseJobs({ DB: db }, { notify: async () => alerts.push(["again"]), mail: async (m) => (mails.push(m), true) });
+  assert.equal(mails.length, 1);
 });

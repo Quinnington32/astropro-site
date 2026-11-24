@@ -230,8 +230,15 @@ export async function handleSublease(request, env, path, h) {
           .run()
           .catch(() => null);
         if (c?.meta?.changes === 1) await mark("ipn_credited");
-        if (c?.meta?.changes === 1)
-          await h.notify?.("Sublease War Room payment received", "PayPal payment " + d.txn + " confirmed (pay code " + d.id + "). The student can now fill out the onboarding form.");
+        if (c?.meta?.changes === 1) {
+          const it = await env.DB.prepare("SELECT email FROM sublease_intents WHERE code=?").bind(d.id).first().catch(() => null);
+          const link = SITE(env) + "/sublease-war-room.html?code=" + d.id + "#start";
+          const sent = it?.email ? await sendStudent(h, it.email, "Payment received: finish your Sublease War Room listing", ["Thank you! Your $39 onboarding payment went through.", "Next step: fill out your listing (about 5 minutes). We'll build your ready-to-post ads and your private dashboard right after."], "Fill out my listing", link) : false;
+          await h.notify?.(
+            "Sublease War Room payment received" + (it?.email ? " from " + it.email : ""),
+            "PayPal payment " + d.txn + " confirmed (pay code " + d.id + ")." + (it?.email ? "\nStudent: " + it.email + (sent ? " (we emailed them the form link)" : " (we could NOT email them, send them this link: " + link + ")") : "\nWe have no email for this payer. Form link: " + link) + "\n\nThey can now fill out the onboarding form.",
+          );
+        }
       }
     }
     return new Response("ok");
@@ -246,6 +253,56 @@ export async function handleSublease(request, env, path, h) {
       .bind(now.slice(0, 10), raw.name)
       .run()
       .catch(() => null);
+    return json({ ok: true });
+  }
+
+  // Checkout started: capture the email so the form link can always reach the student.
+  if (path === "/api/sublease/intent" && request.method === "POST") {
+    if (!h.isSameOrigin(request)) return json({ error: "Not allowed." }, 403);
+    const raw = await h.readJson(request).catch(() => ({}));
+    const code = clean(raw.code, 20).toLowerCase(),
+      email = clean(raw.email, 254).toLowerCase();
+    if (!ID.test(code) || !EMAIL_RE.test(email)) return json({ error: "Enter a valid email so we can send your link." }, 400);
+    if (!(await h.quota(env.DB, "sublease-intent:" + ip + ":" + day, 20, Date.now() + 86400000)))
+      return json({ error: "Too many attempts. Try again tomorrow." }, 429);
+    const existing = await env.DB.prepare("SELECT 1 x FROM sublease_intents WHERE code=?").bind(code).first();
+    await env.DB.prepare("INSERT INTO sublease_intents (code,email,created_at) VALUES (?,?,?) ON CONFLICT(code) DO UPDATE SET email=excluded.email").bind(code, email, now).run();
+    if (!existing)
+      await h.notify?.(
+        "Sublease War Room: " + email + " is heading to PayPal",
+        "A student entered " + email + " and clicked Pay.\nPay code: " + code + "\n\nYou will get a payment email if PayPal confirms it. If you see a $39 payment in PayPal with item number " + code + " and no payment email follows, send them this link to unlock their form:\n" + SITE(env) + "/sublease-war-room.html?code=" + code + "#start",
+      );
+    return json({ ok: true });
+  }
+
+  // Sign in by email: we send a fresh private link for each listing (or the form link if they paid but never filled it).
+  if (path === "/api/sublease/signin" && request.method === "POST") {
+    if (!h.isSameOrigin(request)) return json({ error: "Not allowed." }, 403);
+    const raw = await h.readJson(request).catch(() => ({}));
+    const email = clean(raw.email, 254).toLowerCase();
+    if (!EMAIL_RE.test(email)) return json({ error: "Enter the email you used for your listing." }, 400);
+    if (!(await h.quota(env.DB, "sublease-signin:" + ip + ":" + day, 8, Date.now() + 86400000)) || !(await h.quota(env.DB, "sublease-signin-e:" + email + ":" + day, 4, Date.now() + 86400000)))
+      return json({ error: "Too many sign-in requests. Try again tomorrow." }, 429);
+    const origin = SITE(env);
+    const { results: rows } = await env.DB.prepare("SELECT id, json_extract(data_json,'$.title') title FROM sublease_listings WHERE owner_email=? ORDER BY created_at DESC LIMIT 5").bind(email).all();
+    const links = [];
+    for (const r of rows) {
+      const token = rand(24);
+      await env.DB.prepare("UPDATE sublease_listings SET token_hash=? WHERE id=?").bind(await h.digest(token), r.id).run();
+      links.push({ title: r.title, url: origin + "/sublease-manage.html#" + r.id + "." + token });
+    }
+    let emailed = false,
+      found = links.length > 0;
+    if (links.length) {
+      emailed = await sendStudent(h, email, "Your Sublease War Room sign-in link", ["Here is your private link to your Sublease War Room" + (links.length > 1 ? " (your most recent listing first; the others are below)." : "."), "Anyone with this link can open your dashboard, so don't forward it. Opening a new link signs out older ones.", ...links.slice(1).map((l) => l.title + ": " + l.url)], "Open my Sublease War Room", links[0].url);
+    } else {
+      const it = await env.DB.prepare("SELECT i.code FROM sublease_intents i JOIN sublease_credits c ON c.code=i.code WHERE i.email=? AND c.listing_id IS NULL ORDER BY i.created_at DESC LIMIT 1").bind(email).first();
+      if (it) found = true;
+      if (it) emailed = await sendStudent(h, email, "Finish your Sublease War Room listing", ["Your payment is in and your form is ready."], "Finish my listing", origin + "/sublease-war-room.html?code=" + it.code + "#start");
+    }
+    if (found && !emailed)
+      await h.notify?.("Sublease War Room sign-in request (email could not be sent)", "A student asked for a sign-in link: " + email + (links.length ? "\n\nSend them this link:\n" + links[0].url : "\n\nNo listing found for that email."));
+    await bump(env, "signin_request");
     return json({ ok: true });
   }
 
@@ -385,7 +442,16 @@ export async function handleSublease(request, env, path, h) {
       (data.market.startsWith("c-") ? "NEW MARKET: " : "") + "New Sublease War Room listing — " + data.marketName + " (" + id + ")",
       "A student created a listing.\nReference: " + id + "\nMarket: " + data.marketName + "\nTitle: " + data.title + "\nRent: $" + data.rent + "/mo\nOwner: " + data.ownerName + " <" + data.ownerEmail + ">" + (paidCredit ? "\n\nPaid in advance. It is live for " + LIVE_DAYS + " days." : "\n\nIt is waiting for payment. A PayPal payment with item number " + id + " makes it live for " + LIVE_DAYS + " days automatically."),
     );
-    return json({ ok: true, id, manageToken: token, live: !!paidCredit }, 201);
+    const manageUrl = SITE(env) + "/sublease-manage.html#" + id + "." + token;
+    const emailed = await sendStudent(
+      h,
+      data.ownerEmail,
+      paidCredit ? "Your Sublease War Room is live" : "Your Sublease War Room listing is saved",
+      [paidCredit ? "Your listing is live and your dashboard is ready. Your ready-to-post ads, platform checklist and message inbox are all inside." : "Your listing is saved. It goes live as soon as your payment is confirmed.", "This is your private link. Keep this email, because it's how you get back in. You can also request a new link any time at " + SITE(env) + "/sublease-manage.html"],
+      "Open my Sublease War Room",
+      manageUrl,
+    );
+    return json({ ok: true, id, manageToken: token, live: !!paidCredit, emailed }, 201);
   }
 
   if (path === "/api/sublease/leads" && request.method === "POST") {
@@ -423,6 +489,7 @@ export async function handleSublease(request, env, path, h) {
     return json({
       listing: publicListing(row, counts[row.id] || 0),
       ownerName: JSON.parse(row.data_json).ownerName,
+      ownerEmail: row.owner_email,
       views: row.views || 0,
       paidAt: row.paid_at,
       expiresAt: row.expires_at,
@@ -475,4 +542,59 @@ export async function customMarketPage(env, slug, template) {
     .replace(/school=TPL_SCHOOL/g, "school=" + encodeURIComponent(school))
     .replace(/TPL_SCHOOL/g, htmlEsc(school))
     .replace(/TPL_PLACE/g, htmlEsc(place));
+}
+
+// ---------- Student email, sign-in links and follow-up jobs ----------
+const EMAIL_RE = /^[^\s@]{1,64}@[^\s@]{1,190}\.[^\s@]{2,}$/;
+const SITE = (env) => env.SITE_ORIGIN || "https://astroprostudentresourcecenter.com";
+const mailHtml = (heading, lines, label, url) =>
+  '<div style="font-family:Arial,Helvetica,sans-serif;max-width:560px;margin:0 auto;color:#172447">' +
+  '<div style="background:#172447;color:#fff;padding:18px 24px;border-radius:12px 12px 0 0;font-weight:700;letter-spacing:.2px">AstroPro &middot; Sublease War Room</div>' +
+  '<div style="border:1px solid #e5e2d8;border-top:0;padding:24px;border-radius:0 0 12px 12px;background:#fff">' +
+  '<h2 style="margin:0 0 12px;font-size:22px">' + htmlEsc(heading) + "</h2>" +
+  lines.map((l) => '<p style="line-height:1.55;margin:0 0 12px">' + htmlEsc(l) + "</p>").join("") +
+  '<p style="margin:24px 0"><a href="' + htmlEsc(url) + '" style="background:#E77B25;color:#fff;text-decoration:none;padding:13px 22px;border-radius:8px;font-weight:700;display:inline-block">' + htmlEsc(label) + "</a></p>" +
+  '<p style="font-size:12px;color:#667085;line-height:1.5">Button not working? Copy this link into your browser:<br>' + htmlEsc(url) + "</p>" +
+  '<p style="font-size:12px;color:#667085">Questions? Just reply to this email.</p></div></div>';
+const sendStudent = async (h, to, subject, lines, label, url) => {
+  if (!h.mail || !EMAIL_RE.test(to || "")) return false;
+  return !!(await h.mail({ to, subject, text: lines.join("\n\n") + "\n\n" + label + ": " + url + "\n", html: mailHtml(subject, lines, label, url) }).catch(() => false));
+};
+const bump = (env, name) =>
+  env.DB.prepare("INSERT INTO sublease_events (day,name,n) VALUES (?,?,1) ON CONFLICT(day,name) DO UPDATE SET n=n+1")
+    .bind(new Date().toISOString().slice(0, 10), name)
+    .run()
+    .catch(() => null);
+
+// Runs every 15 minutes: nudge students who paid but have not filled the form, tell the owner about stalled checkouts.
+export async function runSubleaseJobs(env, h) {
+  if (!env.DB) return;
+  const site = SITE(env);
+  const ago = (min) => new Date(Date.now() - min * 60000).toISOString();
+  // Paid, but no listing yet
+  const { results: paid } = await env.DB.prepare(
+    "SELECT i.code, i.email, i.reminders, c.paid_at FROM sublease_intents i JOIN sublease_credits c ON c.code=i.code WHERE c.listing_id IS NULL AND i.reminders < 3 AND NOT EXISTS (SELECT 1 FROM sublease_listings l WHERE l.pay_code=i.code OR l.id=i.code)",
+  ).all().catch(() => ({ results: [] }));
+  const owed = [];
+  for (const r of paid) {
+    const waitMin = [20, 24 * 60, 3 * 24 * 60][r.reminders];
+    if (!(r.paid_at < ago(waitMin))) continue;
+    const url = site + "/sublease-war-room.html?code=" + r.code + "#start";
+    const sent = await sendStudent(h, r.email, "Finish your Sublease War Room listing", ["Thanks for your payment. Your spot is saved and your form is ready.", "It takes about 5 minutes: add your place, photos and dates, and we'll build your ready-to-post ads and your private dashboard."], "Finish my listing", url);
+    await env.DB.prepare("UPDATE sublease_intents SET reminders=reminders+1 WHERE code=?").bind(r.code).run().catch(() => null);
+    if (r.reminders === 0) owed.push(r.email + (sent ? " (we emailed them)" : " (NOT emailed: send them " + url + ")"));
+  }
+  if (owed.length)
+    await h.notify?.("Paid but has not filled out the form (" + owed.length + ")", "These students paid $39 and have not submitted their listing yet:\n\n" + owed.join("\n") + "\n\nA reminder goes out automatically. You can also reach out yourself.");
+  // Checkout started, nothing recorded
+  const { results: stalled } = await env.DB.prepare(
+    "SELECT i.code, i.email, i.abandon_sent FROM sublease_intents i WHERE i.owner_alerted=0 AND i.created_at < ? AND NOT EXISTS (SELECT 1 FROM sublease_credits c WHERE c.code=i.code) AND NOT EXISTS (SELECT 1 FROM sublease_listings l WHERE l.pay_code=i.code OR l.id=i.code)",
+  ).bind(ago(30)).all().catch(() => ({ results: [] }));
+  if (stalled.length) {
+    for (const r of stalled) {
+      await env.DB.prepare("UPDATE sublease_intents SET owner_alerted=1 WHERE code=?").bind(r.code).run().catch(() => null);
+      await sendStudent(h, r.email, "Still need help subleasing?", ["You started checkout for the Sublease War Room but didn't finish.", "When you're ready, pick up where you left off. Your listing goes in front of thousands of students and we give you the ready-to-post ads and every place to post."], "Back to the Sublease War Room", site + "/sublease-war-room.html?code=" + r.code + "#start");
+    }
+    await h.notify?.("Checkout started, no payment recorded (" + stalled.length + ")", "These people entered their email and clicked Pay, but no payment has been recorded after 30 minutes:\n\n" + stalled.map((r) => r.email + "  (code " + r.code + ")").join("\n") + "\n\nIf any of them paid in PayPal (item number = the code), the payment notification may have failed. Tell me and I'll unlock their form.");
+  }
 }

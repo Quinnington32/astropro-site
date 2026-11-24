@@ -112,14 +112,56 @@ function startPage() {
     url.searchParams.set("currency_code", "USD");
     url.searchParams.set("no_shipping", "1");
     url.searchParams.set("notify_url", location.origin + "/api/sublease/paypal-ipn");
-    url.searchParams.set("return", location.origin + "/sublease-war-room.html?paid=1#start");
+    url.searchParams.set("return", location.origin + "/sublease-war-room.html?paid=1&code=" + payCode + "#start");
+    url.searchParams.set("rm", "1");
+    url.searchParams.set("cbt", "Continue to your Sublease War Room form");
     url.searchParams.set("cancel_return", location.origin + "/sublease-war-room.html#start");
     return url.href;
   };
   payBtn.href = buildPayUrl();
+  const payEmail = $("#slPayEmail");
+  const EMAIL_KEY = "astropro.sublease.email";
+  try {
+    const saved = localStorage.getItem(EMAIL_KEY);
+    if (saved && payEmail) payEmail.value = saved;
+  } catch {}
+  let waiting = false;
+  payBtn.addEventListener("click", async (ev) => {
+    ev.preventDefault();
+    const email = (payEmail?.value || "").trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+      say(payMsg, "Enter your email first so we can send your form link.");
+      payEmail?.focus();
+      return;
+    }
+    try {
+      localStorage.setItem(EMAIL_KEY, email);
+    } catch {}
+    say(payMsg, "Taking you to PayPal…", true);
+    try {
+      await Promise.race([api("/intent", { method: "POST", body: JSON.stringify({ code: payCode, email }) }), new Promise((r) => setTimeout(r, 2500))]);
+    } catch (e) {
+      if (/valid email/i.test(e.message)) return say(payMsg, e.message);
+    }
+    waiting = true;
+    location.href = buildPayUrl();
+  });
+  // If they pay in another tab or app and come back here, open the form as soon as the payment shows up.
+  const recheck = async () => {
+    if (!wrap.hidden) return;
+    const st = await creditStatus();
+    if (st.paid && !st.used) openForm();
+  };
+  document.addEventListener("visibilitychange", () => document.visibilityState === "visible" && recheck());
+  window.addEventListener("focus", recheck);
+  setInterval(() => waiting || document.visibilityState !== "visible" || recheck(), 8000);
   const openForm = () => {
     gate.hidden = true;
     wrap.hidden = false;
+    try {
+      const em = localStorage.getItem(EMAIL_KEY);
+      if (em && !$("#slEmail").value) $("#slEmail").value = em;
+    } catch {}
     wrap.scrollIntoView({ behavior: "smooth", block: "start" });
   };
   const creditStatus = async () => {
@@ -175,17 +217,20 @@ function startPage() {
       try {
         localStorage.setItem("astropro.sublease." + out.id, out.manageToken);
       } catch {}
-      showSuccess(out.id, link, out.live);
+      showSuccess(out.id, link, out.live, out.emailed, body.ownerEmail);
     } catch (e) {
       say(msg, e.message);
       btn.disabled = false;
     }
   });
-  function showSuccess(id, link, live) {
+  function showSuccess(id, link, live, emailed, email) {
     const box = $("#slSuccess");
     $("[data-sl-live]").hidden = !live;
     $("[data-sl-confirming]").hidden = !!live;
     $("[data-sl-ref]").textContent = id;
+    $("[data-sl-emailed]").hidden = !emailed;
+    $("[data-sl-notemailed]").hidden = !!emailed;
+    $("[data-sl-email]").textContent = email || "";
     $("[data-sl-manage]").href = link;
     $("[data-sl-manage-url]").value = new URL(link, location.href).href;
     try {
@@ -332,7 +377,25 @@ async function managePage() {
     } catch {}
   }
   if (!id || !saved) {
-    dash.innerHTML = `<div class="empty-state"><h2>Open your private dashboard link.</h2><p>Use the link you saved when you created your listing. It contains your private key.</p><p><a class="btn btn-primary" href="sublease-war-room.html">Start a listing</a></p></div>`;
+    const out = /[?&]signedout=1/.test(location.search);
+    dash.innerHTML = `<div class="sl-signin"><h2>${out ? "You're signed out." : "Sign in to your Sublease War Room"}</h2><p>Enter the email you used for your listing and we'll send you a private sign-in link. There's no password to remember.</p><form id="slSignin" novalidate><div class="field"><label for="slSigninEmail">Your email</label><input id="slSigninEmail" type="email" autocomplete="email" maxlength="254" placeholder="you@school.edu" required></div><p><button class="btn btn-primary" type="submit">Email me my link</button></p><p id="slSigninMsg" class="sl-msg" role="status" hidden></p></form><p class="fineprint">New here? <a href="sublease-war-room.html">Start your Sublease War Room</a>. Signing in with a new link signs out older ones.</p></div>`;
+    try {
+      const em = localStorage.getItem("astropro.sublease.email");
+      if (em) $("#slSigninEmail").value = em;
+    } catch {}
+    $("#slSignin").addEventListener("submit", async (ev) => {
+      ev.preventDefault();
+      const msg = $("#slSigninMsg"),
+        btn = $("button", ev.currentTarget);
+      btn.disabled = true;
+      try {
+        await api("/signin", { method: "POST", body: JSON.stringify({ email: $("#slSigninEmail").value }) });
+        say(msg, "If that email has a Sublease War Room, a sign-in link is on its way. Check your inbox and spam folder. If nothing arrives in a few minutes, email leasesolutions3@gmail.com and we'll get you in.", true);
+      } catch (e) {
+        say(msg, e.message);
+      }
+      btn.disabled = false;
+    });
     return;
   }
   const groups = JSON.parse(root.dataset.groups || "{}");
@@ -377,6 +440,7 @@ async function managePage() {
     const copy = (key, label, text) =>
       `<div class="sl-kit"><div class="sl-kit-head"><h3>${esc(label)}</h3><button class="btn btn-ghost" type="button" data-copy="${key}">Copy</button></div><pre>${esc(text)}</pre></div>`;
     dash.innerHTML = `
+      <div class="sl-acct"><span>Signed in as <strong>${esc(data.ownerEmail || l.ownerName || "you")}</strong></span><span><button class="btn btn-ghost" type="button" data-copy-private>Copy my private link</button> <button class="btn btn-ghost" type="button" data-signout>Sign out</button></span></div>
       <div class="sl-status ${esc(l.status)}"><div><strong>${esc(l.title)}</strong><span>${esc(l.marketName)} · ${money(l.rent)}/mo</span></div><span class="sl-pill">${esc({ pending_payment: "Waiting for payment", live: "Live", paused: "Paused", filled: "Filled", expired: "Expired" }[l.status])}</span></div>
       ${pending ? `<div class="callout"><h2>${l.status === "expired" ? "Bring your listing back" : "Publish your listing"}</h2><p>${l.status === "expired" ? "Your listing ended." : "Your listing is saved but not live yet."} Pay the one-time listing fee and it goes live for 60 days. It updates automatically within a minute or two of your payment. Your reference code is <code>${esc(l.id)}</code>.</p><p><a class="btn btn-primary" href="${payUrl.href}" rel="noopener">Pay $${esc(payBase.price)} with PayPal</a></p><p class="fineprint">Questions? Email <a href="mailto:leasesolutions3@gmail.com">leasesolutions3@gmail.com</a> with your reference code.</p></div>` : ""}
       <section><h2>Your sublease checklist</h2><ol class="sl-steps">${steps.map(([t, s, d]) => `<li class="${s}"><strong>${esc(t)}</strong><span>${esc(d)}</span></li>`).join("")}</ol></section>
@@ -396,6 +460,20 @@ async function managePage() {
         ${live ? '<button class="btn btn-ghost" data-status="paused" type="button">Pause listing</button>' : ""}
         ${l.status === "paused" ? '<button class="btn btn-ghost" data-status="live" type="button">Turn back on</button>' : ""}
         ${["live", "paused"].includes(l.status) ? '<button class="btn btn-primary" data-status="filled" type="button">Mark as filled</button>' : ""}<button class="btn btn-ghost sl-danger" data-delete type="button">Delete listing</button></p><p class="sl-msg" id="slActMsg" hidden></p></section>`;
+    $("[data-signout]", dash)?.addEventListener("click", () => {
+      try {
+        localStorage.removeItem("astropro.sublease." + id);
+      } catch {}
+      location.replace("sublease-manage.html?signedout=1");
+    });
+    $("[data-copy-private]", dash)?.addEventListener("click", async (ev) => {
+      try {
+        await navigator.clipboard.writeText(location.origin + "/sublease-manage.html#" + id + "." + saved);
+        ev.currentTarget.textContent = "Link copied";
+      } catch {
+        ev.currentTarget.textContent = "Copy from the address bar";
+      }
+    });
     $$("[data-copy]", dash).forEach((b) =>
       b.addEventListener("click", async () => {
         try {

@@ -15,6 +15,7 @@
   ],
   "send_email": [
     { "name": "EMAIL", "destination_address": "leasesolutions3@gmail.com" },
+    { "name": "MAILER" },
   ],
   "assets": {
     "directory": "dist",
@@ -31,7 +32,7 @@
     },
   ],
   "triggers": {
-    "crons": ["17 4 * * *"],
+    "crons": ["*/15 * * * *"],
   },
   "observability": {
     "enabled": true,

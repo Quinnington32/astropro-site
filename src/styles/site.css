@@ -3604,3 +3604,12 @@ html, body { overflow-x: clip; }
 .sl-demo-msg.flag { border-color: #d9534f; background: #fff3f2; }
 .sl-demo-flag { background: #d9534f; color: #fff; border-radius: 999px; font-size: .7rem; padding: .1rem .5rem; margin-left: .4rem; }
 .sl-demo-post { font-size: .92rem; background: #f3f5fa; border-radius: 10px; padding: .8rem; margin: 0; color: #172447; }
+
+/* Sublease War Room: account bar and sign-in */
+.sl-acct{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;justify-content:space-between;background:#fff;border:1px solid #e5e2d8;border-radius:12px;padding:12px 16px;margin:0 0 18px;font-size:.95rem}
+.sl-acct strong{word-break:break-all}
+.sl-acct .btn{padding:8px 14px;font-size:.9rem}
+.sl-signin{max-width:520px;margin:12px auto 32px;background:#fff;border:1px solid #e5e2d8;border-radius:16px;padding:28px;box-shadow:0 8px 28px rgba(23,36,71,.07)}
+.sl-signin h2{margin:0 0 8px}
+.sl-pay-email{max-width:420px;margin:14px 0 6px}
+.sl-pay-email input{width:100%}

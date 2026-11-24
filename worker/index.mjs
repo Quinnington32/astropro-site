@@ -1,5 +1,5 @@
 import { marketLinks } from "./market-links.mjs";
-import { handleSublease, customMarketPage } from "./sublease.mjs";
+import { handleSublease, customMarketPage, runSubleaseJobs } from "./sublease.mjs";
 const PREFIX = "/studentresourcecenter";
 const ALIAS_HOSTS = [
   "www.astroprostudentresourcecenter.com",
@@ -383,6 +383,28 @@ export async function notifyPartnerCampaign(env, data) {
   } catch {
     console.error("Partner campaign notification email failed");
   }
+}
+// Email to a student. Uses Brevo when BREVO_API_KEY is set, otherwise Cloudflare Email Sending (needs the Workers Paid plan).
+export async function sendStudentMail(env, { to, subject, text, html }) {
+  const from = env.MAIL_FROM || "warroom@astroprostudentresourcecenter.com";
+  const name = "AstroPro Sublease War Room";
+  try {
+    if (env.BREVO_API_KEY) {
+      const res = await fetch("https://api.brevo.com/v3/smtp/email", {
+        method: "POST",
+        headers: { "api-key": env.BREVO_API_KEY, "content-type": "application/json", accept: "application/json" },
+        body: JSON.stringify({ sender: { name, email: from }, to: [{ email: to }], replyTo: { email: "leasesolutions3@gmail.com" }, subject, textContent: text, htmlContent: html }),
+      });
+      return res.ok;
+    }
+    if (env.MAILER?.send) {
+      await env.MAILER.send({ to, from: { email: from, name }, replyTo: "leasesolutions3@gmail.com", subject, text, html });
+      return true;
+    }
+  } catch {
+    console.error("Student email failed");
+  }
+  return false;
 }
 export async function notifyTeam(env, subject, text) {
   if (!env.EMAIL?.send) return;
@@ -799,7 +821,7 @@ export async function handleRequest(request, env) {
     }
     if (path === "/api/books") return bookSearch(request);
     if (path.startsWith("/api/sublease/") || path.startsWith("/api/admin/sublease/"))
-      return handleSublease(request, env, path, { json, readJson, isSameOrigin, quota, digest, authorize, notify: (subject, text) => notifyTeam(env, subject, text) });
+      return handleSublease(request, env, path, { json, readJson, isSameOrigin, quota, digest, authorize, notify: (subject, text) => notifyTeam(env, subject, text), mail: (m) => sendStudentMail(env, m) });
     if (path === "/api/submissions") return submissions(request, env);
     if (path.startsWith("/api/admin/")) return admin(request, env, path);
     return json({ error: "Endpoint not found." }, 404);
@@ -888,6 +910,7 @@ export default {
   },
   async scheduled(_event, env) {
     if (!env.DB) return;
+    await runSubleaseJobs(env, { notify: (subject, text) => notifyTeam(env, subject, text), mail: (m) => sendStudentMail(env, m) }).catch(() => null);
     await env.DB.batch([
       env.DB.prepare(
         "DELETE FROM submissions WHERE created_at < ? AND type != 'scholarship-interest'",
