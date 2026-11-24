@@ -393,12 +393,12 @@ export async function sendStudentMail(env, { to, subject, text, html }) {
       const res = await fetch("https://api.brevo.com/v3/smtp/email", {
         method: "POST",
         headers: { "api-key": env.BREVO_API_KEY, "content-type": "application/json", accept: "application/json" },
-        body: JSON.stringify({ sender: { name, email: from }, to: [{ email: to }], replyTo: { email: "leasesolutions3@gmail.com" }, subject, textContent: text, htmlContent: html }),
+        body: JSON.stringify({ sender: { name, email: from }, to: [{ email: to }], replyTo: { email: from }, subject, textContent: text, htmlContent: html }),
       });
       return res.ok;
     }
     if (env.MAILER?.send) {
-      await env.MAILER.send({ to, from: { email: from, name }, replyTo: "leasesolutions3@gmail.com", subject, text, html });
+      await env.MAILER.send({ to, from: { email: from, name }, replyTo: from, subject, text, html });
       return true;
     }
   } catch {

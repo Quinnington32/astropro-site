@@ -3619,3 +3619,5 @@ html, body { overflow-x: clip; }
 .sl-signin label,.sl-pay-email label{display:block;margin:0 0 6px;font-weight:600}
 .sl-signin input,.sl-pay-email input{width:100%;box-sizing:border-box}
 .sl-signin .fineprint,.sl-pay-email .fineprint{margin-top:14px}
+
+.footer-links .footer-email { font-size: .85em; opacity: .85; word-break: break-all; }
