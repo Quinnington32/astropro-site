@@ -55,6 +55,7 @@ before(async () => {
     "migrations/0008_sublease_pay_code.sql",
     "migrations/0009_sublease_events.sql",
     "migrations/0010_sublease_intents.sql",
+    "migrations/0011_sublease_secret.sql",
   ]) {
     const schema = await readFile(file, "utf8");
     await db.batch(
@@ -865,4 +866,21 @@ test("sublease war room: checkout email capture, sign-in links and follow-up job
   // it does not nag again right away
   await runSubleaseJobs({ DB: db }, { notify: async () => alerts.push(["again"]), mail: async (m) => (mails.push(m), true) });
   assert.equal(mails.length, 1);
+});
+
+test("sublease owner unlock link records a payment and emails the student", async () => {
+  const { runSubleaseJobs } = await import("../worker/sublease.mjs");
+  await db.prepare("INSERT INTO sublease_intents (code,email,created_at) VALUES (?,?,?)").bind("unlockcode12", "stud@example.com", new Date(Date.now() - 60 * 60000).toISOString()).run();
+  const alerts = [];
+  await runSubleaseJobs({ DB: db }, { notify: async (s, t) => alerts.push([s, t]), mail: async () => true });
+  const text = alerts.map((a) => a[1]).join("\n");
+  const m = text.match(/owner-unlock\?code=unlockcode12&t=([0-9a-f]+)/);
+  assert.ok(m, "stalled alert carries an unlock link");
+  const bad = await mf.dispatchFetch(origin + "/api/sublease/owner-unlock?code=unlockcode12&t=" + "0".repeat(32));
+  assert.equal(bad.status, 403);
+  assert.equal(await db.prepare("SELECT 1 x FROM sublease_credits WHERE code=?").bind("unlockcode12").first(), null);
+  const ok = await mf.dispatchFetch(origin + "/api/sublease/owner-unlock?code=unlockcode12&t=" + m[1]);
+  assert.equal(ok.status, 200);
+  const credit = await db.prepare("SELECT txn_id FROM sublease_credits WHERE code=?").bind("unlockcode12").first();
+  assert.equal(credit.txn_id, "MANUAL-unlockcode12");
 });

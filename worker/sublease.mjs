@@ -256,6 +256,19 @@ export async function handleSublease(request, env, path, h) {
     return json({ ok: true });
   }
 
+  // Owner taps this link (from an alert email) after seeing the payment in PayPal: records the payment and emails the student their form link.
+  if (path === "/api/sublease/owner-unlock" && request.method === "GET") {
+    const code = clean(new URL(request.url).searchParams.get("code"), 20).toLowerCase(),
+      t = clean(new URL(request.url).searchParams.get("t"), 64);
+    const page = (msg, status = 200) => new Response('<!doctype html><meta name="viewport" content="width=device-width,initial-scale=1"><body style="font-family:Arial,sans-serif;max-width:480px;margin:48px auto;padding:0 20px;color:#172447"><h2>' + htmlEsc(msg[0]) + "</h2><p>" + htmlEsc(msg[1]) + "</p>", { status, headers: { "content-type": "text/html; charset=utf-8", "cache-control": "no-store", "x-robots-tag": "noindex" } });
+    if (!ID.test(code) || !t || t !== (await unlockToken(env, code))) return page(["Link not valid", "This unlock link is wrong or expired."], 403);
+    const it = await env.DB.prepare("SELECT email FROM sublease_intents WHERE code=?").bind(code).first();
+    await env.DB.prepare("INSERT OR IGNORE INTO sublease_credits (code,txn_id,paid_at) VALUES (?,?,?)").bind(code, "MANUAL-" + code, now).run();
+    const link = SITE(env) + "/sublease-war-room.html?code=" + code + "#start";
+    const sent = it?.email ? await sendStudent(h, it.email, "Payment received: finish your Sublease War Room listing", ["Thank you! Your $39 onboarding payment went through.", "Next step: fill out your listing (about 5 minutes). We'll build your ready-to-post ads and your private dashboard right after."], "Fill out my listing", link) : false;
+    return page(["Unlocked", it?.email ? (sent ? "Their form is unlocked and we emailed " + it.email + " the link." : "Their form is unlocked, but the email could not be sent. Send them: " + link) : "Their form is unlocked. We have no email for them. Link: " + link]);
+  }
+
   // Checkout started: capture the email so the form link can always reach the student.
   if (path === "/api/sublease/intent" && request.method === "POST") {
     if (!h.isSameOrigin(request)) return json({ error: "Not allowed." }, 403);
@@ -270,7 +283,7 @@ export async function handleSublease(request, env, path, h) {
     if (!existing)
       await h.notify?.(
         "Sublease War Room: " + email + " is heading to PayPal",
-        "A student entered " + email + " and clicked Pay.\nPay code: " + code + "\n\nYou will get a payment email if PayPal confirms it. If you see a $39 payment in PayPal with item number " + code + " and no payment email follows, send them this link to unlock their form:\n" + SITE(env) + "/sublease-war-room.html?code=" + code + "#start",
+        "A student entered " + email + " and clicked Pay.\nPay code: " + code + "\n\nYou will get a payment email if PayPal confirms it. If you see a $39 payment in PayPal with item number " + code + " and no payment email follows, tap this to unlock their form and email them the link:\n" + (await unlockUrl(env, code)),
       );
     return json({ ok: true });
   }
@@ -547,6 +560,23 @@ export async function customMarketPage(env, slug, template) {
 // ---------- Student email, sign-in links and follow-up jobs ----------
 const EMAIL_RE = /^[^\s@]{1,64}@[^\s@]{1,190}\.[^\s@]{2,}$/;
 const SITE = (env) => env.SITE_ORIGIN || "https://astroprostudentresourcecenter.com";
+
+// Owner-only unlock links: a signed link in your alert email marks a payment as received (for when PayPal's instant notice fails).
+const ownerSecret = async (env) => {
+  let row = await env.DB.prepare("SELECT v FROM sublease_secrets WHERE k='owner'").first();
+  if (!row) {
+    const v = Array.from(crypto.getRandomValues(new Uint8Array(32)), (b) => b.toString(16).padStart(2, "0")).join("");
+    await env.DB.prepare("INSERT OR IGNORE INTO sublease_secrets (k,v) VALUES ('owner',?)").bind(v).run();
+    row = await env.DB.prepare("SELECT v FROM sublease_secrets WHERE k='owner'").first();
+  }
+  return row.v;
+};
+const unlockToken = async (env, code) => {
+  const key = await crypto.subtle.importKey("raw", new TextEncoder().encode(await ownerSecret(env)), { name: "HMAC", hash: "SHA-256" }, false, ["sign"]);
+  const sig = await crypto.subtle.sign("HMAC", key, new TextEncoder().encode("unlock:" + code));
+  return Array.from(new Uint8Array(sig).slice(0, 16), (b) => b.toString(16).padStart(2, "0")).join("");
+};
+const unlockUrl = async (env, code) => SITE(env) + "/api/sublease/owner-unlock?code=" + code + "&t=" + (await unlockToken(env, code));
 const mailHtml = (heading, lines, label, url, site) => {
   const base = site || "https://astroprostudentresourcecenter.com";
   return (
@@ -605,6 +635,6 @@ export async function runSubleaseJobs(env, h) {
       await env.DB.prepare("UPDATE sublease_intents SET owner_alerted=1 WHERE code=?").bind(r.code).run().catch(() => null);
       await sendStudent(h, r.email, "Still need help subleasing?", ["You started checkout for the Sublease War Room but didn't finish.", "When you're ready, pick up where you left off. Your listing goes in front of thousands of students and we give you the ready-to-post ads and every place to post."], "Back to the Sublease War Room", site + "/sublease-war-room.html?code=" + r.code + "#start");
     }
-    await h.notify?.("Checkout started, no payment recorded (" + stalled.length + ")", "These people entered their email and clicked Pay, but no payment has been recorded after 30 minutes:\n\n" + stalled.map((r) => r.email + "  (code " + r.code + ")").join("\n") + "\n\nIf any of them paid in PayPal (item number = the code), the payment notification may have failed. Tell me and I'll unlock their form.");
+    await h.notify?.("Checkout started, no payment recorded (" + stalled.length + ")", "These people entered their email and clicked Pay, but no payment has been recorded after 30 minutes:\n\n" + (await Promise.all(stalled.map(async (r) => r.email + "  (code " + r.code + ")\nIf they paid, tap to unlock and email them: " + (await unlockUrl(env, r.code))))).join("\n\n") + "\n\nIf any of them paid in PayPal (item number = the code), the payment notification may have failed. Tap the link under their name to unlock the form and email them.");
   }
 }
