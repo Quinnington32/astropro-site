@@ -86,6 +86,13 @@ function startPage() {
   const CODE_KEY = "astropro.sublease.paycode";
   const newCode = () => [...crypto.getRandomValues(new Uint8Array(12))].map((x) => "abcdefghijklmnopqrstuvwxyz0123456789"[x % 36]).join("");
   let payCode = "";
+  // A link with ?code= lets us send a student back to their paid form from any device.
+  const linkCode = (new URLSearchParams(location.search).get("code") || "").toLowerCase();
+  if (/^[a-z0-9]{12}$/.test(linkCode)) {
+    try {
+      localStorage.setItem(CODE_KEY, linkCode);
+    } catch {}
+  }
   try {
     payCode = localStorage.getItem(CODE_KEY) || "";
   } catch {}

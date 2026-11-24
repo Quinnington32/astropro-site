@@ -182,17 +182,26 @@ export async function handleSublease(request, env, path, h) {
   if (path === "/api/sublease/paypal-ipn" && request.method === "POST") {
     const raw = await request.text();
     if (raw.length > 8000) return new Response("too large", { status: 413 });
+    const mark = (name) =>
+      env.DB.prepare("INSERT INTO sublease_events (day,name,n) VALUES (?,?,1) ON CONFLICT(day,name) DO UPDATE SET n=n+1").bind(now.slice(0, 10), name).run().catch(() => null);
+    await mark("ipn_received");
     const verify = await (h.fetch || fetch)("https://ipnpb.paypal.com/cgi-bin/webscr", {
       method: "POST",
       headers: { "content-type": "application/x-www-form-urlencoded", "user-agent": "AstroPro-IPN" },
       body: "cmd=_notify-validate&" + raw,
     }).catch(() => null);
-    if (!verify || (await verify.text()).trim() !== "VERIFIED") return new Response("ignored");
+    if (!verify || (await verify.text()).trim() !== "VERIFIED") {
+      await mark("ipn_unverified");
+      return new Response("ignored");
+    }
     const d = ipnDecision(new URLSearchParams(raw), {
       business: env.PAYPAL_BUSINESS_EMAIL || PAYPAL_DEFAULT_BUSINESS,
       price: Number(env.SUBLEASE_PRICE || PAYPAL_DEFAULT_PRICE),
     });
-    if (!d.ok) return new Response("ignored");
+    if (!d.ok) {
+      await mark("ipn_rejected");
+      return new Response("ignored");
+    }
     const expires = new Date(Date.now() + LIVE_DAYS * 86400000).toISOString();
     const r = await env.DB.prepare(
       "UPDATE sublease_listings SET status=CASE WHEN status='filled' THEN status ELSE 'live' END, paid_at=?, expires_at=?, txn_id=?, updated_at=? WHERE id=? AND txn_id IS NULL",
@@ -211,6 +220,7 @@ export async function handleSublease(request, env, path, h) {
       if (r2?.meta?.changes === 1) hit = d.id;
     }
     if (hit) {
+      await mark("ipn_listing_live");
       await h.notify?.("Sublease War Room payment received (" + d.id + ")", "PayPal payment " + d.txn + " confirmed for listing " + d.id + ". It is live for " + LIVE_DAYS + " days.");
     } else {
       const exists = await env.DB.prepare("SELECT 1 x FROM sublease_listings WHERE id=? OR pay_code=?").bind(d.id, d.id).first().catch(() => null);
@@ -219,6 +229,7 @@ export async function handleSublease(request, env, path, h) {
           .bind(d.id, d.txn, now)
           .run()
           .catch(() => null);
+        if (c?.meta?.changes === 1) await mark("ipn_credited");
         if (c?.meta?.changes === 1)
           await h.notify?.("Sublease War Room payment received", "PayPal payment " + d.txn + " confirmed (pay code " + d.id + "). The student can now fill out the onboarding form.");
       }
