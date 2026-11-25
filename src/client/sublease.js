@@ -457,6 +457,7 @@ async function managePage() {
       </section>
       <section class="sl-actions"><h2>Manage your listing</h2>
         <p><a class="btn btn-ghost" href="sublease-listing.html?id=${esc(l.id)}">View public page</a>
+        <button class="btn btn-ghost" data-edit type="button">Edit listing</button>
         ${live ? '<button class="btn btn-ghost" data-status="paused" type="button">Pause listing</button>' : ""}
         ${l.status === "paused" ? '<button class="btn btn-ghost" data-status="live" type="button">Turn back on</button>' : ""}
         ${["live", "paused"].includes(l.status) ? '<button class="btn btn-primary" data-status="filled" type="button">Mark as filled</button>' : ""}<button class="btn btn-ghost sl-danger" data-delete type="button">Delete listing</button></p><p class="sl-msg" id="slActMsg" hidden></p></section>`;
@@ -492,6 +493,28 @@ async function managePage() {
         render();
       }),
     );
+    $("[data-edit]", dash)?.addEventListener("click", (ev) => {
+      if ($("#slEditForm")) return;
+      const f = (name, label, val, type = "text", extra = "") => `<div class="field"><label for="ed_${name}">${label}</label><input id="ed_${name}" name="${name}" type="${type}" value="${esc(val ?? "")}" ${extra}></div>`;
+      const sel = (name, label, val, opts) => `<div class="field"><label for="ed_${name}">${label}</label><select id="ed_${name}" name="${name}">${opts.map(([v, t]) => `<option value="${v}"${v === val ? " selected" : ""}>${t}</option>`).join("")}</select></div>`;
+      const form = document.createElement("form");
+      form.id = "slEditForm";
+      form.className = "sl-form callout";
+      form.noValidate = true;
+      form.innerHTML = `<h3>Edit your listing</h3>${f("title", "Title", l.title, "text", 'maxlength="120"')}${f("area", "Neighborhood or building", l.area, "text", 'maxlength="150"')}${f("rent", "Monthly rent ($)", l.rent, "number", 'min="1"')}${f("deposit", "Deposit ($, optional)", l.deposit || "", "number", 'min="0"')}${f("startDate", "Move-in", l.startDate, "date")}${f("endDate", "Move-out", l.endDate, "date")}${f("bedrooms", "Bedrooms", l.bedrooms, "number", 'min="0"')}${f("bathrooms", "Bathrooms", l.bathrooms, "number", 'min="0.5" step="0.5"')}${sel("furnished", "Furnished", l.furnished, [["yes", "Yes"], ["no", "No"], ["partly", "Partly"]])}${sel("utilities", "Utilities", l.utilities, [["yes", "Included"], ["some", "Some included"], ["no", "Not included"]])}<div class="field"><label for="ed_description">Description</label><textarea id="ed_description" name="description" rows="8" maxlength="2000">${esc(l.description)}</textarea></div><p class="sl-msg" id="slEditMsg" role="alert" hidden></p><button class="btn btn-primary" type="submit">Save changes</button> <button class="btn btn-ghost" type="button" data-edit-cancel>Cancel</button>`;
+      ev.currentTarget.closest("section").appendChild(form);
+      $("[data-edit-cancel]", form).addEventListener("click", () => form.remove());
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const fields = Object.fromEntries(new FormData(form).entries());
+        try {
+          await api("/manage/" + id, { method: "POST", headers, body: JSON.stringify({ action: "edit", fields }) });
+          render();
+        } catch (err) {
+          say($("#slEditMsg"), err.message);
+        }
+      });
+    });
     $("[data-delete]", dash)?.addEventListener("click", async (ev) => {
       const b = ev.currentTarget;
       if (!b.dataset.sure) {

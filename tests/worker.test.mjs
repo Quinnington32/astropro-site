@@ -884,3 +884,24 @@ test("sublease owner unlock link records a payment and emails the student", asyn
   const credit = await db.prepare("SELECT txn_id FROM sublease_credits WHERE code=?").bind("unlockcode12").first();
   assert.equal(credit.txn_id, "MANUAL-unlockcode12");
 });
+
+test("sublease owner can edit listing details but not market or owner", async () => {
+  const photo = "data:image/jpeg;base64," + "A".repeat(200);
+  const hdr = { Origin: origin, "Content-Type": "application/json", "CF-Connecting-IP": "192.0.2.93" };
+  const made = await mf.dispatchFetch(origin + "/api/sublease/listings", { method: "POST", headers: hdr, body: JSON.stringify({
+    market: "housing-austin-tx", marketName: "Austin, TX", area: "West Campus", title: "Edit me", description: "A place that will be edited soon.",
+    ownerName: "Sam", ownerEmail: "sam-edit@example.com", permission: "approved", type: "relet", furnished: "no", utilities: "no",
+    startDate: "2027-05-15", endDate: "2027-08-15", rent: 700, bedrooms: 1, bathrooms: 1, photos: [photo], consent: true }) });
+  const { id, manageToken } = await made.json();
+  const post = (body) => mf.dispatchFetch(origin + "/api/sublease/manage/" + id, { method: "POST", headers: { ...hdr, "x-manage-token": manageToken }, body: JSON.stringify(body) });
+  assert.equal((await post({ action: "edit", fields: { endDate: "2027-01-01" } })).status, 400); // move-out before move-in
+  const ok = await post({ action: "edit", fields: { endDate: "2027-09-30", rent: 650, market: "housing-evil", ownerEmail: "evil@example.com" } });
+  assert.equal(ok.status, 200);
+  const row = await db.prepare("SELECT market, owner_email, data_json FROM sublease_listings WHERE id=?").bind(id).first();
+  const d = JSON.parse(row.data_json);
+  assert.equal(d.endDate, "2027-09-30");
+  assert.equal(d.rent, 650);
+  assert.equal(row.market, "housing-austin-tx");
+  assert.equal(row.owner_email, "sam-edit@example.com");
+  assert.equal(d.ownerEmail, "sam-edit@example.com");
+});

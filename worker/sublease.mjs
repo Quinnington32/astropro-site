@@ -44,7 +44,7 @@ const slugId = () =>
 const fail = (message, status = 400) =>
   Object.assign(new Error(message), { status });
 
-export function validateListing(raw) {
+export function validateListing(raw, opts = {}) {
   if (!raw || typeof raw !== "object") throw fail("Send listing details.");
   const out = {
     market: clean(raw.market, 60).toLowerCase(),
@@ -99,6 +99,7 @@ export function validateListing(raw) {
     throw fail("Enter the number of bedrooms (0 for a studio).");
   if (!Number.isFinite(out.bathrooms) || out.bathrooms < 0.5 || out.bathrooms > 10)
     throw fail("Enter the number of bathrooms.");
+  if (opts.keepPhotos) return { data: out, photos: [] };
   const photos = Array.isArray(raw.photos) ? raw.photos.slice(0, 4) : [];
   for (const p of photos)
     if (typeof p !== "string" || !PHOTO.test(p) || p.length > MAX_PHOTO)
@@ -521,6 +522,17 @@ export async function handleSublease(request, env, path, h) {
         env.DB.prepare("DELETE FROM sublease_listings WHERE id=?").bind(row.id),
       ]);
       return json({ ok: true, deleted: true });
+    }
+    if (body.action === "edit") {
+      const cur = JSON.parse(row.data_json);
+      const editable = ["title", "area", "description", "rent", "deposit", "startDate", "endDate", "bedrooms", "bathrooms", "furnished", "utilities", "type"];
+      const patch = {};
+      for (const k of editable) if (body.fields && k in body.fields) patch[k] = body.fields[k];
+      const { data } = validateListing({ ...cur, ...patch }, { keepPhotos: true });
+      // market, school, owner and permission stay as first submitted
+      const merged = { ...cur, ...Object.fromEntries(editable.map((k) => [k, data[k]])) };
+      await env.DB.prepare("UPDATE sublease_listings SET data_json=?, updated_at=? WHERE id=?").bind(JSON.stringify(merged), now, row.id).run();
+      return json({ ok: true });
     }
     const next = clean(body.status, 10);
     const ok = { live: ["paused"], paused: ["live"], filled: [] };
