@@ -3640,3 +3640,6 @@ html, body { overflow-x: clip; }
 .sl-form .field label{display:block;margin-bottom:.3rem;font-weight:600}
 #slEditForm{margin-top:1rem}
 #slEditForm input,#slEditForm select,#slEditForm textarea{width:100%}
+.sl-next .btn-primary{background:#E77B25;border-color:#E77B25;color:#fff}
+.sl-next .btn-primary:hover{background:#cf6a18;border-color:#cf6a18}
+.sl-next-done .btn-primary{background:#fff;color:#1f6b45}
