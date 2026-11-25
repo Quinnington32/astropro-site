@@ -7938,6 +7938,30 @@
         "maps": "https://www.google.com/maps/search/?api=1&query=The%20Park%20on%20Morton%2C%20Bloomington%2C%20IN",
         "summary": "Student apartment community near Indiana University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
         "pick": 1
+      },
+      {
+        "id": "housing-bloomington-in-property-the-quarters-bloomington",
+        "name": "The Quarters Bloomington",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Quarters%20Bloomington%2C%20Bloomington%2C%20IN",
+        "summary": "Student apartment community near Indiana University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 2
+      },
+      {
+        "id": "housing-bloomington-in-property-hub-bloomington",
+        "name": "Hub Bloomington",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Hub%20Bloomington%2C%20Bloomington%2C%20IN",
+        "summary": "Student apartment community near Indiana University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 3
+      },
+      {
+        "id": "housing-bloomington-in-property-3-square",
+        "name": "3 Square",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=3%20Square%2C%20Bloomington%2C%20IN",
+        "summary": "Student apartment community near Indiana University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 4
       }
     ]
   },
@@ -7947,7 +7971,44 @@
     "school": "Michigan State University",
     "place": "East Lansing, MI",
     "description": "Michigan State students rent in the neighborhoods and apartment communities around East Lansing's downtown and the edges of campus.",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-east-lansing-mi-property-campus-village",
+        "name": "Campus Village",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Campus%20Village%2C%20East%20Lansing%2C%20MI",
+        "summary": "Student apartment community near Michigan State University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 1,
+        "website": "https://www.greystar.com/campus-village-e-lansing-east-lansing-mi/p_15734",
+        "source": "https://www.greystar.com/campus-village-e-lansing-east-lansing-mi/p_15734"
+      },
+      {
+        "id": "housing-east-lansing-mi-property-the-lodges-of-east-lansing",
+        "name": "The Lodges of East Lansing",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Lodges%20of%20East%20Lansing%2C%20East%20Lansing%2C%20MI",
+        "summary": "Student apartment community near Michigan State University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 2,
+        "website": "https://www.americancampus.com/lodgesel",
+        "source": "https://www.americancampus.com/lodgesel"
+      },
+      {
+        "id": "housing-east-lansing-mi-property-hannah-lofts",
+        "name": "Hannah Lofts",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Hannah%20Lofts%2C%20East%20Lansing%2C%20MI",
+        "summary": "Student apartment community near Michigan State University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 3
+      },
+      {
+        "id": "housing-east-lansing-mi-property-trowbridge-lofts",
+        "name": "Trowbridge Lofts",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Trowbridge%20Lofts%2C%20East%20Lansing%2C%20MI",
+        "summary": "Student apartment community near Michigan State University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 4
+      }
+    ]
   },
   {
     "id": "housing-champaign-il",
@@ -7955,7 +8016,42 @@
     "school": "University of Illinois Urbana-Champaign",
     "place": "Champaign, IL",
     "description": "Illinois students rent in Campustown and the surrounding Champaign-Urbana neighborhoods near campus.",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-champaign-il-property-the-tower-at-third",
+        "name": "The Tower at Third",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Tower%20at%20Third%2C%20Champaign%2C%20IL",
+        "summary": "Student apartment community near University of Illinois. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 1,
+        "website": "https://www.americancampus.com/student-apartments/il/champaign",
+        "source": "https://www.americancampus.com/student-apartments/il/champaign"
+      },
+      {
+        "id": "housing-champaign-il-property-the-dean-campustown",
+        "name": "The Dean Campustown",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Dean%20Campustown%2C%20Champaign%2C%20IL",
+        "summary": "Student apartment community near University of Illinois. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 2
+      },
+      {
+        "id": "housing-champaign-il-property-maywood-apartments",
+        "name": "Maywood Apartments",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Maywood%20Apartments%2C%20Champaign%2C%20IL",
+        "summary": "Student apartment community near University of Illinois. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 3
+      },
+      {
+        "id": "housing-champaign-il-property-here-champaign",
+        "name": "HERE Champaign",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=HERE%20Champaign%2C%20Champaign%2C%20IL",
+        "summary": "Student apartment community near University of Illinois. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 4
+      }
+    ]
   },
   {
     "id": "housing-lubbock-tx",
@@ -7963,7 +8059,46 @@
     "school": "Texas Tech University",
     "place": "Lubbock, TX",
     "description": "Texas Tech students rent in apartment communities around campus and along the major streets near the university.",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-lubbock-tx-property-25twenty",
+        "name": "25Twenty",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=25Twenty%2C%20Lubbock%2C%20TX",
+        "summary": "Student apartment community near Texas Tech University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 1,
+        "website": "https://www.americancampus.com/student-apartments/tx/lubbock/25twenty",
+        "source": "https://www.americancampus.com/student-apartments/tx/lubbock/25twenty"
+      },
+      {
+        "id": "housing-lubbock-tx-property-university-pointe",
+        "name": "University Pointe",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=University%20Pointe%2C%20Lubbock%2C%20TX",
+        "summary": "Student apartment community near Texas Tech University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 2,
+        "website": "https://www.americancampus.com/student-apartments/tx/lubbock",
+        "source": "https://www.americancampus.com/student-apartments/tx/lubbock"
+      },
+      {
+        "id": "housing-lubbock-tx-property-21hundred-at-overton-park",
+        "name": "21Hundred at Overton Park",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=21Hundred%20at%20Overton%20Park%2C%20Lubbock%2C%20TX",
+        "summary": "Student apartment community near Texas Tech University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 3,
+        "website": "https://www.americancampus.com/student-apartments/tx/lubbock/21hundred-at-overton-park",
+        "source": "https://www.americancampus.com/student-apartments/tx/lubbock/21hundred-at-overton-park"
+      },
+      {
+        "id": "housing-lubbock-tx-property-the-edge-apartments",
+        "name": "The Edge Apartments",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Edge%20Apartments%2C%20Lubbock%2C%20TX",
+        "summary": "Student apartment community near Texas Tech University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 4
+      }
+    ]
   },
   {
     "id": "housing-waco-tx",
@@ -7971,7 +8106,46 @@
     "school": "Baylor University",
     "place": "Waco, TX",
     "description": "Baylor students rent in the neighborhoods and communities around campus and along the Brazos River.",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-waco-tx-property-union",
+        "name": "Union",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Union%2C%20Waco%2C%20TX",
+        "summary": "Student apartment community near Baylor University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 1,
+        "website": "https://www.americancampus.com/student-apartments/tx/waco/union",
+        "source": "https://www.americancampus.com/student-apartments/tx/waco/union"
+      },
+      {
+        "id": "housing-waco-tx-property-u-pointe-on-speight",
+        "name": "U Pointe on Speight",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=U%20Pointe%20on%20Speight%2C%20Waco%2C%20TX",
+        "summary": "Student apartment community near Baylor University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 2,
+        "website": "https://www.americancampus.com/student-apartments/tx/waco/u-pointe-on-speight",
+        "source": "https://www.americancampus.com/student-apartments/tx/waco/u-pointe-on-speight"
+      },
+      {
+        "id": "housing-waco-tx-property-domain-at-waco",
+        "name": "Domain at Waco",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Domain%20at%20Waco%2C%20Waco%2C%20TX",
+        "summary": "Student apartment community near Baylor University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 3
+      },
+      {
+        "id": "housing-waco-tx-property-outpost-at-waco",
+        "name": "Outpost at Waco",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Outpost%20at%20Waco%2C%20Waco%2C%20TX",
+        "summary": "Student apartment community near Baylor University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 4,
+        "website": "https://www.greystar.com/outpost-at-waco-apartments-waco/p_14595",
+        "source": "https://www.greystar.com/outpost-at-waco-apartments-waco/p_14595"
+      }
+    ]
   },
   {
     "id": "housing-knoxville-tn",
@@ -7979,7 +8153,40 @@
     "school": "University of Tennessee",
     "place": "Knoxville, TN",
     "description": "Tennessee students rent in the Fort Sanders area near campus and in communities along the river and the main roads around the university.",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-knoxville-tn-property-university-walk",
+        "name": "University Walk",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=University%20Walk%2C%20Knoxville%2C%20TN",
+        "summary": "Student apartment community near University of Tennessee. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 1
+      },
+      {
+        "id": "housing-knoxville-tn-property-university-park",
+        "name": "University Park",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=University%20Park%2C%20Knoxville%2C%20TN",
+        "summary": "Student apartment community near University of Tennessee. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 2
+      },
+      {
+        "id": "housing-knoxville-tn-property-villas-knoxville",
+        "name": "Villas Knoxville",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Villas%20Knoxville%2C%20Knoxville%2C%20TN",
+        "summary": "Student apartment community near University of Tennessee. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 3
+      },
+      {
+        "id": "housing-knoxville-tn-property-highland-grand",
+        "name": "Highland Grand",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Highland%20Grand%2C%20Knoxville%2C%20TN",
+        "summary": "Student apartment community near University of Tennessee. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 4
+      }
+    ]
   },
   {
     "id": "housing-lexington-ky",
@@ -7987,7 +8194,46 @@
     "school": "University of Kentucky",
     "place": "Lexington, KY",
     "description": "Kentucky students rent in the neighborhoods and apartment communities around campus and downtown Lexington.",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-lexington-ky-property-newtown-crossing",
+        "name": "Newtown Crossing",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Newtown%20Crossing%2C%20Lexington%2C%20KY",
+        "summary": "Student apartment community near University of Kentucky. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 1,
+        "website": "https://www.americancampus.com/lexington",
+        "source": "https://www.americancampus.com/lexington"
+      },
+      {
+        "id": "housing-lexington-ky-property-royal-lexington",
+        "name": "Royal Lexington",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Royal%20Lexington%2C%20Lexington%2C%20KY",
+        "summary": "Student apartment community near University of Kentucky. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 2,
+        "website": "https://www.americancampus.com/student-apartments/ky/lexington",
+        "source": "https://www.americancampus.com/student-apartments/ky/lexington"
+      },
+      {
+        "id": "housing-lexington-ky-property-the-townhomes-at-newtown-crossing",
+        "name": "The Townhomes at Newtown Crossing",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Townhomes%20at%20Newtown%20Crossing%2C%20Lexington%2C%20KY",
+        "summary": "Student apartment community near University of Kentucky. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 3,
+        "website": "https://www.americancampus.com/student-apartments/ky/lexington/the-townhomes-at-newtown-crossing",
+        "source": "https://www.americancampus.com/student-apartments/ky/lexington/the-townhomes-at-newtown-crossing"
+      },
+      {
+        "id": "housing-lexington-ky-property-university-flats",
+        "name": "University Flats",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=University%20Flats%2C%20Lexington%2C%20KY",
+        "summary": "Student apartment community near University of Kentucky. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 4
+      }
+    ]
   },
   {
     "id": "housing-fayetteville-ar",
@@ -7995,7 +8241,42 @@
     "school": "University of Arkansas",
     "place": "Fayetteville, AR",
     "description": "Arkansas students rent in the neighborhoods around campus and in communities along the main corridors of Fayetteville.",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-fayetteville-ar-property-the-locale",
+        "name": "The Locale",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Locale%2C%20Fayetteville%2C%20AR",
+        "summary": "Student apartment community near University of Arkansas. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 1
+      },
+      {
+        "id": "housing-fayetteville-ar-property-university-house-fayetteville",
+        "name": "University House Fayetteville",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=University%20House%20Fayetteville%2C%20Fayetteville%2C%20AR",
+        "summary": "Student apartment community near University of Arkansas. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 2
+      },
+      {
+        "id": "housing-fayetteville-ar-property-the-marshall",
+        "name": "The Marshall",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Marshall%2C%20Fayetteville%2C%20AR",
+        "summary": "Student apartment community near University of Arkansas. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 3
+      },
+      {
+        "id": "housing-fayetteville-ar-property-the-cottages-on-hollywood",
+        "name": "The Cottages on Hollywood",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Cottages%20on%20Hollywood%2C%20Fayetteville%2C%20AR",
+        "summary": "Student apartment community near University of Arkansas. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 4,
+        "website": "https://www.landmarkproperties.com/property/the-cottages-on-hollywood",
+        "source": "https://www.landmarkproperties.com/property/the-cottages-on-hollywood"
+      }
+    ]
   },
   {
     "id": "housing-oxford-ms",
@@ -8003,7 +8284,40 @@
     "school": "University of Mississippi",
     "place": "Oxford, MS",
     "description": "Ole Miss students rent in communities around Oxford and near the campus.",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-oxford-ms-property-the-quarters-at-oxford",
+        "name": "The Quarters at Oxford",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Quarters%20at%20Oxford%2C%20Oxford%2C%20MS",
+        "summary": "Student apartment community near University of Mississippi. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 1
+      },
+      {
+        "id": "housing-oxford-ms-property-village-walk",
+        "name": "Village Walk",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Village%20Walk%2C%20Oxford%2C%20MS",
+        "summary": "Student apartment community near University of Mississippi. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 2
+      },
+      {
+        "id": "housing-oxford-ms-property-ivy-elm",
+        "name": "Ivy & Elm",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Ivy%20%26%20Elm%2C%20Oxford%2C%20MS",
+        "summary": "Student apartment community near University of Mississippi. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 3
+      },
+      {
+        "id": "housing-oxford-ms-property-flatts-at-south-campus",
+        "name": "Flatts at South Campus",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Flatts%20at%20South%20Campus%2C%20Oxford%2C%20MS",
+        "summary": "Student apartment community near University of Mississippi. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 4
+      }
+    ]
   },
   {
     "id": "housing-columbia-sc",
@@ -8011,7 +8325,40 @@
     "school": "University of South Carolina",
     "place": "Columbia, SC",
     "description": "South Carolina students rent in Five Points, the Vista and the apartment communities around campus.",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-columbia-sc-property-station-at-five-points",
+        "name": "Station at Five Points",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Station%20at%20Five%20Points%2C%20Columbia%2C%20SC",
+        "summary": "Student apartment community near University of South Carolina. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 1
+      },
+      {
+        "id": "housing-columbia-sc-property-stadium-suites",
+        "name": "Stadium Suites",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Stadium%20Suites%2C%20Columbia%2C%20SC",
+        "summary": "Student apartment community near University of South Carolina. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 2
+      },
+      {
+        "id": "housing-columbia-sc-property-empire-columbia",
+        "name": "Empire Columbia",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Empire%20Columbia%2C%20Columbia%2C%20SC",
+        "summary": "Student apartment community near University of South Carolina. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 3
+      },
+      {
+        "id": "housing-columbia-sc-property-saga-columbia",
+        "name": "SAGA Columbia",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=SAGA%20Columbia%2C%20Columbia%2C%20SC",
+        "summary": "Student apartment community near University of South Carolina. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 4
+      }
+    ]
   },
   {
     "id": "housing-columbia-mo",
@@ -8019,7 +8366,42 @@
     "school": "University of Missouri",
     "place": "Columbia, MO",
     "description": "Mizzou students rent downtown, near campus, and in communities along the main roads around Columbia.",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-columbia-mo-property-university-place-apartments",
+        "name": "University Place Apartments",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=University%20Place%20Apartments%2C%20Columbia%2C%20MO",
+        "summary": "Student apartment community near University of Missouri. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 1
+      },
+      {
+        "id": "housing-columbia-mo-property-u-centre-on-turner",
+        "name": "U Centre on Turner",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=U%20Centre%20on%20Turner%2C%20Columbia%2C%20MO",
+        "summary": "Student apartment community near University of Missouri. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 2,
+        "website": "https://www.americancampus.com/student-apartments/mo/columbia/u-centre-on-turner",
+        "source": "https://www.americancampus.com/student-apartments/mo/columbia/u-centre-on-turner"
+      },
+      {
+        "id": "housing-columbia-mo-property-the-domain-at-columbia",
+        "name": "The Domain at Columbia",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Domain%20at%20Columbia%2C%20Columbia%2C%20MO",
+        "summary": "Student apartment community near University of Missouri. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 3
+      },
+      {
+        "id": "housing-columbia-mo-property-the-collective-at-columbia",
+        "name": "The Collective at Columbia",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Collective%20at%20Columbia%2C%20Columbia%2C%20MO",
+        "summary": "Student apartment community near University of Missouri. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 4
+      }
+    ]
   },
   {
     "id": "housing-eugene-or",
@@ -8027,6 +8409,43 @@
     "school": "University of Oregon",
     "place": "Eugene, OR",
     "description": "Oregon students rent in the neighborhoods around campus and the apartment communities along the main roads in Eugene.",
-    "properties": []
+    "properties": [
+      {
+        "id": "housing-eugene-or-property-the-515",
+        "name": "The 515",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20515%2C%20Eugene%2C%20OR",
+        "summary": "Student apartment community near University of Oregon. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 1,
+        "website": "https://www.americancampus.com/student-apartments/or/eugene/the-515",
+        "source": "https://www.americancampus.com/student-apartments/or/eugene/the-515"
+      },
+      {
+        "id": "housing-eugene-or-property-959-franklin",
+        "name": "959 Franklin",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=959%20Franklin%2C%20Eugene%2C%20OR",
+        "summary": "Student apartment community near University of Oregon. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 2,
+        "website": "https://americancampus.com/Student-Apartments/OR/Eugene/959-Franklin",
+        "source": "https://americancampus.com/Student-Apartments/OR/Eugene/959-Franklin"
+      },
+      {
+        "id": "housing-eugene-or-property-the-hayward-student-living",
+        "name": "The Hayward Student Living",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Hayward%20Student%20Living%2C%20Eugene%2C%20OR",
+        "summary": "Student apartment community near University of Oregon. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 3
+      },
+      {
+        "id": "housing-eugene-or-property-capri-eugene",
+        "name": "Capri Eugene",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Capri%20Eugene%2C%20Eugene%2C%20OR",
+        "summary": "Student apartment community near University of Oregon. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 4
+      }
+    ]
   }
 ]
