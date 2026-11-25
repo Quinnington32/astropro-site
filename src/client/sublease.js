@@ -533,6 +533,7 @@ async function managePage() {
   }
   const groups = JSON.parse(root.dataset.groups || "{}");
   let doneSet = null;
+  let planOpen = false;
   const edits = {};
   const persist = () => {
     saveDone(id, [...doneSet]);
@@ -558,6 +559,9 @@ async function managePage() {
     const taskRow = (t) => `<li class="${doneSet.has(t.id) ? "done" : ""}"><label class="sl-check"><input type="checkbox" data-task="${t.id}"${doneSet.has(t.id) ? " checked" : ""}> <span>${esc(t.t)}</span></label><span class="sl-task-actions">${t.go && plats.find((p) => p.id === t.go && p.url) ? `<button class="btn btn-primary" type="button" data-go="${t.go}">Copy my post and open ${esc(plats.find((p) => p.id === t.go).short)} ↗</button>` : ""}${t.copy ? `<button class="btn btn-ghost" type="button" data-copy="${t.copy}">${esc(t.label || "Copy")}</button>` : ""}</span></li>`;
     const planHtml = PLAN.map((d) => { const n = d.tasks.filter((t) => doneSet.has(t.id)).length; return `<details class="sl-day${d.d === dayNum ? " today" : ""}"${d.d === dayNum ? " open" : ""}><summary><strong>Day ${d.d}: ${esc(d.title)}</strong>${d.d === dayNum ? ' <span class="sl-today">Today</span>' : ""}<span class="sl-day-count" data-day-count>${n}/${d.tasks.length}</span></summary><ul class="sl-tasks">${d.tasks.map(taskRow).join("")}</ul></details>`; }).join("");
     const tshHtml = TSH.map((g) => `<div class="sl-tsh"><h3>${esc(g.title)}</h3><ul class="sl-tasks">${g.items.map(([i, t]) => taskRow({ id: i, t })).join("")}</ul></div>`).join("");
+    const overdue = PLAN.filter((d) => d.d <= dayNum).flatMap((d) => d.tasks.filter((t) => !doneSet.has(t.id)).map((t) => ({ ...t, day: d.d })));
+    const todayList = overdue.slice(0, 3);
+    const todayCard = `<div class="sl-next sl-today-card"><span class="sl-next-tag">Today, day ${dayNum} of 14</span><h2>${todayList.length ? "Do these " + (todayList.length === 1 ? "one thing" : todayList.length + " things") + " today" : "You're caught up for today"}</h2>${todayList.length ? `<ul class="sl-tasks">${todayList.map((t) => taskRow(t)).join("")}</ul>${overdue.length > 3 ? `<p class="fineprint">${overdue.length - 3} more from earlier days are waiting in the full plan.</p>` : ""}` : "<p>Nothing left from the plan so far. Answer your messages within a few hours and offer two tour times.</p>"}</div>`;
     const planDone = PLAN.reduce((a, d) => a + d.tasks.filter((t) => doneSet.has(t.id)).length, 0);
     const planTotal = PLAN.reduce((a, d) => a + d.tasks.length, 0);
     const tshDone = TSH.reduce((a, g) => a + g.items.filter(([i]) => doneSet.has(i)).length, 0);
@@ -595,10 +599,10 @@ async function managePage() {
       ${pending ? `<div class="callout"><h2>${l.status === "expired" ? "Bring your listing back" : "Publish your listing"}</h2><p>${l.status === "expired" ? "Your listing ended." : "Your listing is saved but not live yet."} Pay the one-time listing fee and it goes live for 60 days. It updates automatically within a minute or two of your payment. Your reference code is <code>${esc(l.id)}</code>.</p><p><a class="btn btn-primary" href="${payUrl.href}" rel="noopener">Pay $${esc(payBase.price)} with PayPal</a></p><p class="fineprint">Questions? Email <a href="mailto:support@astroprostudentresourcecenter.com">support@astroprostudentresourcecenter.com</a> with your reference code.</p></div>` : ""}
       ${live ? `<div class="sl-stats"><div><strong>${data.views || 0}</strong><span>Views</span></div><div><strong>${data.shares || 0}</strong><span>Shares</span></div><div><strong>${data.leads.length}</strong><span>Messages</span></div><div><strong>${daysLeft}</strong><span>Days left</span></div></div>${data.leads.length ? "" : (data.views >= 10 ? `<p class="sl-tip">${data.views} people looked and none messaged yet. A new photo or a $25 price drop usually helps. Use Edit listing below.</p>` : `<p class="sl-tip">New listings take a few days to get traction. Post in your next place below and share your link.</p>`)}` : ""}
       ${live && canRenew ? `<div class="callout"><h2>Your listing ends in ${daysLeft} day${daysLeft === 1 ? "" : "s"}</h2><p>Still need someone? Keep it live 30 more days, free. One time per listing.</p><p><button class="btn btn-primary" type="button" data-renew>Keep my listing live 30 more days</button> <span class="sl-msg" id="slRenewMsg" hidden></span></p></div>` : ""}
-      ${live && next ? `<div class="sl-next"><span class="sl-next-tag">Your next step</span><h2>Post it in ${esc(next.short)}</h2><p>${esc(next.why)}</p><p class="sl-plat-actions"><button class="btn btn-primary" type="button" data-go="${next.id}">Copy my post and open ${esc(next.short)} ↗</button><button class="btn btn-ghost" type="button" data-skip="${next.id}">I already did this</button></p><p class="sl-msg ok" data-go-msg="next" hidden></p></div>` : live && plats.length ? '<div class="sl-next sl-next-done"><span class="sl-next-tag">Nice work</span><h2>You posted everywhere on the list.</h2><p>Now watch your messages, answer within a few hours, and offer two tour times.</p></div>' : ""}
+      ${paid && ["live", "paused"].includes(l.status) ? todayCard : ""}
       <section><h2>Your progress</h2><ol class="sl-steps">${steps.map(([t, s, d]) => `<li class="${s}"><strong>${esc(t)}</strong><span>${esc(d)}</span></li>`).join("")}</ol></section>
       <section><h2>Messages from students (${data.leads.length})</h2>${data.leads.length ? data.leads.map((x) => `<article class="sl-lead${x.flagged ? " flagged" : ""}"><header><strong>${esc(x.name)}</strong><time>${new Date(x.created_at).toLocaleString()}</time></header>${x.flagged ? '<p class="sl-warn">Careful: this message uses wording common in rental scams. Don\'t send money or keys, and meet in person first.</p>' : ""}<p>${esc(x.message).replace(/\n/g, "<br>")}</p><p><a href="mailto:${esc(x.email)}">${esc(x.email)}</a>${x.phone ? " · " + esc(x.phone) : ""}</p></article>`).join("") : "<p>No messages yet. Use the launch kit below to get your first ones.</p>"}</section>
-      <section class="sl-plan"><h2>Your 14-day game plan</h2><p>A few small jobs a day, with a new place or a new push each time. Tap a button to copy your post and open the site, then tick it off. Your ticks save to your account, so they follow you to any device.</p><div class="sl-progress"><div class="sl-bar"><span data-plan-bar style="width:${Math.round((planDone / planTotal) * 100)}%"></span></div><p data-plan-count>${planDone} of ${planTotal} tasks done</p></div>${planHtml}</section>
+      <section class="sl-plan"><h2>Your 14-day game plan</h2><p>A few small jobs a day, with a new place or a new push each time. Tap a button to copy your post and open the site, then tick it off. Your ticks save to your account, so they follow you to any device.</p><div class="sl-progress"><div class="sl-bar"><span data-plan-bar style="width:${Math.round((planDone / planTotal) * 100)}%"></span></div><p data-plan-count>${planDone} of ${planTotal} tasks done</p></div><details class="sl-fullplan"${planOpen ? " open" : ""}><summary class="btn btn-ghost">Show the full 14-day plan</summary>${planHtml}</details></section>
       <section><h2>Where to post, step by step</h2><p>More places means more messages. Each one is free to start. Tap a site, paste the text we wrote, add your photos, then check it off. Sites can change their rules and fees, and only post if your landlord has approved.</p>
         <div class="sl-progress"><div class="sl-bar"><span style="width:${Math.round((done.length / plats.length) * 100)}%"></span></div><p>${done.length} of ${plats.length} places posted</p></div>
         <div class="sl-photos"><p><strong>Your photos</strong> (save them to upload elsewhere):</p>${Array.from({ length: l.photos }, (_, i) => `<a href="/api/sublease/photo/${esc(l.id)}/${i}" download="listing-photo-${i + 1}.jpg"><img alt="Photo ${i + 1}" src="/api/sublease/photo/${esc(l.id)}/${i}" width="96" height="72"><span>Save</span></a>`).join("")}</div>
@@ -744,20 +748,10 @@ async function managePage() {
       b.addEventListener("change", () => {
         b.checked ? doneSet.add(b.dataset.task) : doneSet.delete(b.dataset.task);
         persist();
-        b.closest("li").classList.toggle("done", b.checked);
-        const det = b.closest("details");
-        if (det) {
-          const boxes = $$("[data-task]", det);
-          $("[data-day-count]", det).textContent = boxes.filter((x) => x.checked).length + "/" + boxes.length;
-        }
-        const cnt = (arr) => arr.filter((x) => doneSet.has(x)).length;
-        const pd = cnt(PLAN.flatMap((d) => d.tasks.map((t) => t.id))), td = cnt(TSH.flatMap((g) => g.items.map(([i]) => i)));
-        $("[data-plan-bar]", dash).style.width = Math.round((pd / planTotal) * 100) + "%";
-        $("[data-plan-count]", dash).textContent = pd + " of " + planTotal + " tasks done";
-        $("[data-tsh-bar]", dash).style.width = Math.round((td / tshTotal) * 100) + "%";
-        $("[data-tsh-count]", dash).textContent = td + " of " + tshTotal + " done";
+        render();
       }),
     );
+    $("details.sl-fullplan", dash)?.addEventListener("toggle", (ev) => { planOpen = ev.currentTarget.open; });
     $$("[data-kit]", dash).forEach((t) => t.addEventListener("input", () => { edits[t.dataset.kit] = t.value; }));
     $$("[data-skip]", dash).forEach((b) =>
       b.addEventListener("click", () => {

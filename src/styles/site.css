@@ -3666,3 +3666,6 @@ html, body { overflow-x: clip; }
 .sl-task-actions { display: flex; gap: .5rem; flex-wrap: wrap; }
 .sl-task-actions .btn { padding: .45rem .9rem; font-size: .85rem; }
 .sl-tsh h3 { margin: 1.1rem 0 .2rem; font-size: 1rem; }
+.sl-fullplan > summary { display: inline-block; cursor: pointer; margin: .4rem 0 .6rem; list-style: none; }
+.sl-fullplan > summary::-webkit-details-marker { display: none; }
+.sl-today-card .sl-tasks { margin-top: .6rem; }

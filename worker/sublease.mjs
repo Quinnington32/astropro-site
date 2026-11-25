@@ -222,6 +222,7 @@ export async function handleSublease(request, env, path, h) {
     }
     if (hit) {
       await mark("ipn_listing_live");
+      await shareAlert(env, h, hit);
       await h.notify?.("Sublease War Room payment received (" + d.id + ")", "PayPal payment " + d.txn + " confirmed for listing " + d.id + ". It is live for " + LIVE_DAYS + " days.");
     } else {
       const exists = await env.DB.prepare("SELECT 1 x FROM sublease_listings WHERE id=? OR pay_code=?").bind(d.id, d.id).first().catch(() => null);
@@ -456,6 +457,7 @@ export async function handleSublease(request, env, path, h) {
       (data.market.startsWith("c-") ? "NEW MARKET: " : "") + "New Sublease War Room listing — " + data.marketName + " (" + id + ")",
       "A student created a listing.\nReference: " + id + "\nMarket: " + data.marketName + "\nTitle: " + data.title + "\nRent: $" + data.rent + "/mo\nOwner: " + data.ownerName + " <" + data.ownerEmail + ">" + (paidCredit ? "\n\nPaid in advance. It is live for " + LIVE_DAYS + " days." : "\n\nIt is waiting for payment. A PayPal payment with item number " + id + " makes it live for " + LIVE_DAYS + " days automatically."),
     );
+    if (paidCredit) await shareAlert(env, h, id);
     const manageUrl = SITE(env) + "/sublease-manage.html#" + id + "." + token;
     const emailed = await sendStudent(
       h,
@@ -779,6 +781,26 @@ const bump = (env, name) =>
     .catch(() => null);
 
 // Runs every 15 minutes: nudge students who paid but have not filled the form, tell the owner about stalled checkouts.
+
+// Admin alert for each newly live listing: the post text and steps to share it from the AstroPro Facebook page into local housing groups.
+const shareAlert = async (env, h, id) => {
+  try {
+    const row = await env.DB.prepare("SELECT data_json FROM sublease_listings WHERE id=?").bind(id).first();
+    if (!row) return;
+    const d = JSON.parse(row.data_json);
+    const fmt = (iso) => new Date(iso + "T12:00:00Z").toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
+    const bed = d.bedrooms === 0 ? "studio" : d.bedrooms + "-bedroom";
+    const verb = { sublease: "SUBLEASE", relet: "RELET", assignment: "LEASE TAKEOVER" }[d.type] || "SUBLEASE";
+    const school = d.school || d.marketName;
+    const url = SITE(env) + "/sublease-listing.html?id=" + id;
+    const post =
+      "\u{1F6A8} " + verb + ": " + bed + " near " + school + " for $" + d.rent + "/mo\n\n\u{1F4CD} " + d.area + "\n\u{1F4C5} " + fmt(d.startDate) + " to " + fmt(d.endDate) + "\n\u{1F6CF} " + bed + ", " + d.bathrooms + " bath\n\nTHE DETAILS\n" + d.description + "\n\nTours are open now, in person or on live video. Tap the link to see every photo, then message the student and they'll reply fast.\n\u{1F449} " + url;
+    await h.notify?.(
+      "SHARE TO FACEBOOK GROUPS: " + d.marketName + " (" + id + ")",
+      "A new listing is live. To share it from the AstroPro Facebook page:\n\n1. Open the AstroPro page and go to the " + d.marketName + " / " + school + " housing groups it belongs to.\n2. Post the text below in each one (skip groups that don't allow posts).\n3. Reply to this email or tell Claude how many groups it went to, so we can tell the student.\n\nListing: " + url + "\n\n----- POST TEXT -----\n" + post,
+    );
+  } catch {}
+};
 export async function runSubleaseJobs(env, h) {
   if (!env.DB) return;
   const site = SITE(env);
