@@ -3693,3 +3693,10 @@ html, body { overflow-x: clip; }
 .tape-banner-inner em{font-style:normal;font-weight:800;text-decoration:underline}
 .resource-tile.tape-tile{background:repeating-linear-gradient(-45deg,#111 0 10px,#ffc400 10px 20px);color:#111;border-color:#111}
 .resource-tile.tape-tile h3{background:#ffc400;display:inline-block;padding:2px 8px;border-radius:3px;color:#111}
+
+.page-hero.tape-page{padding:10px 0;border:0;background:repeating-linear-gradient(-45deg,#111 0 14px,#ffc400 14px 28px)}
+.tape-page-in{background:#ffc400;padding-block:32px 36px;border-radius:6px}
+.tape-page-in,.tape-page-in h1,.tape-page-in .lede,.tape-page-in .eyebrow,.tape-page-in .back-link{color:#111}
+.tape-page-in .btn-ghost{border-color:#111;color:#111;background:transparent}
+.tape-page-in .btn-primary{background:#111;color:#ffc400;border-color:#111}
+.tape-btn{padding:5px}

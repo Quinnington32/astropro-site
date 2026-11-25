@@ -207,7 +207,6 @@ const home = `
     </figure>
   </div>
 </section>
-<section class="wrap tape-hero"><a class="tape-banner" href="sublease-war-room.html"><span class="tape-banner-inner"><strong>Stuck in a lease? Enter the Sublease War Room.</strong><span>We list your place, share it to local student groups and email your landlord every week. One-time $39.</span><em>Enter the Sublease War Room &rarr;</em></span></a></section>
 <section id="resources" class="home-resources">
   <div class="wrap">
     <div class="section-head section-head-row"><div><p class="eyebrow">Student Resource Center</p><h2>Scroll through the resources below</h2></div><p>You’ve got options. Let’s find yours.</p></div>
@@ -874,11 +873,12 @@ const slSteps = [
   ["Fill out your onboarding form", "As soon as you finish paying, the form opens right here. Add your details, price, dates and photos."],
   ["Work your checklist", "Your private dashboard gives you a short checklist: what to post, who to nudge, how to answer each message. Check things off and your listing stays live for 60 days."],
 ];
+const tapeHero = (...a) => hero(...a).replace('<section class="page-hero"><div class="wrap">', '<section class="page-hero tape-page"><div class="wrap tape-page-in">');
 emit(
   "sublease-war-room.html",
   "Sublease War Room",
   "Stop paying rent on an empty apartment. We list your place, share it to the Facebook groups in town and email your landlord every week. One-time fee.",
-  hero(
+  tapeHero(
     "Stop paying rent on an empty apartment.",
     "We list your place, share it to the Facebook groups in town, and email your landlord every week until someone takes it over. Built by former apartment managers. One-time fee.",
     `<div class="cta-row"><a class="btn btn-primary" href="#start">Get started</a><a class="btn btn-ghost" href="#what-you-get">See what you get</a></div>`,
