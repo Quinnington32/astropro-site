@@ -57,6 +57,7 @@ before(async () => {
     "migrations/0010_sublease_intents.sql",
     "migrations/0011_sublease_secret.sql",
     "migrations/0012_sublease_engagement.sql",
+    "migrations/0013_sublease_landlord.sql",
   ]) {
     const schema = await readFile(file, "utf8");
     await db.batch(
@@ -959,4 +960,42 @@ test("sublease engagement: share count, photo replace, one-time renew, nudge, re
   const row = await db.prepare("SELECT expires_at, renewed FROM sublease_listings WHERE id=?").bind(id).first();
   assert.equal(row.renewed, 1);
   assert.ok(new Date(row.expires_at).getTime() > Date.now() + 30 * 86400000);
+});
+
+test("sublease landlord accountability: weekly check-ins go to the landlord in the student's name, with a stop link", async () => {
+  const { runSubleaseJobs } = await import("../worker/sublease.mjs");
+  const photo = "data:image/jpeg;base64," + "A".repeat(200);
+  const hdr = { Origin: origin, "Content-Type": "application/json", "CF-Connecting-IP": "192.0.2.98" };
+  const made = await mf.dispatchFetch(origin + "/api/sublease/listings", { method: "POST", headers: hdr, body: JSON.stringify({
+    market: "housing-austin-tx", marketName: "Austin, TX", area: "Lofts on 5th", title: "Landlord test", description: "A place that needs a landlord nudge soon.",
+    ownerName: "Lena Park", ownerEmail: "lena@example.com", permission: "approved", type: "relet", furnished: "no", utilities: "no",
+    startDate: "2027-05-15", endDate: "2027-08-15", rent: 700, bedrooms: 1, bathrooms: 1, photos: [photo], consent: true }) });
+  const { id, manageToken } = await made.json();
+  await db.prepare("UPDATE sublease_listings SET status='live', paid_at=?, expires_at=? WHERE id=?").bind(new Date().toISOString(), new Date(Date.now() + 40 * 86400000).toISOString(), id).run();
+  const post = (body) => mf.dispatchFetch(origin + "/api/sublease/manage/" + id, { method: "POST", headers: { ...hdr, "x-manage-token": manageToken }, body: JSON.stringify(body) });
+  assert.equal((await post({ action: "landlord", landlordEmail: "lena@example.com" })).status, 400); // own email
+  assert.equal((await post({ action: "landlord", landlordEmail: "nope" })).status, 400);
+  assert.equal((await post({ action: "landlord", landlordEmail: "office@lofts.example", landlordName: "Ms. Garcia", property: "Lofts on 5th, unit 4B" })).status, 200);
+  const mails = [];
+  const h = { notify: async () => {}, mail: async (m) => (mails.push(m), true) };
+  await runSubleaseJobs({ DB: db }, h); // first one was not deliverable in tests, so the job sends it
+  const ll = mails.filter((m) => m.to === "office@lofts.example");
+  assert.equal(ll.length, 1);
+  assert.equal(ll[0].replyTo, "lena@example.com");
+  assert.match(ll[0].fromName, /Lena Park/);
+  assert.match(ll[0].subject, /relet list/);
+  assert.match(ll[0].text, /Ms\. Garcia/);
+  const stop = ll[0].text.match(/https?:\/\/\S+landlord-stop\?id=\S+/)[0];
+  await runSubleaseJobs({ DB: db }, h);
+  assert.equal(mails.filter((m) => m.to === "office@lofts.example").length, 1); // not again until next week
+  await db.prepare("UPDATE sublease_landlord SET next_at=? WHERE listing_id=?").bind(new Date(Date.now() - 1000).toISOString(), id).run();
+  await runSubleaseJobs({ DB: db }, h);
+  assert.equal(mails.filter((m) => m.to === "office@lofts.example").length, 2);
+  // landlord stop link needs a valid token, and a POST to confirm
+  assert.match(await (await mf.dispatchFetch(stop.replace(/^https?:\/\/[^/]+/, origin))).text(), /Stop these weekly emails/);
+  assert.match(await (await mf.dispatchFetch(origin + "/api/sublease/landlord-stop?id=" + id + "&t=bad")).text(), /Link not valid/);
+  await mf.dispatchFetch(stop.replace(/^https?:\/\/[^/]+/, origin), { method: "POST" });
+  await db.prepare("UPDATE sublease_landlord SET next_at=? WHERE listing_id=?").bind(new Date(Date.now() - 1000).toISOString(), id).run();
+  await runSubleaseJobs({ DB: db }, h);
+  assert.equal(mails.filter((m) => m.to === "office@lofts.example").length, 2);
 });

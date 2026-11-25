@@ -3651,3 +3651,4 @@ html, body { overflow-x: clip; }
 .sl-tip{background:#fff6ee;border-left:4px solid #E77B25;padding:10px 14px;border-radius:8px;margin:0 0 14px}
 @media(max-width:520px){.sl-stats{grid-template-columns:repeat(2,1fr)}}
 .desktop-nav .nav-war{color:#E77B25;font-weight:700}
+.sl-ll .sl-form{margin:12px 0}.sl-ll-on{border-left:4px solid #2e9e6a}

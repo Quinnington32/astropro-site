@@ -760,7 +760,7 @@ const slValue = [
   ["Reply templates", "Know what to say to the first message, the tour request and the “is it still available?” question."],
   ["A 14-day game plan", "A day-by-day plan so you always know the next move, with a link to your market’s student Facebook group."],
   ["Tour, sign and hand-over checklist", "From first message to signed agreement to move-in photos, nothing gets missed."],
-  ["Landlord permission email", "A ready-to-send email asking your landlord for approval, so you stay protected."],
+  ["Landlord accountability", "We email your landlord for you every week asking where your relet stands, plus ready-to-send templates to confirm you're on their relet list."],
 ];
 const slSteps = [
   ["Pay your one-time $" + SUBLEASE_PRICE + " onboarding fee", "One flat fee through secure PayPal. No subscription and no commission."],

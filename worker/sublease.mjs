@@ -468,6 +468,19 @@ export async function handleSublease(request, env, path, h) {
     return json({ ok: true, id, manageToken: token, live: !!paidCredit, emailed }, 201);
   }
 
+  if (path === "/api/sublease/landlord-stop") {
+    const q = new URL(request.url).searchParams;
+    const id = clean(q.get("id"), 20),
+      t = clean(q.get("t"), 64);
+    const pg = (a, b, form) => new Response('<!doctype html><meta name="viewport" content="width=device-width,initial-scale=1"><body style="font-family:Arial,sans-serif;max-width:480px;margin:48px auto;padding:0 20px;color:#172447"><h2>' + htmlEsc(a) + "</h2><p>" + htmlEsc(b) + "</p>" + (form || ""), { headers: { "content-type": "text/html; charset=utf-8", "cache-control": "no-store", "x-robots-tag": "noindex" } });
+    if (!ID.test(id) || !t || t !== (await hmacTok(env, "ll:" + id))) return pg("Link not valid", "This link is wrong or expired.");
+    if (request.method === "POST") {
+      await env.DB.prepare("UPDATE sublease_landlord SET active=0 WHERE listing_id=?").bind(id).run();
+      return pg("Stopped", "You won't get any more of these weekly emails. Sorry for the bother.");
+    }
+    return pg("Stop these weekly emails?", "A tenant asked us to send you a short weekly check-in about their relet. Tap below to stop them.", '<form method="post"><button style="background:#E77B25;color:#fff;border:0;padding:12px 22px;border-radius:8px;font-size:15px;font-weight:700">Stop the emails</button></form>');
+  }
+
   if (path === "/api/sublease/share" && request.method === "POST") {
     if (!h.isSameOrigin(request)) return json({ error: "Not allowed." }, 403);
     const raw = await h.readJson(request);
@@ -534,6 +547,7 @@ export async function handleSublease(request, env, path, h) {
       ownerName: JSON.parse(row.data_json).ownerName,
       ownerEmail: row.owner_email,
       views: row.views || 0,
+      landlord: await env.DB.prepare("SELECT landlord_email email, landlord_name name, property, note, active, sent, last_sent lastSent FROM sublease_landlord WHERE listing_id=?").bind(row.id).first().catch(() => null),
       shares: row.shares || 0,
       renewed: !!row.renewed,
       paidAt: row.paid_at,
@@ -553,6 +567,33 @@ export async function handleSublease(request, env, path, h) {
         env.DB.prepare("DELETE FROM sublease_listings WHERE id=?").bind(row.id),
       ]);
       return json({ ok: true, deleted: true });
+    }
+    if (body.action === "landlord-stop") {
+      await env.DB.prepare("UPDATE sublease_landlord SET active=0 WHERE listing_id=?").bind(row.id).run();
+      return json({ ok: true });
+    }
+    if (body.action === "landlord") {
+      if (!["live", "paused"].includes(row.status)) throw fail("Your listing needs to be live first.");
+      const email = clean(body.landlordEmail, 200).toLowerCase();
+      if (!EMAIL_RE.test(email)) throw fail("Enter your landlord's email address.");
+      if (email === String(row.owner_email).toLowerCase()) throw fail("That's your own email. Enter your landlord's.");
+      const cur = await env.DB.prepare("SELECT landlord_email, sent FROM sublease_landlord WHERE listing_id=?").bind(row.id).first();
+      const fresh = !cur || cur.landlord_email !== email;
+      if (!cur)
+        await env.DB.prepare("INSERT INTO sublease_landlord (listing_id,landlord_email,landlord_name,property,note,active,sent,next_at,created_at) VALUES (?,?,?,?,?,1,0,?,?)")
+          .bind(row.id, email, clean(body.landlordName, 80), clean(body.property, 120), clean(body.note, 300), now, now).run();
+      else
+        await env.DB.prepare("UPDATE sublease_landlord SET landlord_email=?, landlord_name=?, property=?, note=?, active=1, sent=?, next_at=? WHERE listing_id=?")
+          .bind(email, clean(body.landlordName, 80), clean(body.property, 120), clean(body.note, 300), fresh ? 0 : cur.sent, fresh ? now : (await env.DB.prepare("SELECT next_at FROM sublease_landlord WHERE listing_id=?").bind(row.id).first()).next_at, row.id).run();
+      let sentNow = false;
+      if (fresh) {
+        const f = await env.DB.prepare("SELECT * FROM sublease_landlord WHERE listing_id=?").bind(row.id).first();
+        sentNow = await sendLandlord(env, h, f, row, 0);
+        const next = new Date(Date.now() + 7 * 86400000).toISOString();
+        if (sentNow) await env.DB.prepare("UPDATE sublease_landlord SET sent=1, last_sent=?, next_at=? WHERE listing_id=?").bind(now, next, row.id).run();
+        else await env.DB.prepare("UPDATE sublease_landlord SET next_at=? WHERE listing_id=?").bind(now, row.id).run();
+      }
+      return json({ ok: true, sentNow });
     }
     if (body.action === "renew") {
       const left = row.expires_at ? new Date(row.expires_at).getTime() - Date.now() : -1;
@@ -662,6 +703,34 @@ const unlockToken = async (env, code) => {
   return Array.from(new Uint8Array(sig).slice(0, 16), (b) => b.toString(16).padStart(2, "0")).join("");
 };
 const unlockUrl = async (env, code) => SITE(env) + "/api/sublease/owner-unlock?code=" + code + "&t=" + (await unlockToken(env, code));
+const hmacTok = async (env, msg) => {
+  const key = await crypto.subtle.importKey("raw", new TextEncoder().encode(await ownerSecret(env)), { name: "HMAC", hash: "SHA-256" }, false, ["sign"]);
+  const sig = await crypto.subtle.sign("HMAC", key, new TextEncoder().encode(msg));
+  return Array.from(new Uint8Array(sig).slice(0, 16), (b) => b.toString(16).padStart(2, "0")).join("");
+};
+const LL_MAX = 12;
+// The weekly note to a landlord. Sent from support@ but in the student's name, and replies go to the student.
+const sendLandlord = async (env, h, f, listing, n) => {
+  const d = JSON.parse(listing.data_json);
+  const who = d.ownerName || "A tenant";
+  const first = String(who).split(/\s+/)[0];
+  const prop = f.property || d.area || "my unit";
+  const greet = f.landlord_name ? "Hello " + f.landlord_name + "," : "Hello,";
+  const ends = d.endDate ? " (my lease is available from " + d.startDate + " to " + d.endDate + ")" : "";
+  const stop = SITE(env) + "/api/sublease/landlord-stop?id=" + f.listing_id + "&t=" + (await hmacTok(env, "ll:" + f.listing_id));
+  const body =
+    n === 0
+      ? [greet, "I'm reaching out to confirm that I'm on the relet list for " + prop + ". I'm doing everything I can on my end to find a qualified tenant, and I want to make sure you're also keeping my unit on your list" + ends + ".", "Could you please reply to confirm that I'm on the list, and let me know where my unit stands?"]
+      : n % 4 === 3
+        ? [greet, "Quick check-in on my relet for " + prop + ". I'm still actively marketing the unit" + ends + ". Are there any prospective tenants or applications on your side, and is there anything you need from me to move things along?"]
+        : [greet, "I'm following up on my relet for " + prop + ". Could you let me know the current status, and whether my unit is still on your relet list? I'm happy to send over any tenant I find so you can start the application right away."];
+  if (f.note) body.push(String(f.note));
+  body.push("Thank you for your time and help.", "Best,", who);
+  const foot = "This weekly check-in was set up by " + who + " using the AstroPro Student Resource Center. Replies go directly to " + first + ". To stop these emails: " + stop;
+  const html = '<div style="font-family:Arial,sans-serif;font-size:15px;line-height:1.6;color:#172447;max-width:560px">' + body.map((l) => "<p>" + htmlEsc(l) + "</p>").join("") + '<p style="font-size:12px;color:#667085;border-top:1px solid #e5e2d8;padding-top:10px">This weekly check-in was set up by ' + htmlEsc(who) + " using the AstroPro Student Resource Center. Replies go directly to " + htmlEsc(first) + '. <a href="' + htmlEsc(stop) + '">Stop these emails</a></p></div>';
+  const subject = (n === 0 ? "Confirming my spot on the relet list: " : "Relet update request: ") + String(prop).slice(0, 70);
+  return !!(await h.mail?.({ to: f.landlord_email, replyTo: listing.owner_email, fromName: who + " via AstroPro", subject, text: body.join("\n\n") + "\n\n--\n" + foot, html }).catch(() => false));
+};
 const mailHtml = (heading, lines, label, url, site) => {
   const base = site || "https://astroprostudentresourcecenter.com";
   return (
@@ -711,6 +780,17 @@ export async function runSubleaseJobs(env, h) {
   }
   if (owed.length)
     await h.notify?.("Paid but has not filled out the form (" + owed.length + ")", "These students paid $39 and have not submitted their listing yet:\n\n" + owed.join("\n") + "\n\nA reminder goes out automatically. You can also reach out yourself.");
+  // Weekly landlord check-ins (live or paused listings only)
+  const { results: ll } = await env.DB.prepare(
+    "SELECT f.*, l.data_json, l.owner_email FROM sublease_landlord f JOIN sublease_listings l ON l.id=f.listing_id WHERE f.active=1 AND f.sent < ? AND f.next_at <= ? AND l.status IN ('live','paused') LIMIT 25",
+  ).bind(LL_MAX, new Date().toISOString()).all().catch(() => ({ results: [] }));
+  for (const f of ll) {
+    const ok = await sendLandlord(env, h, f, f, f.sent);
+    const nextAt = new Date(Date.now() + (ok ? 7 * 86400000 : 3600000)).toISOString();
+    if (ok) await env.DB.prepare("UPDATE sublease_landlord SET sent=sent+1, last_sent=?, next_at=? WHERE listing_id=?").bind(new Date().toISOString(), nextAt, f.listing_id).run().catch(() => null);
+    else await env.DB.prepare("UPDATE sublease_landlord SET next_at=? WHERE listing_id=?").bind(nextAt, f.listing_id).run().catch(() => null);
+    if (ok) await bump(env, "landlord_sent");
+  }
   // Live listings: no-message nudge (day 5), renewal heads-up (7 days before the end), weekly progress email.
   const nowIso = new Date().toISOString();
   const soon = new Date(Date.now() + 7 * 86400000).toISOString();

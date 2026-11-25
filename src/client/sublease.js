@@ -106,8 +106,8 @@ function startPage() {
   const permNote = $("#slPermNote");
   const permHelp = {
     approved: "",
-    pending: "Good. Keep the landlord's answer in writing. Your dashboard has an email you can send.",
-    "not-asked": "No problem. After you submit, your dashboard gives you a ready-to-send email asking the landlord for permission.",
+    pending: "Good. Keep the landlord's answer in writing. Your dashboard has landlord accountability templates you can send.",
+    "not-asked": "No problem. After you submit, your dashboard gives you landlord accountability templates, including a ready-to-send request for permission.",
     "not-allowed": "If your lease bans subleasing, ask about a relet or lease-break program first. We can't list a place the lease doesn't allow.",
   };
   permission.addEventListener("change", () => {
@@ -403,6 +403,8 @@ const kit = (l, groupUrl) => {
   const fb = `${verb}: ${bed} near ${l.school || l.marketName}, ${money(l.rent)}/mo\n\n📍 ${l.area}\n📅 ${dates}\n🛏 ${bed}, ${l.bathrooms} bath, ${furn}, ${util}\n${l.deposit ? "💵 Deposit: " + money(l.deposit) + "\n" : ""}\n${l.description}\n\nPhotos and details: ${url}\nMessage me here or use the form on the listing.`;
   const reddit = `[${verb}] ${bed} in ${l.area}, ${money(l.rent)}/mo (${dates})\n\n${l.description}\n\nDetails and photos: ${url}`;
   const landlord = `Subject: Request to ${l.type === "relet" ? "relet" : l.type === "assignment" ? "assign" : "sublease"} my unit at ${l.area}\n\nHello,\n\nI'm a current tenant at ${l.area} and I need to leave early. I'd like to ask what options I have to ${l.type === "relet" ? "relet the unit" : l.type === "assignment" ? "assign my lease" : "sublease the unit"} for ${dates}.\n\nCould you please tell me:\n1. Whether this is allowed under my lease, and what approval you need in writing.\n2. What screening the new tenant must pass, and any fees.\n3. Whether I stay responsible on the lease, or can be released.\n4. How the security deposit would be handled.\n\nI'll find a qualified tenant and send you their application. Thank you for your help.\n\nBest,\n${l.ownerName || "[Your name]"}`;
+  const ll2 = `Subject: Confirming my spot on the relet list: ${l.area}\n\nHi [Landlord or office name],\n\nI'm reaching out to confirm that I'm on the relet list for ${l.area}. I'm doing everything I can on my end to find a qualified tenant (${dates}), but I want to make sure you're also keeping my unit on your list.\n\nCould you please reply to confirm I'm on the list and let me know where my unit stands?\n\nThank you for your help.\n\nBest,\n${l.ownerName || "[Your name]"}`;
+  const ll3 = `Subject: Relet update request: ${l.area}\n\nHi [Landlord or office name],\n\nI'm following up on my relet for ${l.area}. Are there any prospective tenants or applications on your side, and is my unit still on your relet list? I'm happy to send over any tenant I find so you can start their application right away.\n\nThank you,\n${l.ownerName || "[Your name]"}`;
   const reply = `Hi! Thanks for your interest in the ${bed} at ${l.area}. It's available ${dates} for ${money(l.rent)}/mo. I'd love to set up a tour in person or by live video. What days work for you? I'll also need to share your application with the landlord for approval.`;
   const days = [
     "Day 1: Post your listing in your market's Facebook group. Copy the post below and paste it.",
@@ -416,7 +418,7 @@ const kit = (l, groupUrl) => {
     "Day 14: Review what's working. Add new photos, then repost.",
   ];
   const long = `${l.title}\n\n${typeLabel[l.type]}: ${bed} near ${l.school || l.marketName}, ${money(l.rent)}/mo\nArea: ${l.area}\nDates: ${dates}\nBedrooms/baths: ${bed}, ${l.bathrooms} bath\nFurnished: ${furn}; ${util}\n${l.deposit ? "Deposit: " + money(l.deposit) + "\n" : ""}\n${l.description}\n\nMore photos and details: ${url}`;
-  return { fb, reddit, landlord, reply, days, groupUrl, long, title: l.title, url };
+  return { fb, reddit, landlord, ll2, ll3, reply, days, groupUrl, long, title: l.title, url };
 };
 async function managePage() {
   const root = $("#slManage");
@@ -476,7 +478,7 @@ async function managePage() {
     const daysLeft = Math.max(0, Math.ceil(msLeft / 86400000));
     const canRenew = live && !data.renewed && msLeft > 0 && msLeft <= 7 * 86400000;
     const steps = [
-      ["Landlord permission", l.permission === "approved" ? "done" : "todo", l.permission === "approved" ? "Approved in writing." : "Send the email below and get approval in writing before you accept anyone."],
+      ["Landlord permission", l.permission === "approved" ? "done" : "todo", l.permission === "approved" ? "Approved in writing." : "Use the Landlord accountability templates below and get approval in writing before you accept anyone."],
       ["Listing created", "done", "Your listing is built with photos and details."],
       ["Listing live", live ? "done" : "todo", live ? "Live until " + until + "." : l.status === "expired" ? "Expired. Pay the listing fee to bring it back." : l.status === "pending_payment" ? "Not live yet. Pay the listing fee to publish it." : "Status: " + l.status + "."],
       ["Get messages", data.leads.length ? "done" : "todo", data.leads.length ? data.leads.length + " message" + (data.leads.length === 1 ? "" : "s") + " so far." : "Post your listing using the launch kit below."],
@@ -511,8 +513,15 @@ async function managePage() {
         <div class="sl-plats">${plats.map((p) => `<article class="sl-plat${done.includes(p.id) ? " done" : ""}"><header><div><h3>${esc(p.name)}</h3><span class="sl-tag">${esc(p.tag)}</span></div><label class="sl-check"><input type="checkbox" data-done="${p.id}"${done.includes(p.id) ? " checked" : ""}> Posted</label></header><p>${esc(p.why)}</p><ol>${p.steps.map((x) => `<li>${esc(x)}</li>`).join("")}</ol><p class="sl-plat-actions">${p.url ? `<button class="btn btn-primary" type="button" data-go="${p.id}">Copy my post and open ${esc(p.short)} ↗</button>` : ""}<button class="btn btn-ghost" type="button" data-copy="${p.copy}">Copy the text only</button></p><p class="sl-msg ok" data-go-msg="${p.id}" hidden></p></article>`).join("")}</div>
       </section>
       <section><h2>Share your listing</h2><p>The more places your link lands, the more messages you get. It shows your photo, price and title when you share it.</p>${shareBar(k.url, l.title + " | " + money(l.rent) + "/mo")}<div class="sl-share"><input readonly aria-label="Your public listing link" value="${esc(k.url)}"><button class="btn btn-ghost" type="button" data-copy="url">Copy link</button></div><p class="fineprint">${data.views || 0} view${data.views === 1 ? "" : "s"} of your public page so far.</p></section>
+      <section class="sl-ll"><h2>Landlord accountability</h2><p>Landlords fill units fast and forget about relet lists. Put your landlord's email below and we'll email them for you, now and then once a week, asking where your relet stands. The emails go out in your name and replies come straight to you.</p>
+        ${data.landlord && data.landlord.active ? `<div class="callout sl-ll-on"><p><strong>Weekly check-ins are on</strong> for <strong>${esc(data.landlord.email)}</strong>. ${data.landlord.sent} sent${data.landlord.lastSent ? ", last on " + new Date(data.landlord.lastSent).toLocaleDateString("en-US", { month: "short", day: "numeric" }) : ""}. Replies go to ${esc(data.ownerEmail || "you")}.</p><p><button class="btn btn-ghost" type="button" data-ll-stop>Stop the check-ins</button> <button class="btn btn-ghost" type="button" data-ll-change>Change landlord</button></p></div>` : ""}
+        ${live || l.status === "paused" ? `<form id="slLLForm" class="sl-form callout" novalidate${data.landlord && data.landlord.active ? " hidden" : ""}><div class="field"><label for="ll_email">Your landlord or leasing office email</label><input id="ll_email" name="landlordEmail" type="email" autocomplete="off" placeholder="leasing@yourbuilding.com" required></div><div class="field"><label for="ll_name">Their name (optional)</label><input id="ll_name" name="landlordName" type="text" maxlength="80" placeholder="Ms. Garcia"></div><div class="field"><label for="ll_prop">Your building or unit (optional)</label><input id="ll_prop" name="property" type="text" maxlength="120" value="${esc(l.area)}"></div><div class="field"><label for="ll_note">Add a personal line (optional)</label><input id="ll_note" name="note" type="text" maxlength="300" placeholder="I'm moving out May 15 and can show the unit anytime."></div><p><button class="btn btn-primary" type="submit">Email my landlord now and every week</button></p><p class="sl-msg" id="slLLMsg" hidden></p><p class="fineprint">The more you reach out to the office, the more you'll be on their mind and the more it helps you. Your landlord gets a stop link in every email.</p></form>` : '<p class="fineprint">Weekly check-ins start once your listing is live.</p>'}
+        <p class="fineprint" style="font-size:.72rem;opacity:.8">Did they add you to their relet list like they're supposed to?</p>
+        <h3>Landlord accountability templates</h3>
+        ${copy("landlord", "1. Ask for permission", k.landlord)}${copy("ll2", "2. Confirm you're on the relet list", k.ll2)}${copy("ll3", "3. Weekly follow-up", k.ll3)}
+      </section>
       <section><h2>Launch kit</h2><p>Your posts and message templates, written from your listing.</p>
-        ${copy("fb", "Facebook group post", k.fb)}${copy("reddit", "Reddit post", k.reddit)}${copy("landlord", "Email to your landlord", k.landlord)}${copy("reply", "Reply to new messages", k.reply)}
+        ${copy("fb", "Facebook group post", k.fb)}${copy("reddit", "Reddit post", k.reddit)}${copy("reply", "Reply to new messages", k.reply)}
         <div class="sl-kit"><h3>Your next 14 days</h3><ul class="sl-days">${k.days.map((d) => `<li>${esc(d)}</li>`).join("")}</ul></div>
       </section>
       <section class="sl-actions"><h2>Manage your listing</h2>
@@ -553,6 +562,27 @@ async function managePage() {
         render();
       }),
     );
+    $("[data-ll-change]", dash)?.addEventListener("click", () => { $("#slLLForm", dash).hidden = false; });
+    $("[data-ll-stop]", dash)?.addEventListener("click", async () => {
+      try {
+        await api("/manage/" + id, { method: "POST", headers, body: JSON.stringify({ action: "landlord-stop" }) });
+        render();
+      } catch {}
+    });
+    $("#slLLForm", dash)?.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const f = e.currentTarget;
+      const b = $("button[type=submit]", f);
+      b.disabled = true;
+      try {
+        const r = await api("/manage/" + id, { method: "POST", headers, body: JSON.stringify({ action: "landlord", ...Object.fromEntries(new FormData(f).entries()) }) });
+        say($("#slLLMsg"), r.sentNow ? "Sent! Your landlord has your first check-in. We'll follow up weekly." : "Saved. Your first check-in goes out within the hour.", true);
+        setTimeout(render, 1800);
+      } catch (err) {
+        b.disabled = false;
+        say($("#slLLMsg"), err.message);
+      }
+    });
     $("[data-renew]", dash)?.addEventListener("click", async (ev) => {
       ev.currentTarget.disabled = true;
       try {
