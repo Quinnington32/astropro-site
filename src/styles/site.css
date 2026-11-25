@@ -3621,3 +3621,22 @@ html, body { overflow-x: clip; }
 .sl-signin .fineprint,.sl-pay-email .fineprint{margin-top:14px}
 
 .footer-links .footer-email { font-size: .85em; opacity: .85; word-break: break-all; }
+
+/* Share + next step + portal polish */
+.sl-sharebar{display:flex;gap:.5rem;flex-wrap:wrap;margin:.75rem 0 1rem}
+.sl-sharebar .btn{min-height:44px}
+.btn-fb{background:#1877f2;color:#fff;border-color:#1877f2}
+.btn-fb:hover{background:#0f63d0;color:#fff}
+.sl-share-card{margin:1.5rem 0;padding:1.1rem 1.2rem;background:var(--surface,#fff);border:1px solid var(--line,#e5e2d8);border-radius:16px}
+.sl-share-card h2{margin:0 0 .25rem;font-size:1.25rem}
+.sl-next{background:linear-gradient(135deg,#172447,#25366b);color:#fff;border-radius:18px;padding:1.3rem 1.4rem;margin:1.25rem 0;box-shadow:0 10px 28px rgba(23,36,71,.18)}
+.sl-next h2{color:#fff;margin:.25rem 0 .4rem;font-size:1.45rem}
+.sl-next p{color:#dfe5f7;margin:.25rem 0 .8rem}
+.sl-next-tag{display:inline-block;background:#E77B25;color:#fff;font-weight:700;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .6rem;border-radius:999px}
+.sl-next .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+.sl-next .sl-msg{background:rgba(255,255,255,.12);color:#fff;border-radius:10px;padding:.6rem .8rem}
+.sl-next-done{background:linear-gradient(135deg,#1f6b45,#2e8b57)}
+.sl-plat-actions .btn-primary{flex:1 1 260px}
+.sl-form .field label{display:block;margin-bottom:.3rem;font-weight:600}
+#slEditForm{margin-top:1rem}
+#slEditForm input,#slEditForm select,#slEditForm textarea{width:100%}

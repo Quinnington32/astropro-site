@@ -1,5 +1,5 @@
 import { marketLinks } from "./market-links.mjs";
-import { handleSublease, customMarketPage, runSubleaseJobs } from "./sublease.mjs";
+import { handleSublease, customMarketPage, runSubleaseJobs, listingSharePage } from "./sublease.mjs";
 const PREFIX = "/studentresourcecenter";
 const ALIAS_HOSTS = [
   "www.astroprostudentresourcecenter.com",
@@ -850,6 +850,11 @@ export async function handleRequest(request, env) {
         ? "/brand/index.html"
         : path;
   let response = await env.ASSETS.fetch(new Request(assetURL, request));
+  if (path === "/sublease-listing.html" && response.status === 200 && env.DB && request.method === "GET") {
+    const shared = await listingSharePage(env, url.searchParams.get("id"), await response.clone().text(), env.SITE_ORIGIN || "https://astroprostudentresourcecenter.com");
+    if (shared)
+      return new Response(shared, { headers: { "content-type": "text/html; charset=utf-8", "cache-control": "public, max-age=300" } });
+  }
   if (response.status === 404) {
     const cm = path.match(/^\/housing-([a-z0-9-]{2,58})\.html$/);
     if (cm && env.DB) {

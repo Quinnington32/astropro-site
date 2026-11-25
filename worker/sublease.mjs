@@ -552,6 +552,28 @@ export async function handleSublease(request, env, path, h) {
 
 const htmlEsc = (v) => String(v).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
+// Server-rendered social tags so a shared link shows the listing's photo, title and price on Facebook, texts and chat apps.
+export async function listingSharePage(env, id, html, site) {
+  if (!/^[a-z0-9]{12}$/.test(id || "") || !env.DB) return null;
+  const row = await env.DB.prepare(
+    "SELECT id, data_json FROM sublease_listings WHERE id=? AND (status='filled' OR (status='live' AND (expires_at IS NULL OR expires_at > ?)))",
+  ).bind(id, new Date().toISOString()).first().catch(() => null);
+  if (!row) return null;
+  const d = JSON.parse(row.data_json);
+  const title = (d.title || "Sublease") + " | $" + Number(d.rent).toLocaleString("en-US") + "/mo near " + (d.school || d.marketName);
+  const desc = String(d.description || "").replace(/\s+/g, " ").trim().slice(0, 190) + (String(d.description || "").length > 190 ? "…" : "");
+  const url = site + "/sublease-listing.html?id=" + row.id;
+  const swap = (re, to) => (html = html.replace(re, () => to));
+  swap(/<title>[^<]*<\/title>/, "<title>" + htmlEsc(title) + " — AstroPro</title>");
+  swap(/<meta name="description" content="[^"]*">/, '<meta name="description" content="' + htmlEsc(desc) + '">');
+  swap(/<link rel="canonical" href="[^"]*">/, '<link rel="canonical" href="' + htmlEsc(url) + '">');
+  swap(/<meta property="og:title" content="[^"]*">/, '<meta property="og:title" content="' + htmlEsc(title) + '">');
+  swap(/<meta property="og:description" content="[^"]*">/, '<meta property="og:description" content="' + htmlEsc(desc) + '">');
+  swap(/<meta property="og:url" content="[^"]*">/, '<meta property="og:url" content="' + htmlEsc(url) + '">');
+  swap(/<meta property="og:image" content="[^"]*">/, '<meta property="og:image" content="' + htmlEsc(site + "/api/sublease/photo/" + row.id + "/0") + '">');
+  return html;
+}
+
 // Build a full housing page for a school that a student added. Returns null when no live listing backs it.
 export async function customMarketPage(env, slug, template) {
   if (!/^[a-z0-9-]{2,58}$/.test(slug)) return null;

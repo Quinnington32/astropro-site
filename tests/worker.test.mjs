@@ -905,3 +905,19 @@ test("sublease owner can edit listing details but not market or owner", async ()
   assert.equal(row.owner_email, "sam-edit@example.com");
   assert.equal(d.ownerEmail, "sam-edit@example.com");
 });
+
+test("sublease listing pages carry share tags with the listing photo", async () => {
+  const { listingSharePage } = await import("../worker/sublease.mjs");
+  const photo = "data:image/jpeg;base64," + "A".repeat(200);
+  const made = await mf.dispatchFetch(origin + "/api/sublease/listings", { method: "POST", headers: { Origin: origin, "Content-Type": "application/json", "CF-Connecting-IP": "192.0.2.94" }, body: JSON.stringify({
+    market: "housing-austin-tx", marketName: "Austin, TX", school: "UT Austin", area: "West Campus", title: "Share <me>", description: "A bright place close to campus with a balcony.",
+    ownerName: "Sam", ownerEmail: "sam-share@example.com", permission: "approved", type: "sublease", furnished: "no", utilities: "no",
+    startDate: "2027-05-15", endDate: "2027-08-15", rent: 725, bedrooms: 1, bathrooms: 1, photos: [photo], consent: true }) });
+  const { id } = await made.json();
+  await db.prepare("UPDATE sublease_listings SET status='live', expires_at=? WHERE id=?").bind(new Date(Date.now() + 86400000).toISOString(), id).run();
+  const tpl = '<head><title>Sublease listing — AstroPro</title><meta name="description" content="x"><link rel="canonical" href="https://x/y"><meta property="og:title" content="Sublease listing"><meta property="og:description" content="d"><meta property="og:url" content="u"><meta property="og:image" content="i"></head>';
+  const html = await listingSharePage({ DB: db }, id, tpl, "https://site.test");
+  assert.match(html, /og:image" content="https:\/\/site\.test\/api\/sublease\/photo\/[a-z0-9]{12}\/0"/);
+  assert.match(html, /og:title" content="Share &lt;me&gt; \| \$725\/mo near UT Austin"/);
+  assert.equal(await listingSharePage({ DB: db }, "zzzzzzzzzzzz", tpl, "https://site.test"), null);
+});
