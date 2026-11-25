@@ -878,7 +878,7 @@ emit(
   "sublease-war-room.html",
   "Sublease War Room",
   "Stop paying rent on an empty apartment. We list your place, share it to the Facebook groups in town and email your landlord every week. One-time fee.",
-  tapeHero(
+  hero(
     "Stop paying rent on an empty apartment.",
     "We list your place, share it to the Facebook groups in town, and email your landlord every week until someone takes it over. Built by former apartment managers. One-time fee.",
     `<div class="cta-row"><a class="btn btn-primary" href="#start">Get started</a><a class="btn btn-ghost" href="#what-you-get">See what you get</a></div>`,
