@@ -1,4 +1,5 @@
 import { marketLinks } from "./market-links.mjs";
+import { subleaseRedirects } from "./sublease-redirects.mjs";
 import { handleSublease, customMarketPage, runSubleaseJobs, listingSharePage } from "./sublease.mjs";
 const PREFIX = "/studentresourcecenter";
 const ALIAS_HOSTS = [
@@ -832,6 +833,12 @@ export async function handleRequest(request, env) {
     const destination = new URL(request.url);
     destination.pathname += "/";
     return Response.redirect(destination.href, 308);
+  }
+  const oldSchool = path.replace(/^\//, "");
+  if (Object.hasOwn(subleaseRedirects, oldSchool)) {
+    const dest = new URL(request.url);
+    dest.pathname = (url.pathname.startsWith(PREFIX) ? PREFIX : "") + "/" + subleaseRedirects[oldSchool];
+    return Response.redirect(dest.href, 301);
   }
   const go = path.match(/^\/go\/([a-z0-9-]+)\/?$/i);
   if (go && Object.hasOwn(marketLinks, go[1].toLowerCase())) {

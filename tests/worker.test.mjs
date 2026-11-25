@@ -34,6 +34,7 @@ before(async () => {
       modules: [
         { type: "ESModule", path: "worker/index.mjs" },
         { type: "ESModule", path: "worker/market-links.mjs" },
+        { type: "ESModule", path: "worker/sublease-redirects.mjs" },
         { type: "ESModule", path: "worker/sublease.mjs" },
       ],
       modulesRoot: process.cwd(),

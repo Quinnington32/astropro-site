@@ -340,7 +340,7 @@ emit(
     "Search by school, city, or state. These are research starting points, not verified available rentals.",
     `<div class="cta-row"><a class="btn btn-primary" href="#markets">Find your market</a><a class="btn btn-ghost" href="sublease-war-room.html">Sublease War Room</a><a class="btn btn-ghost" href="index.html#organizations">Suggest a property</a></div>`,
   ) +
-    `<section class="wrap"><div class="callout war-banner"><h2>Need out of your lease? Enter the Sublease War Room.</h2><p>We list your place, share it to local Facebook groups, write your posts, and email your landlord every week. Sublease, relet or lease takeover. One-time $39.</p><div class="cta-row"><a class="btn btn-primary" href="sublease-war-room.html">Enter the Sublease War Room</a><a class="btn btn-ghost" href="sublease-by-school.html">Sublease by school</a></div></div></section>` +
+    `<section class="wrap tape-row"><a class="tape-btn" href="sublease-war-room.html"><span>Stuck in a lease? Enter the Sublease War Room</span></a></section>` +
     `<section class="wrap" id="markets" data-markets><div class="directory-controls"><div><label for="marketSearch">School, city, or state</label><input type="search" id="marketSearch" placeholder="Try Houston or Ohio" autocomplete="off"></div><div><label for="marketSort">Sort markets</label><select id="marketSort"><option value="state">Group by state</option><option value="city">City A–Z</option></select></div></div><p id="marketCount" class="result-count" role="status" aria-live="polite">${markets.length} markets</p>${stateJump}${marketCards}<div class="empty-state" id="marketEmpty" hidden><h2>No matching markets</h2><p>Try the city or state name, or find housing support through your school.</p><a class="btn btn-primary" href="school-resources.html?topic=housing">Find campus housing support</a></div><section id="slNewMarkets" hidden><h2 class="state-heading">Added by students</h2><div class="market-grid" id="slNewMarketGrid"></div></section><p class="source-note">A directory mention is not an endorsement or a paid partnership. Check the property’s current terms and eligibility directly.</p></section><script type="module" src="assets/sublease.js"></script>` +
     faqs(),
 );
@@ -393,15 +393,15 @@ const marketPageBody = (m) => {
   const picksHtml = picks.length
     ? `<section class="wrap market-section" id="top-picks"><div class="section-head-row"><div><p class="eyebrow">Near ${e(m.school)}</p><h2>${picks.length === 3 ? "Our top 3 picks" : "Our top picks"}</h2></div></div><div class="rental-grid">${picks.map((p) => rentalCard(p, m, { badge: "Top pick " + p.pick })).join("")}</div><p class="source-note">Picks come from properties whose official sites our team has reviewed. A mention is not an endorsement or a paid partnership; confirm terms with the property.</p></section>`
     : `<section class="wrap market-section" id="top-picks"><div class="empty-feed"><h2>Top picks for ${e(m.place)} are on the way</h2><p>We only feature properties after reviewing their official sites. Check back soon, or suggest one below.</p></div></section>`;
-  const feedHtml = `<section class="wrap market-section" id="available-rentals"><div class="section-head-row"><div><h2>Available Rentals</h2><p class="feed-note">Our team scans the ${e(m.place)} market for available rentals, lease specials, and new listings, then posts the best ones here. Always confirm price and availability with the property.</p>${moreGroups}</div>${groupBtn}</div><div class="rental-grid sl-market-feed" data-sl-market="${e(m.id)}" hidden></div><p class="feed-note sl-list-cta">Moving out early? <a href="sublease-war-room.html?market=${encodeURIComponent(m.id)}">List your sublease or relet here</a> and students in ${e(m.place)} will see it.${typeof seoIds !== "undefined" && seoIds.has(m.id) ? ` <a href="sublease-${m.id.replace(/^housing-/, "")}.html">Subleases near ${e(seoPrimary(m))}</a>.` : ""}</p>${feed.length ? `<div class="rental-grid">${feed.map((p) => rentalCard(p, m, { badge: "Available", feed: true })).join("")}</div>` : `<div class="empty-feed" data-sl-empty><h3>No rentals posted for ${e(m.place)} yet</h3><p>Our team is scanning the market. Know a good rental or manage one here? Send it our way.</p><div class="cta-row"><a class="btn btn-primary" href="index.html#organizations">Suggest a rental</a>${groupBtn}</div></div>`}</section>`;
+  const feedHtml = `<section class="wrap market-section" id="available-rentals"><div class="section-head-row"><div><h2>Available Rentals</h2><p class="feed-note">Our team scans the ${e(m.place)} market for available rentals, lease specials, and new listings, then posts the best ones here. Always confirm price and availability with the property.</p>${moreGroups}</div>${groupBtn}</div><div class="rental-grid sl-market-feed" data-sl-market="${e(m.id)}" hidden></div><p class="sl-list-cta"><a class="tape-btn" href="sublease-war-room.html?market=${encodeURIComponent(m.id)}"><span>Moving out early? Enter the Sublease War Room</span></a></p>${feed.length ? `<div class="rental-grid">${feed.map((p) => rentalCard(p, m, { badge: "Available", feed: true })).join("")}</div>` : `<div class="empty-feed" data-sl-empty><h3>No rentals posted for ${e(m.place)} yet</h3><p>Our team is scanning the market. Know a good rental or manage one here? Send it our way.</p><div class="cta-row"><a class="btn btn-primary" href="index.html#organizations">Suggest a rental</a>${groupBtn}</div></div>`}</section>`;
   const moreHtml = "";
   const body =
     `<div class="wrap breadcrumb"><a href="housing.html">← All housing markets</a></div>` +
     hero(m.place, `Explore housing options near ${m.school}.`, "", "Off-campus housing") +
-    `<section class="wrap"><div class="callout war-banner"><h2>Stuck in a lease near ${e(seoPrimary(m))}? Enter the Sublease War Room.</h2><p>We list your place, share it to the local Facebook groups, write your posts and email your landlord every week until someone takes over. One-time $39.</p><div class="cta-row"><a class="btn btn-primary" href="sublease-war-room.html?market=${encodeURIComponent(m.id)}">Enter the Sublease War Room</a>${seoIds.has(m.id) ? `<a class="btn btn-ghost" href="${seoFile(m)}">Subleases near ${e(seoPrimary(m))}</a>` : ""}</div></div></section>` +
     `<section class="wrap"><p class="notice">${e(m.description)} Check eligibility, commute, and availability directly with each property.</p></section>` +
     picksHtml +
     feedHtml +
+    (m.id.startsWith("c-") ? "" : seoAbout(m)) +
     moreHtml +
     faqs() +
     `<script type="module" src="assets/sublease.js"></script>` +
@@ -414,8 +414,8 @@ const SEO_NEW = ["state-college-pa","west-lafayette-in","tallahassee-fl","orland
 const SEO_SCHOOLS = ["college-station-tx", "austin-tx", "columbus", "ann-arbor", "tempe-az", "gainesville", "san-marcos-tx", "houston", "denton", "ames-ia", "tucson-az", "madison", "minneapolis", "tampa", "provo-ut", "stillwater-ok", "lawrence-ks", "manhattan-ks", "raleigh-nc", "fort-collins-co"];
 const seoGood = (m) => !/^Colleges and universities near/.test(m.school) && (SEO_SCHOOLS.includes(m.id.replace(/^housing-/, "")) || m.properties.length >= 3 || SEO_NEW.includes(m.id.replace(/^housing-/, "")));
 const seoMarkets = markets.filter(seoGood);
-const seoFile = (m) => "sublease-" + m.id.replace(/^housing-/, "") + ".html";
-const seoPrimary = (m) => m.school.split(/ & |, /)[0];
+const seoFile = (m) => m.file;
+const seoPrimary = (m) => /^Colleges and universities near/.test(m.school) ? m.place.split(",")[0] : m.school.split(/ & |, /)[0];
 const seoIds = new Set(seoMarkets.map((m) => m.id));
 const leaseFaq = [
   ["Can I get out of my apartment lease early?", "Usually yes, but it depends on your lease and your state. The common routes are a relet through the property, a sublease, a lease takeover (assignment), or paying an early termination fee. Read your lease first, then ask the landlord in writing which options they allow."],
@@ -424,28 +424,19 @@ const leaseFaq = [
   ["Do I need my landlord's permission to sublease?", "Most leases require it. Subleasing without permission can be a lease violation. Ask for approval in writing before you advertise the place or accept money from anyone."],
   ["How fast can I find someone to take over my lease?", "It varies by market and season. Places priced fairly, with good photos, posted in the right student groups and shared widely tend to move fastest. Starting early, before the move-out date, helps a lot."],
 ];
-const seoSchoolPage = (m) => {
+function seoFaq(m) {
   const name = seoPrimary(m);
-  const props = m.properties.slice(0, 6).map((p) => e(p.name));
-  const faq = [
-    [`How do I find a sublease near ${name}?`, `Start with the live listings on this page, then check the student housing groups for ${m.place} and the property websites near campus. Always tour in person or on live video and confirm the landlord approved the sublease before you send any money.`],
+  return [
+    [`How do I find a sublease near ${name}?`, `Check the student listings on this page, then the student housing groups for ${m.place} and the property websites near campus. Always tour in person or on live video and confirm the landlord approved the sublease before you send any money.`],
     [`How do I get out of my lease near ${name}?`, `Read your lease, then ask your property whether it offers a relet or lets you assign or sublease. Many students near ${name} find a replacement tenant themselves, which stops rent from piling up. Get everything in writing.`],
     [`What is the difference between a sublease, a relet and a lease takeover in ${m.place}?`, `A sublease keeps you on the lease while someone else lives there. A relet lets the property find a new tenant and release you. A lease takeover (assignment) moves the lease to the new tenant, with landlord approval. Terms vary by property, so ask which your landlord uses.`],
     [`Is subleasing safe near ${name}?`, `It can be, if you avoid common scams: never pay a deposit before seeing the unit, be wary of gift cards, wire transfers and requests to move off the platform, and confirm the person is who they say they are.`],
   ];
-  const body =
-    `<div class="wrap breadcrumb"><a href="sublease-by-school.html">← Sublease by school</a></div>` +
-    hero(`Sublease, relet or lease takeover near ${name}`, `Find a sublease, relet or lease takeover near ${m.school} in ${m.place}, or get out of your lease early.`, `<div class="cta-row"><a class="btn btn-primary" href="sublease-war-room.html?market=${encodeURIComponent(m.id)}">List your place</a><a class="btn btn-ghost" href="#listings">See live listings</a></div>`, "Sublease & relet") +
-    `<section class="wrap prose"><h2>Subleases, relets and lease takeovers in ${e(m.place)}</h2><p>${e(m.description)} That mix of neighborhoods means students near ${e(name)} are always looking to hand off a lease or pick one up mid-term.</p><p>Whether you call it a sublease, a relet or a lease takeover, the goal is the same: a new tenant moves in, and the person leaving stops paying for a place they are not using.</p></section>` +
-    `<section class="wrap market-section" id="listings"><div class="section-head-row"><div><h2>Live sublease listings near ${e(name)}</h2><p class="feed-note">Student-posted places in ${e(m.place)}. Always confirm details with the landlord.</p></div></div><div class="rental-grid sl-market-feed" data-sl-market="${e(m.id)}" hidden></div><p class="feed-note sl-list-cta" data-sl-empty>No live listings here right now. Moving out early? <a href="sublease-war-room.html?market=${encodeURIComponent(m.id)}">List your place for students near ${e(name)}</a>.</p></section>` +
-    `<section class="wrap prose"><h2>Leaving your lease near ${e(name)}?</h2><ol><li>Read the lease sections on subleasing, assignment and early termination.</li><li>Ask the leasing office, in writing, about their relet or lease takeover process and any fees.</li><li>Post your place where students look: our Sublease War Room shares it to local housing groups and emails your landlord for you every week.</li><li>Tour, get the landlord's approval in writing, and sign the paperwork before money moves.</li></ol><p><a class="btn btn-primary" href="sublease-war-room.html?market=${encodeURIComponent(m.id)}">Start your Sublease War Room</a> <a class="btn btn-ghost" href="get-out-of-my-lease.html">How to get out of a lease</a></p></section>` +
-    (props.length ? `<section class="wrap prose"><h2>Apartment communities near ${e(name)}</h2><p>Properties we track in ${e(m.place)} include ${props.join(", ")}. Each property has its own sublease and relet rules, so check with the leasing office before you list or apply. See all of them on our <a href="${e(m.file)}">${e(m.place)} housing page</a>.</p></section>` : `<section class="wrap prose"><p>See our <a href="${e(m.file)}">${e(m.place)} housing page</a> for properties and local student groups.</p></section>`) +
-    `<section id="tips"><div class="wrap"><div class="section-head"><p class="eyebrow">Common questions</p><h2>Subleasing near ${e(name)}</h2></div><div class="faq-list">${faq.map(([q, a]) => `<details><summary>${e(q)}</summary><p>${e(a)}</p></details>`).join("")}</div></div></section>` +
-    `<section class="wrap prose"><p class="source-note">General information, not legal advice. Lease and tenant rules vary by state and by property.</p></section>` +
-    `<script type="module" src="assets/sublease.js"></script>`;
-  emit(seoFile(m), `Sublease near ${name}: Relet & Lease Takeover | ${m.place}`, `Find a sublease, relet or lease takeover near ${m.school} in ${m.place}, or get out of your lease early. Live student listings and a safe-sublease checklist.`, body, { faq });
-};
-for (const m of seoMarkets) seoSchoolPage(m);
+}
+function seoAbout(m) {
+  const name = seoPrimary(m);
+  return `<section class="wrap prose market-about" id="sublease-info"><h2>Subleases, relets and lease takeovers near ${e(name)}</h2><p>Students near ${e(name)} often hand off a lease mid-term, whether you call it a sublease, a relet or a lease takeover. Student listings appear in Available Rentals above.</p><h3>Leaving your lease near ${e(name)}?</h3><ol><li>Read the lease sections on subleasing, assignment and early termination.</li><li>Ask the leasing office, in writing, about their relet or lease takeover process and any fees.</li><li>List your place here. The Sublease War Room shares it to local housing groups and emails your landlord every week.</li><li>Tour, get the landlord's approval in writing, and sign the paperwork before money moves.</li></ol><p><a class="tape-btn" href="sublease-war-room.html?market=${encodeURIComponent(m.id)}"><span>Enter the Sublease War Room</span></a> <a href="get-out-of-my-lease.html">How to get out of a lease</a> · <a href="sublease-vs-relet-vs-lease-takeover.html">Sublease vs relet vs takeover</a></p><div class="faq-list">${seoFaq(m).map(([q, a]) => `<details><summary>${e(q)}</summary><p>${e(a)}</p></details>`).join("")}</div><p class="source-note">General information, not legal advice. Lease and tenant rules vary by state and by property.</p></section>`;
+}
 emit(
   "sublease-by-school.html",
   "Sublease by school: relets and lease takeovers near campus",
@@ -514,9 +505,10 @@ emit("sublease-guides.html", "Sublease, relet and lease takeover guides for stud
 for (const m of markets)
   emit(
     m.file,
-    `Housing research in ${m.place}`,
-    `Explore property sources and housing search questions near ${m.school} in ${m.place}.`,
+    `Housing near ${seoPrimary(m)}: Rentals, Subleases & Lease Takeovers`,
+    `Apartments, subleases, relets and lease takeovers near ${m.school} in ${m.place}. Student listings, nearby properties, and how to get out of your lease.`,
     marketPageBody(m),
+    { faq: seoFaq(m) },
   );
 // Template for markets that students add. The Worker fills in the tokens.
 {
@@ -534,6 +526,7 @@ for (const m of markets)
     if (cityCount[c] === 1) links[c] = m.file;
   }
   await writeFile("worker/market-links.mjs", "// Generated by scripts/build.mjs: short links like /go/ames for each housing market.\nexport const marketLinks = " + JSON.stringify(links, null, 2) + ";\n");
+  await writeFile("worker/sublease-redirects.mjs", "// Generated by scripts/build.mjs: old sublease-<school>.html URLs now live on the market page.\nexport const subleaseRedirects = " + JSON.stringify(Object.fromEntries(seoMarkets.map((m) => ["sublease-" + m.id.replace(/^housing-/, "") + ".html", m.file])), null, 2) + ";\n");
 }
 for (const slug of guides) {
   const metadata = JSON.parse(await readFile(`src/content/${slug}.json`));

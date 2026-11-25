@@ -3669,3 +3669,12 @@ html, body { overflow-x: clip; }
 .sl-fullplan > summary { display: inline-block; cursor: pointer; margin: .4rem 0 .6rem; list-style: none; }
 .sl-fullplan > summary::-webkit-details-marker { display: none; }
 .sl-today-card .sl-tasks { margin-top: .6rem; }
+
+/* Caution-tape button for the Sublease War Room */
+.tape-btn{display:inline-block;padding:3px;border-radius:4px;text-decoration:none;color:#111;font-weight:800;font-size:.86rem;letter-spacing:.02em;background:repeating-linear-gradient(-45deg,#111 0 10px,#ffc400 10px 20px)}
+.tape-btn span{display:block;padding:7px 16px;background:#ffc400;border-radius:2px}
+.tape-btn:hover span,.tape-btn:focus-visible span{background:#ffd633}
+.tape-btn:focus-visible{outline:3px solid var(--navy,#172447);outline-offset:2px}
+.tape-row{margin:10px auto}
+.sl-list-cta{margin:14px 0 0}
+.market-about h3{margin-top:18px}
