@@ -3682,3 +3682,14 @@ html, body { overflow-x: clip; }
 @media (max-width:640px){.sl-list-cta .tape-btn{display:block;text-align:center}}
 .tape-top{text-align:center;padding:10px 12px 0}
 @media (max-width:640px){.tape-top .tape-btn{display:block}}
+
+.tape-hero{margin:28px auto}
+.tape-banner{display:block;padding:6px;border-radius:10px;text-decoration:none;color:#111;background:repeating-linear-gradient(-45deg,#111 0 14px,#ffc400 14px 28px);box-shadow:0 6px 18px rgba(0,0,0,.18);transition:transform .15s}
+.tape-banner:hover{transform:translateY(-2px)}
+.tape-banner:focus-visible{outline:3px solid #172447;outline-offset:3px}
+.tape-banner-inner{display:flex;flex-direction:column;gap:6px;padding:20px 24px;background:#ffc400;border-radius:6px;text-align:center}
+.tape-banner-inner strong{font-size:clamp(1.3rem,3.6vw,2rem);line-height:1.15;font-weight:800}
+.tape-banner-inner span{font-size:1rem;color:#222}
+.tape-banner-inner em{font-style:normal;font-weight:800;text-decoration:underline}
+.resource-tile.tape-tile{background:repeating-linear-gradient(-45deg,#111 0 10px,#ffc400 10px 20px);color:#111;border-color:#111}
+.resource-tile.tape-tile h3{background:#ffc400;display:inline-block;padding:2px 8px;border-radius:3px;color:#111}

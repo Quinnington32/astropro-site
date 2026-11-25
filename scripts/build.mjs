@@ -207,10 +207,11 @@ const home = `
     </figure>
   </div>
 </section>
+<section class="wrap tape-hero"><a class="tape-banner" href="sublease-war-room.html"><span class="tape-banner-inner"><strong>Stuck in a lease? Enter the Sublease War Room.</strong><span>We list your place, share it to local student groups and email your landlord every week. One-time $39.</span><em>Enter the Sublease War Room &rarr;</em></span></a></section>
 <section id="resources" class="home-resources">
   <div class="wrap">
     <div class="section-head section-head-row"><div><p class="eyebrow">Student Resource Center</p><h2>Scroll through the resources below</h2></div><p>You’ve got options. Let’s find yours.</p></div>
-    <div class="resource-tiles">${homeCategories.map(([symbol, href, title, tone]) => `<a class="resource-tile" href="${href}"><span class="category-icon tone-${tone}">${icon(symbol)}</span><h3>${title}</h3></a>`).join("")}</div>
+    <div class="resource-tiles">${homeCategories.map(([symbol, href, title, tone]) => `<a class="resource-tile${href === "sublease-war-room.html" ? " tape-tile" : ""}" href="${href}"><span class="category-icon tone-${tone}">${icon(symbol)}</span><h3>${title}</h3></a>`).join("")}</div>
   </div>
 </section>
 <section id="mission" class="home-support">
