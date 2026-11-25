@@ -76,7 +76,7 @@ const iconPaths = {
 };
 export const icon = (name, cls = "") =>
   `<svg class="icon ${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${iconPaths[name] || iconPaths.guides}</svg>`;
-const nav = `<a href="scholarships.html">Scholarships</a><a href="internships.html">Internships</a><a href="housing.html">Housing</a><a href="discounts.html">Discounts</a><a href="apply-to-college.html">Apply for College</a><a href="financial-aid.html">Financial Aid</a><a class="nav-search" href="search.html" aria-label="Search all resources">${icon("search")}</a><a class="nav-saved" href="saved.html">${icon("bookmark")} Saved <span data-saved-count></span></a>`;
+const nav = `<a href="scholarships.html">Scholarships</a><a href="internships.html">Internships</a><a href="housing.html">Housing</a><a href="discounts.html">Discounts</a><a href="apply-to-college.html">Apply for College</a><a href="financial-aid.html">Financial Aid</a><a class="nav-search" href="search.html" aria-label="Search all resources">${icon("search")}</a><a class="nav-war" href="sublease-manage.html">My War Room</a><a class="nav-saved" href="saved.html">${icon("bookmark")} Saved <span data-saved-count></span></a>`;
 export function page({
   title,
   description,

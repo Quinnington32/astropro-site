@@ -56,6 +56,7 @@ before(async () => {
     "migrations/0009_sublease_events.sql",
     "migrations/0010_sublease_intents.sql",
     "migrations/0011_sublease_secret.sql",
+    "migrations/0012_sublease_engagement.sql",
   ]) {
     const schema = await readFile(file, "utf8");
     await db.batch(
@@ -920,4 +921,42 @@ test("sublease listing pages carry share tags with the listing photo", async () 
   assert.match(html, /og:image" content="https:\/\/site\.test\/api\/sublease\/photo\/[a-z0-9]{12}\/0"/);
   assert.match(html, /og:title" content="Share &lt;me&gt; \| \$725\/mo near UT Austin"/);
   assert.equal(await listingSharePage({ DB: db }, "zzzzzzzzzzzz", tpl, "https://site.test"), null);
+});
+
+test("sublease engagement: share count, photo replace, one-time renew, nudge, renewal and weekly emails", async () => {
+  const { runSubleaseJobs } = await import("../worker/sublease.mjs");
+  const photo = "data:image/jpeg;base64," + "A".repeat(200);
+  const hdr = { Origin: origin, "Content-Type": "application/json", "CF-Connecting-IP": "192.0.2.97" };
+  const made = await mf.dispatchFetch(origin + "/api/sublease/listings", { method: "POST", headers: hdr, body: JSON.stringify({
+    market: "housing-austin-tx", marketName: "Austin, TX", area: "West Campus", title: "Engage me", description: "A place that needs engagement soon.",
+    ownerName: "Eve", ownerEmail: "eve-engage@example.com", permission: "approved", type: "relet", furnished: "no", utilities: "no",
+    startDate: "2027-05-15", endDate: "2027-08-15", rent: 700, bedrooms: 1, bathrooms: 1, photos: [photo], consent: true }) });
+  const { id, manageToken } = await made.json();
+  const old = new Date(Date.now() - 8 * 86400000).toISOString();
+  const soon = new Date(Date.now() + 3 * 86400000).toISOString();
+  await db.prepare("UPDATE sublease_listings SET status='live', paid_at=?, expires_at=? WHERE id=?").bind(old, soon, id).run();
+  const post = (body) => mf.dispatchFetch(origin + "/api/sublease/manage/" + id, { method: "POST", headers: { ...hdr, "x-manage-token": manageToken }, body: JSON.stringify(body) });
+  await mf.dispatchFetch(origin + "/api/sublease/share", { method: "POST", headers: hdr, body: JSON.stringify({ id }) });
+  const dash = await (await mf.dispatchFetch(origin + "/api/sublease/manage/" + id, { headers: { ...hdr, "x-manage-token": manageToken } })).json();
+  assert.equal(dash.shares, 1);
+  // photos: needs at least one, replaces the set
+  assert.equal((await post({ action: "photos", photos: [] })).status, 400);
+  assert.equal((await post({ action: "photos", photos: [photo, photo] })).status, 200);
+  assert.equal((await db.prepare("SELECT COUNT(*) c FROM sublease_photos WHERE listing_id=?").bind(id).first()).c, 2);
+  // follow-up emails go out once each
+  const mails = [];
+  const h = { notify: async () => {}, mail: async (m) => (mails.push(m), true) };
+  await runSubleaseJobs({ DB: db }, h);
+  const mine = mails.filter((m) => m.to === "eve-engage@example.com").map((m) => m.subject);
+  assert.equal(mine.length, 3);
+  assert.ok(mine.some((s) => /No messages yet/.test(s)) && mine.some((s) => /ends on/.test(s)) && mine.some((s) => /this week/.test(s)));
+  await runSubleaseJobs({ DB: db }, h);
+  assert.equal(mails.filter((m) => m.to === "eve-engage@example.com").length, 3);
+  // renew once
+  const r1 = await post({ action: "renew" });
+  assert.equal(r1.status, 200);
+  assert.equal((await post({ action: "renew" })).status, 400);
+  const row = await db.prepare("SELECT expires_at, renewed FROM sublease_listings WHERE id=?").bind(id).first();
+  assert.equal(row.renewed, 1);
+  assert.ok(new Date(row.expires_at).getTime() > Date.now() + 30 * 86400000);
 });

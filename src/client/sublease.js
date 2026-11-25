@@ -48,10 +48,15 @@ const shareBar = (url, title) => {
     t = encodeURIComponent(title);
   return `<div class="sl-sharebar" data-share-url="${esc(url)}" data-share-title="${esc(title)}"><a class="btn btn-fb" href="https://www.facebook.com/sharer/sharer.php?u=${u}" target="_blank" rel="noopener">Share on Facebook</a><a class="btn btn-ghost" href="https://wa.me/?text=${t}%20${u}" target="_blank" rel="noopener">WhatsApp</a><a class="btn btn-ghost" href="sms:?&body=${t}%20${u}">Text</a><a class="btn btn-ghost" href="mailto:?subject=${t}&body=${u}">Email</a><button class="btn btn-ghost" type="button" data-native-share hidden>More…</button><button class="btn btn-ghost" type="button" data-copy-url>Copy link</button></div>`;
 };
+const pingShare = (url) => {
+  const m = /[?&]id=([a-z0-9]{12})/.exec(url || "");
+  if (m) fetch("/api/sublease/share", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ id: m[1] }), keepalive: true }).catch(() => {});
+};
 const wireShare = (root) => {
   $$("[data-share-url]", root).forEach((bar) => {
     const url = bar.dataset.shareUrl,
       title = bar.dataset.shareTitle;
+    bar.addEventListener("click", (ev) => { if (ev.target.closest("a,button")) pingShare(url); });
     const native = $("[data-native-share]", bar);
     if (native && navigator.share) {
       native.hidden = false;
@@ -467,6 +472,9 @@ async function managePage() {
     const paid = !!data.paidAt;
     const pending = !paid && ["pending_payment", "expired"].includes(l.status);
     const until = data.expiresAt ? new Date(data.expiresAt).toLocaleDateString("en-US", { month: "short", day: "numeric" }) : "";
+    const msLeft = data.expiresAt ? new Date(data.expiresAt).getTime() - Date.now() : 0;
+    const daysLeft = Math.max(0, Math.ceil(msLeft / 86400000));
+    const canRenew = live && !data.renewed && msLeft > 0 && msLeft <= 7 * 86400000;
     const steps = [
       ["Landlord permission", l.permission === "approved" ? "done" : "todo", l.permission === "approved" ? "Approved in writing." : "Send the email below and get approval in writing before you accept anyone."],
       ["Listing created", "done", "Your listing is built with photos and details."],
@@ -492,6 +500,8 @@ async function managePage() {
       <div class="sl-acct"><span>Signed in as <strong>${esc(data.ownerEmail || l.ownerName || "you")}</strong></span><span><button class="btn btn-ghost" type="button" data-copy-private>Copy my private link</button> <button class="btn btn-ghost" type="button" data-signout>Sign out</button></span></div>
       <div class="sl-status ${esc(l.status)}"><div><strong>${esc(l.title)}</strong><span>${esc(l.marketName)} · ${money(l.rent)}/mo</span></div><span class="sl-pill">${esc({ pending_payment: "Waiting for payment", live: "Live", paused: "Paused", filled: "Filled", expired: "Expired" }[l.status])}</span></div>
       ${pending ? `<div class="callout"><h2>${l.status === "expired" ? "Bring your listing back" : "Publish your listing"}</h2><p>${l.status === "expired" ? "Your listing ended." : "Your listing is saved but not live yet."} Pay the one-time listing fee and it goes live for 60 days. It updates automatically within a minute or two of your payment. Your reference code is <code>${esc(l.id)}</code>.</p><p><a class="btn btn-primary" href="${payUrl.href}" rel="noopener">Pay $${esc(payBase.price)} with PayPal</a></p><p class="fineprint">Questions? Email <a href="mailto:support@astroprostudentresourcecenter.com">support@astroprostudentresourcecenter.com</a> with your reference code.</p></div>` : ""}
+      ${live ? `<div class="sl-stats"><div><strong>${data.views || 0}</strong><span>Views</span></div><div><strong>${data.shares || 0}</strong><span>Shares</span></div><div><strong>${data.leads.length}</strong><span>Messages</span></div><div><strong>${daysLeft}</strong><span>Days left</span></div></div>${data.leads.length ? "" : (data.views >= 10 ? `<p class="sl-tip">${data.views} people looked and none messaged yet. A new photo or a $25 price drop usually helps. Use Edit listing below.</p>` : `<p class="sl-tip">New listings take a few days to get traction. Post in your next place below and share your link.</p>`)}` : ""}
+      ${live && canRenew ? `<div class="callout"><h2>Your listing ends in ${daysLeft} day${daysLeft === 1 ? "" : "s"}</h2><p>Still need someone? Keep it live 30 more days, free. One time per listing.</p><p><button class="btn btn-primary" type="button" data-renew>Keep my listing live 30 more days</button> <span class="sl-msg" id="slRenewMsg" hidden></span></p></div>` : ""}
       ${live && next ? `<div class="sl-next"><span class="sl-next-tag">Your next step</span><h2>Post it in ${esc(next.short)}</h2><p>${esc(next.why)}</p><p class="sl-plat-actions"><button class="btn btn-primary" type="button" data-go="${next.id}">Copy my post and open ${esc(next.short)} ↗</button><button class="btn btn-ghost" type="button" data-skip="${next.id}">I already did this</button></p><p class="sl-msg ok" data-go-msg="next" hidden></p></div>` : live && plats.length ? '<div class="sl-next sl-next-done"><span class="sl-next-tag">Nice work</span><h2>You posted everywhere on the list.</h2><p>Now watch your messages, answer within a few hours, and offer two tour times.</p></div>' : ""}
       <section><h2>Your sublease checklist</h2><ol class="sl-steps">${steps.map(([t, s, d]) => `<li class="${s}"><strong>${esc(t)}</strong><span>${esc(d)}</span></li>`).join("")}</ol></section>
       <section><h2>Messages from students (${data.leads.length})</h2>${data.leads.length ? data.leads.map((x) => `<article class="sl-lead${x.flagged ? " flagged" : ""}"><header><strong>${esc(x.name)}</strong><time>${new Date(x.created_at).toLocaleString()}</time></header>${x.flagged ? '<p class="sl-warn">Careful: this message uses wording common in rental scams. Don\'t send money or keys, and meet in person first.</p>' : ""}<p>${esc(x.message).replace(/\n/g, "<br>")}</p><p><a href="mailto:${esc(x.email)}">${esc(x.email)}</a>${x.phone ? " · " + esc(x.phone) : ""}</p></article>`).join("") : "<p>No messages yet. Use the launch kit below to get your first ones.</p>"}</section>
@@ -543,6 +553,16 @@ async function managePage() {
         render();
       }),
     );
+    $("[data-renew]", dash)?.addEventListener("click", async (ev) => {
+      ev.currentTarget.disabled = true;
+      try {
+        await api("/manage/" + id, { method: "POST", headers, body: JSON.stringify({ action: "renew" }) });
+        render();
+      } catch (err) {
+        ev.currentTarget.disabled = false;
+        say($("#slRenewMsg"), err.message);
+      }
+    });
     $("[data-edit]", dash)?.addEventListener("click", (ev) => {
       if ($("#slEditForm")) return;
       const f = (name, label, val, type = "text", extra = "") => `<div class="field"><label for="ed_${name}">${label}</label><input id="ed_${name}" name="${name}" type="${type}" value="${esc(val ?? "")}" ${extra}></div>`;
@@ -551,13 +571,20 @@ async function managePage() {
       form.id = "slEditForm";
       form.className = "sl-form callout";
       form.noValidate = true;
-      form.innerHTML = `<h3>Edit your listing</h3>${f("title", "Title", l.title, "text", 'maxlength="120"')}${f("area", "Neighborhood or building", l.area, "text", 'maxlength="150"')}${f("rent", "Monthly rent ($)", l.rent, "number", 'min="1"')}${f("deposit", "Deposit ($, optional)", l.deposit || "", "number", 'min="0"')}${f("startDate", "Move-in", l.startDate, "date")}${f("endDate", "Move-out", l.endDate, "date")}${f("bedrooms", "Bedrooms", l.bedrooms, "number", 'min="0"')}${f("bathrooms", "Bathrooms", l.bathrooms, "number", 'min="0.5" step="0.5"')}${sel("furnished", "Furnished", l.furnished, [["yes", "Yes"], ["no", "No"], ["partly", "Partly"]])}${sel("utilities", "Utilities", l.utilities, [["yes", "Included"], ["some", "Some included"], ["no", "Not included"]])}<div class="field"><label for="ed_description">Description</label><textarea id="ed_description" name="description" rows="8" maxlength="2000">${esc(l.description)}</textarea></div><p class="sl-msg" id="slEditMsg" role="alert" hidden></p><button class="btn btn-primary" type="submit">Save changes</button> <button class="btn btn-ghost" type="button" data-edit-cancel>Cancel</button>`;
+      form.innerHTML = `<h3>Edit your listing</h3>${f("title", "Title", l.title, "text", 'maxlength="120"')}${f("area", "Neighborhood or building", l.area, "text", 'maxlength="150"')}${f("rent", "Monthly rent ($)", l.rent, "number", 'min="1"')}${f("deposit", "Deposit ($, optional)", l.deposit || "", "number", 'min="0"')}${f("startDate", "Move-in", l.startDate, "date")}${f("endDate", "Move-out", l.endDate, "date")}${f("bedrooms", "Bedrooms", l.bedrooms, "number", 'min="0"')}${f("bathrooms", "Bathrooms", l.bathrooms, "number", 'min="0.5" step="0.5"')}${sel("furnished", "Furnished", l.furnished, [["yes", "Yes"], ["no", "No"], ["partly", "Partly"]])}${sel("utilities", "Utilities", l.utilities, [["yes", "Included"], ["some", "Some included"], ["no", "Not included"]])}<div class="field"><label for="ed_photos">Replace photos (optional, up to 4)</label><input id="ed_photos" type="file" accept="image/*" multiple><p class="fineprint">Choosing new photos replaces all your current ones.</p></div><div class="field"><label for="ed_description">Description</label><textarea id="ed_description" name="description" rows="8" maxlength="2000">${esc(l.description)}</textarea></div><p class="sl-msg" id="slEditMsg" role="alert" hidden></p><button class="btn btn-primary" type="submit">Save changes</button> <button class="btn btn-ghost" type="button" data-edit-cancel>Cancel</button>`;
       ev.currentTarget.closest("section").appendChild(form);
       $("[data-edit-cancel]", form).addEventListener("click", () => form.remove());
       form.addEventListener("submit", async (e) => {
         e.preventDefault();
         const fields = Object.fromEntries(new FormData(form).entries());
         try {
+          const files = [...($("#ed_photos", form)?.files || [])].slice(0, 4);
+          if (files.length) {
+            say($("#slEditMsg"), "Saving your photos...");
+            const shrunk = [];
+            for (const f of files) shrunk.push(await shrink(f));
+            await api("/manage/" + id, { method: "POST", headers, body: JSON.stringify({ action: "photos", photos: shrunk }) });
+          }
           await api("/manage/" + id, { method: "POST", headers, body: JSON.stringify({ action: "edit", fields }) });
           render();
         } catch (err) {
@@ -572,6 +599,7 @@ async function managePage() {
         if (!p) return;
         const msgs = $$(`[data-go-msg="${p.id}"], [data-go-msg="next"]`, dash);
         // Copy first (while this page still has focus), then open the site.
+        pingShare(k.url);
         const copied = copyText(k[p.copy]);
         window.open(p.url, "_blank", "noopener");
         copied.then((ok) =>

@@ -468,6 +468,15 @@ export async function handleSublease(request, env, path, h) {
     return json({ ok: true, id, manageToken: token, live: !!paidCredit, emailed }, 201);
   }
 
+  if (path === "/api/sublease/share" && request.method === "POST") {
+    if (!h.isSameOrigin(request)) return json({ error: "Not allowed." }, 403);
+    const raw = await h.readJson(request);
+    if (typeof raw.id !== "string" || !ID.test(raw.id)) return json({ ok: false });
+    if (!(await h.quota(env.DB, "sublease-share:" + ip + ":" + raw.id, 20, Date.now() + 86400000))) return json({ ok: true });
+    await env.DB.prepare("UPDATE sublease_listings SET shares=shares+1 WHERE id=? AND status='live'").bind(raw.id).run().catch(() => null);
+    return json({ ok: true });
+  }
+
   if (path === "/api/sublease/leads" && request.method === "POST") {
     if (!h.isSameOrigin(request)) return json({ error: "Send this from the listing page." }, 403);
     const raw = await h.readJson(request);
@@ -525,6 +534,8 @@ export async function handleSublease(request, env, path, h) {
       ownerName: JSON.parse(row.data_json).ownerName,
       ownerEmail: row.owner_email,
       views: row.views || 0,
+      shares: row.shares || 0,
+      renewed: !!row.renewed,
       paidAt: row.paid_at,
       expiresAt: row.expires_at,
       leads: results,
@@ -542,6 +553,26 @@ export async function handleSublease(request, env, path, h) {
         env.DB.prepare("DELETE FROM sublease_listings WHERE id=?").bind(row.id),
       ]);
       return json({ ok: true, deleted: true });
+    }
+    if (body.action === "renew") {
+      const left = row.expires_at ? new Date(row.expires_at).getTime() - Date.now() : -1;
+      if (row.status !== "live" || left <= 0 || left > 7 * 86400000 || row.renewed)
+        return json({ error: "Extending isn't available right now." }, 400);
+      const exp = new Date(new Date(row.expires_at).getTime() + 30 * 86400000).toISOString();
+      await env.DB.prepare("UPDATE sublease_listings SET expires_at=?, renewed=1, renew_sent=0, updated_at=? WHERE id=?").bind(exp, now, row.id).run();
+      return json({ ok: true, expiresAt: exp });
+    }
+    if (body.action === "photos") {
+      const photos = Array.isArray(body.photos) ? body.photos.slice(0, 4) : [];
+      if (!photos.length) throw fail("Add at least one photo.");
+      for (const p of photos)
+        if (typeof p !== "string" || !PHOTO.test(p) || p.length > MAX_PHOTO) throw fail("Photos must be JPEG images under about 330 KB each.");
+      await env.DB.batch([
+        env.DB.prepare("DELETE FROM sublease_photos WHERE listing_id=?").bind(row.id),
+        ...photos.map((p, i) => env.DB.prepare("INSERT INTO sublease_photos (listing_id,n,data) VALUES (?,?,?)").bind(row.id, i, p)),
+        env.DB.prepare("UPDATE sublease_listings SET updated_at=? WHERE id=?").bind(now, row.id),
+      ]);
+      return json({ ok: true });
     }
     if (body.action === "edit") {
       const cur = JSON.parse(row.data_json);
@@ -680,6 +711,41 @@ export async function runSubleaseJobs(env, h) {
   }
   if (owed.length)
     await h.notify?.("Paid but has not filled out the form (" + owed.length + ")", "These students paid $39 and have not submitted their listing yet:\n\n" + owed.join("\n") + "\n\nA reminder goes out automatically. You can also reach out yourself.");
+  // Live listings: no-message nudge (day 5), renewal heads-up (7 days before the end), weekly progress email.
+  const nowIso = new Date().toISOString();
+  const soon = new Date(Date.now() + 7 * 86400000).toISOString();
+  const manage = site + "/sublease-manage.html";
+  const liveBase = "SELECT id, owner_email, views, shares, renewed, expires_at, json_extract(data_json,'$.title') title, (SELECT COUNT(*) FROM sublease_leads WHERE listing_id=sublease_listings.id) msgs FROM sublease_listings WHERE status='live' AND expires_at > ? ";
+  const { results: noMsg } = await env.DB.prepare(liveBase + "AND nudge_sent=0 AND paid_at < ? AND (SELECT COUNT(*) FROM sublease_leads WHERE listing_id=sublease_listings.id)=0 LIMIT 20")
+    .bind(nowIso, ago(5 * 1440)).all().catch(() => ({ results: [] }));
+  for (const r of noMsg) {
+    await env.DB.prepare("UPDATE sublease_listings SET nudge_sent=1 WHERE id=?").bind(r.id).run().catch(() => null);
+    await sendStudent(h, r.owner_email, "No messages yet? Try these 3 quick fixes", [
+      "Your listing has had " + (r.views || 0) + " view" + (r.views === 1 ? "" : "s") + " and no messages yet. That's normal in the first week, and it's usually fixable.",
+      "1) Post it in one more place (your Facebook group and school housing board work best). 2) Refresh the post with \"still available\" and a new photo. 3) If it has been a week, try lowering the rent by $25-50, since subleases fill fast when they're priced a little under the market.",
+      "Your War Room has a button that copies your ready-made post and opens each site for you.",
+    ], "Open my Sublease War Room", manage);
+    await bump(env, "nudge_sent");
+  }
+  const { results: ending } = await env.DB.prepare(liveBase + "AND renew_sent=0 AND expires_at < ? LIMIT 20").bind(nowIso, soon).all().catch(() => ({ results: [] }));
+  for (const r of ending) {
+    await env.DB.prepare("UPDATE sublease_listings SET renew_sent=1 WHERE id=?").bind(r.id).run().catch(() => null);
+    const endDate = new Date(r.expires_at).toLocaleDateString("en-US", { month: "long", day: "numeric", timeZone: "America/Chicago" });
+    await sendStudent(h, r.owner_email, "Your listing ends on " + endDate, [
+      "Your Sublease War Room listing \"" + String(r.title || "your place").slice(0, 70) + "\" comes down on " + endDate + ".",
+      r.renewed ? "If you found someone, open your War Room and tap Mark as filled. If you still need someone, you can list again from the War Room page." : "Still need someone? Open your War Room and tap \"Keep my listing live 30 more days\". It's free and takes one tap. If you found someone, tap Mark as filled instead.",
+    ], "Open my Sublease War Room", manage);
+    await bump(env, "renew_sent");
+  }
+  const { results: digest } = await env.DB.prepare(liveBase + "AND ((digest_at IS NULL AND paid_at < ?) OR digest_at < ?) LIMIT 20").bind(nowIso, ago(7 * 1440), ago(7 * 1440)).all().catch(() => ({ results: [] }));
+  for (const r of digest) {
+    await env.DB.prepare("UPDATE sublease_listings SET digest_at=? WHERE id=?").bind(nowIso, r.id).run().catch(() => null);
+    await sendStudent(h, r.owner_email, "How your listing is doing this week", [
+      "\"" + String(r.title || "Your place").slice(0, 70) + "\" so far: " + (r.views || 0) + " view" + (r.views === 1 ? "" : "s") + ", " + (r.shares || 0) + " share" + (r.shares === 1 ? "" : "s") + ", " + r.msgs + " message" + (r.msgs === 1 ? "" : "s") + ".",
+      r.msgs ? "Reply fast. Students usually go with the first person who answers." : "Share your link in your Facebook group again and refresh the post. A new photo or a small price drop gets listings moving.",
+    ], "Open my Sublease War Room", manage);
+    await bump(env, "digest_sent");
+  }
   // Checkout started, nothing recorded
   const { results: stalled } = await env.DB.prepare(
     "SELECT i.code, i.email, i.abandon_sent FROM sublease_intents i WHERE i.owner_alerted=0 AND i.created_at < ? AND NOT EXISTS (SELECT 1 FROM sublease_credits c WHERE c.code=i.code) AND NOT EXISTS (SELECT 1 FROM sublease_listings l WHERE l.pay_code=i.code OR l.id=i.code)",
