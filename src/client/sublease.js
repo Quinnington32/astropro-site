@@ -23,6 +23,25 @@ const say = (el, text, ok = false) => {
 };
 const typeLabel = { sublease: "Sublease", relet: "Relet", assignment: "Lease takeover" };
 const bedText = (l) => (l.bedrooms === 0 ? "Studio" : l.bedrooms + " bd") + " · " + l.bathrooms + " ba";
+const copyText = async (text) => {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch {
+    try {
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.cssText = "position:fixed;opacity:0";
+      document.body.appendChild(ta);
+      ta.select();
+      const ok = document.execCommand("copy");
+      ta.remove();
+      return ok;
+    } catch {
+      return false;
+    }
+  }
+};
 // Share links: Facebook first, then the other places students actually send things.
 const shareBar = (url, title) => {
   const u = encodeURIComponent(url),
@@ -551,11 +570,12 @@ async function managePage() {
       b.addEventListener("click", () => {
         const p = plats.find((x) => x.id === b.dataset.go);
         if (!p) return;
-        window.open(p.url, "_blank", "noopener");
         const msgs = $$(`[data-go-msg="${p.id}"], [data-go-msg="next"]`, dash);
-        navigator.clipboard.writeText(k[p.copy]).then(
-          () => msgs.forEach((m) => say(m, "Copied! Paste it into the page that just opened, add your photos, and post. Then tick Posted.", true)),
-          () => msgs.forEach((m) => say(m, "Couldn't copy automatically. Use Copy the text only, then open the site.")),
+        // Copy first (while this page still has focus), then open the site.
+        const copied = copyText(k[p.copy]);
+        window.open(p.url, "_blank", "noopener");
+        copied.then((ok) =>
+          msgs.forEach((m) => say(m, ok ? "Copied! Paste it into the page that just opened, add your photos, and post. Then tick Posted." : "Couldn't copy automatically. Tap Copy the text only, then paste it into the site.", ok)),
         );
       }),
     );
