@@ -7444,5 +7444,589 @@
       }
     ],
     "facebookGroup": "https://www.facebook.com/groups/1930302061660730/"
+  },
+  {
+    "id": "housing-state-college-pa",
+    "file": "housing-state-college-pa.html",
+    "school": "Penn State University",
+    "place": "State College, PA",
+    "description": "Penn State students rent right around campus: apartment towers and mid-rises along College and Beaver Avenues downtown, and larger complexes along Waupelani Drive and Toftrees a bit farther out.",
+    "properties": [
+      {
+        "id": "housing-state-college-pa-property-the-canyon",
+        "name": "The Canyon",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Canyon%2C%20State%20College%2C%20PA",
+        "summary": "Student apartment community near Penn State University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 1
+      },
+      {
+        "id": "housing-state-college-pa-property-campus-view-apartments",
+        "name": "Campus View Apartments",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Campus%20View%20Apartments%2C%20State%20College%2C%20PA",
+        "summary": "Student apartment community near Penn State University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 2
+      },
+      {
+        "id": "housing-state-college-pa-property-blue-course-commons",
+        "name": "Blue Course Commons",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Blue%20Course%20Commons%2C%20State%20College%2C%20PA",
+        "summary": "Student apartment community near Penn State University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 3
+      },
+      {
+        "id": "housing-state-college-pa-property-lion-s-gate-apartments",
+        "name": "Lion's Gate Apartments",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Lion's%20Gate%20Apartments%2C%20State%20College%2C%20PA",
+        "summary": "Student apartment community near Penn State University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 4
+      }
+    ]
+  },
+  {
+    "id": "housing-west-lafayette-in",
+    "file": "housing-west-lafayette-in.html",
+    "school": "Purdue University",
+    "place": "West Lafayette, IN",
+    "description": "Purdue is surrounded by student apartment communities, from the Chauncey Hill area right at campus to complexes along Northwestern Avenue, Sagamore Parkway and Yeager Road.",
+    "properties": [
+      {
+        "id": "housing-west-lafayette-in-property-campus-edge-on-pierce",
+        "name": "Campus Edge on Pierce",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Campus%20Edge%20on%20Pierce%2C%20West%20Lafayette%2C%20IN",
+        "summary": "Student apartment community near Purdue University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 1,
+        "website": "https://americancampus.com/student-apartments/in/west-lafayette",
+        "source": "https://americancampus.com/student-apartments/in/west-lafayette"
+      },
+      {
+        "id": "housing-west-lafayette-in-property-hub-on-campus-west-lafayette",
+        "name": "Hub on Campus West Lafayette",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Hub%20on%20Campus%20West%20Lafayette%2C%20West%20Lafayette%2C%20IN",
+        "summary": "Student apartment community near Purdue University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 2
+      },
+      {
+        "id": "housing-west-lafayette-in-property-fuse-apartments",
+        "name": "FUSE Apartments",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=FUSE%20Apartments%2C%20West%20Lafayette%2C%20IN",
+        "summary": "Student apartment community near Purdue University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 3
+      },
+      {
+        "id": "housing-west-lafayette-in-property-the-landing-apartments",
+        "name": "The Landing Apartments",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Landing%20Apartments%2C%20West%20Lafayette%2C%20IN",
+        "summary": "Student apartment community near Purdue University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 4
+      }
+    ]
+  },
+  {
+    "id": "housing-tallahassee-fl",
+    "file": "housing-tallahassee-fl.html",
+    "school": "Florida State University",
+    "place": "Tallahassee, FL",
+    "description": "FSU students live in student communities near campus and along Tennessee Street and Copeland Street, plus complexes on the shuttle routes a little farther out.",
+    "properties": [
+      {
+        "id": "housing-tallahassee-fl-property-stadium-centre",
+        "name": "Stadium Centre",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Stadium%20Centre%2C%20Tallahassee%2C%20FL",
+        "summary": "Student apartment community near Florida State University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 1,
+        "website": "https://www.americancampus.com/student-apartments/fl/tallahassee",
+        "source": "https://www.americancampus.com/student-apartments/fl/tallahassee"
+      },
+      {
+        "id": "housing-tallahassee-fl-property-601-copeland",
+        "name": "601 Copeland",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=601%20Copeland%2C%20Tallahassee%2C%20FL",
+        "summary": "Student apartment community near Florida State University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 2,
+        "website": "https://www.americancampus.com/student-apartments/fl/tallahassee/601-copeland",
+        "source": "https://www.americancampus.com/student-apartments/fl/tallahassee/601-copeland"
+      },
+      {
+        "id": "housing-tallahassee-fl-property-university-village",
+        "name": "University Village",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=University%20Village%2C%20Tallahassee%2C%20FL",
+        "summary": "Student apartment community near Florida State University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 3,
+        "website": "https://www.americancampus.com/student-apartments/fl/tallahassee/university-village-tallahassee",
+        "source": "https://www.americancampus.com/student-apartments/fl/tallahassee/university-village-tallahassee"
+      },
+      {
+        "id": "housing-tallahassee-fl-property-campus-row",
+        "name": "Campus Row",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Campus%20Row%2C%20Tallahassee%2C%20FL",
+        "summary": "Student apartment community near Florida State University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 4
+      }
+    ]
+  },
+  {
+    "id": "housing-orlando-fl",
+    "file": "housing-orlando-fl.html",
+    "school": "University of Central Florida",
+    "place": "Orlando, FL",
+    "description": "UCF's huge main campus is ringed by student apartment communities along University Boulevard, Alafaya Trail and Collegiate Way, many with shuttle service to campus.",
+    "properties": [
+      {
+        "id": "housing-orlando-fl-property-plaza-on-university",
+        "name": "Plaza on University",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Plaza%20on%20University%2C%20Orlando%2C%20FL",
+        "summary": "Student apartment community near University of Central Florida. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 1,
+        "website": "https://www.americancampus.com/Student-Apartments/FL/Orlando",
+        "source": "https://www.americancampus.com/Student-Apartments/FL/Orlando"
+      },
+      {
+        "id": "housing-orlando-fl-property-mercury-3100",
+        "name": "Mercury 3100",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Mercury%203100%2C%20Orlando%2C%20FL",
+        "summary": "Student apartment community near University of Central Florida. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 2,
+        "website": "https://www.americancampus.com/Student-Apartments/FL/Orlando",
+        "source": "https://www.americancampus.com/Student-Apartments/FL/Orlando"
+      },
+      {
+        "id": "housing-orlando-fl-property-the-accolade-collegiate-village",
+        "name": "The Accolade Collegiate Village",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Accolade%20Collegiate%20Village%2C%20Orlando%2C%20FL",
+        "summary": "Student apartment community near University of Central Florida. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 3
+      },
+      {
+        "id": "housing-orlando-fl-property-the-quad-apartments",
+        "name": "The Quad Apartments",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Quad%20Apartments%2C%20Orlando%2C%20FL",
+        "summary": "Student apartment community near University of Central Florida. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 4,
+        "website": "https://www.thequadorlando.com",
+        "source": "https://www.thequadorlando.com"
+      }
+    ]
+  },
+  {
+    "id": "housing-athens-ga",
+    "file": "housing-athens-ga.html",
+    "school": "University of Georgia",
+    "place": "Athens, GA",
+    "description": "UGA students rent downtown near campus and in communities along Barnett Shoals Road, Macon Highway and Oconee Street, many on bus routes.",
+    "properties": [
+      {
+        "id": "housing-athens-ga-property-georgia-heights",
+        "name": "Georgia Heights",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Georgia%20Heights%2C%20Athens%2C%20GA",
+        "summary": "Student apartment community near University of Georgia. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 1,
+        "website": "https://www.americancampus.com/student-apartments/ga/athens/georgia-heights",
+        "source": "https://www.americancampus.com/student-apartments/ga/athens/georgia-heights"
+      },
+      {
+        "id": "housing-athens-ga-property-one-athens",
+        "name": "One Athens",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=One%20Athens%2C%20Athens%2C%20GA",
+        "summary": "Student apartment community near University of Georgia. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 2
+      },
+      {
+        "id": "housing-athens-ga-property-oaks-athens",
+        "name": "Oaks Athens",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Oaks%20Athens%2C%20Athens%2C%20GA",
+        "summary": "Student apartment community near University of Georgia. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 3
+      },
+      {
+        "id": "housing-athens-ga-property-the-flats-at-carrs-hill",
+        "name": "The Flats at Carrs Hill",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Flats%20at%20Carrs%20Hill%2C%20Athens%2C%20GA",
+        "summary": "Student apartment community near University of Georgia. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 4
+      }
+    ]
+  },
+  {
+    "id": "housing-tuscaloosa-al",
+    "file": "housing-tuscaloosa-al.html",
+    "school": "University of Alabama",
+    "place": "Tuscaloosa, AL",
+    "description": "Alabama students live close to campus around 11th and 13th Streets and 15th-17th Streets, and in larger communities along McFarland and Hargrove.",
+    "properties": [
+      {
+        "id": "housing-tuscaloosa-al-property-the-crimson",
+        "name": "The Crimson",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Crimson%2C%20Tuscaloosa%2C%20AL",
+        "summary": "Student apartment community near University of Alabama. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 1
+      },
+      {
+        "id": "housing-tuscaloosa-al-property-state-on-campus-tuscaloosa",
+        "name": "State on Campus Tuscaloosa",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=State%20on%20Campus%20Tuscaloosa%2C%20Tuscaloosa%2C%20AL",
+        "summary": "Student apartment community near University of Alabama. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 2,
+        "website": "https://www.apartments.com/state-on-campus-tuscaloosa-tuscaloosa-al/5gdyjnq",
+        "source": "https://www.apartments.com/state-on-campus-tuscaloosa-tuscaloosa-al/5gdyjnq"
+      },
+      {
+        "id": "housing-tuscaloosa-al-property-lark",
+        "name": "Lark",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Lark%2C%20Tuscaloosa%2C%20AL",
+        "summary": "Student apartment community near University of Alabama. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 3
+      },
+      {
+        "id": "housing-tuscaloosa-al-property-here-tuscaloosa",
+        "name": "HERE Tuscaloosa",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=HERE%20Tuscaloosa%2C%20Tuscaloosa%2C%20AL",
+        "summary": "Student apartment community near University of Alabama. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 4
+      }
+    ]
+  },
+  {
+    "id": "housing-auburn-al",
+    "file": "housing-auburn-al.html",
+    "school": "Auburn University",
+    "place": "Auburn, AL",
+    "description": "Auburn students rent in walkable downtown areas along College Street, Glenn Avenue and Magnolia Avenue, plus larger communities along Donahue and Dean Roads.",
+    "properties": [
+      {
+        "id": "housing-auburn-al-property-160-ross",
+        "name": "160 Ross",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=160%20Ross%2C%20Auburn%2C%20AL",
+        "summary": "Student apartment community near Auburn University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 1,
+        "website": "https://americancampus.com/student-apartments/al/auburn/160-ross",
+        "source": "https://americancampus.com/student-apartments/al/auburn/160-ross"
+      },
+      {
+        "id": "housing-auburn-al-property-191-college",
+        "name": "191 College",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=191%20College%2C%20Auburn%2C%20AL",
+        "summary": "Student apartment community near Auburn University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 2,
+        "website": "https://www.americancampus.com/student-apartments/al/auburn/191-college",
+        "source": "https://www.americancampus.com/student-apartments/al/auburn/191-college"
+      },
+      {
+        "id": "housing-auburn-al-property-eagles-west",
+        "name": "Eagles West",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Eagles%20West%2C%20Auburn%2C%20AL",
+        "summary": "Student apartment community near Auburn University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 3
+      },
+      {
+        "id": "housing-auburn-al-property-oliv-auburn",
+        "name": "oLiv Auburn",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=oLiv%20Auburn%2C%20Auburn%2C%20AL",
+        "summary": "Student apartment community near Auburn University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 4
+      }
+    ]
+  },
+  {
+    "id": "housing-baton-rouge-la",
+    "file": "housing-baton-rouge-la.html",
+    "school": "Louisiana State University",
+    "place": "Baton Rouge, LA",
+    "description": "LSU students rent in Tigerland, along Highland Road and River Road, and in communities off Burbank Drive and Ben Hur Road.",
+    "properties": [
+      {
+        "id": "housing-baton-rouge-la-property-arlington-cottages-and-townhomes",
+        "name": "Arlington Cottages and Townhomes",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Arlington%20Cottages%20and%20Townhomes%2C%20Baton%20Rouge%2C%20LA",
+        "summary": "Student apartment community near Louisiana State University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 1,
+        "website": "https://arlington-cottages-townhomes.squarespace.com",
+        "source": "https://arlington-cottages-townhomes.squarespace.com"
+      },
+      {
+        "id": "housing-baton-rouge-la-property-the-retreat-at-brightside",
+        "name": "The Retreat at Brightside",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Retreat%20at%20Brightside%2C%20Baton%20Rouge%2C%20LA",
+        "summary": "Student apartment community near Louisiana State University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 2
+      },
+      {
+        "id": "housing-baton-rouge-la-property-arc225",
+        "name": "Arc225",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Arc225%2C%20Baton%20Rouge%2C%20LA",
+        "summary": "Student apartment community near Louisiana State University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 3
+      },
+      {
+        "id": "housing-baton-rouge-la-property-the-bengal-apartments",
+        "name": "The Bengal Apartments",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Bengal%20Apartments%2C%20Baton%20Rouge%2C%20LA",
+        "summary": "Student apartment community near Louisiana State University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 4
+      }
+    ]
+  },
+  {
+    "id": "housing-clemson-sc",
+    "file": "housing-clemson-sc.html",
+    "school": "Clemson University",
+    "place": "Clemson, SC",
+    "description": "Clemson's student housing market is made up of apartment and townhome communities around town, many with shuttles or bus service to campus.",
+    "properties": [
+      {
+        "id": "housing-clemson-sc-property-u-centre-on-college",
+        "name": "U Centre on College",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=U%20Centre%20on%20College%2C%20Clemson%2C%20SC",
+        "summary": "Student apartment community near Clemson University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 1,
+        "website": "https://www.americancampus.com/student-apartments/sc/clemson/u-centre-on-college",
+        "source": "https://www.americancampus.com/student-apartments/sc/clemson/u-centre-on-college"
+      },
+      {
+        "id": "housing-clemson-sc-property-campus-view-apartments",
+        "name": "Campus View Apartments",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Campus%20View%20Apartments%2C%20Clemson%2C%20SC",
+        "summary": "Student apartment community near Clemson University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 2,
+        "website": "https://landmarkproperties.com/property/campus-view-apartments",
+        "source": "https://landmarkproperties.com/property/campus-view-apartments"
+      },
+      {
+        "id": "housing-clemson-sc-property-the-collective-at-clemson",
+        "name": "The Collective at Clemson",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Collective%20at%20Clemson%2C%20Clemson%2C%20SC",
+        "summary": "Student apartment community near Clemson University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 3
+      },
+      {
+        "id": "housing-clemson-sc-property-clemson-edge",
+        "name": "Clemson Edge",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Clemson%20Edge%2C%20Clemson%2C%20SC",
+        "summary": "Student apartment community near Clemson University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 4
+      }
+    ]
+  },
+  {
+    "id": "housing-chapel-hill-nc",
+    "file": "housing-chapel-hill-nc.html",
+    "school": "University of North Carolina at Chapel Hill",
+    "place": "Chapel Hill, NC",
+    "description": "UNC students rent downtown along Franklin and Rosemary Streets, near Carrboro, and in communities farther out that run shuttles to campus.",
+    "properties": [
+      {
+        "id": "housing-chapel-hill-nc-property-carolina-square",
+        "name": "Carolina Square",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Carolina%20Square%2C%20Chapel%20Hill%2C%20NC",
+        "summary": "Student apartment community near University of North Carolina at Chapel Hill. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 1
+      },
+      {
+        "id": "housing-chapel-hill-nc-property-the-warehouse",
+        "name": "The Warehouse",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Warehouse%2C%20Chapel%20Hill%2C%20NC",
+        "summary": "Student apartment community near University of North Carolina at Chapel Hill. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 2
+      },
+      {
+        "id": "housing-chapel-hill-nc-property-shortbread-lofts",
+        "name": "Shortbread Lofts",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Shortbread%20Lofts%2C%20Chapel%20Hill%2C%20NC",
+        "summary": "Student apartment community near University of North Carolina at Chapel Hill. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 3
+      },
+      {
+        "id": "housing-chapel-hill-nc-property-university-apartments-chapel-hill",
+        "name": "University Apartments Chapel Hill",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=University%20Apartments%20Chapel%20Hill%2C%20Chapel%20Hill%2C%20NC",
+        "summary": "Student apartment community near University of North Carolina at Chapel Hill. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 4
+      }
+    ]
+  },
+  {
+    "id": "housing-blacksburg-va",
+    "file": "housing-blacksburg-va.html",
+    "school": "Virginia Tech",
+    "place": "Blacksburg, VA",
+    "description": "Virginia Tech students rent in apartment communities on the Blacksburg Transit bus routes, from near downtown to complexes along Prices Fork Road and University City Boulevard.",
+    "properties": [
+      {
+        "id": "housing-blacksburg-va-property-union-blacksburg",
+        "name": "Union Blacksburg",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Union%20Blacksburg%2C%20Blacksburg%2C%20VA",
+        "summary": "Student apartment community near Virginia Tech. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 1
+      },
+      {
+        "id": "housing-blacksburg-va-property-collegiate-suites-of-blacksburg",
+        "name": "Collegiate Suites of Blacksburg",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Collegiate%20Suites%20of%20Blacksburg%2C%20Blacksburg%2C%20VA",
+        "summary": "Student apartment community near Virginia Tech. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 2
+      },
+      {
+        "id": "housing-blacksburg-va-property-fourteen35-apartments",
+        "name": "Fourteen35 Apartments",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Fourteen35%20Apartments%2C%20Blacksburg%2C%20VA",
+        "summary": "Student apartment community near Virginia Tech. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 3
+      },
+      {
+        "id": "housing-blacksburg-va-property-foxridge-apartments",
+        "name": "Foxridge Apartments",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Foxridge%20Apartments%2C%20Blacksburg%2C%20VA",
+        "summary": "Student apartment community near Virginia Tech. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 4
+      }
+    ]
+  },
+  {
+    "id": "housing-bloomington-in",
+    "file": "housing-bloomington-in.html",
+    "school": "Indiana University Bloomington",
+    "place": "Bloomington, IN",
+    "description": "IU students rent in downtown Bloomington, along Kirkwood Avenue, and in neighborhoods and complexes a short bus ride from campus.",
+    "properties": [
+      {
+        "id": "housing-bloomington-in-property-the-park-on-morton",
+        "name": "The Park on Morton",
+        "verifiedAt": "2026-11-25",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The%20Park%20on%20Morton%2C%20Bloomington%2C%20IN",
+        "summary": "Student apartment community near Indiana University. Check the property's own site for floor plans, pricing and its relet or sublease rules.",
+        "pick": 1
+      }
+    ]
+  },
+  {
+    "id": "housing-east-lansing-mi",
+    "file": "housing-east-lansing-mi.html",
+    "school": "Michigan State University",
+    "place": "East Lansing, MI",
+    "description": "Michigan State students rent in the neighborhoods and apartment communities around East Lansing's downtown and the edges of campus.",
+    "properties": []
+  },
+  {
+    "id": "housing-champaign-il",
+    "file": "housing-champaign-il.html",
+    "school": "University of Illinois Urbana-Champaign",
+    "place": "Champaign, IL",
+    "description": "Illinois students rent in Campustown and the surrounding Champaign-Urbana neighborhoods near campus.",
+    "properties": []
+  },
+  {
+    "id": "housing-lubbock-tx",
+    "file": "housing-lubbock-tx.html",
+    "school": "Texas Tech University",
+    "place": "Lubbock, TX",
+    "description": "Texas Tech students rent in apartment communities around campus and along the major streets near the university.",
+    "properties": []
+  },
+  {
+    "id": "housing-waco-tx",
+    "file": "housing-waco-tx.html",
+    "school": "Baylor University",
+    "place": "Waco, TX",
+    "description": "Baylor students rent in the neighborhoods and communities around campus and along the Brazos River.",
+    "properties": []
+  },
+  {
+    "id": "housing-knoxville-tn",
+    "file": "housing-knoxville-tn.html",
+    "school": "University of Tennessee",
+    "place": "Knoxville, TN",
+    "description": "Tennessee students rent in the Fort Sanders area near campus and in communities along the river and the main roads around the university.",
+    "properties": []
+  },
+  {
+    "id": "housing-lexington-ky",
+    "file": "housing-lexington-ky.html",
+    "school": "University of Kentucky",
+    "place": "Lexington, KY",
+    "description": "Kentucky students rent in the neighborhoods and apartment communities around campus and downtown Lexington.",
+    "properties": []
+  },
+  {
+    "id": "housing-fayetteville-ar",
+    "file": "housing-fayetteville-ar.html",
+    "school": "University of Arkansas",
+    "place": "Fayetteville, AR",
+    "description": "Arkansas students rent in the neighborhoods around campus and in communities along the main corridors of Fayetteville.",
+    "properties": []
+  },
+  {
+    "id": "housing-oxford-ms",
+    "file": "housing-oxford-ms.html",
+    "school": "University of Mississippi",
+    "place": "Oxford, MS",
+    "description": "Ole Miss students rent in communities around Oxford and near the campus.",
+    "properties": []
+  },
+  {
+    "id": "housing-columbia-sc",
+    "file": "housing-columbia-sc.html",
+    "school": "University of South Carolina",
+    "place": "Columbia, SC",
+    "description": "South Carolina students rent in Five Points, the Vista and the apartment communities around campus.",
+    "properties": []
+  },
+  {
+    "id": "housing-columbia-mo",
+    "file": "housing-columbia-mo.html",
+    "school": "University of Missouri",
+    "place": "Columbia, MO",
+    "description": "Mizzou students rent downtown, near campus, and in communities along the main roads around Columbia.",
+    "properties": []
+  },
+  {
+    "id": "housing-eugene-or",
+    "file": "housing-eugene-or.html",
+    "school": "University of Oregon",
+    "place": "Eugene, OR",
+    "description": "Oregon students rent in the neighborhoods around campus and the apartment communities along the main roads in Eugene.",
+    "properties": []
   }
 ]

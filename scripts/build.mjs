@@ -397,6 +397,7 @@ const marketPageBody = (m) => {
   const body =
     `<div class="wrap breadcrumb"><a href="housing.html">← All housing markets</a></div>` +
     hero(m.place, `Explore housing options near ${m.school}.`, "", "Off-campus housing") +
+    `<section class="wrap"><div class="callout war-banner"><h2>Stuck in a lease near ${e(seoPrimary(m))}? Enter the Sublease War Room.</h2><p>We list your place, share it to the local Facebook groups, write your posts and email your landlord every week until someone takes over. One-time $39.</p><div class="cta-row"><a class="btn btn-primary" href="sublease-war-room.html?market=${encodeURIComponent(m.id)}">Enter the Sublease War Room</a>${seoIds.has(m.id) ? `<a class="btn btn-ghost" href="${seoFile(m)}">Subleases near ${e(seoPrimary(m))}</a>` : ""}</div></div></section>` +
     `<section class="wrap"><p class="notice">${e(m.description)} Check eligibility, commute, and availability directly with each property.</p></section>` +
     picksHtml +
     feedHtml +
@@ -408,8 +409,10 @@ const marketPageBody = (m) => {
 };
 
 // ---- SEO: sublease / relet / lease takeover pages --------------------------------
+const SEO_NEW = ["state-college-pa","west-lafayette-in","tallahassee-fl","orlando-fl","athens-ga","tuscaloosa-al","auburn-al","baton-rouge-la","clemson-sc","chapel-hill-nc","blacksburg-va","bloomington-in","east-lansing-mi","champaign-il","lubbock-tx","waco-tx","knoxville-tn","lexington-ky","fayetteville-ar","oxford-ms","columbia-sc","columbia-mo","eugene-or"];
 const SEO_SCHOOLS = ["college-station-tx", "austin-tx", "columbus", "ann-arbor", "tempe-az", "gainesville", "san-marcos-tx", "houston", "denton", "ames-ia", "tucson-az", "madison", "minneapolis", "tampa", "provo-ut", "stillwater-ok", "lawrence-ks", "manhattan-ks", "raleigh-nc", "fort-collins-co"];
-const seoMarkets = SEO_SCHOOLS.map((k) => markets.find((m) => m.id === "housing-" + k)).filter(Boolean);
+const seoGood = (m) => !/^Colleges and universities near/.test(m.school) && (SEO_SCHOOLS.includes(m.id.replace(/^housing-/, "")) || m.properties.length >= 3 || SEO_NEW.includes(m.id.replace(/^housing-/, "")));
+const seoMarkets = markets.filter(seoGood);
 const seoFile = (m) => "sublease-" + m.id.replace(/^housing-/, "") + ".html";
 const seoPrimary = (m) => m.school.split(/ & |, /)[0];
 const seoIds = new Set(seoMarkets.map((m) => m.id));
@@ -447,7 +450,7 @@ emit(
   "Sublease by school: relets and lease takeovers near campus",
   "Browse sublease, relet and lease takeover pages for major off-campus student housing markets, and list your own place for local students.",
   hero("Sublease by school.", "Find a sublease or hand off your lease near campus.", `<div class="cta-row"><a class="btn btn-primary" href="sublease-war-room.html">Sublease War Room</a><a class="btn btn-ghost" href="get-out-of-my-lease.html">Get out of your lease</a></div>`, "Sublease & relet") +
-    `<section class="wrap prose"><h2>Pick your school</h2><ul class="link-grid">${seoMarkets.map((m) => `<li><a href="${seoFile(m)}">Sublease near ${e(seoPrimary(m))} <span class="muted">(${e(m.place)})</span></a></li>`).join("")}</ul><p>Don't see your school? <a href="housing.html#markets">Browse every housing market</a> or <a href="sublease-war-room.html">list your place anyway</a>.</p></section>`,
+    `<section class="wrap prose"><h2>Pick your school</h2>${(() => { const by = {}; for (const m of seoMarkets) (by[(m.place.match(/,\s*([A-Z]{2})$/) || [, "Other"])[1]] ||= []).push(m); return Object.keys(by).sort().map((st) => `<h3>${st}</h3><ul class="link-grid">${by[st].map((m) => `<li><a href="${seoFile(m)}">Sublease near ${e(seoPrimary(m))} <span class="muted">(${e(m.place)})</span></a></li>`).join("")}</ul>`).join(""); })()}<p>Don't see your school? <a href="housing.html#markets">Browse every housing market</a> or <a href="sublease-war-room.html">list your place anyway</a>.</p></section>`,
 );
 emit(
   "get-out-of-my-lease.html",
