@@ -548,6 +548,7 @@ export async function handleSublease(request, env, path, h) {
       ownerEmail: row.owner_email,
       views: row.views || 0,
       landlord: await env.DB.prepare("SELECT landlord_email email, landlord_name name, property, note, active, sent, last_sent lastSent FROM sublease_landlord WHERE listing_id=?").bind(row.id).first().catch(() => null),
+      outcome: await env.DB.prepare("SELECT found_via foundVia FROM sublease_outcomes WHERE listing_id=?").bind(row.id).first().catch(() => null),
       shares: row.shares || 0,
       renewed: !!row.renewed,
       paidAt: row.paid_at,
@@ -567,6 +568,15 @@ export async function handleSublease(request, env, path, h) {
         env.DB.prepare("DELETE FROM sublease_listings WHERE id=?").bind(row.id),
       ]);
       return json({ ok: true, deleted: true });
+    }
+    if (body.action === "outcome") {
+      if (row.status !== "filled") throw fail("Mark your listing as filled first.");
+      const via = ["astropro", "elsewhere"].includes(body.foundVia) ? body.foundVia : "elsewhere";
+      const quote = clean(body.quote, 600);
+      await env.DB.prepare("INSERT INTO sublease_outcomes (listing_id,found_via,quote,share_ok,created_at) VALUES (?,?,?,?,?) ON CONFLICT(listing_id) DO UPDATE SET found_via=excluded.found_via, quote=excluded.quote, share_ok=excluded.share_ok")
+        .bind(row.id, via, quote, body.shareOk ? 1 : 0, now).run();
+      await h.notify?.("Sublease success story: " + (via === "astropro" ? "found through AstroPro" : "found elsewhere"), JSON.parse(row.data_json).ownerName + " <" + row.owner_email + "> filled " + row.id + ".\n\nFound via: " + via + "\nOK to share: " + (body.shareOk ? "yes" : "no") + "\n\n" + (quote || "(no comment)"));
+      return json({ ok: true });
     }
     if (body.action === "landlord-stop") {
       await env.DB.prepare("UPDATE sublease_landlord SET active=0 WHERE listing_id=?").bind(row.id).run();
@@ -637,6 +647,7 @@ export async function handleSublease(request, env, path, h) {
     await env.DB.prepare("UPDATE sublease_listings SET status=?, updated_at=? WHERE id=?")
       .bind(next, now, row.id)
       .run();
+    if (next === "filled") await h.notify?.("Sublease listing marked FILLED", JSON.parse(row.data_json).ownerName + " marked " + row.id + " (" + row.market_name + ", $" + JSON.parse(row.data_json).rent + "/mo) as filled.");
     return json({ ok: true, status: next });
   }
   return json({ error: "Endpoint not found." }, 404);

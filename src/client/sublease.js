@@ -501,6 +501,7 @@ async function managePage() {
     dash.innerHTML = `
       <div class="sl-acct"><span>Signed in as <strong>${esc(data.ownerEmail || l.ownerName || "you")}</strong></span><span><button class="btn btn-ghost" type="button" data-copy-private>Copy my private link</button> <button class="btn btn-ghost" type="button" data-signout>Sign out</button></span></div>
       <div class="sl-status ${esc(l.status)}"><div><strong>${esc(l.title)}</strong><span>${esc(l.marketName)} · ${money(l.rent)}/mo</span></div><span class="sl-pill">${esc({ pending_payment: "Waiting for payment", live: "Live", paused: "Paused", filled: "Filled", expired: "Expired" }[l.status])}</span></div>
+      ${l.status === "filled" ? `<div class="callout sl-win"><h2>Congrats, you found someone! 🎉</h2>${data.outcome ? "<p>Thanks for telling us. You're all set.</p>" : `<form id="slOutForm" class="sl-form"><p>One quick question to help the next student.</p><div class="field"><label for="out_via">Where did you find them?</label><select id="out_via" name="foundVia"><option value="astropro">Through my AstroPro listing or message</option><option value="elsewhere">Somewhere else (Facebook, a friend, my landlord...)</option></select></div><div class="field"><label for="out_quote">Anything you'd tell the next student? (optional)</label><textarea id="out_quote" name="quote" rows="3" maxlength="600" placeholder="What worked, what didn't..."></textarea></div><label class="checkbox-label"><input type="checkbox" name="shareOk"><span>You can share my comment (first name only) on the site.</span></label><p><button class="btn btn-primary" type="submit">Send</button></p><p class="sl-msg" id="slOutMsg" hidden></p></form>`}</div>` : ""}
       ${pending ? `<div class="callout"><h2>${l.status === "expired" ? "Bring your listing back" : "Publish your listing"}</h2><p>${l.status === "expired" ? "Your listing ended." : "Your listing is saved but not live yet."} Pay the one-time listing fee and it goes live for 60 days. It updates automatically within a minute or two of your payment. Your reference code is <code>${esc(l.id)}</code>.</p><p><a class="btn btn-primary" href="${payUrl.href}" rel="noopener">Pay $${esc(payBase.price)} with PayPal</a></p><p class="fineprint">Questions? Email <a href="mailto:support@astroprostudentresourcecenter.com">support@astroprostudentresourcecenter.com</a> with your reference code.</p></div>` : ""}
       ${live ? `<div class="sl-stats"><div><strong>${data.views || 0}</strong><span>Views</span></div><div><strong>${data.shares || 0}</strong><span>Shares</span></div><div><strong>${data.leads.length}</strong><span>Messages</span></div><div><strong>${daysLeft}</strong><span>Days left</span></div></div>${data.leads.length ? "" : (data.views >= 10 ? `<p class="sl-tip">${data.views} people looked and none messaged yet. A new photo or a $25 price drop usually helps. Use Edit listing below.</p>` : `<p class="sl-tip">New listings take a few days to get traction. Post in your next place below and share your link.</p>`)}` : ""}
       ${live && canRenew ? `<div class="callout"><h2>Your listing ends in ${daysLeft} day${daysLeft === 1 ? "" : "s"}</h2><p>Still need someone? Keep it live 30 more days, free. One time per listing.</p><p><button class="btn btn-primary" type="button" data-renew>Keep my listing live 30 more days</button> <span class="sl-msg" id="slRenewMsg" hidden></span></p></div>` : ""}
@@ -562,6 +563,17 @@ async function managePage() {
         render();
       }),
     );
+    $("#slOutForm", dash)?.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const f = e.currentTarget;
+      const v = Object.fromEntries(new FormData(f).entries());
+      try {
+        await api("/manage/" + id, { method: "POST", headers, body: JSON.stringify({ action: "outcome", foundVia: v.foundVia, quote: v.quote, shareOk: v.shareOk === "on" }) });
+        render();
+      } catch (err) {
+        say($("#slOutMsg"), err.message);
+      }
+    });
     $("[data-ll-change]", dash)?.addEventListener("click", () => { $("#slLLForm", dash).hidden = false; });
     $("[data-ll-stop]", dash)?.addEventListener("click", async () => {
       try {
