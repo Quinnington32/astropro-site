@@ -588,7 +588,6 @@ async function managePage() {
     payUrl.searchParams.set("return", location.origin + "/sublease-manage.html#" + id + "." + saved);
     const copy = (key, label, text) =>
       `<div class="sl-kit"><div class="sl-kit-head"><h3>${esc(label)}</h3><button class="btn btn-ghost" type="button" data-copy="${key}">Copy</button></div><textarea class="sl-kit-edit" data-kit="${key}" rows="${Math.min(18, text.split("\n").length + 1)}" aria-label="${esc(label)} (you can edit it before copying)">${esc(edits[key] ?? text)}</textarea></div>`;
-      `<div class="sl-kit"><div class="sl-kit-head"><h3>${esc(label)}</h3><button class="btn btn-ghost" type="button" data-copy="${key}">Copy</button></div><pre>${esc(text)}</pre></div>`;
     dash.innerHTML = `
       <div class="sl-acct"><span>Signed in as <strong>${esc(data.ownerEmail || l.ownerName || "you")}</strong></span><span><button class="btn btn-ghost" type="button" data-copy-private>Copy my private link</button> <button class="btn btn-ghost" type="button" data-signout>Sign out</button></span></div>
       <div class="sl-status ${esc(l.status)}"><div><strong>${esc(l.title)}</strong><span>${esc(l.marketName)} · ${money(l.rent)}/mo</span></div><span class="sl-pill">${esc({ pending_payment: "Waiting for payment", live: "Live", paused: "Paused", filled: "Filled", expired: "Expired" }[l.status])}</span></div>
