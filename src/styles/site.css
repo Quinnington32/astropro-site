@@ -3678,3 +3678,5 @@ html, body { overflow-x: clip; }
 .tape-row{margin:10px auto}
 .sl-list-cta{margin:14px 0 0}
 .market-about h3{margin-top:18px}
+.sl-list-cta{margin:16px 0 22px}
+@media (max-width:640px){.sl-list-cta .tape-btn{display:block;text-align:center}}
