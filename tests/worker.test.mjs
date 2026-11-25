@@ -60,6 +60,7 @@ before(async () => {
     "migrations/0013_sublease_landlord.sql",
     "migrations/0014_sublease_outcomes.sql",
     "migrations/0015_scheduled_mail.sql",
+    "migrations/0016_sublease_progress.sql",
   ]) {
     const schema = await readFile(file, "utf8");
     await db.batch(
@@ -1017,4 +1018,20 @@ test("sublease outcome: owner records how a filled listing ended, and we are tol
   assert.equal((await post({ action: "outcome", foundVia: "astropro", quote: "Found a tenant in 4 days", shareOk: true })).status, 200);
   const o = await db.prepare("SELECT found_via, quote, share_ok FROM sublease_outcomes WHERE listing_id=?").bind(id).first();
   assert.deepEqual([o.found_via, o.share_ok], ["astropro", 1]);
+});
+
+test("sublease progress: ticks save to the account, are cleaned, and come back on load", async () => {
+  const photo = "data:image/jpeg;base64," + "A".repeat(200);
+  const hdr = { Origin: origin, "Content-Type": "application/json", "CF-Connecting-IP": "192.0.2.98" };
+  const made = await mf.dispatchFetch(origin + "/api/sublease/listings", { method: "POST", headers: hdr, body: JSON.stringify({
+    market: "housing-austin-tx", marketName: "Austin, TX", area: "The Quad", title: "Progress test", description: "A place for the progress test to save ticks.",
+    ownerName: "Pat", ownerEmail: "pat@example.com", permission: "approved", type: "sublease", furnished: "no", utilities: "no",
+    startDate: "2027-05-15", endDate: "2027-08-15", rent: 700, bedrooms: 1, bathrooms: 1, photos: [photo], consent: true }) });
+  const { id, manageToken } = await made.json();
+  const h2 = { ...hdr, "x-manage-token": manageToken };
+  const get = async () => (await (await mf.dispatchFetch(origin + "/api/sublease/manage/" + id, { headers: h2 })).json()).progress;
+  assert.equal(await get(), null);
+  const r = await mf.dispatchFetch(origin + "/api/sublease/manage/" + id, { method: "POST", headers: h2, body: JSON.stringify({ action: "progress", done: ["d1a", "tsh3", "d1a", "BAD ID", 5, "marketplace"] }) });
+  assert.equal(r.status, 200);
+  assert.deepEqual((await get()).sort(), ["d1a", "marketplace", "tsh3"]);
 });

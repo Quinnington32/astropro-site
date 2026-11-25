@@ -549,6 +549,7 @@ export async function handleSublease(request, env, path, h) {
       views: row.views || 0,
       landlord: await env.DB.prepare("SELECT landlord_email email, landlord_name name, property, note, active, sent, last_sent lastSent FROM sublease_landlord WHERE listing_id=?").bind(row.id).first().catch(() => null),
       outcome: await env.DB.prepare("SELECT found_via foundVia FROM sublease_outcomes WHERE listing_id=?").bind(row.id).first().catch(() => null),
+      progress: await env.DB.prepare("SELECT done FROM sublease_progress WHERE listing_id=?").bind(row.id).first().then((r) => { try { return r ? JSON.parse(r.done) : null; } catch { return null; } }).catch(() => null),
       shares: row.shares || 0,
       renewed: !!row.renewed,
       paidAt: row.paid_at,
@@ -564,6 +565,7 @@ export async function handleSublease(request, env, path, h) {
     if (body.action === "delete") {
       await env.DB.batch([
         env.DB.prepare("DELETE FROM sublease_leads WHERE listing_id=?").bind(row.id),
+        env.DB.prepare("DELETE FROM sublease_progress WHERE listing_id=?").bind(row.id),
         env.DB.prepare("DELETE FROM sublease_photos WHERE listing_id=?").bind(row.id),
         env.DB.prepare("DELETE FROM sublease_listings WHERE id=?").bind(row.id),
       ]);
@@ -604,6 +606,11 @@ export async function handleSublease(request, env, path, h) {
         else await env.DB.prepare("UPDATE sublease_landlord SET next_at=? WHERE listing_id=?").bind(now, row.id).run();
       }
       return json({ ok: true, sentNow });
+    }
+    if (body.action === "progress") {
+      const ids = [...new Set((Array.isArray(body.done) ? body.done : []).filter((x) => typeof x === "string" && /^[a-z0-9_-]{1,40}$/.test(x)))].slice(0, 120);
+      await env.DB.prepare("INSERT INTO sublease_progress (listing_id,done,updated_at) VALUES (?,?,?) ON CONFLICT(listing_id) DO UPDATE SET done=excluded.done, updated_at=excluded.updated_at").bind(row.id, JSON.stringify(ids), now).run();
+      return json({ ok: true });
     }
     if (body.action === "renew") {
       const left = row.expires_at ? new Date(row.expires_at).getTime() - Date.now() : -1;

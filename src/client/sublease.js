@@ -393,6 +393,78 @@ const saveDone = (id, list) => {
     localStorage.setItem("astropro.sublease.done." + id, JSON.stringify(list));
   } catch {}
 };
+// The 14-day game plan: a few small tasks a day, one or two new places each day. go = platform to open, copy = text to copy.
+const PLAN = [
+  { d: 1, title: "Launch day", tasks: [
+    { id: "d1a", t: "Post in your market's Facebook group", go: "fbgroup" },
+    { id: "d1b", t: "Post on Facebook Marketplace", go: "marketplace" },
+    { id: "d1c", t: "Email your landlord to confirm you're on the relet list, and switch on the weekly check-ins below", copy: "ll2", label: "Copy the email" },
+  ] },
+  { d: 2, title: "Spread the word", tasks: [
+    { id: "d2a", t: "Post on Craigslist", go: "craigslist" },
+    { id: "d2b", t: "Post on your school's off-campus housing board", go: "school" },
+    { id: "d2c", t: "Text your link to 5 friends and roommates and ask them to share it", copy: "short", label: "Copy the short post" },
+  ] },
+  { d: 3, title: "Go wider", tasks: [
+    { id: "d3a", t: "Post on Zillow, Trulia and HotPads (only if your landlord has approved)", go: "zillow" },
+    { id: "d3b", t: "Post on Zumper and PadMapper", go: "zumper" },
+    { id: "d3c", t: "Answer every message within 2 hours, and offer two tour times", copy: "reply", label: "Copy the reply" },
+  ] },
+  { d: 4, title: "Sublease sites and campus chats", tasks: [
+    { id: "d4a", t: "Post on Sublet.com and LeaseBreak", go: "sublet" },
+    { id: "d4b", t: "Post on Reddit, GroupMe or Discord (check each group's rules)", go: "reddit" },
+    { id: "d4c", t: "Book tours with everyone who has replied", copy: "followup", label: "Copy the follow-up" },
+  ] },
+  { d: 5, title: "Bump and push", tasks: [
+    { id: "d5a", t: "Comment 'still available' on your Facebook group post with a new photo", copy: "bump", label: "Copy the comment" },
+    { id: "d5b", t: "Share your listing in a second Facebook group (search your school + housing or roommates)", copy: "fb", label: "Copy the post" },
+    { id: "d5c", t: "Check your stats card: views but no messages? Improve your photos or title (Edit listing)" },
+  ] },
+  { d: 6, title: "Social", tasks: [
+    { id: "d6a", t: "Post your link on an Instagram story and in student roommate pages", copy: "short", label: "Copy the short post" },
+    { id: "d6b", t: "Follow up with everyone who asked questions but hasn't booked a tour", copy: "followup", label: "Copy the follow-up" },
+  ] },
+  { d: 7, title: "Week one check-in", tasks: [
+    { id: "d7a", t: "Repost on Facebook Marketplace so it jumps back to the top", go: "marketplace" },
+    { id: "d7b", t: "Run your tours. Use the tour, sign and hand-over checklist below" },
+    { id: "d7c", t: "Ask your landlord for a relet-list update", copy: "ll3", label: "Copy the email" },
+  ] },
+  { d: 8, title: "Sharpen the offer", tasks: [
+    { id: "d8a", t: "No tours yet? Drop the rent $25 to $50 or add a move-in perk (Edit listing)" },
+    { id: "d8b", t: "Repost in your Facebook group and mention the new price", copy: "bump", label: "Copy the comment" },
+  ] },
+  { d: 9, title: "Fresh eyes", tasks: [
+    { id: "d9a", t: "Renew your Craigslist post", go: "craigslist" },
+    { id: "d9b", t: "Message everyone who toured and ask what they're thinking", copy: "followup", label: "Copy the follow-up" },
+  ] },
+  { d: 10, title: "Second wave", tasks: [
+    { id: "d10a", t: "Repost in your Facebook group", go: "fbgroup" },
+    { id: "d10b", t: "Ask 3 friends to share your link again", copy: "short", label: "Copy the short post" },
+    { id: "d10c", t: "Ask your landlord again whether they have anyone for your unit", copy: "ll3", label: "Copy the email" },
+  ] },
+  { d: 11, title: "Line up tours", tasks: [
+    { id: "d11a", t: "Offer back-to-back tour slots on one day so people feel the demand", copy: "reply", label: "Copy the reply" },
+    { id: "d11b", t: "Have the landlord's application link or office contact ready to send" },
+  ] },
+  { d: 12, title: "Close the deal", tasks: [
+    { id: "d12a", t: "Follow up with everyone who has toured", copy: "followup", label: "Copy the follow-up" },
+    { id: "d12b", t: "Confirm the landlord has approved your pick in writing" },
+  ] },
+  { d: 13, title: "Last push", tasks: [
+    { id: "d13a", t: "Post in a different Facebook group or Marketplace", go: "marketplace" },
+    { id: "d13b", t: "Send one more update to your landlord", copy: "ll3", label: "Copy the email" },
+  ] },
+  { d: 14, title: "Review and relaunch", tasks: [
+    { id: "d14a", t: "Look at your views and messages. What worked? Do more of it." },
+    { id: "d14b", t: "Add new photos, refresh your listing and repost everywhere (Edit listing)" },
+  ] },
+];
+const TSH = [
+  { title: "Before the tour", items: [["tsh1", "Get your landlord's approval in writing"], ["tsh2", "Offer two tour times in daylight, and have a roommate or friend there if you can"], ["tsh3", "Tidy the place and take fresh photos"]] },
+  { title: "At the tour", items: [["tsh4", "Meet in person or on live video before anything else"], ["tsh5", "Check photo ID and that the name matches their application"], ["tsh6", "Show everything: appliances, parking, storage and any damage already there"], ["tsh7", "Go over the move-in date, rent due date and utilities"]] },
+  { title: "After the tour", items: [["tsh8", "Send the landlord's application link or the office contact"], ["tsh9", "Wait for the landlord's approval in writing"], ["tsh10", "Never take money before approval"]] },
+  { title: "Sign and hand over", items: [["tsh11", "Sign a written sublease or the landlord's own form"], ["tsh12", "Collect rent and deposit exactly as the paperwork says"], ["tsh13", "Walk through together and take dated move-in photos"], ["tsh14", "Send the photos to the landlord and the new tenant, then hand over keys, fobs and parking passes"], ["tsh15", "Mark your listing as filled here"]] },
+];
 const kit = (l, groupUrl) => {
   const bed = l.bedrooms === 0 ? "studio" : l.bedrooms + "-bedroom";
   const util = { yes: "utilities included", no: "utilities not included", some: "some utilities included" }[l.utilities];
@@ -400,25 +472,31 @@ const kit = (l, groupUrl) => {
   const url = location.origin + "/sublease-listing.html?id=" + l.id;
   const dates = dateText(l.startDate) + " to " + dateText(l.endDate);
   const verb = { sublease: "SUBLEASE", relet: "RELET", assignment: "LEASE TAKEOVER" }[l.type];
-  const fb = `${verb}: ${bed} near ${l.school || l.marketName}, ${money(l.rent)}/mo\n\n📍 ${l.area}\n📅 ${dates}\n🛏 ${bed}, ${l.bathrooms} bath, ${furn}, ${util}\n${l.deposit ? "💵 Deposit: " + money(l.deposit) + "\n" : ""}\n${l.description}\n\nPhotos and details: ${url}\nMessage me here or use the form on the listing.`;
-  const reddit = `[${verb}] ${bed} in ${l.area}, ${money(l.rent)}/mo (${dates})\n\n${l.description}\n\nDetails and photos: ${url}`;
+  const first = (l.ownerName || "").trim().split(/\s+/)[0] || "";
+  const school = l.school || l.marketName;
+  const months = Math.max(1, Math.round((new Date(l.endDate) - new Date(l.startDate)) / 2629800000));
+  const monthsText = months + " month" + (months === 1 ? "" : "s");
+  const approved = l.permission === "approved";
+  const perks = [furn === "furnished" && "Furnished", l.utilities === "yes" && "Utilities included", l.utilities === "some" && "Some utilities included", approved && "Landlord-approved"].filter(Boolean);
+  const intro = {
+    sublease: "I have to leave early, and that's your gain: a place that's ready to move into, so there's no apartment hunting.",
+    relet: "This is a relet, so you apply through the property and they handle the lease paperwork. Simple and official.",
+    assignment: "You'd take over my lease for the rest of the term, so it's the same place and the same rate with no new-lease hunt.",
+  }[l.type];
+  const hello = first ? `Hi, I'm ${first}. ` : "";
+  const hook = `🚨 ${verb}: ${bed} near ${school} for ${money(l.rent)}/mo`;
+  const how = l.type === "relet" ? ["Message me and book a tour (in person or live video).", "Apply through the property's office.", "Get approved, sign with the property and move in."] : ["Message me and book a tour (in person or live video).", "Apply with the landlord for approval.", "Sign the " + (l.type === "assignment" ? "assignment" : "sublease") + " paperwork and move in."];
+  const fb = `${hook}\n\n${hello}${intro}\n\n📍 ${l.area}\n📅 ${dates} (${monthsText})\n💰 ${money(l.rent)}/mo${l.deposit ? " · " + money(l.deposit) + " deposit" : ""}\n🛏 ${bed}, ${l.bathrooms} bath${perks.length ? "\n✅ " + perks.join(" · ") : ""}\n\nTHE DETAILS\n${l.description}\n\nTours are open now, in person or on live video. Tap the link to see every photo, then message me and I'll reply fast. Places like this don't last.\n👉 ${url}`;
+  const long = `${l.title}\n\n${typeLabel[l.type]}: ${bed}, ${l.bathrooms} bath near ${school}\nRent: ${money(l.rent)}/month${l.deposit ? "\nDeposit: " + money(l.deposit) : ""}\nAvailable: ${dates} (${monthsText})\nWhere: ${l.area}\nFurnished: ${furn}\nUtilities: ${util}${approved ? "\nLandlord approval: already in writing" : ""}\n\nABOUT THE PLACE\n${intro}\n\n${l.description}\n\nHOW IT WORKS\n1. ${how[0]}\n2. ${how[1]}\n3. ${how[2]}\n\nPhotos and full details: ${url}\nMessage me today to book a tour.`;
+  const reddit = `[${verb}] ${bed}/${l.bathrooms}ba near ${school} - ${money(l.rent)}/mo, ${dates}\n\n${hello}${intro}\n\n- Where: ${l.area}\n- Dates: ${dates} (${monthsText})\n- Rent: ${money(l.rent)}/mo${l.deposit ? ", " + money(l.deposit) + " deposit" : ""}\n- ${bed}, ${l.bathrooms} bath, ${furn}, ${util}${approved ? "\n- Landlord approval already in writing" : ""}\n\n${l.description}\n\nHappy to answer questions in the comments or by DM, and I can do tours in person or on video. Photos and details: ${url}`;
+  const short = `${hook}\n${l.area} · ${dates}\nPhotos + details + message me: ${url}\nKnow someone who needs a place? Send this their way!`;
+  const bump = `Still available! 🙌 ${bed} near ${school}, ${money(l.rent)}/mo, ${dates}. Tours this week, message me or see photos here: ${url}`;
+  const reply = `Hi! Thanks for reaching out about the ${bed} at ${l.area}. It's still available for ${dates} at ${money(l.rent)}/mo.\n\nI'd love to show it to you. A few quick questions so I can plan:\n- What's your name and what school are you at?\n- When do you need to move in?\n- Would you like to tour in person or on live video? I can do [day] or [day].\n\nAfter you've seen it, the next step is the landlord's application and approval.`;
+  const followup = `Hi [name], just checking in on the ${bed} at ${l.area}. It's still available ${dates} for ${money(l.rent)}/mo. I'm lining up tours this week, so I'm happy to hold a time for you. Does [day] work?`;
   const landlord = `Subject: Request to ${l.type === "relet" ? "relet" : l.type === "assignment" ? "assign" : "sublease"} my unit at ${l.area}\n\nHello,\n\nI'm a current tenant at ${l.area} and I need to leave early. I'd like to ask what options I have to ${l.type === "relet" ? "relet the unit" : l.type === "assignment" ? "assign my lease" : "sublease the unit"} for ${dates}.\n\nCould you please tell me:\n1. Whether this is allowed under my lease, and what approval you need in writing.\n2. What screening the new tenant must pass, and any fees.\n3. Whether I stay responsible on the lease, or can be released.\n4. How the security deposit would be handled.\n\nI'll find a qualified tenant and send you their application. Thank you for your help.\n\nBest,\n${l.ownerName || "[Your name]"}`;
   const ll2 = `Subject: Confirming my spot on the relet list: ${l.area}\n\nHi [Landlord or office name],\n\nI'm reaching out to confirm that I'm on the relet list for ${l.area}. I'm doing everything I can on my end to find a qualified tenant (${dates}), but I want to make sure you're also keeping my unit on your list.\n\nCould you please reply to confirm I'm on the list and let me know where my unit stands?\n\nThank you for your help.\n\nBest,\n${l.ownerName || "[Your name]"}`;
   const ll3 = `Subject: Relet update request: ${l.area}\n\nHi [Landlord or office name],\n\nI'm following up on my relet for ${l.area}. Are there any prospective tenants or applications on your side, and is my unit still on your relet list? I'm happy to send over any tenant I find so you can start their application right away.\n\nThank you,\n${l.ownerName || "[Your name]"}`;
-  const reply = `Hi! Thanks for your interest in the ${bed} at ${l.area}. It's available ${dates} for ${money(l.rent)}/mo. I'd love to set up a tour in person or by live video. What days work for you? I'll also need to share your application with the landlord for approval.`;
-  const days = [
-    "Day 1: Post your listing in your market's Facebook group. Copy the post below and paste it.",
-    "Day 2: Share your listing link with friends, roommates and your school's housing or roommate pages.",
-    "Day 3: Post on Reddit (campus and city subreddits that allow housing posts).",
-    "Day 4: Reply to every message within a few hours. Offer two tour times.",
-    "Day 5: Refresh your Facebook post with a new photo and 'still available'.",
-    "Day 6–7: Follow up with everyone who asked questions but hasn't booked a tour.",
-    "Day 8: Lower the price slightly or add a move-in perk if you have no tours yet.",
-    "Day 10: Repost everywhere. Ask your landlord whether they have a relet list.",
-    "Day 14: Review what's working. Add new photos, then repost.",
-  ];
-  const long = `${l.title}\n\n${typeLabel[l.type]}: ${bed} near ${l.school || l.marketName}, ${money(l.rent)}/mo\nArea: ${l.area}\nDates: ${dates}\nBedrooms/baths: ${bed}, ${l.bathrooms} bath\nFurnished: ${furn}; ${util}\n${l.deposit ? "Deposit: " + money(l.deposit) + "\n" : ""}\n${l.description}\n\nMore photos and details: ${url}`;
-  return { fb, reddit, landlord, ll2, ll3, reply, days, groupUrl, long, title: l.title, url };
+  return { fb, long, reddit, short, bump, reply, followup, landlord, ll2, ll3, groupUrl, title: l.title, url };
 };
 async function managePage() {
   const root = $("#slManage");
@@ -454,6 +532,12 @@ async function managePage() {
     return;
   }
   const groups = JSON.parse(root.dataset.groups || "{}");
+  let doneSet = null;
+  const edits = {};
+  const persist = () => {
+    saveDone(id, [...doneSet]);
+    api("/manage/" + id, { method: "POST", headers: { "x-manage-token": saved }, body: JSON.stringify({ action: "progress", done: [...doneSet] }) }).catch(() => {});
+  };
   const payBase = { business: root.dataset.business, price: root.dataset.price };
   const headers = { "x-manage-token": saved };
   const render = async () => {
@@ -468,7 +552,16 @@ async function managePage() {
     l.ownerName = data.ownerName || "";
     const k = kit(l, groups[l.market]);
     const plats = platforms(l, k.groupUrl).filter((p) => p.id !== "fbgroup" || p.url);
-    const done = loadDone(id).filter((x) => plats.some((p) => p.id === x));
+    if (!doneSet) doneSet = new Set(data.progress || loadDone(id));
+    const done = [...doneSet].filter((x) => plats.some((p) => p.id === x));
+    const dayNum = data.paidAt ? Math.min(14, Math.max(1, Math.floor((Date.now() - new Date(data.paidAt).getTime()) / 86400000) + 1)) : 1;
+    const taskRow = (t) => `<li class="${doneSet.has(t.id) ? "done" : ""}"><label class="sl-check"><input type="checkbox" data-task="${t.id}"${doneSet.has(t.id) ? " checked" : ""}> <span>${esc(t.t)}</span></label><span class="sl-task-actions">${t.go && plats.find((p) => p.id === t.go && p.url) ? `<button class="btn btn-primary" type="button" data-go="${t.go}">Copy my post and open ${esc(plats.find((p) => p.id === t.go).short)} ↗</button>` : ""}${t.copy ? `<button class="btn btn-ghost" type="button" data-copy="${t.copy}">${esc(t.label || "Copy")}</button>` : ""}</span></li>`;
+    const planHtml = PLAN.map((d) => { const n = d.tasks.filter((t) => doneSet.has(t.id)).length; return `<details class="sl-day${d.d === dayNum ? " today" : ""}"${d.d === dayNum ? " open" : ""}><summary><strong>Day ${d.d}: ${esc(d.title)}</strong>${d.d === dayNum ? ' <span class="sl-today">Today</span>' : ""}<span class="sl-day-count" data-day-count>${n}/${d.tasks.length}</span></summary><ul class="sl-tasks">${d.tasks.map(taskRow).join("")}</ul></details>`; }).join("");
+    const tshHtml = TSH.map((g) => `<div class="sl-tsh"><h3>${esc(g.title)}</h3><ul class="sl-tasks">${g.items.map(([i, t]) => taskRow({ id: i, t })).join("")}</ul></div>`).join("");
+    const planDone = PLAN.reduce((a, d) => a + d.tasks.filter((t) => doneSet.has(t.id)).length, 0);
+    const planTotal = PLAN.reduce((a, d) => a + d.tasks.length, 0);
+    const tshDone = TSH.reduce((a, g) => a + g.items.filter(([i]) => doneSet.has(i)).length, 0);
+    const tshTotal = TSH.reduce((a, g) => a + g.items.length, 0);
     const live = l.status === "live";
     const next = plats.find((p) => p.url && !done.includes(p.id));
     const paid = !!data.paidAt;
@@ -482,9 +575,6 @@ async function managePage() {
       ["Listing created", "done", "Your listing is built with photos and details."],
       ["Listing live", live ? "done" : "todo", live ? "Live until " + until + "." : l.status === "expired" ? "Expired. Pay the listing fee to bring it back." : l.status === "pending_payment" ? "Not live yet. Pay the listing fee to publish it." : "Status: " + l.status + "."],
       ["Get messages", data.leads.length ? "done" : "todo", data.leads.length ? data.leads.length + " message" + (data.leads.length === 1 ? "" : "s") + " so far." : "Post your listing using the launch kit below."],
-      ["Tours and applications", "todo", "Show the place in person or on live video. Never take money before you've seen proof of identity and the landlord has approved."],
-      ["Sign the agreement", "todo", "Use a written sublease or the landlord's own form. See the guide for what to include."],
-      ["Hand over the keys", "todo", "Record move-in photos with the new tenant and send them to the landlord."],
     ];
     const payUrl = new URL("https://www.paypal.com/cgi-bin/webscr");
     payUrl.searchParams.set("cmd", "_xclick");
@@ -497,6 +587,7 @@ async function managePage() {
     payUrl.searchParams.set("notify_url", location.origin + "/api/sublease/paypal-ipn");
     payUrl.searchParams.set("return", location.origin + "/sublease-manage.html#" + id + "." + saved);
     const copy = (key, label, text) =>
+      `<div class="sl-kit"><div class="sl-kit-head"><h3>${esc(label)}</h3><button class="btn btn-ghost" type="button" data-copy="${key}">Copy</button></div><textarea class="sl-kit-edit" data-kit="${key}" rows="${Math.min(18, text.split("\n").length + 1)}" aria-label="${esc(label)} (you can edit it before copying)">${esc(edits[key] ?? text)}</textarea></div>`;
       `<div class="sl-kit"><div class="sl-kit-head"><h3>${esc(label)}</h3><button class="btn btn-ghost" type="button" data-copy="${key}">Copy</button></div><pre>${esc(text)}</pre></div>`;
     dash.innerHTML = `
       <div class="sl-acct"><span>Signed in as <strong>${esc(data.ownerEmail || l.ownerName || "you")}</strong></span><span><button class="btn btn-ghost" type="button" data-copy-private>Copy my private link</button> <button class="btn btn-ghost" type="button" data-signout>Sign out</button></span></div>
@@ -506,9 +597,10 @@ async function managePage() {
       ${live ? `<div class="sl-stats"><div><strong>${data.views || 0}</strong><span>Views</span></div><div><strong>${data.shares || 0}</strong><span>Shares</span></div><div><strong>${data.leads.length}</strong><span>Messages</span></div><div><strong>${daysLeft}</strong><span>Days left</span></div></div>${data.leads.length ? "" : (data.views >= 10 ? `<p class="sl-tip">${data.views} people looked and none messaged yet. A new photo or a $25 price drop usually helps. Use Edit listing below.</p>` : `<p class="sl-tip">New listings take a few days to get traction. Post in your next place below and share your link.</p>`)}` : ""}
       ${live && canRenew ? `<div class="callout"><h2>Your listing ends in ${daysLeft} day${daysLeft === 1 ? "" : "s"}</h2><p>Still need someone? Keep it live 30 more days, free. One time per listing.</p><p><button class="btn btn-primary" type="button" data-renew>Keep my listing live 30 more days</button> <span class="sl-msg" id="slRenewMsg" hidden></span></p></div>` : ""}
       ${live && next ? `<div class="sl-next"><span class="sl-next-tag">Your next step</span><h2>Post it in ${esc(next.short)}</h2><p>${esc(next.why)}</p><p class="sl-plat-actions"><button class="btn btn-primary" type="button" data-go="${next.id}">Copy my post and open ${esc(next.short)} ↗</button><button class="btn btn-ghost" type="button" data-skip="${next.id}">I already did this</button></p><p class="sl-msg ok" data-go-msg="next" hidden></p></div>` : live && plats.length ? '<div class="sl-next sl-next-done"><span class="sl-next-tag">Nice work</span><h2>You posted everywhere on the list.</h2><p>Now watch your messages, answer within a few hours, and offer two tour times.</p></div>' : ""}
-      <section><h2>Your sublease checklist</h2><ol class="sl-steps">${steps.map(([t, s, d]) => `<li class="${s}"><strong>${esc(t)}</strong><span>${esc(d)}</span></li>`).join("")}</ol></section>
+      <section><h2>Your progress</h2><ol class="sl-steps">${steps.map(([t, s, d]) => `<li class="${s}"><strong>${esc(t)}</strong><span>${esc(d)}</span></li>`).join("")}</ol></section>
       <section><h2>Messages from students (${data.leads.length})</h2>${data.leads.length ? data.leads.map((x) => `<article class="sl-lead${x.flagged ? " flagged" : ""}"><header><strong>${esc(x.name)}</strong><time>${new Date(x.created_at).toLocaleString()}</time></header>${x.flagged ? '<p class="sl-warn">Careful: this message uses wording common in rental scams. Don\'t send money or keys, and meet in person first.</p>' : ""}<p>${esc(x.message).replace(/\n/g, "<br>")}</p><p><a href="mailto:${esc(x.email)}">${esc(x.email)}</a>${x.phone ? " · " + esc(x.phone) : ""}</p></article>`).join("") : "<p>No messages yet. Use the launch kit below to get your first ones.</p>"}</section>
-      <section><h2>Post it everywhere</h2><p>More places means more messages. Each one is free to start. Tap a site, paste the text we wrote, add your photos, then check it off. Sites can change their rules and fees, and only post if your landlord has approved.</p>
+      <section class="sl-plan"><h2>Your 14-day game plan</h2><p>A few small jobs a day, with a new place or a new push each time. Tap a button to copy your post and open the site, then tick it off. Your ticks save to your account, so they follow you to any device.</p><div class="sl-progress"><div class="sl-bar"><span data-plan-bar style="width:${Math.round((planDone / planTotal) * 100)}%"></span></div><p data-plan-count>${planDone} of ${planTotal} tasks done</p></div>${planHtml}</section>
+      <section><h2>Where to post, step by step</h2><p>More places means more messages. Each one is free to start. Tap a site, paste the text we wrote, add your photos, then check it off. Sites can change their rules and fees, and only post if your landlord has approved.</p>
         <div class="sl-progress"><div class="sl-bar"><span style="width:${Math.round((done.length / plats.length) * 100)}%"></span></div><p>${done.length} of ${plats.length} places posted</p></div>
         <div class="sl-photos"><p><strong>Your photos</strong> (save them to upload elsewhere):</p>${Array.from({ length: l.photos }, (_, i) => `<a href="/api/sublease/photo/${esc(l.id)}/${i}" download="listing-photo-${i + 1}.jpg"><img alt="Photo ${i + 1}" src="/api/sublease/photo/${esc(l.id)}/${i}" width="96" height="72"><span>Save</span></a>`).join("")}</div>
         <div class="sl-plats">${plats.map((p) => `<article class="sl-plat${done.includes(p.id) ? " done" : ""}"><header><div><h3>${esc(p.name)}</h3><span class="sl-tag">${esc(p.tag)}</span></div><label class="sl-check"><input type="checkbox" data-done="${p.id}"${done.includes(p.id) ? " checked" : ""}> Posted</label></header><p>${esc(p.why)}</p><ol>${p.steps.map((x) => `<li>${esc(x)}</li>`).join("")}</ol><p class="sl-plat-actions">${p.url ? `<button class="btn btn-primary" type="button" data-go="${p.id}">Copy my post and open ${esc(p.short)} ↗</button>` : ""}<button class="btn btn-ghost" type="button" data-copy="${p.copy}">Copy the text only</button></p><p class="sl-msg ok" data-go-msg="${p.id}" hidden></p></article>`).join("")}</div>
@@ -521,10 +613,10 @@ async function managePage() {
         <h3>Landlord accountability templates</h3>
         ${copy("landlord", "1. Ask for permission", k.landlord)}${copy("ll2", "2. Confirm you're on the relet list", k.ll2)}${copy("ll3", "3. Weekly follow-up", k.ll3)}
       </section>
-      <section><h2>Launch kit</h2><p>Your posts and message templates, written from your listing.</p>
-        ${copy("fb", "Facebook group post", k.fb)}${copy("reddit", "Reddit post", k.reddit)}${copy("reply", "Reply to new messages", k.reply)}
-        <div class="sl-kit"><h3>Your next 14 days</h3><ul class="sl-days">${k.days.map((d) => `<li>${esc(d)}</li>`).join("")}</ul></div>
+      <section><h2>Launch kit</h2><p>Posts and message templates written from your listing: a hook, the key details, and a clear next step. Tap a box to edit it, then copy.</p>
+        ${copy("fb", "Facebook group post", k.fb)}${copy("long", "Marketplace, Craigslist and listing sites", k.long)}${copy("reddit", "Reddit post", k.reddit)}${copy("short", "Short post for Instagram, GroupMe and texts", k.short)}${copy("bump", "'Still available' bump comment", k.bump)}${copy("reply", "Reply to new messages", k.reply)}${copy("followup", "Follow-up after a tour or no reply", k.followup)}
       </section>
+      <section class="sl-tshwrap"><h2>Tour, sign and hand-over checklist</h2><p>From first tour to keys in hand. Tick things off as you go.</p><div class="sl-progress"><div class="sl-bar"><span data-tsh-bar style="width:${Math.round((tshDone / tshTotal) * 100)}%"></span></div><p data-tsh-count>${tshDone} of ${tshTotal} done</p></div>${tshHtml}</section>
       <section class="sl-actions"><h2>Manage your listing</h2>
         <p><a class="btn btn-ghost" href="sublease-listing.html?id=${esc(l.id)}">View public page</a>
         <button class="btn btn-ghost" data-edit type="button">Edit listing</button>
@@ -548,7 +640,7 @@ async function managePage() {
     $$("[data-copy]", dash).forEach((b) =>
       b.addEventListener("click", async () => {
         try {
-          await navigator.clipboard.writeText(k[b.dataset.copy]);
+          await navigator.clipboard.writeText(edits[b.dataset.copy] ?? k[b.dataset.copy]);
           b.textContent = "Copied";
         } catch {
           b.textContent = "Select and copy";
@@ -557,9 +649,8 @@ async function managePage() {
     );
     $$("[data-done]", dash).forEach((b) =>
       b.addEventListener("change", () => {
-        const set = new Set(loadDone(id));
-        b.checked ? set.add(b.dataset.done) : set.delete(b.dataset.done);
-        saveDone(id, [...set]);
+        b.checked ? doneSet.add(b.dataset.done) : doneSet.delete(b.dataset.done);
+        persist();
         render();
       }),
     );
@@ -642,18 +733,37 @@ async function managePage() {
         const msgs = $$(`[data-go-msg="${p.id}"], [data-go-msg="next"]`, dash);
         // Copy first (while this page still has focus), then open the site.
         pingShare(k.url);
-        const copied = copyText(k[p.copy]);
+        const copied = copyText(edits[p.copy] ?? k[p.copy]);
         window.open(p.url, "_blank", "noopener");
+        if (!msgs.length) copied.then((ok) => { b.textContent = ok ? "Copied! Paste it in the new tab" : "Copy failed: use the Launch kit below"; });
         copied.then((ok) =>
           msgs.forEach((m) => say(m, ok ? "Copied! Paste it into the page that just opened, add your photos, and post. Then tick Posted." : "Couldn't copy automatically. Tap Copy the text only, then paste it into the site.", ok)),
         );
       }),
     );
+    $$("[data-task]", dash).forEach((b) =>
+      b.addEventListener("change", () => {
+        b.checked ? doneSet.add(b.dataset.task) : doneSet.delete(b.dataset.task);
+        persist();
+        b.closest("li").classList.toggle("done", b.checked);
+        const det = b.closest("details");
+        if (det) {
+          const boxes = $$("[data-task]", det);
+          $("[data-day-count]", det).textContent = boxes.filter((x) => x.checked).length + "/" + boxes.length;
+        }
+        const cnt = (arr) => arr.filter((x) => doneSet.has(x)).length;
+        const pd = cnt(PLAN.flatMap((d) => d.tasks.map((t) => t.id))), td = cnt(TSH.flatMap((g) => g.items.map(([i]) => i)));
+        $("[data-plan-bar]", dash).style.width = Math.round((pd / planTotal) * 100) + "%";
+        $("[data-plan-count]", dash).textContent = pd + " of " + planTotal + " tasks done";
+        $("[data-tsh-bar]", dash).style.width = Math.round((td / tshTotal) * 100) + "%";
+        $("[data-tsh-count]", dash).textContent = td + " of " + tshTotal + " done";
+      }),
+    );
+    $$("[data-kit]", dash).forEach((t) => t.addEventListener("input", () => { edits[t.dataset.kit] = t.value; }));
     $$("[data-skip]", dash).forEach((b) =>
       b.addEventListener("click", () => {
-        const set = new Set(loadDone(id));
-        set.add(b.dataset.skip);
-        saveDone(id, [...set]);
+        doneSet.add(b.dataset.skip);
+        persist();
         render();
       }),
     );
