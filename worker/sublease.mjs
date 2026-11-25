@@ -775,6 +775,17 @@ const bump = (env, name) =>
 export async function runSubleaseJobs(env, h) {
   if (!env.DB) return;
   const site = SITE(env);
+  // One-off scheduled emails (sent from the support address through the branded template)
+  const { results: dueMail } = await env.DB.prepare(
+    "SELECT id, to_email, subject, lines, label, url FROM scheduled_mail WHERE sent_at IS NULL AND send_at <= ? LIMIT 5",
+  ).bind(new Date().toISOString()).all().catch(() => ({ results: [] }));
+  for (const m of dueMail) {
+    let lines = [];
+    try { lines = JSON.parse(m.lines); } catch {}
+    if (await sendStudent(h, m.to_email, m.subject, lines, m.label, m.url)) {
+      await env.DB.prepare("UPDATE scheduled_mail SET sent_at=? WHERE id=?").bind(new Date().toISOString(), m.id).run().catch(() => null);
+    }
+  }
   const ago = (min) => new Date(Date.now() - min * 60000).toISOString();
   // Paid, but no listing yet
   const { results: paid } = await env.DB.prepare(

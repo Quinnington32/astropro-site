@@ -59,6 +59,7 @@ before(async () => {
     "migrations/0012_sublease_engagement.sql",
     "migrations/0013_sublease_landlord.sql",
     "migrations/0014_sublease_outcomes.sql",
+    "migrations/0015_scheduled_mail.sql",
   ]) {
     const schema = await readFile(file, "utf8");
     await db.batch(
