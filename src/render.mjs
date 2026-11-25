@@ -83,6 +83,7 @@ export function page({
   body,
   file = "index.html",
   noindex = false,
+  faq = null,
 }) {
   const url = canonicalRoot + (file === "index.html" ? "" : file);
   const ld = noindex
@@ -100,6 +101,7 @@ export function page({
               "@context": "https://schema.org",
               "@graph": [
                 { "@type": "WebPage", "@id": url + "#page", url, name: title, description, isPartOf: { "@id": canonicalRoot + "#website" }, inLanguage: "en-US" },
+                ...(faq ? [{ "@type": "FAQPage", mainEntity: faq.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })) }] : []),
                 { "@type": "BreadcrumbList", itemListElement: [
                   { "@type": "ListItem", position: 1, name: "Home", item: canonicalRoot },
                   { "@type": "ListItem", position: 2, name: title, item: url },
