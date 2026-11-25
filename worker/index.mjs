@@ -385,7 +385,7 @@ export async function notifyPartnerCampaign(env, data) {
   }
 }
 // Email to a student. Uses Brevo when BREVO_API_KEY is set, otherwise Cloudflare Email Sending (needs the Workers Paid plan).
-export async function sendStudentMail(env, { to, subject, text, html }) {
+export async function sendStudentMail(env, { to, subject, text, html, replyTo }) {
   const from = env.MAIL_FROM || "support@astroprostudentresourcecenter.com";
   const name = "AstroPro Student Resource Center";
   try {
@@ -393,12 +393,12 @@ export async function sendStudentMail(env, { to, subject, text, html }) {
       const res = await fetch("https://api.brevo.com/v3/smtp/email", {
         method: "POST",
         headers: { "api-key": env.BREVO_API_KEY, "content-type": "application/json", accept: "application/json" },
-        body: JSON.stringify({ sender: { name, email: from }, to: [{ email: to }], replyTo: { email: from }, subject, textContent: text, htmlContent: html }),
+        body: JSON.stringify({ sender: { name, email: from }, to: [{ email: to }], replyTo: { email: replyTo || from }, subject, textContent: text, htmlContent: html }),
       });
       return res.ok;
     }
     if (env.MAILER?.send) {
-      await env.MAILER.send({ to, from: { email: from, name }, replyTo: from, subject, text, html });
+      await env.MAILER.send({ to, from: { email: from, name }, replyTo: replyTo || from, subject, text, html });
       return true;
     }
   } catch {

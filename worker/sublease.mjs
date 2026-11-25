@@ -487,6 +487,26 @@ export async function handleSublease(request, env, path, h) {
     )
       .bind(crypto.randomUUID(), lead.listingId, lead.name, lead.email, lead.phone, lead.message, lead.flagged, now)
       .run();
+    // Tell the owner right away. Replies go straight to the student who wrote.
+    const lrow = await env.DB.prepare("SELECT owner_email, json_extract(data_json,'$.title') title FROM sublease_listings WHERE id=?").bind(lead.listingId).first().catch(() => null);
+    const site = SITE(env);
+    if (lrow?.owner_email) {
+      await sendStudent(
+        h,
+        lrow.owner_email,
+        "New message about your listing: " + String(lrow.title || "your place").slice(0, 70),
+        [
+          lead.name + " wrote:",
+          lead.message,
+          "Reply to this email to answer them directly (" + lead.email + (lead.phone ? ", " + lead.phone : "") + ").",
+          ...(lead.flagged ? ["Careful: this message uses wording common in rental scams. Don't send money or keys, and meet in person first."] : []),
+        ],
+        "Open my Sublease War Room",
+        site + "/sublease-manage.html",
+        { replyTo: lead.email },
+      );
+    }
+    await sendStudent(h, lead.email, "We sent your message", ["Your message about \"" + String(lrow?.title || "the listing").slice(0, 80) + "\" is on its way to the student.", "They'll reply to " + lead.email + ". Meanwhile, never send a deposit or rent before you've seen the place and the landlord has approved."], "Browse more places", site + "/sublease-listings.html");
     return json({ ok: true }, 201);
   }
 
@@ -630,9 +650,9 @@ const mailHtml = (heading, lines, label, url, site) => {
     "</div></div>"
   );
 };
-const sendStudent = async (h, to, subject, lines, label, url) => {
+const sendStudent = async (h, to, subject, lines, label, url, opts = {}) => {
   if (!h.mail || !EMAIL_RE.test(to || "")) return false;
-  return !!(await h.mail({ to, subject, text: lines.join("\n\n") + "\n\n" + label + ": " + url + "\n\n- The AstroPro Team\nAstroPro Student Resource Center\n", html: mailHtml(subject, lines, label, url, h.site) }).catch(() => false));
+  return !!(await h.mail({ to, replyTo: opts.replyTo, subject, text: lines.join("\n\n") + "\n\n" + label + ": " + url + "\n\n- The AstroPro Team\nAstroPro Student Resource Center\n", html: mailHtml(subject, lines, label, url, h.site) }).catch(() => false));
 };
 const bump = (env, name) =>
   env.DB.prepare("INSERT INTO sublease_events (day,name,n) VALUES (?,?,1) ON CONFLICT(day,name) DO UPDATE SET n=n+1")
