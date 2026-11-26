@@ -128,3 +128,21 @@ export const extraGuides = [
    [["Where can I get help?", "Your school's student legal services or off-campus housing office is a good first call, and local legal aid can help with your state's rules."]]],
 ];
 
+
+// Official school resources, each URL confirmed from the school's own page.
+export const officialResources = {
+  "college-station-tx": [["Texas A&M Student Life: Leasing 101 and Off Campus Student Services", "https://studentlife.tamu.edu/education/leasing-101", "Leasing guidance from Off Campus Student Services, which also runs the AggieSearch housing tool."]],
+  "ann-arbor": [["University of Michigan Off-Campus Housing: subleasing", "https://offcampus.umich.edu/article/sub-leasing", "Sublease guidance, a sublease agreement and an inventory checklist. Students can list an apartment for free on the site."]],
+  "gainesville": [["UF Off Campus Life: frequently asked questions", "https://offcampus.ufl.edu/about/frequently-asked-question/", "Sublease steps, plus lease review through UF Student Legal Services. The Housing Locator also lists subleases."]],
+  "austin-tx": [["UT Austin Off-Campus Living", "https://offcampus.utexas.edu", "The Off-Campus Housing Marketplace lets students find roommates or list a sublease. Legal Services for Students can review a lease."]],
+  "boulder-co": [["CU Boulder Student Life: things to know about subletting", "https://www.colorado.edu/studentlife/2021/04/19/things-know-about-subletting", "Explains short-term and long-term subleases, and what to ask your property manager."]],
+  "columbus": [["Ohio State Student Legal Services: subleasing", "https://studentlegal.osu.edu/sublease", "Explains what a sublease is, why a written agreement matters and how landlord permission works."]],
+  "knoxville-tn": [["UT Knoxville: understanding subletting", "https://studentlife.utk.edu/off-campus-living/resources/understanding-subletting/", "UT students with written approval to sublet can list a unit on the off-campus housing site at no cost."]],
+  "louisville-ky": [["University of Louisville off-campus housing", "https://louisville.edu/housing/options/communities/upperclass", "UofL students who live off campus can post sublease offers for free on the school's off-campus housing site."]],
+  "champaign-il": [["Illinois Off-Campus Community Living: rights and responsibilities", "https://www.occl.illinois.edu/rights-and-responsibilities", "Tenant rights and responsibilities from the university's off-campus office."]],
+  "lubbock-tx": [["Texas Tech Off-Campus Housing FAQ", "https://offcampushousing.ttu.edu/about/faq/", "Lease reviews are handled by Student Legal Services for students who pay the Student Service Fee."]],
+  "lafayette-la": [["UL Lafayette renter's resources", "https://louisiana.edu/housing/choices-costs/off-campus-housing/renters-resources", "Covers subleasing terms in your lease and how to avoid rental scams."]],
+  "syracuse-ny": [["Syracuse University student living: subleasing", "https://experience.syracuse.edu/student-living/?p=2585", "Explains what subleasing is and landlord notice rules."]],
+  "milwaukee-wi": [["UW-Milwaukee: what is a sublease?", "https://uwm.edu/neighborhoodhousing/what-is-a-sublease-and-do-i-need-permission-from-my-landlord-to-sublease-my-room-or-entire-unit/", "Landlord approval is required, and UWM's listing service has a sublease tab."]],
+  "houston": [["University of Houston: renting a room and subletting", "https://www.uh.edu/issso/housing/off-campus/renting-a-room/", "Warns that many landlords forbid subleasing and may not honor an unapproved arrangement."]],
+};

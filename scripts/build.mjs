@@ -1,4 +1,4 @@
-import { tipsAndTricks, calendarNote, scamFlags, stateNotes, defaultStateNote, extraGuides } from "../src/data/sublease-extra.mjs";
+import { tipsAndTricks, calendarNote, scamFlags, stateNotes, defaultStateNote, extraGuides, officialResources } from "../src/data/sublease-extra.mjs";
 import { readFile, writeFile, mkdir, cp, rm, readdir } from "node:fs/promises";
 import { load } from "cheerio";
 import {
@@ -443,6 +443,7 @@ const seoSchoolPage = (m) => {
     `<section class="wrap prose"><h2>Subleases, relets and lease takeovers in ${e(m.place)}</h2><p>${e(m.description)} That mix of neighborhoods means students near ${e(name)} are always looking to hand off a lease or pick one up mid-term.</p><p>Whether you call it a sublease, a relet or a lease takeover, the goal is the same: a new tenant moves in, and the person leaving stops paying for a place they are not using.</p></section>` +
     `<section class="wrap prose" id="listings"><h2>Live sublease listings near ${e(name)}</h2><p>Student sublease listings are posted under Available Rentals &amp; Subleases on the <a href="${m.file}#available-rentals">${e(m.place)} housing page</a>.</p></section>` +
     `<section class="wrap prose"><h2>Leaving your lease near ${e(name)}?</h2><ol><li>Read the lease sections on subleasing, assignment and early termination.</li><li>Ask the leasing office, in writing, about their relet or lease takeover process and any fees.</li><li>List your place where students near ${e(name)} will see it, and share it in the local housing groups.</li><li>Tour, get the landlord's approval in writing, and sign the paperwork before any money moves.</li></ol></section>` +
+    ((officialResources[m.id.replace(/^housing-/, "")] || []).length ? `<section class="wrap prose"><h2>Official ${e(name)} resources</h2><ul>${officialResources[m.id.replace(/^housing-/, "")].map(([label, url, note]) => `<li>${external(url, label)}. ${e(note)}</li>`).join("")}</ul><p class="source-note">These are the school's own pages. AstroPro is not affiliated with these schools.</p></section>` : "") +
     `<section class="wrap prose"><h2>When to list a sublease near ${e(name)}</h2><p>${e(calendarNote)}</p></section>` +
     `<section class="wrap prose"><h2>Sublease tips for ${e(name)} students</h2><ul>${tipsAndTricks.map(([h, p]) => `<li><strong>${e(h)}.</strong> ${e(p)}</li>`).join("")}</ul></section>` +
     `<section class="wrap prose"><h2>Sublease scams to watch for near ${e(name)}</h2><ul>${scamFlags.map((s) => `<li>${e(s)}</li>`).join("")}</ul></section>` +
