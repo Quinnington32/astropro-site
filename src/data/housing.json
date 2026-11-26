@@ -8447,5 +8447,557 @@
         "pick": 4
       }
     ]
+  },
+  {
+    "id": "housing-charlottesville-va",
+    "file": "housing-charlottesville-va.html",
+    "school": "University of Virginia",
+    "place": "Charlottesville, VA",
+    "description": "Students at University of Virginia rent apartments, houses and rooms in and around Charlottesville. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-boulder-co",
+    "file": "housing-boulder-co.html",
+    "school": "University of Colorado Boulder",
+    "place": "Boulder, CO",
+    "description": "Students at University of Colorado Boulder rent apartments, houses and rooms in and around Boulder. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-salt-lake-city-ut",
+    "file": "housing-salt-lake-city-ut.html",
+    "school": "University of Utah",
+    "place": "Salt Lake City, UT",
+    "description": "Students at University of Utah rent apartments, houses and rooms in and around Salt Lake City. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-corvallis-or",
+    "file": "housing-corvallis-or.html",
+    "school": "Oregon State University",
+    "place": "Corvallis, OR",
+    "description": "Students at Oregon State University rent apartments, houses and rooms in and around Corvallis. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-pullman-wa",
+    "file": "housing-pullman-wa.html",
+    "school": "Washington State University",
+    "place": "Pullman, WA",
+    "description": "Students at Washington State University rent apartments, houses and rooms in and around Pullman. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-norman-ok",
+    "file": "housing-norman-ok.html",
+    "school": "University of Oklahoma",
+    "place": "Norman, OK",
+    "description": "Students at University of Oklahoma rent apartments, houses and rooms in and around Norman. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-fort-worth-tx",
+    "file": "housing-fort-worth-tx.html",
+    "school": "Texas Christian University",
+    "place": "Fort Worth, TX",
+    "description": "Students at Texas Christian University rent apartments, houses and rooms in and around Fort Worth. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-morgantown-wv",
+    "file": "housing-morgantown-wv.html",
+    "school": "West Virginia University",
+    "place": "Morgantown, WV",
+    "description": "Students at West Virginia University rent apartments, houses and rooms in and around Morgantown. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-lafayette-la",
+    "file": "housing-lafayette-la.html",
+    "school": "University of Louisiana at Lafayette",
+    "place": "Lafayette, LA",
+    "description": "Students at University of Louisiana at Lafayette rent apartments, houses and rooms in and around Lafayette. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-starkville-ms",
+    "file": "housing-starkville-ms.html",
+    "school": "Mississippi State University",
+    "place": "Starkville, MS",
+    "description": "Students at Mississippi State University rent apartments, houses and rooms in and around Starkville. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-durham-nc",
+    "file": "housing-durham-nc.html",
+    "school": "Duke University",
+    "place": "Durham, NC",
+    "description": "Students at Duke University rent apartments, houses and rooms in and around Durham. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-miami-fl",
+    "file": "housing-miami-fl.html",
+    "school": "University of Miami",
+    "place": "Miami, FL",
+    "description": "Students at University of Miami rent apartments, houses and rooms in and around Miami. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-atlanta-ga",
+    "file": "housing-atlanta-ga.html",
+    "school": "Georgia Tech, Emory & Georgia State",
+    "place": "Atlanta, GA",
+    "description": "Students at Georgia Tech, Emory & Georgia State rent apartments, houses and rooms in and around Atlanta. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-nashville-tn",
+    "file": "housing-nashville-tn.html",
+    "school": "Vanderbilt University",
+    "place": "Nashville, TN",
+    "description": "Students at Vanderbilt University rent apartments, houses and rooms in and around Nashville. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-louisville-ky",
+    "file": "housing-louisville-ky.html",
+    "school": "University of Louisville",
+    "place": "Louisville, KY",
+    "description": "Students at University of Louisville rent apartments, houses and rooms in and around Louisville. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-cincinnati-oh",
+    "file": "housing-cincinnati-oh.html",
+    "school": "University of Cincinnati",
+    "place": "Cincinnati, OH",
+    "description": "Students at University of Cincinnati rent apartments, houses and rooms in and around Cincinnati. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-kent-oh",
+    "file": "housing-kent-oh.html",
+    "school": "Kent State University",
+    "place": "Kent, OH",
+    "description": "Students at Kent State University rent apartments, houses and rooms in and around Kent. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-athens-oh",
+    "file": "housing-athens-oh.html",
+    "school": "Ohio University",
+    "place": "Athens, OH",
+    "description": "Students at Ohio University rent apartments, houses and rooms in and around Athens. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-south-bend-in",
+    "file": "housing-south-bend-in.html",
+    "school": "University of Notre Dame",
+    "place": "South Bend, IN",
+    "description": "Students at University of Notre Dame rent apartments, houses and rooms in and around South Bend. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-laramie-wy",
+    "file": "housing-laramie-wy.html",
+    "school": "University of Wyoming",
+    "place": "Laramie, WY",
+    "description": "Students at University of Wyoming rent apartments, houses and rooms in and around Laramie. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-bozeman-mt",
+    "file": "housing-bozeman-mt.html",
+    "school": "Montana State University",
+    "place": "Bozeman, MT",
+    "description": "Students at Montana State University rent apartments, houses and rooms in and around Bozeman. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-moscow-id",
+    "file": "housing-moscow-id.html",
+    "school": "University of Idaho",
+    "place": "Moscow, ID",
+    "description": "Students at University of Idaho rent apartments, houses and rooms in and around Moscow. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-logan-ut",
+    "file": "housing-logan-ut.html",
+    "school": "Utah State University",
+    "place": "Logan, UT",
+    "description": "Students at Utah State University rent apartments, houses and rooms in and around Logan. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-las-cruces-nm",
+    "file": "housing-las-cruces-nm.html",
+    "school": "New Mexico State University",
+    "place": "Las Cruces, NM",
+    "description": "Students at New Mexico State University rent apartments, houses and rooms in and around Las Cruces. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-flagstaff-az",
+    "file": "housing-flagstaff-az.html",
+    "school": "Northern Arizona University",
+    "place": "Flagstaff, AZ",
+    "description": "Students at Northern Arizona University rent apartments, houses and rooms in and around Flagstaff. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-davis-ca",
+    "file": "housing-davis-ca.html",
+    "school": "UC Davis",
+    "place": "Davis, CA",
+    "description": "Students at UC Davis rent apartments, houses and rooms in and around Davis. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-santa-barbara-ca",
+    "file": "housing-santa-barbara-ca.html",
+    "school": "UC Santa Barbara",
+    "place": "Santa Barbara, CA",
+    "description": "Students at UC Santa Barbara rent apartments, houses and rooms in and around Santa Barbara. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-san-luis-obispo-ca",
+    "file": "housing-san-luis-obispo-ca.html",
+    "school": "Cal Poly San Luis Obispo",
+    "place": "San Luis Obispo, CA",
+    "description": "Students at Cal Poly San Luis Obispo rent apartments, houses and rooms in and around San Luis Obispo. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-amherst-ma",
+    "file": "housing-amherst-ma.html",
+    "school": "UMass Amherst",
+    "place": "Amherst, MA",
+    "description": "Students at UMass Amherst rent apartments, houses and rooms in and around Amherst. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-ithaca-ny",
+    "file": "housing-ithaca-ny.html",
+    "school": "Cornell University & Ithaca College",
+    "place": "Ithaca, NY",
+    "description": "Students at Cornell University & Ithaca College rent apartments, houses and rooms in and around Ithaca. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-syracuse-ny",
+    "file": "housing-syracuse-ny.html",
+    "school": "Syracuse University",
+    "place": "Syracuse, NY",
+    "description": "Students at Syracuse University rent apartments, houses and rooms in and around Syracuse. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-buffalo-ny",
+    "file": "housing-buffalo-ny.html",
+    "school": "University at Buffalo",
+    "place": "Buffalo, NY",
+    "description": "Students at University at Buffalo rent apartments, houses and rooms in and around Buffalo. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-storrs-ct",
+    "file": "housing-storrs-ct.html",
+    "school": "UConn",
+    "place": "Storrs, CT",
+    "description": "Students at UConn rent apartments, houses and rooms in and around Storrs. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-new-haven-ct",
+    "file": "housing-new-haven-ct.html",
+    "school": "Yale University",
+    "place": "New Haven, CT",
+    "description": "Students at Yale University rent apartments, houses and rooms in and around New Haven. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-providence-ri",
+    "file": "housing-providence-ri.html",
+    "school": "Brown University & RISD",
+    "place": "Providence, RI",
+    "description": "Students at Brown University & RISD rent apartments, houses and rooms in and around Providence. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-durham-nh",
+    "file": "housing-durham-nh.html",
+    "school": "University of New Hampshire",
+    "place": "Durham, NH",
+    "description": "Students at University of New Hampshire rent apartments, houses and rooms in and around Durham. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-orono-me",
+    "file": "housing-orono-me.html",
+    "school": "University of Maine",
+    "place": "Orono, ME",
+    "description": "Students at University of Maine rent apartments, houses and rooms in and around Orono. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-burlington-vt",
+    "file": "housing-burlington-vt.html",
+    "school": "University of Vermont",
+    "place": "Burlington, VT",
+    "description": "Students at University of Vermont rent apartments, houses and rooms in and around Burlington. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-newark-de",
+    "file": "housing-newark-de.html",
+    "school": "University of Delaware",
+    "place": "Newark, DE",
+    "description": "Students at University of Delaware rent apartments, houses and rooms in and around Newark. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-pittsburgh-pa",
+    "file": "housing-pittsburgh-pa.html",
+    "school": "University of Pittsburgh & Carnegie Mellon",
+    "place": "Pittsburgh, PA",
+    "description": "Students at University of Pittsburgh & Carnegie Mellon rent apartments, houses and rooms in and around Pittsburgh. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-hattiesburg-ms",
+    "file": "housing-hattiesburg-ms.html",
+    "school": "University of Southern Mississippi",
+    "place": "Hattiesburg, MS",
+    "description": "Students at University of Southern Mississippi rent apartments, houses and rooms in and around Hattiesburg. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-ruston-la",
+    "file": "housing-ruston-la.html",
+    "school": "Louisiana Tech University",
+    "place": "Ruston, LA",
+    "description": "Students at Louisiana Tech University rent apartments, houses and rooms in and around Ruston. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-statesboro-ga",
+    "file": "housing-statesboro-ga.html",
+    "school": "Georgia Southern University",
+    "place": "Statesboro, GA",
+    "description": "Students at Georgia Southern University rent apartments, houses and rooms in and around Statesboro. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-oxford-oh",
+    "file": "housing-oxford-oh.html",
+    "school": "Miami University",
+    "place": "Oxford, OH",
+    "description": "Students at Miami University rent apartments, houses and rooms in and around Oxford. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-muncie-in",
+    "file": "housing-muncie-in.html",
+    "school": "Ball State University",
+    "place": "Muncie, IN",
+    "description": "Students at Ball State University rent apartments, houses and rooms in and around Muncie. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-carbondale-il",
+    "file": "housing-carbondale-il.html",
+    "school": "Southern Illinois University",
+    "place": "Carbondale, IL",
+    "description": "Students at Southern Illinois University rent apartments, houses and rooms in and around Carbondale. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-dekalb-il",
+    "file": "housing-dekalb-il.html",
+    "school": "Northern Illinois University",
+    "place": "DeKalb, IL",
+    "description": "Students at Northern Illinois University rent apartments, houses and rooms in and around DeKalb. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-mount-pleasant-mi",
+    "file": "housing-mount-pleasant-mi.html",
+    "school": "Central Michigan University",
+    "place": "Mount Pleasant, MI",
+    "description": "Students at Central Michigan University rent apartments, houses and rooms in and around Mount Pleasant. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-ypsilanti-mi",
+    "file": "housing-ypsilanti-mi.html",
+    "school": "Eastern Michigan University",
+    "place": "Ypsilanti, MI",
+    "description": "Students at Eastern Michigan University rent apartments, houses and rooms in and around Ypsilanti. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-huntsville-tx",
+    "file": "housing-huntsville-tx.html",
+    "school": "Sam Houston State University",
+    "place": "Huntsville, TX",
+    "description": "Students at Sam Houston State University rent apartments, houses and rooms in and around Huntsville. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-nacogdoches-tx",
+    "file": "housing-nacogdoches-tx.html",
+    "school": "Stephen F. Austin State University",
+    "place": "Nacogdoches, TX",
+    "description": "Students at Stephen F. Austin State University rent apartments, houses and rooms in and around Nacogdoches. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-arlington-tx",
+    "file": "housing-arlington-tx.html",
+    "school": "University of Texas at Arlington",
+    "place": "Arlington, TX",
+    "description": "Students at University of Texas at Arlington rent apartments, houses and rooms in and around Arlington. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-richardson-tx",
+    "file": "housing-richardson-tx.html",
+    "school": "UT Dallas",
+    "place": "Richardson, TX",
+    "description": "Students at UT Dallas rent apartments, houses and rooms in and around Richardson. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-corpus-christi-tx",
+    "file": "housing-corpus-christi-tx.html",
+    "school": "Texas A&M University-Corpus Christi",
+    "place": "Corpus Christi, TX",
+    "description": "Students at Texas A&M University-Corpus Christi rent apartments, houses and rooms in and around Corpus Christi. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-milwaukee-wi",
+    "file": "housing-milwaukee-wi.html",
+    "school": "UW-Milwaukee & Marquette",
+    "place": "Milwaukee, WI",
+    "description": "Students at UW-Milwaukee & Marquette rent apartments, houses and rooms in and around Milwaukee. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-kansas-city-mo",
+    "file": "housing-kansas-city-mo.html",
+    "school": "University of Missouri-Kansas City",
+    "place": "Kansas City, MO",
+    "description": "Students at University of Missouri-Kansas City rent apartments, houses and rooms in and around Kansas City. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-st-louis-mo",
+    "file": "housing-st-louis-mo.html",
+    "school": "Washington University & Saint Louis University",
+    "place": "St. Louis, MO",
+    "description": "Students at Washington University & Saint Louis University rent apartments, houses and rooms in and around St. Louis. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-indianapolis-in",
+    "file": "housing-indianapolis-in.html",
+    "school": "IUPUI & Butler University",
+    "place": "Indianapolis, IN",
+    "description": "Students at IUPUI & Butler University rent apartments, houses and rooms in and around Indianapolis. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-richmond-va",
+    "file": "housing-richmond-va.html",
+    "school": "Virginia Commonwealth University",
+    "place": "Richmond, VA",
+    "description": "Students at Virginia Commonwealth University rent apartments, houses and rooms in and around Richmond. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-norfolk-va",
+    "file": "housing-norfolk-va.html",
+    "school": "Old Dominion University",
+    "place": "Norfolk, VA",
+    "description": "Students at Old Dominion University rent apartments, houses and rooms in and around Norfolk. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-charlotte-nc",
+    "file": "housing-charlotte-nc.html",
+    "school": "UNC Charlotte",
+    "place": "Charlotte, NC",
+    "description": "Students at UNC Charlotte rent apartments, houses and rooms in and around Charlotte. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-birmingham-al",
+    "file": "housing-birmingham-al.html",
+    "school": "UAB",
+    "place": "Birmingham, AL",
+    "description": "Students at UAB rent apartments, houses and rooms in and around Birmingham. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-jacksonville-fl",
+    "file": "housing-jacksonville-fl.html",
+    "school": "University of North Florida",
+    "place": "Jacksonville, FL",
+    "description": "Students at University of North Florida rent apartments, houses and rooms in and around Jacksonville. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-tulsa-ok",
+    "file": "housing-tulsa-ok.html",
+    "school": "University of Tulsa",
+    "place": "Tulsa, OK",
+    "description": "Students at University of Tulsa rent apartments, houses and rooms in and around Tulsa. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-des-moines-ia",
+    "file": "housing-des-moines-ia.html",
+    "school": "Drake University",
+    "place": "Des Moines, IA",
+    "description": "Students at Drake University rent apartments, houses and rooms in and around Des Moines. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-washington-dc",
+    "file": "housing-washington-dc.html",
+    "school": "George Washington, Georgetown & American University",
+    "place": "Washington, DC",
+    "description": "Students at George Washington, Georgetown & American University rent apartments, houses and rooms in and around Washington. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-baltimore-md",
+    "file": "housing-baltimore-md.html",
+    "school": "Johns Hopkins & Towson",
+    "place": "Baltimore, MD",
+    "description": "Students at Johns Hopkins & Towson rent apartments, houses and rooms in and around Baltimore. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-detroit-mi",
+    "file": "housing-detroit-mi.html",
+    "school": "Wayne State University",
+    "place": "Detroit, MI",
+    "description": "Students at Wayne State University rent apartments, houses and rooms in and around Detroit. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
+  },
+  {
+    "id": "housing-cleveland-oh",
+    "file": "housing-cleveland-oh.html",
+    "school": "Case Western Reserve & Cleveland State",
+    "place": "Cleveland, OH",
+    "description": "Students at Case Western Reserve & Cleveland State rent apartments, houses and rooms in and around Cleveland. Compare commute, lease dates and sublease or relet rules before you sign.",
+    "properties": []
   }
 ]
