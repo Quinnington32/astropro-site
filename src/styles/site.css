@@ -3742,7 +3742,7 @@ html, body { overflow-x: clip; }
 .sl-hd-stat strong{font-size:1.9rem;color:#fff;line-height:1}
 .sl-hd-stat small{color:#8d9bc9}
 .sl-hd-stat .up{color:#5be3a0;font-size:.78rem;font-weight:600}
-.sl-hd-ring{width:3.4rem;height:3.4rem;border-radius:50%;background:conic-gradient(#e77b25 calc(var(--p)*1%),#243468 0);display:grid;place-items:center;position:relative}
+.sl-hd-ring{width:3.4rem;height:3.4rem;border-radius:50%;background:conic-gradient(#e77b25 var(--pd),#243468 0);display:grid;place-items:center;position:relative}
 .sl-hd-ring::before{content:"";position:absolute;inset:.35rem;background:#16224a;border-radius:50%}
 .sl-hd-ring span{position:relative;font-weight:800;color:#fff;font-size:1.05rem}
 .sl-hd-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;padding:.8rem 1.1rem 1.1rem}
