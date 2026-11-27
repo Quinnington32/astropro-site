@@ -3720,3 +3720,5 @@ html, body { overflow-x: clip; }
   body.sl-sticky-on{padding-bottom:78px}
   .sl-chips li{font-size:.8rem}
 }
+.sl-next strong{color:#172447;display:block}
+.sl-next li{color:#4a5470}
