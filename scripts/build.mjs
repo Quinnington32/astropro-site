@@ -881,7 +881,6 @@ const slValue = [
 const slFaq = [
   ["Is it safe to pay through PayPal?", "Yes. You pay on PayPal's own website, so your card or bank details go to PayPal and never to us. PayPal also protects your purchase under its buyer rules."],
   ["Do I need a PayPal account?", "You can use your PayPal balance, or in most cases pay with a debit or credit card without making an account. PayPal shows you your options at checkout."],
-  ["Does paying guarantee someone takes my place?", "No, and no one honestly can. We put your place in front of local students, share it to every Facebook group in your city and keep your landlord hearing about it every week. A fair price, good photos and a quick reply make the biggest difference."],
   ["Do you take a cut when it subleases?", "No. It is one flat fee. You and your subtenant deal directly, and we never touch rent or deposits."],
   ["What if my landlord doesn't allow subleasing?", "Check your lease first. The form asks whether you have approval, and you can choose a relet or lease takeover instead, where the property is involved. Get approval in writing before anyone pays or moves in."],
   ["How long is my listing live?", "60 days from the moment you publish it."],
