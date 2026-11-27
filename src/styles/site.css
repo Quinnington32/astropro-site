@@ -3773,3 +3773,4 @@ html, body { overflow-x: clip; }
 .sl-hd-ad-h{margin-top:.2rem!important}
 .sl-hd-ad{margin:0;background:#0d1733;border-radius:10px;padding:.7rem .8rem;color:#c9d2f0;font-size:.85rem;line-height:1.45}
 @media (max-width:720px){.sl-hd-stats{grid-template-columns:repeat(2,1fr)}.sl-hd-grid{grid-template-columns:1fr}.sl-hd-stat strong{font-size:1.6rem}}
+.sl-hd-ring{--pd:87%}.sl-hd-prog i{width:62%}
