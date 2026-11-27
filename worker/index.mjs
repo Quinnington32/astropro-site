@@ -6,6 +6,7 @@ const ALIAS_HOSTS = [
   "www.astroprostudentresourcecenter.com",
   "astroprostudentresourcecenter.org",
   "www.astroprostudentresourcecenter.org",
+  "students.goastropro.com",
 ];
 const MAX_BODY = 2500000;
 const JSON_HEADERS = {
