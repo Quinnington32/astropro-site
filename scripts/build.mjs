@@ -894,7 +894,11 @@ const slGroups2 = [
   ["Close it", "From first message to signed hand-over.", ["A day-by-day 14-day game plan", "Tour, sign and hand-over checklist so nothing gets missed"]],
 ];
 // Student reviews. Add real ones here ({ quote, name, school }); the section only appears once there is at least one.
-const slReviews = [];
+const slReviews = [
+  { quote: "When my mom got sick I had to move home and had no idea how to sublease or what to do. AstroPro literally saved me!!", name: "Chelsey W." },
+  { quote: "Highly recommend. I was only posting on Facebook and they gave me a bunch of other places to post my place, and that's where I found someone!", name: "Justin B." },
+  { quote: "You can tell this is well thought out and they really know what they are doing. It's basically everything you need to sublease in 1 place. It helped me!", name: "Katie K." },
+];
 const slReviewsHtml = () => slReviews.length ? `<section class="wrap" id="reviews"><div class="section-head"><span class="kicker-sm">From students</span><h2>Students who got out of their lease.</h2></div><div class="sl-reviews">${slReviews.map((r) => `<figure class="sl-review"><div class="sl-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>${e(r.quote)}</blockquote><figcaption><b>${e(r.name)}</b>${r.school ? `<span>${e(r.school)}</span>` : ""}</figcaption></figure>`).join("")}</div></section>\n` : "";
 const slSteps = [
   ["Join with one secure payment", "A single flat fee through PayPal. Use your PayPal balance or a card, then PayPal brings you straight back here."],
