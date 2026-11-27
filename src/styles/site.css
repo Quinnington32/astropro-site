@@ -3700,3 +3700,23 @@ html, body { overflow-x: clip; }
 .tape-page-in .btn-ghost{border-color:#111;color:#111;background:transparent}
 .tape-page-in .btn-primary{background:#111;color:#ffc400;border-color:#111}
 .tape-btn{padding:5px}
+
+.sl-chips{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;margin:1.1rem 0 0;padding:0}
+.sl-chips li{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);color:#fff;border-radius:999px;padding:.3rem .85rem;font-size:.88rem;font-weight:600}
+.sl-buy{border:2px solid #172447;background:#fff;box-shadow:0 10px 30px rgba(23,36,71,.12)}
+.sl-price{font-size:1.15rem!important;color:#172447!important}
+.sl-price strong{font-size:2rem;color:#e77b25}
+.sl-buy-list{list-style:none;margin:.5rem 0 1rem;padding:0;display:grid;gap:.4rem}
+.sl-buy-list li{padding-left:1.7rem;position:relative;color:#2b3550;font-size:.95rem}
+.sl-buy-list li::before{content:"\2713";position:absolute;left:0;color:#fff;background:#2e8b57;width:1.2rem;height:1.2rem;border-radius:50%;font-size:.75rem;display:grid;place-items:center;top:.15rem}
+.sl-next{background:#fbfaf6;border:1px solid rgba(23,36,71,.12);border-radius:12px;padding:.8rem 1.1rem;margin:1rem 0;font-size:.92rem;max-width:60ch}
+.sl-next ol{margin:.4rem 0 0;padding-left:1.2rem;color:#4a5470}
+.sl-ask{margin-top:1rem;font-weight:600}
+#start .btn.btn-primary{font-size:1.05rem;padding:.9rem 1.6rem}
+.sl-sticky{display:none}
+@media (max-width:720px){
+  .sl-sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:50;background:#e77b25;color:#fff;text-align:center;font-weight:700;padding:.95rem 1rem;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,.3);text-decoration:none}
+  .sl-sticky:not([hidden]){display:block}
+  body.sl-sticky-on{padding-bottom:78px}
+  .sl-chips li{font-size:.8rem}
+}

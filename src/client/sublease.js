@@ -156,7 +156,7 @@ function startPage() {
     const url = new URL("https://www.paypal.com/cgi-bin/webscr");
     url.searchParams.set("cmd", "_xclick");
     url.searchParams.set("business", payBtn.dataset.business);
-    url.searchParams.set("item_name", "Sublease War Room onboarding fee");
+    url.searchParams.set("item_name", "AstroPro Sublease War Room: 60-day listing, Facebook group posts, weekly landlord emails");
     url.searchParams.set("item_number", payCode);
     url.searchParams.set("amount", Number(payBtn.dataset.price).toFixed(2));
     url.searchParams.set("currency_code", "USD");
@@ -169,6 +169,18 @@ function startPage() {
     return url.href;
   };
   payBtn.href = buildPayUrl();
+  const sticky = $("[data-sl-sticky]");
+  if (sticky) {
+    const startEl = $("#start");
+    const upd = () => {
+      const r = startEl.getBoundingClientRect();
+      const past = window.scrollY > 500 && !(r.top < innerHeight && r.bottom > 0);
+      sticky.hidden = !past;
+      document.body.classList.toggle("sl-sticky-on", past);
+    };
+    addEventListener("scroll", upd, { passive: true });
+    upd();
+  }
   const payEmail = $("#slPayEmail");
   const EMAIL_KEY = "astropro.sublease.email";
   try {
@@ -187,7 +199,7 @@ function startPage() {
     try {
       localStorage.setItem(EMAIL_KEY, email);
     } catch {}
-    say(payMsg, "Taking you to PayPal…", true);
+    say(payMsg, "Opening PayPal's secure checkout…", true);
     try {
       await Promise.race([api("/intent", { method: "POST", body: JSON.stringify({ code: payCode, email }) }), new Promise((r) => setTimeout(r, 2500))]);
     } catch (e) {
