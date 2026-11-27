@@ -3774,3 +3774,10 @@ html, body { overflow-x: clip; }
 .sl-hd-ad{margin:0;background:#0d1733;border-radius:10px;padding:.7rem .8rem;color:#c9d2f0;font-size:.85rem;line-height:1.45}
 @media (max-width:720px){.sl-hd-stats{grid-template-columns:repeat(2,1fr)}.sl-hd-grid{grid-template-columns:1fr}.sl-hd-stat strong{font-size:1.6rem}}
 .sl-hd-ring{--pd:87%}.sl-hd-prog i{width:62%}
+
+.sl-reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin:1.5rem 0}
+.sl-review{margin:0;background:#fff;border:1px solid rgba(23,36,71,.12);border-radius:16px;padding:1.4rem;box-shadow:0 2px 12px rgba(23,36,71,.07);display:flex;flex-direction:column;gap:.8rem}
+.sl-stars{color:#e77b25;letter-spacing:.15em;font-size:1.1rem}
+.sl-review blockquote{margin:0;color:#172447;font-size:1.02rem;line-height:1.55;flex:1}
+.sl-review figcaption{display:flex;flex-direction:column;color:#4a5470;font-size:.9rem}
+.sl-review figcaption b{color:#172447}
