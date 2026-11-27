@@ -3702,7 +3702,7 @@ html, body { overflow-x: clip; }
 .tape-btn{padding:5px}
 
 .sl-chips{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;margin:1.1rem 0 0;padding:0}
-.sl-chips li{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);color:#fff;border-radius:999px;padding:.3rem .85rem;font-size:.88rem;font-weight:600}
+.sl-chips li{background:#fff;border:1px solid rgba(23,36,71,.2);color:#172447;border-radius:999px;padding:.3rem .85rem;font-size:.88rem;font-weight:600}
 .sl-buy{border:2px solid #172447;background:#fff;box-shadow:0 10px 30px rgba(23,36,71,.12)}
 .sl-price{font-size:1.15rem!important;color:#172447!important}
 .sl-price strong{font-size:2rem;color:#e77b25}
