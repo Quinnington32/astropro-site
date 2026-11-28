@@ -1,5 +1,5 @@
 // Sublease War Room dashboard: command center on top, a menu on the right, one center at a time in the middle.
-import { cityInfo, platformList, PLAN, TIPS, MOTIVATION, llTemplates, HELP, TSH } from "./war-room-data.js";
+import { cityInfo, platformList, PLAN, TIPS, MOTIVATION, llTemplates, HELP, TSH, GUIDES, coachChecks } from "./war-room-data.js";
 
 const PLAN_DAYS = 30;
 const ICONS = {
@@ -11,9 +11,11 @@ const ICONS = {
   leads: '<circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5M11 8v6M8 11h6"/>',
   help: '<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 015 0c0 2-2.5 2-2.5 4M12 17h.01"/>',
   listing: '<path d="M5 3h14v18H5zM9 8h6M9 12h6M9 16h4"/>',
+  coach: '<path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.5 6.6 19.5l1.2-6L3.300 9.300l6.100-.7z"/>',
+  learn: '<path d="M3 6c3-1.500 6-1.500 9 0v13c-3-1.500-6-1.500-9 0zM12 6c3-1.500 6-1.500 9 0v13c-3-1.500-6-1.500-9 0z"/>',
 };
 const icon = (n) => `<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[n] || ""}</svg>`;
-const NAV = [["today", "Today"], ["messages", "Messages"], ["platforms", "Platforms"], ["marketing", "Marketing"], ["landlord", "Landlord"], ["leads", "Lead Finder"], ["help", "Help Center"], ["listing", "My Listing"]];
+const NAV = [["today", "Today"], ["messages", "Messages"], ["coach", "Listing Coach"], ["platforms", "Platforms"], ["marketing", "Marketing"], ["landlord", "Landlord"], ["leads", "Lead Finder"], ["help", "Help Center"], ["learn", "Learn"], ["listing", "My Listing"]];
 
 export async function mountWarRoom(h) {
   const { id, saved, dash, root, groups, api, $, $$, esc, money, dateText, say, copyText, pingShare, wireShare, shareBar, shrink, typeLabel, kit } = h;
@@ -242,6 +244,26 @@ export async function mountWarRoom(h) {
       <div class="wr-panel"><h3>Your account</h3><p>Signed in as <strong>${esc(data.ownerEmail || "you")}</strong></p><p class="wr-actions"><button class="btn btn-ghost" type="button" data-copy-private>Copy my private link</button><button class="btn btn-ghost" type="button" data-signout>Sign out</button></p><p class="fineprint">Tip: add this page to your phone's home screen to use it like an app. In your browser menu, choose Add to Home Screen or Install.</p></div>`;
   };
 
+  // ---------- listing coach ----------
+  const coachView = () => {
+    const fl = loadFl();
+    const checks = coachChecks({ l, fl, posted: postedCount(), descLen: String(l.description || "").length });
+    const score = checks.reduce((t, x) => t + x.got, 0);
+    const grade = score >= 85 ? "Excellent" : score >= 65 ? "Good, a few fixes left" : score >= 40 ? "Needs work" : "Just getting started";
+    const views = data.views || 0, leads = data.leads.length;
+    const reads = [];
+    if (views >= 40 && !leads) reads.push("People are looking but not writing. That usually means the price, photos or description. Try dropping the rent $25 to $50, adding a perk, and improving your first photo.");
+    if (views < 20 && rawDay() >= 4) reads.push("Not many people are seeing your listing yet. Post on more platforms and share your link. Open Platforms.");
+    if (views >= 20 && leads) reads.push("Your listing is getting attention and replies. Answer within a few hours and offer two tour times.");
+    if (!reads.length) reads.push("Keep posting and answering fast. Check back as your views come in and this will tell you what to change.");
+    const fixBtn = (c2) => ({ edit: `<button class="btn btn-ghost" type="button" data-go="listing:edit">Fix it</button>`, marketing: `<button class="btn btn-ghost" type="button" data-nav="marketing" data-mkt="flyers">Fix it</button>`, landlord: `<button class="btn btn-ghost" type="button" data-nav="landlord">Fix it</button>`, platforms: `<button class="btn btn-ghost" type="button" data-nav="platforms">Fix it</button>` }[c2] || "");
+    return `<div class="wr-panel"><div class="wr-ph"><span class="wr-eyebrow">Listing Coach</span><h2>Your listing score: ${score} / 100</h2><p>${grade}. Each item below shows what to change to get more replies.</p></div><div class="wr-score"><i></i></div>
+      <ul class="wr-checks">${checks.map((c2) => `<li class="${c2.ok ? "ok" : "todo"}"><span class="wr-dot">${c2.ok ? "✓" : "!"}</span><div><strong>${esc(c2.title)}</strong> <em>${c2.got}/${c2.pts}</em><p>${esc(c2.tip)}</p></div>${c2.ok ? "" : fixBtn(c2.fix)}</li>`).join("")}</ul></div>
+      <div class="wr-panel"><h3>What your numbers say</h3><p>${views} view${views === 1 ? "" : "s"} · ${leads} message${leads === 1 ? "" : "s"} · ${data.shares || 0} share${data.shares === 1 ? "" : "s"}</p>${reads.map((r) => `<p class="wr-note">${esc(r)}</p>`).join("")}</div>`;
+  };
+  let openGuide = null;
+  const learnView = () => `<div class="wr-panel"><div class="wr-ph"><span class="wr-eyebrow">Learn</span><h2>Short guides for first-time subleasers</h2><p>No experience needed. Each guide takes a couple of minutes.</p></div>${GUIDES.map(([gid, t, mins, paras]) => `<details class="wr-faq" data-guide="${gid}"${openGuide === gid ? " open" : ""}><summary>${esc(t)} <small>${mins}</small></summary>${paras.map((p2) => `<p>${esc(p2)}</p>`).join("")}</details>`).join("")}</div>`;
+
   // ---------- chrome around the center ----------
   const banners = () => {
     const pending = !data.paidAt && ["pending_payment", "expired"].includes(l.status);
@@ -264,10 +286,10 @@ export async function mountWarRoom(h) {
     if (v === "today") { const dn = dayNum(); const n = PLAN.filter((d) => d.d <= dn).flatMap((d) => d.tasks).filter((t) => !isDone(t)).length; return n; }
     return 0;
   };
-  const GROUPS = [["1", "Start here", ["today"]], ["2", "Get it seen", ["platforms", "marketing", "leads"]], ["3", "Handle interest", ["messages", "landlord"]], ["4", "Close and manage", ["help", "listing"]]];
+  const GROUPS = [["1", "Start here", ["today"]], ["2", "Get it seen", ["coach", "platforms", "marketing", "leads"]], ["3", "Handle interest", ["messages", "landlord"]], ["4", "Close and manage", ["help", "learn", "listing"]]];
   const nav = () => `<nav class="wr-nav" aria-label="War Room centers">${GROUPS.map(([n, t, vs]) => `<p class="wr-nav-h"><i>${n}</i>${t}</p>${vs.map((v) => { const label = NAV.find((x) => x[0] === v)[1]; return `<button type="button" class="wr-nav-btn${view === v ? " on" : ""}" data-nav="${v}"${view === v ? ' aria-current="page"' : ""}>${icon(v)}<span>${label}</span>${badge(v) ? `<b>${badge(v)}</b>` : ""}</button>`; }).join("")}`).join("")}</nav>`;
 
-  const center = () => ({ today: todayView, messages: messagesView, platforms: platformsView, marketing: marketingView, landlord: landlordView, leads: leadsView, help: helpView, listing: listingView }[view] || todayView)();
+  const center = () => ({ coach: coachView, learn: learnView, today: todayView, messages: messagesView, platforms: platformsView, marketing: marketingView, landlord: landlordView, leads: leadsView, help: helpView, listing: listingView }[view] || todayView)();
 
   // ---------- flyers (drawn on a canvas from the listing) ----------
   const loadImg = (src) => new Promise((res) => { const i = new Image(); i.onload = () => res(i); i.onerror = () => res(null); i.src = src; });
@@ -382,6 +404,7 @@ export async function mountWarRoom(h) {
   const paint = () => {
     dash.innerHTML = `<div class="wr">${commandCenter()}${banners()}<div class="wr-shell">${nav()}<main class="wr-main" id="wrMain" tabindex="-1">${center()}</main></div></div>`;
     $$("[data-w]", dash).forEach((e) => { e.style.width = Math.max(0, Math.min(100, Number(e.dataset.w))) + "%"; });
+    $$(".wr-score i", dash).forEach((e) => { const m = /(\d+) \/ 100/.exec($(".wr-ph h2", dash)?.textContent || ""); e.style.width = (m ? m[1] : 0) + "%"; });
     $$("[data-ring]", dash).forEach((e) => e.style.setProperty("--pd", Math.max(0, Math.min(100, Number(e.dataset.ring))) + "%"));
     wireShare(dash);
     if (view === "marketing" && mktTab === "flyers") paintFlyers();

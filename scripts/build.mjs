@@ -875,8 +875,8 @@ const slValue = [
   ["Every message in one place", "Interested students message you through your page, and you get an email each time. Your private dashboard collects them all."],
   ["Scam protection", "Messages that use common rental-scam wording are flagged before you reply."],
   ["Reply templates", "Know what to say to the first message, the tour request and the “is it still available?” question."],
-  ["A 14-day game plan", "A day-by-day plan so you always know the next move, with a link to your market’s student Facebook group."],
-  ["Tour, sign and hand-over checklist", "From first message to signed agreement to move-in photos, nothing gets missed."],
+  ["A 30-day game plan", "A day-by-day plan that sends you to the right platform, flyer or follow-up each day, so you always know the next move."],
+  ["Help Center and guides", "Tips, dos and don’ts, scam red flags, a tour and hand-over checklist, and short how-to guides, so nothing gets missed."],
 ];
 const slFaq = [
   ["Is it safe to pay through PayPal?", "Yes. You pay on PayPal's own website, so your card or bank details go to PayPal and never to us. PayPal also protects your purchase under its buyer rules."],
@@ -890,8 +890,8 @@ const slFaq = [
 const slGroups2 = [
   ["Get seen", "Your place in front of the right students.", ["Your ad goes live on our rental marketplace, where thousands of students come every day looking for rentals. It stays up for 60 days", "We share your listing to every Facebook group in your city from our main AstroPro page", "10+ additional platforms we recommend posting on, each with a direct link and your post ready to copy and paste"]],
   ["Get replies", "Never stare at a blank message again.", ["Professionally written, ready-to-post ads with your details", "Reply templates for the first message, tour requests and “is it still available?”", "Every message in one private dashboard, with an email each time", "Messages with common rental-scam wording are flagged before you reply"]],
-  ["Landlord accountability", "Your landlord has a job to do too.", ["In many states, landlords have a responsibility to make a real effort to find someone to take over your place", "Your War Room emails your landlord every week asking for an update and where you stand on their relet list. You can pause it anytime"]],
-  ["Close it", "From first message to signed hand-over.", ["A day-by-day 14-day game plan", "Tour, sign and hand-over checklist so nothing gets missed"]],
+  ["Landlord accountability", "Your landlord has a job to do too.", ["Many states expect landlords to make reasonable efforts to re-rent a unit when a tenant leaves early (check your lease and state rules)", "Your War Room emails your landlord every week asking for an update and where you stand on their relet list. You can pause it anytime"]],
+  ["Close it", "From first message to signed hand-over.", ["A day-by-day 30-day game plan with a link to the right place for every task", "Help Center with tips, scam red flags and a tour and hand-over checklist so nothing gets missed"]],
 ];
 // Student reviews. Add real ones here ({ quote, name, school }); the section only appears once there is at least one.
 const slReviews = [
@@ -953,7 +953,7 @@ ${slReviewsHtml()}<section class="wrap" id="start" data-sublease-start data-busi
 <p id="slFormMsg" class="sl-msg" role="alert" hidden></p>
 <button class="btn btn-primary" type="submit">Publish my listing</button>
 </form>
-<div id="slSuccess" hidden><h2>You're in!</h2><p>Reference code: <code data-sl-ref></code></p><p data-sl-live hidden><strong>Your listing is live for 60 days.</strong></p><p data-sl-confirming hidden><strong>Your listing goes live automatically the moment PayPal confirms your payment, usually within a minute or two.</strong> You don't need to do anything.</p><p>Next, open your dashboard. It tells you exactly what to post, where, and what to say.</p><p data-sl-emailed hidden>We emailed your private link to <strong data-sl-email></strong>. Keep that email, it's how you get back in.</p><p data-sl-notemailed hidden><strong>Save your private dashboard link below.</strong> It's how you reach your messages and launch kit. If you lose it, use <a href="sublease-manage.html">Sign in</a> and we'll send a new one.</p><div class="field"><label for="slManageUrl">Your private dashboard link</label><input id="slManageUrl" data-sl-manage-url readonly></div><p><button class="btn btn-ghost" type="button" data-sl-copy-link>Copy link</button> <a class="btn btn-primary" data-sl-manage href="sublease-manage.html">Open my dashboard</a></p></div>
+<div id="slSuccess" hidden><h2>You're in!</h2><p>Reference code: <code data-sl-ref></code></p><p data-sl-live hidden><strong>Your listing is live for 60 days.</strong></p><p data-sl-confirming hidden><strong>Your listing goes live automatically the moment PayPal confirms your payment, usually within a minute or two.</strong> You don't need to do anything.</p><p>Next, open your dashboard. It tells you exactly what to post, where, and what to say.</p><p data-sl-emailed hidden>We emailed your private link to <strong data-sl-email></strong>. Keep that email, it's how you get back in.</p><p data-sl-notemailed hidden><strong>Save your private dashboard link below.</strong> It's how you reach your messages, game plan and marketing tools. If you lose it, use <a href="sublease-manage.html">Sign in</a> and we'll send a new one.</p><div class="field"><label for="slManageUrl">Your private dashboard link</label><input id="slManageUrl" data-sl-manage-url readonly></div><p><button class="btn btn-ghost" type="button" data-sl-copy-link>Copy link</button> <a class="btn btn-primary" data-sl-manage href="sublease-manage.html">Open my dashboard</a></p></div>
 </div>
 </div></section><a class="sl-sticky" href="#start" data-sl-sticky hidden>Join the Sublease War Room</a>${slScript}`,
 );
