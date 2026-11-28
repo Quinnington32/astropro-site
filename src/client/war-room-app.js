@@ -182,7 +182,7 @@ export async function mountWarRoom(h) {
     const live = ["live", "paused"].includes(l.status);
     const tpls = llTemplates(l, k);
     const confirmed = doneSet.has("ll_confirmed");
-    return `<div class="wr-panel"><div class="wr-ph"><span class="wr-eyebrow">Landlord center</span><h2>Landlord accountability</h2><p>Landlords fill units fast and forget about relet lists. Keep yours accountable. In many states, landlords have a responsibility to make reasonable efforts to find someone for your unit.</p></div>
+    return `<div class="wr-panel"><div class="wr-ph"><span class="wr-eyebrow">Landlord center</span><h2>Landlord accountability</h2><p>Landlords fill units fast and forget about relet lists. Keep yours accountable. Many states expect a landlord to make reasonable efforts to re-rent a unit when a tenant leaves early. Check your lease and your state's rules, and keep every email as a record.</p></div>
       <div class="wr-mode" role="group" aria-label="Who sends the emails"><button type="button" class="wr-mode-btn${manual ? "" : " on"}" data-mode="auto"><strong>Automatic</strong><span>We email your landlord for you, every week</span></button><button type="button" class="wr-mode-btn${manual ? " on" : ""}" data-mode="manual"><strong>Manual</strong><span>You send the emails yourself</span></button></div>
       <label class="wr-check wr-confirm"><input type="checkbox" data-task="ll_confirmed"${confirmed ? " checked" : ""}><span>My landlord confirmed I'm on the relet list</span></label>
       ${manual ? `<p class="wr-note">Manual mode: your weekly check-ins are paused. Copy any template below, or open it in your email app.</p>` : ""}
@@ -294,7 +294,7 @@ export async function mountWarRoom(h) {
     const where = clip(l.area, 62) + " · " + c.city + (c.st ? ", " + c.st : "");
     const kindText = ({ sublease: "SUBLEASE", relet: "LEASE TAKEOVER", assignment: "LEASE TAKEOVER" }[l.type] || "SUBLEASE");
     const pin = (a, b, s, col) => { x.save(); x.translate(a, b); x.scale(s, s); x.strokeStyle = col; x.lineWidth = 2.4; x.lineCap = x.lineJoin = "round"; x.beginPath(); x.moveTo(12, 22); x.bezierCurveTo(12, 22, 19, 15.8, 19, 10); x.arc(12, 10, 7, 0, Math.PI, true); x.bezierCurveTo(5, 15.8, 12, 22, 12, 22); x.stroke(); x.beginPath(); x.arc(12, 10, 2.6, 0, 7); x.stroke(); x.restore(); };
-    const priceTag = (a, b, s) => { const t = money(l.rent); x.font = "800 " + 64 * s + "px Sora, sans-serif"; const w1 = x.measureText(t).width; x.font = "600 " + 28 * s + "px 'Work Sans', sans-serif"; const w2 = x.measureText("/month").width; const w = w1 + w2 + 56 * s, hh = 100 * s; x.fillStyle = ORANGE; rr(x, a, b, w, hh, 18 * s); x.fill(); x.fillStyle = NAVY; x.textBaseline = "alphabetic"; x.font = "800 " + 64 * s + "px Sora, sans-serif"; x.fillText(t, a + 28 * s, b + 72 * s); x.font = "600 " + 28 * s + "px 'Work Sans', sans-serif"; x.fillText("/month", a + 28 * s + w1 + 4 * s, b + 72 * s); };
+    const priceTag = (a, b, s) => { const t = money(l.rent); x.font = "800 " + 64 * s + "px Sora, sans-serif"; const w1 = x.measureText(t).width; x.font = "600 " + 28 * s + "px 'Work Sans', sans-serif"; const w2 = x.measureText("/month").width; const w = w1 + w2 + 56 * s, hh = 100 * s; if (a < 0) a = W - w + a; x.fillStyle = ORANGE; rr(x, a, b, w, hh, 18 * s); x.fill(); x.fillStyle = NAVY; x.textBaseline = "alphabetic"; x.font = "800 " + 64 * s + "px Sora, sans-serif"; x.fillText(t, a + 28 * s, b + 72 * s); x.font = "600 " + 28 * s + "px 'Work Sans', sans-serif"; x.fillText("/month", a + 28 * s + w1 + 4 * s, b + 72 * s); };
     const heroFallback = (a, b, w, hh, r) => { x.fillStyle = NAVY; rr(x, a, b, w, hh, r); x.fill(); x.fillStyle = "#FBFAF6"; x.font = "800 56px Sora, sans-serif"; x.textAlign = "center"; x.fillText(c.city.toUpperCase(), a + w / 2, b + hh / 2 + 18); x.textAlign = "left"; };
     const hero = (a, b, w, hh, r) => (photos[0] ? cover(x, photos[0], a, b, w, hh, r) : heroFallback(a, b, w, hh, r));
     const url = "astroprostudentresourcecenter.com";
@@ -323,7 +323,7 @@ export async function mountWarRoom(h) {
       x.fillStyle = IVORY; rr(x, 64, 150, 520, 150, 30); x.fill(); if (logo) x.drawImage(logo, 84, 160, 480, 130);
       x.fillStyle = IVORY; x.font = "800 88px Sora, sans-serif"; let y = wrapText(x, "Need a place near " + clip(l.school || c.city, 26) + "?", 64, 420, W - 128, 96, 2);
       x.fillStyle = ORANGE; y = wrapText(x, "Take over my lease.", 64, y + 6, W - 128, 96, 1);
-      hero(64, y + 30, W - 128, 560, 30); priceTag(W - 64 - 330, y + 30 + 560 - 56, 1.2);
+      hero(64, y + 30, W - 128, 560, 30); priceTag(-64, y + 30 + 560 - 56, 1.2);
       const ly = y + 30 + 560 + 86;
       x.fillStyle = IVORY; rr(x, 64, ly, W - 128, 120, 60); x.fill(); pin(96, ly + 30, 2.4, NAVY); x.fillStyle = NAVY; x.font = "700 38px 'Work Sans', sans-serif"; x.fillText(clip(l.area, 34), 170, ly + 56); x.font = "500 32px 'Work Sans', sans-serif"; x.fillText(c.city + (c.st ? ", " + c.st : ""), 170, ly + 98);
       x.fillStyle = IVORY; x.font = "500 40px 'Work Sans', sans-serif"; const ty = wrapText(x, bed + " · " + dateText(l.startDate) + " to " + dateText(l.endDate) + (l.furnished === "yes" ? " · Furnished" : "") + (l.utilities === "yes" ? " · Utilities included" : ""), 64, ly + 190, W - 128, 54, 3);

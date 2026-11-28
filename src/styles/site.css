@@ -3899,3 +3899,4 @@ html, body { overflow-x: clip; }
 .wr-mini button { background: transparent; border: 1px solid rgba(255,255,255,.4); color: #fff; border-radius: 999px; padding: 3px 12px; cursor: pointer; font: inherit; }
 @media (max-width: 860px) { .wr-mini span:nth-of-type(n+3) { display: none; } }
 .wr-page { padding-top: 22px; }
+.wr-confirm { align-items: center; margin: 4px 0 14px; }
