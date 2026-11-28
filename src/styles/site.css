@@ -3920,3 +3920,18 @@ html, body { overflow-x: clip; }
 .wr-rec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 10px; margin-bottom: 10px; }
 .wr-rec-card { background: #fff; border: 1px solid #E3E0D6; border-radius: 12px; padding: 12px; display: grid; gap: 6px; }
 .wr-rec-card span { font-size: .78rem; color: #4A5470; }
+.wr-app { display: flex; gap: 14px; align-items: center; justify-content: space-between; background: #EEF3FF; border-color: #B9C8F0; }
+.wr-app p { margin: 4px 0 0; color: #33405F; font-size: .92rem; }
+@media (max-width: 860px) {
+  .wr-tiles { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .wr-tile { padding: 7px 9px; }
+  .wr-tile strong { font-size: 1.1rem; }
+  .wr-tile small { display: none; }
+  .wr-tile:nth-child(n+7) { display: none; }
+  .wr-cc-bar b { font-size: .9rem; flex-basis: 100%; order: 2; }
+  .wr-cc-bar em { order: 1; margin-left: auto; }
+  .wr-cc-tip small { display: none; }
+  .wr-cc-tip p { font-size: .88rem; }
+  .wr-rec-grid { grid-template-columns: 1fr 1fr; }
+  .wr-app { flex-direction: column; align-items: stretch; }
+}

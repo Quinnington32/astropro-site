@@ -86,7 +86,7 @@ export async function mountWarRoom(h) {
     const lastShare = boost && boost.lastAt ? "last " + new Date(boost.lastAt).toLocaleDateString("en-US", { month: "short", day: "numeric" }) : "we share it for you";
     const mini = `<div class="wr-mini" hidden><b>Day ${dn}/${PLAN_DAYS}</b><span>${daysLeft} days left</span><span>${postedCount()}/${plats.length} platforms</span><span>${boost && boost.groups ? boost.groups : 0} FB groups</span><span>${data.leads.length} messages</span><button type="button" data-top>Command center ↑</button></div>`;
     return `${mini}<section class="wr-cc" aria-label="Command center">
-      <header class="wr-cc-bar"><span class="wr-live"><i></i>${live ? "LIVE" : esc(statusText.toUpperCase())}</span><b>Command center</b><span class="wr-cc-listing">${esc(l.title)} · ${esc(l.marketName)} · ${money(l.rent)}/mo</span><em>Day ${dn} of ${PLAN_DAYS}</em></header>
+      <header class="wr-cc-bar"><span class="wr-live"><i></i>${live ? "LIVE" : esc(statusText.toUpperCase())}</span><b>Sublease War Room · Command Center</b><span class="wr-cc-listing">${esc(l.title)} · ${esc(l.marketName)} · ${money(l.rent)}/mo</span><em>Day ${dn} of ${PLAN_DAYS}</em></header>
       <div class="wr-cc-body">
         <div class="wr-ring" data-ring="${pct}"><span>${pct}%</span><small>of the 30-day plan</small></div>
         <div class="wr-tiles">
@@ -127,7 +127,8 @@ export async function mountWarRoom(h) {
     const done = PLAN.flatMap((d) => d.tasks).filter(isDone).length;
     const rec = PRIORITY.map((pid) => plats.find((x) => x.id === pid)).filter((x) => x && !doneSet.has("p_" + x.id)).slice(0, 4);
     const recHtml = rec.length ? `<div class="wr-panel wr-rec"><div class="wr-ph"><span class="wr-eyebrow">Biggest win right now</span><h3>Get your listing on more platforms</h3><p>Students find places on many sites. You're on ${postedCount()} of ${plats.length}. We recommend starting with these:</p></div><div class="wr-rec-grid">${rec.map((x) => `<div class="wr-rec-card"><strong>${esc(x.name)}</strong><span>${esc(x.tag)}</span><button class="btn btn-primary" type="button" data-go="plat:${x.id}">Post here →</button></div>`).join("")}</div><p><button class="btn btn-ghost" type="button" data-nav="platforms">See all ${plats.length} platforms</button></p></div>` : "";
-    return `${recHtml}<div class="wr-panel"><div class="wr-ph"><span class="wr-eyebrow">Day ${dn} · ${esc(day.title)}</span><h2>${caught ? "You're caught up for today" : "Today's mission"}</h2><p>Each item takes you straight to the right place. Tick it off when you're done. Your progress saves to your account.</p></div>
+    const appHtml = fetchStore("astropro.wr.app") === "1" ? "" : `<div class="wr-panel wr-app"><div><strong>Use this like an app</strong><p>Add your War Room to your phone's home screen so it opens in one tap. <b>iPhone:</b> open this page in Safari, tap Share, then Add to Home Screen. <b>Android:</b> in Chrome tap the ⋮ menu, then Add to Home screen or Install app. Open it from your email link first so it stays signed in.</p></div><button class="btn btn-ghost" type="button" data-appx>Got it</button></div>`;
+    return `${recHtml}${appHtml}<div class="wr-panel"><div class="wr-ph"><span class="wr-eyebrow">Day ${dn} · ${esc(day.title)}</span><h2>${caught ? "You're caught up for today" : "Today's mission"}</h2><p>Each item takes you straight to the right place. Tick it off when you're done. Your progress saves to your account.</p></div>
       <ul class="wr-tasks">${todays.map((t) => taskRow(t)).join("")}</ul>
       ${earlier.length ? `<h3 class="wr-sub">Catch up from earlier</h3><ul class="wr-tasks">${earlier.map((t) => taskRow(t)).join("")}</ul>` : ""}
       ${caught ? `<p class="wr-note">Nothing left on today's list. Answer your messages within a few hours and offer two tour times.</p>` : ""}
@@ -436,6 +437,7 @@ export async function mountWarRoom(h) {
     if (!t || !dash.contains(t)) return;
     const d = t.dataset;
     if (d.nav) { view = d.nav; sub = null; if (d.mkt) mktTab = d.mkt; store("astropro.wr.view." + id, view); paint(); $("#wrMain", dash)?.scrollIntoView({ behavior: "smooth", block: "start" }); return; }
+    if (d.appx !== undefined) { store("astropro.wr.app", "1"); paint(); return; }
     if (d.top !== undefined) return window.scrollTo({ top: 0, behavior: "smooth" });
     if (d.go) return go(d.go);
     if (d.kind) { platKind = d.kind; sub = null; paint(); return; }
