@@ -1062,6 +1062,8 @@ await cp("src/client/resource-search.js", "dist/assets/resource-search.js");
 await cp("src/client/book-finder.js", "dist/assets/book-finder.js");
 await cp("src/client/private-session.js", "dist/assets/private-session.js");
 await cp("src/client/sublease.js", "dist/assets/sublease.js");
+await cp("src/client/war-room-app.js", "dist/assets/war-room-app.js");
+await cp("src/client/war-room-data.js", "dist/assets/war-room-data.js");
 const catalog = [
   ...scholarships.map((x) => ({
     ...x,

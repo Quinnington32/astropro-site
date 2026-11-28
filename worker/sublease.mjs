@@ -553,6 +553,7 @@ export async function handleSublease(request, env, path, h) {
       outcome: await env.DB.prepare("SELECT found_via foundVia FROM sublease_outcomes WHERE listing_id=?").bind(row.id).first().catch(() => null),
       progress: await env.DB.prepare("SELECT done FROM sublease_progress WHERE listing_id=?").bind(row.id).first().then((r) => { try { return r ? JSON.parse(r.done) : null; } catch { return null; } }).catch(() => null),
       shares: row.shares || 0,
+      boost: await env.DB.prepare("SELECT groups, last_at lastAt, note FROM sublease_boost WHERE listing_id=?").bind(row.id).first().catch(() => null),
       renewed: !!row.renewed,
       paidAt: row.paid_at,
       expiresAt: row.expires_at,
@@ -580,6 +581,22 @@ export async function handleSublease(request, env, path, h) {
       await env.DB.prepare("INSERT INTO sublease_outcomes (listing_id,found_via,quote,share_ok,created_at) VALUES (?,?,?,?,?) ON CONFLICT(listing_id) DO UPDATE SET found_via=excluded.found_via, quote=excluded.quote, share_ok=excluded.share_ok")
         .bind(row.id, via, quote, body.shareOk ? 1 : 0, now).run();
       await h.notify?.("Sublease success story: " + (via === "astropro" ? "found through AstroPro" : "found elsewhere"), JSON.parse(row.data_json).ownerName + " <" + row.owner_email + "> filled " + row.id + ".\n\nFound via: " + via + "\nOK to share: " + (body.shareOk ? "yes" : "no") + "\n\n" + (quote || "(no comment)"));
+      return json({ ok: true });
+    }
+    if (body.action === "landlord-send") {
+      if (!["live", "paused"].includes(row.status)) throw fail("Your listing needs to be live first.");
+      const f = await env.DB.prepare("SELECT * FROM sublease_landlord WHERE listing_id=?").bind(row.id).first();
+      if (!f) throw fail("Add your landlord's email first.");
+      const subject = clean(body.subject, 150),
+        text = String(body.text || "").replace(/\r/g, "").trim().slice(0, 2500);
+      if (!subject || text.length < 20) throw fail("Choose a template first.");
+      if (!(await h.quota(env.DB, "sublease-llsend:" + row.id + ":" + day, 3, Date.now() + 86400000))) throw fail("You've sent 3 emails to your landlord today. Try again tomorrow.", 429);
+      const d = JSON.parse(row.data_json);
+      const who = d.ownerName || "A tenant";
+      const html = '<div style="font-family:Arial,sans-serif;font-size:15px;line-height:1.6;color:#172447;max-width:560px">' + text.split(/\n\n+/).map((l) => "<p>" + htmlEsc(l).replace(/\n/g, "<br>") + "</p>").join("") + '<p style="font-size:12px;color:#667085;border-top:1px solid #e5e2d8;padding-top:10px">Sent by ' + htmlEsc(who) + " using the AstroPro Student Resource Center. Replies go directly to " + htmlEsc(who) + ".</p></div>";
+      const ok = !!(await h.mail?.({ to: f.landlord_email, replyTo: row.owner_email, fromName: who + " via AstroPro", subject, text: text + "\n\n--\nSent by " + who + " using the AstroPro Student Resource Center. Replies go directly to " + who + ".", html }).catch(() => false));
+      if (!ok) throw fail("We couldn't send that email. Copy it and send it yourself for now.");
+      await env.DB.prepare("UPDATE sublease_landlord SET sent=sent+1, last_sent=? WHERE listing_id=?").bind(now, row.id).run();
       return json({ ok: true });
     }
     if (body.action === "landlord-stop") {
@@ -610,7 +627,7 @@ export async function handleSublease(request, env, path, h) {
       return json({ ok: true, sentNow });
     }
     if (body.action === "progress") {
-      const ids = [...new Set((Array.isArray(body.done) ? body.done : []).filter((x) => typeof x === "string" && /^[a-z0-9_-]{1,40}$/.test(x)))].slice(0, 120);
+      const ids = [...new Set((Array.isArray(body.done) ? body.done : []).filter((x) => typeof x === "string" && /^[a-z0-9_-]{1,40}$/.test(x)))].slice(0, 400);
       await env.DB.prepare("INSERT INTO sublease_progress (listing_id,done,updated_at) VALUES (?,?,?) ON CONFLICT(listing_id) DO UPDATE SET done=excluded.done, updated_at=excluded.updated_at").bind(row.id, JSON.stringify(ids), now).run();
       return json({ ok: true });
     }

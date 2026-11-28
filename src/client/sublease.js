@@ -553,6 +553,10 @@ async function managePage() {
   };
   const payBase = { business: root.dataset.business, price: root.dataset.price };
   const headers = { "x-manage-token": saved };
+  if (!/[?&]classic=1/.test(location.search)) {
+    const { mountWarRoom } = await import("./war-room-app.js");
+    return mountWarRoom({ id, saved, dash, root, groups, payBase, api, $, $$, esc, money, dateText, say, copyText, pingShare, wireShare, shareBar, shrink, typeLabel, kit });
+  }
   const render = async () => {
     let data;
     try {
