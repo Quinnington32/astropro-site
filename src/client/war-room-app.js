@@ -1,5 +1,5 @@
 // Sublease War Room dashboard: command center on top, a menu on the right, one center at a time in the middle.
-import { cityInfo, platformList, PLAN, TIPS, MOTIVATION, llTemplates, HELP, TSH, GUIDES, coachChecks } from "./war-room-data.js";
+import { cityInfo, platformList, PLAN, TIPS, MOTIVATION, llTemplates, HELP, TSH, GUIDES, coachChecks, PRIORITY } from "./war-room-data.js";
 
 const PLAN_DAYS = 30;
 const ICONS = {
@@ -125,7 +125,9 @@ export async function mountWarRoom(h) {
     const caught = todays.every(isDone) && !earlier.length;
     const total = PLAN.flatMap((d) => d.tasks).length;
     const done = PLAN.flatMap((d) => d.tasks).filter(isDone).length;
-    return `<div class="wr-panel"><div class="wr-ph"><span class="wr-eyebrow">Day ${dn} · ${esc(day.title)}</span><h2>${caught ? "You're caught up for today" : "Today's mission"}</h2><p>Each item takes you straight to the right place. Tick it off when you're done. Your progress saves to your account.</p></div>
+    const rec = PRIORITY.map((pid) => plats.find((x) => x.id === pid)).filter((x) => x && !doneSet.has("p_" + x.id)).slice(0, 4);
+    const recHtml = rec.length ? `<div class="wr-panel wr-rec"><div class="wr-ph"><span class="wr-eyebrow">Biggest win right now</span><h3>Get your listing on more platforms</h3><p>Students find places on many sites. You're on ${postedCount()} of ${plats.length}. We recommend starting with these:</p></div><div class="wr-rec-grid">${rec.map((x) => `<div class="wr-rec-card"><strong>${esc(x.name)}</strong><span>${esc(x.tag)}</span><button class="btn btn-primary" type="button" data-go="plat:${x.id}">Post here →</button></div>`).join("")}</div><p><button class="btn btn-ghost" type="button" data-nav="platforms">See all ${plats.length} platforms</button></p></div>` : "";
+    return `${recHtml}<div class="wr-panel"><div class="wr-ph"><span class="wr-eyebrow">Day ${dn} · ${esc(day.title)}</span><h2>${caught ? "You're caught up for today" : "Today's mission"}</h2><p>Each item takes you straight to the right place. Tick it off when you're done. Your progress saves to your account.</p></div>
       <ul class="wr-tasks">${todays.map((t) => taskRow(t)).join("")}</ul>
       ${earlier.length ? `<h3 class="wr-sub">Catch up from earlier</h3><ul class="wr-tasks">${earlier.map((t) => taskRow(t)).join("")}</ul>` : ""}
       ${caught ? `<p class="wr-note">Nothing left on today's list. Answer your messages within a few hours and offer two tour times.</p>` : ""}

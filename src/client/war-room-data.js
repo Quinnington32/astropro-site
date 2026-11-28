@@ -47,8 +47,8 @@ const T = (id, t, to, extra = {}) => ({ id, t, do: to, ...extra });
 
 // The 30-day plan. We already share every listing to the Facebook groups in the student's city, so these days point at everything else.
 export const PLAN = [
-  { d: 1, title: "Launch day", tasks: [T("d1a", "Switch on your landlord check-ins (we email them every week for you)", "ll"), T("d1b", "Download your flyer and story image, then print 10 flyers", "mkt:flyer"), T("d1c", "Reply to 3 students who are looking for a place right now", "leads")] },
-  { d: 2, title: "The big rental sites", tasks: [T("d2a", "Post on Zillow (it also feeds Trulia and HotPads)", "plat:zillow"), T("d2b", "Post on Craigslist", "plat:craigslist"), T("d2c", "Hang your flyers: campus boards, laundromats, coffee shops", "mkt:flyer")] },
+  { d: 1, title: "Launch day", tasks: [T("d1p", "Post on Craigslist (free, takes 5 minutes)", "plat:craigslist"), T("d1q", "Post on Zillow (it also feeds Trulia and HotPads)", "plat:zillow"), T("d1a", "Switch on your landlord check-ins (we email them every week for you)", "ll"), T("d1b", "Download your flyer and story image, then print 10 flyers", "mkt:flyer"), T("d1c", "Reply to 3 students who are looking for a place right now", "leads")] },
+  { d: 2, title: "More rental sites", tasks: [T("d2a", "Post on Facebook Marketplace", "plat:marketplace"), T("d2b", "Post on Zumper (also feeds PadMapper)", "plat:zumper"), T("d2c", "Hang your flyers: campus boards, laundromats, coffee shops", "mkt:flyer")] },
   { d: 3, title: "Check your competition", tasks: [T("d3a", "Look at Trulia and compare rents. Adjust your price if you're higher", "plat:trulia"), T("d3b", "Check your listing appears on HotPads", "plat:hotpads"), T("d3c", "Message 3 more students from the Lead Finder", "leads")] },
   { d: 4, title: "Sublease sites", tasks: [T("d4a", "Post on Sublet.com", "plat:sublet"), T("d4b", "Post on Zumper", "plat:zumper"), T("d4c", "Answer every message within 2 hours and offer two tour times", "msgs")] },
   { d: 5, title: "Campus reach", tasks: [T("d5a", "Post on your school's housing board", "plat:school"), T("d5b", "Post on Uloop", "plat:uloop"), T("d5c", "Ask 3 friends in different clubs to share your link", "plat:groupme")] },
@@ -172,3 +172,5 @@ export const coachChecks = ({ l, fl, posted, descLen }) => [
   { id: "approval", pts: 10, got: l.permission === "approved" ? 10 : l.permission === "pending" ? 5 : 0, title: "Landlord approval", ok: l.permission === "approved", tip: l.permission === "approved" ? "Approved, which builds trust." : "Ask your landlord for approval in writing. People trust listings that are approved. Use the Landlord center.", fix: "landlord" },
   { id: "reach", pts: 20, got: Math.min(20, posted * 4), title: "Where it's posted", ok: posted >= 5, tip: posted >= 5 ? posted + " platforms. Nice reach." : "You've posted on " + posted + ". Get to 5 or more. Open Platforms and start with Zillow and Craigslist.", fix: "platforms" },
 ];
+
+export const PRIORITY = ["craigslist", "zillow", "marketplace", "zumper", "sublet", "school", "uloop", "reddit", "instagram", "groupme", "nextdoor", "fbmore", "furnished", "roomster", "roommates", "spareroom", "offerup", "leasebreak", "trulia", "hotpads", "apartments", "padmapper"];

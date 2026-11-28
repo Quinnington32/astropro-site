@@ -3916,3 +3916,7 @@ html, body { overflow-x: clip; }
 .wr-dot { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; font-weight: 800; color: #fff; background: #E77B25; flex: none; }
 .wr-checks li.ok .wr-dot { background: #2E9E5B; }
 .wr-faq small { color: #9A8F73; margin-left: 8px; }
+.wr-rec { border: 2px solid #E77B25; background: #FFF9F2; }
+.wr-rec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 10px; margin-bottom: 10px; }
+.wr-rec-card { background: #fff; border: 1px solid #E3E0D6; border-radius: 12px; padding: 12px; display: grid; gap: 6px; }
+.wr-rec-card span { font-size: .78rem; color: #4A5470; }
