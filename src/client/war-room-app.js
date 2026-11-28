@@ -29,6 +29,7 @@ export async function mountWarRoom(h) {
   let helpTab = "tips";
   let mktTab = "flyers";
   const flyers = {};
+  let scrollFn = null;
 
   const persist = () => {
     store("astropro.sublease.done." + id, JSON.stringify([...doneSet]));
@@ -81,7 +82,8 @@ export async function mountWarRoom(h) {
     const statusText = { pending_payment: "Waiting for payment", live: "Live", paused: "Paused", filled: "Filled", expired: "Expired" }[l.status];
     const tile = (n, label, sub2, w) => `<div class="wr-tile"><strong>${n}</strong><span>${label}</span><small>${sub2 || "&nbsp;"}</small>${w != null ? `<i class="wr-meter"><b data-w="${w}"></b></i>` : ""}</div>`;
     const lastShare = boost && boost.lastAt ? "last " + new Date(boost.lastAt).toLocaleDateString("en-US", { month: "short", day: "numeric" }) : "we share it for you";
-    return `<section class="wr-cc" aria-label="Command center">
+    const mini = `<div class="wr-mini" hidden><b>Day ${dn}/${PLAN_DAYS}</b><span>${daysLeft} days left</span><span>${postedCount()}/${plats.length} platforms</span><span>${boost && boost.groups ? boost.groups : 0} FB groups</span><span>${data.leads.length} messages</span><button type="button" data-top>Command center ↑</button></div>`;
+    return `${mini}<section class="wr-cc" aria-label="Command center">
       <header class="wr-cc-bar"><span class="wr-live"><i></i>${live ? "LIVE" : esc(statusText.toUpperCase())}</span><b>Command center</b><span class="wr-cc-listing">${esc(l.title)} · ${esc(l.marketName)} · ${money(l.rent)}/mo</span><em>Day ${dn} of ${PLAN_DAYS}</em></header>
       <div class="wr-cc-body">
         <div class="wr-ring" data-ring="${pct}"><span>${pct}%</span><small>of the 30-day plan</small></div>
@@ -364,6 +366,8 @@ export async function mountWarRoom(h) {
     $$("[data-ring]", dash).forEach((e) => e.style.setProperty("--pd", Math.max(0, Math.min(100, Number(e.dataset.ring))) + "%"));
     wireShare(dash);
     if (view === "marketing" && mktTab === "flyers") paintFlyers();
+    const cc = $(".wr-cc", dash), mn = $(".wr-mini", dash);
+    if (cc && mn) { const upd = () => { mn.hidden = cc.getBoundingClientRect().bottom > 0; }; if (scrollFn) window.removeEventListener("scroll", scrollFn); scrollFn = upd; window.addEventListener("scroll", upd, { passive: true }); upd(); }
   };
   const go = (to, scroll = true) => {
     if (to.startsWith("plat:")) { view = "platforms"; sub = to.slice(5); platKind = "all"; }
@@ -388,6 +392,7 @@ export async function mountWarRoom(h) {
     if (!t || !dash.contains(t)) return;
     const d = t.dataset;
     if (d.nav) { view = d.nav; sub = null; if (d.mkt) mktTab = d.mkt; store("astropro.wr.view." + id, view); paint(); $("#wrMain", dash)?.scrollIntoView({ behavior: "smooth", block: "start" }); return; }
+    if (d.top !== undefined) return window.scrollTo({ top: 0, behavior: "smooth" });
     if (d.go) return go(d.go);
     if (d.kind) { platKind = d.kind; sub = null; paint(); return; }
     if (d.plat) { sub = d.plat; paint(); $("#wrPlat", dash)?.scrollIntoView({ behavior: "smooth", block: "start" }); return; }

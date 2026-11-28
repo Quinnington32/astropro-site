@@ -975,8 +975,8 @@ emit(
   "sublease-manage.html",
   "Your Sublease War Room dashboard",
   "Your private Sublease War Room dashboard.",
-  hero("Your sublease dashboard.", "Your checklist, your messages and your launch kit, all in one place.", "", "Sublease War Room") +
-    `<section class="wrap" id="slManage" data-business="${e(PAYPAL_BUSINESS_EMAIL)}" data-price="${SUBLEASE_PRICE}" data-groups="${e(JSON.stringify(slGroups))}"><div id="slDash"><p>Loading your dashboard…</p></div></section>${slScript}`,
+  
+    `<section class="wrap wr-page" id="slManage" data-business="${e(PAYPAL_BUSINESS_EMAIL)}" data-price="${SUBLEASE_PRICE}" data-groups="${e(JSON.stringify(slGroups))}"><h1 class="sr-only">Your Sublease War Room</h1><div id="slDash"><p>Loading your dashboard…</p></div></section>${slScript}`,
   { noindex: true },
 );
 const partnerCampaignForm = form({
