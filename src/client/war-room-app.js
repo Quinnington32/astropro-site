@@ -264,7 +264,8 @@ export async function mountWarRoom(h) {
     if (v === "today") { const dn = dayNum(); const n = PLAN.filter((d) => d.d <= dn).flatMap((d) => d.tasks).filter((t) => !isDone(t)).length; return n; }
     return 0;
   };
-  const nav = () => `<nav class="wr-nav" aria-label="War Room centers">${NAV.map(([v, t]) => `<button type="button" class="wr-nav-btn${view === v ? " on" : ""}" data-nav="${v}"${view === v ? ' aria-current="page"' : ""}>${icon(v)}<span>${t}</span>${badge(v) ? `<b>${badge(v)}</b>` : ""}</button>`).join("")}</nav>`;
+  const GROUPS = [["1", "Start here", ["today"]], ["2", "Get it seen", ["platforms", "marketing", "leads"]], ["3", "Handle interest", ["messages", "landlord"]], ["4", "Close and manage", ["help", "listing"]]];
+  const nav = () => `<nav class="wr-nav" aria-label="War Room centers">${GROUPS.map(([n, t, vs]) => `<p class="wr-nav-h"><i>${n}</i>${t}</p>${vs.map((v) => { const label = NAV.find((x) => x[0] === v)[1]; return `<button type="button" class="wr-nav-btn${view === v ? " on" : ""}" data-nav="${v}"${view === v ? ' aria-current="page"' : ""}>${icon(v)}<span>${label}</span>${badge(v) ? `<b>${badge(v)}</b>` : ""}</button>`; }).join("")}`).join("")}</nav>`;
 
   const center = () => ({ today: todayView, messages: messagesView, platforms: platformsView, marketing: marketingView, landlord: landlordView, leads: leadsView, help: helpView, listing: listingView }[view] || todayView)();
 
@@ -361,7 +362,7 @@ export async function mountWarRoom(h) {
 
   // ---------- paint ----------
   const paint = () => {
-    dash.innerHTML = `<div class="wr">${commandCenter()}${banners()}<div class="wr-shell"><main class="wr-main" id="wrMain" tabindex="-1">${center()}</main>${nav()}</div></div>`;
+    dash.innerHTML = `<div class="wr">${commandCenter()}${banners()}<div class="wr-shell">${nav()}<main class="wr-main" id="wrMain" tabindex="-1">${center()}</main></div></div>`;
     $$("[data-w]", dash).forEach((e) => { e.style.width = Math.max(0, Math.min(100, Number(e.dataset.w))) + "%"; });
     $$("[data-ring]", dash).forEach((e) => e.style.setProperty("--pd", Math.max(0, Math.min(100, Number(e.dataset.ring))) + "%"));
     wireShare(dash);
