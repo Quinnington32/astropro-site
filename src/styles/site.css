@@ -3944,3 +3944,10 @@ html, body { overflow-x: clip; }
   .wr-nav-btn.on b { background: #172447; color: #fff; }
 }
 @media (max-width: 860px) { .wr-nav-btn { text-align: center; } .wr-nav-btn span { text-align: center; line-height: 1.15; } }
+.sl-shots { display: grid; grid-template-columns: 1.5fr 1fr; gap: 20px; align-items: start; }
+.sl-shots figure { margin: 0; }
+.sl-shots img { width: 100%; height: auto; display: block; border-radius: 16px; border: 1px solid #E3E0D6; box-shadow: 0 12px 34px rgba(23,36,71,.16); }
+.sl-shots figcaption { margin-top: 8px; font-size: .9rem; color: #4A5470; text-align: center; }
+.sl-shot-side { display: grid; gap: 20px; }
+.sl-shot-side figure:first-child img { max-width: 260px; margin: 0 auto; }
+@media (max-width: 860px) { .sl-shots { grid-template-columns: 1fr; } }
