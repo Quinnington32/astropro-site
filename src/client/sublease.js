@@ -212,19 +212,19 @@ function startPage() {
   const recheck = async () => {
     if (!wrap.hidden) return;
     const st = await creditStatus();
-    if (st.paid && !st.used) openForm();
+    if (st.paid && !st.used) openForm(waiting);
   };
   document.addEventListener("visibilitychange", () => document.visibilityState === "visible" && recheck());
   window.addEventListener("focus", recheck);
   setInterval(() => waiting || document.visibilityState !== "visible" || recheck(), 8000);
-  const openForm = () => {
+  const openForm = (scroll = true) => {
     gate.hidden = true;
     wrap.hidden = false;
     try {
       const em = localStorage.getItem(EMAIL_KEY);
       if (em && !$("#slEmail").value) $("#slEmail").value = em;
     } catch {}
-    wrap.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (scroll) wrap.scrollIntoView({ behavior: "smooth", block: "start" });
   };
   const creditStatus = async () => {
     try {
@@ -235,9 +235,9 @@ function startPage() {
   };
   (async () => {
     // Coming back from PayPal: open the form right away. Confirmation can take a minute, so it never makes them wait.
-    if (/[?&]paid=1/.test(location.search)) return openForm();
+    if (/[?&]paid=1/.test(location.search)) return openForm(true);
     const st = await creditStatus();
-    if (st.paid && !st.used) return openForm();
+    if (st.paid && !st.used) return openForm(/[?&]code=/.test(location.search) || location.hash === "#start");
     if (st.used) {
       payCode = newCode();
       try {
