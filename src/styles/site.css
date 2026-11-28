@@ -3951,3 +3951,8 @@ html, body { overflow-x: clip; }
 .sl-shot-side { display: grid; gap: 20px; }
 .sl-shot-side figure:first-child img { max-width: 260px; margin: 0 auto; }
 @media (max-width: 860px) { .sl-shots { grid-template-columns: 1fr; } }
+.sl-phone { text-align: center; }
+.sl-phone-frame { width: 250px; margin: 0 auto; padding: 10px; background: #172447; border-radius: 38px; box-shadow: 0 18px 40px rgba(23,36,71,.3); position: relative; }
+.sl-phone-frame::before { content: ""; position: absolute; top: 14px; left: 50%; width: 70px; height: 6px; margin-left: -35px; border-radius: 6px; background: rgba(255,255,255,.25); z-index: 1; }
+.sl-shots .sl-phone-frame img { border: 0; border-radius: 28px; box-shadow: none; max-width: none; margin: 0; }
+.sl-shot-side figure:first-child img { max-width: none; }
