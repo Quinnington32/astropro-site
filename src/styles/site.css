@@ -3935,3 +3935,12 @@ html, body { overflow-x: clip; }
   .wr-rec-grid { grid-template-columns: 1fr 1fr; }
   .wr-app { flex-direction: column; align-items: stretch; }
 }
+@media (max-width: 860px) {
+  .wr-nav { background: #172447; border-top: 3px solid #E77B25; box-shadow: 0 -6px 22px rgba(0,0,0,.28); }
+  .wr-nav-btn { color: #fff; }
+  .wr-nav-btn:hover { background: rgba(255,255,255,.1); }
+  .wr-nav-btn.on { background: #E77B25; color: #172447; font-weight: 800; }
+  .wr-nav-btn b { background: #fff; color: #172447; }
+  .wr-nav-btn.on b { background: #172447; color: #fff; }
+}
+@media (max-width: 860px) { .wr-nav-btn { text-align: center; } .wr-nav-btn span { text-align: center; line-height: 1.15; } }

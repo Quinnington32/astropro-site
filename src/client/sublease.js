@@ -513,7 +513,13 @@ const kit = (l, groupUrl) => {
 async function managePage() {
   const root = $("#slManage");
   if (!root) return;
-  const [id, token] = (location.hash.slice(1) || "").split(".");
+  let [id, token] = (location.hash.slice(1) || "").split(".");
+  if (!id && !/[?&]signedout=1/.test(location.search)) {
+    try {
+      const last = localStorage.getItem("astropro.sublease.last");
+      if (last && localStorage.getItem("astropro.sublease." + last)) id = last;
+    } catch {}
+  }
   const dash = $("#slDash");
   let saved = token;
   if (!saved && id) {

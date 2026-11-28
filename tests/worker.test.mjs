@@ -36,6 +36,7 @@ before(async () => {
         { type: "ESModule", path: "worker/market-links.mjs" },
         { type: "ESModule", path: "worker/sublease-redirects.mjs" },
         { type: "ESModule", path: "worker/sublease.mjs" },
+        { type: "ESModule", path: "src/client/war-room-data.js" },
       ],
       modulesRoot: process.cwd(),
       compatibilityDate: "2026-10-01",

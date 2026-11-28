@@ -244,7 +244,7 @@ export async function mountWarRoom(h) {
       <div class="wr-panel sl-actions"><div class="wr-ph"><span class="wr-eyebrow">My listing</span><h2>Manage your listing</h2><p>${esc(l.title)} · ${money(l.rent)}/mo · ${l.status === "live" && data.expiresAt ? "live until " + new Date(data.expiresAt).toLocaleDateString("en-US", { month: "short", day: "numeric" }) : esc(l.status)}</p></div>
       <p class="wr-actions"><a class="btn btn-ghost" href="sublease-listing.html?id=${esc(l.id)}">View public page</a><button class="btn btn-ghost" data-edit type="button">Edit listing</button>${live ? '<button class="btn btn-ghost" data-status="paused" type="button">Pause listing</button>' : ""}${l.status === "paused" ? '<button class="btn btn-ghost" data-status="live" type="button">Turn back on</button>' : ""}${["live", "paused"].includes(l.status) ? '<button class="btn btn-primary" data-status="filled" type="button">Mark as filled</button>' : ""}<button class="btn btn-ghost sl-danger" data-delete type="button">Delete listing</button></p><p class="sl-msg" id="slActMsg" hidden></p></div>
       <div class="wr-panel"><h3>Share your listing</h3>${shareBar(k.url, l.title + " | " + money(l.rent) + "/mo")}<div class="sl-share"><input readonly aria-label="Your public listing link" value="${esc(k.url)}"><button class="btn btn-ghost" type="button" data-copy="url">Copy link</button></div></div>
-      <div class="wr-panel"><h3>Your account</h3><p>Signed in as <strong>${esc(data.ownerEmail || "you")}</strong></p><p class="wr-actions"><button class="btn btn-ghost" type="button" data-copy-private>Copy my private link</button><button class="btn btn-ghost" type="button" data-signout>Sign out</button></p><p class="fineprint">Tip: add this page to your phone's home screen to use it like an app. In your browser menu, choose Add to Home Screen or Install.</p></div>`;
+      <div class="wr-panel"><h3>Your account</h3><p>Signed in as <strong>${esc(data.ownerEmail || "you")}</strong></p><label class="wr-check wr-confirm"><input type="checkbox" data-nudge${data.nudge === false ? "" : " checked"}><span>Email me a short daily list of what to do next</span></label><p class="wr-actions"><button class="btn btn-ghost" type="button" data-copy-private>Copy my private link</button><button class="btn btn-ghost" type="button" data-signout>Sign out</button></p><p class="fineprint">Tip: add this page to your phone's home screen to use it like an app. In your browser menu, choose Add to Home Screen or Install.</p></div>`;
   };
 
   // ---------- listing coach ----------
@@ -481,6 +481,7 @@ export async function mountWarRoom(h) {
   dash.addEventListener("change", (ev) => {
     const el = ev.target;
     if (el.dataset.task) { el.checked ? doneSet.add(el.dataset.task) : doneSet.delete(el.dataset.task); persist(); paint(); }
+    if (el.dataset.nudge !== undefined) { data.nudge = el.checked; api("/manage/" + id, { method: "POST", headers, body: JSON.stringify({ action: "nudge", on: el.checked }) }).catch(() => {}); }
     if (el.dataset.posted) { el.checked ? doneSet.add("p_" + el.dataset.posted) : doneSet.delete("p_" + el.dataset.posted); persist(); paint(); $("#wrPlat", dash)?.scrollIntoView({ block: "nearest" }); }
   });
   dash.addEventListener("input", (ev) => { const t = ev.target; if (t.dataset && t.dataset.kit) edits[t.dataset.kit] = t.value; });

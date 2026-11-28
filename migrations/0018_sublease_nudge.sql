@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS sublease_nudge (listing_id TEXT PRIMARY KEY, last_day TEXT, off INTEGER NOT NULL DEFAULT 0);

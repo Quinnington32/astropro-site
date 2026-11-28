@@ -1,4 +1,5 @@
 // Sublease War Room API. Self-contained; index.mjs passes in its shared helpers.
+import { PLAN, TIPS } from "../src/client/war-room-data.js";
 const ID = /^[a-z0-9]{12}$/;
 const MARKET = /^[a-z0-9-]{2,60}$/;
 const DATE = /^\d{4}-\d{2}-\d{2}$/;
@@ -351,6 +352,13 @@ export async function handleSublease(request, env, path, h) {
         .run();
       return json({ ok: r.meta.changes === 1, expiresAt: expires });
     }
+    if (path === "/api/admin/sublease/boost" && request.method === "POST") {
+      const body = await h.readJson(request);
+      const id = clean(body.id, 12), n = Math.max(0, Math.min(500, parseInt(body.groups, 10) || 0));
+      if (!ID.test(id)) return json({ error: "Invalid listing id." }, 400);
+      await env.DB.prepare("INSERT INTO sublease_boost (listing_id,groups,last_at,note) VALUES (?,?,?,?) ON CONFLICT(listing_id) DO UPDATE SET groups=excluded.groups, last_at=excluded.last_at, note=excluded.note").bind(id, n, now, clean(body.note, 120)).run();
+      return json({ ok: true, groups: n });
+    }
     return json({ error: "Endpoint not found." }, 404);
   }
 
@@ -470,6 +478,18 @@ export async function handleSublease(request, env, path, h) {
     return json({ ok: true, id, manageToken: token, live: !!paidCredit, emailed }, 201);
   }
 
+  if (path === "/api/sublease/nudge-off") {
+    const q = new URL(request.url).searchParams;
+    const id = clean(q.get("id"), 20), t = clean(q.get("t"), 64);
+    const pg = (a, b, form) => new Response('<!doctype html><meta name="viewport" content="width=device-width,initial-scale=1"><body style="font-family:Arial,sans-serif;max-width:480px;margin:48px auto;padding:0 20px;color:#172447"><h2>' + htmlEsc(a) + "</h2><p>" + htmlEsc(b) + "</p>" + (form || "") + "</body>", { headers: { "content-type": "text/html; charset=utf-8", "cache-control": "no-store", "x-robots-tag": "noindex" } });
+    if (!ID.test(id) || !t || t !== (await hmacTok(env, "nudge:" + id))) return pg("Link not valid", "This link is wrong or expired.");
+    if (request.method === "POST") {
+      await env.DB.prepare("INSERT INTO sublease_nudge (listing_id,off) VALUES (?,1) ON CONFLICT(listing_id) DO UPDATE SET off=1").bind(id).run();
+      return pg("Daily reminders are off", "You can turn them back on any time from My Listing in your Command Center.");
+    }
+    return pg("Stop the daily reminder emails?", "We send a short daily list of what to do next on your sublease. Tap below to stop them.", '<form method="post"><button style="background:#E77B25;color:#fff;border:0;padding:12px 22px;border-radius:8px;font-weight:700;font-size:15px">Stop daily reminders</button></form>');
+  }
+
   if (path === "/api/sublease/landlord-stop") {
     const q = new URL(request.url).searchParams;
     const id = clean(q.get("id"), 20),
@@ -553,6 +573,7 @@ export async function handleSublease(request, env, path, h) {
       outcome: await env.DB.prepare("SELECT found_via foundVia FROM sublease_outcomes WHERE listing_id=?").bind(row.id).first().catch(() => null),
       progress: await env.DB.prepare("SELECT done FROM sublease_progress WHERE listing_id=?").bind(row.id).first().then((r) => { try { return r ? JSON.parse(r.done) : null; } catch { return null; } }).catch(() => null),
       shares: row.shares || 0,
+      nudge: !(await env.DB.prepare("SELECT off FROM sublease_nudge WHERE listing_id=?").bind(row.id).first().then((r) => r && r.off).catch(() => 0)),
       boost: await env.DB.prepare("SELECT groups, last_at lastAt, note FROM sublease_boost WHERE listing_id=?").bind(row.id).first().catch(() => null),
       renewed: !!row.renewed,
       paidAt: row.paid_at,
@@ -597,6 +618,10 @@ export async function handleSublease(request, env, path, h) {
       const ok = !!(await h.mail?.({ to: f.landlord_email, replyTo: row.owner_email, fromName: who + " via AstroPro", subject, text: text + "\n\n--\nSent by " + who + " using the AstroPro Student Resource Center. Replies go directly to " + who + ".", html }).catch(() => false));
       if (!ok) throw fail("We couldn't send that email. Copy it and send it yourself for now.");
       await env.DB.prepare("UPDATE sublease_landlord SET sent=sent+1, last_sent=? WHERE listing_id=?").bind(now, row.id).run();
+      return json({ ok: true });
+    }
+    if (body.action === "nudge") {
+      await env.DB.prepare("INSERT INTO sublease_nudge (listing_id,off) VALUES (?,?) ON CONFLICT(listing_id) DO UPDATE SET off=excluded.off").bind(row.id, body.on ? 0 : 1).run();
       return json({ ok: true });
     }
     if (body.action === "landlord-stop") {
@@ -832,6 +857,32 @@ export async function runSubleaseJobs(env, h) {
       await env.DB.prepare("UPDATE scheduled_mail SET sent_at=? WHERE id=?").bind(new Date().toISOString(), m.id).run().catch(() => null);
     }
   }
+  // Daily "today's 3 things" email (about 10am Central), live listings only, once per day, stops after day 30 or when the student opts out
+  const nowD = new Date(), todayD = nowD.toISOString().slice(0, 10);
+  if (nowD.getUTCHours() >= 15 && nowD.getUTCHours() < 21) try {
+    const { results: nrows } = await env.DB.prepare(
+      "SELECT l.id, l.owner_email, l.paid_at, l.data_json, p.done FROM sublease_listings l LEFT JOIN sublease_progress p ON p.listing_id=l.id LEFT JOIN sublease_nudge n ON n.listing_id=l.id WHERE l.status='live' AND l.paid_at IS NOT NULL AND l.paid_at < ? AND (n.last_day IS NULL OR n.last_day < ?) AND COALESCE(n.off,0)=0 LIMIT 10",
+    ).bind(new Date(Date.now() - 20 * 3600000).toISOString(), todayD).all().catch(() => ({ results: [] }));
+    for (const r of nrows) {
+      const day = Math.floor((Date.now() - new Date(r.paid_at).getTime()) / 86400000) + 1;
+      let done = [];
+      try { done = r.done ? JSON.parse(r.done) : []; } catch {}
+      const ds = new Set(done);
+      const isDone = (t) => ds.has(t.id) || (t.do && t.do.startsWith("plat:") && ds.has("p_" + t.do.slice(5)));
+      let d0 = {};
+      try { d0 = JSON.parse(r.data_json); } catch {}
+      if (day <= 30 && d0.demo !== true) {
+        const pend = [...PLAN.filter((x) => x.d === day), ...PLAN.filter((x) => x.d < day).reverse()].flatMap((x) => x.tasks.filter((t) => !isDone(t))).slice(0, 3);
+        if (pend.length) {
+          const code = await hmacTok(env, "nudge:" + r.id);
+          const lines = ["Day " + day + " of 30 on your sublease. Here is what to do next:", ...pend.map((t, i) => (i + 1) + ". " + t.t), "Tip: " + TIPS[(day - 1) % TIPS.length], "Stop these daily reminders: " + site + "/api/sublease/nudge-off?id=" + r.id + "&t=" + code];
+          const ok = await sendStudent(h, r.owner_email, "Day " + day + ": your next " + pend.length + " step" + (pend.length === 1 ? "" : "s") + " to sublease your place", lines, "Open my Command Center", site + "/sublease-manage.html");
+          if (!ok) continue;
+        }
+      }
+      await env.DB.prepare("INSERT INTO sublease_nudge (listing_id,last_day) VALUES (?,?) ON CONFLICT(listing_id) DO UPDATE SET last_day=excluded.last_day").bind(r.id, todayD).run().catch(() => null);
+    }
+  } catch {}
   const ago = (min) => new Date(Date.now() - min * 60000).toISOString();
   // Paid, but no listing yet
   const { results: paid } = await env.DB.prepare(
