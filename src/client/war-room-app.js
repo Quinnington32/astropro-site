@@ -319,20 +319,20 @@ export async function mountWarRoom(h) {
     const perks = [l.furnished === "yes" && "Fully furnished", l.utilities === "yes" && "Utilities included", l.permission === "approved" && "Landlord approved", l.deposit ? money(l.deposit) + " deposit" : "No deposit required", "Tours in person or by video"].filter(Boolean);
     x.fillStyle = IVORY; x.fillRect(0, 0, W, H);
     if (kind === "flyer") {
-      photoOr(photos[0], 0, 0, W, 800, 0); grad(x, 360, 800, "rgba(23,36,71,0)", "rgba(23,36,71,.92)", W);
+      photoOr(photos[0], 0, 0, W, 740, 0); grad(x, 330, 740, "rgba(23,36,71,0)", "rgba(23,36,71,.92)", W);
       pill(tag, 56, 52, 24, "rgba(255,255,255,.95)", NAVY); priceBadge(W - 56, 48, 1);
-      x.fillStyle = "#fff"; font(800, 70); let y = wrapText(x, l.title, 56, 620, W - 112, 80, 2);
+      x.fillStyle = "#fff"; font(800, 70); let y = wrapText(x, l.title, 56, 560, W - 112, 80, 2);
       x.fillStyle = "#FFD9B8"; font(600, 32, "W"); x.fillText(clip(where, 62), 56, y + 12);
       let top = 800;
-      if (special) { const hh = specialBanner(56, 770, W - 112, 36); top = 770 + hh + 26; } else top = 826;
-      const th = photos.length > 1 ? 210 : 0;
-      if (th) { const n = Math.min(3, photos.length - 1), gap = 16, tw = (W - 112 - gap * (n - 1)) / n; for (let i = 0; i < n; i++) cover(x, photos[i + 1], 56 + i * (tw + gap), top, tw, th, 16); top += th + 26; }
+      if (special) { const hh = specialBanner(56, 712, W - 112, 36); top = 712 + hh + 24; } else top = 768;
+      const th = photos.length > 1 ? 190 : 0;
+      if (th) { const n = Math.min(3, photos.length - 1), gap = 16, tw = (W - 112 - gap * (n - 1)) / n; for (let i = 0; i < n; i++) cover(x, photos[i + 1], 56 + i * (tw + gap), top, tw, th, 16); top += th + 24; }
       factCards(56, top, W - 112, facts); top += 112 + 34;
-      const bottom = 1470;
+      const bottom = 1420;
       x.fillStyle = NAVY; font(800, 32); x.fillText("Why you'll love it", 56, top + 30);
-      perks.slice(0, 5).forEach((t, i) => { const py = top + 82 + i * 46; x.fillStyle = ORANGE; x.beginPath(); x.arc(70, py - 9, 9, 0, 7); x.fill(); x.fillStyle = INK; font(500, 28, "W"); x.fillText(t, 96, py); });
+      perks.slice(0, 4).forEach((t, i) => { const py = top + 80 + i * 44; x.fillStyle = ORANGE; x.beginPath(); x.arc(70, py - 9, 9, 0, 7); x.fill(); x.fillStyle = INK; font(500, 28, "W"); x.fillText(t, 96, py); });
       const dx = 640; x.fillStyle = INK; font(500, 26, "W"); wrapText(x, String(l.description || "").replace(/\s+/g, " "), dx, top + 30, W - 56 - dx, 38, Math.max(3, Math.floor((bottom - top - 40) / 38)));
-      contact(0, 1480, W, 170, true);
+      contact(0, 1440, W, 210, true);
     } else if (kind === "story") {
       photoOr(photos[0], 0, 0, W, 1120, 0); grad(x, 560, 1120, "rgba(23,36,71,0)", "rgba(23,36,71,.95)", W); grad(x, 0, 220, "rgba(0,0,0,.35)", "rgba(0,0,0,0)", W);
       pill(tag, 56, 80, 30, "rgba(255,255,255,.95)", NAVY); priceBadge(W - 56, 70, 1.15);
