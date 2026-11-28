@@ -3904,3 +3904,5 @@ html, body { overflow-x: clip; }
 .wr-nav-h:first-child { margin-top: 2px; }
 .wr-nav-h i { font-style: normal; width: 18px; height: 18px; border-radius: 50%; background: #E77B25; color: #172447; display: grid; place-items: center; font-size: .66rem; }
 @media (max-width: 860px) { .wr-nav-h { display: none; } }
+.wr-flform { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; align-items: end; background: #FFF4E8; border-radius: 14px; padding: 14px; margin: 8px 0 18px; }
+.wr-flform p { margin: 0; }

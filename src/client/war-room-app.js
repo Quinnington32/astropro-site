@@ -166,7 +166,7 @@ export async function mountWarRoom(h) {
   const marketingView = () => {
     const tabs = [["flyers", "Flyers and images"], ["posts", "Post templates"], ["share", "Share links"], ["print", "Print and hang"]];
     let body = "";
-    if (mktTab === "flyers") body = `<p>We build these from your listing and photos. Download them, print the flyer, and post the story image.</p><div class="wr-flyers"><figure><div class="wr-canvas" data-flyer="flyer"><p>Building your flyer…</p></div><figcaption><strong>Flyer, 8.5 x 11</strong><span>Print it or send it as an image.</span><button class="btn btn-primary" type="button" data-dl="flyer">Download PNG</button> <button class="btn btn-ghost" type="button" data-print="flyer">Print it</button></figcaption></figure><figure><div class="wr-canvas story" data-flyer="story"><p>Building your story image…</p></div><figcaption><strong>Story, 1080 x 1920</strong><span>For Instagram, Facebook and TikTok stories.</span><button class="btn btn-primary" type="button" data-dl="story">Download PNG</button></figcaption></figure><figure><div class="wr-canvas square" data-flyer="square"><p>Building your post image…</p></div><figcaption><strong>Square post, 1080 x 1080</strong><span>For feed posts, GroupMe and texts.</span><button class="btn btn-primary" type="button" data-dl="square">Download PNG</button></figcaption></figure></div>`;
+    if (mktTab === "flyers") { const f0 = loadFl(); body = `<p>Built from your listing and your own photos. Add your contact info and any special, then download. Nothing here is shared until you post it.</p><form class="wr-flform" id="wrFlForm" novalidate><div class="field"><label for="fl_phone">Your cell phone (shown on the flyer)</label><input id="fl_phone" name="phone" type="tel" autocomplete="tel" maxlength="24" placeholder="(555) 123-4567" value="${esc(f0.phone || "")}"></div><div class="field"><label for="fl_email">Your email (shown on the flyer)</label><input id="fl_email" name="email" type="email" maxlength="80" value="${esc(f0.email ?? data.ownerEmail ?? "")}"></div><div class="field"><label for="fl_special">Special or move-in perk (optional)</label><input id="fl_special" name="special" type="text" maxlength="64" placeholder="First week free, or Pay no deposit" value="${esc(f0.special || "")}"></div><p><button class="btn btn-primary" type="submit">Update my flyers</button> <span class="sl-msg ok" id="wrFlMsg" hidden></span></p></form>`; body += `<div class="wr-flyers"><figure><div class="wr-canvas" data-flyer="flyer"><p>Building your flyer…</p></div><figcaption><strong>Flyer, 8.5 x 11</strong><span>Print it or send it as an image.</span><button class="btn btn-primary" type="button" data-dl="flyer">Download PNG</button> <button class="btn btn-ghost" type="button" data-print="flyer">Print it</button></figcaption></figure><figure><div class="wr-canvas story" data-flyer="story"><p>Building your story image…</p></div><figcaption><strong>Story, 1080 x 1920</strong><span>For Instagram, Facebook and TikTok stories.</span><button class="btn btn-primary" type="button" data-dl="story">Download PNG</button></figcaption></figure><figure><div class="wr-canvas square" data-flyer="square"><p>Building your post image…</p></div><figcaption><strong>Square post, 1080 x 1080</strong><span>For feed posts, GroupMe and texts.</span><button class="btn btn-primary" type="button" data-dl="square">Download PNG</button></figcaption></figure></div>`; }
     if (mktTab === "posts") body = `<p>Posts written from your listing. Tap a box to edit it, then copy.</p>${copyCard("fb", "Facebook post", k.fb)}${copyCard("long", "Marketplace, Craigslist and listing sites", k.long)}${copyCard("reddit", "Reddit post", k.reddit)}${copyCard("short", "Short post for Instagram, GroupMe and texts", k.short)}${copyCard("bump", "'Still available' bump comment", k.bump)}${copyCard("reply", "Reply to new messages", k.reply)}${copyCard("followup", "Follow-up after a tour or no reply", k.followup)}`;
     if (mktTab === "share") body = `<p>The more places your link lands, the more views you get. It shows your photo, price and title when shared.</p>${shareBar(k.url, l.title + " | " + money(l.rent) + "/mo")}<div class="sl-share"><input readonly aria-label="Your public listing link" value="${esc(k.url)}"><button class="btn btn-ghost" type="button" data-copy="url">Copy link</button></div><p class="fineprint">${data.views || 0} view${data.views === 1 ? "" : "s"} of your public page so far.</p>`;
     if (mktTab === "print") body = `<ol class="wr-steps"><li><strong>Print 10 to 20 flyers.</strong> A campus print shop or library does it for a few dollars. Color is worth it.</li><li><strong>Hang them where students look.</strong> Campus bulletin boards, laundromats, coffee shops, gyms, apartment-complex boards and near the housing office. Ask first where a sign-off is needed.</li><li><strong>Make tear-offs.</strong> Cut vertical strips at the bottom with your listing link so people can grab one.</li><li><strong>Replace them every week.</strong> Fresh paper gets noticed.</li><li><strong>Take a photo of each board</strong> and post it on your story with the link.</li></ol><p><button class="btn btn-primary" type="button" data-nav="marketing" data-mkt="flyers">Get my flyer</button></p>`;
@@ -282,61 +282,79 @@ export async function mountWarRoom(h) {
     return b + lines.length * lh;
   };
   const clip = (s, n) => { s = String(s); return s.length > n ? s.slice(0, n - 1).trimEnd() + "…" : s; };
+  const flKey = "astropro.wr.flyer." + id;
+  const loadFl = () => { try { return JSON.parse(fetchStore(flKey) || "{}"); } catch { return {}; } };
+  const grad = (x, y0, y1, c0, c1, W, a = 0) => { const g = x.createLinearGradient(0, y0, 0, y1); g.addColorStop(0, c0); g.addColorStop(1, c1); x.fillStyle = g; x.fillRect(a, Math.min(y0, y1), W, Math.abs(y1 - y0)); };
   const drawFlyer = async (kind) => {
     if (flyers[kind]) return flyers[kind];
     try { await Promise.all([document.fonts.load("800 40px Sora"), document.fonts.load("500 20px 'Work Sans'"), document.fonts.load("700 20px 'Work Sans'")]); } catch {}
-    const logo = await loadImg("/brand/astropro-student-logo.png");
     const photos = (await Promise.all(Array.from({ length: Math.min(l.photos || 0, 4) }, (_, i) => loadImg("/api/sublease/photo/" + l.id + "/" + i)))).filter(Boolean);
+    const fl = loadFl();
+    const phone = (fl.phone || "").trim(), mail = (fl.email ?? data.ownerEmail ?? "").trim(), special = (fl.special || "").trim();
+    const who = (l.ownerName || "").split(" ")[0];
     const [W, H] = kind === "flyer" ? [1275, 1650] : kind === "story" ? [1080, 1920] : [1080, 1080];
     const cv = document.createElement("canvas"); cv.width = W; cv.height = H;
-    const x = cv.getContext("2d");
-    const NAVY = "#172447", ORANGE = "#E77B25", IVORY = "#FBFAF6", GREY = "#4A5470";
-    const bed = l.bedrooms === 0 ? "Studio" : l.bedrooms + " bed / " + l.bathrooms + " bath";
-    const where = clip(l.area, 62) + " · " + c.city + (c.st ? ", " + c.st : "");
-    const kindText = ({ sublease: "SUBLEASE", relet: "LEASE TAKEOVER", assignment: "LEASE TAKEOVER" }[l.type] || "SUBLEASE");
-    const pin = (a, b, s, col) => { x.save(); x.translate(a, b); x.scale(s, s); x.strokeStyle = col; x.lineWidth = 2.4; x.lineCap = x.lineJoin = "round"; x.beginPath(); x.moveTo(12, 22); x.bezierCurveTo(12, 22, 19, 15.8, 19, 10); x.arc(12, 10, 7, 0, Math.PI, true); x.bezierCurveTo(5, 15.8, 12, 22, 12, 22); x.stroke(); x.beginPath(); x.arc(12, 10, 2.6, 0, 7); x.stroke(); x.restore(); };
-    const priceTag = (a, b, s) => { const t = money(l.rent); x.font = "800 " + 64 * s + "px Sora, sans-serif"; const w1 = x.measureText(t).width; x.font = "600 " + 28 * s + "px 'Work Sans', sans-serif"; const w2 = x.measureText("/month").width; const w = w1 + w2 + 56 * s, hh = 100 * s; if (a < 0) a = W - w + a; x.fillStyle = ORANGE; rr(x, a, b, w, hh, 18 * s); x.fill(); x.fillStyle = NAVY; x.textBaseline = "alphabetic"; x.font = "800 " + 64 * s + "px Sora, sans-serif"; x.fillText(t, a + 28 * s, b + 72 * s); x.font = "600 " + 28 * s + "px 'Work Sans', sans-serif"; x.fillText("/month", a + 28 * s + w1 + 4 * s, b + 72 * s); };
-    const heroFallback = (a, b, w, hh, r) => { x.fillStyle = NAVY; rr(x, a, b, w, hh, r); x.fill(); x.fillStyle = "#FBFAF6"; x.font = "800 56px Sora, sans-serif"; x.textAlign = "center"; x.fillText(c.city.toUpperCase(), a + w / 2, b + hh / 2 + 18); x.textAlign = "left"; };
-    const hero = (a, b, w, hh, r) => (photos[0] ? cover(x, photos[0], a, b, w, hh, r) : heroFallback(a, b, w, hh, r));
-    const url = "astroprostudentresourcecenter.com";
-    x.fillStyle = kind === "story" ? NAVY : IVORY; x.fillRect(0, 0, W, H);
+    const x = cv.getContext("2d"); x.textBaseline = "alphabetic";
+    const NAVY = "#172447", ORANGE = "#E77B25", IVORY = "#FBFAF6", INK = "#1d2540", GREY = "#5A6480";
+    const bed = l.bedrooms === 0 ? "Studio" : l.bedrooms + " Bed · " + l.bathrooms + " Bath";
+    const tag = { sublease: "SUBLEASE", relet: "LEASE TAKEOVER", assignment: "LEASE TAKEOVER" }[l.type] || "SUBLEASE";
+    const where = [l.area, c.city + (c.st ? ", " + c.st : "")].filter(Boolean).join(" · ");
+    const dates = dateText(l.startDate) + " – " + dateText(l.endDate);
+    const font = (w, px, f = "Sora") => (x.font = w + " " + px + "px " + (f === "Sora" ? "Sora, sans-serif" : "'Work Sans', sans-serif"));
+    const pill = (txt, a, b, px, bg, fg, padX = 26) => { font(700, px, "W"); const w = x.measureText(txt).width + padX * 2, hh = px * 2.1; x.fillStyle = bg; rr(x, a, b, w, hh, hh / 2); x.fill(); x.fillStyle = fg; x.fillText(txt, a + padX, b + hh / 2 + px * 0.35); return w; };
+    const photoOr = (img, a, b, w, hh, r) => { if (img) cover(x, img, a, b, w, hh, r); else { x.save(); rr(x, a, b, w, hh, r); x.clip(); grad(x, b, b + hh, "#22356b", NAVY, w, a); x.restore(); x.fillStyle = "rgba(255,255,255,.9)"; font(800, Math.min(60, w / 9)); x.textAlign = "center"; x.fillText(c.city.toUpperCase(), a + w / 2, b + hh / 2 + 18); x.textAlign = "left"; } };
+    const priceBadge = (right, top, s) => { const t = money(l.rent); font(800, 74 * s); const w1 = x.measureText(t).width; font(600, 28 * s, "W"); const w2 = x.measureText("per month").width; const w = Math.max(w1, w2) + 60 * s, hh = 130 * s, a = right - w; x.save(); x.shadowColor = "rgba(0,0,0,.35)"; x.shadowBlur = 24; x.shadowOffsetY = 8; x.fillStyle = ORANGE; rr(x, a, top, w, hh, 22 * s); x.fill(); x.restore(); x.fillStyle = NAVY; x.textAlign = "center"; font(800, 74 * s); x.fillText(t, a + w / 2, top + 80 * s); font(600, 28 * s, "W"); x.fillText("per month", a + w / 2, top + 114 * s); x.textAlign = "left"; };
+    const specialBanner = (a, b, w, px) => { if (!special) return 0; const txt = clip(special, 64); font(800, px); const hh = px * 2.5; x.fillStyle = "#fff"; rr(x, a, b, w, hh, 16); x.fill(); x.fillStyle = ORANGE; rr(x, a, b, 12, hh, 6); x.fill(); font(800, px * .62, "W"); x.fillStyle = ORANGE; x.fillText("SPECIAL OFFER", a + 34, b + hh * .38); font(800, px); x.fillStyle = NAVY; x.fillText(clip(txt, Math.floor(w / (px * .55))), a + 34, b + hh * .78); return hh; };
+    const contact = (a, b, w, hh, dark) => {
+      x.fillStyle = dark ? NAVY : IVORY; rr(x, a, b, w, hh, 0); x.fill();
+      const fg = dark ? "#fff" : NAVY;
+      x.fillStyle = ORANGE; font(800, Math.min(30, hh * .17), "W"); x.fillText(("INTERESTED? CONTACT" + (who ? " " + who.toUpperCase() : " ME")), a + 56, b + hh * .27);
+      x.fillStyle = fg; const big = Math.min(54, hh * .3);
+      const lines = [phone && ["phone", phone], mail && ["mail", mail]].filter(Boolean);
+      if (!lines.length) { font(800, big); x.fillText("Message me to book a tour", a + 56, b + hh * .66); }
+      lines.forEach(([t, v], i) => { const y = b + hh * (lines.length === 1 ? .68 : .55) + i * big * 1.25; x.fillStyle = ORANGE; x.beginPath(); x.arc(a + 76, y - big * .3, 16, 0, 7); x.fill(); x.strokeStyle = NAVY; x.lineWidth = 2.6; x.lineCap = "round"; x.lineJoin = "round"; x.beginPath(); if (t === "phone") { x.moveTo(a + 70, y - big * .3 - 8); x.lineTo(a + 70, y - big * .3 + 8); x.lineTo(a + 82, y - big * .3 + 8); x.lineTo(a + 82, y - big * .3 - 8); x.closePath(); } else { x.rect(a + 67, y - big * .3 - 7, 18, 14); x.moveTo(a + 67, y - big * .3 - 7); x.lineTo(a + 76, y - big * .3 + 1); x.lineTo(a + 85, y - big * .3 - 7); } x.stroke(); x.fillStyle = fg; font(800, big); x.fillText(clip(v, 34), a + 112, y); });
+    };
+    const factCards = (a, b, w, items) => { const gap = 14, cw = (w - gap * (items.length - 1)) / items.length; items.forEach(([lab, val], i) => { const fx = a + i * (cw + gap); x.fillStyle = "#fff"; rr(x, fx, b, cw, 112, 16); x.fill(); x.strokeStyle = "#E3E0D6"; x.lineWidth = 2; x.stroke(); x.fillStyle = GREY; font(700, 19, "W"); x.fillText(lab, fx + 20, b + 40); x.fillStyle = NAVY; font(800, 27); x.fillText(clip(val, Math.floor(cw / 15.5)), fx + 20, b + 84); }); };
+    const facts = [["LAYOUT", bed], ["AVAILABLE", dateText(l.startDate)], ["FURNISHED", { yes: "Yes", no: "No", partly: "Partly" }[l.furnished] || "—"], ["UTILITIES", { yes: "Included", some: "Some included", no: "Not included" }[l.utilities] || "—"]];
+    const perks = [l.furnished === "yes" && "Fully furnished", l.utilities === "yes" && "Utilities included", l.permission === "approved" && "Landlord approved", l.deposit ? money(l.deposit) + " deposit" : "No deposit required", "Tours in person or by video"].filter(Boolean);
+    x.fillStyle = IVORY; x.fillRect(0, 0, W, H);
     if (kind === "flyer") {
-      if (logo) x.drawImage(logo, 60, 36, 330, 110);
-      x.fillStyle = NAVY; rr(x, W - 60 - 330, 62, 330, 62, 31); x.fill(); x.fillStyle = IVORY; x.font = "600 26px 'Work Sans', sans-serif"; x.textAlign = "center"; x.fillText(kindText, W - 60 - 165, 103); x.textAlign = "left";
-      x.fillStyle = ORANGE; x.fillRect(0, 166, W, 8);
-      hero(0, 174, W, 500, 0); priceTag(60, 624, 1);
-      x.fillStyle = NAVY; x.font = "800 58px Sora, sans-serif"; let y = wrapText(x, l.title, 60, 800, W - 120, 68, 2);
-      pin(52, y + 6, 1.7, ORANGE); x.fillStyle = NAVY; x.font = "600 34px 'Work Sans', sans-serif"; x.fillText(clip(where, 52), 106, y + 40);
-      x.fillStyle = GREY; x.font = "500 28px 'Work Sans', sans-serif"; x.fillText("Near " + clip(l.school || c.city, 48), 60, y + 88);
-      const facts = [["LAYOUT", bed], ["MOVE-IN", dateText(l.startDate)], ["FURNISHED", { yes: "Yes", no: "No", partly: "Partly" }[l.furnished] || "—"], ["UTILITIES", { yes: "Included", some: "Some included", no: "Not included" }[l.utilities] || "—"]];
-      const fy = y + 125, fw = (W - 120 - 36) / 4;
-      facts.forEach(([a, b], i) => { const fx = 60 + i * (fw + 12); x.fillStyle = "#fff"; rr(x, fx, fy, fw, 108, 16); x.fill(); x.strokeStyle = "#E3E0D6"; x.lineWidth = 2; x.stroke(); x.fillStyle = GREY; x.font = "600 20px 'Work Sans', sans-serif"; x.fillText(a, fx + 18, fy + 38); x.fillStyle = NAVY; x.font = "800 27px Sora, sans-serif"; x.fillText(clip(b, 14), fx + 18, fy + 82); });
-      const py = fy + 140, ph = 1560 - py - 20;
-      const perks = [l.furnished === "yes" && "Fully furnished", l.utilities === "yes" && "Utilities included", l.permission === "approved" && "Landlord approved", l.deposit ? money(l.deposit) + " deposit" : "No deposit", "Tours in person or on video"].filter(Boolean);
-      x.fillStyle = NAVY; x.font = "800 30px Sora, sans-serif"; x.fillText("Why you'll love it", 60, py + 36);
-      x.font = "500 28px 'Work Sans', sans-serif"; x.fillStyle = "#33405F"; perks.slice(0, 5).forEach((p, i) => { x.fillStyle = ORANGE; x.beginPath(); x.arc(74, py + 82 + i * 44 - 8, 8, 0, 7); x.fill(); x.fillStyle = "#33405F"; x.fillText(p, 98, py + 82 + i * 44); });
-      const extra = photos.slice(1, 3);
-      extra.forEach((im, i) => cover(x, im, W - 60 - (extra.length - i) * 276 + (extra.length - i - 1) * 16, py, 260, Math.min(ph, 220), 16));
-      x.fillStyle = NAVY; x.fillRect(0, 1560, W, 90);
-      x.fillStyle = IVORY; x.font = "800 34px Sora, sans-serif"; x.fillText("Message me to book a tour", 60, 1618);
-      x.fillStyle = ORANGE; rr(x, W - 60 - 560, 1578, 560, 56, 14); x.fill(); x.fillStyle = NAVY; x.font = "700 24px 'Work Sans', sans-serif"; x.textAlign = "center"; x.fillText(url, W - 60 - 280, 1614); x.textAlign = "left";
+      photoOr(photos[0], 0, 0, W, 800, 0); grad(x, 360, 800, "rgba(23,36,71,0)", "rgba(23,36,71,.92)", W);
+      pill(tag, 56, 52, 24, "rgba(255,255,255,.95)", NAVY); priceBadge(W - 56, 48, 1);
+      x.fillStyle = "#fff"; font(800, 70); let y = wrapText(x, l.title, 56, 620, W - 112, 80, 2);
+      x.fillStyle = "#FFD9B8"; font(600, 32, "W"); x.fillText(clip(where, 62), 56, y + 12);
+      let top = 800;
+      if (special) { const hh = specialBanner(56, 770, W - 112, 36); top = 770 + hh + 26; } else top = 826;
+      const th = photos.length > 1 ? 210 : 0;
+      if (th) { const n = Math.min(3, photos.length - 1), gap = 16, tw = (W - 112 - gap * (n - 1)) / n; for (let i = 0; i < n; i++) cover(x, photos[i + 1], 56 + i * (tw + gap), top, tw, th, 16); top += th + 26; }
+      factCards(56, top, W - 112, facts); top += 112 + 34;
+      const bottom = 1470;
+      x.fillStyle = NAVY; font(800, 32); x.fillText("Why you'll love it", 56, top + 30);
+      perks.slice(0, 5).forEach((t, i) => { const py = top + 82 + i * 46; x.fillStyle = ORANGE; x.beginPath(); x.arc(70, py - 9, 9, 0, 7); x.fill(); x.fillStyle = INK; font(500, 28, "W"); x.fillText(t, 96, py); });
+      const dx = 640; x.fillStyle = INK; font(500, 26, "W"); wrapText(x, String(l.description || "").replace(/\s+/g, " "), dx, top + 30, W - 56 - dx, 38, Math.max(3, Math.floor((bottom - top - 40) / 38)));
+      contact(0, 1480, W, 170, true);
     } else if (kind === "story") {
-      x.fillStyle = IVORY; rr(x, 64, 150, 520, 150, 30); x.fill(); if (logo) x.drawImage(logo, 84, 160, 480, 130);
-      x.fillStyle = IVORY; x.font = "800 88px Sora, sans-serif"; let y = wrapText(x, "Need a place near " + clip(l.school || c.city, 26) + "?", 64, 420, W - 128, 96, 2);
-      x.fillStyle = ORANGE; y = wrapText(x, "Take over my lease.", 64, y + 6, W - 128, 96, 1);
-      hero(64, y + 30, W - 128, 560, 30); priceTag(-64, y + 30 + 560 - 56, 1.2);
-      const ly = y + 30 + 560 + 86;
-      x.fillStyle = IVORY; rr(x, 64, ly, W - 128, 120, 60); x.fill(); pin(96, ly + 30, 2.4, NAVY); x.fillStyle = NAVY; x.font = "700 38px 'Work Sans', sans-serif"; x.fillText(clip(l.area, 34), 170, ly + 56); x.font = "500 32px 'Work Sans', sans-serif"; x.fillText(c.city + (c.st ? ", " + c.st : ""), 170, ly + 98);
-      x.fillStyle = IVORY; x.font = "500 40px 'Work Sans', sans-serif"; const ty = wrapText(x, bed + " · " + dateText(l.startDate) + " to " + dateText(l.endDate) + (l.furnished === "yes" ? " · Furnished" : "") + (l.utilities === "yes" ? " · Utilities included" : ""), 64, ly + 190, W - 128, 54, 3);
-      x.fillStyle = ORANGE; rr(x, 64, 1690, W - 128, 150, 28); x.fill(); x.fillStyle = NAVY; x.textAlign = "center"; x.font = "800 48px Sora, sans-serif"; x.fillText("Tours this week. Message me.", W / 2, 1758); x.font = "700 30px 'Work Sans', sans-serif"; x.fillText(url, W / 2, 1808); x.textAlign = "left";
+      photoOr(photos[0], 0, 0, W, 1120, 0); grad(x, 560, 1120, "rgba(23,36,71,0)", "rgba(23,36,71,.95)", W); grad(x, 0, 220, "rgba(0,0,0,.35)", "rgba(0,0,0,0)", W);
+      pill(tag, 56, 80, 30, "rgba(255,255,255,.95)", NAVY); priceBadge(W - 56, 70, 1.15);
+      x.fillStyle = "#fff"; font(800, 82); let y = wrapText(x, l.title, 56, 900, W - 112, 92, 3);
+      x.fillStyle = "#FFD9B8"; font(600, 36, "W"); x.fillText(clip(where, 52), 56, y + 14);
+      x.fillStyle = NAVY; x.fillRect(0, 1120, W, H - 1120); x.fillStyle = IVORY; x.fillRect(0, 1120, W, H - 1120);
+      let top = 1150;
+      if (special) { const hh = specialBanner(56, top, W - 112, 40); top += hh + 24; }
+      if (photos.length > 1) { const n = Math.min(3, photos.length - 1), gap = 14, tw = (W - 112 - gap * (n - 1)) / n; for (let i = 0; i < n; i++) cover(x, photos[i + 1], 56 + i * (tw + gap), top, tw, 190, 16); top += 190 + 24; }
+      const chips = [bed, dates, l.furnished === "yes" && "Furnished", l.utilities === "yes" && "Utilities included"].filter(Boolean);
+      let cx = 56, cy = top; chips.forEach((t) => { font(700, 30, "W"); const w = x.measureText(t).width + 48; if (cx + w > W - 56) { cx = 56; cy += 76; } x.fillStyle = "#fff"; rr(x, cx, cy, w, 60, 30); x.fill(); x.strokeStyle = "#E3E0D6"; x.lineWidth = 2; x.stroke(); x.fillStyle = NAVY; x.fillText(t, cx + 24, cy + 40); cx += w + 12; });
+      contact(0, H - 300, W, 300, true);
     } else {
-      hero(0, 0, W, 520, 0); priceTag(48, 470, 1);
-      x.fillStyle = NAVY; x.font = "800 52px Sora, sans-serif"; let y = wrapText(x, l.title, 48, 640, W - 96, 60, 2);
-      pin(40, y + 2, 1.5, ORANGE); x.fillStyle = NAVY; x.font = "600 30px 'Work Sans', sans-serif"; x.fillText(clip(where, 54), 90, y + 32);
-      x.fillStyle = GREY; x.font = "500 28px 'Work Sans', sans-serif"; x.fillText(bed + " · " + dateText(l.startDate) + " to " + dateText(l.endDate), 48, y + 80);
-      x.fillStyle = NAVY; x.fillRect(0, H - 110, W, 110); x.fillStyle = IVORY; x.font = "800 32px Sora, sans-serif"; x.fillText("Message me to book a tour", 48, H - 50);
-      x.fillStyle = ORANGE; x.font = "700 24px 'Work Sans', sans-serif"; x.textAlign = "right"; x.fillText(url, W - 48, H - 50); x.textAlign = "left";
-      if (logo) { x.fillStyle = IVORY; rr(x, W - 48 - 250, 36, 250, 84, 16); x.fill(); x.drawImage(logo, W - 48 - 238, 42, 226, 72); }
+      photoOr(photos[0], 0, 0, W, 600, 0); grad(x, 300, 600, "rgba(23,36,71,0)", "rgba(23,36,71,.9)", W);
+      pill(tag, 48, 44, 22, "rgba(255,255,255,.95)", NAVY); priceBadge(W - 48, 40, .85);
+      x.fillStyle = "#fff"; font(800, 56); let y = wrapText(x, l.title, 48, 500, W - 96, 64, 2);
+      x.fillStyle = "#FFD9B8"; font(600, 28, "W"); x.fillText(clip(where, 60), 48, y + 8);
+      let top = 626;
+      if (special) { const hh = specialBanner(48, top, W - 96, 32); top += hh + 20; }
+      x.fillStyle = NAVY; font(800, 34); x.fillText(bed + " · " + dates, 48, top + 36);
+      x.fillStyle = INK; font(500, 27, "W"); perks.slice(0, 3).forEach((t, i) => { x.fillStyle = ORANGE; x.beginPath(); x.arc(58, top + 84 + i * 40 - 8, 8, 0, 7); x.fill(); x.fillStyle = INK; x.fillText(t, 80, top + 84 + i * 40); });
+      contact(0, H - 220, W, 220, true);
     }
     flyers[kind] = cv;
     return cv;
@@ -444,6 +462,11 @@ export async function mountWarRoom(h) {
     if (f.id === "slLLForm") {
       ev.preventDefault(); const b = $("button[type=submit]", f); b.disabled = true;
       try { const r = await api("/manage/" + id, { method: "POST", headers, body: JSON.stringify({ action: "landlord", ...Object.fromEntries(new FormData(f).entries()) }) }); say($("#slLLMsg"), r.sentNow ? "Sent! Your landlord has your first check-in. We'll follow up weekly." : "Saved. Your first check-in goes out within the hour.", true); doneSet.delete("ll_manual"); setTimeout(async () => { await load(); paint(); }, 1600); } catch (e) { b.disabled = false; say($("#slLLMsg"), e.message); }
+    }
+    if (f.id === "wrFlForm") {
+      ev.preventDefault(); const v = Object.fromEntries(new FormData(f).entries());
+      store(flKey, JSON.stringify({ phone: String(v.phone || "").slice(0, 24), email: String(v.email || "").slice(0, 80), special: String(v.special || "").slice(0, 64) }));
+      Object.keys(flyers).forEach((x) => delete flyers[x]); paint();
     }
     if (f.id === "slOutForm") {
       ev.preventDefault(); const v = Object.fromEntries(new FormData(f).entries());
